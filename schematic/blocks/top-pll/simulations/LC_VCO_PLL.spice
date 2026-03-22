@@ -1,77 +1,68 @@
-* =========================================================
-* TOP LEVEL PLL LVS NETLIST (FINAL CLEAN VERSION)
-* =========================================================
-
-* ---- Standard Cell Library ----
-
+** sch_path: /foss/designs/frac-n-pll-vco-unic_cass/schematic/blocks/top-pll/LC_VCO_PLL.sch
 .include "/foss/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/cdl/sg13g2_stdcell.cdl"
-* =========================================================
-
-* TOP CELL
-* =========================================================
 .SUBCKT LC_VCO_PLL GND VDD CLK_IN IbiasVCO Ibias OUTn CLK_OUT sdata en sclk rst
-
-
-* Charge Pump
+*.PININFO GND:B VDD:B CLK_IN:I IbiasVCO:I Ibias:I OUTn:O CLK_OUT:O sdata:I en:I sclk:I rst:I
+x5 CLK_OUT net1 VDD GND sg13g2_inv_2
 x1 VDD UP VCTRL DN GND Ibias CP
-
-* PFD
-x2 VDD UP CLK_IN DSM_OUT DN GND PFD
-
-* LC VCO
-x3 VDD CLK_OUT OUTn IbiasVCO VCTRL GND LC_VCO
-
+x2 VDD net1 OUTn IbiasVCO VCTRL GND LC_VCO
+x3 VDD UP CLK_IN DSM_OUT DN GND PFD
 * DSM (Digital Block)
 X4 VDD GND en CLK_OUT DSM_OUT rst sclk sdata dsm_and_freq_divider
 
 .ENDS
 
-* =========================================================
-* CHARGE PUMP
-* =========================================================
+* expanding   symbol:  /foss/designs/frac-n-pll-vco-unic_cass/schematic/blocks/charge-pump/CP.sym # of pins=6
+** sym_path: /foss/designs/frac-n-pll-vco-unic_cass/schematic/blocks/charge-pump/CP.sym
+** sch_path: /foss/designs/frac-n-pll-vco-unic_cass/schematic/blocks/charge-pump/CP.sch
 .SUBCKT CP VDD UP CTRL DN GND Ibias
-M2 Vbn Vbn net2 GND sg13_lv_nmos w=3u l=2u
-M8 net5 GND VDD VDD sg13_lv_pmos w=10u l=2u
-R3 CTRL1 CTRL rsil w=0.5u l=1000u
-R2 CTRL1 CTRL2 rsil w=0.5u l=2500u
-C4 CTRL GND cap_cmim w=60u l=60u
-C1 CTRL2 GND cap_cmim w=40u l=40u m=4
-C2 CTRL1 GND cap_cmim w=15u l=20u m=4
-M11 Ibias Ibias net5 VDD sg13_lv_pmos w=10u l=2u
-M3 Vbn Ibias net1 VDD sg13_lv_pmos w=10u l=2u
-M4 net1 GND VDD VDD sg13_lv_pmos w=10u l=2u
-M7 net4 UP VDD VDD sg13_lv_pmos w=10u l=2u
-M9 CTRL1 Ibias net4 VDD sg13_lv_pmos w=10u l=2u
-M10 net2 VDD GND GND sg13_lv_nmos w=3u l=2u
-M1 net3 DN GND GND sg13_lv_nmos w=3u l=2u
-M5 CTRL1 Vbn net3 GND sg13_lv_nmos w=3u l=2u
+*.PININFO CTRL:O UP:I VDD:I Ibias:I DN:I GND:I
+M2 Vbn Vbn net2 GND sg13_lv_nmos w=3u l=2u ng=1
+M8 net5 GND VDD VDD sg13_lv_pmos w=10u l=2u ng=1
+R3 CTRL CTRL1 rsil w=0.5e-6 l=1000e-6 m=1 b=0
+R2 CTRL2 CTRL1 rsil w=0.5e-6 l=2500e-6 m=1 b=0
+C4 CTRL GND cap_cmim w=60.0e-6 l=60.0e-6
+C1 CTRL2 GND cap_cmim w=40.0e-6 l=40.0e-6 m=4
+C2 CTRL1 GND cap_cmim w=15.0e-6 l=20.0e-6 m=4
+M11 Ibias Ibias net5 VDD sg13_lv_pmos w=10u l=2u ng=1
+M3 Vbn Ibias net1 VDD sg13_lv_pmos w=10u l=2u ng=1
+M4 net1 GND VDD VDD sg13_lv_pmos w=10u l=2u ng=1
+M7 net4 UP VDD VDD sg13_lv_pmos w=10u l=2u ng=1
+M9 CTRL1 Ibias net4 VDD sg13_lv_pmos w=10u l=2u ng=1
+M10 net2 VDD GND GND sg13_lv_nmos w=3u l=2u ng=1
+M1 net3 DN GND GND sg13_lv_nmos w=3u l=2u ng=1
+M5 CTRL1 Vbn net3 GND sg13_lv_nmos w=3u l=2u ng=1
 .ENDS
 
-* =========================================================
-* PFD
-* =========================================================
+
+* expanding   symbol:  /foss/designs/frac-n-pll-vco-unic_cass/schematic/blocks/lc-vco/LC_VCO.sym # of pins=6
+** sym_path: /foss/designs/frac-n-pll-vco-unic_cass/schematic/blocks/lc-vco/LC_VCO.sym
+** sch_path: /foss/designs/frac-n-pll-vco-unic_cass/schematic/blocks/lc-vco/LC_VCO.sch
+.SUBCKT LC_VCO VDD OUTp OUTn Ibias VCTRL GND
+*.PININFO VDD:B OUTp:O OUTn:O GND:B VCTRL:B Ibias:B
+M6 net1 Ibias GND GND sg13_lv_nmos w=1u l=0.15u ng=1 m=60
+M5 Ibias Ibias GND GND sg13_lv_nmos w=1u l=0.15u ng=1
+M4 OUTp OUTn VDD VDD sg13_lv_pmos w=8.5u l=0.5u ng=1 m=13
+M3 OUTn OUTp VDD VDD sg13_lv_pmos w=8.5u l=0.5u ng=1 m=13
+M2 OUTp OUTn net1 GND sg13_lv_nmos w=2u l=0.5u ng=1 m=12
+M1 OUTn OUTp net1 GND sg13_lv_nmos w=2u l=0.5u ng=1 m=12
+C3 OUTp OUTn cap_cmim w=4.26e-6 l=4.26e-6 m=12
+Mv2 OUTp VCTRL OUTp VDD sg13_lv_pmos w=4u l=4u ng=1 m=22
+Mv1 OUTn VCTRL OUTn VDD sg13_lv_pmos w=4u l=4u ng=1 m=22
+R1 OUTp OUTn rhigh w=1e-6 l=0.79e-6 m=1 b=0
+.ENDS
+
+
+* expanding   symbol:  /foss/designs/frac-n-pll-vco-unic_cass/schematic/blocks/phase-freq-detector/PFD_std.sym # of pins=6
+** sym_path: /foss/designs/frac-n-pll-vco-unic_cass/schematic/blocks/phase-freq-detector/PFD_std.sym
+** sch_path: /foss/designs/frac-n-pll-vco-unic_cass/schematic/blocks/phase-freq-detector/PFD_std.sch
 .SUBCKT PFD VDD UP F_REF F_VCO DN GND
 *.PININFO UP:O F_REF:I VDD:I GND:I DN:O F_VCO:I
 x1 net1 net2 F_REF VDD RST_N VDD GND sg13g2_dfrbp_2
-x2 DN   net3 F_VCO VDD RST_N VDD GND sg13g2_dfrbp_2
+x2 DN net3 F_VCO VDD RST_N VDD GND sg13g2_dfrbp_2
 x3 RST_N net1 DN VDD GND sg13g2_nand2_2
-x4 UP    net1 VDD GND sg13g2_inv_2
+x4 UP net1 VDD GND sg13g2_inv_2
 .ENDS
-* =========================================================
-* LC VCO
-* =========================================================
-.SUBCKT LC_VCO VDD OUTp OUTn Ibias VCTRL GND
-M6 net1 Ibias GND GND sg13_lv_nmos w=1u l=0.15u m=60
-M5 Ibias Ibias GND GND sg13_lv_nmos w=1u l=0.15u m=1
-M4 OUTp OUTn VDD VDD sg13_lv_pmos w=8.5u l=0.5u m=13
-M3 OUTn OUTp VDD VDD sg13_lv_pmos w=8.5u l=0.5u m=13
-M2 OUTp OUTn net1 GND sg13_lv_nmos w=2u l=0.5u m=12
-M1 OUTn OUTp net1 GND sg13_lv_nmos w=2u l=0.5u m=12
-C3 OUTp OUTn cap_cmim w=4.26e-6 l=4.26e-6 m=12
-Mv2 OUTp VCTRL OUTp VDD sg13_lv_pmos w=4u l=4u m=22
-Mv1 OUTn VCTRL OUTn VDD sg13_lv_pmos w=4u l=4u m=22
-R1 OUTn OUTp rhigh w=1e-6 l=0.79e-6 m=1
-.ENDS
+
 
 * =========================================================
 * DSM BLOCK (CLEANED VERSION)
@@ -624,7 +615,5 @@ XFILLER_17_108 VDD GND sg13g2_decap_4
 
 .ENDS
 
-* =========================================================
-* GLOBALS
-* =========================================================
-.GLOBAL VDD GND VPWR VGND VSS
+.GLOBAL VDD
+.GLOBAL GND

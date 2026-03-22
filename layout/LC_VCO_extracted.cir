@@ -1,4 +1,4 @@
-* Extracted by KLayout with SG13G2 LVS runset on : 21/03/2026 09:48
+* Extracted by KLayout with SG13G2 LVS runset on : 22/03/2026 14:30
 
 .SUBCKT LC_VCO 1 2 3 4 6 7
 M$1 4 6 5 4 sg13_lv_nmos L=0.15u W=60u AS=11.55p AD=11.55p PS=84.1u PD=84.1u

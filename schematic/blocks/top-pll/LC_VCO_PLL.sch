@@ -1,4 +1,4 @@
-v {xschem version=3.4.8RC file_version=1.2}
+v {xschem version=3.4.8RC file_version=1.3}
 G {}
 K {}
 V {}
@@ -35,19 +35,13 @@ N 1730 -540 1800 -540 {lab=CLK_OUT}
 N 1320 -520 1340 -520 {lab=IbiasVCO}
 N 1730 -540 1730 -320 {lab=CLK_OUT}
 N 1660 -540 1730 -540 {lab=CLK_OUT}
-N 1550 -540 1580 -540 {lab=#net7}
+N 1550 -540 1580 -540 {lab=#net1}
 C {lab_pin.sym} 720 -550 0 1 {name=p16 lab=UP}
 C {lab_pin.sym} 460 -520 0 0 {name=p18 sig_type=std_logic lab=DSM_OUT}
 C {lab_pin.sym} 720 -510 0 1 {name=p19 lab=DN}
 C {lab_pin.sym} 1070 -540 0 1 {name=p10 lab=VCTRL}
 C {vdd.sym} 550 -600 0 0 {name=l6 lab=VDD}
 C {vdd.sym} 950 -610 0 0 {name=l2 lab=VDD}
-C {/foss/designs/iic_osic_tools/frac-n-pll-vco-unic_cass/schematic/blocks/charge-pump/CP.sym} 950 -540 0 0 {name=x1}
-C {/foss/designs/iic_osic_tools/frac-n-pll-vco-unic_cass/schematic/blocks/phase-freq-detector/PFD_std.sym} 550 -530 0 0 {name=x2}
-C {/foss/designs/iic_osic_tools/frac-n-pll-vco-unic_cass/schematic/blocks/dsm/xschem/dsm_and_freq_divider.sym} 1300 -280 0 1 {name=adut
-dut=dut
-d_cosim_model= d_cosim
-model=./../dsm_and_freq_divider.so}
 C {lab_pin.sym} 1550 -240 0 1 {name=p2 sig_type=std_logic lab=en}
 C {lab_pin.sym} 1550 -260 0 1 {name=p3 sig_type=std_logic lab=sdata}
 C {lab_pin.sym} 1550 -280 0 1 {name=p4 sig_type=std_logic lab=sclk}
@@ -75,9 +69,15 @@ C {ipin.sym} 90 -360 0 0 {name=p14 lab=sclk}
 C {ipin.sym} 90 -330 0 0 {name=p15 lab=rst}
 C {sg13g2_stdcells/sg13g2_inv_2.sym} 1620 -540 0 0 {name=x5 VDD=VDD VSS=GND prefix=sg13g2_ }
 C {vdd.sym} 1440 -630 0 0 {name=l4 lab=VDD}
-C {/foss/designs/iic_osic_tools/frac-n-pll-vco-unic_cass/schematic/blocks/lc-vco/LC_VCO.sym} 1440 -530 0 0 {name=x3}
 C {lab_pin.sym} 1320 -520 0 0 {name=p12 lab=IbiasVCO}
 C {lab_pin.sym} 1320 -540 0 0 {name=p23 lab=VCTRL}
 C {gnd.sym} 1440 -430 0 0 {name=l7 lab=GND}
 C {lab_pin.sym} 1800 -540 0 1 {name=p13 sig_type=std_logic lab=CLK_OUT}
 C {lab_pin.sym} 1600 -520 0 1 {name=p25 lab=OUTn}
+C {/foss/designs/frac-n-pll-vco-unic_cass/schematic/blocks/charge-pump/CP.sym} 950 -540 0 0 {name=x1}
+C {/foss/designs/frac-n-pll-vco-unic_cass/schematic/blocks/lc-vco/LC_VCO.sym} 1440 -530 0 0 {name=x2}
+C {/foss/designs/frac-n-pll-vco-unic_cass/schematic/blocks/phase-freq-detector/PFD_std.sym} 550 -530 0 0 {name=x3}
+C {/foss/designs/frac-n-pll-vco-unic_cass/schematic/blocks/dsm/xschem/dsm_and_freq_divider.sym} 1300 -280 0 1 {name=adut
+dut=dut
+d_cosim_model= d_cosim
+model=./../dsm_and_freq_divider.so}
