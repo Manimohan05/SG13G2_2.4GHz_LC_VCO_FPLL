@@ -1,0 +1,65 @@
+** sch_path: /foss/designs/frac-n-pll-vco-unic_cass/schematic/top-pll/LC_VCO_PLL_op_tb.sch
+**.subckt LC_VCO_PLL_op_tb OUTn CLK_OUT
+*.opin OUTn
+*.opin CLK_OUT
+V1 VDD GND 1.2
+I0 VDD net1 50u
+Vfref CLK_IN GND 0 pulse(0 1.2 0n 0.1n 0.1n 5n 10n)
+I1 net2 GND 10m
+**** begin user architecture code
+
+
+
+*****************************************************
+* PLL + DSM Frequency Divider Testbench
+*****************************************************
+
+.option temp = 27
+.param VDD = 1.2
+
+* ==============================
+* Include Models
+* ==============================
+
+* Inductor / analog models
+.include ./IHP_4nH_Inductor.spice
+
+.control
+save all
+op
+set filetype=ascii
+write op_out.raw
+print all > op_out.txt
+.endc
+
+* to generate following file copy stimuli.test
+* to the simulation directory and run simulation -> Utile Stimuli Editor (GUI),
+* and press 'Translate'
+.include stimuli_test.cir
+
+
+
+
+
+.lib cornerMOSlv.lib mos_tt
+.lib cornerHBT.lib hbt_typ
+.lib cornerRES.lib res_typ
+.lib cornerCAP.lib cap_typ_stat
+.include /foss/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
+.global VDD GND
+
+
+.param CP_N_L = 0.5u
+.param CP_N_W = 10u
+.param CP_P_M = 1
+.param CP_P_L = 0.5u
+.param CP_P_W = 30u
+.param CP_N_M = 1
+.param C_CP = 400p
+
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.GLOBAL VDD
+.end
