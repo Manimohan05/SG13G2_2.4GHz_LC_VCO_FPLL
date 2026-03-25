@@ -19,7 +19,6 @@ N 650 -540 650 -530 {lab=VDD}
 N 230 -350 230 -310 {lab=GND}
 N 230 -550 230 -470 {lab=VDD}
 N 320 -400 330 -400 {lab=IOUT}
-C {vsource.sym} -140 -390 0 0 {name=V1 value=1.2 savecurrent=false}
 C {vsource.sym} -80 -390 0 0 {name=V2 value=0.6 savecurrent=false}
 C {gnd.sym} -140 -320 0 0 {name=l1 lab=GND}
 C {gnd.sym} -80 -320 0 0 {name=l2 lab=GND}
@@ -89,3 +88,4 @@ C {iopin.sym} 840 -430 0 0 {name=p1 lab=OUTn}
 C {lab_pin.sym} 340 -420 0 1 {name=p2 sig_type=std_logic lab=IBIASVCO}
 C {iopin.sym} 330 -400 0 0 {name=p5 lab=IOUT}
 C {/foss/designs/frac-n-pll-vco-unic_cass/schematic/current_source/Current_source.sym} 230 -410 0 0 {name=x1}
+C {vsource.sym} -140 -390 0 0 {name=V1 value="PULSE(0 1.2 0 1 0 1 2)" savecurrent=false}

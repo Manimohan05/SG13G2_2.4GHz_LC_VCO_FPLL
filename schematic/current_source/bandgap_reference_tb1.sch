@@ -5,6 +5,75 @@ V {}
 S {}
 F {}
 E {}
+B 2 1505.3515625 -1274.21875 2305.3515625 -874.21875 {flags=graph
+y1=0
+y2=1.2
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+
+x2=1.9691739
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+
+
+dataset=-1
+unitx=1
+logx=0
+logy=0
+x1=-0.030826141
+color=7
+node=vdd}
+B 2 1575.3515625 -794.21875 2375.3515625 -394.21875 {flags=graph
+y1=0
+y2=0.61
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+
+x2=1.9691739
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+node=vbg
+color=4
+dataset=-1
+unitx=1
+logx=0
+logy=0
+x1=-0.030826141}
+B 2 1345.3515625 -324.21875 2145.3515625 75.78125 {flags=graph
+y1=0
+y2=6.4e-05
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+
+x2=1.9691739
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+dataset=-1
+unitx=1
+logx=0
+logy=0
+x1=-0.030826141
+color="4 5 12 10"
+node="i(vmeas15)
+i(vmeas12)
+i(vmeas11)
+i(vmeas14)"
+autoload=1}
 N -720 -850 -720 -795 {
 lab=#net1}
 N -575 -980 -485 -980 {
@@ -63,6 +132,8 @@ N -720 -980 -575 -980 {
 lab=VDD}
 N -720 -980 -720 -960 {
 lab=VDD}
+N 890 -300 890 -270 {
+lab=GND}
 N 370 -560 390 -560 {
 lab=#net4}
 N 370 -620 370 -560 {
@@ -155,38 +226,25 @@ N -630 -735 -575 -735 {
 lab=GND}
 N -350 -535 -350 -530 {lab=GND}
 N -350 -540 -350 -535 {lab=GND}
-N 1020 -770 1030 -770 {
+N 1020 -770 1070 -770 {
 lab=VBG}
-N 635 -940 1070 -940 {lab=VDD}
+N 635 -940 1290 -940 {lab=VDD}
 N 430 -940 635 -940 {
 lab=VDD}
-N 1070 -940 1070 -770 {lab=VDD}
 N 1020 -780 1020 -770 {lab=VBG}
 N 1010 -770 1020 -770 {
 lab=VBG}
 N 1010 -770 1020 -780 {lab=VBG}
 N 980 -770 1010 -770 {
 lab=VBG}
-N 1070 -480 1190 -480 {lab=#net5}
-N 1190 -480 1190 -400 {lab=#net5}
-N 1110 -400 1190 -400 {lab=#net5}
+N 1070 -480 1190 -480 {lab=VBG}
+N 1190 -480 1190 -400 {lab=VBG}
+N 1110 -400 1190 -400 {lab=VBG}
 N 1290 -400 1290 -310 {lab=GND}
 N 1070 -400 1070 -310 {lab=GND}
-N 1190 -400 1250 -400 {lab=#net5}
-N 1070 -480 1070 -430 {lab=#net5}
-N 1070 -740 1070 -480 {lab=#net5}
-N 1270 -940 1270 -780 {lab=VDD}
-N 1160 -940 1270 -940 {lab=VDD}
-N 1270 -750 1270 -600 {lab=IBIASVCO}
-N 1160 -940 1160 -780 {lab=VDD}
-N 1210 -780 1230 -780 {lab=#net6}
-N 1160 -730 1210 -730 {lab=#net6}
-N 1160 -750 1160 -730 {lab=#net6}
-N 1210 -780 1210 -730 {lab=#net6}
-N 1200 -780 1210 -780 {lab=#net6}
-N 1070 -940 1160 -940 {lab=VDD}
-N 1160 -730 1160 -700 {lab=#net6}
-N 1100 -670 1120 -670 {lab=VBG}
+N 1190 -400 1250 -400 {lab=VBG}
+N 1070 -480 1070 -430 {lab=VBG}
+N 890 -410 890 -360 {lab=VDD}
 N -630 -710 -630 -680 {
 lab=GND}
 N -720 -710 -630 -710 {
@@ -194,8 +252,39 @@ lab=GND}
 N -275 -630 -270 -630 {lab=GND}
 N -280 -630 -275 -630 {lab=GND}
 N -270 -630 -270 -490 {lab=GND}
-N 1160 -670 1160 -530 {lab=GND}
-N 1290 -470 1290 -430 {lab=IBIAS}
+N 1070 -770 1070 -480 {lab=VBG}
+N 1290 -940 1290 -430 {lab=VDD}
+C {devices/code_shown.sym} -440 -333.828125 0 0 {name=bandgap only_toplevel=true value="
+.control
+save all
+alter V1 dc 1.2
+
+op
+print I(Vmeas)
+
+dc TEMP 100 -50 -5
+print I(Vmeas)
+
+write bgr_temp.raw
+.endc
+
+.control
+save all
+tran 1m 2
+
+print I(Vmeas10) I(Vmeas11) I(Vmeas14) 
+
+write bandgap_transient.raw
+.endc
+"
+}
+C {devices/code_shown.sym} -450 -445 0 0 {name=MODEL only_toplevel=true
+format="tcleval( @value )"
+value="
+.lib $::SG13G2_MODELS/cornerCAP.lib cap_typ
+.lib $::SG13G2_MODELS/cornerRES.lib res_typ
+.lib cornerMOSlv.lib mos_tt
+"}
 C {sg13g2_pr/sg13_lv_nmos.sym} -700 -765 2 0 {name=M8
 l=10u
 w=150n
@@ -232,6 +321,9 @@ C {lab_pin.sym} -485 -980 0 1 {name=p5 sig_type=std_logic lab=VDD}
 C {lab_pin.sym} -275 -795 0 1 {name=p1 sig_type=std_logic lab=VDD}
 C {lab_pin.sym} -530 -930 0 1 {name=p4 sig_type=std_logic lab=VDD}
 C {lab_pin.sym} -780 -930 0 0 {name=p17 sig_type=std_logic lab=VDD}
+C {vsource.sym} 890 -330 0 0 {name=V1 value="PULSE(0 1.2 0 1 0 1 2)" savecurrent=false}
+C {lab_pin.sym} 890 -405 0 1 {name=p6 sig_type=std_logic lab=VDD}
+C {gnd.sym} 890 -270 0 0 {name=l18 lab=GND}
 C {sg13g2_pr/sg13_lv_nmos.sym} 150 -560 2 0 {name=M1
 l=5u
 w=7.14u
@@ -310,6 +402,14 @@ spiceprefix=X
 b=0
 m=1
 }
+C {launcher.sym} 1151.40625 -1023.28125 0 0 {name=h5
+descr="load DC" 
+tclcommand="xschem raw_read $netlist_dir/bgr_temp.raw dc"
+}
+C {launcher.sym} 1151.40625 -978.28125 0 0 {name=h1
+descr="load Transient" 
+tclcommand="xschem raw_read $netlist_dir/bandgap_transient.raw tran"
+}
 C {sg13g2_pr/cap_cmim.sym} -630 -765 0 0 {name=C1
 model=cap_cmim
 w=18.195e-6
@@ -342,39 +442,6 @@ m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_pmos.sym} 1050 -770 0 0 {name=M10
-l=0.13u
-w=3.94u
-ng=1
-m=1
-model=sg13_lv_pmos
-spiceprefix=X
-}
-C {sg13g2_pr/sg13_lv_pmos.sym} 1250 -780 0 0 {name=M15
-l=0.13u
-w=2.5u
-ng=1
-m=1
-model=sg13_lv_pmos
-spiceprefix=X
-}
-C {sg13g2_pr/sg13_lv_pmos.sym} 1180 -780 0 1 {name=M14
-l=0.13u
-w=2.5u
-ng=1
-m=1
-model=sg13_lv_pmos
-spiceprefix=X
-}
-C {sg13g2_pr/sg13_lv_nmos.sym} 1140 -670 0 0 {name=M13
-l=0.13u
-w=2.3u
-ng=1
-m=1
-model=sg13_lv_nmos
-spiceprefix=X
-}
-C {lab_pin.sym} 1105 -670 1 1 {name=p18 sig_type=std_logic lab=VBG}
 C {lab_pin.sym} -80 -695 2 0 {name=p10 sig_type=std_logic lab=Vo1}
 C {lab_pin.sym} -460 -650 3 0 {name=p19 sig_type=std_logic lab=v-}
 C {lab_pin.sym} -430 -735 1 0 {name=p7 sig_type=std_logic lab=v+}
@@ -383,8 +450,3 @@ C {lab_pin.sym} -630 -685 0 1 {name=p20 sig_type=std_logic lab=GND}
 C {lab_pin.sym} -270 -495 0 1 {name=p21 sig_type=std_logic lab=GND}
 C {lab_pin.sym} 1070 -315 0 1 {name=p22 sig_type=std_logic lab=GND}
 C {lab_pin.sym} 1290 -315 0 1 {name=p23 sig_type=std_logic lab=GND}
-C {lab_pin.sym} 1160 -535 0 1 {name=p24 sig_type=std_logic lab=GND}
-C {iopin.sym} 1270 -600 0 0 {name=p6 lab=IBIASVCO}
-C {iopin.sym} 1290 -470 0 0 {name=p25 lab=IBIAS}
-C {iopin.sym} 10 -300 0 0 {name=p26 lab=VDD}
-C {iopin.sym} 10 -240 0 0 {name=p27 lab=GND}

@@ -1,12 +1,13 @@
 ** sch_path: /foss/designs/frac-n-pll-vco-unic_cass/schematic/lc-vco/LC_VCO_cs_tb.sch
-**.subckt LC_VCO_cs_tb OUTp OUTn IOUT
+**.subckt LC_VCO_cs_tb OUTp OUTn
 *.iopin OUTp
 *.iopin OUTn
-*.iopin IOUT
-V1 VDD GND 1.2
+V1 VDD GND PULSE(0 1.2 0 1 0 1 2)
 V2 VCTRL GND 0.6
-x2 VDD OUTp OUTn IBIASVCO VCTRL GND LC_VCO
-x1 IBIASVCO IOUT VDD GND Current_source
+
+x2 VDD OUTp OUTn IBIASVCO1 VCTRL GND LC_VCO
+Vmeas_VCO IBIASVCO IBIASVCO1  0
+x1 IBIASVCO net1 VDD GND Current_source
 **** begin user architecture code
 
 
@@ -23,16 +24,16 @@ x1 IBIASVCO IOUT VDD GND Current_source
 .options reltol=1e-4 abstol=1e-9 maxstep=5p method=gear
 
 * Save required signals
-save time v(OUTp) v(CTRL)
+save time v(OUTp) v(VCTRL) I(Vmeas_VCO)
 
 * Long transient for ~10 kHz FFT resolution
-tran 0.01n 0.5u UIC
+tran 0.01n 2 UIC
 
 * Save raw waveform
 write LC_VCO_tb.raw
 
 * Plot steady-state waveform
-plot v(OUTp) xlimit 5n 60n
+plot v(OUTp) xlimit 1.5 2
 
 * FFT analysis
 linearize v(OUTp)
@@ -48,7 +49,7 @@ wrdata fft_output.txt frequency vmag
 
 * Save waveform for external processing
 wrdata vco_waveform.txt time v(OUTp)
-
+print I(Vmeas_VCO)
 .endc
 
 
