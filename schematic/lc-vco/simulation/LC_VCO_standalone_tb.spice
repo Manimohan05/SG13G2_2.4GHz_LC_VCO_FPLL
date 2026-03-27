@@ -1,0 +1,128 @@
+** sch_path: /home/designer/shared/frac-n-pll-vco-smacd_2026/schematic/lc-vco/LC_VCO_standalone_tb.sch
+**.subckt LC_VCO_standalone_tb OUT VCTRL VBGR
+*.opin OUT
+*.ipin VCTRL
+*.ipin VBGR
+XM5 Vx Vgs GND GND sg13_lv_nmos w=W_5 l=L_TL ng=n_5 m=1
+XM4 net1 net5 VDD VDD sg13_lv_pmos w=W_34 l=L_CC ng=n_34 m=1
+XM3 net5 net1 VDD VDD sg13_lv_pmos w=W_34 l=L_CC ng=n_34 m=1
+XM2 OUTp OUTn net4 GND sg13_lv_nmos w=W_12 l=L_CC ng=n_12 m=1
+XM1 OUTn OUTp net4 GND sg13_lv_nmos w=W_12 l=L_CC ng=n_12 m=1
+V1 VDD GND 1.2
+Vpmos_p net1 net3 0
+.save i(vpmos_p)
+Vnmos_p net3 OUTp 0
+.save i(vnmos_p)
+Vtail net4 Vx 0
+.save i(vtail)
+XM6 Vgs Vgs GND GND sg13_lv_nmos w=W_6 l=L_TL ng=n_6 m=1
+Vpmos_n net5 net2 0
+.save i(vpmos_n)
+Vnmos_n net2 OUTn 0
+.save i(vnmos_n)
+x1 net2 net3 ihp_4nh_inductor
+Vup VCTRL GND PULSE(0.4 1.1 10n 90n 1n 1s 2s)
+XC1 net2 net3 GND cap_rfcmim w=21.77e-6 l=21.77e-6 wfeed=10.0e-6
+XC3 OUTp VCTRL OUTn GND sg13_hv_svaricap w=9.74u l=0.8u Nx=7
+XC2 OUTp VCTRL OUTn GND sg13_hv_svaricap w=9.74u l=0.8u Nx=7
+XM7 Vgs VBGR VDD VDD sg13_lv_pmos w=W_7 l=L_TL ng=n_7 m=1
+VBGR VBGR GND 0.6
+XM8 OUT net3 VDD VDD sg13_lv_pmos w=25.10u l=0.13u ng=15 m=1
+XM9 OUT net3 GND GND sg13_lv_nmos w=1.64u l=0.13u ng=1 m=1
+XM10 net6 net2 VDD VDD sg13_lv_pmos w=25.10u l=0.13u ng=15 m=1
+XM11 net6 net2 GND GND sg13_lv_nmos w=1.64u l=0.13u ng=1 m=1
+**** begin user architecture code
+
+.lib cornerMOSlv.lib mos_tt
+.lib cornerMOShv.lib mos_tt
+.lib cornerRES.lib res_typ
+.lib cornerCAP.lib cap_typ
+
+
+
+.param L_CC=0.13u
+
+  .param W_34=34.52u
+  .param n_34=10
+
+  .param W_12=25.11u
+  .param n_12=8
+
+.param L_TL=0.5u
+
+  .param W_5=70.29u
+  .param n_5=20
+
+  .param W_6=17.95u
+  .param n_6=6
+
+  .param W_7=16.72u
+  .param n_7=6
+
+
+
+.include ../ihp_4nh_inductor.spice
+
+
+
+
+.param temp = 27
+.options method=gear, rshunt=1.0e12
+
+.control
+
+* Save required signals
+save v(OUTp) v(VCTRL) v(OUT) v(Vx)
+
+* Long transient simulation
+tran 10p 500n 100n
+
+* Save raw waveform
+write LC_VCO_standalone_tran.raw
+
+* Plot transient waveform
+let vout = v(OUT)
+plot v(OUTp) v(VCTRL) v(Vx) v(OUT)
+
+* Plot steady-state waveform
+plot v(OUTp) v(VCTRL) v(Vx) v(OUT) xlimit 400n 405n
+
+* FFT analysis
+setplot tran1
+linearize vout
+set specwindow=blackman
+fft vout
+
+* Plot FFT spectrum
+let power_out_db = db(vout)
+plot power_out_db xlimit 2.38G 2.58G ylimit -200 0
+
+* Find the maximum magnitude value between 2G and 3G
+meas sp max_power_out_db max power_out_db FROM=2G TO=3G
+
+* Save FFT data
+wrdata fft_output_standalone.txt frequency power_out_db
+
+* Save waveform for external processing
+wrdata vco_waveform_standalone.txt power_out_db
+
+.endc
+
+
+
+
+
+.include LC_VCO_standalone_tb.save
+.param temp=27
+.control
+save all
+op
+write LC_VCO_standalone_tb.raw
+.endc
+
+
+**** end user architecture code
+**.ends
+.GLOBAL VDD
+.GLOBAL GND
+.end
