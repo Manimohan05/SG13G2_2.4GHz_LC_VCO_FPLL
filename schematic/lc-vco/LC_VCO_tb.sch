@@ -54,7 +54,7 @@ value="
 save v(OUTp) v(VCTRL)
 
 * Long transient simulation
-tran 10p 500n 100n
+tran 10p 10.1u 100n
 
 * Save raw waveform
 write LC_VCO_tb.raw
@@ -74,7 +74,7 @@ fft vout
 
 * Plot FFT spectrum
 let vout_db = db(vout)
-plot vout_db xlimit 2.35G 2.55G ylimit -150 0
+plot vout_db xlimit 2.30G 2.50G ylimit -160 0
 
 * Find the maximum magnitude value between 2G and 3G
 meas sp max_vout_db max vout_db FROM=2G TO=3G
@@ -100,10 +100,10 @@ descr="OP annotate"
 tclcommand="xschem annotate_op"
 }
 C {vsource.sym} 880 -230 0 1 {name=Vup value="PULSE(0.4 1.1 10n 90n 1n 1s 2s)" savecurrent=false
-}
+spice_ignore=true}
 C {gnd.sym} 880 -160 0 0 {name=l4 lab=GND}
 C {vsource.sym} 950 -230 0 0 {name=V3 value=1.1 savecurrent=false
 spice_ignore=true}
 C {vsource.sym} 650 -230 0 1 {name=Vdn value="PULSE(0.5 0.4 10n 1n 90n 1s 2s)" savecurrent=false
-spice_ignore=true}
+}
 C {devices/vdd.sym} 880 -300 0 0 {name=l8 lab=VCTRL}
