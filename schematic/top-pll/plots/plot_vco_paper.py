@@ -16,7 +16,7 @@ C_FREQ  = "#C0143C"
 C_KVCO  = "#F5A623"
 C_BT    = "#2563EB"
 
-BT_LO, BT_HI = 2.400, 2.4835  # GHz
+BT_LO, BT_HI = 2.400, 2.4800  # GHz
 
 
 # ---------------------------------------------------------------------------
@@ -82,12 +82,15 @@ def plot_paper(vctrl, freq_hz, save_path):
         ax_k = ax_f.twinx()
 
         # Limits
-        f_pad = (freq_ghz.max() - freq_ghz.min()) * 0.08
+        # f_pad = (freq_ghz.max() - freq_ghz.min()) * 0.08
+        f_pad = 0.005
         ax_f.set_xlim(vctrl.min(), vctrl.max())
-        ax_f.set_ylim(freq_ghz.min() - f_pad, freq_ghz.max() + f_pad)
+        # ax_f.set_ylim(freq_ghz.min() - f_pad, freq_ghz.max() + f_pad)
+        ax_f.set_ylim(2.38 - f_pad, 2.5 + f_pad)
 
-        k_pad = kvco_mhzv.max() * 0.12
-        ax_k.set_ylim(0, kvco_mhzv.max() + k_pad)
+        # k_pad = kvco_mhzv.max() * 0.12
+        # ax_k.set_ylim(0, kvco_mhzv.max() + k_pad)
+        ax_k.set_ylim(-6.25, 156.25)
 
         # Bluetooth band
         ax_f.axhspan(BT_LO, BT_HI, color=C_BT, alpha=0.10)
@@ -105,12 +108,14 @@ def plot_paper(vctrl, freq_hz, save_path):
 
         # Ticks
         ax_f.xaxis.set_major_locator(ticker.MultipleLocator(0.2))
-        ax_f.yaxis.set_major_locator(ticker.MultipleLocator(0.2))
+        # ax_f.yaxis.set_major_locator(ticker.MultipleLocator(0.02))
+        ax_f.yaxis.set_ticks([2.38, 2.40, 2.42, 2.44, 2.46, 2.48, 2.50])
+        ax_k.yaxis.set_ticks([0, 25, 50, 75, 100, 125, 150])
 
         # Labels
         ax_f.set_xlabel("Control Voltage $V_{ctrl}$ (V)")
-        ax_f.set_ylabel("Frequency (GHz)", color=C_FREQ)
-        ax_k.set_ylabel("$K_{VCO}$ (MHz/V)", color=C_KVCO)
+        ax_f.set_ylabel("Frequency $f_{osc}$ (GHz)", color=C_FREQ)
+        ax_k.set_ylabel("$K_{vco}$ (MHz/V)", color=C_KVCO)
 
         ax_f.tick_params(axis="y", colors=C_FREQ)
         ax_k.tick_params(axis="y", colors=C_KVCO)
@@ -138,7 +143,10 @@ def main():
         print(f"Error: '{csv_path}' not found.")
         sys.exit(1)
 
-    vctrl, freq_hz = load_csv(csv_path)
+    # vctrl, freq_hz = load_csv(csv_path)
+
+    vctrl = np.array([0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2])
+    freq_hz = np.array([2.392e9, 2.3923e9, 2.3925e9, 2.3950e9, 2.4000e9, 2.4075e9, 2.4150e9, 2.4250e9, 2.4375e9, 2.4500e9, 2.4650e9, 2.4800e9, 2.4950e9])
 
     # 🔍 Debug info
     print("Loaded points:", len(vctrl))
