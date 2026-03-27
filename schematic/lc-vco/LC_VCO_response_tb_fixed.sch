@@ -4,9 +4,15 @@ V2 VCTRL GND 0.0
 V1 VDD GND 1.2
 I0 VDD Ibias 50u
 x1 VDD OUTp OUTn Ibias VCTRL GND LC_VCO
+
+* Force ngspice to save top-level nodes (fixes "no such vector" error)
+.save v(outp) v(outn) v(vctrl) v(vdd)
+
+* Initial condition kick to guarantee oscillation startup
+* OUTp starts HIGH, OUTn starts LOW — differential kick
+.ic V(OUTp)=1.2 V(OUTn)=0.0
+
 **** begin user architecture code
-
-
 .control
 * ============================================================
 *  VCO Tuning Curve Sweep  (Vctrl = 0.0 V to 1.2 V, 0.1 V step)
@@ -27,48 +33,46 @@ echo vctrl_V,freq_Hz > vco_tuning.csv
 while v_c <= (v_stop + v_step * 0.01)
 
     * Set VCTRL to the current sweep point
-    * (alter @element[param] = value  is the correct ngspice syntax)
     alter @V2[dc] = $&v_c
 
-    * Run 200 ns transient — ~480 cycles at 2.4 GHz, enough to settle from 0V
-    * uic: each step starts fresh (no carry-over state from previous Vctrl)
-    tran 10p 200n uic
+    * Run 300 ns transient — longer window to ensure 50+ rising edges at all Vctrl
+    * No 'uic' here: .ic handles initial conditions, DC OP is properly solved first
+    tran 10p 300n
 
-    * Measure 20 full cycles starting from the 30th rising edge crossing of VDD/2
-    * RISE=30 skips the startup transient; 50-30=20 cycles gives accurate average
-    * Threshold = VDD/2 = 0.6 V   (was wrongly 0.9 V before)
-    * Node     = v(OUTp)          (was wrongly v(vco_out) before)
-    meas tran t_rise30 WHEN v(OUTp)=0.6 RISE=30
-    meas tran t_rise50 WHEN v(OUTp)=0.6 RISE=50
+    * Measure 20 full cycles between the 30th and 50th rising edge crossings
+    * Threshold = VDD/2 = 0.6 V
+    * RISE=30 skips startup transient; 50-30=20 cycles gives accurate average period
+    meas tran t_rise30 WHEN v(outp)=0.6 RISE=30
+    meas tran t_rise50 WHEN v(outp)=0.6 RISE=50
 
-    let freq = 20 / (t_rise50 - t_rise30)
-
-    * Append  vctrl_V,freq_Hz  row to CSV
-    echo $&v_c,$&freq >> vco_tuning.csv
+    * Guard: only compute freq if both measurements succeeded
+    if t_rise50 > t_rise30
+        let freq = 20 / (t_rise50 - t_rise30)
+        echo $&v_c,$&freq >> vco_tuning.csv
+    else
+        echo $&v_c,FAILED >> vco_tuning.csv
+        echo WARNING: measurement failed at Vctrl = $&v_c V
+    end
 
     let v_c = v_c + v_step
+
 end
 
-* Save the raw file from the last transient (Vctrl = 1.2 V) for xschem viewer
-write tb_VCO.raw v(OUTp) v(OUTn) v(vctrl)
+* Save raw waveform from the last transient (Vctrl = 1.2 V) for xschem viewer
+write tb_VCO.raw v(outp) v(outn) v(vctrl)
+
 echo --- Tuning sweep complete ---
 echo CSV written to vco_tuning.csv
 echo Run: python3 plot_vco_tuning.py
+
 .endc
 
-
-
+* ---- Process corners (deduplicated — each lib called only once) ----
 .lib cornerMOSlv.lib mos_tt
 .lib cornerMOShv.lib mos_tt
 .lib cornerRES.lib res_typ
 .lib cornerCAP.lib cap_typ
 .include ./IHP_4nH_Inductor.spice
-
-
-.lib cornerMOSlv.lib mos_tt
-.lib cornerMOShv.lib mos_tt
-.lib cornerRES.lib res_typ
-.lib cornerCAP.lib cap_typ
 
 **** end user architecture code
 **.ends

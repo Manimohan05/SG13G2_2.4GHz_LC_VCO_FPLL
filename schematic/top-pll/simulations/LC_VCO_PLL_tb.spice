@@ -1,10 +1,10 @@
 ** sch_path: /foss/designs/frac-n-pll-vco-unic_cass/schematic/top-pll/LC_VCO_PLL_tb.sch
 **.subckt LC_VCO_PLL_tb
 V1 VDD GND 1.2
-I0 VDD Vbias2 50u
 Vfref CLK_IN GND 0 pulse(0 1.2 0n 1n 1n 50n 100n)
 I1 Vbias1 GND 5u
 x1 VDD CLK_IN CLK_OUT Vbias2 OUTn Vbias1 GND LC_VCO_PLL
+I3 VDD Vbias2 80u
 **** begin user architecture code
 
 
@@ -102,17 +102,17 @@ x1 VDD net7 OUTn IbiasVCO VCTRL GND LC_VCO
 adut [ net1 net2 net3 net4 net5 ] [ net6 ] null dut
 .model dut d_cosim simulation=./../dsm_and_freq_divider.so
 A1 [ CLK_OUT ] [ net1 ] adc1
-.model adc1 adc_bridge in_low=0.4 in_high=0.6
-A2 [ rst ] [ net2 ] adc1
-.model adc1 adc_bridge in_low=0.4 in_high=0.6
-A3 [ sclk ] [ net3 ] adc1
-.model adc1 adc_bridge in_low=0.4 in_high=0.6
-A4 [ sdata ] [ net4 ] adc1
-.model adc1 adc_bridge in_low=0.4 in_high=0.6
-A5 [ en ] [ net5 ] adc1
-.model adc1 adc_bridge in_low=0.4 in_high=0.6
+.model adc1 adc_bridge in_low=0.76 in_high=0.76
 A6 [ net6 ] [ DSM_OUT ] dac1
 .model dac1 dac_bridge out_low=0 out_high=1.2
+A7 [ en ] [ net5 ] adc1
+.model adc1 adc_bridge in_low=0.76 in_high=0.76
+A2 [ rst ] [ net2 ] adc1
+.model adc1 adc_bridge in_low=0.76 in_high=0.76
+A3 [ sclk ] [ net3 ] adc1
+.model adc1 adc_bridge in_low=0.76 in_high=0.76
+A4 [ sdata ] [ net4 ] adc1
+.model adc1 adc_bridge in_low=0.76 in_high=0.76
 .ends
 
 

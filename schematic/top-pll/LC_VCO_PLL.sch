@@ -94,39 +94,39 @@ C {/foss/designs/frac-n-pll-vco-unic_cass/schematic/dsm/xschem/dsm_and_freq_divi
 dut=dut
 d_cosim_model= d_cosim
 model=./../dsm_and_freq_divider.so}
-C {/foss/designs/frac-n-pll-vco-unic_cass/schematic/dsm/xschem/adc_bridge1.sym} 1470 -320 0 1 {name=A1
+C {/foss/designs/frac-n-pll-vco-unic_cass/schematic/dsm/xschem/adc_bridge1.sym} 1470 -320 2 0 {name=A1
 adc=adc1
 adc_bridge_model=adc_bridge
-in_low=0.4
-in_high=0.6
-}
-C {/foss/designs/frac-n-pll-vco-unic_cass/schematic/dsm/xschem/adc_bridge1.sym} 1470 -300 0 1 {name=A2
-adc=adc1
-adc_bridge_model=adc_bridge
-in_low=0.4
-in_high=0.6
-}
-C {/foss/designs/frac-n-pll-vco-unic_cass/schematic/dsm/xschem/adc_bridge1.sym} 1470 -280 0 1 {name=A3
-adc=adc1
-adc_bridge_model=adc_bridge
-in_low=0.4
-in_high=0.6
-}
-C {/foss/designs/frac-n-pll-vco-unic_cass/schematic/dsm/xschem/adc_bridge1.sym} 1470 -260 0 1 {name=A4
-adc=adc1
-adc_bridge_model=adc_bridge
-in_low=0.4
-in_high=0.6
-}
-C {/foss/designs/frac-n-pll-vco-unic_cass/schematic/dsm/xschem/adc_bridge1.sym} 1470 -240 0 1 {name=A5
-adc=adc1
-adc_bridge_model=adc_bridge
-in_low=0.4
-in_high=0.6
+in_low=0.76
+in_high=0.76
 }
 C {/foss/designs/frac-n-pll-vco-unic_cass/schematic/dsm/xschem/dac_bridge1.sym} 1160 -280 0 1 {name=A6
 dac=dac1
 dac_bridge_model=dac_bridge
 out_low=0
 out_high=1.2
+}
+C {/foss/designs/frac-n-pll-vco-unic_cass/schematic/dsm/xschem/adc_bridge1.sym} 1470 -240 2 0 {name=A7
+adc=adc1
+adc_bridge_model=adc_bridge
+in_low=0.76
+in_high=0.76
+}
+C {/foss/designs/frac-n-pll-vco-unic_cass/schematic/dsm/xschem/adc_bridge1.sym} 1470 -300 2 0 {name=A2
+adc=adc1
+adc_bridge_model=adc_bridge
+in_low=0.76
+in_high=0.76
+}
+C {/foss/designs/frac-n-pll-vco-unic_cass/schematic/dsm/xschem/adc_bridge1.sym} 1470 -280 2 0 {name=A3
+adc=adc1
+adc_bridge_model=adc_bridge
+in_low=0.76
+in_high=0.76
+}
+C {/foss/designs/frac-n-pll-vco-unic_cass/schematic/dsm/xschem/adc_bridge1.sym} 1470 -260 2 0 {name=A4
+adc=adc1
+adc_bridge_model=adc_bridge
+in_low=0.76
+in_high=0.76
 }

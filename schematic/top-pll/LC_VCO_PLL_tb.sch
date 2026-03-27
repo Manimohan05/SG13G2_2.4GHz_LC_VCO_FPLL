@@ -168,7 +168,6 @@ N 470 -520 470 -510 {lab=GND}
 C {vsource.sym} 140 -590 0 0 {name=V1 value=1.2 savecurrent=false}
 C {gnd.sym} 140 -510 0 0 {name=l1 lab=GND}
 C {devices/vdd.sym} 140 -720 0 0 {name=l5 lab=VDD}
-C {devices/isource.sym} 410 -680 0 0 {name=I0 value=50u}
 C {devices/vdd.sym} 410 -720 0 0 {name=l12 lab=VDD}
 C {vsource.sym} 410 -580 0 1 {name=Vfref value="0 pulse(0 1.2 0n 1n 1n 50n 100n)" savecurrent=false}
 C {gnd.sym} 410 -510 0 0 {name=l10 lab=GND}
@@ -270,3 +269,4 @@ C {lab_pin.sym} 410 -620 0 0 {name=p3 sig_type=std_logic lab=CLK_IN}
 C {lab_pin.sym} 470 -600 0 0 {name=p4 lab=Vbias1}
 C {lab_pin.sym} 410 -640 0 0 {name=p5 lab=Vbias2}
 C {LC_VCO_PLL.sym} 630 -620 0 0 {name=x1}
+C {devices/isource.sym} 410 -680 0 0 {name=I3 value=80u}

@@ -112,7 +112,7 @@ C {devices/vdd.sym} 230 -460 0 0 {name=l5 lab=VDD}
 C {devices/isource.sym} 170 -430 0 0 {name=I0 value=50u}
 C {devices/vdd.sym} 170 -460 0 0 {name=l12 lab=VDD}
 C {devices/vdd.sym} 170 -380 2 0 {name=l3 lab=Ibias}
-C {title.sym} 160 -40 0 0 {name=l4 author="Skill Surf"}
+C {title.sym} 760 -120 0 0 {name=l4 author="Skill Surf"}
 C {LC_VCO.sym} 740 -380 0 0 {name=x1}
 C {simulator_commands.sym} 30 -240 0 0 {name=MODEL only_toplevel=true
 format="tcleval( @value )"
