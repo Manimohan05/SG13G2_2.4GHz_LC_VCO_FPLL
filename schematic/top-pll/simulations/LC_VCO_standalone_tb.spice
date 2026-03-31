@@ -17,20 +17,20 @@ x1 VDD VCTRL GND OUT VBGR LC_VCO
 .control
 
 * Save required signals
-save v(VCTRL) v(OUT) v(Vx)
+save v(VCTRL) v(OUT) v(x1.Vx)
 
-* Long transient simulation
-tran 10p 500n 100n
+* Long transient simulation (5 us for phase noise resolution down to ~240 kHz)
+tran 10p 5u 100n
 
-* Save raw waveform
+* Save transient raw waveform
 write LC_VCO_standalone_tran.raw
 
 * Plot transient waveform
 let vout = v(OUT)
-plot v(VCTRL) v(Vx) v(OUT)
+plot v(VCTRL) v(x1.Vx) v(OUT)
 
 * Plot steady-state waveform
-plot v(VCTRL) v(Vx) v(OUT) xlimit 400n 405n
+plot v(VCTRL) v(x1.Vx) v(OUT) xlimit 400n 405n
 
 * FFT analysis
 setplot tran1
@@ -45,7 +45,10 @@ plot power_out_db xlimit 2.38G 2.58G ylimit -200 0
 * Find the maximum magnitude value between 2G and 3G
 meas sp max_power_out_db max power_out_db FROM=2G TO=3G
 
-* Save FFT data
+* Save FFT spectrum as raw file
+write LC_VCO_standalone_fft.raw
+
+* Save FFT data as text
 wrdata fft_output_standalone.txt frequency power_out_db
 
 * Save waveform for external processing

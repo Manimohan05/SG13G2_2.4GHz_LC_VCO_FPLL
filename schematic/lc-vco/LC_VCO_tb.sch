@@ -40,7 +40,7 @@ value="
 save v(VCTRL) v(OUT) v(x1.Vx)
 
 * Long transient simulation
-tran 10p 500n 100n
+tran 10p 5u 100n
 
 * Save raw waveform
 write LC_VCO_standalone_tran.raw
@@ -65,6 +65,9 @@ plot power_out_db xlimit 2.38G 2.58G ylimit -200 0
 * Find the maximum magnitude value between 2G and 3G
 meas sp max_power_out_db max power_out_db FROM=2G TO=3G
 
+* Save FFT spectrum as raw file
+write LC_VCO_fft.raw
+
 * Save FFT data
 wrdata fft_output_standalone.txt frequency power_out_db
 
@@ -74,7 +77,7 @@ wrdata vco_waveform_standalone.txt power_out_db
 .endc
 "
 }
-C {vsource.sym} -960 -190 0 1 {name=Vup value="PULSE(0.4 1.1 10n 90n 1n 1s 2s)" savecurrent=false
+C {vsource.sym} -960 -190 0 1 {name=Vup value="PULSE(0.4 0.81 10n 90n 1n 1s 2s)" savecurrent=false
 }
 C {gnd.sym} -960 -120 0 0 {name=l6 lab=GND}
 C {vsource.sym} -890 -190 0 0 {name=V2 value=1.1 savecurrent=false
