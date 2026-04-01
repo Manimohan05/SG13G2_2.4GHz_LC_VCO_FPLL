@@ -1,19 +1,18 @@
-* Extracted by KLayout with SG13G2 LVS runset on : 26/03/2026 17:49
+* Extracted by KLayout with SG13G2 LVS runset on : 01/04/2026 18:40
 
-.SUBCKT CP 1 2 3 5 7 8 9 10 14
-M$1 4 5 5 1 sg13_lv_nmos L=2u W=3u AS=1.02p AD=1.02p PS=6.68u PD=6.68u
-M$2 6 5 14 1 sg13_lv_nmos L=2u W=3u AS=1.02p AD=1.02p PS=6.68u PD=6.68u
-M$3 1 8 4 1 sg13_lv_nmos L=2u W=3u AS=1.02p AD=1.02p PS=6.68u PD=6.68u
-M$4 1 7 6 1 sg13_lv_nmos L=2u W=3u AS=1.02p AD=1.02p PS=6.68u PD=6.68u
-M$5 8 10 13 8 sg13_lv_pmos L=2u W=10u AS=3.4p AD=3.4p PS=20.68u PD=20.68u
-M$6 13 9 14 8 sg13_lv_pmos L=2u W=10u AS=3.4p AD=3.4p PS=20.68u PD=20.68u
-M$7 8 1 12 8 sg13_lv_pmos L=2u W=10u AS=3.4p AD=3.4p PS=20.68u PD=20.68u
-M$8 12 9 5 8 sg13_lv_pmos L=2u W=10u AS=3.4p AD=3.4p PS=20.68u PD=20.68u
-M$9 8 1 11 8 sg13_lv_pmos L=2u W=10u AS=3.4p AD=3.4p PS=20.68u PD=20.68u
-M$10 11 9 9 8 sg13_lv_pmos L=2u W=10u AS=3.4p AD=3.4p PS=20.68u PD=20.68u
-R$19 14 2 rsil w=0.5u l=1000u ps=0 b=0 m=1
-R$45 3 14 rsil w=0.5u l=2500u ps=0 b=0 m=1
-C$46 3 1 cap_cmim w=40u l=40u A=1600p P=160u m=4
-C$47 2 1 cap_cmim w=60u l=60u A=3600p P=240u m=1
-C$49 14 1 cap_cmim w=20u l=15u A=300p P=70u m=4
+.SUBCKT CP 1 2 3 5 7 8 9 10 11
+M$1 6 5 7 1 sg13_lv_nmos L=2u W=3u AS=1.02p AD=1.02p PS=6.68u PD=6.68u
+M$2 1 9 4 1 sg13_lv_nmos L=2u W=3u AS=1.02p AD=1.02p PS=6.68u PD=6.68u
+M$3 4 5 5 1 sg13_lv_nmos L=2u W=3u AS=1.02p AD=1.02p PS=6.68u PD=6.68u
+M$4 1 8 6 1 sg13_lv_nmos L=2u W=3u AS=1.02p AD=1.02p PS=6.68u PD=6.68u
+M$5 9 1 14 9 sg13_lv_pmos L=2u W=10u AS=3.4p AD=3.4p PS=20.68u PD=20.68u
+M$6 9 11 12 9 sg13_lv_pmos L=2u W=10u AS=3.4p AD=3.4p PS=20.68u PD=20.68u
+M$7 12 10 7 9 sg13_lv_pmos L=2u W=10u AS=3.4p AD=3.4p PS=20.68u PD=20.68u
+M$8 14 10 5 9 sg13_lv_pmos L=2u W=10u AS=3.4p AD=3.4p PS=20.68u PD=20.68u
+M$9 9 1 13 9 sg13_lv_pmos L=2u W=10u AS=3.4p AD=3.4p PS=20.68u PD=20.68u
+M$10 13 10 10 9 sg13_lv_pmos L=2u W=10u AS=3.4p AD=3.4p PS=20.68u PD=20.68u
+R$49 7 2 rsil w=0.5u l=3848u ps=0 b=0 m=1
+R$88 3 7 rsil w=0.5u l=3848u ps=0 b=0 m=1
+C$89 3 1 cap_cmim w=55.85u l=55.85u A=3119.2225p P=223.4u m=12
+C$91 2 1 cap_cmim w=41.7u l=41.7u A=1738.89p P=166.8u m=8
 .ENDS CP

@@ -52,9 +52,9 @@ write bandgap_transient.raw
 **** end user architecture code
 **.ends
 
-* expanding   symbol:  two_stage_OTA.sym # of pins=6
-** sym_path: /foss/designs/frac-n-pll-vco-unic_cass/schematic/current_source/two_stage_OTA.sym
-** sch_path: /foss/designs/frac-n-pll-vco-unic_cass/schematic/current_source/two_stage_OTA.sch
+* expanding   symbol:  schematic/bgr/two_stage_OTA.sym # of pins=6
+** sym_path: /foss/designs/frac-n-pll-vco-unic_cass/schematic/bgr/two_stage_OTA.sym
+** sch_path: /foss/designs/frac-n-pll-vco-unic_cass/schematic/bgr/two_stage_OTA.sch
 .subckt two_stage_OTA vdd iout v+ v- vout vss
 *.iopin v-
 *.iopin v+
