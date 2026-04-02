@@ -1,9 +1,8 @@
-v {xschem version=3.4.8RC file_version=1.3}
+v {xschem version=3.4.6 file_version=1.2}
 G {}
 K {}
 V {}
 S {}
-F {}
 E {}
 N -720 -850 -720 -795 {
 lab=#net1}
@@ -43,12 +42,8 @@ N -110 -695 -80 -695 {
 lab=Vo1}
 N -275 -795 -275 -760 {
 lab=VDD}
-N -350 -610 -350 -595 {
+N -350 -590 -350 -580 {
 lab=#net3}
-N -350 -535 -275 -535 {
-lab=VSS}
-N -275 -535 -275 -510 {
-lab=VSS}
 N -435 -735 -410 -735 {
 lab=v+}
 N -485 -650 -410 -650 {
@@ -151,8 +146,7 @@ N -630 -795 -575 -795 {
 lab=#net2}
 N -630 -735 -575 -735 {
 lab=VSS}
-N -350 -535 -350 -530 {lab=VSS}
-N -350 -540 -350 -535 {lab=VSS}
+N -350 -510 -350 -500 {lab=#net5}
 N 980 -770 1030 -770 {
 lab=VBGR}
 N -675 -710 -675 -680 {
@@ -163,8 +157,17 @@ N 275 -460 275 -430 {
 lab=VSS}
 N 130 -460 275 -460 {
 lab=VSS}
-N -275 -630 -275 -535 {
+N -275 -630 -275 -420 {
 lab=VSS}
+N -350 -440 -350 -420 {lab=VSS}
+N -350 -420 -275 -420 {lab=VSS}
+N -410 -590 -410 -580 {lab=#net3}
+N -410 -590 -350 -590 {lab=#net3}
+N -350 -610 -350 -590 {
+lab=#net3}
+N -410 -520 -410 -510 {lab=#net5}
+N -410 -510 -350 -510 {lab=#net5}
+N -350 -520 -350 -510 {lab=#net5}
 C {sg13g2_pr/sg13_lv_nmos.sym} -700 -765 2 0 {name=M8
 l=10u
 w=150n
@@ -286,20 +289,22 @@ w=18.195e-6
 l=18.195e-6
 m=1
 spiceprefix=X}
-C {schematic/bgr/two_stage_OTA.sym} -260 -695 0 0 {name=x1}
-C {sg13g2_pr/rppd.sym} -350 -570 0 0 {name=R4
+C {bgr/two_stage_OTA.sym} -260 -695 0 0 {name=x1}
+C {sg13g2_pr/rppd.sym} -350 -550 0 0 {name=R4
 w=0.5e-6
 l=15e-6
 model=rppd
 spiceprefix=X
 b=0
 m=1
-}
-C {iopin.sym} -760 -605 0 1 {name=p18 lab=VDD}
+spice_ignore=true}
+C {iopin.sym} -760 -605 2 0 {name=p18 lab=VDD}
 C {lab_pin.sym} -80 -695 0 1 {name=p6 sig_type=std_logic lab=Vo1}
 C {lab_pin.sym} -430 -735 1 0 {name=p10 sig_type=std_logic lab=v+}
 C {lab_pin.sym} -450 -650 3 0 {name=p7 sig_type=std_logic lab=v-}
 C {iopin.sym} -760 -575 2 0 {name=p21 lab=VSS}
-C {lab_pin.sym} -275 -515 0 1 {name=p16 sig_type=std_logic lab=VSS}
-C {lab_pin.sym} -675 -685 0 1 {name=p22 sig_type=std_logic lab=VSS}
-C {lab_pin.sym} 275 -435 0 1 {name=p19 sig_type=std_logic lab=VSS}
+C {lab_pin.sym} -275 -420 0 1 {name=p16 sig_type=std_logic lab=VSS}
+C {lab_pin.sym} -675 -680 0 1 {name=p22 sig_type=std_logic lab=VSS}
+C {lab_pin.sym} 275 -430 0 1 {name=p19 sig_type=std_logic lab=VSS}
+C {ammeter.sym} -350 -470 0 0 {name=Vbias savecurrent=true spice_ignore=0}
+C {isource.sym} -410 -550 0 1 {name=I0 value=80u}

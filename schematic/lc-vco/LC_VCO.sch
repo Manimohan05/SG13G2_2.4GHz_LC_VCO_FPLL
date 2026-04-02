@@ -238,7 +238,7 @@ C {ammeter.sym} 60 -110 0 1 {name=Vpmos_n savecurrent=true spice_ignore=0}
 C {ammeter.sym} 60 30 0 1 {name=Vnmos_n savecurrent=true spice_ignore=0}
 C {lab_pin.sym} -470 230 2 0 {name=p1 sig_type=std_logic lab=Vgs
 }
-C {ihp_4nh_inductor.sym} 200 60 2 1 {name=x1
+C {lc-vco/ihp_4nh_inductor.sym} 200 60 2 1 {name=x1
 }
 C {sg13g2_pr/cap_rfcmim.sym} 210 -80 3 0 {name=C1 
 model=cap_rfcmim

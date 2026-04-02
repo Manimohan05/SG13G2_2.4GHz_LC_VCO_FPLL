@@ -4,90 +4,54 @@ K {}
 V {}
 S {}
 E {}
-B 2 -724.6484375 -64.21875 75.3515625 335.78125 {flags=graph
-y1=0
-y2=1.2
-ypos1=0
-ypos2=2
-divy=5
-subdivy=1
-unity=1
-
-x2=2
-divx=5
-subdivx=1
-xlabmag=1.0
-ylabmag=1.0
-dataset=-1
-unitx=1
-logx=0
-logy=0
-x1=0
-autoload=1
-rawfile=$netlist_dir/LC_VCO_fft.raw}
-N -870 -160 -870 -120 {lab=GND}
-N -1030 -140 -1030 -120 {lab=GND}
-N -1030 -240 -1030 -220 {lab=VCTRL}
-N -1030 -240 -960 -240 {lab=VCTRL}
+N -800 -85 -800 -45 {lab=GND}
+N -960 -140 -960 -120 {lab=GND}
 N -960 -240 -960 -220 {lab=VCTRL}
+N -960 -240 -890 -240 {lab=VCTRL}
+N -890 -240 -890 -220 {lab=VCTRL}
+N -890 -160 -890 -140 {lab=GND}
+N -960 -140 -890 -140 {lab=GND}
 N -960 -160 -960 -140 {lab=GND}
-N -1030 -140 -960 -140 {lab=GND}
-N -1030 -160 -1030 -140 {lab=GND}
-N -870 -260 -870 -220 {lab=VDD}
-N -1260 -240 -1260 -220 {lab=VCTRL}
-N -1260 -240 -1030 -240 {lab=VCTRL}
-N -1260 -140 -1030 -140 {lab=GND}
-N -1260 -160 -1260 -140 {lab=GND}
-N -1030 -270 -1030 -240 {lab=VCTRL}
-N -260 -200 -180 -200 {lab=OUT}
-N -540 -210 -470 -210 {lab=VCTRL}
-N -370 -110 -370 -100 {lab=GND}
-N -370 -300 -370 -290 {lab=VDD}
-<<<<<<< Updated upstream
-N -560 -190 -540 -190 {lab=VBGR}
-C {gnd.sym} -870 -120 0 0 {name=l4 lab=GND}
-C {simulator_commands.sym} -1120 -30 0 0 {name=ANALYSIS only_toplevel=true 
-=======
-N -580 -190 -470 -190 {lab=VBGR}
-C {vsource.sym} -800 -190 0 0 {name=V1 value=1.2 savecurrent=false}
-C {gnd.sym} -800 -120 0 0 {name=l4 lab=GND}
+N -800 -185 -800 -145 {lab=VDD}
+N -1190 -240 -1190 -220 {lab=VCTRL}
+N -1190 -240 -960 -240 {lab=VCTRL}
+N -1190 -140 -960 -140 {lab=GND}
+N -1190 -160 -1190 -140 {lab=GND}
+N -960 -270 -960 -240 {lab=VCTRL}
+N -270 -130 -270 -110 {lab=GND}
+N -270 -330 -270 -310 {lab=VDD}
+N -160 -220 -140 -220 {lab=OUT}
+N -390 -230 -370 -230 {lab=VCTRL}
+N -430 -210 -370 -210 {lab=VBGR}
+N -430 -210 -430 -150 {lab=VBGR}
+N -490 -210 -430 -210 {lab=VBGR}
+N -600 -140 -600 -120 {lab=GND}
+N -600 -300 -600 -280 {lab=VDD}
+C {vsource.sym} -800 -115 0 0 {name=V1 value="PULSE(0 1.2 0 1u 0 1s 2s)" savecurrent=false}
+C {gnd.sym} -800 -45 0 0 {name=l4 lab=GND}
 C {simulator_commands.sym} -1030 60 0 0 {name=ANALYSIS only_toplevel=true 
->>>>>>> Stashed changes
 value="
 .param temp = 27
-.options method=gear
+.options method=gear rshunt=1.0e12
 
 .control
 
 * Save required signals
-<<<<<<< Updated upstream
-save v(VCTRL) v(OUT) v(x1.Vx) v(vbgr)
+save v(VCTRL) v(OUT) v(x1.Vx) v(x1.OUTp) v(VBGR)
 
 * Long transient simulation
-tran 10p 1.5 100n
-=======
-save v(VCTRL) v(OUT) v(x1.Vx) v(x1.OUTp)
-
-* Long transient simulation
-tran 10p 6u 1u
->>>>>>> Stashed changes
+tran 10p 2u
 
 * Save raw waveform
-write LC_VCO_tran.raw
+write LC_VCO_standalone_tran.raw
 
 * Plot transient waveform
 let vout = v(OUT)
-<<<<<<< Updated upstream
-plot v(VCTRL) v(x1.Vx) v(OUT)
+plot v(VCTRL) v(x1.Vx) v(OUT) v(x1.OUTp) v(VBGR)
 plot v(VBGR)
-* Plot steady-state waveform
-plot v(VCTRL) v(x1.Vx) v(OUT) xlimit 1 1100m
-=======
-plot v(VCTRL) v(x1.Vx) v(OUT) v(x1.OUTp)
 
 * Plot steady-state waveform
-plot v(VCTRL) v(x1.Vx) v(OUT) v(x1.OUTp) xlimit 4000n 4005n
->>>>>>> Stashed changes
+plot v(VCTRL) v(x1.Vx) v(OUT) v(x1.OUTp) v(VBGR) xlimit 4000n 4005n
 
 * FFT analysis
 setplot tran1
@@ -114,20 +78,16 @@ wrdata vco_waveform_standalone.txt power_out_db
 .endc
 "
 }
-<<<<<<< Updated upstream
-C {vsource.sym} -1030 -190 0 1 {name=Vup value="PULSE(0.4 0.81 10n 90n 1n 1s 2s)" savecurrent=false
-=======
-C {vsource.sym} -960 -190 0 1 {name=Vup value="PULSE(0.4 0.8 10n 90n 1n 1s 2s)" savecurrent=false
->>>>>>> Stashed changes
+C {vsource.sym} -960 -190 0 1 {name=Vup value="PULSE(0.4 0.8 1u 90n 1n 1s 2s)" savecurrent=false
 }
-C {gnd.sym} -1030 -120 0 0 {name=l6 lab=GND}
-C {vsource.sym} -960 -190 0 0 {name=V2 value=1.1 savecurrent=false
+C {gnd.sym} -960 -120 0 0 {name=l6 lab=GND}
+C {vsource.sym} -890 -190 0 0 {name=V2 value=1.1 savecurrent=false
 spice_ignore=true}
-C {vsource.sym} -1260 -190 0 1 {name=Vdn value="PULSE(0.5 0.0 10n 90n 1n 1s 2s)" savecurrent=false
+C {vsource.sym} -1190 -190 0 1 {name=Vdn value="PULSE(0.5 0.0 10n 90n 1n 1s 2s)" savecurrent=false
 spice_ignore=true}
-C {opin.sym} -180 -200 0 0 {name=p5 lab=OUT
+C {opin.sym} -140 -220 0 0 {name=p5 lab=OUT
 }
-C {simulator_commands.sym} -1260 -30 0 0 {name=OP only_toplevel=true 
+C {simulator_commands.sym} -1170 60 0 0 {name=OP only_toplevel=true 
 value="
 .param temp=27
 .control
@@ -137,48 +97,18 @@ write LC_VCO_tb.raw
 .endc
 "
 }
-C {ipin.sym} -1030 -270 1 0 {name=p11 lab=VCTRL}
-C {gnd.sym} -370 -100 0 0 {name=l1 lab=GND}
-C {lab_pin.sym} -540 -210 1 0 {name=p3 sig_type=std_logic lab=VCTRL}
-C {LC_VCO.sym} -370 -130 0 0 {name=x1}
-C {vdd.sym} -370 -300 0 0 {name=l2 lab=VDD}
-<<<<<<< Updated upstream
-C {vdd.sym} -870 -260 0 0 {name=l3 lab=VDD}
-C {simulator_commands.sym} -960 -30 0 0 {name=PARAMS1 only_toplevel=true 
-value="
-.param L_CC=0.13u
-
-  .param W_34=34.52u
-  .param n_34=10
-
-  .param W_12=25.11u
-  .param n_12=8
-
-.param L_TL=0.5u
-
-  .param W_5=70.29u
-  .param n_5=20
-
-  .param W_6=17.95u
-  .param n_6=6
-
-  .param W_7=16.72u
-  .param n_7=6
-"}
-C {simulator_commands.sym} -1260 150 0 0 {name=INCLUDE only_toplevel=true
-=======
-C {vdd.sym} -800 -260 0 0 {name=l3 lab=VDD}
+C {ipin.sym} -960 -270 1 0 {name=p11 lab=VCTRL}
+C {gnd.sym} -270 -110 0 0 {name=l1 lab=GND}
+C {lab_pin.sym} -390 -230 2 1 {name=p3 sig_type=std_logic lab=VCTRL}
+C {lc-vco/LC_VCO.sym} -270 -150 0 0 {name=x1}
+C {vdd.sym} -270 -330 0 0 {name=l2 lab=VDD}
+C {vdd.sym} -800 -185 0 0 {name=l3 lab=VDD}
 C {simulator_commands.sym} -730 60 0 0 {name=INCLUDE only_toplevel=true
->>>>>>> Stashed changes
 format="tcleval( @value )"
 value="
 .include ../ihp_4nh_inductor.spice
 "}
-<<<<<<< Updated upstream
-C {simulator_commands.sym} -1130 150 0 0 {name=MODEL only_toplevel=true
-=======
 C {simulator_commands.sym} -880 60 0 0 {name=MODEL only_toplevel=true
->>>>>>> Stashed changes
 format="tcleval( @value )"
 value="
 .lib cornerMOSlv.lib mos_tt
@@ -186,16 +116,11 @@ value="
 .lib cornerRES.lib res_typ
 .lib cornerCAP.lib cap_typ
 "}
-C {launcher.sym} -890 150 0 0 {name=h1
+C {launcher.sym} -370 130 0 0 {name=h1
 descr="OP annotate" 
 tclcommand="xschem annotate_op"
 }
-C {schematic/bgr/bgr.sym} -670 -190 0 0 {name=x2}
-C {vdd.sym} -670 -260 0 0 {name=l5 lab=VDD}
-C {gnd.sym} -670 -120 0 0 {name=l7 lab=GND}
-C {launcher.sym} -898.59375 241.71875 0 0 {name=h3
-descr="load Transient" 
-tclcommand="xschem raw_read $netlist_dir/LC_VCO_tran.raw tran"
-}
-C {lab_pin.sym} -520 -190 3 0 {name=p1 sig_type=std_logic lab=VBGR}
-C {vsource.sym} -870 -190 0 0 {name=V1 value="PULSE(0 1.2 0 1 0 1 2)" savecurrent=false}
+C {lab_pin.sym} -430 -150 3 0 {name=p1 sig_type=std_logic lab=VBGR}
+C {/home/designer/shared/frac-n-pll-vco-smacd_2026/schematic/bgr/bgr.sym} -600 -210 0 0 {name=x2}
+C {gnd.sym} -600 -120 0 0 {name=l5 lab=GND}
+C {vdd.sym} -600 -300 0 0 {name=l7 lab=VDD}
