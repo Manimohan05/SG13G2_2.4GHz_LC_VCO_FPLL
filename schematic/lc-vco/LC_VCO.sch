@@ -1,8 +1,9 @@
-v {xschem version=3.4.6 file_version=1.2}
+v {xschem version=3.4.8RC file_version=1.3}
 G {}
 K {}
 V {}
 S {}
+F {}
 E {}
 L 4 -680 -340 -360 -340 {}
 L 4 -360 -400 -360 -340 {}
@@ -25,15 +26,15 @@ T {Bias Current Gen} -460 20 0 0 0.4 0.4 {}
 T {Load Balancing} -240 170 0 0 0.4 0.4 {}
 T {Output Buffer} 650 170 0 1 0.4 0.4 {}
 N 360 -230 360 -190 {
-lab=#net1}
+lab=OUTp}
 N 100 -260 140 -260 {
-lab=#net1}
+lab=OUTp}
 N 290 -190 360 -190 {
-lab=#net1}
+lab=OUTp}
 N 60 -350 360 -350 {
 lab=VDD}
-N 60 -50 120 -50 {lab=#net2}
-N 300 -50 360 -50 {lab=#net3}
+N 60 -50 120 -50 {lab=OUTn}
+N 300 -50 360 -50 {lab=OUTp}
 N 60 -310 60 -290 {lab=VDD}
 N 360 -310 360 -290 {lab=VDD}
 N 360 -260 420 -260 {lab=VDD}
@@ -44,11 +45,11 @@ N 0 -310 60 -310 {lab=VDD}
 N 420 200 420 260 {lab=GND}
 N 360 200 420 200 {lab=GND}
 N 360 230 360 270 {
-lab=#net4}
+lab=#net1}
 N 0 200 0 260 {lab=GND}
 N 0 200 60 200 {lab=GND}
 N 60 230 60 270 {
-lab=#net4}
+lab=#net1}
 N 360 130 360 180 {
 lab=OUTp}
 N 60 130 60 180 {
@@ -56,17 +57,17 @@ lab=OUTn}
 N 60 -350 60 -310 {lab=VDD}
 N 360 -350 360 -310 {lab=VDD}
 N 280 -260 320 -260 {
-lab=#net5}
+lab=OUTn}
 N 100 200 140 200 {
 lab=OUTp}
 N 280 200 320 200 {
 lab=OUTn}
 N 60 -190 130 -190 {
-lab=#net5}
+lab=OUTn}
 N 60 -230 60 -190 {
-lab=#net5}
-N 130 -190 280 -260 {lab=#net5}
-N 140 -260 290 -190 {lab=#net1}
+lab=OUTn}
+N 130 -190 280 -260 {lab=OUTn}
+N 140 -260 290 -190 {lab=OUTp}
 N 60 130 130 130 {
 lab=OUTn}
 N 290 130 360 130 {
@@ -78,21 +79,21 @@ N -380 350 -320 350 {lab=GND}
 N -320 300 -320 350 {lab=GND}
 N -380 300 -320 300 {lab=GND}
 N -380 330 -380 350 {lab=GND}
-N 360 -50 360 -30 {lab=#net3}
-N 360 -190 360 -140 {lab=#net1}
-N 360 -30 360 0 {lab=#net3}
+N 360 -50 360 -30 {lab=OUTp}
+N 360 -190 360 -140 {lab=OUTp}
+N 360 -30 360 0 {lab=OUTp}
 N 360 60 360 130 {lab=OUTp}
 N 210 270 360 270 {
-lab=#net4}
+lab=#net1}
 N -620 350 -560 350 {lab=GND}
 N -620 300 -620 350 {lab=GND}
 N -620 300 -560 300 {lab=GND}
 N -560 330 -560 350 {lab=GND}
 N -470 300 -420 300 {lab=Vgs}
-N 60 -50 60 -30 {lab=#net2}
-N 60 -190 60 -140 {lab=#net5}
+N 60 -50 60 -30 {lab=OUTn}
+N 60 -190 60 -140 {lab=OUTn}
 N 60 60 60 130 {lab=OUTn}
-N 60 -30 60 0 {lab=#net2}
+N 60 -30 60 0 {lab=OUTn}
 N -470 -170 -470 -140 {lab=GND}
 N -470 -170 -420 -170 {lab=GND}
 N -470 -200 -470 -170 {lab=GND}
@@ -107,16 +108,16 @@ N -360 -230 -360 -170 {lab=OUTp}
 N -600 -170 -580 -170 {lab=OUTn}
 N -580 -230 -580 -170 {lab=OUTn}
 N -470 -290 -470 -260 {lab=VCTRL}
-N 250 70 300 70 {lab=#net3}
-N 120 70 160 70 {lab=#net2}
+N 250 70 300 70 {lab=OUTp}
+N 120 70 160 70 {lab=OUTn}
 N 210 -50 210 0 {lab=GND}
-N 120 -80 180 -80 {lab=#net2}
-N 120 -50 120 70 {lab=#net2}
-N 300 -50 300 70 {lab=#net3}
-N 240 -80 300 -80 {lab=#net3}
-N 210 270 210 300 {lab=#net4}
+N 120 -80 180 -80 {lab=OUTn}
+N 120 -50 120 70 {lab=OUTn}
+N 300 -50 300 70 {lab=OUTp}
+N 240 -80 300 -80 {lab=OUTp}
+N 210 270 210 300 {lab=#net1}
 N 60 270 210 270 {
-lab=#net4}
+lab=#net1}
 N -470 -290 -410 -290 {lab=VCTRL}
 N -470 -80 -470 -50 {lab=VCTRL}
 N -470 -50 -410 -50 {lab=VCTRL}
@@ -138,8 +139,8 @@ N -380 140 -380 270 {lab=Vx}
 N -720 160 -600 160 {lab=VBGR}
 N 570 -30 570 0 {lab=OUT}
 N 570 -60 570 -30 {lab=OUT}
-N 500 30 530 30 {lab=#net3}
-N 500 -90 530 -90 {lab=#net3}
+N 500 30 530 30 {lab=OUTp}
+N 500 -90 530 -90 {lab=OUTp}
 N 570 80 570 100 {lab=GND}
 N 570 -140 570 -120 {lab=VDD}
 N 570 -90 630 -90 {lab=VDD}
@@ -150,11 +151,11 @@ N 570 80 630 80 {lab=GND}
 N 630 30 630 80 {lab=GND}
 N 570 30 630 30 {lab=GND}
 N 570 60 570 80 {lab=GND}
-N 360 -30 500 -30 {lab=#net3}
-N 500 -30 500 30 {lab=#net3}
-N -150 -60 -150 0 {lab=#net6}
-N -110 30 -80 30 {lab=#net2}
-N -110 -90 -80 -90 {lab=#net2}
+N 360 -30 500 -30 {lab=OUTp}
+N 500 -30 500 30 {lab=OUTp}
+N -150 -60 -150 0 {lab=#net2}
+N -110 30 -80 30 {lab=OUTn}
+N -110 -90 -80 -90 {lab=OUTn}
 N -150 80 -150 100 {lab=GND}
 N -150 -140 -150 -120 {lab=VDD}
 N -210 -90 -150 -90 {lab=VDD}
@@ -165,19 +166,24 @@ N -210 80 -150 80 {lab=GND}
 N -210 30 -210 80 {lab=GND}
 N -210 30 -150 30 {lab=GND}
 N -150 60 -150 80 {lab=GND}
-N -80 -30 -80 30 {lab=#net2}
-N -80 -30 60 -30 {lab=#net2}
-N -80 -90 -80 -30 {lab=#net2}
-N 500 -90 500 -30 {lab=#net3}
-N 300 -80 300 -50 {lab=#net3}
-N 360 -80 360 -50 {lab=#net3}
-N 60 -80 60 -50 {lab=#net2}
-N 120 -80 120 -50 {lab=#net2}
+N -80 -30 -80 30 {lab=OUTn}
+N -80 -30 60 -30 {lab=OUTn}
+N -80 -90 -80 -30 {lab=OUTn}
+N 500 -90 500 -30 {lab=OUTp}
+N 300 -80 300 -50 {lab=OUTp}
+N 360 -80 360 -50 {lab=OUTp}
+N 60 -80 60 -50 {lab=OUTn}
+N 120 -80 120 -50 {lab=OUTn}
 N 520 -320 580 -320 {lab=VDD}
 N 520 -340 520 -320 {lab=VDD}
 N 520 -280 580 -280 {lab=GND}
 N 520 -280 520 -260 {lab=GND}
 N 570 -30 720 -30 {lab=OUT}
+N 360 0 360 60 {lab=OUTp}
+N 60 -140 60 -90 {lab=OUTn}
+N 60 -90 60 -80 {lab=OUTn}
+N 360 -140 360 -80 {lab=OUTp}
+N 60 0 60 60 {lab=OUTn}
 C {sg13g2_pr/sg13_lv_nmos.sym} -400 300 0 0 {name=M5
 l=1u
 w=384u
@@ -220,9 +226,6 @@ spiceprefix=X
 C {gnd.sym} 0 260 0 0 {name=l1 lab=GND}
 C {gnd.sym} 420 260 0 1 {name=l2 lab=GND}
 C {gnd.sym} -380 370 0 0 {name=l3 lab=GND}
-C {ammeter.sym} 360 -110 0 0 {name=Vpmos_p savecurrent=true spice_ignore=0}
-C {ammeter.sym} 360 30 0 0 {name=Vnmos_p savecurrent=true spice_ignore=0}
-C {ammeter.sym} 210 330 0 0 {name=Vtail savecurrent=true spice_ignore=0}
 C {lab_pin.sym} -380 140 1 0 {name=p2 sig_type=std_logic lab=Vx
 }
 C {sg13g2_pr/sg13_lv_nmos.sym} -540 300 0 1 {name=M6
@@ -234,8 +237,6 @@ model=sg13_lv_nmos
 spiceprefix=X
 }
 C {gnd.sym} -560 370 0 1 {name=l8 lab=GND}
-C {ammeter.sym} 60 -110 0 1 {name=Vpmos_n savecurrent=true spice_ignore=0}
-C {ammeter.sym} 60 30 0 1 {name=Vnmos_n savecurrent=true spice_ignore=0}
 C {lab_pin.sym} -470 230 2 0 {name=p1 sig_type=std_logic lab=Vgs
 }
 C {lc-vco/ihp_4nh_inductor.sym} 200 60 2 1 {name=x1

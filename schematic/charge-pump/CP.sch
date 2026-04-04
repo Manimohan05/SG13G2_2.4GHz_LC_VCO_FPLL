@@ -17,9 +17,13 @@ L 4 1470 -960 1470 -230 {}
 L 4 1470 -230 2130 -230 {}
 L 4 2130 -960 2130 -230 {}
 L 4 1470 -960 2130 -960 {}
+L 4 40 -960 260 -960 {}
+L 4 40 -1020 40 -960 {}
+P 4 5 -160 -1020 260 -1020 260 -600 -160 -600 -160 -1020 {}
 T {Bias Generator} 340 -950 0 0 0.4 0.4 {}
 T {Charge Pump} 1150 -950 0 0 0.4 0.4 {}
 T {Loop Filter} 1490 -950 0 0 0.4 0.4 {}
+T {Bias Current Gen} 60 -1000 0 0 0.4 0.4 {}
 N 740 -330 740 -290 {lab=GND}
 N 740 -470 740 -390 {lab=net2}
 N 710 -360 740 -360 {lab=GND}
@@ -72,6 +76,29 @@ N 1760 -590 1760 -560 {lab=CTRL1}
 N 1550 -590 1760 -590 {lab=CTRL1}
 N 1760 -500 1760 -450 {lab=CTRL2}
 N 1760 -390 1760 -290 {lab=GND}
+N 140 -670 200 -670 {lab=GND}
+N 200 -720 200 -670 {lab=GND}
+N 140 -720 200 -720 {lab=GND}
+N 140 -690 140 -670 {lab=GND}
+N -100 -670 -40 -670 {lab=GND}
+N -100 -720 -100 -670 {lab=GND}
+N -100 -720 -40 -720 {lab=GND}
+N -40 -690 -40 -670 {lab=GND}
+N 50 -720 100 -720 {lab=Vgs}
+N 140 -670 140 -650 {lab=GND}
+N -40 -670 -40 -650 {lab=GND}
+N 50 -790 50 -720 {lab=Vgs}
+N -40 -790 -40 -750 {lab=Vgs}
+N -40 -910 20 -910 {lab=VDD}
+N 20 -910 20 -860 {lab=VDD}
+N -40 -860 20 -860 {lab=VDD}
+N -40 -910 -40 -890 {lab=VDD}
+N -40 -930 -40 -910 {lab=VDD}
+N 0 -720 50 -720 {lab=Vgs}
+N -40 -790 50 -790 {lab=Vgs}
+N -40 -830 -40 -790 {lab=Vgs}
+N 140 -880 140 -750 {lab=Vx}
+N -200 -860 -80 -860 {lab=VBGR}
 C {opin.sym} 180 -210 0 0 {name=p4 lab=CTRL}
 C {ipin.sym} 110 -220 0 0 {name=p12 lab=UP}
 C {ipin.sym} 110 -270 0 0 {name=p1 lab=VDD}
@@ -231,3 +258,33 @@ nrd="expr('0.29 / @W ')" nrs="expr('0.29 / @W ')"
 model=sg13_lv_nmos
 spiceprefix=X
 }
+C {sg13g2_pr/sg13_lv_nmos.sym} 120 -720 0 0 {name=M6
+l=0.5u
+w=70.29u
+ng=20
+m=1
+model=sg13_lv_nmos
+spiceprefix=X
+}
+C {gnd.sym} 140 -650 0 0 {name=l1 lab=GND}
+C {sg13g2_pr/sg13_lv_nmos.sym} -20 -720 0 1 {name=M12
+l=0.5u
+w=17.95u
+ng=6
+m=1
+model=sg13_lv_nmos
+spiceprefix=X
+}
+C {gnd.sym} -40 -650 0 1 {name=l8 lab=GND}
+C {lab_pin.sym} 50 -790 2 0 {name=p22 sig_type=std_logic lab=Vgs
+}
+C {sg13g2_pr/sg13_lv_pmos.sym} -60 -860 0 0 {name=M13
+l=0.5u
+w=16.72u
+ng=6
+m=1
+model=sg13_lv_pmos
+spiceprefix=X}
+C {ipin.sym} -200 -860 0 0 {name=p23 lab=VBGR}
+C {vdd.sym} -40 -920 0 0 {name=l9 lab=VDD}
+C {lab_pin.sym} 140 -880 0 1 {name=p34 sig_type=std_logic lab=Ibias}

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <report-database>
  <description>Main DRC Run Report at</description>
- <original-file>/foss/designs/frac-n-pll-vco-unic_cass/layout/CP.gds</original-file>
+ <original-file>/foss/designs/frac-n-pll-vco-unic_cass/layout/LC_VCO.gds</original-file>
  <generator>drc: script='/foss/pdks/ihp-sg13g2/libs.tech/klayout/tech/drc/ihp-sg13g2.drc'</generator>
- <top-cell>CP</top-cell>
+ <top-cell>LC_VCO</top-cell>
  <tags>
   <tag>
    <name>waived</name>
@@ -1127,7 +1127,7 @@
  </categories>
  <cells>
   <cell>
-   <name>CP</name>
+   <name>LC_VCO</name>
    <variant/>
    <layout-name/>
    <references>
@@ -1135,5 +1135,449 @@
   </cell>
  </cells>
  <items>
+  <item>
+   <tags/>
+   <category>'GFil.i'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>polygon: (146.2,-314.915;14.7,-183.415;14.7,79.585;146.2,211.085;409.2,211.085;540.7,79.585;540.7,-183.415;409.2,-314.915)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'Cnt.c'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (9.54,-42.58;9.7,-42.58)/(9.52,-42.54;9.757,-42.54)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'Cnt.c'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (9.7,-42.74;9.54,-42.74)/(9.757,-42.78;9.52,-42.78)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'Cnt.c'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (-0.95,-42.58;-0.79,-42.58)/(-1.007,-42.54;-0.77,-42.54)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'Cnt.c'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (-0.79,-42.74;-0.95,-42.74)/(-0.77,-42.78;-1.007,-42.78)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'Cnt.c'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (-0.95,-61.1;-0.79,-61.1)/(-1.007,-61.06;-0.77,-61.06)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'Cnt.c'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (-0.79,-61.26;-0.95,-61.26)/(-0.77,-61.3;-1.007,-61.3)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'Cnt.c'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (9.54,-61.1;9.7,-61.1)/(9.52,-61.06;9.757,-61.06)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'Cnt.c'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (9.7,-61.26;9.54,-61.26)/(9.757,-61.3;9.52,-61.3)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'Cnt.d'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (-8.635,38.7;-8.635,38.54)/(-8.57,38.726;-8.57,38.514)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'Cnt.e'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (-0.79,-42.195;-0.79,-42.355)/(-0.77,-42.494;-0.77,-42.056)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'Cnt.e'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (9.54,-43.13;9.54,-42.97)/(9.52,-42.831;9.52,-43.269)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'Cnt.e'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (-0.79,-60.325;-0.79,-60.485)/(-0.77,-60.624;-0.77,-60.186)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'Cnt.e'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (9.54,-42.355;9.54,-42.195)/(9.52,-42.056;9.52,-42.494)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'Cnt.e'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (-0.79,-42.97;-0.79,-43.13)/(-0.77,-43.269;-0.77,-42.831)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'Cnt.e'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (9.54,-41.965;9.54,-41.805)/(9.52,-41.666;9.52,-42.104)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'Cnt.e'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (9.54,-43.515;9.54,-43.355)/(9.52,-43.216;9.52,-43.654)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'Cnt.e'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (-0.79,-41.805;-0.79,-41.965)/(-0.77,-42.104;-0.77,-41.666)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'Cnt.e'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (-0.79,-61.485;-0.79,-61.645)/(-0.77,-61.784;-0.77,-61.346)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'Cnt.e'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (9.54,-60.87;9.54,-60.71)/(9.52,-60.571;9.52,-61.009)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'Cnt.e'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (-0.79,-60.71;-0.79,-60.87)/(-0.77,-61.009;-0.77,-60.571)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'Cnt.e'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (9.54,-62.035;9.54,-61.875)/(9.52,-61.736;9.52,-62.174)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'Cnt.e'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (9.54,-60.485;9.54,-60.325)/(9.52,-60.186;9.52,-60.624)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'Cnt.e'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (-0.79,-61.875;-0.79,-62.035)/(-0.77,-62.174;-0.77,-61.736)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'Cnt.e'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (-0.79,-43.355;-0.79,-43.515)/(-0.77,-43.654;-0.77,-43.216)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'Cnt.e'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (9.54,-61.645;9.54,-61.485)/(9.52,-61.346;9.52,-61.784)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'Cnt.g1'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (-0.87,-42.74;-0.87,-42.58)/(-0.87,-42.49;-0.87,-42.83)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'Cnt.g1'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (9.62,-42.58;9.62,-42.74)/(9.62,-42.83;9.62,-42.49)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'Cnt.g1'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (9.62,-61.1;9.62,-61.26)/(9.62,-61.35;9.62,-61.01)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'Cnt.g1'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (-0.87,-61.26;-0.87,-61.1)/(-0.87,-61.01;-0.87,-61.35)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'Cnt.g2'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (-0.87,-61.1;-0.87,-61.26)/(-0.87,-61.01;-0.87,-61.35)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'Cnt.g2'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (9.62,-61.26;9.62,-61.1)/(9.62,-61.35;9.62,-61.01)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'Cnt.g2'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (-0.87,-42.58;-0.87,-42.74)/(-0.87,-42.49;-0.87,-42.83)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'Cnt.g2'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (9.62,-42.74;9.62,-42.58)/(9.62,-42.83;9.62,-42.49)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'M1.b'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (-16.035,-58.845;-15.6,-58.845)|(-15.541,-58.675;-16.094,-58.675)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'M1.b'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (-16.094,-45.165;-15.541,-45.165)|(-15.6,-44.995;-16.035,-44.995)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'M1.b'</category>
+   <cell>LC_VCO</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (-17.22,-57.58;-16.785,-57.58)|(-16.686,-57.43;-17.319,-57.43)</value>
+   </values>
+  </item>
  </items>
 </report-database>
