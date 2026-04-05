@@ -1,8 +1,9 @@
-v {xschem version=3.4.6 file_version=1.2}
+v {xschem version=3.4.8RC file_version=1.3}
 G {}
 K {}
 V {}
 S {}
+F {}
 E {}
 N -800 -85 -800 -45 {lab=GND}
 N -960 -140 -960 -120 {lab=GND}
@@ -121,6 +122,6 @@ descr="OP annotate"
 tclcommand="xschem annotate_op"
 }
 C {lab_pin.sym} -430 -150 3 0 {name=p1 sig_type=std_logic lab=VBGR}
-C {/home/designer/shared/frac-n-pll-vco-smacd_2026/schematic/bgr/bgr.sym} -600 -210 0 0 {name=x2}
+C {schematic/bgr/bgr.sym} -600 -210 0 0 {name=x2}
 C {gnd.sym} -600 -120 0 0 {name=l5 lab=GND}
 C {vdd.sym} -600 -300 0 0 {name=l7 lab=VDD}
