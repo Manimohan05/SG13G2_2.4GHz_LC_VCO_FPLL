@@ -1,0 +1,8 @@
+** sch_path: /foss/designs/frac-n-pll-vco-unic_cass/schematic/phase-freq-detector/PFD.sch
+.SUBCKT PFD VDD UP F_REF F_VCO DN GND
+*.PININFO UP:O F_REF:I VDD:I GND:I DN:O F_VCO:I
+x1 net1 net2 F_REF VDD RST_N VDD GND sg13g2_dfrbp_2
+x2 DN net3 F_VCO VDD RST_N VDD GND sg13g2_dfrbp_2
+x3 RST_N net1 DN VDD GND sg13g2_nand2_2
+x4 UP net1 VDD GND sg13g2_inv_2
+.ENDS

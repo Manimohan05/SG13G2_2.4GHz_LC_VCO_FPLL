@@ -1,0 +1,3 @@
+GDS input file passed, running in LVS mode
+No explicit top cell specified, using top cell 'CP'
+Can't read schematic (LVS input) at path schematic/blocks/charge-pump/simulations/CP.spice

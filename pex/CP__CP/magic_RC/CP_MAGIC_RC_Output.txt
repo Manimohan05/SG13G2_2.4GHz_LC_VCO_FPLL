@@ -1,0 +1,129 @@
+
+Magic 8.3 revision 603 - Compiled on Sat Feb 14 01:20:09 AM CET 2026.
+Starting magic under Tcl interpreter
+Using the terminal as the console.
+WARNING: RLIMIT_NOFILE is above 1024 and Tcl_Version<9 this may cause runtime issues [rlim_cur=1048576]
+Using NULL graphics device.
+Processing system .magicrc file
+Switching to WIRING tool.
+Switching to NETLIST tool.
+Switching to PICK tool.
+Switching to BOX tool.
+Sourcing design .magicrc for technology ihp-sg13g2 ...
+2 Magic internal units = 1 Lambda
+Input style sg13g2(): scaleFactor=2, multiplier=2
+The following types are not handled by extraction and will be treated as non-electrical types:
+    pblock sealcont difffill nemitter hvnemitter hvisodiffres sealvia1 sealvia2 sealvia3 sealvia4 sealvia5 sealvia6 pillar solder seal glass thruvia inductor 
+Scaled tech values by 2 / 1 to match internal grid scaling
+Loading ihp-sg13g2 Device Generator Menu ...
+Loading "pex/CP__CP/magic_RC/CP_MAGIC_RC_Script.tcl" from command line.
+Warning: Calma reading is not undoable!  I hope that's OK.
+Library written using GDS-II Release 6.0
+Library name: LIB
+Reading "$$$CONTEXT_INFO$$$".
+Reading "via_stack$4".
+Reading "via_stack$2".
+Reading "via_stack".
+Reading "rsil$1".
+Reading "cmim$1".
+Reading "nmos$1".
+Reading "pmos$1".
+Reading "rsil".
+Reading "cmim".
+Reading "CP".
+Extracting CP into /foss/designs/frac-n-pll-vco-unic_cass/pex/CP__CP/magic_RC/CP.ext:
+exttosim finished.
+Adding  a_n42268_42556#
+Adding  a_n62338_42316#
+Adding  a_n42268_42076#
+Adding  a_n62338_41836#
+Adding  a_n42268_41596#
+Adding  a_n62338_41356#
+Adding  a_n42268_41116#
+Adding  a_n62338_40876#
+Adding  a_n42268_40636#
+Adding  a_n62338_40396#
+Adding  a_n42268_40156#
+Adding  a_n62338_39916#
+Adding  a_n42268_39676#
+Adding  a_n62338_39436#
+Adding  a_n42268_39196#
+Adding  a_n62338_38956#
+Adding  a_n42268_38716#
+Adding  a_n62338_38476#
+Adding  a_n42268_38236#
+Adding  a_n62338_37996#
+Adding  a_n42268_37756#
+Adding  a_n62338_37516#
+Adding  a_n42268_37276#
+Adding  a_n62338_37036#
+Adding  a_n42268_36796#
+Adding  a_n62338_36556#
+Adding  a_n42268_36316#
+Adding  a_n62338_36076#
+Adding  a_n42268_35836#
+Adding  a_n62338_35596#
+Adding  a_n42268_35356#
+Adding  a_n62338_35116#
+Adding  a_n42268_34876#
+Adding  a_n62338_34636#
+Adding  a_n42268_34396#
+Adding  a_n62338_34156#
+Adding  a_n42268_33916#
+Adding  a_n62338_33676#
+Adding  a_n42276_32769#
+Adding  a_n62346_32529#
+Adding  a_n42276_32289#
+Adding  a_n62346_32049#
+Adding  a_n42276_31809#
+Adding  a_n62346_31569#
+Adding  a_n42276_31329#
+Adding  a_n62346_31089#
+Adding  a_n42276_30849#
+Adding  a_n62346_30609#
+Adding  a_n42276_30369#
+Adding  a_n62346_30129#
+Adding  a_n42276_29889#
+Adding  a_n62346_29649#
+Adding  a_n42276_29409#
+Adding  a_n62346_29169#
+Adding  a_n42276_28929#
+Adding  a_n62346_28689#
+Adding  a_n42276_28449#
+Adding  a_n62346_28209#
+Adding  a_n42276_27969#
+Adding  a_n62346_27729#
+Adding  a_n42276_27489#
+Adding  a_n62346_27249#
+Adding  a_n42276_27009#
+Adding  a_n62346_26769#
+Adding  a_n42276_26529#
+Adding  a_n62346_26289#
+Adding  a_n42276_26049#
+Adding  a_n62346_25809#
+Adding  a_n42276_25569#
+Adding  a_n62346_25329#
+Adding  a_n42276_25089#
+Adding  a_n62346_24849#
+Adding  a_n42276_24609#
+Adding  a_n62346_24369#
+Adding  a_n42276_24129#
+Adding  a_n62346_23889#
+Adding  a_n59084_18838#; Tnew = 0.00ns, Told = -1200.13ns
+Adding  a_n56080_18834#; Tnew = 0.00ns, Told = -1194.47ns
+Adding  a_n53584_18828#; Tnew = 0.00ns, Told = -1498.74ns
+Adding  a_n56080_15789#
+Adding  a_n53581_15789#
+Adding  GND
+Adding  VDD; Tnew = 0.13ns, Told = 0.00ns
+Adding  CTRL2; Tnew = 0.19ns, Told = 0.00ns
+Adding  CTRL1; Tnew = 0.04ns, Told = 0.00ns
+Adding  CTRL; Tnew = 0.17ns, Told = 0.00ns
+Adding  Ibias; Tnew = 0.07ns, Told = 0.00ns
+Adding  Vbn; Tnew = 0.01ns, Told = 0.00ns
+Adding  UP; Tnew = 0.06ns, Told = 0.00ns
+Adding  DN; Tnew = 0.00ns, Told = 0.00ns
+Total Nets: 170
+Nets extracted: 90 (0.529412)
+Nets output: 90 (0.529412)
+exttospice finished.

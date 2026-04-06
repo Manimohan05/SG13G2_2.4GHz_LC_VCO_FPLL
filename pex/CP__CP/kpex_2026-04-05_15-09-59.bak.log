@@ -1,0 +1,3 @@
+[2026-04-05 15:10:10,975] [INFO]    GDS input file passed, running in LVS mode
+[2026-04-05 15:10:11,001] [INFO]    No explicit top cell specified, using top cell 'CP'
+[2026-04-05 15:10:11,005] [ERROR]    Can't read schematic (LVS input) at path schematic/blocks/charge-pump/simulations/CP.spice

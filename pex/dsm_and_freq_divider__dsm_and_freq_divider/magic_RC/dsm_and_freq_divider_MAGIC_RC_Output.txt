@@ -1,16 +1,21 @@
 
-Magic 8.3 revision 530 - Compiled on Tue Jul 29 09:46:08 AM CEST 2025.
+Magic 8.3 revision 603 - Compiled on Sat Feb 14 01:20:09 AM CET 2026.
 Starting magic under Tcl interpreter
 Using the terminal as the console.
 WARNING: RLIMIT_NOFILE is above 1024 and Tcl_Version<9 this may cause runtime issues [rlim_cur=1048576]
 Using NULL graphics device.
 Processing system .magicrc file
+Switching to WIRING tool.
+Switching to NETLIST tool.
+Switching to PICK tool.
+Switching to BOX tool.
 Sourcing design .magicrc for technology ihp-sg13g2 ...
 2 Magic internal units = 1 Lambda
 Input style sg13g2(): scaleFactor=2, multiplier=2
 The following types are not handled by extraction and will be treated as non-electrical types:
-    fillfet sealcont difffill nemitter hvnemitter hvisodiffres sealvia1 sealvia2 sealvia3 sealvia4 sealvia5 sealvia6 pad seal thruvia 
+    pblock sealcont difffill nemitter hvnemitter hvisodiffres sealvia1 sealvia2 sealvia3 sealvia4 sealvia5 sealvia6 pillar solder seal glass thruvia inductor 
 Scaled tech values by 2 / 1 to match internal grid scaling
+Loading ihp-sg13g2 Device Generator Menu ...
 Loading "pex/dsm_and_freq_divider__dsm_and_freq_divider/magic_RC/dsm_and_freq_divider_MAGIC_RC_Script.tcl" from command line.
 Warning: Calma reading is not undoable!  I hope that's OK.
 Library written using GDS-II Release 3.0
@@ -42,34 +47,871 @@ Reading "sg13g2_o21ai_1".
 Reading "sg13g2_nor3_1".
 Reading "sg13g2_a221oi_1".
 Reading "dsm_and_freq_divider".
-Extracting dsm_and_freq_divider into /foss/designs/iic_osic_tools/frac-n-pll-vco-unic_cass/pex/dsm_and_freq_divider__dsm_and_freq_divider/magic_RC/dsm_and_freq_divider.ext:
+Extracting dsm_and_freq_divider into /foss/designs/frac-n-pll-vco-unic_cass/pex/dsm_and_freq_divider__dsm_and_freq_divider/magic_RC/dsm_and_freq_divider.ext:
 dsm_and_freq_divider: 1034 warnings
 Total of 1034 warnings.
-Port: name = VGND is new node 0x57e043a04a10
-Location is (1152, 6764); drivepoint (1152, 6764)
-Port: name = VGND exists, forcing drivepoint
-Location is (1152, 6764); drivepoint (4892, 2898)
-Port: name = VPWR is new node 0x57e043a04c60
-Location is (1152, 5524); drivepoint (1152, 5524)
-Port: name = VPWR exists, forcing drivepoint
-Location is (1152, 5524); drivepoint (3652, 2980)
-Port: name = en is new node 0x57e043a04bd0
-Location is (0, 11636); drivepoint (0, 11636)
-Port: name = freq_in is new node 0x57e04335cce0
-Location is (9464, 22008); drivepoint (9464, 22008)
-Port: name = freq_out is new node 0x57e043396800
-Location is (18264, 4580); drivepoint (18264, 4580)
-Port: name = rst is new node 0x57e043a048e0
-Location is (0, 17348); drivepoint (0, 17348)
-Port: name = sclk is new node 0x57e04335a550
-Location is (0, 11468); drivepoint (0, 11468)
-Port: name = sdata is new node 0x57e04335b010
-Location is (0, 7436); drivepoint (0, 7436)
-Couldn't find wire at 3652 2980
-Error in extracting node VPWR
-Couldn't find wire at 4892 2898
-Error in extracting node VGND
-Total Nets: 8
-Nets extracted: 8 (1.000000)
-Nets output: 6 (0.750000)
+exttosim finished.
+Adding  a_10220_18222#
+Adding  _225_.A
+Adding  _236_.A
+Adding  a_1192_17508#
+Adding  fanout8.A
+Adding  a_2126_17774#
+Adding  a_2232_17770#
+Adding  _250_.Q
+Adding  _118_.A0
+Adding  _124_.S
+Adding  _250_.D
+Adding  a_2298_17878#
+Adding  a_2620_17878#
+Adding  fanout6.A
+Adding  a_2298_17532#
+Adding  a_2558_17532#
+Adding  a_4475_17856#
+Adding  a_4512_17547#
+Adding  a_4661_17878#
+Adding  _207_.A2
+Adding  a_9352_17508#
+Adding  _214_.Y
+Adding  _240_.Y
+Adding  a_4755_17508#; Tnew = 0.00ns, Told = -67.23ns
+Adding  a_9734_17946#
+Adding  a_9828_17946#
+Adding  a_9994_17476#
+Adding  a_10020_17512#
+Adding  a_10437_17519#
+Adding  a_10246_17933#
+Adding  a_10308_17933#
+Adding  a_10539_17519#
+Adding  a_11536_17750#
+Adding  a_11279_17869#
+Adding  a_11946_17508#
+Adding  a_11185_17869#
+Adding  a_11698_17946#
+Adding  a_10377_17555#
+Adding  _214_.A
+Adding  a_11481_17631#
+Adding  _222_.A
+Adding  _250_.RESET_B
+Adding  a_1580_16710#
+Adding  a_2122_16969#
+Adding  _222_.Y
+Adding  _118_.X
+Adding  a_1862_16746#
+Adding  a_2148_17064#
+Adding  a_2565_16725#
+Adding  a_2667_16868#
+Adding  _247_.CLK
+Adding  a_2505_17137#
+Adding  a_1956_16746#
+Adding  a_3407_16823#
+Adding  a_3664_16966#
+Adding  a_4074_17044#
+Adding  _207_.Y
+Adding  a_4625_16800#
+Adding  _207_.A1
+Adding  a_5376_17061#
+Adding  _205_.Y
+Adding  _208_.X
+Adding  a_6720_17061#
+Adding  a_3609_17061#
+Adding  a_2436_16759#
+Adding  a_2374_16759#
+Adding  a_3313_16823#
+Adding  a_4593_17068#
+Adding  a_4796_17044#; Tnew = 0.00ns, Told = -1516.01ns
+Adding  a_5619_17044#; Tnew = 0.00ns, Told = -61.47ns
+Adding  _199_.B1
+Adding  a_3826_16746#
+Adding  a_4890_16762#
+Adding  a_5339_16792#
+Adding  a_5525_16750#
+Adding  a_6963_17044#; Tnew = 0.00ns, Told = -60.69ns
+Adding  _209_.Y
+Adding  a_6683_16792#
+Adding  a_6869_16750#
+Adding  _258_.RESET_B
+Adding  _232_.Y
+Adding  a_8266_16969#
+Adding  a_8006_16746#
+Adding  a_8292_17064#
+Adding  a_8709_16725#
+Adding  a_8811_16868#
+Adding  fanout7.A
+Adding  a_8649_17137#
+Adding  a_8100_16746#
+Adding  a_9551_16823#
+Adding  a_9808_16966#
+Adding  a_10218_17044#
+Adding  a_9753_17061#
+Adding  a_8580_16759#
+Adding  a_8518_16759#
+Adding  a_9457_16823#
+Adding  a_11338_16969#
+Adding  _241_.Y
+Adding  a_9970_16746#
+Adding  _212_.Y
+Adding  a_11078_16746#
+Adding  a_11364_17064#
+Adding  a_11781_16725#
+Adding  a_11883_16868#
+Adding  a_11721_17137#
+Adding  a_11172_16746#
+Adding  a_12623_16823#
+Adding  a_12880_16966#
+Adding  a_13290_17044#
+Adding  a_14240_16921#
+Adding  a_14359_16710#
+Adding  a_12825_17061#
+Adding  a_11652_16759#
+Adding  a_11590_16759#
+Adding  a_12529_16823#
+Adding  _266_.CLK
+Adding  _135_.A
+Adding  a_13042_16746#
+Adding  _238_.Y
+Adding  a_15071_17016#
+Adding  a_14572_16746#
+Adding  a_14919_16964#
+Adding  a_14830_17061#
+Adding  a_14940_16710#
+Adding  a_15767_17137#
+Adding  a_15861_16904#
+Adding  a_15963_17137#
+Adding  _211_.Y
+Adding  a_15722_16904#
+Adding  a_14666_16746#
+Adding  a_14830_16746#
+Adding  a_16118_16759#
+Adding  a_16514_16746#
+Adding  a_1862_16434#
+Adding  a_1956_16434#
+Adding  a_2122_15964#
+Adding  a_2148_16000#
+Adding  a_2565_16007#
+Adding  a_2374_16421#
+Adding  a_2436_16421#
+Adding  a_2667_16007#
+Adding  a_3664_16238#
+Adding  a_3407_16357#
+Adding  a_4074_15996#
+Adding  a_3313_16357#
+Adding  a_3826_16434#
+Adding  a_2505_16043#
+Adding  a_4462_16052#
+Adding  _206_.Y
+Adding  _201_.Y
+Adding  a_3609_16119#
+Adding  a_4684_15996#; Tnew = 0.00ns, Told = -49.52ns
+Adding  a_5249_16344#
+Adding  _202_.Y
+Adding  a_5147_15996#; Tnew = 0.00ns, Told = -1232.27ns
+Adding  a_6971_16344#
+Adding  a_7008_16035#
+Adding  a_7157_16366#
+Adding  _203_.Y
+Adding  a_7622_16434#
+Adding  a_7716_16434#
+Adding  a_7882_15964#
+Adding  a_7908_16000#
+Adding  a_8325_16007#
+Adding  a_7251_15996#; Tnew = 0.00ns, Told = -70.36ns
+Adding  a_8134_16421#
+Adding  a_8196_16421#
+Adding  a_8427_16007#
+Adding  a_9424_16238#
+Adding  a_9167_16357#
+Adding  a_9834_15996#
+Adding  a_9073_16357#
+Adding  a_9586_16434#
+Adding  a_8265_16043#
+Adding  a_9369_16119#
+Adding  _135_.X
+Adding  _237_.Y
+Adding  a_12518_16434#
+Adding  a_12612_16434#
+Adding  a_12778_15964#
+Adding  a_12804_16000#
+Adding  a_13221_16007#
+Adding  a_13030_16421#
+Adding  a_13092_16421#
+Adding  a_13323_16007#
+Adding  a_14320_16238#
+Adding  a_14063_16357#
+Adding  a_14730_15996#
+Adding  a_13969_16357#
+Adding  a_14482_16434#
+Adding  a_13161_16043#
+Adding  _264_.Q
+Adding  a_14265_16119#
+Adding  a_2126_15424#
+Adding  a_2232_15428#
+Adding  _119_.A0
+Adding  a_2298_15532#
+Adding  a_2558_15532#
+Adding  _148_.B
+Adding  _196_.Y
+Adding  _195_.Y
+Adding  a_2298_15238#
+Adding  a_2620_15238#
+Adding  a_5333_15532#; Tnew = 0.00ns, Told = -1209.83ns
+Adding  _199_.Y
+Adding  _200_.Y
+Adding  a_6286_15276#
+Adding  _191_.Y
+Adding  _204_.X
+Adding  _186_.Y
+Adding  a_7616_15437#
+Adding  _193_.Y
+Adding  a_5050_15238#
+Adding  a_5427_15260#
+Adding  a_6508_15532#; Tnew = 0.00ns, Told = -50.16ns
+Adding  a_6862_15532#; Tnew = 0.00ns, Told = -1949.34ns
+Adding  a_7074_15532#; Tnew = 0.00ns, Told = -1206.57ns
+Adding  a_5906_15242#
+Adding  a_6008_15242#
+Adding  a_6862_15260#
+Adding  a_7168_15260#
+Adding  a_7753_15280#
+Adding  a_12992_15437#
+Adding  _134_.Y
+Adding  _239_.Y
+Adding  a_14314_15457#
+Adding  a_14054_15234#
+Adding  a_14340_15552#
+Adding  a_14757_15213#
+Adding  a_14859_15356#
+Adding  a_14697_15625#
+Adding  a_13129_15280#
+Adding  a_14148_15234#
+Adding  a_15599_15311#
+Adding  a_15856_15454#
+Adding  a_16266_15532#
+Adding  a_15801_15549#
+Adding  a_14628_15247#
+Adding  a_14566_15247#
+Adding  a_15505_15311#
+Adding  _133_.B
+Adding  a_16018_15234#
+Adding  a_7553_14832#
+Adding  a_7451_14484#; Tnew = 0.00ns, Told = -1290.11ns
+Adding  a_2126_13912#
+Adding  _119_.X
+Adding  a_2232_13916#
+Adding  _120_.A0
+Adding  clkload0.Y
+Adding  a_2298_14020#
+Adding  a_2558_14020#
+Adding  a_3380_13690#
+Adding  clkbuf_1_0__f_sclk.A
+Adding  _189_.X
+Adding  _190_.A
+Adding  a_6958_13764#
+Adding  a_7985_13776#
+Adding  a_2298_13726#
+Adding  a_2620_13726#
+Adding  _192_.Y
+Adding  a_6106_13726#
+Adding  a_7180_14020#; Tnew = 0.00ns, Told = -55.50ns
+Adding  a_7953_14044#
+Adding  a_8156_14020#; Tnew = 0.00ns, Told = -1468.04ns
+Adding  _194_.X
+Adding  _230_.Y
+Adding  a_9130_13945#
+Adding  a_8870_13722#
+Adding  a_9156_14040#
+Adding  a_9573_13701#
+Adding  a_9675_13844#
+Adding  a_9513_14113#
+Adding  a_8250_13738#
+Adding  a_8964_13722#
+Adding  a_10415_13799#
+Adding  a_10672_13942#
+Adding  a_11082_14020#
+Adding  a_10617_14037#
+Adding  a_9444_13735#
+Adding  a_9382_13735#
+Adding  a_10321_13799#
+Adding  a_13100_13686#
+Adding  a_10834_13722#
+Adding  _215_.A
+Adding  a_1580_12936#
+Adding  _221_.Y
+Adding  a_1862_13410#
+Adding  a_1956_13410#
+Adding  a_2122_12940#
+Adding  a_2148_12976#
+Adding  a_2565_12983#
+Adding  a_2374_13397#
+Adding  a_2436_13397#
+Adding  a_2667_12983#
+Adding  a_3664_13214#
+Adding  a_3407_13333#
+Adding  a_4074_12972#
+Adding  a_3313_13333#
+Adding  a_3826_13410#
+Adding  a_2505_13019#
+Adding  a_4913_13330#
+Adding  a_3609_13095#
+Adding  a_5178_13330#
+Adding  a_6011_13320#
+Adding  a_6048_13011#
+Adding  a_6197_13342#
+Adding  _192_.C
+Adding  _187_.Y
+Adding  _192_.B
+Adding  _128_.B1
+Adding  _133_.Y
+Adding  _131_.A2
+Adding  _126_.B1
+Adding  a_12886_13350#
+Adding  a_6881_13320#
+Adding  a_4881_12972#
+Adding  a_5084_12972#; Tnew = 0.00ns, Told = -1492.68ns
+Adding  a_6291_12972#; Tnew = 0.00ns, Told = -62.15ns
+Adding  a_6779_12972#; Tnew = 0.00ns, Told = -1318.11ns
+Adding  a_13366_13350#
+Adding  _129_.B1
+Adding  _260_.CLK
+Adding  a_13978_13342#
+Adding  a_12984_12952#; Tnew = 0.00ns, Told = -100.74ns
+Adding  a_13464_12952#; Tnew = 0.00ns, Told = -98.30ns
+Adding  a_14451_13320#
+Adding  _131_.B1
+Adding  a_14357_12972#; Tnew = 0.00ns, Told = -1240.82ns
+Adding  _220_.Y
+Adding  a_2218_12433#
+Adding  _120_.X
+Adding  a_1958_12210#
+Adding  a_2244_12528#
+Adding  a_2661_12189#
+Adding  a_2763_12332#
+Adding  a_2601_12601#
+Adding  a_2052_12210#
+Adding  a_3503_12287#
+Adding  a_3760_12430#
+Adding  a_4170_12508#
+Adding  a_5297_12264#
+Adding  a_3705_12525#
+Adding  a_2532_12223#
+Adding  a_2470_12223#
+Adding  a_3409_12287#
+Adding  a_3922_12210#
+Adding  a_5265_12532#
+Adding  a_5468_12508#; Tnew = 0.00ns, Told = -1523.99ns
+Adding  _176_.B
+Adding  a_4858_12214#
+Adding  a_5562_12226#
+Adding  _176_.A
+Adding  a_6482_12218#
+Adding  a_6584_12218#
+Adding  _229_.Y
+Adding  a_9130_12433#
+Adding  _182_.Y
+Adding  a_8870_12210#
+Adding  a_9156_12528#
+Adding  a_9573_12189#
+Adding  a_9675_12332#
+Adding  _251_.CLK
+Adding  a_9513_12601#
+Adding  a_6970_12214#
+Adding  a_8964_12210#
+Adding  a_10415_12287#
+Adding  a_10672_12430#
+Adding  a_11082_12508#
+Adding  a_10617_12525#
+Adding  a_9444_12223#
+Adding  a_9382_12223#
+Adding  a_10321_12287#
+Adding  a_10834_12210#
+Adding  _234_.Y
+Adding  a_12106_12433#
+Adding  _126_.Y
+Adding  a_11846_12210#
+Adding  a_12132_12528#
+Adding  a_12549_12189#
+Adding  a_12651_12332#
+Adding  a_12489_12601#
+Adding  a_11940_12210#
+Adding  a_13391_12287#
+Adding  a_13648_12430#
+Adding  a_14058_12508#
+Adding  a_13593_12525#
+Adding  a_12420_12223#
+Adding  a_12358_12223#
+Adding  a_13297_12287#
+Adding  a_14698_12433#
+Adding  _235_.Y
+Adding  _129_.Y
+Adding  a_14438_12210#
+Adding  a_14724_12528#
+Adding  a_15141_12189#
+Adding  a_15243_12332#
+Adding  a_15081_12601#
+Adding  a_13810_12210#
+Adding  a_14532_12210#
+Adding  a_15983_12287#
+Adding  a_16240_12430#
+Adding  a_16650_12508#
+Adding  a_16185_12525#
+Adding  a_15012_12223#
+Adding  a_14950_12223#
+Adding  a_15889_12287#
+Adding  a_16402_12210#
+Adding  a_1192_11460#
+Adding  a_2126_11726#
+Adding  a_2232_11722#
+Adding  _173_.A
+Adding  a_2298_11830#
+Adding  a_2620_11830#
+Adding  a_2298_11484#
+Adding  a_2558_11484#
+Adding  a_6299_11808#
+Adding  a_6336_11499#
+Adding  a_6485_11830#
+Adding  _178_.B1
+Adding  _132_.Y
+Adding  a_6579_11460#; Tnew = 0.00ns, Told = -65.14ns
+Adding  a_13025_11808#
+Adding  _131_.Y
+Adding  _236_.Y
+Adding  a_13985_11808#
+Adding  a_14534_11898#
+Adding  a_14628_11898#
+Adding  a_14794_11428#
+Adding  a_14820_11464#
+Adding  a_15237_11471#
+Adding  a_12923_11460#; Tnew = 0.00ns, Told = -1231.04ns
+Adding  a_13413_11460#; Tnew = 0.00ns, Told = -97.91ns
+Adding  a_13527_11460#; Tnew = 0.00ns, Told = -93.84ns
+Adding  a_13883_11460#; Tnew = 0.00ns, Told = -1272.70ns
+Adding  a_15046_11885#
+Adding  a_15108_11885#
+Adding  a_15339_11471#
+Adding  a_16336_11702#
+Adding  a_16079_11821#
+Adding  a_16746_11460#
+Adding  a_15985_11821#
+Adding  a_16498_11898#
+Adding  a_15177_11507#
+Adding  a_16281_11583#
+Adding  a_3886_10702#
+Adding  _179_.Y
+Adding  _181_.Y
+Adding  a_8352_11013#
+Adding  a_8595_10996#; Tnew = 0.00ns, Told = -65.14ns
+Adding  a_8315_10744#
+Adding  a_8501_10702#
+Adding  a_13804_10996#; Tnew = 0.00ns, Told = -50.72ns
+Adding  a_14651_10996#; Tnew = 0.00ns, Told = -1278.73ns
+Adding  a_14753_10724#
+Adding  a_2126_10214#
+Adding  a_2232_10210#
+Adding  _122_.A0
+Adding  _246_.D
+Adding  a_2298_10318#
+Adding  a_2620_10318#
+Adding  _173_.Y
+Adding  _174_.Y
+Adding  a_6124_9945#
+Adding  _177_.X
+Adding  _178_.Y
+Adding  a_2298_9972#
+Adding  a_2558_9972#
+Adding  a_6218_10296#
+Adding  a_6320_10296#
+Adding  _184_.Y
+Adding  _171_.A
+Adding  a_7251_10296#
+Adding  _185_.Y
+Adding  _183_.Y
+Adding  _164_.Y
+Adding  a_6890_9948#; Tnew = 0.00ns, Told = -56.62ns
+Adding  a_7157_9948#; Tnew = 0.00ns, Told = -1267.42ns
+Adding  a_8050_10326#
+Adding  _171_.Y
+Adding  a_8506_10318#
+Adding  a_8156_9928#; Tnew = 0.00ns, Told = -97.89ns
+Adding  _260_.RESET_B
+Adding  _219_.Y
+Adding  a_2410_9409#
+Adding  a_2150_9186#
+Adding  a_2436_9504#
+Adding  a_2853_9165#
+Adding  a_2955_9308#
+Adding  _243_.CLK
+Adding  a_2793_9577#
+Adding  a_2244_9186#
+Adding  a_3695_9263#
+Adding  a_3952_9406#
+Adding  a_4362_9484#
+Adding  _136_.A
+Adding  a_5201_9240#
+Adding  _168_.B
+Adding  _168_.A
+Adding  a_3897_9501#
+Adding  a_2724_9199#
+Adding  a_2662_9199#
+Adding  a_3601_9263#
+Adding  a_4114_9186#
+Adding  a_5169_9508#
+Adding  a_5372_9484#; Tnew = 0.00ns, Told = -1472.89ns
+Adding  a_5466_9202#
+Adding  a_6389_9484#; Tnew = 0.00ns, Told = -1325.50ns
+Adding  _168_.Y
+Adding  _165_.Y
+Adding  _170_.B
+Adding  _180_.X
+Adding  a_9120_9501#
+Adding  a_6106_9190#
+Adding  a_6483_9212#
+Adding  a_6962_9194#
+Adding  a_7064_9194#
+Adding  a_7739_9484#; Tnew = 0.00ns, Told = -1258.42ns
+Adding  a_8603_9484#; Tnew = 0.00ns, Told = -1241.09ns
+Adding  a_7841_9212#
+Adding  a_9363_9484#; Tnew = 0.00ns, Told = -61.12ns
+Adding  _172_.Y
+Adding  a_9994_9409#
+Adding  _228_.Y
+Adding  a_9734_9186#
+Adding  a_10020_9504#
+Adding  a_10437_9165#
+Adding  a_10539_9308#
+Adding  a_10377_9577#
+Adding  a_8705_9212#
+Adding  a_9083_9232#
+Adding  a_9269_9190#
+Adding  a_9828_9186#
+Adding  a_11279_9263#
+Adding  a_11536_9406#
+Adding  a_11946_9484#
+Adding  a_11481_9501#
+Adding  a_10308_9199#
+Adding  a_10246_9199#
+Adding  a_11185_9263#
+Adding  a_11698_9186#
+Adding  _213_.Y
+Adding  a_14794_9409#
+Adding  a_14534_9186#
+Adding  a_14820_9504#
+Adding  a_15237_9165#
+Adding  a_15339_9308#
+Adding  a_15177_9577#
+Adding  a_14628_9186#
+Adding  a_16079_9263#
+Adding  a_16336_9406#
+Adding  a_16746_9484#
+Adding  a_16281_9501#
+Adding  a_15108_9199#
+Adding  a_15046_9199#
+Adding  a_15985_9263#
+Adding  a_16498_9186#
+Adding  _122_.X
+Adding  _218_.Y
+Adding  a_2150_8874#
+Adding  a_2244_8874#
+Adding  a_2410_8404#
+Adding  a_2436_8440#
+Adding  a_2853_8447#
+Adding  a_2662_8861#
+Adding  a_2724_8861#
+Adding  a_2955_8447#
+Adding  a_3952_8678#
+Adding  a_3695_8797#
+Adding  a_4362_8436#
+Adding  a_3601_8797#
+Adding  a_4114_8874#
+Adding  a_2793_8483#
+Adding  a_5242_8806#
+Adding  a_3897_8559#
+Adding  a_6491_8784#
+Adding  a_6528_8475#
+Adding  a_6677_8806#
+Adding  a_7258_8806#
+Adding  a_8014_8492#
+Adding  a_8488_8436#
+Adding  a_7634_8802#
+Adding  a_7736_8802#
+Adding  _170_.Y
+Adding  a_6771_8436#; Tnew = 0.00ns, Told = -59.62ns
+Adding  a_8236_8436#; Tnew = 0.00ns, Told = -50.62ns
+Adding  _160_.X
+Adding  _145_.X
+Adding  _164_.B1
+Adding  a_11731_8698#
+Adding  a_10989_8784#
+Adding  a_12110_8784#
+Adding  _162_.B
+Adding  _153_.Y
+Adding  a_10895_8436#
+Adding  a_11974_8436#
+Adding  a_12730_8806#
+Adding  _161_.Y
+Adding  _157_.Y
+Adding  _151_.B
+Adding  _158_.Y
+Adding  a_13505_8784#
+Adding  _159_.Y
+Adding  _227_.Y
+Adding  a_13403_8436#; Tnew = 0.00ns, Told = -1320.23ns
+Adding  a_14534_8874#
+Adding  a_14628_8874#
+Adding  a_14794_8404#
+Adding  a_14820_8440#
+Adding  a_15237_8447#
+Adding  a_15046_8861#
+Adding  a_15108_8861#
+Adding  a_15339_8447#
+Adding  a_16336_8678#
+Adding  a_16079_8797#
+Adding  a_16746_8436#
+Adding  a_15985_8797#
+Adding  a_16498_8874#
+Adding  a_15177_8483#
+Adding  _166_.A
+Adding  a_16281_8559#
+Adding  a_1192_7712#
+Adding  a_2126_7864#
+Adding  _125_.A1
+Adding  a_2232_7868#
+Adding  _148_.A
+Adding  a_2298_7972#
+Adding  a_2558_7972#
+Adding  a_7985_7728#
+Adding  a_2298_7678#
+Adding  a_2620_7678#
+Adding  a_7953_7996#
+Adding  a_8156_7972#; Tnew = 0.00ns, Told = -1490.28ns
+Adding  _154_.X
+Adding  a_8250_7690#
+Adding  a_10752_7989#
+Adding  a_12215_7664#
+Adding  a_9466_7678#
+Adding  a_10995_7972#; Tnew = 0.00ns, Told = -60.49ns
+Adding  a_10715_7720#
+Adding  a_10901_7678#
+Adding  _162_.Y
+Adding  a_13073_7728#
+Adding  _160_.B
+Adding  a_13824_7989#
+Adding  a_12549_7996#
+Adding  a_13041_7996#
+Adding  a_13244_7972#; Tnew = 0.00ns, Told = -1522.33ns
+Adding  a_12685_7700#
+Adding  a_14067_7972#; Tnew = 0.00ns, Told = -64.55ns
+Adding  a_15980_7638#
+Adding  a_13338_7690#
+Adding  a_13787_7720#
+Adding  a_13973_7678#
+Adding  a_3956_6888#
+Adding  a_13184_7183#
+Adding  a_12652_6924#; Tnew = 0.00ns, Told = -52.93ns
+Adding  a_13321_7272#
+Adding  _243_.Q
+Adding  a_2171_6204#
+Adding  a_2494_6166#
+Adding  a_2397_6460#
+Adding  a_2671_6460#
+Adding  _244_.D
+Adding  _244_.RESET_B
+Adding  _152_.X
+Adding  _149_.A
+Adding  _148_.X
+Adding  a_2397_6166#
+Adding  a_2608_6166#
+Adding  a_13019_6460#; Tnew = 0.00ns, Told = -1274.71ns
+Adding  a_13121_6188#
+Adding  _210_.A
+Adding  a_2075_5468#
+Adding  a_2398_5782#
+Adding  a_2301_5782#
+Adding  a_2512_5782#
+Adding  _242_.D
+Adding  a_3014_5850#
+Adding  a_3108_5850#
+Adding  a_3274_5380#
+Adding  a_3300_5416#
+Adding  a_3717_5423#
+Adding  a_2301_5436#
+Adding  a_2575_5436#
+Adding  a_3526_5837#
+Adding  a_3588_5837#
+Adding  a_3819_5423#
+Adding  a_4816_5654#
+Adding  a_4559_5773#
+Adding  a_5226_5412#
+Adding  a_4465_5773#
+Adding  a_4978_5850#
+Adding  a_3657_5459#
+Adding  a_6747_5468#
+Adding  _210_.B
+Adding  a_4761_5535#
+Adding  a_6949_5782#
+Adding  _143_.A
+Adding  _145_.A2
+Adding  a_7835_5760#
+Adding  a_7872_5451#
+Adding  a_8021_5782#
+Adding  _138_.Y
+Adding  _252_.D
+Adding  a_8538_5375#
+Adding  _144_.B
+Adding  a_8694_5770#
+Adding  a_10764_5678#
+Adding  _139_.X
+Adding  a_8115_5412#; Tnew = 0.00ns, Told = -68.45ns
+Adding  a_8564_5412#; Tnew = 0.00ns, Told = -1545.99ns
+Adding  a_8990_5412#
+Adding  a_10799_5782#
+Adding  _147_.A1
+Adding  a_11220_5760#
+Adding  a_12237_5760#
+Adding  a_10938_5412#; Tnew = 0.00ns, Told = -65.25ns
+Adding  a_12331_5760#
+Adding  _147_.Y
+Adding  _157_.B
+Adding  a_13073_5770#
+Adding  a_13740_5678#
+Adding  a_13338_5770#
+Adding  a_13775_5782#
+Adding  _151_.X
+Adding  _226_.Y
+Adding  a_14438_5850#
+Adding  a_14196_5760#
+Adding  a_14532_5850#
+Adding  a_14698_5380#
+Adding  a_14724_5416#
+Adding  a_15141_5423#
+Adding  a_13041_5412#
+Adding  a_13244_5412#; Tnew = 0.00ns, Told = -1524.82ns
+Adding  a_13914_5412#; Tnew = 0.00ns, Told = -68.45ns
+Adding  a_14950_5837#
+Adding  a_15012_5837#
+Adding  a_15243_5423#
+Adding  a_16240_5654#
+Adding  a_15983_5773#
+Adding  a_16650_5412#
+Adding  a_15889_5773#
+Adding  a_16402_5850#
+Adding  a_15081_5459#
+Adding  a_16185_5535#
+Adding  _243_.RESET_B
+Adding  _215_.Y
+Adding  a_2075_4692#
+Adding  a_2398_4654#
+Adding  a_2301_4948#
+Adding  a_2575_4948#
+Adding  _243_.D
+Adding  a_3274_4873#
+Adding  a_3014_4650#
+Adding  a_3300_4968#
+Adding  a_3717_4629#
+Adding  a_3819_4772#
+Adding  a_3657_5041#
+Adding  a_2301_4654#
+Adding  a_2512_4654#
+Adding  a_3108_4650#
+Adding  a_4559_4727#
+Adding  a_4816_4870#
+Adding  a_5226_4948#
+Adding  a_4761_4965#
+Adding  a_3588_4663#
+Adding  a_3526_4663#
+Adding  a_4465_4727#
+Adding  a_4978_4650#
+Adding  _224_.Y
+Adding  a_6442_4873#
+Adding  _210_.Y
+Adding  a_6182_4650#
+Adding  a_6468_4968#
+Adding  a_6885_4629#
+Adding  a_6987_4772#
+Adding  a_6825_5041#
+Adding  a_6276_4650#
+Adding  a_7727_4727#
+Adding  a_7984_4870#
+Adding  a_8394_4948#
+Adding  a_7929_4965#
+Adding  a_6756_4663#
+Adding  a_6694_4663#
+Adding  a_7633_4727#
+Adding  _136_.B
+Adding  _225_.Y
+Adding  a_9322_4873#
+Adding  a_9062_4650#
+Adding  a_9348_4968#
+Adding  a_9765_4629#
+Adding  a_9867_4772#
+Adding  a_9705_5041#
+Adding  a_8146_4650#
+Adding  a_9156_4650#
+Adding  a_10607_4727#
+Adding  a_10864_4870#
+Adding  a_11274_4948#
+Adding  a_11661_4696#
+Adding  a_12401_4704#
+Adding  a_13649_4704#
+Adding  a_10809_4965#
+Adding  a_9636_4663#
+Adding  a_9574_4663#
+Adding  a_10513_4727#
+Adding  _147_.B1
+Adding  a_11026_4650#
+Adding  a_11755_4696#
+Adding  a_12369_4972#
+Adding  a_12572_4948#; Tnew = 0.00ns, Told = -1538.78ns
+Adding  a_13130_4948#; Tnew = 0.00ns, Told = -50.93ns
+Adding  a_12666_4666#
+Adding  a_13617_4972#
+Adding  a_13820_4948#; Tnew = 0.00ns, Told = -1523.60ns
+Adding  a_13914_4666#
+Adding  a_16840_4688#
+Adding  a_2342_4338#
+Adding  a_2436_4338#
+Adding  a_2602_3868#
+Adding  a_2628_3904#
+Adding  a_3045_3911#
+Adding  a_2854_4325#
+Adding  a_2916_4325#
+Adding  a_3147_3911#
+Adding  a_4144_4142#
+Adding  a_3887_4261#
+Adding  a_4554_3900#
+Adding  a_3793_4261#
+Adding  a_4306_4338#
+Adding  a_2985_3947#
+Adding  a_6060_4166#
+Adding  a_4089_4023#
+Adding  a_6095_4270#
+Adding  a_6810_3863#
+Adding  a_6516_4248#
+Adding  a_6966_4258#
+Adding  a_6234_3900#; Tnew = 0.00ns, Told = -57.06ns
+Adding  a_6836_3900#; Tnew = 0.00ns, Told = -1463.51ns
+Adding  _143_.Y
+Adding  _144_.Y
+Adding  a_8557_4248#
+Adding  a_7262_3900#
+Adding  a_8042_3900#; Tnew = 0.00ns, Told = -50.60ns
+Adding  a_8480_4248#
+Adding  a_10769_4258#
+Adding  a_8386_3900#
+Adding  a_9290_3900#; Tnew = 0.00ns, Told = -51.94ns
+Adding  a_11034_4258#
+Adding  a_11475_4248#
+Adding  a_10737_3900#
+Adding  a_10940_3900#; Tnew = 0.00ns, Told = -1477.14ns
+Adding  a_11381_3900#; Tnew = 0.00ns, Told = -1262.31ns
+Adding  VGND
+Adding  VPWR
+Adding  rst; Tnew = 0.00ns, Told = 0.00ns
+Adding  freq_in; Tnew = 0.02ns, Told = 0.00ns
+Adding  en; Tnew = 0.01ns, Told = 0.00ns
+Adding  sclk; Tnew = 0.03ns, Told = 0.00ns
+Adding  sdata; Tnew = 0.00ns, Told = 0.00ns
+Adding  freq_out; Tnew = 0.00ns, Told = 0.00ns
+Total Nets: 955
+Nets extracted: 860 (0.900524)
+Nets output: 860 (0.900524)
 exttospice finished.

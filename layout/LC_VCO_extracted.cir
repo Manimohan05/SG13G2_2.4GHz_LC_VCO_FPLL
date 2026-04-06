@@ -1,18 +1,18 @@
-* Extracted by KLayout with SG13G2 LVS runset on : 05/04/2026 08:54
+* Extracted by KLayout with SG13G2 LVS runset on : 06/04/2026 04:18
 
 .SUBCKT LC_VCO 1 2 3 5 6 7 8 9
-M$1 7 5 2 1 sg13_lv_nmos L=0.13u W=21.99u AS=5.2776p AD=5.2776p PS=30.76u
+M$1 7 5 3 1 sg13_lv_nmos L=0.13u W=21.99u AS=5.2776p AD=5.2776p PS=30.76u
 + PD=30.76u
-M$4 1 2 4 1 sg13_lv_nmos L=0.13u W=1.5u AS=0.51p AD=0.51p PS=3.68u PD=3.68u
-M$5 5 2 7 1 sg13_lv_nmos L=0.13u W=21.99u AS=5.2776p AD=5.2776p PS=30.76u
+M$4 1 3 4 1 sg13_lv_nmos L=0.13u W=1.5u AS=0.51p AD=0.51p PS=3.68u PD=3.68u
+M$5 5 3 7 1 sg13_lv_nmos L=0.13u W=21.99u AS=5.2776p AD=5.2776p PS=30.76u
 + PD=30.76u
 M$8 6 5 1 1 sg13_lv_nmos L=0.13u W=1.5u AS=0.51p AD=0.51p PS=3.68u PD=3.68u
 M$9 1 8 7 1 sg13_lv_nmos L=1u W=384u AS=74.16p AD=74.16p PS=410.54u PD=410.54u
 M$57 1 8 8 1 sg13_lv_nmos L=1u W=64u AS=13.36p AD=13.36p PS=75.34u PD=75.34u
-M$65 3 2 4 3 sg13_lv_pmos L=0.13u W=15u AS=3.075p AD=3.075p PS=20.6u PD=20.6u
-M$75 3 5 2 3 sg13_lv_pmos L=0.13u W=36u AS=7.92p AD=7.92p PS=45.4u PD=45.4u
-M$80 3 5 6 3 sg13_lv_pmos L=0.13u W=15u AS=3.075p AD=3.075p PS=20.6u PD=20.6u
-M$90 3 2 5 3 sg13_lv_pmos L=0.13u W=36u AS=7.92p AD=7.92p PS=45.4u PD=45.4u
-M$95 8 9 3 3 sg13_lv_pmos L=1u W=38u AS=8.36p AD=8.36p PS=47.8u PD=47.8u
-C$100 2 5 1 rfcmim w=21.9u l=21.9u A=479.61p P=87.6u m=1 wfeed=10u
+M$65 2 3 4 2 sg13_lv_pmos L=0.13u W=15u AS=3.075p AD=3.075p PS=20.6u PD=20.6u
+M$75 2 5 3 2 sg13_lv_pmos L=0.13u W=36u AS=7.92p AD=7.92p PS=45.4u PD=45.4u
+M$80 2 5 6 2 sg13_lv_pmos L=0.13u W=15u AS=3.075p AD=3.075p PS=20.6u PD=20.6u
+M$90 2 3 5 2 sg13_lv_pmos L=0.13u W=36u AS=7.92p AD=7.92p PS=45.4u PD=45.4u
+M$95 8 9 2 2 sg13_lv_pmos L=1u W=38u AS=8.36p AD=8.36p PS=47.8u PD=47.8u
+C$100 3 5 1 rfcmim w=21.9u l=21.9u A=479.61p P=87.6u m=1 wfeed=10u
 .ENDS LC_VCO

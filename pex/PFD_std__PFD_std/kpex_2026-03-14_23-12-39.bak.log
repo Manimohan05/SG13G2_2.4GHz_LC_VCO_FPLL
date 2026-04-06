@@ -1,3 +1,0 @@
-[2026-03-14 23:14:46,173] [INFO]    GDS input file passed, running in LVS mode
-[2026-03-14 23:14:46,193] [INFO]    No explicit top cell specified, using top cell 'PFD_std'
-[2026-03-14 23:14:46,198] [ERROR]    Can't read schematic (LVS input) at path schematic/blocks/phase-freq-detectorsimulations/PFD_std_lvs.spice
