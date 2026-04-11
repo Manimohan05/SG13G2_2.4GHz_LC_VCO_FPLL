@@ -1,0 +1,23 @@
+11-Apr-2026 04:52:12 | INFO    | Your Klayout version is: KLayout 0.30.5
+11-Apr-2026 04:52:12 | INFO    | Running SG13G2 LVS checks on design /home/designer/shared/frac-n-pll-vco-unic_cass/layout/LC_VCO.gds on cell LC_VCO
+11-Apr-2026 04:52:14 | ERROR   | KLayout run failed with exit code 1.
+11-Apr-2026 04:52:14 | ERROR   | KLayout stderr: ERROR: In /opt/pdks/ihp-sg13g2/libs.tech/klayout/tech/lvs/sg13g2.lvs: 'M' element must have four nodes in /home/designer/shared/frac-n-pll-vco-unic_cass/schematic/lc-vco/simulations/LC_VCO.spice, line 11 in Netlist::read
+11-Apr-2026 04:52:14 | ERROR   | KLayout stderr: ERROR: RuntimeError: 'M' element must have four nodes in /home/designer/shared/frac-n-pll-vco-unic_cass/schematic/lc-vco/simulations/LC_VCO.spice, line 11 in Netlist::read in Executable::execute
+11-Apr-2026 04:52:14 | INFO    | ==============================================================================
+11-Apr-2026 04:52:14 | INFO    | Important Summary
+11-Apr-2026 04:52:14 | INFO    | +------------------+-----------------------------------------------------------------------------------+
+11-Apr-2026 04:52:14 | INFO    | | Status           | PASS                                                                              |
+11-Apr-2026 04:52:14 | INFO    | | Mode             | COMPARE                                                                           |
+11-Apr-2026 04:52:14 | INFO    | | Outcome          | Comparison mode: completed (no explicit PASS/FAIL signature found).               |
+11-Apr-2026 04:52:14 | INFO    | | Layout           | LC_VCO.gds                                                                        |
+11-Apr-2026 04:52:14 | INFO    | | Top Cell         | LC_VCO                                                                            |
+11-Apr-2026 04:52:14 | INFO    | | Results Dir      | /home/designer/shared/frac-n-pll-vco-unic_cass/lvs_run_LC_VCO_2026_04_11_04_52_12 |
+11-Apr-2026 04:52:14 | INFO    | | Warnings         | 0                                                                                 |
+11-Apr-2026 04:52:14 | INFO    | | Errors           | 3                                                                                 |
+11-Apr-2026 04:52:14 | INFO    | | Run Time (s)     | 2.113                                                                             |
+11-Apr-2026 04:52:14 | INFO    | +------------------+-----------------------------------------------------------------------------------+
+11-Apr-2026 04:52:14 | ERROR   | Key errors:
+11-Apr-2026 04:52:14 | ERROR   |   - KLayout run failed with exit code 1.
+11-Apr-2026 04:52:14 | ERROR   |   - KLayout stderr: ERROR: In /opt/pdks/ihp-sg13g2/libs.tech/klayout/tech/lvs/sg13g2.lvs: 'M' element must have four nodes in /home/designer/shared/frac-n-pll-vco-unic_cass/schematic/lc-vco/simulations/LC_VCO.spice, line 11 in Netlist::read
+11-Apr-2026 04:52:14 | ERROR   |   - KLayout stderr: ERROR: RuntimeError: 'M' element must have four nodes in /home/designer/shared/frac-n-pll-vco-unic_cass/schematic/lc-vco/simulations/LC_VCO.spice, line 11 in Netlist::read in Executable::execute
+11-Apr-2026 04:52:14 | INFO    | ==============================================================================

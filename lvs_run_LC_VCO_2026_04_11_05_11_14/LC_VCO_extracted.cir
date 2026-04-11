@@ -1,0 +1,27 @@
+* Extracted by KLayout with SG13G2 LVS runset on : 11/04/2026 05:11
+
+.SUBCKT LC_VCO GND|VCTRL VDD OUTn OUTp OUT Vx Vgs VBGR
+M$1 Vx OUTp OUTn GND|VCTRL sg13_lv_nmos L=0.13u W=21.99u AS=5.2776p AD=5.2776p
++ PS=30.76u PD=30.76u rfmode=0
+M$4 GND|VCTRL OUTn \$72 GND|VCTRL sg13_lv_nmos L=0.13u W=1.5u AS=0.51p AD=0.51p
++ PS=3.68u PD=3.68u rfmode=0
+M$5 OUTp OUTn Vx GND|VCTRL sg13_lv_nmos L=0.13u W=21.99u AS=5.2776p AD=5.2776p
++ PS=30.76u PD=30.76u rfmode=0
+M$8 OUT OUTp GND|VCTRL GND|VCTRL sg13_lv_nmos L=0.13u W=1.5u AS=0.51p AD=0.51p
++ PS=3.68u PD=3.68u rfmode=0
+M$9 GND|VCTRL Vgs Vx GND|VCTRL sg13_lv_nmos L=1u W=384u AS=74.16p AD=74.16p
++ PS=410.54u PD=410.54u rfmode=0
+M$57 GND|VCTRL Vgs Vgs GND|VCTRL sg13_lv_nmos L=1u W=64u AS=13.36p AD=13.36p
++ PS=75.34u PD=75.34u rfmode=0
+M$65 VDD OUTn \$72 VDD sg13_lv_pmos L=0.13u W=15u AS=3.075p AD=3.075p PS=20.6u
++ PD=20.6u rfmode=0
+M$75 VDD OUTp OUTn VDD sg13_lv_pmos L=0.13u W=36u AS=7.92p AD=7.92p PS=45.4u
++ PD=45.4u rfmode=0
+M$80 VDD OUTp OUT VDD sg13_lv_pmos L=0.13u W=15u AS=3.075p AD=3.075p PS=20.6u
++ PD=20.6u rfmode=0
+M$90 VDD OUTn OUTp VDD sg13_lv_pmos L=0.13u W=36u AS=7.92p AD=7.92p PS=45.4u
++ PD=45.4u rfmode=0
+M$95 Vgs VBGR VDD VDD sg13_lv_pmos L=1u W=38u AS=8.36p AD=8.36p PS=47.8u
++ PD=47.8u rfmode=0
+C$100 OUTn OUTp GND|VCTRL rfcmim w=21.9u l=21.9u A=479.61p P=87.6u m=1 wfeed=10u
+.ENDS LC_VCO

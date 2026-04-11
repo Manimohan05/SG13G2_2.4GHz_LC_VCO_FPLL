@@ -1,0 +1,3 @@
+11-Apr-2026 04:12:32 | INFO    | Your Klayout version is: KLayout 0.30.5
+11-Apr-2026 04:12:32 | WARNING | Both --netlist and --net_only were provided. The netlist input is ignored because net-only extraction was requested.
+11-Apr-2026 04:12:32 | INFO    | Running SG13G2 LVS checks on design /home/designer/shared/frac-n-pll-vco-unic_cass/layout/LC_VCO.gds on cell LC_VCO

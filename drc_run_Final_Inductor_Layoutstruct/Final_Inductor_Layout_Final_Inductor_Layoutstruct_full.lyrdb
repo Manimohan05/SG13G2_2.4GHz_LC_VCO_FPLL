@@ -3,7 +3,7 @@
  <description>Main DRC Run Report at</description>
  <original-file />
  <generator>drc: script='/opt/pdks/ihp-sg13g2/libs.tech/klayout/tech/drc/ihp-sg13g2.drc'</generator>
- <top-cell>LC_VCO</top-cell>
+ <top-cell>Final_Inductor_Layoutstruct</top-cell>
  <tags>
  </tags>
  <categories>
@@ -5183,20 +5183,64 @@
  </categories>
  <cells>
   <cell>
-   <name>LC_VCO</name>
+   <name>Final_Inductor_Layoutstruct</name>
    <variant />
    <layout-name />
    <references>
    </references>
   </cell>
   <cell>
-   <name>IHP_4nH_Inductor</name>
+   <name>GenericVia</name>
    <variant />
-   <layout-name>IHP_4nH_Inductor</layout-name>
+   <layout-name>GenericVia</layout-name>
    <references>
     <ref>
-     <parent>LC_VCO</parent>
-     <trans>r270 *1 282.81,-50.5</trans>
+     <parent>Final_Inductor_Layoutstruct</parent>
+     <trans>r270 *1 -42.735,-245.535</trans>
+    </ref>
+   </references>
+  </cell>
+  <cell>
+   <name>GenericVia$2</name>
+   <variant />
+   <layout-name>GenericVia$2</layout-name>
+   <references>
+    <ref>
+     <parent>Final_Inductor_Layoutstruct</parent>
+     <trans>r270 *1 -42.735,-242.835</trans>
+    </ref>
+   </references>
+  </cell>
+  <cell>
+   <name>GenericVia$3</name>
+   <variant />
+   <layout-name>GenericVia$3</layout-name>
+   <references>
+    <ref>
+     <parent>Final_Inductor_Layoutstruct</parent>
+     <trans>r270 *1 -42.735,-245.535</trans>
+    </ref>
+   </references>
+  </cell>
+  <cell>
+   <name>GenericVia$4</name>
+   <variant />
+   <layout-name>GenericVia$4</layout-name>
+   <references>
+    <ref>
+     <parent>Final_Inductor_Layoutstruct</parent>
+     <trans>r270 *1 -42.735,-242.835</trans>
+    </ref>
+   </references>
+  </cell>
+  <cell>
+   <name>GenericVia$5</name>
+   <variant />
+   <layout-name>GenericVia$5</layout-name>
+   <references>
+    <ref>
+     <parent>Final_Inductor_Layoutstruct</parent>
+     <trans>r270 *1 -42.735,-245.535</trans>
     </ref>
    </references>
   </cell>
@@ -5204,104 +5248,608 @@
  <items>
   <item>
    <tags />
-   <category>topmetal1_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <category>'V1.a'</category>
+   <cell>GenericVia</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
    <image />
    <values>
-    <value>edge-pair: (20.758,153.927;20.758,153.927)/(20.758,153.927;20.758,153.927)</value>
+    <value>polygon: (-0.45,-0.45;-0.45,0.45;0.45,0.45;0.45,-0.45)</value>
    </values>
   </item>
   <item>
    <tags />
-   <category>topmetal1_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <category>'V1.a'</category>
+   <cell>GenericVia</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
    <image />
    <values>
-    <value>edge-pair: (-29.242,197.927;-29.242,197.927)/(-29.242,197.927;-29.242,197.927)</value>
+    <value>polygon: (-0.45,-0.45;-0.45,0.45;0.45,0.45;0.45,-0.45)</value>
    </values>
   </item>
   <item>
    <tags />
-   <category>topmetal1_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <category>'V2.a'</category>
+   <cell>GenericVia$2</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
    <image />
    <values>
-    <value>edge-pair: (-68.731,197.927;-68.731,197.927)/(-68.731,197.927;-68.731,197.927)</value>
+    <value>polygon: (-0.45,-0.45;-0.45,0.45;0.45,0.45;0.45,-0.45)</value>
    </values>
   </item>
   <item>
    <tags />
-   <category>topmetal1_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <category>'V2.a'</category>
+   <cell>GenericVia$2</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
    <image />
    <values>
-    <value>edge-pair: (-68.731,227.927;-68.731,227.927)/(-68.731,227.927;-68.731,227.927)</value>
+    <value>polygon: (-0.45,-0.45;-0.45,0.45;0.45,0.45;0.45,-0.45)</value>
    </values>
   </item>
   <item>
    <tags />
-   <category>topmetal1_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <category>'V3.a'</category>
+   <cell>GenericVia$3</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
    <image />
    <values>
-    <value>edge-pair: (-17.921,227.927;-17.921,227.927)/(-17.921,227.927;-17.921,227.927)</value>
+    <value>polygon: (-0.45,-0.45;-0.45,0.45;0.45,0.45;0.45,-0.45)</value>
    </values>
   </item>
   <item>
    <tags />
-   <category>topmetal1_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <category>'V3.a'</category>
+   <cell>GenericVia$3</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
    <image />
    <values>
-    <value>edge-pair: (32.079,183.927;32.079,183.927)/(32.079,183.927;32.079,183.927)</value>
+    <value>polygon: (-0.45,-0.45;-0.45,0.45;0.45,0.45;0.45,-0.45)</value>
    </values>
   </item>
   <item>
    <tags />
-   <category>topmetal1_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <category>'V4.a'</category>
+   <cell>GenericVia$4</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
    <image />
    <values>
-    <value>edge-pair: (62.455,183.927;62.455,183.927)/(62.455,183.927;62.455,183.927)</value>
+    <value>polygon: (-0.45,-0.45;-0.45,0.45;0.45,0.45;0.45,-0.45)</value>
    </values>
   </item>
   <item>
    <tags />
-   <category>topmetal1_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <category>'V4.a'</category>
+   <cell>GenericVia$4</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
    <image />
    <values>
-    <value>edge-pair: (62.455,153.927;62.455,153.927)/(62.455,153.927;62.455,153.927)</value>
+    <value>polygon: (-0.45,-0.45;-0.45,0.45;0.45,0.45;0.45,-0.45)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>'TV1.a'</category>
+   <cell>GenericVia$5</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>polygon: (-0.45,-0.45;-0.45,0.45;0.45,0.45;0.45,-0.45)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>'TV1.a'</category>
+   <cell>GenericVia$5</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>polygon: (-0.45,-0.45;-0.45,0.45;0.45,0.45;0.45,-0.45)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal1_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (-53.581,-268.073;-53.581,-268.073)/(-53.581,-268.073;-53.581,-268.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal1_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (-53.581,-238.073;-53.581,-238.073)/(-53.581,-238.073;-53.581,-238.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal1_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (-23.581,-238.073;-23.581,-238.073)/(-23.581,-238.073;-23.581,-238.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal1_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (-23.581,-268.073;-23.581,-268.073)/(-23.581,-268.073;-23.581,-268.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal1_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (26.419,-268.073;26.419,-268.073)/(26.419,-268.073;26.419,-268.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal1_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (26.419,-238.073;26.419,-238.073)/(26.419,-238.073;26.419,-238.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal1_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (56.419,-238.073;56.419,-238.073)/(56.419,-238.073;56.419,-238.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal1_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (56.419,-268.073;56.419,-268.073)/(56.419,-268.073;56.419,-268.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal2_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (26.419,-268.073;26.419,-268.073)/(26.419,-268.073;26.419,-268.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal2_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (26.419,-238.073;26.419,-238.073)/(26.419,-238.073;26.419,-238.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal2_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (56.419,-238.073;56.419,-238.073)/(56.419,-238.073;56.419,-238.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal2_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (56.419,-268.073;56.419,-268.073)/(56.419,-268.073;56.419,-268.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal2_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (-53.581,-268.073;-53.581,-268.073)/(-53.581,-268.073;-53.581,-268.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal2_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (-53.581,-238.073;-53.581,-238.073)/(-53.581,-238.073;-53.581,-238.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal2_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (-23.581,-238.073;-23.581,-238.073)/(-23.581,-238.073;-23.581,-238.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal2_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (-23.581,-268.073;-23.581,-268.073)/(-23.581,-268.073;-23.581,-268.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal3_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (-53.581,-268.073;-53.581,-268.073)/(-53.581,-268.073;-53.581,-268.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal3_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (-53.581,-238.073;-53.581,-238.073)/(-53.581,-238.073;-53.581,-238.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal3_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (-23.581,-238.073;-23.581,-238.073)/(-23.581,-238.073;-23.581,-238.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal3_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (-23.581,-268.073;-23.581,-268.073)/(-23.581,-268.073;-23.581,-268.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal3_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (26.419,-268.073;26.419,-268.073)/(26.419,-268.073;26.419,-268.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal3_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (26.419,-238.073;26.419,-238.073)/(26.419,-238.073;26.419,-238.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal3_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (56.419,-238.073;56.419,-238.073)/(56.419,-238.073;56.419,-238.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal3_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (56.419,-268.073;56.419,-268.073)/(56.419,-268.073;56.419,-268.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal4_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (-53.581,-268.073;-53.581,-268.073)/(-53.581,-268.073;-53.581,-268.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal4_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (-53.581,-238.073;-53.581,-238.073)/(-53.581,-238.073;-53.581,-238.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal4_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (-23.581,-238.073;-23.581,-238.073)/(-23.581,-238.073;-23.581,-238.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal4_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (-23.581,-268.073;-23.581,-268.073)/(-23.581,-268.073;-23.581,-268.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal4_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (26.419,-268.073;26.419,-268.073)/(26.419,-268.073;26.419,-268.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal4_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (26.419,-238.073;26.419,-238.073)/(26.419,-238.073;26.419,-238.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal4_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (56.419,-238.073;56.419,-238.073)/(56.419,-238.073;56.419,-238.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal4_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (56.419,-268.073;56.419,-268.073)/(56.419,-268.073;56.419,-268.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal5_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (26.419,-268.073;26.419,-268.073)/(26.419,-268.073;26.419,-268.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal5_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (26.419,-238.073;26.419,-238.073)/(26.419,-238.073;26.419,-238.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal5_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (56.419,-238.073;56.419,-238.073)/(56.419,-238.073;56.419,-238.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal5_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (56.419,-268.073;56.419,-268.073)/(56.419,-268.073;56.419,-268.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal5_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (-53.581,-268.073;-53.581,-268.073)/(-53.581,-268.073;-53.581,-268.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal5_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (-53.581,-238.073;-53.581,-238.073)/(-53.581,-238.073;-53.581,-238.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal5_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (-23.581,-238.073;-23.581,-238.073)/(-23.581,-238.073;-23.581,-238.073)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>metal5_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (-23.581,-268.073;-23.581,-268.073)/(-23.581,-268.073;-23.581,-268.073)</value>
    </values>
   </item>
   <item>
    <tags />
    <category>topmetal1_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5313,7 +5861,7 @@
   <item>
    <tags />
    <category>topmetal1_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5325,7 +5873,7 @@
   <item>
    <tags />
    <category>topmetal1_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5337,7 +5885,7 @@
   <item>
    <tags />
    <category>topmetal1_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5349,7 +5897,7 @@
   <item>
    <tags />
    <category>topmetal1_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5361,7 +5909,7 @@
   <item>
    <tags />
    <category>topmetal1_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5373,7 +5921,7 @@
   <item>
    <tags />
    <category>topmetal1_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5385,7 +5933,7 @@
   <item>
    <tags />
    <category>topmetal1_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5396,8 +5944,104 @@
   </item>
   <item>
    <tags />
+   <category>topmetal1_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (20.758,153.927;20.758,153.927)/(20.758,153.927;20.758,153.927)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>topmetal1_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (-29.242,197.927;-29.242,197.927)/(-29.242,197.927;-29.242,197.927)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>topmetal1_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (-68.731,197.927;-68.731,197.927)/(-68.731,197.927;-68.731,197.927)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>topmetal1_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (-68.731,227.927;-68.731,227.927)/(-68.731,227.927;-68.731,227.927)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>topmetal1_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (-17.921,227.927;-17.921,227.927)/(-17.921,227.927;-17.921,227.927)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>topmetal1_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (32.079,183.927;32.079,183.927)/(32.079,183.927;32.079,183.927)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>topmetal1_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (62.455,183.927;62.455,183.927)/(62.455,183.927;62.455,183.927)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>topmetal1_drw_Offgrid</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (62.455,153.927;62.455,153.927)/(62.455,153.927;62.455,153.927)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5409,7 +6053,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5421,7 +6065,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5433,7 +6077,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5445,7 +6089,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5457,7 +6101,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5469,7 +6113,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5481,7 +6125,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5493,7 +6137,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5505,7 +6149,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5517,7 +6161,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5529,7 +6173,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5541,7 +6185,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5553,7 +6197,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5565,7 +6209,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5577,7 +6221,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5589,7 +6233,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5601,7 +6245,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5613,7 +6257,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5625,7 +6269,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5637,7 +6281,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5649,7 +6293,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5661,7 +6305,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5673,7 +6317,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5685,7 +6329,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5697,7 +6341,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5709,7 +6353,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5721,7 +6365,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5733,7 +6377,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5745,7 +6389,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5757,7 +6401,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5769,7 +6413,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5781,7 +6425,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5793,7 +6437,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5805,7 +6449,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5817,7 +6461,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5829,7 +6473,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5841,7 +6485,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5853,7 +6497,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5865,7 +6509,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5877,7 +6521,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5889,7 +6533,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5901,7 +6545,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5913,7 +6557,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5925,7 +6569,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5937,7 +6581,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5949,7 +6593,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5961,7 +6605,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5973,7 +6617,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5985,7 +6629,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -5997,7 +6641,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -6009,7 +6653,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -6021,7 +6665,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -6033,7 +6677,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -6045,7 +6689,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -6057,7 +6701,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -6069,7 +6713,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -6081,7 +6725,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -6093,7 +6737,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -6105,7 +6749,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -6117,7 +6761,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -6129,7 +6773,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -6141,7 +6785,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -6153,7 +6797,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -6165,7 +6809,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -6177,7 +6821,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -6189,7 +6833,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -6201,7 +6845,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -6213,7 +6857,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -6225,7 +6869,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -6237,7 +6881,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -6249,7 +6893,7 @@
   <item>
    <tags />
    <category>topmetal2_drw_Offgrid</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -6261,19 +6905,7 @@
   <item>
    <tags />
    <category>topmetal1_drw_Angle45</category>
-   <cell>IHP_4nH_Inductor</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment />
-   <image />
-   <values>
-    <value>edge: (20.758,-194.073;-29.242,-150.073)</value>
-   </values>
-  </item>
-  <item>
-   <tags />
-   <category>topmetal1_drw_Angle45</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -6285,7 +6917,19 @@
   <item>
    <tags />
    <category>topmetal1_drw_Angle45</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge: (-17.921,227.927;32.079,183.927)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>topmetal1_drw_Angle45</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -6297,91 +6941,19 @@
   <item>
    <tags />
    <category>topmetal1_drw_Angle45</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
    <image />
    <values>
-    <value>edge: (-17.921,227.927;32.079,183.927)</value>
+    <value>edge: (20.758,-194.073;-29.242,-150.073)</value>
    </values>
   </item>
   <item>
    <tags />
    <category>topmetal2_drw_Angle45</category>
-   <cell>IHP_4nH_Inductor</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment />
-   <image />
-   <values>
-    <value>edge: (49.053,-120.073;116.419,-52.708)</value>
-   </values>
-  </item>
-  <item>
-   <tags />
-   <category>topmetal2_drw_Angle45</category>
-   <cell>IHP_4nH_Inductor</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment />
-   <image />
-   <values>
-    <value>edge: (-46.216,109.927;-113.581,42.561)</value>
-   </values>
-  </item>
-  <item>
-   <tags />
-   <category>topmetal2_drw_Angle45</category>
-   <cell>IHP_4nH_Inductor</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment />
-   <image />
-   <values>
-    <value>edge: (-231.581,91.438;-95.093,227.927)</value>
-   </values>
-  </item>
-  <item>
-   <tags />
-   <category>topmetal2_drw_Angle45</category>
-   <cell>IHP_4nH_Inductor</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment />
-   <image />
-   <values>
-    <value>edge: (-82.667,197.927;-201.581,79.012)</value>
-   </values>
-  </item>
-  <item>
-   <tags />
-   <category>topmetal2_drw_Angle45</category>
-   <cell>IHP_4nH_Inductor</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment />
-   <image />
-   <values>
-    <value>edge: (-187.581,73.213;-76.868,183.927)</value>
-   </values>
-  </item>
-  <item>
-   <tags />
-   <category>topmetal2_drw_Angle45</category>
-   <cell>IHP_4nH_Inductor</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment />
-   <image />
-   <values>
-    <value>edge: (-29.242,-164.073;20.758,-120.073)</value>
-   </values>
-  </item>
-  <item>
-   <tags />
-   <category>topmetal2_drw_Angle45</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -6393,7 +6965,55 @@
   <item>
    <tags />
    <category>topmetal2_drw_Angle45</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge: (-187.581,73.213;-76.868,183.927)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>topmetal2_drw_Angle45</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge: (-231.581,91.438;-95.093,227.927)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>topmetal2_drw_Angle45</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge: (-82.667,197.927;-201.581,79.012)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>topmetal2_drw_Angle45</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge: (-46.216,109.927;-113.581,42.561)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>topmetal2_drw_Angle45</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -6405,7 +7025,19 @@
   <item>
    <tags />
    <category>topmetal2_drw_Angle45</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge: (49.053,-120.073;116.419,-52.708)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>topmetal2_drw_Angle45</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -6417,19 +7049,19 @@
   <item>
    <tags />
    <category>topmetal2_drw_Angle45</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
    <image />
    <values>
-    <value>edge: (-29.242,183.927;20.758,227.927)</value>
+    <value>edge: (-29.242,-164.073;20.758,-120.073)</value>
    </values>
   </item>
   <item>
    <tags />
    <category>topmetal2_drw_Angle45</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -6441,7 +7073,19 @@
   <item>
    <tags />
    <category>topmetal2_drw_Angle45</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge: (-29.242,183.927;20.758,227.927)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>topmetal2_drw_Angle45</category>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -6453,7 +7097,7 @@
  <item>
    <tags />
    <category>'Slt.c.TM2'</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -6465,7 +7109,7 @@
   <item>
    <tags />
    <category>'Slt.c.TM2'</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -6477,7 +7121,7 @@
   <item>
    <tags />
    <category>'Slt.c.TM2'</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -6489,7 +7133,7 @@
   <item>
    <tags />
    <category>'Slt.c.TM2'</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -6501,7 +7145,7 @@
   <item>
    <tags />
    <category>'Slt.c.TM2'</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -6513,7 +7157,7 @@
   <item>
    <tags />
    <category>'Slt.c.TM2'</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -6525,7 +7169,7 @@
   <item>
    <tags />
    <category>'Slt.c.TM2'</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
@@ -6537,7 +7181,7 @@
   <item>
    <tags />
    <category>'Slt.c.TM2'</category>
-   <cell>IHP_4nH_Inductor</cell>
+   <cell>Final_Inductor_Layoutstruct</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />

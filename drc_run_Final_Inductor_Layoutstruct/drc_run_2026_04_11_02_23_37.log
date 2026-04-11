@@ -1,0 +1,11 @@
+11-Apr-2026 04:23:48 | INFO    | KLayout version detected: 0.30.5
+11-Apr-2026 04:23:48 | INFO    | Using DRC JSON file: /opt/pdks/ihp-sg13g2/libs.tech/klayout/python/sg13g2_pycell_lib/sg13g2_tech_mod.json
+11-Apr-2026 04:23:48 | INFO    | Running IHP-SG13G2 main checks on design /home/designer/shared/frac-n-pll-vco-unic_cass/layout/Final_Inductor_Layout.gds, topcell: Final_Inductor_Layoutstruct
+11-Apr-2026 04:23:55 | INFO    | Running IHP-SG13G2 sg13g2_maximal checks on design /home/designer/shared/frac-n-pll-vco-unic_cass/layout/Final_Inductor_Layout.gds, topcell: Final_Inductor_Layoutstruct
+11-Apr-2026 04:24:00 | INFO    | Completed running Sg13g2_maximal checks.
+11-Apr-2026 04:24:00 | ERROR   | ==================================================================================
+11-Apr-2026 04:24:00 | ERROR   | ❌ --- KLayout DRC Check Failed: Violations were detected in the layout. --- ❌
+11-Apr-2026 04:24:00 | ERROR   | ==================================================================================
+11-Apr-2026 04:24:00 | ERROR   | Violated rules are : {'TV1.a', 'V3.a', 'metal5_drw_Offgrid', 'metal4_drw_Offgrid', 'V1.a', 'topmetal1_drw_Offgrid', 'topmetal2_drw_Offgrid', 'V2.a', 'V4.a', 'topmetal1_drw_Angle45', 'metal3_drw_Offgrid', 'topmetal2_drw_Angle45', 'Slt.c.TM2', 'metal1_drw_Offgrid', 'metal2_drw_Offgrid'}
+
+11-Apr-2026 04:24:00 | INFO    | Total DRC Run time: 22.36 seconds (including execution, analysis, and reporting)

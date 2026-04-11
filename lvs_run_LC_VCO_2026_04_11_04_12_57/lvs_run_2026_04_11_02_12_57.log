@@ -1,0 +1,18 @@
+11-Apr-2026 04:12:57 | INFO    | Your Klayout version is: KLayout 0.30.5
+11-Apr-2026 04:12:57 | INFO    | Running SG13G2 LVS checks on design /home/designer/shared/frac-n-pll-vco-unic_cass/layout/LC_VCO.gds on cell LC_VCO
+11-Apr-2026 04:13:01 | INFO    | ==============================================================================
+11-Apr-2026 04:13:01 | INFO    | Important Summary
+11-Apr-2026 04:13:01 | INFO    | +------------------+-----------------------------------------------------------------------------------+
+11-Apr-2026 04:13:01 | INFO    | | Status           | FAIL                                                                              |
+11-Apr-2026 04:13:01 | INFO    | | Mode             | COMPARE                                                                           |
+11-Apr-2026 04:13:01 | INFO    | | Outcome          | Comparison mode: FAIL (netlists do not match).                                    |
+11-Apr-2026 04:13:01 | INFO    | | Layout           | LC_VCO.gds                                                                        |
+11-Apr-2026 04:13:01 | INFO    | | Top Cell         | LC_VCO                                                                            |
+11-Apr-2026 04:13:01 | INFO    | | Results Dir      | /home/designer/shared/frac-n-pll-vco-unic_cass/lvs_run_LC_VCO_2026_04_11_04_12_57 |
+11-Apr-2026 04:13:01 | INFO    | | Warnings         | 0                                                                                 |
+11-Apr-2026 04:13:01 | INFO    | | Errors           | 1                                                                                 |
+11-Apr-2026 04:13:01 | INFO    | | Run Time (s)     | 4.154                                                                             |
+11-Apr-2026 04:13:01 | INFO    | +------------------+-----------------------------------------------------------------------------------+
+11-Apr-2026 04:13:01 | ERROR   | Key errors:
+11-Apr-2026 04:13:01 | ERROR   |   - 2026-04-11 04:13:01 +0200: Memory Usage (453484K) : ERROR : Netlists don't match
+11-Apr-2026 04:13:01 | INFO    | ==============================================================================

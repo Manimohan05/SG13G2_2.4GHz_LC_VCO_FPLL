@@ -1,0 +1,11 @@
+11-Apr-2026 05:10:00 | INFO    | KLayout version detected: 0.30.5
+11-Apr-2026 05:10:00 | INFO    | Using DRC JSON file: /opt/pdks/ihp-sg13g2/libs.tech/klayout/python/sg13g2_pycell_lib/sg13g2_tech_mod.json
+11-Apr-2026 05:10:00 | INFO    | Running IHP-SG13G2 main checks on design /home/designer/shared/frac-n-pll-vco-unic_cass/layout/LC_VCO.gds, topcell: LC_VCO
+11-Apr-2026 05:10:09 | INFO    | Running IHP-SG13G2 sg13g2_maximal checks on design /home/designer/shared/frac-n-pll-vco-unic_cass/layout/LC_VCO.gds, topcell: LC_VCO
+11-Apr-2026 05:10:20 | INFO    | Completed running Sg13g2_maximal checks.
+11-Apr-2026 05:10:20 | ERROR   | ==================================================================================
+11-Apr-2026 05:10:20 | ERROR   | ❌ --- KLayout DRC Check Failed: Violations were detected in the layout. --- ❌
+11-Apr-2026 05:10:20 | ERROR   | ==================================================================================
+11-Apr-2026 05:10:20 | ERROR   | Violated rules are : {'topmetal2_drw_Offgrid', 'topmetal2_drw_Angle45', 'topmetal1_drw_Offgrid', 'Slt.c.TM2', 'topmetal1_drw_Angle45'}
+
+11-Apr-2026 05:10:20 | INFO    | Total DRC Run time: 20.49 seconds (including execution, analysis, and reporting)

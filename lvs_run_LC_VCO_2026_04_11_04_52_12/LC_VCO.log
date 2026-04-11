@@ -1,0 +1,20 @@
+# Logfile created on 2026-04-11 04:52:14 +0200 by logger.rb/v1.4.3
+2026-04-11 04:52:14 +0200: Memory Usage (430856K) : Starting running SG13G2 Klayout LVS runset on /home/designer/shared/frac-n-pll-vco-unic_cass/layout/LC_VCO.gds
+2026-04-11 04:52:14 +0200: Memory Usage (430856K) : Ruby Version for klayout: 3.0.2
+2026-04-11 04:52:14 +0200: Memory Usage (432008K) : Loading database to memory is complete.
+2026-04-11 04:52:14 +0200: Memory Usage (432008K) : SG13G2 Klayout LVS runset output at: /home/designer/shared/frac-n-pll-vco-unic_cass/lvs_run_LC_VCO_2026_04_11_04_52_12/LC_VCO.lvsdb
+2026-04-11 04:52:14 +0200: Memory Usage (432008K) : Evaluate switches.
+2026-04-11 04:52:14 +0200: Memory Usage (432008K) : Extracted netlist with net names: true
+2026-04-11 04:52:14 +0200: Memory Usage (432008K) : Extracted netlist with comments in details: false
+2026-04-11 04:52:14 +0200: Memory Usage (432008K) : Selected NET_ONLY option: false
+2026-04-11 04:52:14 +0200: Memory Usage (432008K) : Selected LAYOUT_NETLIST option: (none)
+2026-04-11 04:52:14 +0200: Memory Usage (432008K) : Selected IGNORE_TOP_PORTS_MISMATCH option: 
+2026-04-11 04:52:14 +0200: Memory Usage (432008K) : Selected IMPLICIT_NETS option: (none)
+2026-04-11 04:52:14 +0200: Memory Usage (432008K) : Selected TOP_LVL_PINS option: false
+2026-04-11 04:52:14 +0200: Memory Usage (432008K) : Selected COMBINE DEVICES option: false
+2026-04-11 04:52:14 +0200: Memory Usage (432008K) : Selected PURGE option: false
+2026-04-11 04:52:14 +0200: Memory Usage (432008K) : Selected PURGE_NETS option: false
+2026-04-11 04:52:14 +0200: Memory Usage (432008K) : Selected SIMPLIFY option: true
+2026-04-11 04:52:14 +0200: Memory Usage (432008K) : Selected SERIES_RES option: true
+2026-04-11 04:52:14 +0200: Memory Usage (432008K) : Selected PARALLEL_RES option: true
+2026-04-11 04:52:14 +0200: Memory Usage (432008K) : flat  mode is enabled.
