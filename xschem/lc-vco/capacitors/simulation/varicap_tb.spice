@@ -1,0 +1,66 @@
+** sch_path: /home/designer/shared/frac-n-pll-vco-smacd_2026/schematic/lc-vco/capacitors/varicap_tb.sch
+**.subckt varicap_tb
+R1 in GND 1Meg m=1
+V1 in GND dc 0 ac 1 portnum 1 z0 50
+R2 out GND 1Meg m=1
+V2 out GND dc 0 ac 0 portnum 2 z0 50
+XC1 in net1 out GND sg13_hv_svaricap w=9.74u l=0.8u Nx=6
+Vtune net1 GND dc 0
+XC2 in net1 out GND sg13_hv_svaricap w=9.74u l=0.8u Nx=6
+**** begin user architecture code
+
+.lib cornerMOShv.lib mos_tt
+
+
+
+.control
+
+* 1. Define sweep parameters
+let v_start = 0
+let v_stop = 1.2
+let v_step = 0.1
+let num_points = (v_stop - v_start + v_step) / v_step
+
+let v_current = v_start
+
+* 2. Create arrays for results
+let C_var = vector(num_points)
+let V_ctrl = vector(num_points)
+
+let i = 0
+
+* 3. Loop through tuning voltages
+while v_current <= v_stop
+    * Alter the DC voltage of the Vtune source
+    alter Vtune dc = v_current
+
+    * Run S-parameter analysis: Linear sweep, 1 point, 2.4 GHz
+    sp lin 1 2.4G 2.4G
+
+    * Calculate Capacitance
+    let C = 1/(2*PI*frequency*imag(1/Y_2_1))
+
+    * Store the values in the arrays
+    let C_var[i] = real(C)
+    let V_ctrl[i] = v_current
+
+    * Increment loop variables
+    let v_current = v_current + v_step
+    let i = i + 1
+end
+
+let C_var_max = C_var[0]
+let C_var_min = C_var[12]
+let delta_C = (C_var_max - C_var_min) * 1e15
+print delta_C
+
+* 4. Plot the results
+plot C_var vs V_ctrl xlabel 'Tuning Voltage (V)' ylabel 'Capacitance (F)' title 'Differential Capacitance vs. Tuning Voltage'
+
+.endc
+
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end

@@ -1,0 +1,20 @@
+set XSCHEM_STARTUP_WINDOW $env(PDKPATH)/libs.tech/xschem/start_page.sch
+
+set netlist_dir /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/top-pll/simulations
+
+append XSCHEM_LIBRARY_PATH :/foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem
+append XSCHEM_LIBRARY_PATH :/foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/lc-vco
+append XSCHEM_LIBRARY_PATH :/foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/phase-freq-detector
+append XSCHEM_LIBRARY_PATH :/foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/top-pll
+append XSCHEM_LIBRARY_PATH :/foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/charge-pump
+append XSCHEM_LIBRARY_PATH :/foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/dsm/xschem
+append XSCHEM_LIBRARY_PATH :/foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/freq_divider/xschem
+append XSCHEM_LIBRARY_PATH :/foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/loop-filter
+append XSCHEM_LIBRARY_PATH :/foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/bgr
+append XSCHEM_LIBRARY_PATH :/foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/pdk_custom_SYM
+
+append XSCHEM_LIBRARY_PATH :$env(PDKPATH)/libs.tech/xschem
+append XSCHEM_LIBRARY_PATH :$env(PDKPATH)/libs.tech/xschem/sg13g2_stdcells
+append XSCHEM_LIBRARY_PATH :$env(PDKPATH)/libs.tech/xschem/sg13g2_tests
+append XSCHEM_LIBRARY_PATH :$env(PDKPATH)/libs.tech/xschem/sg13g2_tests_xyce
+append XSCHEM_LIBRARY_PATH :$env(PDKPATH)/libs.tech/xschem/sg13g2_pr

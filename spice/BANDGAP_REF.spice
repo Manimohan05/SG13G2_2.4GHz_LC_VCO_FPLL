@@ -1,0 +1,59 @@
+** sch_path: /home/designer/shared/LC_VCO_FPLL/xschem/BANDGAP_REF.sch
+.subckt BANDGAP_REF VDD GND VBGR SUB!
+*.PININFO VBGR:O GND:B VDD:B SUB!:B
+MM8 GND v- net1 SUB! sg13_lv_nmos w=150n l=10u ng=1 m=1
+MM6 net1 net1 VDD bulk6 sg13_lv_pmos w=1u l=1u ng=1 m=1
+MM7 net2 net1 VDD bulk6 sg13_lv_pmos w=1u l=1u ng=1 m=1
+MM9 v- net2 VDD bulk5 sg13_lv_pmos w=200n l=4u ng=1 m=1
+MM1 v- v+ GND SUB! sg13_lv_nmos w=7.14u l=5u ng=4 m=1
+MM2 net3 net3 GND SUB! sg13_lv_nmos w=21u l=5u ng=8 m=1
+MM3 v- Vo1 VDD bulk7 sg13_lv_pmos w=15u l=5u ng=8 m=1
+MM4 v+ Vo1 VDD bulk7 sg13_lv_pmos w=15u l=5u ng=8 m=1
+MM5 VBGR Vo1 VDD bulk7 sg13_lv_pmos w=16u l=5u ng=8 m=1
+RR2 VBGR net11 -968.455529315823 $SUB=sub! $[rppd] w=0.710e-6 l=38.65e-6 b=0 m=1
+CC1 net2 GND cap_cmim w=18.2e-6 l=18.2e-6 m=1
+MM10 dn3 v- dn2 bulk sg13_lv_pmos w=3.64u l=3.7u ng=1 m=2
+MM11 dn4 v+ dn2 bulk sg13_lv_pmos w=3.64u l=3.7u ng=1 m=2
+MM12 dn4 VDD VDD bulk sg13_lv_pmos w=3.64u l=3.7u ng=1 m=2
+MM13 dn3 VDD VDD bulk sg13_lv_pmos w=3.64u l=3.7u ng=1 m=2
+MM15 dn2 VDD VDD bulk sg13_lv_pmos w=3.64u l=3.7u ng=1 m=2
+MM16 dn2 VDD VDD bulk sg13_lv_pmos w=3.64u l=3.7u ng=1 m=2
+RR4 VDD bulk ntap1 A=3.30912e-11 P=0.00018384
+MM14 dn2 iout VDD bulk1 sg13_lv_pmos w=5.3u l=1.95u ng=1 m=1
+RR5 GND SUB! ptap1 A=2.23488e-11 P=6.208e-05
+RR6 VDD bulk1 ntap1 A=2.04264e-11 P=5.674e-05
+MM17 GND dn3 dn3 SUB! sg13_lv_nmos w=720n l=9.75u ng=1 m=1
+MM18 GND dn3 dn4 SUB! sg13_lv_nmos w=720n l=9.75u ng=1 m=1
+MM19 Vo1 iout VDD bulk4 sg13_lv_pmos w=75u l=2.08u ng=8 m=1
+MM20 GND dn4 Vo1 SUB! sg13_lv_nmos w=28.8u l=9.75u ng=4 m=1
+MM21 iout iout VDD bulk4 sg13_lv_pmos w=75u l=2.08u ng=8 m=1
+CC2 dn4 Vo1 cap_cmim w=22.29e-6 l=22.29e-6 m=1
+RR8 VDD bulk4 ntap1 A=6.52608e-11 P=0.00018128
+RR9 VDD bulk6 ntap1 A=2.0988e-11 P=5.83e-05
+RR12 v+ net7 -946.705882352941 $SUB=sub! $[rppd] w=0.5e-6 l=38.65e-6 b=0 m=1
+RR3 net7 net6 -946.705882352941 $SUB=sub! $[rppd] w=0.5e-6 l=38.65e-6 b=0 m=1
+RR13 net6 net5 -946.705882352941 $SUB=sub! $[rppd] w=0.5e-6 l=38.65e-6 b=0 m=1
+RR14 net5 net4 -946.705882352941 $SUB=sub! $[rppd] w=0.5e-6 l=38.65e-6 b=0 m=1
+RR15 net4 net3 -946.705882352941 $SUB=sub! $[rppd] w=0.5e-6 l=38.65e-6 b=0 m=1
+RR16 net10 net9 -946.705882352941 $SUB=sub! $[rppd] w=0.5e-6 l=38.65e-6 b=0 m=1
+RR17 net9 net8 -946.705882352941 $SUB=sub! $[rppd] w=0.5e-6 l=38.65e-6 b=0 m=1
+RR18 net8 net17 -946.705882352941 $SUB=sub! $[rppd] w=0.5e-6 l=38.65e-6 b=0 m=1
+RR19 net17 GND -1352.83333333333 $SUB=sub! $[rppd] w=3e-6 l=38.65e-6 b=0 m=1
+RR20 net11 net12 -968.455529315823 $SUB=sub! $[rppd] w=0.710e-6 l=38.65e-6 b=0 m=1
+RR21 net12 net13 -968.455529315823 $SUB=sub! $[rppd] w=0.710e-6 l=38.65e-6 b=0 m=1
+RR22 net13 net14 -968.455529315823 $SUB=sub! $[rppd] w=0.710e-6 l=38.65e-6 b=0 m=1
+RR23 net14 net15 -968.455529315823 $SUB=sub! $[rppd] w=0.710e-6 l=38.65e-6 b=0 m=1
+RR24 net15 net16 -968.455529315823 $SUB=sub! $[rppd] w=0.710e-6 l=38.65e-6 b=0 m=1
+RR25 net16 GND -968.455529315823 $SUB=sub! $[rppd] w=0.710e-6 l=38.65e-6 b=0 m=1
+RR26 VDD bulk5 ntap1 A=1.29024e-11 P=3.584e-05
+RR27 VDD bulk7 ntap1 A=8.00064e-11 P=0.00022224
+RR7 GND SUB! ptap1 A=2.04624e-11 P=5.684e-05
+RR10 GND SUB! ptap1 A=7.2e-11 P=0.0002
+RR11 GND SUB! ptap1 A=3.97296e-11 P=0.00011036
+RR28 GND SUB! ptap1 A=3.27072e-11 P=0.00020442
+CC3 VDD GND cap_cmim w=5e-6 l=5e-6 m=15
+RR31 v+ net10 -946.705882352941 $SUB=sub! $[rppd] w=0.5e-6 l=38.65e-6 b=0 m=1
+RR1 iout GND -223.294117647059 $SUB=sub! $[rppd] w=0.5e-6 l=15e-6 b=0 m=1
+.ends
+.GLOBAL VDD
+.GLOBAL GND

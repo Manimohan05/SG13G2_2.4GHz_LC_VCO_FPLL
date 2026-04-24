@@ -1,0 +1,16 @@
+16-Apr-2026 20:09:21 | INFO    | Your Klayout version is: KLayout 0.30.5
+16-Apr-2026 20:09:21 | INFO    | Running SG13G2 LVS checks on design /home/designer/shared/LC_VCO_FPLL/gds/blocks/PHASE_FREQ_DET.gds on cell PHASE_FREQ_DET
+16-Apr-2026 20:09:23 | INFO    | ==============================================================================
+16-Apr-2026 20:09:23 | INFO    | Important Summary
+16-Apr-2026 20:09:23 | INFO    | +------------------+--------------------------------------------------------------+
+16-Apr-2026 20:09:23 | INFO    | | Status           | PASS                                                         |
+16-Apr-2026 20:09:23 | INFO    | | Mode             | COMPARE                                                      |
+16-Apr-2026 20:09:23 | INFO    | | Outcome          | Comparison mode: PASS (netlists match).                      |
+16-Apr-2026 20:09:23 | INFO    | | Layout           | PHASE_FREQ_DET.gds                                           |
+16-Apr-2026 20:09:23 | INFO    | | Top Cell         | PHASE_FREQ_DET                                               |
+16-Apr-2026 20:09:23 | INFO    | | Results Dir      | /home/designer/shared/LC_VCO_FPLL/lvs/lvs_run_PHASE_FREQ_DET |
+16-Apr-2026 20:09:23 | INFO    | | Warnings         | 0                                                            |
+16-Apr-2026 20:09:23 | INFO    | | Errors           | 0                                                            |
+16-Apr-2026 20:09:23 | INFO    | | Run Time (s)     | 3.008                                                        |
+16-Apr-2026 20:09:23 | INFO    | +------------------+--------------------------------------------------------------+
+16-Apr-2026 20:09:23 | INFO    | ==============================================================================

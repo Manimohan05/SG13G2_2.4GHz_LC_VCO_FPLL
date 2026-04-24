@@ -1,0 +1,9 @@
+set circuit1 [readnet spice /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/68-magic-spiceextraction/dsm_and_freq_divider.spice]
+set circuit2 [readnet verilog /dev/null]
+puts "Reading SPICE netlist file '/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice'..."
+readnet spice /home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice $circuit2
+puts "Reading SPICE netlist file '/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_io/spice/sg13g2_io.spi'..."
+readnet spice /home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_io/spice/sg13g2_io.spi $circuit2
+puts "Reading Verilog netlist file '/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/52-openroad-fillinsertion/dsm_and_freq_divider.pnl.v'..."
+readnet verilog /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/52-openroad-fillinsertion/dsm_and_freq_divider.pnl.v $circuit2
+lvs "$circuit1 dsm_and_freq_divider" "$circuit2 dsm_and_freq_divider" /nix/store/slcig8wnc74r65q82z4xzwsf083lmzip-python3-3.13.9-env/lib/python3.13/site-packages/librelane/scripts/netgen/setup.tcl /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/70-netgen-lvs/reports/lvs.netgen.rpt -blackbox -json

@@ -1,0 +1,20 @@
+** sch_path: /home/designer/shared/LC_VCO_FPLL/xschem/LC_VCO_NOIND.sch
+.subckt LC_VCO_NOIND FOUT VCTRL VBGR VDD GND OUTn OUTp
+*.PININFO FOUT:O VCTRL:I VBGR:I VDD:B GND:B OUTn:B OUTp:B
+XM5 Vx Vgs GND GND sg13_lv_nmos w=384u l=1u ng=48 m=1
+XM4 OUTp OUTn VDD VDD sg13_lv_pmos w=36u l=0.13u ng=5 m=1
+XM3 OUTn OUTp VDD VDD sg13_lv_pmos w=36u l=0.13u ng=5 m=1
+XM2 OUTp OUTn Vx GND sg13_lv_nmos w=22u l=0.13u ng=3 m=1
+XM1 OUTn OUTp Vx GND sg13_lv_nmos w=22u l=0.13u ng=3 m=1
+XM6 Vgs Vgs GND GND sg13_lv_nmos w=64u l=1u ng=8 m=1
+XC1 OUTn OUTp GND cap_rfcmim w=21.9e-6 l=21.9e-6 wfeed=10.0e-6
+XC3 OUTp VCTRL OUTn GND sg13_hv_svaricap w=9.74u l=0.8u Nx=7
+XC2 OUTp VCTRL OUTn GND sg13_hv_svaricap w=9.74u l=0.8u Nx=7
+XM7 Vgs VBGR VDD VDD sg13_lv_pmos w=38u l=1u ng=5 m=1
+XM8 FOUT OUTp VDD VDD sg13_lv_pmos w=15u l=0.13u ng=10 m=1
+XM9 FOUT OUTp GND GND sg13_lv_nmos w=1.5u l=0.13u ng=1 m=1
+XM10 net1 OUTn VDD VDD sg13_lv_pmos w=15u l=0.13u ng=10 m=1
+XM11 net1 OUTn GND GND sg13_lv_nmos w=1.5u l=0.13u ng=1 m=1
+.ends
+.GLOBAL GND
+.GLOBAL VDD

@@ -1,0 +1,1 @@
+openroad -exit -no_splash -metrics /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/31-openroad-stamidpnr/or_metrics_out.json /nix/store/slcig8wnc74r65q82z4xzwsf083lmzip-python3-3.13.9-env/lib/python3.13/site-packages/librelane/scripts/openroad/sta/corner.tcl

@@ -1,0 +1,31 @@
+** sch_path: /home/designer/shared/LC_VCO_FPLL/xschem/LC_VCO.sch
+.subckt LC_VCO VDD VCTRL GND FOUT VBGR
+*.PININFO FOUT:O VCTRL:I VBGR:I VDD:B GND:B
+MM5 Vx Vgs GND GND sg13_lv_nmos w=384u l=1u ng=48 m=1
+MM4 OUTp OUTn VDD VDD sg13_lv_pmos w=36u l=0.13u ng=5 m=1
+MM3 OUTn OUTp VDD VDD sg13_lv_pmos w=36u l=0.13u ng=5 m=1
+MM2 OUTp OUTn Vx GND sg13_lv_nmos w=22u l=0.13u ng=3 m=1
+MM1 OUTn OUTp Vx GND sg13_lv_nmos w=22u l=0.13u ng=3 m=1
+MM6 Vgs Vgs GND GND sg13_lv_nmos w=64u l=1u ng=8 m=1
+CC1 OUTn OUTp GND rfcmim w=21.9e-6 l=21.9e-6 wfeed=10.0e-6
+CC3 OUTp VCTRL OUTn GND sg13_hv_svaricap w=9.74u l=0.8u Nx=7
+CC2 OUTp VCTRL OUTn GND sg13_hv_svaricap w=9.74u l=0.8u Nx=7
+MM7 Vgs VBGR VDD VDD sg13_lv_pmos w=38u l=1u ng=5 m=1
+MM8 FOUT OUTp VDD VDD sg13_lv_pmos w=15u l=0.13u ng=10 m=1
+MM9 FOUT OUTp GND GND sg13_lv_nmos w=1.5u l=0.13u ng=1 m=1
+MM10 net1 OUTn VDD VDD sg13_lv_pmos w=15u l=0.13u ng=10 m=1
+MM11 net1 OUTn GND GND sg13_lv_nmos w=1.5u l=0.13u ng=1 m=1
+x1 OUTn OUTp 4nH_INDUCTOR
+**** begin user architecture code
+
+
+.subckt 4nH_INDUCTOR 1 2
+* LVS black-box stub only
+* Full model is available in 4nH_INDUCTOR.spice
+.ends
+
+
+**** end user architecture code
+.ends
+.GLOBAL GND
+.GLOBAL VDD

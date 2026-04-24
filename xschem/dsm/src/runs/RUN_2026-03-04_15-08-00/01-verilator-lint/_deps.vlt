@@ -1,0 +1,7 @@
+`verilator_config
+lint_off -rule DECLFILENAME
+lint_off -rule EOFNEWLINE
+lint_off -rule UNDRIVEN -file "/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/tmp/e754120f39814559884a06bafee0dbe2.bb.v"
+lint_off -rule UNUSEDSIGNAL -file "/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/tmp/e754120f39814559884a06bafee0dbe2.bb.v"
+lint_off -rule UNDRIVEN -file "/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/tmp/c19ec636690a4c0eb9497dcd1c4c9453.bb.v"
+lint_off -rule UNUSEDSIGNAL -file "/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/tmp/c19ec636690a4c0eb9497dcd1c4c9453.bb.v"

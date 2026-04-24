@@ -1,0 +1,73 @@
+Reading timing models for corner nom_typ_1p20V_25C…
+Reading timing library for the 'nom_typ_1p20V_25C' corner at '/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/lib/sg13g2_stdcell_typ_1p20V_25C.lib'…
+Reading timing library for the 'nom_typ_1p20V_25C' corner at '/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_io/lib/sg13g2_io_typ_1p2V_3p3V_25C.lib'…
+Reading OpenROAD database at '/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/37-openroad-resizertimingpostcts/dsm_and_freq_divider.odb'…
+Reading design constraints file at '/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/my_constraints.sdc'…
+[INFO] No information on clock propagation in input SDC file-- propagating all clocks.
+[INFO] Setting signal min routing layer to: Metal2 and clock min routing layer to Metal2. 
+[INFO] Setting signal max routing layer to: Metal5 and clock max routing layer to Metal5. 
++ global_route -congestion_iterations 50 -verbose -allow_congestion
+[INFO GRT-0020] Min routing layer: Metal2
+[INFO GRT-0021] Max routing layer: Metal5
+[INFO GRT-0022] Global adjustment: 30%
+[INFO GRT-0023] Grid origin: (0, 0)
+[INFO GRT-0088] Layer Metal1  Track-Pitch = 0.4200  line-2-Via Pitch: 0.3650
+[INFO GRT-0088] Layer Metal2  Track-Pitch = 0.4800  line-2-Via Pitch: 0.4150
+[INFO GRT-0088] Layer Metal3  Track-Pitch = 0.4200  line-2-Via Pitch: 0.4150
+[INFO GRT-0088] Layer Metal4  Track-Pitch = 0.4800  line-2-Via Pitch: 0.4150
+[INFO GRT-0088] Layer Metal5  Track-Pitch = 0.4200  line-2-Via Pitch: 0.4100
+[INFO GRT-0003] Macros: 0
+[INFO GRT-0004] Blockages: 0
+[INFO GRT-0019] Found 5 clock nets.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 10
+
+[INFO GRT-0053] Routing resources analysis:
+          Routing      Original      Derated      Resource
+Layer     Direction    Resources     Resources    Reduction (%)
+---------------------------------------------------------------
+Metal1     Horizontal          0             0          0.00%
+Metal2     Vertical         2572          1712          33.44%
+Metal3     Horizontal       2860          1879          34.30%
+Metal4     Vertical         2572          1712          33.44%
+Metal5     Horizontal       2836          1858          34.49%
+---------------------------------------------------------------
+
+[INFO GRT-0197] Via related to pin nodes: 770
+[INFO GRT-0198] Via related Steiner nodes: 8
+[INFO GRT-0199] Via filling finished.
+[INFO GRT-0111] Final number of vias: 894
+[INFO GRT-0112] Final usage 3D: 3086
+
+[INFO GRT-0096] Final congestion report:
+Layer         Resource        Demand        Usage (%)    Max H / Max V / Total Overflow
+---------------------------------------------------------------------------------------
+Metal1               0             0            0.00%             0 /  0 /  0
+Metal2            1712           206           12.03%             0 /  0 /  0
+Metal3            1879           198           10.54%             0 /  0 /  0
+Metal4            1712             0            0.00%             0 /  0 /  0
+Metal5            1858             0            0.00%             0 /  0 /  0
+---------------------------------------------------------------------------------------
+Total             7161           404            5.64%             0 /  0 /  0
+
+[INFO GRT-0018] Total wirelength: 4932 um
+[INFO GRT-0014] Routed nets: 171
+[INFO GRT-0303] Global routing runtime = 00:00:00
+%OL_CREATE_REPORT antenna.rpt
+[INFO ANT-0002] Found 0 net violations.
+[INFO ANT-0001] Found 0 pin violations.
+%OL_END_REPORT
+Setting global connections for newly added cells…
+[INFO] Setting global connections...
+[INFO ODB-0403] 0 connections made, 0 conflicts skipped.
+Updating metrics…
+Cell type report:                       Count       Area
+  Clock buffer                              3     136.08
+  Timing Repair Buffer                     11      79.83
+  Inverter                                 32     174.18
+  Clock inverter                            1       5.44
+  Sequential cell                          27    1322.70
+  Multi-Input combinational cell           93    1075.94
+  Total                                   167    2794.18
+Writing OpenROAD database to '/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/39-openroad-globalrouting/dsm_and_freq_divider.odb'…
+Writing layout to '/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/39-openroad-globalrouting/dsm_and_freq_divider.def'…

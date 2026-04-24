@@ -1,0 +1,9 @@
+* Extracted by KLayout with SG13G2 LVS runset on : 18/04/2026 13:19
+
+.SUBCKT LOOP_FILTER VSS OUT IN
+R$1 VSS \$1 ptap1 A=93.504p P=623.36u
+R$12 IN OUT \$1 rppd w=2u l=407.2u ps=0u b=0 m=1
+R$22 IN \$10 \$1 rppd w=2u l=407.2u ps=0u b=0 m=1
+C$23 \$10 VSS cap_cmim w=48.34u l=48.34u A=2336.7556p P=193.36u m=16
+C$39 OUT VSS cap_cmim w=18.63u l=18.63u A=347.0769p P=74.52u m=4
+.ENDS LOOP_FILTER

@@ -1,0 +1,161 @@
+{
+    "STD_CELL_LIBRARY": "sg13g2_stdcell",
+    "VDD_PIN": "VPWR",
+    "GND_PIN": "VGND",
+    "TECH_LEFS": {
+        "nom_*": "/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/lef/sg13g2_tech.lef",
+        "min_*": "/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/lef/sg13g2_tech.lef",
+        "max_*": "/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/lef/sg13g2_tech.lef"
+    },
+    "PRIMARY_GDSII_STREAMOUT_TOOL": "magic",
+    "DEFAULT_MAX_TRAN": null,
+    "DEFAULT_CORNER": "nom_typ_1p20V_25C",
+    "STA_CORNERS": [
+        "nom_fast_1p32V_m40C",
+        "nom_slow_1p08V_125C",
+        "nom_typ_1p20V_25C"
+    ],
+    "RT_MIN_LAYER": "Metal2",
+    "RT_MAX_LAYER": "Metal5",
+    "SCL_GROUND_PINS": [
+        "VSS"
+    ],
+    "SCL_POWER_PINS": [
+        "VDD"
+    ],
+    "TRISTATE_CELLS": [
+        "sg13g2_ebufn_*",
+        "sg13g2_einvn_*"
+    ],
+    "FILL_CELLS": [
+        "sg13g2_fill_1",
+        "sg13g2_fill_2"
+    ],
+    "DECAP_CELLS": [
+        "sg13g2_decap_*"
+    ],
+    "LIB": {
+        "nom_typ_1p20V_25C": [
+            "/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/lib/sg13g2_stdcell_typ_1p20V_25C.lib",
+            "/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_io/lib/sg13g2_io_typ_1p2V_3p3V_25C.lib"
+        ],
+        "nom_fast_1p32V_m40C": [
+            "/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/lib/sg13g2_stdcell_fast_1p32V_m40C.lib",
+            "/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_io/lib/sg13g2_io_fast_1p32V_3p6V_m40C.lib"
+        ],
+        "nom_slow_1p08V_125C": [
+            "/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/lib/sg13g2_stdcell_slow_1p08V_125C.lib",
+            "/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_io/lib/sg13g2_io_slow_1p08V_3p0V_125C.lib"
+        ]
+    },
+    "CELL_LEFS": [
+        "/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/lef/sg13g2_stdcell.lef"
+    ],
+    "CELL_GDS": [
+        "/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/gds/sg13g2_stdcell.gds"
+    ],
+    "CELL_VERILOG_MODELS": [
+        "/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v"
+    ],
+    "CELL_BB_VERILOG_MODELS": null,
+    "CELL_SPICE_MODELS": [
+        "/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice"
+    ],
+    "CELL_CDLS": [
+        "/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/cdl/sg13g2_stdcell.cdl"
+    ],
+    "SYNTH_EXCLUDED_CELL_FILE": "/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.tech/librelane/sg13g2_stdcell/synth_exclude.cells",
+    "PNR_EXCLUDED_CELL_FILE": "/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.tech/librelane/sg13g2_stdcell/pnr_exclude.cells",
+    "OUTPUT_CAP_LOAD": 6,
+    "MAX_FANOUT_CONSTRAINT": 10,
+    "MAX_TRANSITION_CONSTRAINT": null,
+    "MAX_CAPACITANCE_CONSTRAINT": null,
+    "CLOCK_UNCERTAINTY_CONSTRAINT": 0.25,
+    "CLOCK_TRANSITION_CONSTRAINT": 0.15,
+    "TIME_DERATING_CONSTRAINT": 5,
+    "IO_DELAY_CONSTRAINT": 20,
+    "SYNTH_DRIVING_CELL": "sg13g2_buf_4/X",
+    "SYNTH_CLK_DRIVING_CELL": null,
+    "SYNTH_TIEHI_CELL": "sg13g2_tiehi/L_HI",
+    "SYNTH_TIELO_CELL": "sg13g2_tielo/L_LO",
+    "SYNTH_BUFFER_CELL": "sg13g2_buf_1/A/X",
+    "PLACE_SITE": "CoreSite",
+    "CELL_PAD_EXCLUDE": [
+        "sg13g2_fill_*",
+        "sg13g2_decap_*"
+    ],
+    "DIODE_CELL": "sg13g2_antennanp/A",
+    "WELLTAP_CELL": null,
+    "ENDCAP_CELL": null,
+    "DESIGN_DIR": "/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src",
+    "PDK_ROOT": "/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c",
+    "DESIGN_NAME": "dsm_and_freq_divider",
+    "PDK": "ihp-sg13g2",
+    "CLOCK_PERIOD": 10,
+    "CLOCK_PORT": [
+        "sclk",
+        "freq_in"
+    ],
+    "CLOCK_NET": null,
+    "VDD_NETS": null,
+    "GND_NETS": null,
+    "DIE_AREA": null,
+    "EXTRA_EXCLUDED_CELLS": null,
+    "MACROS": null,
+    "EXTRA_LEFS": null,
+    "EXTRA_VERILOG_MODELS": null,
+    "EXTRA_SPICE_MODELS": null,
+    "EXTRA_CDLS": null,
+    "EXTRA_LIBS": null,
+    "EXTRA_GDS": null,
+    "FALLBACK_SDC": "/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/my_constraints.sdc",
+    "PAD_GDS": [
+        "/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_io/gds/sg13g2_io.gds"
+    ],
+    "PAD_LEFS": [
+        "/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_io/lef/sg13g2_io.lef"
+    ],
+    "PAD_VERILOG_MODELS": [
+        "/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_io/verilog/sg13g2_io.v"
+    ],
+    "PAD_SPICE_MODELS": [
+        "/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_io/spice/sg13g2_io.spi"
+    ],
+    "PAD_CDLS": [
+        "/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_io/cdl/sg13g2_io.cdl"
+    ],
+    "PAD_LIBS": null,
+    "PAD_CORNER": [
+        "sg13g2_Corner"
+    ],
+    "PAD_FILLERS": [
+        "sg13g2_Filler10000",
+        "sg13g2_Filler4000",
+        "sg13g2_Filler2000",
+        "sg13g2_Filler1000",
+        "sg13g2_Filler400",
+        "sg13g2_Filler200"
+    ],
+    "PAD_SITE_NAME": "sg13g2_ioSite",
+    "PAD_CORNER_SITE_NAME": "sg13g2_cornerSite",
+    "PAD_FAKE_SITES": null,
+    "PAD_BONDPAD_NAME": "bondpad_70x70",
+    "PAD_BONDPAD_WIDTH": 70,
+    "PAD_BONDPAD_HEIGHT": 70,
+    "PAD_BONDPAD_OFFSETS": {
+        "sg13g2_IOPad*": [
+            5,
+            -70
+        ]
+    },
+    "PAD_PLACE_IO_TERMINALS": null,
+    "PAD_EDGE_SPACING": 140,
+    "MAGIC_EXT_USE_GDS": false,
+    "NETGEN_SETUP": "/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.tech/netgen/ihp-sg13g2_setup.tcl",
+    "LVS_INCLUDE_MARCO_NETLISTS": false,
+    "LVS_FLATTEN_CELLS": null,
+    "meta": {
+        "librelane_version": "3.0.0rc0",
+        "step": "Netgen.LVS"
+    }
+}

@@ -1,0 +1,33 @@
+** sch_path: /home/mmhnbm/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.tech/xschem/sg13g2_tests_xyce/tran_mim_cap.sch
+**.subckt tran_mim_cap
+I1 0 G pwl 0 0 1000n 0 1010n 100n
+R1 G REF 1G
+I3 0 G2 pwl 0 0 1000n 0 1010n 100n
+R3 G2 REF 1G
+C1 G2 0 0.07452p
+V1 REF 0 -2
+XC2 G 0 cap_cmim w=7.0e-6 l=7.0e-6
+**** begin user architecture code
+
+
+
+
+
+
+
+.lib cornerCAP.lib cap_typ
+
+
+
+
+
+.param temp=27
+.control
+tran 10n 6u
+write test_mim_cap.raw
+.endc
+
+
+**** end user architecture code
+**.ends
+.end

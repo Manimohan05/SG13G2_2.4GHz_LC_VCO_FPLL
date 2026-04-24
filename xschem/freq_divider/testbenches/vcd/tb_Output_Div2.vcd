@@ -1,0 +1,119 @@
+$date
+	Sat Feb  7 12:24:57 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_Output_Div2 $end
+$var wire 1 ! freq_out $end
+$var reg 1 " clk_in $end
+$var reg 1 # rst $end
+$scope module uut $end
+$var wire 1 " clk_in $end
+$var wire 1 ! freq_out $end
+$var wire 1 # rst $end
+$var wire 1 $ q_out $end
+$var wire 1 % q_bar_out $end
+$scope module dff_out $end
+$var wire 1 " clk $end
+$var wire 1 % d $end
+$var wire 1 % q_bar $end
+$var wire 1 # rst $end
+$var reg 1 $ q $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+1%
+0$
+1#
+0"
+0!
+$end
+#5000
+1"
+#10000
+0"
+#15000
+1"
+#20000
+0"
+0#
+#25000
+0%
+1!
+1$
+1"
+#30000
+0"
+#35000
+1%
+0!
+0$
+1"
+#40000
+0"
+#45000
+0%
+1!
+1$
+1"
+#50000
+0"
+#55000
+1%
+0!
+0$
+1"
+#60000
+0"
+#65000
+0%
+1!
+1$
+1"
+#70000
+0"
+#75000
+1%
+0!
+0$
+1"
+#80000
+0"
+#85000
+0%
+1!
+1$
+1"
+#90000
+0"
+#95000
+1%
+0!
+0$
+1"
+#100000
+0"
+#105000
+0%
+1!
+1$
+1"
+#110000
+0"
+#115000
+1%
+0!
+0$
+1"
+#120000
+0"

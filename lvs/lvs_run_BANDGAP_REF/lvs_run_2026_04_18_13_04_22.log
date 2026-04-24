@@ -1,0 +1,16 @@
+18-Apr-2026 15:04:22 | INFO    | Your Klayout version is: KLayout 0.30.5
+18-Apr-2026 15:04:22 | INFO    | Running SG13G2 LVS checks on design /home/designer/shared/LC_VCO_FPLL/gds/blocks/BANDGAP_REF.gds on cell BANDGAP_REF
+18-Apr-2026 15:04:26 | INFO    | ==============================================================================
+18-Apr-2026 15:04:26 | INFO    | Important Summary
+18-Apr-2026 15:04:26 | INFO    | +------------------+--------------------------------------------------------------+
+18-Apr-2026 15:04:26 | INFO    | | Status           | PASS                                                         |
+18-Apr-2026 15:04:26 | INFO    | | Mode             | COMPARE                                                      |
+18-Apr-2026 15:04:26 | INFO    | | Outcome          | Comparison mode: PASS (netlists match).                      |
+18-Apr-2026 15:04:26 | INFO    | | Layout           | BANDGAP_REF.gds                                              |
+18-Apr-2026 15:04:26 | INFO    | | Top Cell         | BANDGAP_REF                                                  |
+18-Apr-2026 15:04:26 | INFO    | | Results Dir      | /home/designer/shared/LC_VCO_FPLL/lvs/lvs_run_BANDGAP_REF    |
+18-Apr-2026 15:04:26 | INFO    | | Warnings         | 0                                                            |
+18-Apr-2026 15:04:26 | INFO    | | Errors           | 0                                                            |
+18-Apr-2026 15:04:26 | INFO    | | Run Time (s)     | 4.208                                                        |
+18-Apr-2026 15:04:26 | INFO    | +------------------+--------------------------------------------------------------+
+18-Apr-2026 15:04:26 | INFO    | ==============================================================================

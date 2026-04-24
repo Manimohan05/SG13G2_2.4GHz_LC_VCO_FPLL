@@ -1,0 +1,116 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO dsm_and_freq_divider
+  CLASS BLOCK ;
+  FOREIGN dsm_and_freq_divider ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 91.720 BY 110.440 ;
+  PIN VGND
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER TopMetal1 ;
+        RECT 24.460 14.490 26.660 94.720 ;
+    END
+    PORT
+      LAYER TopMetal2 ;
+        RECT 5.760 33.820 85.920 36.020 ;
+    END
+  END VGND
+  PIN VPWR
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER TopMetal1 ;
+        RECT 18.260 14.900 20.460 95.130 ;
+    END
+    PORT
+      LAYER TopMetal2 ;
+        RECT 5.760 27.620 85.920 29.820 ;
+    END
+  END VPWR
+  PIN en
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.180700 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 58.180 0.400 58.580 ;
+    END
+  END en
+  PIN freq_in
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.241800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 47.320 110.040 47.720 110.440 ;
+    END
+  END freq_in
+  PIN freq_out
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.708600 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 91.320 22.900 91.720 23.300 ;
+    END
+  END freq_out
+  PIN rst
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.180700 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 86.740 0.400 87.140 ;
+    END
+  END rst
+  PIN sclk
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 1.450800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 57.340 0.400 57.740 ;
+    END
+  END sclk
+  PIN sdata
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.180700 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 37.180 0.400 37.580 ;
+    END
+  END sdata
+  OBS
+      LAYER GatPoly ;
+        RECT 5.760 14.970 85.920 94.650 ;
+      LAYER Metal1 ;
+        RECT 5.760 14.900 85.920 94.720 ;
+      LAYER Metal2 ;
+        RECT 0.375 109.830 47.110 110.040 ;
+        RECT 47.930 109.830 85.545 110.040 ;
+        RECT 0.375 14.975 85.545 109.830 ;
+      LAYER Metal3 ;
+        RECT 0.335 87.350 91.320 99.640 ;
+        RECT 0.610 86.530 91.320 87.350 ;
+        RECT 0.335 58.790 91.320 86.530 ;
+        RECT 0.610 57.970 91.320 58.790 ;
+        RECT 0.335 57.950 91.320 57.970 ;
+        RECT 0.610 57.130 91.320 57.950 ;
+        RECT 0.335 37.790 91.320 57.130 ;
+        RECT 0.610 36.970 91.320 37.790 ;
+        RECT 0.335 23.510 91.320 36.970 ;
+        RECT 0.335 22.690 91.110 23.510 ;
+        RECT 0.335 15.020 91.320 22.690 ;
+      LAYER Metal4 ;
+        RECT 18.440 14.975 65.860 94.645 ;
+      LAYER Metal5 ;
+        RECT 18.395 14.810 26.525 94.810 ;
+  END
+END dsm_and_freq_divider
+END LIBRARY
+

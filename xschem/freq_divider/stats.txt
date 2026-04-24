@@ -1,0 +1,122 @@
+4. Printing statistics.
+
+=== Frequency_Divider_240_248 ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       12 wires
+       12 wire bits
+       12 public wires
+       12 public wire bits
+        4 ports
+        4 port bits
+        5 submodules
+        1   Divide_by_4
+        1   Mod7_Counter
+        1   Modulus_Controller
+        1   Output_Div2
+        1   Prescaler_4_5
+
+=== Output_Div2 ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        5 wire bits
+        5 public wires
+        5 public wire bits
+        3 ports
+        3 port bits
+        1 submodules
+        1   DFF
+
+=== Modulus_Controller ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       15 wires
+       15 wire bits
+       10 public wires
+       10 public wire bits
+        7 ports
+        7 port bits
+        5 cells
+        3   $and
+        2   $or
+
+=== Mod7_Counter ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       13 wires
+       13 wire bits
+       10 public wires
+       10 public wire bits
+        7 ports
+        7 port bits
+        3 cells
+        1   $and
+        2   $or
+        3 submodules
+        3   JK_FF
+
+=== JK_FF ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       13 wires
+       13 wire bits
+        9 public wires
+        9 public wire bits
+        6 ports
+        6 port bits
+        4 cells
+        2   $and
+        1   $not
+        1   $or
+        1 submodules
+        1   DFF
+
+=== Prescaler_4_5 ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       13 wires
+       13 wire bits
+       11 public wires
+       11 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        1   $and
+        1   $or
+        3 submodules
+        3   DFF
+
+=== Divide_by_4 ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        7 wire bits
+        7 public wires
+        7 public wire bits
+        3 ports
+        3 port bits
+        2 submodules
+        2   DFF
+
+=== DFF ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        8 wires
+        8 wire bits
+        5 public wires
+        5 public wire bits
+        5 ports
+        5 port bits
+        2 cells
+        1   $adff
+        1   $not
+

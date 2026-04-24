@@ -1,0 +1,141 @@
+** sch_path: /foss/designs/frac-n-pll-vco-unic_cass/schematic/Test/pll_temp_fredivider_tb.sch
+**.subckt pll_temp_fredivider_tb
+V1 VDD GND 1.2
+I0 VDD IbiasVCO 50u
+Vfref F_REF GND 0 pulse(0 1.2 0n 0.1n 0.1n 5n 10n)
+I1 IbiasCP GND 10m
+x5 F_VCO net1 VDD GND sg13g2_inv_2
+x2 VDD UP CTRL DN GND IbiasCP CP
+*  x1 -  Frequency_Divider_240_248  IS MISSING !!!!
+x3 VDD UP F_REF F_DIV DN GND PFD
+x4 VDD net1 OUTn IbiasVCO CTRL GND LC_VCO
+*  x6 -  Frequency_Divider_240_248  IS MISSING !!!!
+x7 F_VCO F_DIV Freq_Div_std
+**** begin user architecture code
+
+
+
+.lib cornerMOSlv.lib mos_tt
+.lib cornerHBT.lib hbt_typ
+.lib cornerRES.lib res_typ
+.lib cornerCAP.lib cap_typ_stat
+.include /foss/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
+.global VDD GND
+
+
+.param CP_N_L = 0.5u
+.param CP_N_W = 10u
+.param CP_P_M = 1
+.param CP_P_L = 0.5u
+.param CP_P_W = 30u
+.param CP_N_M = 1
+.param C_CP = 400p
+
+
+
+
+
+.model freq_div freq_div
+.include ./IHP_4nH_Inductor.spice
+.option temp = 27
+.param VDD = 1.2
+.ic v(OUTp)=0.6
+
+.control
+.options maxstep=100P reltol=1e-3 abstol=1e-6
+pre_osdi ./freq_div.osdi
+save v(CTRL) v(OUTp) v(F_REF) v(F_DIV) v(VDD) v(UP) v(DN) v(F_VCO)
+
+tran 50p 500n uic
+write tb_pll_freq_div.raw
+*quit 0
+.endc
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  /foss/designs/frac-n-pll-vco-unic_cass/schematic/charge-pump/CP.sym # of pins=6
+** sym_path: /foss/designs/frac-n-pll-vco-unic_cass/schematic/charge-pump/CP.sym
+** sch_path: /foss/designs/frac-n-pll-vco-unic_cass/schematic/charge-pump/CP.sch
+.subckt CP VDD UP CTRL DN GND Ibias
+*.opin CTRL
+*.ipin UP
+*.ipin VDD
+*.ipin Ibias
+*.ipin DN
+*.ipin GND
+XM2 Vbn Vbn net2 GND sg13_lv_nmos w=3u l=2u ng=1
+XM8 net5 GND VDD VDD sg13_lv_pmos w=10u l=2u ng=1
+XR3 CTRL CTRL1 sub! rsil w=0.5e-6 l=1000e-6 m=1 b=0
+XR2 CTRL2 CTRL1 sub! rsil w=0.5e-6 l=2500e-6 m=1 b=0
+XC4 CTRL GND cap_cmim w=60.0e-6 l=60.0e-6
+XC1 CTRL2 GND cap_cmim w=40.0e-6 l=40.0e-6 m=4
+XC2 CTRL1 GND cap_cmim w=15.0e-6 l=20.0e-6 m=4
+XM11 Ibias Ibias net5 VDD sg13_lv_pmos w=10u l=2u ng=1
+XM3 Vbn Ibias net1 VDD sg13_lv_pmos w=10u l=2u ng=1
+XM4 net1 GND VDD VDD sg13_lv_pmos w=10u l=2u ng=1
+XM7 net4 UP VDD VDD sg13_lv_pmos w=10u l=2u ng=1
+XM9 CTRL1 Ibias net4 VDD sg13_lv_pmos w=10u l=2u ng=1
+XM10 net2 VDD GND GND sg13_lv_nmos w=3u l=2u ng=1
+XM1 net3 DN GND GND sg13_lv_nmos w=3u l=2u ng=1
+XM5 CTRL1 Vbn net3 GND sg13_lv_nmos w=3u l=2u ng=1
+.ends
+
+
+* expanding   symbol:  /foss/designs/frac-n-pll-vco-unic_cass/schematic/phase-freq-detector/PFD.sym # of pins=6
+** sym_path: /foss/designs/frac-n-pll-vco-unic_cass/schematic/phase-freq-detector/PFD.sym
+** sch_path: /foss/designs/frac-n-pll-vco-unic_cass/schematic/phase-freq-detector/PFD.sch
+.subckt PFD VDD UP F_REF F_VCO DN GND
+*.opin UP
+*.ipin F_REF
+*.ipin VDD
+*.ipin GND
+*.opin DN
+*.ipin F_VCO
+x1 net1 net2 F_REF VDD RST_N VDD GND sg13g2_dfrbp_2
+x2 DN net3 F_VCO VDD RST_N VDD GND sg13g2_dfrbp_2
+x3 RST_N net1 DN VDD GND sg13g2_nand2_2
+x4 UP net1 VDD GND sg13g2_inv_2
+.ends
+
+
+* expanding   symbol:  /foss/designs/frac-n-pll-vco-unic_cass/schematic/lc-vco/LC_VCO.sym # of pins=6
+** sym_path: /foss/designs/frac-n-pll-vco-unic_cass/schematic/lc-vco/LC_VCO.sym
+** sch_path: /foss/designs/frac-n-pll-vco-unic_cass/schematic/lc-vco/LC_VCO.sch
+.subckt LC_VCO VDD OUTp OUTn Ibias VCTRL GND
+*.iopin VDD
+*.opin OUTp
+*.opin OUTn
+*.iopin GND
+*.iopin VCTRL
+*.iopin Ibias
+XM6 net1 Ibias GND GND sg13_lv_nmos w=1u l=0.15u ng=1 m=60
+XM5 Ibias Ibias GND GND sg13_lv_nmos w=1u l=0.15u ng=1
+XM4 OUTp OUTn VDD VDD sg13_lv_pmos w=8.5u l=0.5u ng=1 m=13
+X5M3 OUTn OUTp VDD VDD sg13_lv_pmos w=8.5u l=0.5u ng=1 m=13
+XM2 OUTp OUTn net1 GND sg13_lv_nmos w=2u l=0.5u ng=1 m=12
+XM1 OUTn OUTp net1 GND sg13_lv_nmos w=2u l=0.5u ng=1 m=12
+XC3 OUTp OUTn cap_cmim w=4.26e-6 l=4.26e-6 m=12
+XMv2 OUTp VCTRL OUTp VDD sg13_lv_pmos w=4u l=4u ng=1 m=22
+XMv1 OUTn VCTRL OUTn VDD sg13_lv_pmos w=4u l=4u ng=1 m=22
+XR1 OUTp OUTn sub! rhigh w=1e-6 l=0.79e-6 m=1 b=0
+*  x1 -  ihp_4nh_inductor  IS MISSING !!!!
+.ends
+
+
+* expanding   symbol:  /foss/designs/frac-n-pll-vco-unic_cass/schematic/Test/FD/Freq_Div_std.sym # of pins=2
+** sym_path: /foss/designs/frac-n-pll-vco-unic_cass/schematic/Test/FD/Freq_Div_std.sym
+** sch_path: /foss/designs/frac-n-pll-vco-unic_cass/schematic/Test/FD/Freq_Div_std.sch
+.subckt Freq_Div_std F_IN F_OUT
+*.opin F_OUT
+*.ipin F_IN
+x6 net3 net1 F_IN net1 VDD VDD GND sg13g2_dfrbp_1
+x5 net4 net2 net3 net2 VDD VDD GND sg13g2_dfrbp_2
+x7 net6 net5 net4 net5 VDD VDD GND sg13g2_dfrbp_2
+x8 F_OUT net7 net6 net7 VDD VDD GND sg13g2_dfrbp_2
+.ends
+
+.GLOBAL GND
+.GLOBAL VDD
+.end

@@ -1,0 +1,362 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.62 (git sha1 7326bb7d6641500ecb285c291a54a662cb1e76cf, clang++ 21.1.2 -fPIC -O3)
+
+1. Executing Verilog-2005 frontend: /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/tmp/e754120f39814559884a06bafee0dbe2.bb.v
+Parsing SystemVerilog input from `/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/tmp/e754120f39814559884a06bafee0dbe2.bb.v' to AST representation.
+Generating RTLIL representation for module `\sg13g2_a21o_1'.
+Generating RTLIL representation for module `\sg13g2_a21o_2'.
+Generating RTLIL representation for module `\sg13g2_a21oi_1'.
+Generating RTLIL representation for module `\sg13g2_a21oi_2'.
+Generating RTLIL representation for module `\sg13g2_a221oi_1'.
+Generating RTLIL representation for module `\sg13g2_a22oi_1'.
+Generating RTLIL representation for module `\sg13g2_and2_1'.
+Generating RTLIL representation for module `\sg13g2_and2_2'.
+Generating RTLIL representation for module `\sg13g2_and3_1'.
+Generating RTLIL representation for module `\sg13g2_and3_2'.
+Generating RTLIL representation for module `\sg13g2_and4_1'.
+Generating RTLIL representation for module `\sg13g2_and4_2'.
+Generating RTLIL representation for module `\sg13g2_antennanp'.
+Generating RTLIL representation for module `\sg13g2_buf_1'.
+Generating RTLIL representation for module `\sg13g2_buf_16'.
+Generating RTLIL representation for module `\sg13g2_buf_2'.
+Generating RTLIL representation for module `\sg13g2_buf_4'.
+Generating RTLIL representation for module `\sg13g2_buf_8'.
+Generating RTLIL representation for module `\sg13g2_decap_4'.
+Generating RTLIL representation for module `\sg13g2_decap_8'.
+Generating RTLIL representation for module `\sg13g2_dfrbp_1'.
+Generating RTLIL representation for module `\sg13g2_dfrbp_2'.
+Generating RTLIL representation for module `\sg13g2_dfrbpq_1'.
+Generating RTLIL representation for module `\sg13g2_dfrbpq_2'.
+Generating RTLIL representation for module `\sg13g2_dlhq_1'.
+Generating RTLIL representation for module `\sg13g2_dlhr_1'.
+Generating RTLIL representation for module `\sg13g2_dlhrq_1'.
+Generating RTLIL representation for module `\sg13g2_dllr_1'.
+Generating RTLIL representation for module `\sg13g2_dllrq_1'.
+Generating RTLIL representation for module `\sg13g2_dlygate4sd1_1'.
+Generating RTLIL representation for module `\sg13g2_dlygate4sd2_1'.
+Generating RTLIL representation for module `\sg13g2_dlygate4sd3_1'.
+Generating RTLIL representation for module `\sg13g2_ebufn_2'.
+Generating RTLIL representation for module `\sg13g2_ebufn_4'.
+Generating RTLIL representation for module `\sg13g2_ebufn_8'.
+Generating RTLIL representation for module `\sg13g2_einvn_2'.
+Generating RTLIL representation for module `\sg13g2_einvn_4'.
+Generating RTLIL representation for module `\sg13g2_einvn_8'.
+Generating RTLIL representation for module `\sg13g2_fill_1'.
+Generating RTLIL representation for module `\sg13g2_fill_2'.
+Generating RTLIL representation for module `\sg13g2_fill_4'.
+Generating RTLIL representation for module `\sg13g2_fill_8'.
+Generating RTLIL representation for module `\sg13g2_inv_1'.
+Generating RTLIL representation for module `\sg13g2_inv_16'.
+Generating RTLIL representation for module `\sg13g2_inv_2'.
+Generating RTLIL representation for module `\sg13g2_inv_4'.
+Generating RTLIL representation for module `\sg13g2_inv_8'.
+Generating RTLIL representation for module `\sg13g2_lgcp_1'.
+Generating RTLIL representation for module `\sg13g2_mux2_1'.
+Generating RTLIL representation for module `\sg13g2_mux2_2'.
+Generating RTLIL representation for module `\sg13g2_mux4_1'.
+Generating RTLIL representation for module `\sg13g2_nand2_1'.
+Generating RTLIL representation for module `\sg13g2_nand2_2'.
+Generating RTLIL representation for module `\sg13g2_nand2b_1'.
+Generating RTLIL representation for module `\sg13g2_nand2b_2'.
+Generating RTLIL representation for module `\sg13g2_nand3_1'.
+Generating RTLIL representation for module `\sg13g2_nand3b_1'.
+Generating RTLIL representation for module `\sg13g2_nand4_1'.
+Generating RTLIL representation for module `\sg13g2_nor2_1'.
+Generating RTLIL representation for module `\sg13g2_nor2_2'.
+Generating RTLIL representation for module `\sg13g2_nor2b_1'.
+Generating RTLIL representation for module `\sg13g2_nor2b_2'.
+Generating RTLIL representation for module `\sg13g2_nor3_1'.
+Generating RTLIL representation for module `\sg13g2_nor3_2'.
+Generating RTLIL representation for module `\sg13g2_nor4_1'.
+Generating RTLIL representation for module `\sg13g2_nor4_2'.
+Generating RTLIL representation for module `\sg13g2_o21ai_1'.
+Generating RTLIL representation for module `\sg13g2_or2_1'.
+Generating RTLIL representation for module `\sg13g2_or2_2'.
+Generating RTLIL representation for module `\sg13g2_or3_1'.
+Generating RTLIL representation for module `\sg13g2_or3_2'.
+Generating RTLIL representation for module `\sg13g2_or4_1'.
+Generating RTLIL representation for module `\sg13g2_or4_2'.
+Generating RTLIL representation for module `\sg13g2_sdfbbp_1'.
+Generating RTLIL representation for module `\sg13g2_sdfrbp_1'.
+Generating RTLIL representation for module `\sg13g2_sdfrbp_2'.
+Generating RTLIL representation for module `\sg13g2_sdfrbpq_1'.
+Generating RTLIL representation for module `\sg13g2_sdfrbpq_2'.
+Generating RTLIL representation for module `\sg13g2_sighold'.
+Generating RTLIL representation for module `\sg13g2_slgcp_1'.
+Generating RTLIL representation for module `\sg13g2_tiehi'.
+Generating RTLIL representation for module `\sg13g2_tielo'.
+Generating RTLIL representation for module `\sg13g2_xnor2_1'.
+Generating RTLIL representation for module `\sg13g2_xor2_1'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/tmp/c19ec636690a4c0eb9497dcd1c4c9453.bb.v
+Parsing SystemVerilog input from `/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/tmp/c19ec636690a4c0eb9497dcd1c4c9453.bb.v' to AST representation.
+Generating RTLIL representation for module `\sg13g2_Corner'.
+Generating RTLIL representation for module `\sg13g2_Filler1000'.
+Generating RTLIL representation for module `\sg13g2_Filler10000'.
+Generating RTLIL representation for module `\sg13g2_Filler200'.
+Generating RTLIL representation for module `\sg13g2_Filler2000'.
+Generating RTLIL representation for module `\sg13g2_Filler400'.
+Generating RTLIL representation for module `\sg13g2_Filler4000'.
+Generating RTLIL representation for module `\sg13g2_IOPadAnalog'.
+Generating RTLIL representation for module `\sg13g2_IOPadIOVdd'.
+Generating RTLIL representation for module `\sg13g2_IOPadIOVss'.
+Generating RTLIL representation for module `\sg13g2_IOPadIn'.
+Generating RTLIL representation for module `\sg13g2_IOPadInOut16mA'.
+Generating RTLIL representation for module `\sg13g2_IOPadInOut30mA'.
+Generating RTLIL representation for module `\sg13g2_IOPadInOut4mA'.
+Generating RTLIL representation for module `\sg13g2_IOPadOut16mA'.
+Generating RTLIL representation for module `\sg13g2_IOPadOut30mA'.
+Generating RTLIL representation for module `\sg13g2_IOPadOut4mA'.
+Generating RTLIL representation for module `\sg13g2_IOPadTriOut16mA'.
+Generating RTLIL representation for module `\sg13g2_IOPadTriOut30mA'.
+Generating RTLIL representation for module `\sg13g2_IOPadTriOut4mA'.
+Generating RTLIL representation for module `\sg13g2_IOPadVdd'.
+Generating RTLIL representation for module `\sg13g2_IOPadVss'.
+Successfully finished Verilog frontend.
+wtaf
+
+3. Executing Verilog-2005 frontend: /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_and_freq_divider.v
+Parsing SystemVerilog input from `/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_and_freq_divider.v' to AST representation.
+Storing AST representation for module `$abstract\dsm_and_freq_divider'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/DFF.v
+Parsing SystemVerilog input from `/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/DFF.v' to AST representation.
+Storing AST representation for module `$abstract\DFF'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/Divide_by_4.v
+Parsing SystemVerilog input from `/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/Divide_by_4.v' to AST representation.
+Storing AST representation for module `$abstract\Divide_by_4'.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_9bit.v
+Parsing SystemVerilog input from `/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_9bit.v' to AST representation.
+Storing AST representation for module `$abstract\dsm_9bit'.
+Successfully finished Verilog frontend.
+
+7. Executing Verilog-2005 frontend: /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/Frequency_Divider_240_248.v
+Parsing SystemVerilog input from `/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/Frequency_Divider_240_248.v' to AST representation.
+Storing AST representation for module `$abstract\Frequency_Divider_240_248'.
+Successfully finished Verilog frontend.
+
+8. Executing Verilog-2005 frontend: /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/JK_FF.v
+Parsing SystemVerilog input from `/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/JK_FF.v' to AST representation.
+Storing AST representation for module `$abstract\JK_FF'.
+Successfully finished Verilog frontend.
+
+9. Executing Verilog-2005 frontend: /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/Mod7_Counter.v
+Parsing SystemVerilog input from `/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/Mod7_Counter.v' to AST representation.
+Storing AST representation for module `$abstract\Mod7_Counter'.
+Successfully finished Verilog frontend.
+
+10. Executing Verilog-2005 frontend: /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/Modulus_Controller.v
+Parsing SystemVerilog input from `/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/Modulus_Controller.v' to AST representation.
+Storing AST representation for module `$abstract\Modulus_Controller'.
+Successfully finished Verilog frontend.
+
+11. Executing Verilog-2005 frontend: /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/Output_Div2.v
+Parsing SystemVerilog input from `/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/Output_Div2.v' to AST representation.
+Storing AST representation for module `$abstract\Output_Div2'.
+Successfully finished Verilog frontend.
+
+12. Executing Verilog-2005 frontend: /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/Prescaler_4_5.v
+Parsing SystemVerilog input from `/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/Prescaler_4_5.v' to AST representation.
+Storing AST representation for module `$abstract\Prescaler_4_5'.
+Successfully finished Verilog frontend.
+
+13. Executing Verilog-2005 frontend: /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/shift_reg_serial.v
+Parsing SystemVerilog input from `/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/shift_reg_serial.v' to AST representation.
+Storing AST representation for module `$abstract\shift_reg_serial'.
+Successfully finished Verilog frontend.
+
+14. Executing HIERARCHY pass (managing design hierarchy).
+
+15. Executing AST frontend in derive mode using pre-parsed AST for module `\dsm_and_freq_divider'.
+Generating RTLIL representation for module `\dsm_and_freq_divider'.
+
+15.1. Analyzing design hierarchy..
+Top module:  \dsm_and_freq_divider
+
+15.2. Executing AST frontend in derive mode using pre-parsed AST for module `\Frequency_Divider_240_248'.
+Generating RTLIL representation for module `\Frequency_Divider_240_248'.
+
+15.3. Executing AST frontend in derive mode using pre-parsed AST for module `\dsm_9bit'.
+Generating RTLIL representation for module `\dsm_9bit'.
+
+15.4. Executing AST frontend in derive mode using pre-parsed AST for module `\shift_reg_serial'.
+Generating RTLIL representation for module `\shift_reg_serial'.
+
+15.5. Analyzing design hierarchy..
+Top module:  \dsm_and_freq_divider
+Used module:     \Frequency_Divider_240_248
+Used module:     \dsm_9bit
+Used module:     \shift_reg_serial
+
+15.6. Executing AST frontend in derive mode using pre-parsed AST for module `\Output_Div2'.
+Generating RTLIL representation for module `\Output_Div2'.
+
+15.7. Executing AST frontend in derive mode using pre-parsed AST for module `\Modulus_Controller'.
+Generating RTLIL representation for module `\Modulus_Controller'.
+
+15.8. Executing AST frontend in derive mode using pre-parsed AST for module `\Mod7_Counter'.
+Generating RTLIL representation for module `\Mod7_Counter'.
+
+15.9. Executing AST frontend in derive mode using pre-parsed AST for module `\Prescaler_4_5'.
+Generating RTLIL representation for module `\Prescaler_4_5'.
+
+15.10. Executing AST frontend in derive mode using pre-parsed AST for module `\Divide_by_4'.
+Generating RTLIL representation for module `\Divide_by_4'.
+
+15.11. Analyzing design hierarchy..
+Top module:  \dsm_and_freq_divider
+Used module:     \Frequency_Divider_240_248
+Used module:         \Output_Div2
+Used module:         \Modulus_Controller
+Used module:         \Mod7_Counter
+Used module:         \Prescaler_4_5
+Used module:         \Divide_by_4
+Used module:     \dsm_9bit
+Used module:     \shift_reg_serial
+
+15.12. Executing AST frontend in derive mode using pre-parsed AST for module `\DFF'.
+Generating RTLIL representation for module `\DFF'.
+
+15.13. Executing AST frontend in derive mode using pre-parsed AST for module `\JK_FF'.
+Generating RTLIL representation for module `\JK_FF'.
+
+15.14. Analyzing design hierarchy..
+Top module:  \dsm_and_freq_divider
+Used module:     \Frequency_Divider_240_248
+Used module:         \Output_Div2
+Used module:             \DFF
+Used module:         \Modulus_Controller
+Used module:         \Mod7_Counter
+Used module:             \JK_FF
+Used module:         \Prescaler_4_5
+Used module:         \Divide_by_4
+Used module:     \dsm_9bit
+Used module:     \shift_reg_serial
+
+15.15. Analyzing design hierarchy..
+Top module:  \dsm_and_freq_divider
+Used module:     \Frequency_Divider_240_248
+Used module:         \Output_Div2
+Used module:             \DFF
+Used module:         \Modulus_Controller
+Used module:         \Mod7_Counter
+Used module:             \JK_FF
+Used module:         \Prescaler_4_5
+Used module:         \Divide_by_4
+Used module:     \dsm_9bit
+Used module:     \shift_reg_serial
+Removing unused module `$abstract\shift_reg_serial'.
+Removing unused module `$abstract\Prescaler_4_5'.
+Removing unused module `$abstract\Output_Div2'.
+Removing unused module `$abstract\Modulus_Controller'.
+Removing unused module `$abstract\Mod7_Counter'.
+Removing unused module `$abstract\JK_FF'.
+Removing unused module `$abstract\Frequency_Divider_240_248'.
+Removing unused module `$abstract\dsm_9bit'.
+Removing unused module `$abstract\Divide_by_4'.
+Removing unused module `$abstract\DFF'.
+Removing unused module `$abstract\dsm_and_freq_divider'.
+Removed 11 unused modules.
+Renaming module dsm_and_freq_divider to dsm_and_freq_divider.
+
+16. Executing PROC pass (convert processes to netlists).
+
+16.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+16.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/DFF.v:14$19 in module DFF.
+Marked 1 switch rules as full_case in process $proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/shift_reg_serial.v:9$7 in module shift_reg_serial.
+Marked 1 switch rules as full_case in process $proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_9bit.v:21$4 in module dsm_9bit.
+Removed a total of 0 dead cases.
+
+16.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 2 redundant assignments.
+Promoted 2 assignments to connections.
+
+16.4. Executing PROC_INIT pass (extract init attributes).
+
+16.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst in `\DFF.$proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/DFF.v:14$19'.
+Found async reset \rst in `\shift_reg_serial.$proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/shift_reg_serial.v:9$7'.
+Found async reset \rst in `\dsm_9bit.$proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_9bit.v:21$4'.
+
+16.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~1 debug messages>
+
+16.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\DFF.$proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/DFF.v:14$19'.
+     1/1: $0\q[0:0]
+Creating decoders for process `\shift_reg_serial.$proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/shift_reg_serial.v:9$7'.
+     1/1: $0\q[8:0]
+Creating decoders for process `\dsm_9bit.$proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_9bit.v:21$4'.
+     1/1: $0\integrator[8:0]
+Creating decoders for process `\dsm_9bit.$proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_9bit.v:16$1'.
+
+16.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\dsm_9bit.\DO' from process `\dsm_9bit.$proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_9bit.v:16$1'.
+No latch inferred for signal `\dsm_9bit.\feedback_value' from process `\dsm_9bit.$proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_9bit.v:16$1'.
+
+16.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\DFF.\q' using process `\DFF.$proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/DFF.v:14$19'.
+  created $adff cell `$procdff$28' with positive edge clock and positive level reset.
+Creating register for signal `\shift_reg_serial.\q' using process `\shift_reg_serial.$proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/shift_reg_serial.v:9$7'.
+  created $adff cell `$procdff$31' with positive edge clock and positive level reset.
+Creating register for signal `\dsm_9bit.\integrator' using process `\dsm_9bit.$proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_9bit.v:21$4'.
+  created $adff cell `$procdff$34' with positive edge clock and positive level reset.
+
+16.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+16.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `DFF.$proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/DFF.v:14$19'.
+Found and cleaned up 1 empty switch in `\shift_reg_serial.$proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/shift_reg_serial.v:9$7'.
+Removing empty process `shift_reg_serial.$proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/shift_reg_serial.v:9$7'.
+Removing empty process `dsm_9bit.$proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_9bit.v:21$4'.
+Removing empty process `dsm_9bit.$proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_9bit.v:16$1'.
+Cleaned up 1 empty switch.
+
+16.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsm_and_freq_divider.
+Optimizing module DFF.
+<suppressed ~1 debug messages>
+Optimizing module Divide_by_4.
+Optimizing module Prescaler_4_5.
+Optimizing module Mod7_Counter.
+Optimizing module Modulus_Controller.
+Optimizing module Output_Div2.
+Optimizing module shift_reg_serial.
+<suppressed ~1 debug messages>
+Optimizing module dsm_9bit.
+<suppressed ~1 debug messages>
+Optimizing module Frequency_Divider_240_248.
+Optimizing module JK_FF.
+
+17. Executing FLATTEN pass (flatten design).
+Deleting now unused module DFF.
+Deleting now unused module Divide_by_4.
+Deleting now unused module Prescaler_4_5.
+Deleting now unused module Mod7_Counter.
+Deleting now unused module Modulus_Controller.
+Deleting now unused module Output_Div2.
+Deleting now unused module shift_reg_serial.
+Deleting now unused module dsm_9bit.
+Deleting now unused module Frequency_Divider_240_248.
+Deleting now unused module JK_FF.
+<suppressed ~18 debug messages>
+
+18. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsm_and_freq_divider..
+Removed 22 unused cells and 157 unused wires.
+<suppressed ~133 debug messages>

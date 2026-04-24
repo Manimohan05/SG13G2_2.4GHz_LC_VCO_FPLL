@@ -1,0 +1,9 @@
+# Logfile created on 2026-04-18 15:03:36 +0200 by logger.rb/v1.4.3
+2026-04-18 15:03:36 +0200: Memory Usage (429872K) : Starting running IHP-SG13G2 Klayout DRC maximum runset on /home/designer/shared/LC_VCO_FPLL/gds/blocks/BANDGAP_REF.gds
+2026-04-18 15:03:36 +0200: Memory Usage (429872K) : Ruby Version for klayout: 3.0.2
+2026-04-18 15:03:36 +0200: Memory Usage (430868K) : Loading database to memory is complete.
+2026-04-18 15:03:36 +0200: Memory Usage (430868K) : IHP-SG13G2 Klayout DRC maximum runset output at: /home/designer/shared/LC_VCO_FPLL/drc/drc_run_BANDGAP_REF/BANDGAP_REF_BANDGAP_REF_sg13g2_maximal.lyrdb
+2026-04-18 15:03:36 +0200: Memory Usage (432060K) : Evaluate switches.
+2026-04-18 15:03:36 +0200: Memory Usage (432060K) : Klayout will use 1 thread(s)
+2026-04-18 15:03:36 +0200: Memory Usage (432060K) : deep mode is enabled for sg13g2_maximal runset.
+2026-04-18 15:03:45 +0200: Memory Usage (467960K) : KLayout DRC run for maximum ruleSet completed in 8.21 seconds

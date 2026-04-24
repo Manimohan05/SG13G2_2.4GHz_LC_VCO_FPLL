@@ -1,0 +1,8 @@
+sg13g2_buf_1
+sg13g2_buf_16
+sg13g2_buf_2
+sg13g2_buf_4
+sg13g2_buf_8
+sg13g2_dlygate4sd1_1
+sg13g2_dlygate4sd2_1
+sg13g2_dlygate4sd3_1

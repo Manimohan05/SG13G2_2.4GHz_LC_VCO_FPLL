@@ -1,0 +1,121 @@
+** sch_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/lc-vco/LC_VCO_tb.sch
+**.subckt LC_VCO_tb FOUT VCTRL
+*.opin FOUT
+*.ipin VCTRL
+V1 VDD GND PULSE(0 1.2 0 1u 0 1s 2s)
+Vup VCTRL GND PULSE(0.4 0.8 1u 90n 1n 1s 2s)
+VBGR VBGR GND 0.6
+x1 VDD VCTRL GND FOUT VBGR LC_VCO
+**** begin user architecture code
+
+
+
+.param temp = 27
+.options method=gear rshunt=1.0e12
+
+.control
+
+* Save required signals
+save v(VCTRL) v(FOUT) v(x1.Vx) v(x1.OUTp) v(VBGR)
+
+* Long transient simulation
+tran 10p 2u
+
+* Save raw waveform
+write LC_VCO_standalone_tran.raw
+
+* Plot transient waveform
+let vout = v(FOUT)
+plot v(VCTRL) v(x1.Vx) v(FOUT) v(x1.OUTp) v(VBGR)
+plot v(VBGR)
+
+* Plot steady-state waveform
+plot v(VCTRL) v(x1.Vx) v(OUT) v(x1.OUTp) v(VBGR) xlimit 4000n 4005n
+
+* FFT analysis
+setplot tran1
+linearize vout
+set specwindow=blackman
+fft vout
+
+* Plot FFT spectrum
+let power_out_db = db(vout)
+plot power_out_db xlimit 2.34G 2.54G ylimit -200 0
+
+* Find the maximum magnitude value between 2G and 3G
+meas sp max_power_out_db max power_out_db FROM=2G TO=3G
+
+* Save FFT spectrum as raw file
+write LC_VCO_fft.raw
+
+* Save FFT data
+wrdata fft_output_standalone.txt frequency power_out_db
+
+* Save waveform for external processing
+wrdata vco_waveform_standalone.txt power_out_db
+
+.endc
+
+
+
+
+
+.param temp=27
+.control
+save all
+op
+write LC_VCO_tb.raw
+.endc
+
+
+
+.include 4nH_INDUCTOR.spice
+
+
+.lib cornerMOSlv.lib mos_tt
+.lib cornerMOShv.lib mos_tt
+.lib cornerRES.lib res_typ
+.lib cornerCAP.lib cap_typ
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  xschem/lc-vco/LC_VCO.sym # of pins=5
+** sym_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/lc-vco/LC_VCO.sym
+** sch_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/lc-vco/LC_VCO.sch
+.subckt LC_VCO VDD VCTRL GND FOUT VBGR
+*.opin FOUT
+*.ipin VCTRL
+*.ipin VBGR
+*.iopin VDD
+*.iopin GND
+XM5 Vx Vgs GND GND sg13_lv_nmos w=384u l=1u ng=48
+XM4 OUTp OUTn VDD VDD sg13_lv_pmos w=36u l=0.13u ng=5
+XM3 OUTn OUTp VDD VDD sg13_lv_pmos w=36u l=0.13u ng=5
+XM2 OUTp OUTn Vx GND sg13_lv_nmos w=22u l=0.13u ng=3
+XM1 OUTn OUTp Vx GND sg13_lv_nmos w=22u l=0.13u ng=3
+XM6 Vgs Vgs GND GND sg13_lv_nmos w=64u l=1u ng=8
+XC1 OUTn OUTp GND cap_rfcmim w=21.9e-6 l=21.9e-6 wfeed=10.0e-6
+XC3 OUTp VCTRL OUTn GND sg13_hv_svaricap w=9.74u l=0.8u Nx=7
+XC2 OUTp VCTRL OUTn GND sg13_hv_svaricap w=9.74u l=0.8u Nx=7
+XM7 Vgs VBGR VDD VDD sg13_lv_pmos w=38u l=1u ng=5
+XM8 FOUT OUTp VDD VDD sg13_lv_pmos w=15u l=0.13u ng=10
+XM9 FOUT OUTp GND GND sg13_lv_nmos w=1.5u l=0.13u ng=1
+XM10 net1 OUTn VDD VDD sg13_lv_pmos w=15u l=0.13u ng=10
+XM11 net1 OUTn GND GND sg13_lv_nmos w=1.5u l=0.13u ng=1
+**** begin user architecture code
+
+
+.subckt 4nH_INDUCTOR 1 2
+* LVS black-box stub only
+* Full model is available in 4nH_INDUCTOR.spice
+.ends
+
+
+**** end user architecture code
+x2 OUTn OUTp 4nH_INDUCTOR
+.ends
+
+.GLOBAL GND
+.GLOBAL VDD
+.end

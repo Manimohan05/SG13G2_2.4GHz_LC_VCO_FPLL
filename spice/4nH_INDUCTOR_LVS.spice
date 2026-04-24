@@ -1,0 +1,4 @@
+.subckt 4nH_INDUCTOR 1 2
+* LVS black-box stub only
+* Full model is available in 4nH_INDUCTOR.spice
+.ends

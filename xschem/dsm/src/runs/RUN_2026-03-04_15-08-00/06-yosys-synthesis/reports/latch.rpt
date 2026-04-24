@@ -1,0 +1,4 @@
+
+26. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\dsm_9bit.\DO' from process `\dsm_9bit.$proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_9bit.v:16$1'.
+No latch inferred for signal `\dsm_9bit.\feedback_value' from process `\dsm_9bit.$proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_9bit.v:16$1'.

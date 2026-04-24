@@ -1,0 +1,11 @@
+** sch_path: /home/designer/shared/LC_VCO_FPLL/xschem/LOOP_FILTER.sch
+.subckt LOOP_FILTER OUT IN GND SUB!
+*.PININFO OUT:O GND:B IN:I SUB!:B
+CC2 OUT GND cap_cmim w=18.63e-6 l=18.63e-6 m=4
+CC1 net1 GND cap_cmim w=48.34e-6 l=48.34e-6 m=16
+RR2 OUT IN -14840.7142857143 $SUB=SUB! $[rppd] w=2e-6 l=407.2e-6 b=0 m=1
+RR1 net1 IN -14840.7142857143 $SUB=SUB! $[rppd] w=2e-6 l=407.2e-6 b=0 m=1
+RR3 GND SUB! ptap1 A=4.6752e-11 P=0.00031168
+RR4 GND SUB! ptap1 A=4.6752e-11 P=0.00031168
+.ends
+.GLOBAL GND

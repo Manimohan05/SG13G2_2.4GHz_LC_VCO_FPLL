@@ -1,0 +1,119 @@
+** sch_path: /home/designer/shared/LC_VCO_FPLL/xschem/PFD_CP_LF.sch
+.subckt PFD_CP_LF CLK_IN VCTRL VDD VSS CLK_FB VBGR
+*.PININFO CLK_IN:I VCTRL:O VDD:B VSS:B CLK_FB:I VBGR:B
+x1 CLK_IN UP VDD VSS CLK_FB DN PHASE_FREQ_DET
+x2 UP VDD VCP VBGR VSS DN VSS CHARGE_PUMP
+x3 VCTRL VCP VSS VSS LOOP_FILTER
+.ends
+
+* expanding   symbol:  xschem/PHASE_FREQ_DET.sym # of pins=6
+** sym_path: /home/designer/shared/LC_VCO_FPLL/xschem/PHASE_FREQ_DET.sym
+** sch_path: /home/designer/shared/LC_VCO_FPLL/xschem/PHASE_FREQ_DET.sch
+.subckt PHASE_FREQ_DET FREF UP VDD GND FDIV DN
+*.PININFO UP:O FREF:I VDD:B GND:B DN:O FDIV:I
+x1 net1 UP FREF VDD nRST VDD GND sg13g2_dfrbp_2
+x2 DN net2 FDIV VDD nRST VDD GND sg13g2_dfrbp_2
+x3 nRST net1 DN VDD GND sg13g2_nand2_2
+* noconn #net2
+.ends
+
+
+* expanding   symbol:  xschem/CHARGE_PUMP.sym # of pins=7
+** sym_path: /home/designer/shared/LC_VCO_FPLL/xschem/CHARGE_PUMP.sym
+** sch_path: /home/designer/shared/LC_VCO_FPLL/xschem/CHARGE_PUMP.sch
+.subckt CHARGE_PUMP UP VDD VCP VBGR GND DN SUB!
+*.PININFO VCP:O UP:I DN:I GND:B VBGR:B VDD:B SUB!:B
+MM2 Vbn Vbn net5 SUB! sg13_lv_nmos w=40.7u l=2u ng=5 m=1
+MM8 net2 GND VDD NW sg13_lv_pmos w=29.6u l=2u ng=5 m=1
+MM11 Vbp Vbp net2 NW sg13_lv_pmos w=163.6u l=2u ng=20 m=1
+MM3 Vbn Vbp net1 NW sg13_lv_pmos w=163.6u l=2u ng=20 m=1
+MM4 net1 GND VDD NW sg13_lv_pmos w=29.6u l=2u ng=5 m=1
+MM7 net3 UP VDD NW sg13_lv_pmos w=29.6u l=2u ng=5 m=1
+MM9 VCP Vbp net3 NW sg13_lv_pmos w=163.6u l=2u ng=20 m=1
+MM10 net5 VDD GND SUB! sg13_lv_nmos w=6u l=2u ng=1 m=1
+MM1 net4 DN GND SUB! sg13_lv_nmos w=6u l=2u ng=1 m=1
+MM5 VCP Vbn net4 SUB! sg13_lv_nmos w=40.7u l=2u ng=5 m=1
+MM6 Vbp VBGR GND SUB! sg13_lv_nmos w=3.9u l=2u ng=1 m=1
+RR1 VDD NW ntap1 A=5.184e-11 P=0.0003456
+RR2 VDD NW ntap1 A=2.724e-11 P=0.0001816
+RR3 GND SUB! ptap1 A=7.404e-12 P=4.936e-05
+RR4 GND SUB! ptap1 A=2.5164e-11 P=0.00016776
+RR5 GND SUB! ptap1 A=1.524e-11 P=0.0001016
+.ends
+
+
+* expanding   symbol:  xschem/LOOP_FILTER.sym # of pins=4
+** sym_path: /home/designer/shared/LC_VCO_FPLL/xschem/LOOP_FILTER.sym
+** sch_path: /home/designer/shared/LC_VCO_FPLL/xschem/LOOP_FILTER.sch
+.subckt LOOP_FILTER OUT IN GND SUB!
+*.PININFO OUT:O GND:B IN:I SUB!:B
+CC2 OUT GND cap_cmim w=18.63e-6 l=18.63e-6 m=4
+CC1 net1 GND cap_cmim w=48.34e-6 l=48.34e-6 m=16
+RR2 OUT IN -14840.7142857143 $SUB=SUB! $[rppd] w=2e-6 l=407.2e-6 b=0 m=1
+RR1 net1 IN -14840.7142857143 $SUB=SUB! $[rppd] w=2e-6 l=407.2e-6 b=0 m=1
+RR3 GND SUB! ptap1 A=4.6752e-11 P=0.00031168
+RR4 GND SUB! ptap1 A=4.6752e-11 P=0.00031168
+.ends
+
+.GLOBAL VSS
+.GLOBAL VDD
+.GLOBAL GND
+
+
+************************************************************************
+* Library Name: sg13g2_stdcell
+* Cell Name:    sg13g2_dfrbp_2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT sg13g2_dfrbp_2 Q Q_N CLK D RESET_B VDD VSS
+*.PININFO CLK:I D:I RESET_B:I Q:O Q_N:O VDD:B VSS:B
+MN11 net12 net2 VSS VSS sg13_lv_nmos m=1 w=420.00n l=130.00n ng=1
+MN10 net5 clkneg net12 VSS sg13_lv_nmos m=1 w=420.00n l=130.00n ng=1
+MN12 net2 net5 net11 VSS sg13_lv_nmos m=1 w=420.00n l=130.00n ng=1
+MN13 net11 RESET_B VSS VSS sg13_lv_nmos m=1 w=420.00n l=130.00n ng=1
+MN14 Q_N net5 VSS VSS sg13_lv_nmos m=1 w=1.48u l=130.00n ng=2
+MN0 Db D net10 VSS sg13_lv_nmos m=1 w=420.00n l=130.00n ng=1
+MN1 net10 RESET_B VSS VSS sg13_lv_nmos m=1 w=420.00n l=130.00n ng=1
+MN4 Db clkneg net6 VSS sg13_lv_nmos m=1 w=420.00n l=130.00n ng=1
+MN5 net6 clkpos net9 VSS sg13_lv_nmos m=1 w=420.00n l=130.00n ng=1
+MN6 net9 net4 net8 VSS sg13_lv_nmos m=1 w=420.00n l=130.00n ng=1
+MN7 net8 RESET_B VSS VSS sg13_lv_nmos m=1 w=420.00n l=130.00n ng=1
+MN8 net4 net6 VSS VSS sg13_lv_nmos m=1 w=740.00n l=130.00n ng=1
+MN2 clkneg CLK VSS VSS sg13_lv_nmos m=1 w=740.00n l=130.00n ng=1
+MN9 net4 clkpos net5 VSS sg13_lv_nmos m=1 w=740.00n l=130.00n ng=1
+MN3 clkpos clkneg VSS VSS sg13_lv_nmos m=1 w=740.00n l=130.00n ng=1
+MN16 Q net1 VSS VSS sg13_lv_nmos m=1 w=1.48u l=130.00n ng=2
+MN15 net1 net5 VSS VSS sg13_lv_nmos m=1 w=640.00n l=130.00n ng=1
+MP11 net5 clkpos net3 VDD sg13_lv_pmos m=1 w=420.00n l=130.00n ng=1
+MP12 net2 net5 VDD VDD sg13_lv_pmos m=1 w=420.00n l=130.00n ng=1
+MP13 net2 RESET_B VDD VDD sg13_lv_pmos m=1 w=420.00n l=130.00n ng=1
+MP14 Q_N net5 VDD VDD sg13_lv_pmos m=1 w=2.24u l=130.00n ng=2
+MP4 Db clkpos net6 VDD sg13_lv_pmos m=1 w=420.00n l=130.00n ng=1
+MP0 Db RESET_B VDD VDD sg13_lv_pmos m=1 w=420.00n l=130.00n ng=1
+MP1 Db D VDD VDD sg13_lv_pmos m=1 w=420.00n l=130.00n ng=1
+MP5 net7 net4 VDD VDD sg13_lv_pmos m=1 w=420.00n l=130.00n ng=1
+MP6 net6 clkneg net7 VDD sg13_lv_pmos m=1 w=420.00n l=130.00n ng=1
+MP7 net6 RESET_B VDD VDD sg13_lv_pmos m=1 w=420.00n l=130.00n ng=1
+MP2 clkneg CLK VDD VDD sg13_lv_pmos m=1 w=1.12u l=130.00n ng=1
+MP3 clkpos clkneg VDD VDD sg13_lv_pmos m=1 w=1.12u l=130.00n ng=1
+MP8 net4 net6 VDD VDD sg13_lv_pmos m=1 w=1.000u l=130.00n ng=1
+MP9 net4 clkneg net5 VDD sg13_lv_pmos m=1 w=1.000u l=130.00n ng=1
+MP16 Q net1 VDD VDD sg13_lv_pmos m=1 w=2.24u l=130.00n ng=2
+MP10 net3 net2 VDD VDD sg13_lv_pmos m=1 w=420.00n l=130.00n ng=1
+MP15 net1 net5 VDD VDD sg13_lv_pmos m=1 w=1.000u l=130.00n ng=1
+.ENDS
+
+************************************************************************
+* Library Name: sg13g2_stdcell
+* Cell Name:    sg13g2_nand2_2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT sg13g2_nand2_2 Y A B VDD VSS
+*.PININFO A:I B:I Y:O VDD:B VSS:B
+MP1 Y B VDD VDD sg13_lv_pmos m=1 w=2.24u l=130.00n ng=2
+MP0 Y A VDD VDD sg13_lv_pmos m=1 w=2.24u l=130.00n ng=2
+MN1 net1 B VSS VSS sg13_lv_nmos m=1 w=1.44u l=130.00n ng=2
+MN0 Y A net1 VSS sg13_lv_nmos m=1 w=1.44u l=130.00n ng=2
+.ENDS

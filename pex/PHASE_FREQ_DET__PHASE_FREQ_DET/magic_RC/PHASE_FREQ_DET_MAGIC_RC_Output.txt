@@ -1,0 +1,73 @@
+
+Magic 8.3 revision 636 - Compiled on Thu Apr 16 09:13:57 PM CEST 2026.
+Starting magic under Tcl interpreter
+Using the terminal as the console.
+WARNING: RLIMIT_NOFILE is above 1024 and Tcl_Version<9 this may cause runtime issues [rlim_cur=1048576]
+Using NULL graphics device.
+Processing system .magicrc file
+Switching to WIRING tool.
+Switching to NETLIST tool.
+Switching to PICK tool.
+Switching to BOX tool.
+Sourcing design .magicrc for technology ihp-sg13g2 ...
+2 Magic internal units = 1 Lambda
+Input style sg13g2(): scaleFactor=2, multiplier=2
+The following types are not handled by extraction and will be treated as non-electrical types:
+    pblock sealcont difffill nemitter hvnemitter hvisodiffres sealvia1 sealvia2 sealvia3 sealvia4 sealvia5 sealvia6 pillar solder seal glass thruvia inductor 
+Scaled tech values by 2 / 1 to match internal grid scaling
+Loading ihp-sg13g2 Device Generator Menu ...
+Loading "pex/PHASE_FREQ_DET__PHASE_FREQ_DET/magic_RC/PHASE_FREQ_DET_MAGIC_RC_Script.tcl" from command line.
+Warning: Calma reading is not undoable!  I hope that's OK.
+Library written using GDS-II Release 6.0
+Library name: LIB
+Reading "$$$CONTEXT_INFO$$$".
+Reading "via_stack$1".
+Reading "sg13g2_nand2_2".
+Reading "sg13g2_dfrbp_2".
+Reading "PHASE_FREQ_DET".
+Extracting PHASE_FREQ_DET into /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/pex/PHASE_FREQ_DET__PHASE_FREQ_DET/magic_RC/PHASE_FREQ_DET.ext:
+exttosim finished.
+Adding  a_n1222_381#
+Adding  sg13g2_nand2_2_0.Y
+Adding  a_n1482_158#
+Adding  a_n1196_476#
+Adding  a_n787_415#
+Adding  a_n685_502#
+Adding  a_n839_549#
+Adding  a_n1388_158#
+Adding  a_63_235#
+Adding  a_291_375#
+Adding  a_864_436#
+Adding  sg13g2_nand2_2_0.A
+Adding  a_252_473#
+Adding  a_n907_171#
+Adding  a_n970_171#
+Adding  a_n31_235#
+Adding  a_482_158#
+Adding  a_1402_159#
+Adding  a_n1482_n242#
+Adding  a_n1388_n242#
+Adding  a_n1222_n712#
+Adding  a_n1196_n676#
+Adding  a_n787_n669#
+Adding  a_n970_n255#
+Adding  a_n907_n255#
+Adding  a_n685_n669#
+Adding  a_291_n441#
+Adding  a_63_n319#
+Adding  a_864_n636#
+Adding  a_n31_n319#
+Adding  a_482_n242#
+Adding  sg13g2_dfrbp_2_1.Q_N
+Adding  a_n839_n633#
+Adding  a_252_n557#
+Adding  VSS
+Adding  VDD; Tnew = 0.00ns, Told = 0.00ns
+Adding  FREF; Tnew = 0.00ns, Told = 0.00ns
+Adding  DN; Tnew = 0.01ns, Told = 0.00ns
+Adding  UP; Tnew = 0.01ns, Told = 0.00ns
+Adding  FDIV; Tnew = 0.00ns, Told = 0.00ns
+Total Nets: 40
+Nets extracted: 40 (1.000000)
+Nets output: 40 (1.000000)
+exttospice finished.

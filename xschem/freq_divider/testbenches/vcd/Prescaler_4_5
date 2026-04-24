@@ -1,0 +1,157 @@
+#! /foss/tools/iverilog/bin/vvp
+:ivl_version "13.0 (devel)" "(s20251012-46-gaad14df3-dirty)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/foss/tools/iverilog/lib/ivl/system.vpi";
+:vpi_module "/foss/tools/iverilog/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/foss/tools/iverilog/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/foss/tools/iverilog/lib/ivl/v2005_math.vpi";
+:vpi_module "/foss/tools/iverilog/lib/ivl/va_math.vpi";
+S_0x55ed6f5d8180 .scope module, "tb_Prescaler_4_5" "tb_Prescaler_4_5" 2 4;
+ .timescale -9 -12;
+v0x55ed6f5f4430_0 .var "clk", 0 0;
+v0x55ed6f5f4560_0 .net "clk_jk", 0 0, L_0x55ed6f5f4d10;  1 drivers
+v0x55ed6f5f4620_0 .var "mc", 0 0;
+v0x55ed6f5f4720_0 .var "rst", 0 0;
+S_0x55ed6f5d8310 .scope module, "uut" "Prescaler_4_5" 2 13, 3 7 0, S_0x55ed6f5d8180;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "rst";
+    .port_info 2 /INPUT 1 "mc";
+    .port_info 3 /OUTPUT 1 "clk_jk";
+L_0x55ed6f5c9ec0 .functor BUFZ 1, L_0x55ed6f5f4af0, C4<0>, C4<0>, C4<0>;
+L_0x55ed6f5c93d0 .functor BUFZ 1, v0x55ed6f5f3120_0, C4<0>, C4<0>, C4<0>;
+L_0x55ed6f5f48a0 .functor OR 1, v0x55ed6f5f4620_0, v0x55ed6f5f3890_0, C4<0>, C4<0>;
+L_0x55ed6f5f49b0 .functor AND 1, v0x55ed6f5f3120_0, L_0x55ed6f5f48a0, C4<1>, C4<1>;
+L_0x55ed6f5f4d10 .functor BUFZ 1, v0x55ed6f5f3890_0, C4<0>, C4<0>, C4<0>;
+v0x55ed6f5f3bd0_0 .net "clk", 0 0, v0x55ed6f5f4430_0;  1 drivers
+v0x55ed6f5f3c90_0 .net "clk_jk", 0 0, L_0x55ed6f5f4d10;  alias, 1 drivers
+v0x55ed6f5f3d50_0 .net "d1", 0 0, L_0x55ed6f5f49b0;  1 drivers
+v0x55ed6f5f3df0_0 .net "d2", 0 0, L_0x55ed6f5c9ec0;  1 drivers
+v0x55ed6f5f3ec0_0 .net "d3", 0 0, L_0x55ed6f5c93d0;  1 drivers
+v0x55ed6f5f3fb0_0 .net "mc", 0 0, v0x55ed6f5f4620_0;  1 drivers
+v0x55ed6f5f4050_0 .net "mc_gated", 0 0, L_0x55ed6f5f48a0;  1 drivers
+v0x55ed6f5f40f0_0 .net "q1_n", 0 0, L_0x55ed6f5f4af0;  1 drivers
+v0x55ed6f5f41c0_0 .net "q2", 0 0, v0x55ed6f5f3120_0;  1 drivers
+v0x55ed6f5f4290_0 .net "q3", 0 0, v0x55ed6f5f3890_0;  1 drivers
+v0x55ed6f5f4360_0 .net "rst", 0 0, v0x55ed6f5f4720_0;  1 drivers
+S_0x55ed6f5dbb40 .scope module, "ff1" "DFF" 3 26, 4 5 0, S_0x55ed6f5d8310;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "rst";
+    .port_info 2 /INPUT 1 "d";
+    .port_info 3 /OUTPUT 1 "q";
+    .port_info 4 /OUTPUT 1 "q_bar";
+L_0x55ed6f5f4af0 .functor NOT 1, v0x55ed6f5c94e0_0, C4<0>, C4<0>, C4<0>;
+v0x55ed6f5c9fd0_0 .net "clk", 0 0, v0x55ed6f5f4430_0;  alias, 1 drivers
+v0x55ed6f5ca0d0_0 .net "d", 0 0, L_0x55ed6f5f49b0;  alias, 1 drivers
+v0x55ed6f5c94e0_0 .var "q", 0 0;
+v0x55ed6f5c95e0_0 .net "q_bar", 0 0, L_0x55ed6f5f4af0;  alias, 1 drivers
+v0x55ed6f5f2b80_0 .net "rst", 0 0, v0x55ed6f5f4720_0;  alias, 1 drivers
+E_0x55ed6f59efb0 .event posedge, v0x55ed6f5f2b80_0, v0x55ed6f5c9fd0_0;
+S_0x55ed6f5f2d30 .scope module, "ff2" "DFF" 3 27, 4 5 0, S_0x55ed6f5d8310;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "rst";
+    .port_info 2 /INPUT 1 "d";
+    .port_info 3 /OUTPUT 1 "q";
+    .port_info 4 /OUTPUT 1 "q_bar";
+L_0x55ed6f5f4b60 .functor NOT 1, v0x55ed6f5f3120_0, C4<0>, C4<0>, C4<0>;
+v0x55ed6f5f2fe0_0 .net "clk", 0 0, v0x55ed6f5f4430_0;  alias, 1 drivers
+v0x55ed6f5f3080_0 .net "d", 0 0, L_0x55ed6f5c9ec0;  alias, 1 drivers
+v0x55ed6f5f3120_0 .var "q", 0 0;
+v0x55ed6f5f31c0_0 .net "q_bar", 0 0, L_0x55ed6f5f4b60;  1 drivers
+v0x55ed6f5f3280_0 .net "rst", 0 0, v0x55ed6f5f4720_0;  alias, 1 drivers
+S_0x55ed6f5f3420 .scope module, "ff3" "DFF" 3 28, 4 5 0, S_0x55ed6f5d8310;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "rst";
+    .port_info 2 /INPUT 1 "d";
+    .port_info 3 /OUTPUT 1 "q";
+    .port_info 4 /OUTPUT 1 "q_bar";
+L_0x55ed6f5f4c80 .functor NOT 1, v0x55ed6f5f3890_0, C4<0>, C4<0>, C4<0>;
+v0x55ed6f5f36e0_0 .net "clk", 0 0, v0x55ed6f5f4430_0;  alias, 1 drivers
+v0x55ed6f5f37d0_0 .net "d", 0 0, L_0x55ed6f5c93d0;  alias, 1 drivers
+v0x55ed6f5f3890_0 .var "q", 0 0;
+v0x55ed6f5f3930_0 .net "q_bar", 0 0, L_0x55ed6f5f4c80;  1 drivers
+v0x55ed6f5f39f0_0 .net "rst", 0 0, v0x55ed6f5f4720_0;  alias, 1 drivers
+    .scope S_0x55ed6f5dbb40;
+T_0 ;
+    %wait E_0x55ed6f59efb0;
+    %load/vec4 v0x55ed6f5f2b80_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x55ed6f5c94e0_0, 0;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v0x55ed6f5ca0d0_0;
+    %assign/vec4 v0x55ed6f5c94e0_0, 0;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_0x55ed6f5f2d30;
+T_1 ;
+    %wait E_0x55ed6f59efb0;
+    %load/vec4 v0x55ed6f5f3280_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_1.0, 8;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x55ed6f5f3120_0, 0;
+    %jmp T_1.1;
+T_1.0 ;
+    %load/vec4 v0x55ed6f5f3080_0;
+    %assign/vec4 v0x55ed6f5f3120_0, 0;
+T_1.1 ;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_0x55ed6f5f3420;
+T_2 ;
+    %wait E_0x55ed6f59efb0;
+    %load/vec4 v0x55ed6f5f39f0_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_2.0, 8;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x55ed6f5f3890_0, 0;
+    %jmp T_2.1;
+T_2.0 ;
+    %load/vec4 v0x55ed6f5f37d0_0;
+    %assign/vec4 v0x55ed6f5f3890_0, 0;
+T_2.1 ;
+    %jmp T_2;
+    .thread T_2;
+    .scope S_0x55ed6f5d8180;
+T_3 ;
+    %delay 5000, 0;
+    %load/vec4 v0x55ed6f5f4430_0;
+    %inv;
+    %store/vec4 v0x55ed6f5f4430_0, 0, 1;
+    %jmp T_3;
+    .thread T_3;
+    .scope S_0x55ed6f5d8180;
+T_4 ;
+    %vpi_call 2 24 "$dumpfile", "tb_Prescaler_4_5.vcd" {0 0 0};
+    %vpi_call 2 25 "$dumpvars" {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55ed6f5f4430_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55ed6f5f4720_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55ed6f5f4620_0, 0, 1;
+    %delay 20000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55ed6f5f4720_0, 0, 1;
+    %delay 200000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55ed6f5f4620_0, 0, 1;
+    %delay 200000, 0;
+    %vpi_call 2 45 "$finish" {0 0 0};
+    %end;
+    .thread T_4;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "../tb_Prescaler_4_5.v";
+    "./../../Prescaler_4_5.v";
+    "./../../DFF.v";

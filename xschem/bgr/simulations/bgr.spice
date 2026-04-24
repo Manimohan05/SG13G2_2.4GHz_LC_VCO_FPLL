@@ -1,0 +1,45 @@
+** sch_path: /foss/designs/frac-n-pll-vco-unic_cass/schematic/bgr/bgr.sch
+**.subckt bgr VBGR VDD VSS
+*.opin VBGR
+*.iopin VDD
+*.iopin VSS
+XM8 VSS v- net1 VSS sg13_lv_nmos w=150n l=10u ng=1
+XM6 net1 net1 VDD VDD sg13_lv_pmos w=1u l=1u ng=1
+XM7 net2 net1 VDD VDD sg13_lv_pmos w=1u l=1u ng=1
+XM9 v- net2 VDD VDD sg13_lv_pmos w=200n l=4u ng=1
+XM1 VSS v+ v- VSS sg13_lv_nmos w=7.14u l=5u ng=4
+XM2 VSS net4 net4 VSS sg13_lv_nmos w=21u l=5u ng=8
+XM3 v- Vo1 VDD VDD sg13_lv_pmos w=15u l=5u ng=8
+XM4 v+ Vo1 VDD VDD sg13_lv_pmos w=15u l=5u ng=8
+XM5 VBGR Vo1 VDD VDD sg13_lv_pmos w=16u l=5u ng=8
+XC3 VBGR VSS cap_cmim w=72.965e-6 l=72.965e-6
+XR3 v+ net4 sub! rppd w=0.5e-6 l=194.345e-6 m=1 b=0
+XR1 v+ VSS sub! rppd w=0.6e-6 l=194.345e-6 m=1 b=0
+XR2 VBGR VSS sub! rppd w=0.5e-6 l=192.395e-6 m=1 b=0
+XC1 net2 VSS cap_cmim w=18.195e-6 l=18.195e-6
+x1 VDD net3 v+ v- Vo1 VSS two_stage_OTA
+XR4 net3 VSS sub! rppd w=0.5e-6 l=15e-6 m=1 b=0
+**.ends
+
+* expanding   symbol:  two_stage_OTA.sym # of pins=6
+** sym_path: /foss/designs/frac-n-pll-vco-unic_cass/schematic/bgr/two_stage_OTA.sym
+** sch_path: /foss/designs/frac-n-pll-vco-unic_cass/schematic/bgr/two_stage_OTA.sch
+.subckt two_stage_OTA vdd iout v+ v- vout vss
+*.iopin v-
+*.iopin v+
+*.iopin vss
+*.iopin vdd
+*.iopin iout
+*.iopin vout
+XM4 vss net1 net3 vss sg13_lv_nmos w=720n l=9.75u ng=1
+XM3 vss net1 net1 vss sg13_lv_nmos w=720n l=9.75u ng=1
+XM1 net1 v- net2 vdd sg13_lv_pmos w=3.64u l=3.7u ng=1 m=2
+XM2 net3 v+ net2 vdd sg13_lv_pmos w=3.64u l=3.7u ng=1 m=2
+XM5 net2 iout vdd vdd sg13_lv_pmos w=5.3u l=1.95u ng=1
+XM7 vout iout vdd vdd sg13_lv_pmos w=75u l=2.08u ng=8
+XM6 vss net3 vout vss sg13_lv_nmos w=28.8u l=9.75u ng=4
+XM9 iout iout vdd vdd sg13_lv_pmos w=75u l=2.08u ng=8
+XC2 net3 vout cap_cmim w=22.295e-6 l=22.295e-6
+.ends
+
+.end

@@ -1,0 +1,61 @@
+{
+   "creator": "Yosys 0.62 (git sha1 7326bb7d6641500ecb285c291a54a662cb1e76cf, clang++ 21.1.2 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/tmp/d25c324478f54785a641184ce90d7660.lib -liberty /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/tmp/36bb69b466694c83969b88bc54a4202a.lib ",
+   "modules": {
+      "\\dsm_and_freq_divider": {
+         "num_wires":         117,
+         "num_wire_bits":     149,
+         "num_pub_wires":     24,
+         "num_pub_wire_bits": 40,
+         "num_ports":         6,
+         "num_port_bits":     6,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         135,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 29,
+            "$_AND_": 2,
+            "$_DFFE_PP0P_": 9,
+            "$_DFF_PP0_": 18,
+            "$_MUX_": 2,
+            "$_NAND_": 6,
+            "$_NOR_": 14,
+            "$_NOT_": 6,
+            "$_ORNOT_": 6,
+            "$_OR_": 9,
+            "$_XNOR_": 14,
+            "$_XOR_": 20
+         }
+      }
+   },
+      "design": {
+         "num_wires":         117,
+         "num_wire_bits":     149,
+         "num_pub_wires":     24,
+         "num_pub_wire_bits": 40,
+         "num_ports":         6,
+         "num_port_bits":     6,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         135,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 29,
+            "$_AND_": 2,
+            "$_DFFE_PP0P_": 9,
+            "$_DFF_PP0_": 18,
+            "$_MUX_": 2,
+            "$_NAND_": 6,
+            "$_NOR_": 14,
+            "$_NOT_": 6,
+            "$_ORNOT_": 6,
+            "$_OR_": 9,
+            "$_XNOR_": 14,
+            "$_XOR_": 20
+         }
+      }
+}
+

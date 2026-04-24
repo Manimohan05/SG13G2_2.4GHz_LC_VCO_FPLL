@@ -1,0 +1,193 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.62 (git sha1 7326bb7d6641500ecb285c291a54a662cb1e76cf, clang++ 21.1.2 -fPIC -O3)
+
+-- Running command `
+                    verilog_defines -DUSE_POWER_PINS;
+read_verilog -sv -lib /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/tmp/e754120f39814559884a06bafee0dbe2.bb.v;
+
+                    blackbox;
+                    write_verilog -noattr -noexpr -nohex -nodec -defparam -blackboxes /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/tmp/e754120f39814559884a06bafee0dbe2.bb.v;
+                    ' --
+
+1. Executing Verilog-2005 frontend: /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/tmp/e754120f39814559884a06bafee0dbe2.bb.v
+Parsing SystemVerilog input from `/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/tmp/e754120f39814559884a06bafee0dbe2.bb.v' to AST representation.
+Generating RTLIL representation for module `\sg13g2_a21o_1'.
+Generating RTLIL representation for module `\sg13g2_a21o_2'.
+Generating RTLIL representation for module `\sg13g2_a21oi_1'.
+Generating RTLIL representation for module `\sg13g2_a21oi_2'.
+Generating RTLIL representation for module `\sg13g2_a221oi_1'.
+Generating RTLIL representation for module `\sg13g2_a22oi_1'.
+Generating RTLIL representation for module `\sg13g2_and2_1'.
+Generating RTLIL representation for module `\sg13g2_and2_2'.
+Generating RTLIL representation for module `\sg13g2_and3_1'.
+Generating RTLIL representation for module `\sg13g2_and3_2'.
+Generating RTLIL representation for module `\sg13g2_and4_1'.
+Generating RTLIL representation for module `\sg13g2_and4_2'.
+Generating RTLIL representation for module `\sg13g2_antennanp'.
+Generating RTLIL representation for module `\sg13g2_buf_1'.
+Generating RTLIL representation for module `\sg13g2_buf_16'.
+Generating RTLIL representation for module `\sg13g2_buf_2'.
+Generating RTLIL representation for module `\sg13g2_buf_4'.
+Generating RTLIL representation for module `\sg13g2_buf_8'.
+Generating RTLIL representation for module `\sg13g2_decap_4'.
+Generating RTLIL representation for module `\sg13g2_decap_8'.
+Generating RTLIL representation for module `\sg13g2_dfrbp_1'.
+Generating RTLIL representation for module `\sg13g2_dfrbp_2'.
+Generating RTLIL representation for module `\sg13g2_dfrbpq_1'.
+Generating RTLIL representation for module `\sg13g2_dfrbpq_2'.
+Generating RTLIL representation for module `\sg13g2_dlhq_1'.
+Generating RTLIL representation for module `\sg13g2_dlhr_1'.
+Generating RTLIL representation for module `\sg13g2_dlhrq_1'.
+Generating RTLIL representation for module `\sg13g2_dllr_1'.
+Generating RTLIL representation for module `\sg13g2_dllrq_1'.
+Generating RTLIL representation for module `\sg13g2_dlygate4sd1_1'.
+Generating RTLIL representation for module `\sg13g2_dlygate4sd2_1'.
+Generating RTLIL representation for module `\sg13g2_dlygate4sd3_1'.
+Generating RTLIL representation for module `\sg13g2_ebufn_2'.
+Generating RTLIL representation for module `\sg13g2_ebufn_4'.
+Generating RTLIL representation for module `\sg13g2_ebufn_8'.
+Generating RTLIL representation for module `\sg13g2_einvn_2'.
+Generating RTLIL representation for module `\sg13g2_einvn_4'.
+Generating RTLIL representation for module `\sg13g2_einvn_8'.
+Generating RTLIL representation for module `\sg13g2_fill_1'.
+Generating RTLIL representation for module `\sg13g2_fill_2'.
+Generating RTLIL representation for module `\sg13g2_fill_4'.
+Generating RTLIL representation for module `\sg13g2_fill_8'.
+Generating RTLIL representation for module `\sg13g2_inv_1'.
+Generating RTLIL representation for module `\sg13g2_inv_16'.
+Generating RTLIL representation for module `\sg13g2_inv_2'.
+Generating RTLIL representation for module `\sg13g2_inv_4'.
+Generating RTLIL representation for module `\sg13g2_inv_8'.
+Generating RTLIL representation for module `\sg13g2_lgcp_1'.
+Generating RTLIL representation for module `\sg13g2_mux2_1'.
+Generating RTLIL representation for module `\sg13g2_mux2_2'.
+Generating RTLIL representation for module `\sg13g2_mux4_1'.
+Generating RTLIL representation for module `\sg13g2_nand2_1'.
+Generating RTLIL representation for module `\sg13g2_nand2_2'.
+Generating RTLIL representation for module `\sg13g2_nand2b_1'.
+Generating RTLIL representation for module `\sg13g2_nand2b_2'.
+Generating RTLIL representation for module `\sg13g2_nand3_1'.
+Generating RTLIL representation for module `\sg13g2_nand3b_1'.
+Generating RTLIL representation for module `\sg13g2_nand4_1'.
+Generating RTLIL representation for module `\sg13g2_nor2_1'.
+Generating RTLIL representation for module `\sg13g2_nor2_2'.
+Generating RTLIL representation for module `\sg13g2_nor2b_1'.
+Generating RTLIL representation for module `\sg13g2_nor2b_2'.
+Generating RTLIL representation for module `\sg13g2_nor3_1'.
+Generating RTLIL representation for module `\sg13g2_nor3_2'.
+Generating RTLIL representation for module `\sg13g2_nor4_1'.
+Generating RTLIL representation for module `\sg13g2_nor4_2'.
+Generating RTLIL representation for module `\sg13g2_o21ai_1'.
+Generating RTLIL representation for module `\sg13g2_or2_1'.
+Generating RTLIL representation for module `\sg13g2_or2_2'.
+Generating RTLIL representation for module `\sg13g2_or3_1'.
+Generating RTLIL representation for module `\sg13g2_or3_2'.
+Generating RTLIL representation for module `\sg13g2_or4_1'.
+Generating RTLIL representation for module `\sg13g2_or4_2'.
+Generating RTLIL representation for module `\sg13g2_sdfbbp_1'.
+Generating RTLIL representation for module `\sg13g2_sdfrbp_1'.
+Generating RTLIL representation for module `\sg13g2_sdfrbp_2'.
+Generating RTLIL representation for module `\sg13g2_sdfrbpq_1'.
+Generating RTLIL representation for module `\sg13g2_sdfrbpq_2'.
+Generating RTLIL representation for module `\sg13g2_sighold'.
+Generating RTLIL representation for module `\sg13g2_slgcp_1'.
+Generating RTLIL representation for module `\sg13g2_tiehi'.
+Generating RTLIL representation for module `\sg13g2_tielo'.
+Generating RTLIL representation for module `\sg13g2_xnor2_1'.
+Generating RTLIL representation for module `\sg13g2_xor2_1'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog backend.
+Dumping module `\sg13g2_a21o_1'.
+Dumping module `\sg13g2_a21o_2'.
+Dumping module `\sg13g2_a21oi_1'.
+Dumping module `\sg13g2_a21oi_2'.
+Dumping module `\sg13g2_a221oi_1'.
+Dumping module `\sg13g2_a22oi_1'.
+Dumping module `\sg13g2_and2_1'.
+Dumping module `\sg13g2_and2_2'.
+Dumping module `\sg13g2_and3_1'.
+Dumping module `\sg13g2_and3_2'.
+Dumping module `\sg13g2_and4_1'.
+Dumping module `\sg13g2_and4_2'.
+Dumping module `\sg13g2_antennanp'.
+Dumping module `\sg13g2_buf_1'.
+Dumping module `\sg13g2_buf_16'.
+Dumping module `\sg13g2_buf_2'.
+Dumping module `\sg13g2_buf_4'.
+Dumping module `\sg13g2_buf_8'.
+Dumping module `\sg13g2_decap_4'.
+Dumping module `\sg13g2_decap_8'.
+Dumping module `\sg13g2_dfrbp_1'.
+Dumping module `\sg13g2_dfrbp_2'.
+Dumping module `\sg13g2_dfrbpq_1'.
+Dumping module `\sg13g2_dfrbpq_2'.
+Dumping module `\sg13g2_dlhq_1'.
+Dumping module `\sg13g2_dlhr_1'.
+Dumping module `\sg13g2_dlhrq_1'.
+Dumping module `\sg13g2_dllr_1'.
+Dumping module `\sg13g2_dllrq_1'.
+Dumping module `\sg13g2_dlygate4sd1_1'.
+Dumping module `\sg13g2_dlygate4sd2_1'.
+Dumping module `\sg13g2_dlygate4sd3_1'.
+Dumping module `\sg13g2_ebufn_2'.
+Dumping module `\sg13g2_ebufn_4'.
+Dumping module `\sg13g2_ebufn_8'.
+Dumping module `\sg13g2_einvn_2'.
+Dumping module `\sg13g2_einvn_4'.
+Dumping module `\sg13g2_einvn_8'.
+Dumping module `\sg13g2_fill_1'.
+Dumping module `\sg13g2_fill_2'.
+Dumping module `\sg13g2_fill_4'.
+Dumping module `\sg13g2_fill_8'.
+Dumping module `\sg13g2_inv_1'.
+Dumping module `\sg13g2_inv_16'.
+Dumping module `\sg13g2_inv_2'.
+Dumping module `\sg13g2_inv_4'.
+Dumping module `\sg13g2_inv_8'.
+Dumping module `\sg13g2_lgcp_1'.
+Dumping module `\sg13g2_mux2_1'.
+Dumping module `\sg13g2_mux2_2'.
+Dumping module `\sg13g2_mux4_1'.
+Dumping module `\sg13g2_nand2_1'.
+Dumping module `\sg13g2_nand2_2'.
+Dumping module `\sg13g2_nand2b_1'.
+Dumping module `\sg13g2_nand2b_2'.
+Dumping module `\sg13g2_nand3_1'.
+Dumping module `\sg13g2_nand3b_1'.
+Dumping module `\sg13g2_nand4_1'.
+Dumping module `\sg13g2_nor2_1'.
+Dumping module `\sg13g2_nor2_2'.
+Dumping module `\sg13g2_nor2b_1'.
+Dumping module `\sg13g2_nor2b_2'.
+Dumping module `\sg13g2_nor3_1'.
+Dumping module `\sg13g2_nor3_2'.
+Dumping module `\sg13g2_nor4_1'.
+Dumping module `\sg13g2_nor4_2'.
+Dumping module `\sg13g2_o21ai_1'.
+Dumping module `\sg13g2_or2_1'.
+Dumping module `\sg13g2_or2_2'.
+Dumping module `\sg13g2_or3_1'.
+Dumping module `\sg13g2_or3_2'.
+Dumping module `\sg13g2_or4_1'.
+Dumping module `\sg13g2_or4_2'.
+Dumping module `\sg13g2_sdfbbp_1'.
+Dumping module `\sg13g2_sdfrbp_1'.
+Dumping module `\sg13g2_sdfrbp_2'.
+Dumping module `\sg13g2_sdfrbpq_1'.
+Dumping module `\sg13g2_sdfrbpq_2'.
+Dumping module `\sg13g2_sighold'.
+Dumping module `\sg13g2_slgcp_1'.
+Dumping module `\sg13g2_tiehi'.
+Dumping module `\sg13g2_tielo'.
+Dumping module `\sg13g2_xnor2_1'.
+Dumping module `\sg13g2_xor2_1'.
+
+End of script. Logfile hash: 0826492cf5, CPU: user 0.05s system 0.02s, MEM: 56.52 MB peak
+Yosys 0.62 (git sha1 7326bb7d6641500ecb285c291a54a662cb1e76cf, clang++ 21.1.2 -fPIC -O3)
+Time spent: 57% 2x write_verilog (0 sec), 39% 2x read_verilog (0 sec), ...

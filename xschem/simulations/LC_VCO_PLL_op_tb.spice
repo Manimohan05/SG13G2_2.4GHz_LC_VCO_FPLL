@@ -1,0 +1,190 @@
+** sch_path: /home/designer/shared/frac-n-pll-vco-smacd_2026/schematic/top-pll/LC_VCO_PLL_op_tb.sch
+**.subckt LC_VCO_PLL_op_tb OUT
+*.opin OUT
+Vfref CLK_IN GND 0 pulse(0 1.2 0n 0.1n 0.1n 5n 10n)
+I1 net1 GND 10m
+x1 VDD CLK_IN OUT VBGR net1 GND LC_VCO_FPLL
+V1 VDD GND 1.2
+VBGR VBGR GND 0.6
+**** begin user architecture code
+
+
+
+*****************************************************
+* PLL + DSM Frequency Divider Testbench
+*****************************************************
+
+.option temp = 27
+.param VDD = 1.2
+
+* ==============================
+* Include Models
+* ==============================
+
+* Inductor / analog models
+.include ../IHP_4nH_Inductor.spice
+
+.control
+save all
+op
+set filetype=ascii
+
+* Print supply current
+print i(V1)
+
+* Print power (correct way)
+let power = i(V1)*v(VDD)
+print power
+
+write op_out.raw
+print all > op_out.txt
+.endc
+
+* to generate following file copy stimuli.test
+* to the simulation directory and run simulation -> Utile Stimuli Editor (GUI),
+* and press 'Translate'
+.include ../simulations/stimuli_test.cir
+
+
+
+
+
+.lib cornerMOSlv.lib mos_tt
+.lib cornerMOShv.lib mos_tt
+.lib cornerHBT.lib hbt_typ
+.lib cornerRES.lib res_typ
+.lib cornerCAP.lib cap_typ_stat
+.include /foss/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
+.include /opt/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
+.global VDD GND
+
+
+.param CP_N_L = 1u
+.param CP_N_W = 3u
+.param CP_P_M = 1
+.param CP_P_L = 1u
+.param CP_P_W = 10u
+.param CP_N_M = 1
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  top-pll/LC_VCO_FPLL.sym # of pins=6
+** sym_path: /home/designer/shared/frac-n-pll-vco-smacd_2026/schematic/top-pll/LC_VCO_FPLL.sym
+** sch_path: /home/designer/shared/frac-n-pll-vco-smacd_2026/schematic/top-pll/LC_VCO_FPLL.sch
+.subckt LC_VCO_FPLL VDD CLK_IN CLK_OUT VBGR Ibias GND
+*.iopin GND
+*.iopin VDD
+*.ipin CLK_IN
+*.ipin VBGR
+*.ipin Ibias
+*.opin CLK_OUT
+* noconn rst
+* noconn sclk
+* noconn sdata
+* noconn en
+xcp VDD UP VCTRL DN GND Ibias CP
+xpfd VDD UP CLK_IN DSM_OUT DN GND PFD
+adut [ net1 net2 net3 net4 net5 ] [ net6 ] null dut
+.model dut d_cosim simulation=./../dsm_and_freq_divider.so
+A1 [ CLK_OUT ] [ net1 ] adc1
+.model adc1 adc_bridge in_low=0.6 in_high=0.6
+A6 [ net6 ] [ DSM_OUT ] dac1
+.model dac1 dac_bridge out_low=0 out_high=1.2
+A7 [ en ] [ net5 ] adc1
+.model adc1 adc_bridge in_low=0.6 in_high=0.6
+A2 [ rst ] [ net2 ] adc1
+.model adc1 adc_bridge in_low=0.6 in_high=0.6
+A3 [ sclk ] [ net3 ] adc1
+.model adc1 adc_bridge in_low=0.6 in_high=0.6
+A4 [ sdata ] [ net4 ] adc1
+.model adc1 adc_bridge in_low=0.6 in_high=0.6
+x1 VDD VCTRL GND CLK_OUT VBGR LC_VCO
+.ends
+
+
+* expanding   symbol:  charge-pump/CP.sym # of pins=6
+** sym_path: /home/designer/shared/frac-n-pll-vco-smacd_2026/schematic/charge-pump/CP.sym
+** sch_path: /home/designer/shared/frac-n-pll-vco-smacd_2026/schematic/charge-pump/CP.sch
+.subckt CP VDD UP CTRL DN GND Ibias
+*.opin CTRL
+*.ipin UP
+*.ipin VDD
+*.ipin Ibias
+*.ipin DN
+*.ipin GND
+XM2 Vbn Vbn net2 GND sg13_lv_nmos w=3u l=2u ng=1 m=1
+XM8 net5 GND VDD VDD sg13_lv_pmos w=10u l=2u ng=1 m=1
+XR2 CTRL CTRL1 sub! rsil w=0.5e-6 l=3848e-6 m=1 b=0
+XR1 CTRL2 CTRL1 sub! rsil w=0.5e-6 l=3848e-6 m=1 b=0
+XC3 CTRL GND cap_cmim w=41.7e-6 l=41.7e-6 m=8
+XC2 CTRL2 GND cap_cmim w=55.85e-6 l=55.85e-6 m=12
+XM11 Ibias Ibias net5 VDD sg13_lv_pmos w=10u l=2u ng=1 m=1
+XM3 Vbn Ibias net1 VDD sg13_lv_pmos w=10u l=2u ng=1 m=1
+XM4 net1 GND VDD VDD sg13_lv_pmos w=10u l=2u ng=1 m=1
+XM7 net4 UP VDD VDD sg13_lv_pmos w=10u l=2u ng=1 m=1
+XM9 CTRL1 Ibias net4 VDD sg13_lv_pmos w=10u l=2u ng=1 m=1
+XM10 net2 VDD GND GND sg13_lv_nmos w=3u l=2u ng=1 m=1
+XM1 net3 DN GND GND sg13_lv_nmos w=3u l=2u ng=1 m=1
+XM5 CTRL1 Vbn net3 GND sg13_lv_nmos w=3u l=2u ng=1 m=1
+.ends
+
+
+* expanding   symbol:  phase-freq-detector/PFD.sym # of pins=6
+** sym_path: /home/designer/shared/frac-n-pll-vco-smacd_2026/schematic/phase-freq-detector/PFD.sym
+** sch_path: /home/designer/shared/frac-n-pll-vco-smacd_2026/schematic/phase-freq-detector/PFD.sch
+.subckt PFD VDD UP F_REF F_VCO DN GND
+*.opin UP
+*.ipin F_REF
+*.ipin VDD
+*.ipin GND
+*.opin DN
+*.ipin F_VCO
+x1 net1 net2 F_REF VDD RST_N VDD GND sg13g2_dfrbp_2
+x2 DN net3 F_VCO VDD RST_N VDD GND sg13g2_dfrbp_2
+x3 RST_N net1 DN VDD GND sg13g2_nand2_2
+x4 UP net1 VDD GND sg13g2_inv_2
+.ends
+
+
+* expanding   symbol:  lc-vco/LC_VCO.sym # of pins=5
+** sym_path: /home/designer/shared/frac-n-pll-vco-smacd_2026/schematic/lc-vco/LC_VCO.sym
+** sch_path: /home/designer/shared/frac-n-pll-vco-smacd_2026/schematic/lc-vco/LC_VCO.sch
+.subckt LC_VCO VDD VCTRL GND OUT VBGR
+*.opin OUT
+*.ipin VCTRL
+*.ipin VBGR
+*.iopin VDD
+*.iopin GND
+XM5 Vx Vgs GND GND sg13_lv_nmos w=384u l=1u ng=48 m=1
+XM4 net1 net5 VDD VDD sg13_lv_pmos w=36u l=0.13u ng=5 m=1
+XM3 net5 net1 VDD VDD sg13_lv_pmos w=36u l=0.13u ng=5 m=1
+XM2 OUTp OUTn net4 GND sg13_lv_nmos w=22u l=0.13u ng=3 m=1
+XM1 OUTn OUTp net4 GND sg13_lv_nmos w=22u l=0.13u ng=3 m=1
+Vpmos_p net1 net3 0
+.save i(vpmos_p)
+Vnmos_p net3 OUTp 0
+.save i(vnmos_p)
+Vtail net4 Vx 0
+.save i(vtail)
+XM6 Vgs Vgs GND GND sg13_lv_nmos w=64u l=1u ng=8 m=1
+Vpmos_n net5 net2 0
+.save i(vpmos_n)
+Vnmos_n net2 OUTn 0
+.save i(vnmos_n)
+*  x1 -  ihp_4nh_inductor  IS MISSING !!!!
+XC1 net2 net3 GND cap_rfcmim w=21.9e-6 l=21.9e-6 wfeed=10.0e-6
+XC3 OUTp VCTRL OUTn GND sg13_hv_svaricap w=9.74u l=0.8u Nx=7
+XC2 OUTp VCTRL OUTn GND sg13_hv_svaricap w=9.74u l=0.8u Nx=7
+XM7 Vgs VBGR VDD VDD sg13_lv_pmos w=38u l=1u ng=5 m=1
+XM8 OUT net3 VDD VDD sg13_lv_pmos w=15u l=0.13u ng=10 m=1
+XM9 OUT net3 GND GND sg13_lv_nmos w=1.5u l=0.13u ng=1 m=1
+XM10 net6 net2 VDD VDD sg13_lv_pmos w=15u l=0.13u ng=10 m=1
+XM11 net6 net2 GND GND sg13_lv_nmos w=1.5u l=0.13u ng=1 m=1
+.ends
+
+.GLOBAL GND
+.GLOBAL VDD
+.GLOBAL VBGR
+.end

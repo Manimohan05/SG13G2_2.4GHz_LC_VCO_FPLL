@@ -1,0 +1,9 @@
+{
+    "json_h": "/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/05-yosys-jsonheader/dsm_and_freq_divider.h.json",
+    "metrics": {
+        "design__lint_error__count": 0,
+        "design__lint_timing_construct__count": 0,
+        "design__lint_warning__count": 0,
+        "design__inferred_latch__count": 0
+    }
+}

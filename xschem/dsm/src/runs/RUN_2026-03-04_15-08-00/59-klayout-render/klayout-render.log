@@ -1,0 +1,1 @@
+QObject::startTimer: Timers can only be used with threads started with QThread

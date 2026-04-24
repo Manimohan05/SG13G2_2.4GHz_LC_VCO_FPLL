@@ -1,0 +1,62 @@
+
+Magic 8.3 revision 610 - Compiled on Sat Feb 28 15:31:27 UTC 2026.
+Starting magic under Tcl interpreter
+Using the terminal as the console.
+Using NULL graphics device.
+Processing system .magicrc file
+Switching to WIRING tool.
+Switching to NETLIST tool.
+Switching to PICK tool.
+Switching to BOX tool.
+Sourcing design .magicrc for technology ihp-sg13g2 ...
+2 Magic internal units = 1 Lambda
+Input style sg13g2(): scaleFactor=2, multiplier=2
+The following types are not handled by extraction and will be treated as non-electrical types:
+    pblock sealcont difffill nemitter hvnemitter hvisodiffres sealvia1 sealvia2 sealvia3 sealvia4 sealvia5 sealvia6 pillar solder seal glass thruvia inductor 
+Scaled tech values by 2 / 1 to match internal grid scaling
+Loading ihp-sg13g2 Device Generator Menu ...
+Loading "/nix/store/slcig8wnc74r65q82z4xzwsf083lmzip-python3-3.13.9-env/lib/python3.13/site-packages/librelane/scripts/magic/wrapper.tcl" from command line.
+Warning: Calma reading is not undoable!  I hope that's OK.
+Library written using GDS-II Release 3.0
+Library name: dsm_and_freq_divider
+Reading "sg13g2_decap_8".
+Reading "sg13g2_fill_1".
+Reading "sg13g2_decap_4".
+Reading "sg13g2_dfrbpq_1".
+Reading "sg13g2_xnor2_1".
+Reading "sg13g2_xor2_1".
+Reading "sg13g2_nor2_1".
+Reading "sg13g2_a21o_2".
+Reading "sg13g2_inv_1".
+Reading "sg13g2_a21oi_1".
+CIF file read warning: CIF style sg13g2(): units rescaled by factor of 5 / 1
+Reading "sg13g2_fill_2".
+Reading "sg13g2_mux2_1".
+Reading "sg13g2_and2_1".
+Reading "sg13g2_buf_1".
+Reading "sg13g2_nand2b_1".
+Reading "sg13g2_buf_16".
+Reading "sg13g2_nand2_1".
+Reading "sg13g2_nor2b_1".
+Reading "sg13g2_nand3_1".
+Reading "sg13g2_a21oi_2".
+Reading "sg13g2_a21o_1".
+Reading "sg13g2_and3_1".
+Reading "sg13g2_o21ai_1".
+Reading "sg13g2_nor3_1".
+Reading "sg13g2_a221oi_1".
+Reading "dsm_and_freq_divider".
+[INFO] Loading dsm_and_freq_divider
+
+/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.tech/magic/ihp-sg13g2-drc.tech: line 742: section drc:
+	All layers for "maxwidth" exclude types must be on same plane.
+DRC style is now "drc(full)"
+Loading DRC CIF style.
+/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.tech/magic/ihp-sg13g2-drc.tech: line 742: section drc:
+	All layers for "maxwidth" exclude types must be on same plane.
+No errors found.
+[INFO] COUNT: 0
+[INFO] Should be divided by 3 or 4
+[INFO] DRC Checking DONE (/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/64-magic-drc/reports/drc.magic.rpt)
+[INFO] Saving mag view with DRC errors (/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/64-magic-drc/views/dsm_and_freq_divider.drc.mag)
+[INFO] Saved

@@ -1,0 +1,1392 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.62 (git sha1 7326bb7d6641500ecb285c291a54a662cb1e76cf, clang++ 21.1.2 -fPIC -O3)
+
+1. Executing Liberty frontend: /home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/lib/sg13g2_stdcell_typ_1p20V_25C.lib
+Imported 84 cell types from liberty file.
+
+2. Executing Liberty frontend: /home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_io/lib/sg13g2_io_typ_1p2V_3p3V_25C.lib
+Imported 15 cell types from liberty file.
+[INFO] Using SDC file '/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/06-yosys-synthesis/synthesis.abc.sdc' for ABC…wtaf
+
+3. Executing Verilog-2005 frontend: /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_and_freq_divider.v
+Parsing SystemVerilog input from `/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_and_freq_divider.v' to AST representation.
+Storing AST representation for module `$abstract\dsm_and_freq_divider'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/DFF.v
+Parsing SystemVerilog input from `/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/DFF.v' to AST representation.
+Storing AST representation for module `$abstract\DFF'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/Divide_by_4.v
+Parsing SystemVerilog input from `/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/Divide_by_4.v' to AST representation.
+Storing AST representation for module `$abstract\Divide_by_4'.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_9bit.v
+Parsing SystemVerilog input from `/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_9bit.v' to AST representation.
+Storing AST representation for module `$abstract\dsm_9bit'.
+Successfully finished Verilog frontend.
+
+7. Executing Verilog-2005 frontend: /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/Frequency_Divider_240_248.v
+Parsing SystemVerilog input from `/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/Frequency_Divider_240_248.v' to AST representation.
+Storing AST representation for module `$abstract\Frequency_Divider_240_248'.
+Successfully finished Verilog frontend.
+
+8. Executing Verilog-2005 frontend: /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/JK_FF.v
+Parsing SystemVerilog input from `/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/JK_FF.v' to AST representation.
+Storing AST representation for module `$abstract\JK_FF'.
+Successfully finished Verilog frontend.
+
+9. Executing Verilog-2005 frontend: /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/Mod7_Counter.v
+Parsing SystemVerilog input from `/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/Mod7_Counter.v' to AST representation.
+Storing AST representation for module `$abstract\Mod7_Counter'.
+Successfully finished Verilog frontend.
+
+10. Executing Verilog-2005 frontend: /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/Modulus_Controller.v
+Parsing SystemVerilog input from `/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/Modulus_Controller.v' to AST representation.
+Storing AST representation for module `$abstract\Modulus_Controller'.
+Successfully finished Verilog frontend.
+
+11. Executing Verilog-2005 frontend: /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/Output_Div2.v
+Parsing SystemVerilog input from `/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/Output_Div2.v' to AST representation.
+Storing AST representation for module `$abstract\Output_Div2'.
+Successfully finished Verilog frontend.
+
+12. Executing Verilog-2005 frontend: /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/Prescaler_4_5.v
+Parsing SystemVerilog input from `/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/Prescaler_4_5.v' to AST representation.
+Storing AST representation for module `$abstract\Prescaler_4_5'.
+Successfully finished Verilog frontend.
+
+13. Executing Verilog-2005 frontend: /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/shift_reg_serial.v
+Parsing SystemVerilog input from `/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/shift_reg_serial.v' to AST representation.
+Storing AST representation for module `$abstract\shift_reg_serial'.
+Successfully finished Verilog frontend.
+
+14. Executing HIERARCHY pass (managing design hierarchy).
+
+15. Executing AST frontend in derive mode using pre-parsed AST for module `\dsm_and_freq_divider'.
+Generating RTLIL representation for module `\dsm_and_freq_divider'.
+
+15.1. Analyzing design hierarchy..
+Top module:  \dsm_and_freq_divider
+
+15.2. Executing AST frontend in derive mode using pre-parsed AST for module `\Frequency_Divider_240_248'.
+Generating RTLIL representation for module `\Frequency_Divider_240_248'.
+
+15.3. Executing AST frontend in derive mode using pre-parsed AST for module `\dsm_9bit'.
+Generating RTLIL representation for module `\dsm_9bit'.
+
+15.4. Executing AST frontend in derive mode using pre-parsed AST for module `\shift_reg_serial'.
+Generating RTLIL representation for module `\shift_reg_serial'.
+
+15.5. Analyzing design hierarchy..
+Top module:  \dsm_and_freq_divider
+Used module:     \Frequency_Divider_240_248
+Used module:     \dsm_9bit
+Used module:     \shift_reg_serial
+
+15.6. Executing AST frontend in derive mode using pre-parsed AST for module `\Output_Div2'.
+Generating RTLIL representation for module `\Output_Div2'.
+
+15.7. Executing AST frontend in derive mode using pre-parsed AST for module `\Modulus_Controller'.
+Generating RTLIL representation for module `\Modulus_Controller'.
+
+15.8. Executing AST frontend in derive mode using pre-parsed AST for module `\Mod7_Counter'.
+Generating RTLIL representation for module `\Mod7_Counter'.
+
+15.9. Executing AST frontend in derive mode using pre-parsed AST for module `\Prescaler_4_5'.
+Generating RTLIL representation for module `\Prescaler_4_5'.
+
+15.10. Executing AST frontend in derive mode using pre-parsed AST for module `\Divide_by_4'.
+Generating RTLIL representation for module `\Divide_by_4'.
+
+15.11. Analyzing design hierarchy..
+Top module:  \dsm_and_freq_divider
+Used module:     \Frequency_Divider_240_248
+Used module:         \Output_Div2
+Used module:         \Modulus_Controller
+Used module:         \Mod7_Counter
+Used module:         \Prescaler_4_5
+Used module:         \Divide_by_4
+Used module:     \dsm_9bit
+Used module:     \shift_reg_serial
+
+15.12. Executing AST frontend in derive mode using pre-parsed AST for module `\DFF'.
+Generating RTLIL representation for module `\DFF'.
+
+15.13. Executing AST frontend in derive mode using pre-parsed AST for module `\JK_FF'.
+Generating RTLIL representation for module `\JK_FF'.
+
+15.14. Analyzing design hierarchy..
+Top module:  \dsm_and_freq_divider
+Used module:     \Frequency_Divider_240_248
+Used module:         \Output_Div2
+Used module:             \DFF
+Used module:         \Modulus_Controller
+Used module:         \Mod7_Counter
+Used module:             \JK_FF
+Used module:         \Prescaler_4_5
+Used module:         \Divide_by_4
+Used module:     \dsm_9bit
+Used module:     \shift_reg_serial
+
+15.15. Analyzing design hierarchy..
+Top module:  \dsm_and_freq_divider
+Used module:     \Frequency_Divider_240_248
+Used module:         \Output_Div2
+Used module:             \DFF
+Used module:         \Modulus_Controller
+Used module:         \Mod7_Counter
+Used module:             \JK_FF
+Used module:         \Prescaler_4_5
+Used module:         \Divide_by_4
+Used module:     \dsm_9bit
+Used module:     \shift_reg_serial
+Removing unused module `$abstract\shift_reg_serial'.
+Removing unused module `$abstract\Prescaler_4_5'.
+Removing unused module `$abstract\Output_Div2'.
+Removing unused module `$abstract\Modulus_Controller'.
+Removing unused module `$abstract\Mod7_Counter'.
+Removing unused module `$abstract\JK_FF'.
+Removing unused module `$abstract\Frequency_Divider_240_248'.
+Removing unused module `$abstract\dsm_9bit'.
+Removing unused module `$abstract\Divide_by_4'.
+Removing unused module `$abstract\DFF'.
+Removing unused module `$abstract\dsm_and_freq_divider'.
+Removed 11 unused modules.
+Renaming module dsm_and_freq_divider to dsm_and_freq_divider.
+
+16. Executing ATTRMAP pass (move or copy attributes).
+
+17. Executing TRIBUF pass.
+
+18. Executing HIERARCHY pass (managing design hierarchy).
+
+18.1. Analyzing design hierarchy..
+Top module:  \dsm_and_freq_divider
+Used module:     \Frequency_Divider_240_248
+Used module:         \Output_Div2
+Used module:             \DFF
+Used module:         \Modulus_Controller
+Used module:         \Mod7_Counter
+Used module:             \JK_FF
+Used module:         \Prescaler_4_5
+Used module:         \Divide_by_4
+Used module:     \dsm_9bit
+Used module:     \shift_reg_serial
+
+18.2. Analyzing design hierarchy..
+Top module:  \dsm_and_freq_divider
+Used module:     \Frequency_Divider_240_248
+Used module:         \Output_Div2
+Used module:             \DFF
+Used module:         \Modulus_Controller
+Used module:         \Mod7_Counter
+Used module:             \JK_FF
+Used module:         \Prescaler_4_5
+Used module:         \Divide_by_4
+Used module:     \dsm_9bit
+Used module:     \shift_reg_serial
+Removed 0 unused modules.
+
+19. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+20. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/DFF.v:14$19 in module DFF.
+Marked 1 switch rules as full_case in process $proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/shift_reg_serial.v:9$7 in module shift_reg_serial.
+Marked 1 switch rules as full_case in process $proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_9bit.v:21$4 in module dsm_9bit.
+Removed a total of 0 dead cases.
+
+21. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 2 redundant assignments.
+Promoted 2 assignments to connections.
+
+22. Executing PROC_INIT pass (extract init attributes).
+
+23. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst in `\DFF.$proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/DFF.v:14$19'.
+Found async reset \rst in `\shift_reg_serial.$proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/shift_reg_serial.v:9$7'.
+Found async reset \rst in `\dsm_9bit.$proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_9bit.v:21$4'.
+
+24. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~1 debug messages>
+
+25. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\DFF.$proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/DFF.v:14$19'.
+     1/1: $0\q[0:0]
+Creating decoders for process `\shift_reg_serial.$proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/shift_reg_serial.v:9$7'.
+     1/1: $0\q[8:0]
+Creating decoders for process `\dsm_9bit.$proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_9bit.v:21$4'.
+     1/1: $0\integrator[8:0]
+Creating decoders for process `\dsm_9bit.$proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_9bit.v:16$1'.
+
+26. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\dsm_9bit.\DO' from process `\dsm_9bit.$proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_9bit.v:16$1'.
+No latch inferred for signal `\dsm_9bit.\feedback_value' from process `\dsm_9bit.$proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_9bit.v:16$1'.
+
+27. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\DFF.\q' using process `\DFF.$proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/DFF.v:14$19'.
+  created $adff cell `$procdff$28' with positive edge clock and positive level reset.
+Creating register for signal `\shift_reg_serial.\q' using process `\shift_reg_serial.$proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/shift_reg_serial.v:9$7'.
+  created $adff cell `$procdff$31' with positive edge clock and positive level reset.
+Creating register for signal `\dsm_9bit.\integrator' using process `\dsm_9bit.$proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_9bit.v:21$4'.
+  created $adff cell `$procdff$34' with positive edge clock and positive level reset.
+
+28. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+29. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `DFF.$proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/DFF.v:14$19'.
+Found and cleaned up 1 empty switch in `\shift_reg_serial.$proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/shift_reg_serial.v:9$7'.
+Removing empty process `shift_reg_serial.$proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/shift_reg_serial.v:9$7'.
+Removing empty process `dsm_9bit.$proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_9bit.v:21$4'.
+Removing empty process `dsm_9bit.$proc$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_9bit.v:16$1'.
+Cleaned up 1 empty switch.
+
+30. Executing CHECK pass (checking for obvious problems).
+Checking module dsm_and_freq_divider...
+Checking module DFF...
+Checking module Divide_by_4...
+Checking module Prescaler_4_5...
+Checking module Mod7_Counter...
+Checking module Modulus_Controller...
+Checking module Output_Div2...
+Checking module shift_reg_serial...
+Checking module dsm_9bit...
+Checking module Frequency_Divider_240_248...
+Checking module JK_FF...
+Found and reported 0 problems.
+
+31. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsm_and_freq_divider.
+Optimizing module DFF.
+<suppressed ~1 debug messages>
+Optimizing module Divide_by_4.
+Optimizing module Prescaler_4_5.
+Optimizing module Mod7_Counter.
+Optimizing module Modulus_Controller.
+Optimizing module Output_Div2.
+Optimizing module shift_reg_serial.
+<suppressed ~1 debug messages>
+Optimizing module dsm_9bit.
+<suppressed ~1 debug messages>
+Optimizing module Frequency_Divider_240_248.
+Optimizing module JK_FF.
+
+32. Executing FLATTEN pass (flatten design).
+Deleting now unused module DFF.
+Deleting now unused module Divide_by_4.
+Deleting now unused module Prescaler_4_5.
+Deleting now unused module Mod7_Counter.
+Deleting now unused module Modulus_Controller.
+Deleting now unused module Output_Div2.
+Deleting now unused module shift_reg_serial.
+Deleting now unused module dsm_9bit.
+Deleting now unused module Frequency_Divider_240_248.
+Deleting now unused module JK_FF.
+<suppressed ~18 debug messages>
+
+33. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsm_and_freq_divider.
+<suppressed ~3 debug messages>
+
+34. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsm_and_freq_divider..
+Removed 2 unused cells and 52 unused wires.
+<suppressed ~5 debug messages>
+
+35. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsm_and_freq_divider.
+
+36. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsm_and_freq_divider'.
+Computing hashes of 62 cells of `\dsm_and_freq_divider'.
+Finding duplicate cells in `\dsm_and_freq_divider'.
+Computing hashes of 61 cells of `\dsm_and_freq_divider'.
+Finding duplicate cells in `\dsm_and_freq_divider'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+37. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \dsm_and_freq_divider..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+38. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \dsm_and_freq_divider.
+Performed a total of 0 changes.
+
+39. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsm_and_freq_divider'.
+Computing hashes of 61 cells of `\dsm_and_freq_divider'.
+Finding duplicate cells in `\dsm_and_freq_divider'.
+Removed a total of 0 cells.
+
+40. Executing OPT_DFF pass (perform DFF optimizations).
+
+41. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsm_and_freq_divider..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+42. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsm_and_freq_divider.
+
+43. Rerunning OPT passes. (Maybe there is more to do…)
+
+44. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \dsm_and_freq_divider..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+45. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \dsm_and_freq_divider.
+Performed a total of 0 changes.
+
+46. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsm_and_freq_divider'.
+Computing hashes of 61 cells of `\dsm_and_freq_divider'.
+Finding duplicate cells in `\dsm_and_freq_divider'.
+Removed a total of 0 cells.
+
+47. Executing OPT_DFF pass (perform DFF optimizations).
+
+48. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsm_and_freq_divider..
+
+49. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsm_and_freq_divider.
+
+50. Executing FSM pass (extract and optimize FSM).
+
+50.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+50.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+50.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+50.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsm_and_freq_divider..
+
+50.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+50.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+50.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+50.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+51. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsm_and_freq_divider.
+
+52. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsm_and_freq_divider'.
+Computing hashes of 61 cells of `\dsm_and_freq_divider'.
+Finding duplicate cells in `\dsm_and_freq_divider'.
+Removed a total of 0 cells.
+
+53. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \dsm_and_freq_divider..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+54. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \dsm_and_freq_divider.
+Performed a total of 0 changes.
+
+55. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsm_and_freq_divider'.
+Computing hashes of 61 cells of `\dsm_and_freq_divider'.
+Finding duplicate cells in `\dsm_and_freq_divider'.
+Removed a total of 0 cells.
+
+56. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $flatten\u_shift.$procdff$31 ($adff) from module dsm_and_freq_divider (D = { \u_shift.q [7:0] \sdata }, Q = \u_shift.q).
+
+57. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsm_and_freq_divider..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+58. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsm_and_freq_divider.
+
+59. Rerunning OPT passes. (Maybe there is more to do…)
+
+60. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \dsm_and_freq_divider..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~2 debug messages>
+
+61. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \dsm_and_freq_divider.
+Performed a total of 0 changes.
+
+62. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsm_and_freq_divider'.
+Computing hashes of 60 cells of `\dsm_and_freq_divider'.
+Finding duplicate cells in `\dsm_and_freq_divider'.
+Removed a total of 0 cells.
+
+63. Executing OPT_DFF pass (perform DFF optimizations).
+
+64. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsm_and_freq_divider..
+
+65. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsm_and_freq_divider.
+
+66. Executing WREDUCE pass (reducing word size of cells).
+Removed top 31 bits (of 32) from port B of cell dsm_and_freq_divider.$flatten\u_dsm.$ge$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_9bit.v:17$2 ($ge).
+
+67. Executing PEEPOPT pass (run peephole optimizers).
+
+68. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsm_and_freq_divider..
+
+69. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module dsm_and_freq_divider:
+  creating $macc model for $flatten\u_dsm.$add$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_9bit.v:25$6 ($add).
+  creating $macc model for $flatten\u_dsm.$sub$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_9bit.v:25$5 ($sub).
+  merging $macc model for $flatten\u_dsm.$sub$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_9bit.v:25$5 into $flatten\u_dsm.$add$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_9bit.v:25$6.
+  creating $macc cell for $flatten\u_dsm.$add$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_9bit.v:25$6: $auto$alumacc.cc:382:replace_macc$54
+  creating $alu model for $flatten\u_dsm.$ge$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_9bit.v:17$2 ($ge): new $alu
+  creating $alu cell for $flatten\u_dsm.$ge$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_9bit.v:17$2: $auto$alumacc.cc:512:replace_alu$56
+  created 1 $alu and 1 $macc cells.
+
+70. Executing SHARE pass (SAT-based resource sharing).
+
+71. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsm_and_freq_divider.
+<suppressed ~3 debug messages>
+
+72. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsm_and_freq_divider'.
+Computing hashes of 65 cells of `\dsm_and_freq_divider'.
+Finding duplicate cells in `\dsm_and_freq_divider'.
+Removed a total of 0 cells.
+
+73. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \dsm_and_freq_divider..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~2 debug messages>
+
+74. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \dsm_and_freq_divider.
+Performed a total of 0 changes.
+
+75. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsm_and_freq_divider'.
+Computing hashes of 65 cells of `\dsm_and_freq_divider'.
+Finding duplicate cells in `\dsm_and_freq_divider'.
+Removed a total of 0 cells.
+
+76. Executing OPT_DFF pass (perform DFF optimizations).
+
+77. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsm_and_freq_divider..
+Removed 1 unused cells and 7 unused wires.
+<suppressed ~3 debug messages>
+
+78. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsm_and_freq_divider.
+
+79. Rerunning OPT passes. (Maybe there is more to do…)
+
+80. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \dsm_and_freq_divider..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~2 debug messages>
+
+81. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \dsm_and_freq_divider.
+Performed a total of 0 changes.
+
+82. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsm_and_freq_divider'.
+Computing hashes of 63 cells of `\dsm_and_freq_divider'.
+Finding duplicate cells in `\dsm_and_freq_divider'.
+Removed a total of 0 cells.
+
+83. Executing OPT_DFF pass (perform DFF optimizations).
+
+84. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsm_and_freq_divider..
+
+85. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsm_and_freq_divider.
+
+86. Executing MEMORY pass.
+
+86.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+86.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+86.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+86.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+86.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+86.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsm_and_freq_divider..
+
+86.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+86.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+86.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsm_and_freq_divider..
+
+86.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+87. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsm_and_freq_divider..
+
+88. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsm_and_freq_divider.
+
+89. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsm_and_freq_divider'.
+Computing hashes of 63 cells of `\dsm_and_freq_divider'.
+Finding duplicate cells in `\dsm_and_freq_divider'.
+Removed a total of 0 cells.
+
+90. Executing OPT_DFF pass (perform DFF optimizations).
+
+91. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsm_and_freq_divider..
+
+92. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+93. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsm_and_freq_divider.
+
+94. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsm_and_freq_divider'.
+Computing hashes of 63 cells of `\dsm_and_freq_divider'.
+Finding duplicate cells in `\dsm_and_freq_divider'.
+Removed a total of 0 cells.
+
+95. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \dsm_and_freq_divider..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~2 debug messages>
+
+96. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \dsm_and_freq_divider.
+    Consolidated identical input bits for $mux cell $flatten\u_dsm.$ternary$/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/dsm_9bit.v:18$3:
+      Old ports: A=9'110000000, B=9'001111111, Y=\u_dsm.feedback_value
+      New ports: A=2'10, B=2'01, Y={ \u_dsm.feedback_value [7] \u_dsm.feedback_value [0] }
+      New connections: { \u_dsm.feedback_value [8] \u_dsm.feedback_value [6:1] } = { \u_dsm.feedback_value [7] \u_dsm.feedback_value [0] \u_dsm.feedback_value [0] \u_dsm.feedback_value [0] \u_dsm.feedback_value [0] \u_dsm.feedback_value [0] \u_dsm.feedback_value [0] }
+  Optimizing cells in module \dsm_and_freq_divider.
+Performed a total of 1 changes.
+
+97. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsm_and_freq_divider'.
+Computing hashes of 63 cells of `\dsm_and_freq_divider'.
+Finding duplicate cells in `\dsm_and_freq_divider'.
+Removed a total of 0 cells.
+
+98. Executing OPT_SHARE pass.
+
+99. Executing OPT_DFF pass (perform DFF optimizations).
+
+100. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsm_and_freq_divider..
+
+101. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsm_and_freq_divider.
+
+102. Rerunning OPT passes. (Maybe there is more to do…)
+
+103. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \dsm_and_freq_divider..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~2 debug messages>
+
+104. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \dsm_and_freq_divider.
+Performed a total of 0 changes.
+
+105. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsm_and_freq_divider'.
+Computing hashes of 63 cells of `\dsm_and_freq_divider'.
+Finding duplicate cells in `\dsm_and_freq_divider'.
+Removed a total of 0 cells.
+
+106. Executing OPT_SHARE pass.
+
+107. Executing OPT_DFF pass (perform DFF optimizations).
+
+108. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsm_and_freq_divider..
+
+109. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsm_and_freq_divider.
+
+110. Executing TECHMAP pass (map to technology primitives).
+
+110.1. Executing Verilog-2005 frontend: /nix/store/f1q0w7rd0a4ny4hqvfxlhs4cmariidcy-yosys-0.62/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nix/store/f1q0w7rd0a4ny4hqvfxlhs4cmariidcy-yosys-0.62/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+110.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper maccmap for cells of type $macc_v2.
+  add \u_dsm.integrator (9 bits, unsigned)
+  add \u_shift.q (9 bits, unsigned)
+  sub { \u_dsm.feedback_value [8] \u_dsm.feedback_value [8] \u_dsm.feedback_value [6] \u_dsm.feedback_value [6] \u_dsm.feedback_value [6] \u_dsm.feedback_value [6] \u_dsm.feedback_value [6] \u_dsm.feedback_value [6] \u_dsm.feedback_value [6] } (9 bits, unsigned)
+  packed 1 (1) bits / 1 words into adder tree
+Using extmapper simplemap for cells of type $adffe.
+Using extmapper simplemap for cells of type $adff.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $and.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000001001 for cells of type $fa.
+Using template $paramod$d2fa05d38998afabc6d4f34471305d0af4b8b2df\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000001001 for cells of type $lcu.
+Using extmapper simplemap for cells of type $xor.
+No more expansions possible.
+<suppressed ~316 debug messages>
+
+111. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsm_and_freq_divider.
+<suppressed ~46 debug messages>
+
+112. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsm_and_freq_divider'.
+Computing hashes of 206 cells of `\dsm_and_freq_divider'.
+Finding duplicate cells in `\dsm_and_freq_divider'.
+Computing hashes of 199 cells of `\dsm_and_freq_divider'.
+Finding duplicate cells in `\dsm_and_freq_divider'.
+<suppressed ~21 debug messages>
+Removed a total of 7 cells.
+
+113. Executing OPT_DFF pass (perform DFF optimizations).
+
+114. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsm_and_freq_divider..
+Removed 15 unused cells and 55 unused wires.
+<suppressed ~16 debug messages>
+
+115. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsm_and_freq_divider.
+
+116. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsm_and_freq_divider'.
+Computing hashes of 184 cells of `\dsm_and_freq_divider'.
+Finding duplicate cells in `\dsm_and_freq_divider'.
+Removed a total of 0 cells.
+
+117. Executing OPT_DFF pass (perform DFF optimizations).
+
+118. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsm_and_freq_divider..
+
+119. Executing ABC pass (technology mapping using ABC).
+
+119.1. Extracting gate netlist of module `\dsm_and_freq_divider' to `<abc-temp-dir>/input.blif'..
+
+119.1.1. Executed ABC.
+Extracted 137 gates and 164 wires to a netlist network with 27 inputs and 17 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: ======== ABC command line "source <abc-temp-dir>/abc.script"
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library /tmp/yosys-abc-W5CqZA/stdcells.genlib 
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+119.1.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        2
+ABC RESULTS:            ANDNOT cells:       29
+ABC RESULTS:               MUX cells:        2
+ABC RESULTS:              NAND cells:        6
+ABC RESULTS:               NOR cells:       14
+ABC RESULTS:               NOT cells:        6
+ABC RESULTS:                OR cells:        9
+ABC RESULTS:             ORNOT cells:        6
+ABC RESULTS:              XNOR cells:       14
+ABC RESULTS:               XOR cells:       20
+ABC RESULTS:        internal signals:      120
+ABC RESULTS:           input signals:       27
+ABC RESULTS:          output signals:       17
+Removing temp directory.
+Removing global temp directory.
+
+120. Executing OPT pass (performing simple optimizations).
+
+120.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsm_and_freq_divider.
+<suppressed ~1 debug messages>
+
+120.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsm_and_freq_divider'.
+Computing hashes of 155 cells of `\dsm_and_freq_divider'.
+Finding duplicate cells in `\dsm_and_freq_divider'.
+Removed a total of 0 cells.
+
+120.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+120.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsm_and_freq_divider..
+Removed 0 unused cells and 115 unused wires.
+<suppressed ~32 debug messages>
+
+120.5. Finished fast OPT passes.
+
+121. Executing HIERARCHY pass (managing design hierarchy).
+
+121.1. Analyzing design hierarchy..
+Top module:  \dsm_and_freq_divider
+
+121.2. Analyzing design hierarchy..
+Top module:  \dsm_and_freq_divider
+Removed 0 unused modules.
+
+122. Executing CHECK pass (checking for obvious problems).
+Checking module dsm_and_freq_divider...
+Found and reported 0 problems.
+
+123. Printing statistics.
+
+=== dsm_and_freq_divider ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      206 wires
+      262 wire bits
+      113 public wires
+      153 public wire bits
+        6 ports
+        6 port bits
+      155 cells
+       29   $_ANDNOT_
+        2   $_AND_
+        9   $_DFFE_PP0P_
+       18   $_DFF_PP0_
+        2   $_MUX_
+        6   $_NAND_
+       14   $_NOR_
+        6   $_NOT_
+        6   $_ORNOT_
+        9   $_OR_
+       14   $_XNOR_
+       20   $_XOR_
+       20   $scopeinfo
+
+124. Executing OPT pass (performing simple optimizations).
+
+124.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsm_and_freq_divider.
+
+124.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsm_and_freq_divider'.
+Computing hashes of 155 cells of `\dsm_and_freq_divider'.
+Finding duplicate cells in `\dsm_and_freq_divider'.
+Removed a total of 0 cells.
+
+124.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \dsm_and_freq_divider..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+124.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \dsm_and_freq_divider.
+Performed a total of 0 changes.
+
+124.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsm_and_freq_divider'.
+Computing hashes of 155 cells of `\dsm_and_freq_divider'.
+Finding duplicate cells in `\dsm_and_freq_divider'.
+Removed a total of 0 cells.
+
+124.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+124.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsm_and_freq_divider..
+
+124.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsm_and_freq_divider.
+
+124.9. Finished fast OPT passes. (There is nothing left to do.)
+
+125. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsm_and_freq_divider..
+Removed 20 unused cells and 89 unused wires.
+<suppressed ~109 debug messages>
+{
+   "creator": "Yosys 0.62 (git sha1 7326bb7d6641500ecb285c291a54a662cb1e76cf, clang++ 21.1.2 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/tmp/d25c324478f54785a641184ce90d7660.lib -liberty /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/tmp/36bb69b466694c83969b88bc54a4202a.lib ",
+   "modules": {
+      "\\dsm_and_freq_divider": {
+         "num_wires":         117,
+         "num_wire_bits":     149,
+         "num_pub_wires":     24,
+         "num_pub_wire_bits": 40,
+         "num_ports":         6,
+         "num_port_bits":     6,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         135,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 29,
+            "$_AND_": 2,
+            "$_DFFE_PP0P_": 9,
+            "$_DFF_PP0_": 18,
+            "$_MUX_": 2,
+            "$_NAND_": 6,
+            "$_NOR_": 14,
+            "$_NOT_": 6,
+            "$_ORNOT_": 6,
+            "$_OR_": 9,
+            "$_XNOR_": 14,
+            "$_XOR_": 20
+         }
+      }
+   },
+      "design": {
+         "num_wires":         117,
+         "num_wire_bits":     149,
+         "num_pub_wires":     24,
+         "num_pub_wire_bits": 40,
+         "num_ports":         6,
+         "num_port_bits":     6,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         135,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 29,
+            "$_AND_": 2,
+            "$_DFFE_PP0P_": 9,
+            "$_DFF_PP0_": 18,
+            "$_MUX_": 2,
+            "$_NAND_": 6,
+            "$_NOR_": 14,
+            "$_NOT_": 6,
+            "$_ORNOT_": 6,
+            "$_OR_": 9,
+            "$_XNOR_": 14,
+            "$_XOR_": 20
+         }
+      }
+}
+
+126. Printing statistics.
+
+=== dsm_and_freq_divider ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      117 wires
+      149 wire bits
+       24 public wires
+       40 public wire bits
+        6 ports
+        6 port bits
+      135 cells
+       29   $_ANDNOT_
+        2   $_AND_
+        9   $_DFFE_PP0P_
+       18   $_DFF_PP0_
+        2   $_MUX_
+        6   $_NAND_
+       14   $_NOR_
+        6   $_NOT_
+        6   $_ORNOT_
+        9   $_OR_
+       14   $_XNOR_
+       20   $_XOR_
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_DFFE_PP0P_ is unknown!
+   Area for cell type $_DFF_PP0_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+
+[INFO] Applying tri-state buffer mapping from '/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.tech/librelane/sg13g2_stdcell/tribuff_map.v'…
+
+127. Executing TECHMAP pass (map to technology primitives).
+
+127.1. Executing Verilog-2005 frontend: /home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.tech/librelane/sg13g2_stdcell/tribuff_map.v
+Parsing Verilog input from `/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.tech/librelane/sg13g2_stdcell/tribuff_map.v' to AST representation.
+Generating RTLIL representation for module `$_TBUF_'.
+Successfully finished Verilog frontend.
+
+127.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+128. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+[INFO] Applying latch mapping from '/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.tech/librelane/sg13g2_stdcell/latch_map.v'…
+
+129. Executing TECHMAP pass (map to technology primitives).
+
+129.1. Executing Verilog-2005 frontend: /home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.tech/librelane/sg13g2_stdcell/latch_map.v
+Parsing Verilog input from `/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.tech/librelane/sg13g2_stdcell/latch_map.v' to AST representation.
+Generating RTLIL representation for module `$_DLATCH_P_'.
+Generating RTLIL representation for module `$_DLATCH_PN0_'.
+Generating RTLIL representation for module `$_DLATCH_N_'.
+Generating RTLIL representation for module `$_DLATCH_NN0_'.
+Successfully finished Verilog frontend.
+
+129.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~6 debug messages>
+
+130. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+131. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell sg13g2_dfrbpq_1 (noninv, pins=4, area=48.99) is a direct match for cell type $_DFF_PN0_.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    unmapped dff cell: $_DFF_P_
+    unmapped dff cell: $_DFF_NN0_
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \sg13g2_dfrbpq_1 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    unmapped dff cell: $_DFF_PN1_
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    unmapped dff cell: $_DFFE_NN_
+    unmapped dff cell: $_DFFE_NP_
+    unmapped dff cell: $_DFFE_PN_
+    unmapped dff cell: $_DFFE_PP_
+    unmapped dff cell: $_DFFSR_NNN_
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    unmapped dff cell: $_DFFSR_PNN_
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+131.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+<suppressed ~4 debug messages>
+Mapping DFF cells in module `\dsm_and_freq_divider':
+  mapped 27 $_DFF_PN0_ cells to \sg13g2_dfrbpq_1 cells.
+{
+   "creator": "Yosys 0.62 (git sha1 7326bb7d6641500ecb285c291a54a662cb1e76cf, clang++ 21.1.2 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/tmp/d25c324478f54785a641184ce90d7660.lib -liberty /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/tmp/36bb69b466694c83969b88bc54a4202a.lib ",
+   "modules": {
+      "\\dsm_and_freq_divider": {
+         "num_wires":         153,
+         "num_wire_bits":     185,
+         "num_pub_wires":     24,
+         "num_pub_wire_bits": 40,
+         "num_ports":         6,
+         "num_port_bits":     6,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         171,
+         "num_submodules":       0,
+         "area":              1322.697600,
+         "sequential_area":    1322.697600,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 29,
+            "$_AND_": 2,
+            "$_MUX_": 11,
+            "$_NAND_": 6,
+            "$_NOR_": 14,
+            "$_NOT_": 33,
+            "$_ORNOT_": 6,
+            "$_OR_": 9,
+            "$_XNOR_": 14,
+            "$_XOR_": 20,
+            "sg13g2_dfrbpq_1": 27
+         }
+      }
+   },
+      "design": {
+         "num_wires":         153,
+         "num_wire_bits":     185,
+         "num_pub_wires":     24,
+         "num_pub_wire_bits": 40,
+         "num_ports":         6,
+         "num_port_bits":     6,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         171,
+         "num_submodules":       0,
+         "area":              1322.697600,
+         "sequential_area":    1322.697600,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 29,
+            "$_AND_": 2,
+            "$_MUX_": 11,
+            "$_NAND_": 6,
+            "$_NOR_": 14,
+            "$_NOT_": 33,
+            "$_ORNOT_": 6,
+            "$_OR_": 9,
+            "$_XNOR_": 14,
+            "$_XOR_": 20,
+            "sg13g2_dfrbpq_1": 27
+         }
+      }
+}
+
+132. Printing statistics.
+
+=== dsm_and_freq_divider ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      153        - wires
+      185        - wire bits
+       24        - public wires
+       40        - public wire bits
+        6        - ports
+        6        - port bits
+      171 1.32E+03 cells
+       29        -   $_ANDNOT_
+        2        -   $_AND_
+       11        -   $_MUX_
+        6        -   $_NAND_
+       14        -   $_NOR_
+       33        -   $_NOT_
+        6        -   $_ORNOT_
+        9        -   $_OR_
+       14        -   $_XNOR_
+       20        -   $_XOR_
+       27 1.32E+03   sg13g2_dfrbpq_1
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+
+   Chip area for module '\dsm_and_freq_divider': 1322.697600
+     of which used for sequential elements: 1322.697600 (100.00%)
+
+[INFO] Using generated ABC script '/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/06-yosys-synthesis/AREA_0.abc'…
+
+133. Executing ABC pass (technology mapping using ABC).
+
+133.1. Extracting gate netlist of module `\dsm_and_freq_divider' to `/tmp/yosys-abc-baYZPb/input.blif'..
+
+133.1.1. Executed ABC.
+Extracted 144 gates and 174 wires to a netlist network with 30 inputs and 53 outputs.
+Running ABC script: /tmp/yosys-abc-baYZPb/abc.script
+ABC: ======== ABC command line "source /tmp/yosys-abc-baYZPb/abc.script"
+ABC: + read_blif /tmp/yosys-abc-baYZPb/input.blif 
+ABC: + read_lib -w /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/tmp/d25c324478f54785a641184ce90d7660.lib 
+ABC: Library with only 0 cell classes cannot be used.
+ABC: Parsing finished successfully.  Parsing time =     0.00 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadIOVdd" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadIOVss" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadIn" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadInOut16mA" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadInOut30mA" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadInOut4mA" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadOut16mA" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadOut30mA" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadOut4mA" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadTriOut16mA" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadTriOut30mA" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadTriOut4mA" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadVdd" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadVss" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadAnalog" due to dont_use attribute.
+ABC: Library "sg13g2_io_typ_1p2V_3p3V_25C" from "/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/tmp/d25c324478f54785a641184ce90d7660.lib" has 0 cells (15 skipped: 0 seq; 0 tri-state; 4 no func; 11 dont_use; 0 with 2 outputs; 0 with 3+ outputs).  Time =     0.00 sec
+ABC: Memory =    0.38 MB. Time =     0.00 sec
+ABC: + read_lib -m -w /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/tmp/36bb69b466694c83969b88bc54a4202a.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.02 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_antennanp" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_decap_4" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_decap_8" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sg13g2_dfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sg13g2_dfrbpq_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sg13g2_dfrbpq_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sg13g2_dlhq_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sg13g2_dlhr_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sg13g2_dlhrq_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sg13g2_dllr_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sg13g2_dllrq_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sg13g2_ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sg13g2_ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sg13g2_ebufn_8".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sg13g2_einvn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sg13g2_einvn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sg13g2_einvn_8".
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_fill_1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_fill_2" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_fill_4" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_fill_8" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sg13g2_sdfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sg13g2_sdfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sg13g2_sdfrbpq_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sg13g2_sdfrbpq_2".
+ABC: Library "sg13g2_stdcell_typ_1p20V_25C" from "/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/tmp/36bb69b466694c83969b88bc54a4202a.lib" has 54 cells (25 skipped: 12 seq; 6 tri-state; 0 no func; 7 dont_use; 0 with 2 outputs; 0 with 3+ outputs).  Time =     0.03 sec
+ABC: Memory =    2.63 MB. Time =     0.03 sec
+ABC: + read_constr -v /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/06-yosys-synthesis/synthesis.abc.sdc 
+ABC: Setting driving cell to be "sg13g2_buf_4/X".
+ABC: Setting output load to be 6.000000.
+ABC: + source /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/06-yosys-synthesis/AREA_0.abc 
+ABC: Error: The network is combinational.
+ABC: Cannot find the default PI driving cell (sg13g2_buf_4/X) in the library.
+ABC: Cannot find the default PI driving cell (sg13g2_buf_4/X) in the library.
+ABC: Cannot find the default PI driving cell (sg13g2_buf_4/X) in the library.
+ABC: Cannot find the default PI driving cell (sg13g2_buf_4/X) in the library.
+ABC: WireLoad = "none"  Gates =    125 ( 25.6 %)   Cap =  8.0 ff (  4.8 %)   Area =     1250.12 ( 90.4 %)   Delay =  1021.83 ps  ( 13.6 %)               
+ABC: Path  0 --       9 : 0    4 pi              A =   0.00  Df =   0.0   -0.0 ps  S =   0.0 ps  Cin =  0.0 ff  Cout =  14.1 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --     106 : 2    2 sg13g2_xor2_1   A =  14.52  Df = 108.6   -8.5 ps  S =  95.4 ps  Cin =  5.4 ff  Cout =   8.2 ff  Cmax = 300.0 ff  G =  149  
+ABC: Path  2 --     107 : 2    2 sg13g2_xnor2_1  A =  14.52  Df = 245.7  -26.2 ps  S = 106.8 ps  Cin =  5.4 ff  Cout =   8.2 ff  Cmax = 300.0 ff  G =  150  
+ABC: Path  3 --     108 : 2    2 sg13g2_xor2_1   A =  14.52  Df = 395.7  -56.3 ps  S =  97.7 ps  Cin =  5.4 ff  Cout =   8.0 ff  Cmax = 300.0 ff  G =  146  
+ABC: Path  4 --     112 : 3    4 sg13g2_a21o_2   A =  14.52  Df = 547.8  -32.9 ps  S =  53.1 ps  Cin =  2.8 ff  Cout =  17.3 ff  Cmax = 600.0 ff  G =  607  
+ABC: Path  5 --     131 : 3    2 sg13g2_a21oi_2  A =  14.52  Df = 618.0  -25.1 ps  S =  66.3 ps  Cin =  5.8 ff  Cout =   9.1 ff  Cmax = 600.0 ff  G =  153  
+ABC: Path  6 --     153 : 3    3 sg13g2_o21ai_1  A =   9.07  Df = 773.6  -70.2 ps  S = 154.0 ps  Cin =  3.3 ff  Cout =  11.9 ff  Cmax = 300.0 ff  G =  356  
+ABC: Path  7 --     172 : 5    1 sg13g2_a221oi_1 A =  14.52  Df = 891.5  -12.5 ps  S = 142.2 ps  Cin =  3.0 ff  Cout =   5.7 ff  Cmax = 300.0 ff  G =  190  
+ABC: Path  8 --     176 : 2    1 sg13g2_xnor2_1  A =  14.52  Df =1021.8   -4.1 ps  S =  90.3 ps  Cin =  5.4 ff  Cout =   6.0 ff  Cmax = 300.0 ff  G =  112  
+ABC: Start-point = pi8 (\data_word [1]).  End-point = po20 ($auto$maccmap.cc:240:synth$178.Y [8]).
+ABC: netlist                       : i/o =   30/   53  lat =    0  nd =   125  edge =    258  area =1250.11  delay = 8.00  lev = 8
+ABC: + write_blif /tmp/yosys-abc-baYZPb/output.blif 
+
+133.1.2. Re-integrating ABC results.
+ABC RESULTS:     sg13g2_a21o_1 cells:        1
+ABC RESULTS:     sg13g2_a21o_2 cells:        2
+ABC RESULTS:    sg13g2_a21oi_1 cells:       15
+ABC RESULTS:    sg13g2_a21oi_2 cells:        1
+ABC RESULTS:   sg13g2_a221oi_1 cells:        1
+ABC RESULTS:     sg13g2_and2_1 cells:        5
+ABC RESULTS:     sg13g2_and3_1 cells:        1
+ABC RESULTS:      sg13g2_inv_1 cells:       32
+ABC RESULTS:     sg13g2_mux2_1 cells:        9
+ABC RESULTS:    sg13g2_nand2_1 cells:       11
+ABC RESULTS:   sg13g2_nand2b_1 cells:        1
+ABC RESULTS:    sg13g2_nand3_1 cells:        4
+ABC RESULTS:     sg13g2_nor2_1 cells:        6
+ABC RESULTS:    sg13g2_nor2b_1 cells:        4
+ABC RESULTS:     sg13g2_nor3_1 cells:        1
+ABC RESULTS:    sg13g2_o21ai_1 cells:        3
+ABC RESULTS:    sg13g2_xnor2_1 cells:       15
+ABC RESULTS:     sg13g2_xor2_1 cells:       13
+ABC RESULTS:        internal signals:       91
+ABC RESULTS:           input signals:       30
+ABC RESULTS:          output signals:       53
+Removing temp directory.
+Removing global temp directory.
+
+134. Executing SETUNDEF pass (replace undef values with defined constants).
+
+135. Executing HILOMAP pass (mapping to constant drivers).
+
+136. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+137. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsm_and_freq_divider..
+Removed 0 unused cells and 183 unused wires.
+<suppressed ~1 debug messages>
+
+138. Executing INSBUF pass (insert buffer cells for connected wires).
+
+139. Executing CHECK pass (checking for obvious problems).
+Checking module dsm_and_freq_divider...
+Found and reported 0 problems.
+{
+   "creator": "Yosys 0.62 (git sha1 7326bb7d6641500ecb285c291a54a662cb1e76cf, clang++ 21.1.2 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/tmp/d25c324478f54785a641184ce90d7660.lib -liberty /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/tmp/36bb69b466694c83969b88bc54a4202a.lib ",
+   "modules": {
+      "\\dsm_and_freq_divider": {
+         "num_wires":         157,
+         "num_wire_bits":     157,
+         "num_pub_wires":     40,
+         "num_pub_wire_bits": 40,
+         "num_ports":         6,
+         "num_port_bits":     6,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         152,
+         "num_submodules":       0,
+         "area":              2572.819200,
+         "sequential_area":    1322.697600,
+         "num_cells_by_type": {
+            "sg13g2_a21o_1": 1,
+            "sg13g2_a21o_2": 2,
+            "sg13g2_a21oi_1": 15,
+            "sg13g2_a21oi_2": 1,
+            "sg13g2_a221oi_1": 1,
+            "sg13g2_and2_1": 5,
+            "sg13g2_and3_1": 1,
+            "sg13g2_dfrbpq_1": 27,
+            "sg13g2_inv_1": 32,
+            "sg13g2_mux2_1": 9,
+            "sg13g2_nand2_1": 11,
+            "sg13g2_nand2b_1": 1,
+            "sg13g2_nand3_1": 4,
+            "sg13g2_nor2_1": 6,
+            "sg13g2_nor2b_1": 4,
+            "sg13g2_nor3_1": 1,
+            "sg13g2_o21ai_1": 3,
+            "sg13g2_xnor2_1": 15,
+            "sg13g2_xor2_1": 13
+         }
+      }
+   },
+      "design": {
+         "num_wires":         157,
+         "num_wire_bits":     157,
+         "num_pub_wires":     40,
+         "num_pub_wire_bits": 40,
+         "num_ports":         6,
+         "num_port_bits":     6,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         152,
+         "num_submodules":       0,
+         "area":              2572.819200,
+         "sequential_area":    1322.697600,
+         "num_cells_by_type": {
+            "sg13g2_a21o_1": 1,
+            "sg13g2_a21o_2": 2,
+            "sg13g2_a21oi_1": 15,
+            "sg13g2_a21oi_2": 1,
+            "sg13g2_a221oi_1": 1,
+            "sg13g2_and2_1": 5,
+            "sg13g2_and3_1": 1,
+            "sg13g2_dfrbpq_1": 27,
+            "sg13g2_inv_1": 32,
+            "sg13g2_mux2_1": 9,
+            "sg13g2_nand2_1": 11,
+            "sg13g2_nand2b_1": 1,
+            "sg13g2_nand3_1": 4,
+            "sg13g2_nor2_1": 6,
+            "sg13g2_nor2b_1": 4,
+            "sg13g2_nor3_1": 1,
+            "sg13g2_o21ai_1": 3,
+            "sg13g2_xnor2_1": 15,
+            "sg13g2_xor2_1": 13
+         }
+      }
+}
+
+140. Printing statistics.
+
+=== dsm_and_freq_divider ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      157        - wires
+      157        - wire bits
+       40        - public wires
+       40        - public wire bits
+        6        - ports
+        6        - port bits
+      152 2.57E+03 cells
+        1   12.701   sg13g2_a21o_1
+        2    29.03   sg13g2_a21o_2
+       15   136.08   sg13g2_a21oi_1
+        1   14.515   sg13g2_a21oi_2
+        1   14.515   sg13g2_a221oi_1
+        5    45.36   sg13g2_and2_1
+        1   12.701   sg13g2_and3_1
+       27 1.32E+03   sg13g2_dfrbpq_1
+       32  174.182   sg13g2_inv_1
+        9  163.296   sg13g2_mux2_1
+       11   79.834   sg13g2_nand2_1
+        1    9.072   sg13g2_nand2b_1
+        4   36.288   sg13g2_nand3_1
+        6   43.546   sg13g2_nor2_1
+        4   36.288   sg13g2_nor2b_1
+        1    9.072   sg13g2_nor3_1
+        3   27.216   sg13g2_o21ai_1
+       15  217.728   sg13g2_xnor2_1
+       13  188.698   sg13g2_xor2_1
+
+   Chip area for module '\dsm_and_freq_divider': 2572.819200
+     of which used for sequential elements: 1322.697600 (51.41%)
+
+141. Executing Verilog backend.
+Dumping module `\dsm_and_freq_divider'.
+
+142. Executing JSON backend.

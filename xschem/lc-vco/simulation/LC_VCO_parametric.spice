@@ -1,0 +1,148 @@
+** sch_path: /home/designer/shared/frac-n-pll-vco-smacd_2026/schematic/lc-vco/LC_VCO_parametric.sch
+**.subckt LC_VCO_parametric OUTp OUTn
+*.opin OUTp
+*.opin OUTn
+XM6 net5 Vgs GND GND sg13_lv_nmos w=W_6 l=L_TL ng=n_6 m=1
+XM4 net1 net4 VDD VDD sg13_lv_pmos w=W_34 l=L_CC ng=n_34 m=1
+X5M3 net4 net1 VDD VDD sg13_lv_pmos w=W_34 l=L_CC ng=n_34 m=1
+XM2 OUTp OUTn Vx GND sg13_lv_nmos w=W_12 l=L_CC ng=n_12 m=1
+XM1 OUTn OUTp Vx GND sg13_lv_nmos w=W_12 l=L_CC ng=n_12 m=1
+V1 VDD GND 1.2
+Vpmos_p net1 net2 0
+.save i(vpmos_p)
+Vnmos_p net2 OUTp 0
+.save i(vnmos_p)
+Vtail Vx net5 0
+.save i(vtail)
+XM5 Vgs Vgs GND GND sg13_lv_nmos w=W_5 l=L_TL ng=n_5 m=1
+I0 VDD Vgs 100u
+Vpmos_n net4 net3 0
+.save i(vpmos_n)
+Vnmos_n net3 OUTn 0
+.save i(vnmos_n)
+x1 net3 net2 ihp_4nh_inductor
+Vup Vctrl GND PULSE(0.4 1.1 10n 90n 1n 1s 2s)
+XC1 net3 net2 GND cap_rfcmim w=22.1e-6 l=22.1e-6 wfeed=10.0e-6
+XC3 OUTp Vctrl OUTn GND sg13_hv_svaricap w=9.74u l=0.8u Nx=7
+XC2 OUTp Vctrl OUTn GND sg13_hv_svaricap w=9.74u l=0.8u Nx=7
+**** begin user architecture code
+
+
+.param temp=27
+.control
+save all
+op
+write LC_VCO_parametric.raw
+.endc
+
+
+
+.lib cornerMOSlv.lib mos_tt
+.lib cornerMOShv.lib mos_tt
+.lib cornerRES.lib res_typ
+.lib cornerCAP.lib cap_typ
+
+
+
+.param L_CC=0.13u
+
+.param W_34=36u
+.param n_34=5
+
+.param W_12=22u
+.param n_12=3
+
+.param L_TL=1u
+
+.param W_6=384u
+.param n_6=48
+
+.param W_5=64u
+.param n_5=8
+
+
+
+.include ../ihp_4nh_inductor.spice
+
+
+
+
+.param temp = 27
+.options method=gear
+.options savecurrents
+.options noacct
+
+.control
+
+* Save required signals
+save v(OUTp) v(OUTn) v(Vx)
+
+* Long transient simulation
+tran 10p 500n 100n
+
+* Save raw waveform
+write LC_VCO_parametric_tb.raw
+
+* Find average power dissipation
+let tot_power = abs(v(vdd)*i(v1))
+meas tran avg_power AVG tot_power FROM=400n TO=450n
+
+* Plot steady-state waveform
+let vout = v(OUTp)
+meas tran vout_pp PP vout FROM=400n TO=450n
+plot vout xlimit 400n 405n
+
+* FFT analysis
+setplot tran1
+linearize vout
+set specwindow=blackman
+fft vout
+
+* Plot FFT spectrum
+let power_db = db(vout)
+plot power_db xlimit 2.34G 2.54G ylimit -200 0
+
+* Find the maximum magnitude value between 2G and 3G
+meas sp max_power_db max power_db FROM=2G TO=3G
+
+* Save FFT data
+wrdata fft_output_parametric.txt frequency power_db
+
+* Save waveform for external processing
+wrdata vco_waveform_parametric.txt power_db
+
+.endc
+
+
+
+
+
+.param temp = 27
+.options method=gear
+.options savecurrents
+.options noacct
+
+.control
+
+* Save required signals
+save v(OUTp) v(OUTn) v(Vx)
+
+* Long transient simulation
+tran 10p 50n
+
+* Plot transient waveform
+let vout = v(OUTp)
+plot vout v(Vctrl) v(Vx)
+
+* Find average power dissipation
+let tot_power = abs(v(vdd)*i(v1))
+plot tot_power xlimit 20n 35n
+
+.endc
+
+
+**** end user architecture code
+**.ends
+.GLOBAL VDD
+.GLOBAL GND
+.end

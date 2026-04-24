@@ -1,0 +1,19 @@
+fx
+mfs
+strash
+drf -l
+balance; drw -l; drf -l; balance; drw -l; drw -l -z; balance; drf -l -z; drw -l -z; balance
+retime -M 5
+scleanup
+fraig_store; balance; fraig_store; balance; drw -l; drf -l; balance; drw -l; drw -l -z; balance; drf -l -z; drw -l -z; balance; fraig_store; balance; drw -l; drf -l; balance; drw -l; drw -l -z; balance; drf -l -z; drw -l -z; balance; fraig_store; balance; drw -l; drf -l; balance; drw -l; drw -l -z; balance; drf -l -z; drw -l -z; balance; fraig_store; fraig_restore
+amap -m -Q 0.1 -F 20 -A 20 -C 5000
+
+retime
+&get -n
+&st
+&dch
+&nf
+&put
+buffer -N 10;upsize;dnsize
+stime -p
+print_stats -m

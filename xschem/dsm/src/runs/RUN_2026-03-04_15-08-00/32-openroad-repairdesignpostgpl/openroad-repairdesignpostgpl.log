@@ -1,0 +1,67 @@
+Reading timing models for corner nom_fast_1p32V_m40C…
+Reading timing library for the 'nom_fast_1p32V_m40C' corner at '/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/lib/sg13g2_stdcell_fast_1p32V_m40C.lib'…
+Reading timing library for the 'nom_fast_1p32V_m40C' corner at '/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_io/lib/sg13g2_io_fast_1p32V_3p6V_m40C.lib'…
+Reading timing models for corner nom_slow_1p08V_125C…
+Reading timing library for the 'nom_slow_1p08V_125C' corner at '/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/lib/sg13g2_stdcell_slow_1p08V_125C.lib'…
+Reading timing library for the 'nom_slow_1p08V_125C' corner at '/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_io/lib/sg13g2_io_slow_1p08V_3p0V_125C.lib'…
+Reading timing models for corner nom_typ_1p20V_25C…
+Reading timing library for the 'nom_typ_1p20V_25C' corner at '/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/lib/sg13g2_stdcell_typ_1p20V_25C.lib'…
+Reading timing library for the 'nom_typ_1p20V_25C' corner at '/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_io/lib/sg13g2_io_typ_1p2V_3p3V_25C.lib'…
+Reading OpenROAD database at '/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/28-openroad-globalplacement/dsm_and_freq_divider.odb'…
+Reading design constraints file at '/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/my_constraints.sdc'…
+[INFO] No information on clock propagation in input SDC file-- propagating all clocks.
+[INFO RSZ-0027] Inserted 3 sg13g2_buf_1 input buffers.
+[INFO RSZ-0028] Inserted 1 sg13g2_buf_1 output buffers.
++ repair_design -verbose -max_wire_length 0 -slew_margin 20 -cap_margin 20
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +0.0% |       0 |       0 |             0 |       161
+       10 |     +0.0% |       0 |       0 |             0 |       151
+       20 |     +0.0% |       0 |       0 |             0 |       141
+       30 |     +0.0% |       0 |       0 |             0 |       131
+       40 |     +0.0% |       0 |       0 |             0 |       121
+       50 |     +0.0% |       0 |       0 |             0 |       111
+       60 |     +0.0% |       0 |       0 |             0 |       101
+       70 |     +0.0% |       0 |       0 |             0 |        91
+       80 |     +0.6% |       0 |       2 |             1 |        81
+       90 |     +0.6% |       0 |       2 |             1 |        71
+      100 |     +0.8% |       0 |       3 |             2 |        61
+      110 |     +0.8% |       0 |       3 |             2 |        51
+      120 |     +0.8% |       0 |       3 |             2 |        41
+      130 |     +0.8% |       0 |       3 |             2 |        31
+      140 |     +0.8% |       0 |       3 |             2 |        21
+      150 |     +0.8% |       0 |       3 |             2 |        11
+      160 |     +2.0% |       0 |       7 |             4 |         1
+    final |     +2.0% |       0 |       7 |             4 |         0
+---------------------------------------------------------------------
+[INFO RSZ-0035] Found 4 fanout violations.
+[INFO RSZ-0038] Inserted 7 buffers in 4 nets.
++ detailed_placement -max_displacement  500 100 
+Placement Analysis
+---------------------------------
+total displacement        520.4 u
+average displacement        3.2 u
+max displacement            9.0 u
+original HPWL            2209.8 u
+legalized HPWL           2742.8 u
+delta HPWL                   24 %
+
+[INFO DPL-0020] Mirrored 42 instances
+[INFO DPL-0021] HPWL before            2742.8 u
+[INFO DPL-0022] HPWL after             2665.3 u
+[INFO DPL-0023] HPWL delta               -2.8 %
+Setting global connections for newly added cells…
+[INFO] Setting global connections...
+[INFO ODB-0403] 22 connections made, 0 conflicts skipped.
+Updating metrics…
+Cell type report:                       Count       Area
+  Timing Repair Buffer                     11      79.83
+  Inverter                                 32     174.18
+  Sequential cell                          27    1322.70
+  Multi-Input combinational cell           93    1075.94
+  Total                                   163    2652.65
+Writing OpenROAD database to '/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/32-openroad-repairdesignpostgpl/dsm_and_freq_divider.odb'…
+Writing netlist to '/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/32-openroad-repairdesignpostgpl/dsm_and_freq_divider.nl.v'…
+Writing powered netlist to '/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/32-openroad-repairdesignpostgpl/dsm_and_freq_divider.pnl.v'…
+Writing layout to '/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/32-openroad-repairdesignpostgpl/dsm_and_freq_divider.def'…
+Writing timing constraints to '/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/32-openroad-repairdesignpostgpl/dsm_and_freq_divider.sdc'…

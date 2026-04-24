@@ -1,0 +1,16 @@
+16-Apr-2026 20:30:46 | INFO    | Your Klayout version is: KLayout 0.30.5
+16-Apr-2026 20:30:46 | INFO    | Running SG13G2 LVS checks on design /home/designer/shared/LC_VCO_FPLL/gds/blocks/DSM_N_FREQ_DIV.gds on cell DSM_N_FREQ_DIV
+16-Apr-2026 20:30:51 | INFO    | ==============================================================================
+16-Apr-2026 20:30:51 | INFO    | Important Summary
+16-Apr-2026 20:30:51 | INFO    | +------------------+--------------------------------------------------------------+
+16-Apr-2026 20:30:51 | INFO    | | Status           | PASS                                                         |
+16-Apr-2026 20:30:51 | INFO    | | Mode             | COMPARE                                                      |
+16-Apr-2026 20:30:51 | INFO    | | Outcome          | Comparison mode: PASS (netlists match).                      |
+16-Apr-2026 20:30:51 | INFO    | | Layout           | DSM_N_FREQ_DIV.gds                                           |
+16-Apr-2026 20:30:51 | INFO    | | Top Cell         | DSM_N_FREQ_DIV                                               |
+16-Apr-2026 20:30:51 | INFO    | | Results Dir      | /home/designer/shared/LC_VCO_FPLL/lvs/lvs_run_DSM_N_FREQ_DIV |
+16-Apr-2026 20:30:51 | INFO    | | Warnings         | 0                                                            |
+16-Apr-2026 20:30:51 | INFO    | | Errors           | 0                                                            |
+16-Apr-2026 20:30:51 | INFO    | | Run Time (s)     | 4.711                                                        |
+16-Apr-2026 20:30:51 | INFO    | +------------------+--------------------------------------------------------------+
+16-Apr-2026 20:30:51 | INFO    | ==============================================================================

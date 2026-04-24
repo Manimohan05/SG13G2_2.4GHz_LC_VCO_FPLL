@@ -1,0 +1,16 @@
+18-Apr-2026 14:45:47 | INFO    | Your Klayout version is: KLayout 0.30.5
+18-Apr-2026 14:45:47 | INFO    | Running SG13G2 LVS checks on design /home/designer/shared/LC_VCO_FPLL/gds/blocks/PFD_CP_LF.gds on cell PFD_CP_LF
+18-Apr-2026 14:45:51 | INFO    | ==============================================================================
+18-Apr-2026 14:45:51 | INFO    | Important Summary
+18-Apr-2026 14:45:52 | INFO    | +------------------+--------------------------------------------------------------+
+18-Apr-2026 14:45:52 | INFO    | | Status           | PASS                                                         |
+18-Apr-2026 14:45:52 | INFO    | | Mode             | COMPARE                                                      |
+18-Apr-2026 14:45:52 | INFO    | | Outcome          | Comparison mode: PASS (netlists match).                      |
+18-Apr-2026 14:45:52 | INFO    | | Layout           | PFD_CP_LF.gds                                                |
+18-Apr-2026 14:45:52 | INFO    | | Top Cell         | PFD_CP_LF                                                    |
+18-Apr-2026 14:45:52 | INFO    | | Results Dir      | /home/designer/shared/LC_VCO_FPLL/lvs/lvs_run_PFD_CP_LF      |
+18-Apr-2026 14:45:52 | INFO    | | Warnings         | 0                                                            |
+18-Apr-2026 14:45:52 | INFO    | | Errors           | 0                                                            |
+18-Apr-2026 14:45:52 | INFO    | | Run Time (s)     | 5.0                                                          |
+18-Apr-2026 14:45:52 | INFO    | +------------------+--------------------------------------------------------------+
+18-Apr-2026 14:45:52 | INFO    | ==============================================================================

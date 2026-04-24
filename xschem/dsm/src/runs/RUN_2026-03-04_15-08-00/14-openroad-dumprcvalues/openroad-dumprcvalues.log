@@ -1,0 +1,93 @@
+Reading timing models for corner nom_typ_1p20V_25C…
+Reading timing library for the 'nom_typ_1p20V_25C' corner at '/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/lib/sg13g2_stdcell_typ_1p20V_25C.lib'…
+Reading timing library for the 'nom_typ_1p20V_25C' corner at '/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_io/lib/sg13g2_io_typ_1p2V_3p3V_25C.lib'…
+Reading technology LEF file at '/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/lef/sg13g2_tech.lef'…
+[INFO ODB-0227] LEF file: /home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/lef/sg13g2_tech.lef, created 19 layers, 70 vias
+Reading cell LEF file at '/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/lef/sg13g2_stdcell.lef'…
+[INFO ODB-0227] LEF file: /home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/lef/sg13g2_stdcell.lef, created 84 library cells
+Reading gpio pad LEF file at '/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_io/lef/sg13g2_io.lef'…
+[INFO ODB-0227] LEF file: /home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_io/lef/sg13g2_io.lef, created 22 library cells
+[INFO ODB-0127] Reading DEF file: /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/13-openroad-floorplan/dsm_and_freq_divider.def
+[INFO ODB-0128] Design: dsm_and_freq_divider
+[INFO ODB-0130]     Created 6 pins.
+[INFO ODB-0131]     Created 152 components and 795 component-terminals.
+[INFO ODB-0132]     Created 2 special nets and 304 connections.
+[INFO ODB-0133]     Created 157 nets and 491 connections.
+[INFO ODB-0134] Finished DEF file: /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/13-openroad-floorplan/dsm_and_freq_divider.def
+%OL_CREATE_REPORT tlef_values.rpt
+ time 1ns
+ capacitance 1pF
+ resistance 1kohm
+ voltage 1v
+ current 1uA
+ power 1pW
+ distance 1um
+== Technology LEF Values ==
+=== Routing Layers ===
+Name                Direction           Res/Unit Distance   Cap/Unit Distance   
+Metal1              HORIZONTAL          8.437500e-04        6.878400e-05        
+Metal2              VERTICAL            5.150000e-04        9.302000e-05        
+Metal3              HORIZONTAL          5.150000e-04        9.200000e-05        
+Metal4              VERTICAL            5.150000e-04        9.178800e-05        
+Metal5              HORIZONTAL          5.150000e-04        8.882600e-05        
+=== Vias ===
+Name                Cut Resistance      
+Cont                2.200000e-02        
+Via1                2.000000e-02        
+Via2                2.000000e-02        
+Via3                2.000000e-02        
+Via4                2.000000e-02        
+%OL_END_REPORT
+%OL_CREATE_REPORT layer_values_after.rpt
+ time 1ns
+ capacitance 1pF
+ resistance 1kohm
+ voltage 1v
+ current 1uA
+ power 1pW
+ distance 1um
+== Layer Values (After Set RC) ==
+=== Routing Layers ===
+Name                Direction           Res/Unit Distance   Cap/Unit Distance   
+Metal1              HORIZONTAL          8.437500e-04        6.878400e-05        
+Metal2              VERTICAL            5.150000e-04        9.302000e-05        
+Metal3              HORIZONTAL          5.150000e-04        9.200000e-05        
+Metal4              VERTICAL            5.150000e-04        9.178800e-05        
+Metal5              HORIZONTAL          5.150000e-04        8.882600e-05        
+=== Vias ===
+Name                Cut Resistance      
+Cont                2.200000e-02        
+Via1                2.000000e-02        
+Via2                2.000000e-02        
+Via3                2.000000e-02        
+Via4                2.000000e-02        
+%OL_END_REPORT
+%OL_CREATE_REPORT resizer_values_after.rpt
+ time 1ns
+ capacitance 1pF
+ resistance 1kohm
+ voltage 1v
+ current 1uA
+ power 1pW
+ distance 1um
+== Resizer RC Values (After Set RC) ==
+=== Corner nom_typ_1p20V_25C ===
+==== Estimation RC Values ====
+Name                Direction           Res/Unit Distance   Cap/Unit Distance   
+Signal              Avg                 8.989925e-04        1.006917e-04        
+Clock               Avg                 8.989925e-04        1.006917e-04        
+==== Rt. Layer RC Values ====
+Name                Direction           Res/Unit Distance   Cap/Unit Distance   
+Metal1              HORIZONTAL          8.545760e-03        1.000000e-10        
+Metal2              VERTICAL            2.535190e-03        1.691210e-04        
+Metal3              HORIZONTAL          1.543290e-03        1.828320e-04        
+Metal4              VERTICAL            6.314240e-04        1.664540e-04        
+Metal5              HORIZONTAL          6.840510e-04        8.574310e-05        
+==== Via R Values ====
+Name                Res/Unit Distance   
+Cont                2.200000e-03        
+Via1                2.000000e-03        
+Via2                2.000000e-03        
+Via3                2.000000e-03        
+Via4                2.000000e-03        
+%OL_END_REPORT

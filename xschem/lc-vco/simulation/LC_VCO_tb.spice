@@ -1,0 +1,171 @@
+** sch_path: /home/designer/shared/frac-n-pll-vco-smacd_2026/schematic/lc-vco/LC_VCO_tb.sch
+**.subckt LC_VCO_tb OUT VCTRL
+*.opin OUT
+*.ipin VCTRL
+V1 VDD GND PULSE(0 1.2 0 1u 0 1s 2s)
+Vup VCTRL GND PULSE(0.4 0.8 1u 90n 1n 1s 2s)
+x1 VDD VCTRL GND OUT VBGR LC_VCO
+x2 VBGR VDD GND bgr
+**** begin user architecture code
+
+
+
+.param temp = 27
+.options method=gear rshunt=1.0e12
+
+.control
+
+* Save required signals
+save v(VCTRL) v(OUT) v(x1.Vx) v(x1.OUTp) v(VBGR)
+
+* Long transient simulation
+tran 10p 2u
+
+* Save raw waveform
+write LC_VCO_standalone_tran.raw
+
+* Plot transient waveform
+let vout = v(OUT)
+plot v(VCTRL) v(x1.Vx) v(OUT) v(x1.OUTp) v(VBGR)
+plot v(VBGR)
+
+* Plot steady-state waveform
+plot v(VCTRL) v(x1.Vx) v(OUT) v(x1.OUTp) v(VBGR) xlimit 4000n 4005n
+
+* FFT analysis
+setplot tran1
+linearize vout
+set specwindow=blackman
+fft vout
+
+* Plot FFT spectrum
+let power_out_db = db(vout)
+plot power_out_db xlimit 2.34G 2.54G ylimit -200 0
+
+* Find the maximum magnitude value between 2G and 3G
+meas sp max_power_out_db max power_out_db FROM=2G TO=3G
+
+* Save FFT spectrum as raw file
+write LC_VCO_fft.raw
+
+* Save FFT data
+wrdata fft_output_standalone.txt frequency power_out_db
+
+* Save waveform for external processing
+wrdata vco_waveform_standalone.txt power_out_db
+
+.endc
+
+
+
+
+
+.param temp=27
+.control
+save all
+op
+write LC_VCO_tb.raw
+.endc
+
+
+
+.include ../ihp_4nh_inductor.spice
+
+
+.lib cornerMOSlv.lib mos_tt
+.lib cornerMOShv.lib mos_tt
+.lib cornerRES.lib res_typ
+.lib cornerCAP.lib cap_typ
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  lc-vco/LC_VCO.sym # of pins=5
+** sym_path: /home/designer/shared/frac-n-pll-vco-smacd_2026/schematic/lc-vco/LC_VCO.sym
+** sch_path: /home/designer/shared/frac-n-pll-vco-smacd_2026/schematic/lc-vco/LC_VCO.sch
+.subckt LC_VCO VDD VCTRL GND OUT VBGR
+*.opin OUT
+*.ipin VCTRL
+*.ipin VBGR
+*.iopin VDD
+*.iopin GND
+XM5 Vx Vgs GND GND sg13_lv_nmos w=384u l=1u ng=48 m=1
+XM4 net1 net5 VDD VDD sg13_lv_pmos w=36u l=0.13u ng=5 m=1
+XM3 net5 net1 VDD VDD sg13_lv_pmos w=36u l=0.13u ng=5 m=1
+XM2 OUTp OUTn net4 GND sg13_lv_nmos w=22u l=0.13u ng=3 m=1
+XM1 OUTn OUTp net4 GND sg13_lv_nmos w=22u l=0.13u ng=3 m=1
+Vpmos_p net1 net3 0
+.save i(vpmos_p)
+Vnmos_p net3 OUTp 0
+.save i(vnmos_p)
+Vtail net4 Vx 0
+.save i(vtail)
+XM6 Vgs Vgs GND GND sg13_lv_nmos w=64u l=1u ng=8 m=1
+Vpmos_n net5 net2 0
+.save i(vpmos_n)
+Vnmos_n net2 OUTn 0
+.save i(vnmos_n)
+x1 net2 net3 ihp_4nh_inductor
+XC1 net2 net3 GND cap_rfcmim w=21.9e-6 l=21.9e-6 wfeed=10.0e-6
+XC3 OUTp VCTRL OUTn GND sg13_hv_svaricap w=9.74u l=0.8u Nx=7
+XC2 OUTp VCTRL OUTn GND sg13_hv_svaricap w=9.74u l=0.8u Nx=7
+XM7 Vgs VBGR VDD VDD sg13_lv_pmos w=38u l=1u ng=5 m=1
+XM8 OUT net3 VDD VDD sg13_lv_pmos w=15u l=0.13u ng=10 m=1
+XM9 OUT net3 GND GND sg13_lv_nmos w=1.5u l=0.13u ng=1 m=1
+XM10 net6 net2 VDD VDD sg13_lv_pmos w=15u l=0.13u ng=10 m=1
+XM11 net6 net2 GND GND sg13_lv_nmos w=1.5u l=0.13u ng=1 m=1
+.ends
+
+
+* expanding   symbol:  /home/designer/shared/frac-n-pll-vco-smacd_2026/schematic/bgr/bgr.sym # of pins=3
+** sym_path: /home/designer/shared/frac-n-pll-vco-smacd_2026/schematic/bgr/bgr.sym
+** sch_path: /home/designer/shared/frac-n-pll-vco-smacd_2026/schematic/bgr/bgr.sch
+.subckt bgr VBGR VDD VSS
+*.opin VBGR
+*.iopin VDD
+*.iopin VSS
+XM8 VSS v- net1 VSS sg13_lv_nmos w=150n l=10u ng=1 m=1
+XM6 net1 net1 VDD VDD sg13_lv_pmos w=1u l=1u ng=1 m=1
+XM7 net2 net1 VDD VDD sg13_lv_pmos w=1u l=1u ng=1 m=1
+XM9 v- net2 VDD VDD sg13_lv_pmos w=200n l=4u ng=1 m=1
+XM1 VSS v+ v- VSS sg13_lv_nmos w=7.14u l=5u ng=4 m=1
+XM2 VSS net4 net4 VSS sg13_lv_nmos w=21u l=5u ng=8 m=1
+XM3 v- Vo1 VDD VDD sg13_lv_pmos w=15u l=5u ng=8 m=1
+XM4 v+ Vo1 VDD VDD sg13_lv_pmos w=15u l=5u ng=8 m=1
+XM5 VBGR Vo1 VDD VDD sg13_lv_pmos w=16u l=5u ng=8 m=1
+XC3 VBGR VSS cap_cmim w=72.965e-6 l=72.965e-6 m=1
+XR3 v+ net4 sub! rppd w=0.5e-6 l=194.345e-6 m=1 b=0
+XR1 v+ VSS sub! rppd w=0.6e-6 l=194.345e-6 m=1 b=0
+XR2 VBGR VSS sub! rppd w=0.5e-6 l=192.395e-6 m=1 b=0
+XC1 net2 VSS cap_cmim w=18.195e-6 l=18.195e-6 m=1
+x1 VDD net3 v+ v- Vo1 VSS two_stage_OTA
+XR4 net3 net5 sub! rppd w=0.5e-6 l=15e-6 m=1 b=0
+Vbias net5 VSS 0
+.save i(vbias)
+.ends
+
+
+* expanding   symbol:  bgr/two_stage_OTA.sym # of pins=6
+** sym_path: /home/designer/shared/frac-n-pll-vco-smacd_2026/schematic/bgr/two_stage_OTA.sym
+** sch_path: /home/designer/shared/frac-n-pll-vco-smacd_2026/schematic/bgr/two_stage_OTA.sch
+.subckt two_stage_OTA vdd iout v+ v- vout vss
+*.iopin v-
+*.iopin v+
+*.iopin vss
+*.iopin vdd
+*.iopin iout
+*.iopin vout
+XM4 vss net1 net3 vss sg13_lv_nmos w=720n l=9.75u ng=1 m=1
+XM3 vss net1 net1 vss sg13_lv_nmos w=720n l=9.75u ng=1 m=1
+XM1 net1 v- net2 vdd sg13_lv_pmos w=3.64u l=3.7u ng=1 m=2
+XM2 net3 v+ net2 vdd sg13_lv_pmos w=3.64u l=3.7u ng=1 m=2
+XM5 net2 iout vdd vdd sg13_lv_pmos w=5.3u l=1.95u ng=1 m=1
+XM7 vout iout vdd vdd sg13_lv_pmos w=75u l=2.08u ng=8 m=1
+XM6 vss net3 vout vss sg13_lv_nmos w=28.8u l=9.75u ng=4 m=1
+XM9 iout iout vdd vdd sg13_lv_pmos w=75u l=2.08u ng=8 m=1
+XC2 net3 vout cap_cmim w=22.295e-6 l=22.295e-6 m=1
+.ends
+
+.GLOBAL GND
+.GLOBAL VDD
+.end

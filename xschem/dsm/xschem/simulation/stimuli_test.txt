@@ -1,0 +1,998 @@
+unit n
+voltage 1.8
+slope 5
+format hspice_simple
+
+signal sdata
+signal sclk
+signal rst
+signal en
+
+beginfile stimuli_test.cir
+
+* --- Initialization ---
+set rst 1
+set en 0
+set sclk 0
+set sdata 0
+s 50
+set rst 0
+s 20
+
+* --- Sending word -128 ---
+set en 1
+s 3
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set en 0
+set sdata 0
+s 10000
+
+* --- Sending word -112 ---
+set en 1
+s 3
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set en 0
+set sdata 0
+s 10000
+
+* --- Sending word -96 ---
+set en 1
+s 3
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set en 0
+set sdata 0
+s 10000
+
+* --- Sending word -80 ---
+set en 1
+s 3
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set en 0
+set sdata 0
+s 10000
+
+* --- Sending word -64 ---
+set en 1
+s 3
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set en 0
+set sdata 0
+s 10000
+
+* --- Sending word -48 ---
+set en 1
+s 3
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set en 0
+set sdata 0
+s 10000
+
+* --- Sending word -32 ---
+set en 1
+s 3
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set en 0
+set sdata 0
+s 10000
+
+* --- Sending word -16 ---
+set en 1
+s 3
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set en 0
+set sdata 0
+s 10000
+
+* --- Sending word 0 ---
+set en 1
+s 3
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set en 0
+set sdata 0
+s 10000
+
+* --- Sending word 16 ---
+set en 1
+s 3
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set en 0
+set sdata 0
+s 10000
+
+* --- Sending word 32 ---
+set en 1
+s 3
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set en 0
+set sdata 0
+s 10000
+
+* --- Sending word 48 ---
+set en 1
+s 3
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set en 0
+set sdata 0
+s 10000
+
+* --- Sending word 64 ---
+set en 1
+s 3
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set en 0
+set sdata 0
+s 10000
+
+* --- Sending word 80 ---
+set en 1
+s 3
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set en 0
+set sdata 0
+s 10000
+
+* --- Sending word 96 ---
+set en 1
+s 3
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set en 0
+set sdata 0
+s 10000
+
+* --- Sending word 112 ---
+set en 1
+s 3
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 1
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set sdata 0
+s 1
+set sclk 1
+s 5
+set sclk 0
+s 5
+set en 0
+set sdata 0
+s 10000
+
+endfile

@@ -1,0 +1,181 @@
+** sch_path: /foss/designs/iic_osic_tools/frac-n-pll-vco-unic_cass/schematic/blocks/top-pll/pll_tb.sch
+**.subckt pll_tb OUTn F_OUT
+*.opin OUTn
+*.opin F_OUT
+V1 VDD GND 1.2
+I0 VDD net1 50u
+Vfref F_REF GND 0 pulse(0 1.2 0n 0.1n 0.1n 5n 10n)
+I1 net2 GND 10m
+x1 F_OUT F_REF net1 OUTn net2 VDD GND pll
+**** begin user architecture code
+
+
+
+.lib cornerMOSlv.lib mos_tt
+.lib cornerHBT.lib hbt_typ
+.lib cornerRES.lib res_typ
+.lib cornerCAP.lib cap_typ_stat
+.include /foss/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
+.global VDD GND
+
+
+.param CP_N_L = 0.5u
+.param CP_N_W = 60u
+.param CP_P_M = 1
+.param CP_P_L = 0.5u
+.param CP_P_W = 200u
+.param CP_N_M = 1
+.param C_CP = 700p
+
+
+
+
+
+*****************************************************
+* PLL + DSM Frequency Divider Testbench
+*****************************************************
+
+.option temp = 27
+.param VDD = 1.2
+
+* ==============================
+* Include Models
+* ==============================
+
+* Inductor / analog models
+.include ./IHP_4nH_Inductor.spice
+
+* to generate following file copy stimuli.test
+* to the simulation directory and run simulation -> Utile Stimuli Editor (GUI),
+* and press 'Translate'
+.include stimuli_test.cir
+
+.control
+
+  * Simulation accuracy options
+  .options maxstep=10p reltol=1e-4 abstol=1e-9
+
+  * Save important PLL + DSM nodes
+  save v(sdata) v(sclk) v(rst) v(dsm_clk) v(F_REF) v(F_VCO) v(vctrl) v(vco_out) v(UP) v(DN)
+  set appendwrite
+
+ * Run long enough for PLL lock
+  tran 20p 5u uic
+
+  remzerovec
+
+  write pll_dsm_freq_div.raw
+.endc
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  pll.sym # of pins=7
+** sym_path: /foss/designs/iic_osic_tools/frac-n-pll-vco-unic_cass/schematic/blocks/top-pll/pll.sym
+** sch_path: /foss/designs/iic_osic_tools/frac-n-pll-vco-unic_cass/schematic/blocks/top-pll/pll.sch
+.subckt pll F_OUT F_REF IbiasVCO OUTn Ibias VDD GND
+*.opin OUTn
+*.iopin GND
+*.iopin VDD
+*.ipin F_REF
+*.opin F_OUT
+*.ipin IbiasVCO
+*.ipin Ibias
+x5 F_OUT net7 VDD GND sg13g2_inv_2
+x1 VDD UP vctrl DN GND Ibias CP
+x2 VDD UP F_REF F_VCO DN GND PFD_std
+x3 VDD net7 OUTn IbiasVCO vctrl GND LC_VCO
+adut [ net1 net2 net3 net4 net5 ] [ net6 ] null dut
+.model dut d_cosim simulation=./../dsm_and_freq_divider.so
+A1 [ F_OUT ] [ net1 ] adc1
+.model adc1 adc_bridge in_low=0.4 in_high=0.6
+A2 [ rst ] [ net2 ] adc1
+.model adc1 adc_bridge in_low=0.4 in_high=0.6
+A3 [ sclk ] [ net3 ] adc1
+.model adc1 adc_bridge in_low=0.4 in_high=0.6
+A4 [ sdata ] [ net4 ] adc1
+.model adc1 adc_bridge in_low=0.4 in_high=0.6
+A5 [ en ] [ net5 ] adc1
+.model adc1 adc_bridge in_low=0.4 in_high=0.6
+A6 [ net6 ] [ F_VCO ] dac1
+.model dac1 dac_bridge out_low=0 out_high=1.2
+* noconn rst
+* noconn sclk
+* noconn sdata
+* noconn en
+.ends
+
+
+* expanding   symbol:  /foss/designs/iic_osic_tools/frac-n-pll-vco-unic_cass/schematic/blocks/charge-pump/CP.sym # of pins=6
+** sym_path: /foss/designs/iic_osic_tools/frac-n-pll-vco-unic_cass/schematic/blocks/charge-pump/CP.sym
+** sch_path: /foss/designs/iic_osic_tools/frac-n-pll-vco-unic_cass/schematic/blocks/charge-pump/CP.sch
+.subckt CP VDD UP CTRL DN GND Ibias
+*.opin CTRL
+*.ipin UP
+*.ipin VDD
+*.ipin Ibias
+*.ipin DN
+*.ipin GND
+XM2 Vbn Vbn net2 GND sg13_lv_nmos w={CP_N_W} l={CP_N_L} ng=1 m={CP_N_M}
+XM1 net2 VDD GND GND sg13_lv_nmos w={CP_N_W} l={CP_N_L} ng=1 m={CP_N_M}
+XM3 Vbn Vbp net1 VDD sg13_lv_pmos w={CP_P_W} l={CP_P_L} ng=1 m={CP_P_M}
+XM4 net1 GND VDD VDD sg13_lv_pmos w={CP_P_W} l={CP_P_L} ng=1 m={CP_P_M}
+XM7 Vbp Vbp net7 VDD sg13_lv_pmos w={CP_P_W} l={CP_P_L} ng=1 m={CP_P_M}
+XM8 net7 GND VDD VDD sg13_lv_pmos w={CP_P_W} l={CP_P_L} ng=1 m={CP_P_M}
+XM5 net6 Vbn net3 GND sg13_lv_nmos w={CP_N_W} l={CP_N_L} ng=1 m={CP_N_M}
+XM6 net3 DN GND GND sg13_lv_nmos w={CP_N_W} l={CP_N_L} ng=1 m={CP_N_M}
+XM9 net6 Vbp net4 VDD sg13_lv_pmos w={CP_P_W} l={CP_P_L} ng=1 m={CP_P_M}
+XM10 net4 UP VDD VDD sg13_lv_pmos w={CP_P_W} l={CP_P_L} ng=1 m={CP_P_M}
+XC1 net5 GND cparasitic C='C_CP'
+XR1 Ibias Vbp sub! rsil w=0.5e-6 l=0.5e-6 m=1 b=0
+XM11 VDD net5 CTRL GND sg13_lv_nmos w=100u l=0.5u ng=20 m=1
+XR2 GND CTRL sub! rsil w=0.5e-6 l=0.5e-4 m=1 b=0
+XR3 net6 net5 sub! rsil w=0.5e-6 l=1e-5 m=1 b=0
+.ends
+
+
+* expanding   symbol:  /foss/designs/iic_osic_tools/frac-n-pll-vco-unic_cass/schematic/blocks/phase-freq-detector/PFD_std.sym # of
+*+ pins=6
+** sym_path: /foss/designs/iic_osic_tools/frac-n-pll-vco-unic_cass/schematic/blocks/phase-freq-detector/PFD_std.sym
+** sch_path: /foss/designs/iic_osic_tools/frac-n-pll-vco-unic_cass/schematic/blocks/phase-freq-detector/PFD_std.sch
+.subckt PFD_std VDD UP F_REF F_VCO DN GND
+*.opin UP
+*.ipin F_REF
+*.ipin VDD
+*.ipin GND
+*.opin DN
+*.ipin F_VCO
+x1 net1 net2 F_REF VDD RST_N VDD GND sg13g2_dfrbp_2
+x2 DN net3 F_VCO VDD RST_N VDD GND sg13g2_dfrbp_2
+x3 RST_N net1 DN VDD GND sg13g2_nand2_2
+x4 UP net1 VDD GND sg13g2_inv_2
+.ends
+
+
+* expanding   symbol:  /foss/designs/iic_osic_tools/frac-n-pll-vco-unic_cass/schematic/blocks/lc-vco/LC_VCO.sym # of pins=6
+** sym_path: /foss/designs/iic_osic_tools/frac-n-pll-vco-unic_cass/schematic/blocks/lc-vco/LC_VCO.sym
+** sch_path: /foss/designs/iic_osic_tools/frac-n-pll-vco-unic_cass/schematic/blocks/lc-vco/LC_VCO.sch
+.subckt LC_VCO VDD OUTp OUTn Ibias VCTRL GND
+*.iopin VDD
+*.opin OUTp
+*.opin OUTn
+*.iopin GND
+*.iopin VCTRL
+*.iopin Ibias
+XM6 net1 Ibias GND GND sg13_lv_nmos w=1u l=0.15u ng=1 m=60
+XM5 Ibias Ibias GND GND sg13_lv_nmos w=1u l=0.15u ng=1 m=1
+XM4 OUTp OUTn VDD VDD sg13_lv_pmos w=8.5u l=0.5u ng=1 m=13
+X5M3 OUTn OUTp VDD VDD sg13_lv_pmos w=8.5u l=0.5u ng=1 m=13
+XM2 OUTp OUTn net1 GND sg13_lv_nmos w=2u l=0.5u ng=1 m=12
+XM1 OUTn OUTp net1 GND sg13_lv_nmos w=2u l=0.5u ng=1 m=12
+XC3 OUTp OUTn cap_cmim w=4.0e-6 l=4.0e-6 m=13.6
+XMv2 OUTp VCTRL OUTp VDD sg13_lv_pmos w=4u l=4u ng=1 m=22
+XMv1 OUTn VCTRL OUTn VDD sg13_lv_pmos w=4u l=4u ng=1 m=22
+*  x1 -  ihp_4nh_inductor  IS MISSING !!!!
+XR1 OUTn OUTp sub! rhigh w=1e-6 l=1e-6 m=1.23 b=0
+.ends
+
+.GLOBAL GND
+.GLOBAL VDD
+.end
