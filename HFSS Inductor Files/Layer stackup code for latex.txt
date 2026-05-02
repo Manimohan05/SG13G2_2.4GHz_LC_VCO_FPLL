@@ -1,0 +1,29 @@
+\begin{table}[t]
+\caption{IHP SG13G2 Layer Stackup and Material Properties}
+\label{tab:ihp_sg13g2_stackup}
+\centering
+\footnotesize
+\begin{tabular}{l l c c c}
+\toprule
+\textbf{Layer} & \textbf{Material} & \textbf{Thk. ($\mu$m)} & $\boldsymbol{\epsilon_r}$ & \textbf{Cond. (S/m)} \\
+\midrule
+TopMetal2 & Al & 3.000 & 1.0 & $3.03\times10^{7}$ \\
+TopVia2   & Interconnect & 2.800 & --  & $3.14\times10^{6}$ \\
+TopMetal1 & Al & 2.000 & 1.0 & $2.78\times10^{7}$ \\
+TopVia1   & Interconnect & 0.850 & --  & $2.19\times10^{6}$ \\
+Met5      & Al & 0.490 & 1.0 & $2.32\times10^{7}$ \\
+Via4      & Interconnect & 0.540 & --  & $1.66\times10^{6}$ \\
+Met4      & Al & 0.490 & 1.0 & $2.32\times10^{7}$ \\
+Via3      & Interconnect & 0.540 & --  & $1.66\times10^{6}$ \\
+Met3      & Al & 0.490 & 1.0 & $2.32\times10^{7}$ \\
+Via2      & Interconnect & 0.540 & --  & $1.66\times10^{6}$ \\
+Met2      & Al & 0.490 & 1.0 & $2.32\times10^{7}$ \\
+Via1      & Interconnect & 0.540 & --  & $1.66\times10^{6}$ \\
+Met1      & Al & 0.420 & 1.0 & $2.16\times10^{7}$ \\
+Cont      & Tungsten & 0.640 & --  & $2.39\times10^{6}$ \\
+SiO2      & Dielectric & 15.73 & 4.1 & -- \\
+EPI       & Epi-Si & 3.750 & 11.9 & 5.0 \\
+Substrate & Si & 280.0 & 11.9 & 2.0 \\
+\bottomrule
+\end{tabular}
+\end{table}   

@@ -1,0 +1,9 @@
+# Logfile created on 2026-04-16 20:00:15 +0200 by logger.rb/v1.4.3
+2026-04-16 20:00:15 +0200: Memory Usage (431244K) : Starting running IHP-SG13G2 Klayout DRC maximum runset on /home/designer/shared/LC_VCO_FPLL/gds/blocks/PHASE_FREQ_DET.gds
+2026-04-16 20:00:15 +0200: Memory Usage (431244K) : Ruby Version for klayout: 3.0.2
+2026-04-16 20:00:15 +0200: Memory Usage (431244K) : Loading database to memory is complete.
+2026-04-16 20:00:15 +0200: Memory Usage (431244K) : IHP-SG13G2 Klayout DRC maximum runset output at: /home/designer/shared/LC_VCO_FPLL/drc/drc_run_PHASE_FREQ_DET/PHASE_FREQ_DET_PHASE_FREQ_DET_sg13g2_maximal.lyrdb
+2026-04-16 20:00:15 +0200: Memory Usage (431244K) : Evaluate switches.
+2026-04-16 20:00:15 +0200: Memory Usage (431244K) : Klayout will use 1 thread(s)
+2026-04-16 20:00:15 +0200: Memory Usage (431244K) : deep mode is enabled for sg13g2_maximal runset.
+2026-04-16 20:00:19 +0200: Memory Usage (454760K) : KLayout DRC run for maximum ruleSet completed in 3.93 seconds

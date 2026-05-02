@@ -1,0 +1,9 @@
+# File extensions to ignore
+*.raw
+*.nodes
+*.sims
+
+# Ignore large FFT output
+schematic/blocks/lc-vco/simulations/fft_output.txt
+/.vscode
+/.claude

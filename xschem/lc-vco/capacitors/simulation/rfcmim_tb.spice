@@ -1,0 +1,29 @@
+** sch_path: /home/designer/shared/frac-n-pll-vco-smacd_2026/schematic/lc-vco/capacitors/rfcmim_tb.sch
+**.subckt rfcmim_tb
+R1 in GND 1Meg m=1
+V1 in GND dc 0 ac 1 portnum 1 z0 50
+R2 out GND 1Meg m=1
+V2 out GND dc 0 ac 0 portnum 2 z0 50
+XC1 in out GND cap_rfcmim w=2.0e-6 l=2.0e-6 wfeed=5.0e-6
+**** begin user architecture code
+
+.lib cornerCAP.lib cap_typ
+
+
+
+.control
+
+* Run S-parameter analysis: Linear sweep, 1 point, 2.44 GHz
+sp lin 1 2.44G 2.44G
+
+* Calculate C_diff and Q_diff
+let C = 1/(2*PI*frequency*imag(1/Y_2_1))
+print real(C)
+
+.endc
+
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end

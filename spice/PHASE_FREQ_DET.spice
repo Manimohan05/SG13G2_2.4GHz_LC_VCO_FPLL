@@ -1,0 +1,69 @@
+** sch_path: /home/designer/shared/LC_VCO_FPLL/xschem/PHASE_FREQ_DET.sch
+.subckt PHASE_FREQ_DET FREF UP VDD GND FDIV DN
+*.PININFO UP:O FREF:I VDD:B GND:B DN:O FDIV:I
+x1 net1 UP FREF VDD nRST VDD GND sg13g2_dfrbp_2
+x2 DN net2 FDIV VDD nRST VDD GND sg13g2_dfrbp_2
+x3 nRST net1 DN VDD GND sg13g2_nand2_2
+* noconn #net2
+.ends
+.GLOBAL VDD
+.GLOBAL GND
+
+
+************************************************************************
+* Library Name: sg13g2_stdcell
+* Cell Name:    sg13g2_dfrbp_2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT sg13g2_dfrbp_2 Q Q_N CLK D RESET_B VDD VSS
+*.PININFO CLK:I D:I RESET_B:I Q:O Q_N:O VDD:B VSS:B
+MN11 net12 net2 VSS VSS sg13_lv_nmos m=1 w=420.00n l=130.00n ng=1
+MN10 net5 clkneg net12 VSS sg13_lv_nmos m=1 w=420.00n l=130.00n ng=1
+MN12 net2 net5 net11 VSS sg13_lv_nmos m=1 w=420.00n l=130.00n ng=1
+MN13 net11 RESET_B VSS VSS sg13_lv_nmos m=1 w=420.00n l=130.00n ng=1
+MN14 Q_N net5 VSS VSS sg13_lv_nmos m=1 w=1.48u l=130.00n ng=2
+MN0 Db D net10 VSS sg13_lv_nmos m=1 w=420.00n l=130.00n ng=1
+MN1 net10 RESET_B VSS VSS sg13_lv_nmos m=1 w=420.00n l=130.00n ng=1
+MN4 Db clkneg net6 VSS sg13_lv_nmos m=1 w=420.00n l=130.00n ng=1
+MN5 net6 clkpos net9 VSS sg13_lv_nmos m=1 w=420.00n l=130.00n ng=1
+MN6 net9 net4 net8 VSS sg13_lv_nmos m=1 w=420.00n l=130.00n ng=1
+MN7 net8 RESET_B VSS VSS sg13_lv_nmos m=1 w=420.00n l=130.00n ng=1
+MN8 net4 net6 VSS VSS sg13_lv_nmos m=1 w=740.00n l=130.00n ng=1
+MN2 clkneg CLK VSS VSS sg13_lv_nmos m=1 w=740.00n l=130.00n ng=1
+MN9 net4 clkpos net5 VSS sg13_lv_nmos m=1 w=740.00n l=130.00n ng=1
+MN3 clkpos clkneg VSS VSS sg13_lv_nmos m=1 w=740.00n l=130.00n ng=1
+MN16 Q net1 VSS VSS sg13_lv_nmos m=1 w=1.48u l=130.00n ng=2
+MN15 net1 net5 VSS VSS sg13_lv_nmos m=1 w=640.00n l=130.00n ng=1
+MP11 net5 clkpos net3 VDD sg13_lv_pmos m=1 w=420.00n l=130.00n ng=1
+MP12 net2 net5 VDD VDD sg13_lv_pmos m=1 w=420.00n l=130.00n ng=1
+MP13 net2 RESET_B VDD VDD sg13_lv_pmos m=1 w=420.00n l=130.00n ng=1
+MP14 Q_N net5 VDD VDD sg13_lv_pmos m=1 w=2.24u l=130.00n ng=2
+MP4 Db clkpos net6 VDD sg13_lv_pmos m=1 w=420.00n l=130.00n ng=1
+MP0 Db RESET_B VDD VDD sg13_lv_pmos m=1 w=420.00n l=130.00n ng=1
+MP1 Db D VDD VDD sg13_lv_pmos m=1 w=420.00n l=130.00n ng=1
+MP5 net7 net4 VDD VDD sg13_lv_pmos m=1 w=420.00n l=130.00n ng=1
+MP6 net6 clkneg net7 VDD sg13_lv_pmos m=1 w=420.00n l=130.00n ng=1
+MP7 net6 RESET_B VDD VDD sg13_lv_pmos m=1 w=420.00n l=130.00n ng=1
+MP2 clkneg CLK VDD VDD sg13_lv_pmos m=1 w=1.12u l=130.00n ng=1
+MP3 clkpos clkneg VDD VDD sg13_lv_pmos m=1 w=1.12u l=130.00n ng=1
+MP8 net4 net6 VDD VDD sg13_lv_pmos m=1 w=1.000u l=130.00n ng=1
+MP9 net4 clkneg net5 VDD sg13_lv_pmos m=1 w=1.000u l=130.00n ng=1
+MP16 Q net1 VDD VDD sg13_lv_pmos m=1 w=2.24u l=130.00n ng=2
+MP10 net3 net2 VDD VDD sg13_lv_pmos m=1 w=420.00n l=130.00n ng=1
+MP15 net1 net5 VDD VDD sg13_lv_pmos m=1 w=1.000u l=130.00n ng=1
+.ENDS
+
+************************************************************************
+* Library Name: sg13g2_stdcell
+* Cell Name:    sg13g2_nand2_2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT sg13g2_nand2_2 Y A B VDD VSS
+*.PININFO A:I B:I Y:O VDD:B VSS:B
+MP1 Y B VDD VDD sg13_lv_pmos m=1 w=2.24u l=130.00n ng=2
+MP0 Y A VDD VDD sg13_lv_pmos m=1 w=2.24u l=130.00n ng=2
+MN1 net1 B VSS VSS sg13_lv_nmos m=1 w=1.44u l=130.00n ng=2
+MN0 Y A net1 VSS sg13_lv_nmos m=1 w=1.44u l=130.00n ng=2
+.ENDS

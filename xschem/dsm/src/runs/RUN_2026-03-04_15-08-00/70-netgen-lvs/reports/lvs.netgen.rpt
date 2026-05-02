@@ -1,0 +1,503 @@
+
+Cell sg13g2_decap_8 (0) disconnected node: VDD
+Cell sg13g2_decap_8 (0) disconnected node: VSS
+
+Subcircuit pins:
+Circuit 1: sg13g2_decap_8                  |Circuit 2: sg13g2_decap_8                  
+-------------------------------------------|-------------------------------------------
+VDD                                        |VDD                                        
+VSS                                        |VSS                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sg13g2_decap_8 and sg13g2_decap_8 are equivalent.
+
+Cell sg13g2_fill_1 (0) disconnected node: VDD
+Cell sg13g2_fill_1 (0) disconnected node: VSS
+Cell sg13g2_fill_1 (1) disconnected node: VDD
+Cell sg13g2_fill_1 (1) disconnected node: VSS
+
+Subcircuit pins:
+Circuit 1: sg13g2_fill_1                   |Circuit 2: sg13g2_fill_1                   
+-------------------------------------------|-------------------------------------------
+VDD                                        |VDD                                        
+VSS                                        |VSS                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sg13g2_fill_1 and sg13g2_fill_1 are equivalent.
+
+Cell sg13g2_nand3_1 (0) disconnected node: Y
+Cell sg13g2_nand3_1 (0) disconnected node: A
+Cell sg13g2_nand3_1 (0) disconnected node: B
+Cell sg13g2_nand3_1 (0) disconnected node: C
+Cell sg13g2_nand3_1 (0) disconnected node: VDD
+Cell sg13g2_nand3_1 (0) disconnected node: VSS
+
+Subcircuit pins:
+Circuit 1: sg13g2_nand3_1                  |Circuit 2: sg13g2_nand3_1                  
+-------------------------------------------|-------------------------------------------
+Y                                          |Y                                          
+A                                          |A                                          
+B                                          |B                                          
+C                                          |C                                          
+VDD                                        |VDD                                        
+VSS                                        |VSS                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sg13g2_nand3_1 and sg13g2_nand3_1 are equivalent.
+
+Cell sg13g2_a21oi_1 (0) disconnected node: Y
+Cell sg13g2_a21oi_1 (0) disconnected node: A1
+Cell sg13g2_a21oi_1 (0) disconnected node: A2
+Cell sg13g2_a21oi_1 (0) disconnected node: B1
+Cell sg13g2_a21oi_1 (0) disconnected node: VDD
+Cell sg13g2_a21oi_1 (0) disconnected node: VSS
+
+Subcircuit pins:
+Circuit 1: sg13g2_a21oi_1                  |Circuit 2: sg13g2_a21oi_1                  
+-------------------------------------------|-------------------------------------------
+Y                                          |Y                                          
+A1                                         |A1                                         
+A2                                         |A2                                         
+B1                                         |B1                                         
+VDD                                        |VDD                                        
+VSS                                        |VSS                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sg13g2_a21oi_1 and sg13g2_a21oi_1 are equivalent.
+
+Cell sg13g2_buf_1 (0) disconnected node: X
+Cell sg13g2_buf_1 (0) disconnected node: A
+Cell sg13g2_buf_1 (0) disconnected node: VDD
+Cell sg13g2_buf_1 (0) disconnected node: VSS
+
+Subcircuit pins:
+Circuit 1: sg13g2_buf_1                    |Circuit 2: sg13g2_buf_1                    
+-------------------------------------------|-------------------------------------------
+X                                          |X                                          
+A                                          |A                                          
+VDD                                        |VDD                                        
+VSS                                        |VSS                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sg13g2_buf_1 and sg13g2_buf_1 are equivalent.
+
+Cell sg13g2_dfrbpq_1 (0) disconnected node: Q
+Cell sg13g2_dfrbpq_1 (0) disconnected node: CLK
+Cell sg13g2_dfrbpq_1 (0) disconnected node: D
+Cell sg13g2_dfrbpq_1 (0) disconnected node: RESET_B
+Cell sg13g2_dfrbpq_1 (0) disconnected node: VDD
+Cell sg13g2_dfrbpq_1 (0) disconnected node: VSS
+
+Subcircuit pins:
+Circuit 1: sg13g2_dfrbpq_1                 |Circuit 2: sg13g2_dfrbpq_1                 
+-------------------------------------------|-------------------------------------------
+Q                                          |Q                                          
+CLK                                        |CLK                                        
+D                                          |D                                          
+RESET_B                                    |RESET_B                                    
+VDD                                        |VDD                                        
+VSS                                        |VSS                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sg13g2_dfrbpq_1 and sg13g2_dfrbpq_1 are equivalent.
+
+Cell sg13g2_fill_2 (0) disconnected node: VDD
+Cell sg13g2_fill_2 (0) disconnected node: VSS
+Cell sg13g2_fill_2 (1) disconnected node: VDD
+Cell sg13g2_fill_2 (1) disconnected node: VSS
+
+Subcircuit pins:
+Circuit 1: sg13g2_fill_2                   |Circuit 2: sg13g2_fill_2                   
+-------------------------------------------|-------------------------------------------
+VDD                                        |VDD                                        
+VSS                                        |VSS                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sg13g2_fill_2 and sg13g2_fill_2 are equivalent.
+
+Cell sg13g2_xor2_1 (0) disconnected node: X
+Cell sg13g2_xor2_1 (0) disconnected node: A
+Cell sg13g2_xor2_1 (0) disconnected node: B
+Cell sg13g2_xor2_1 (0) disconnected node: VDD
+Cell sg13g2_xor2_1 (0) disconnected node: VSS
+
+Subcircuit pins:
+Circuit 1: sg13g2_xor2_1                   |Circuit 2: sg13g2_xor2_1                   
+-------------------------------------------|-------------------------------------------
+X                                          |X                                          
+A                                          |A                                          
+B                                          |B                                          
+VDD                                        |VDD                                        
+VSS                                        |VSS                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sg13g2_xor2_1 and sg13g2_xor2_1 are equivalent.
+
+Cell sg13g2_nand2_1 (0) disconnected node: Y
+Cell sg13g2_nand2_1 (0) disconnected node: A
+Cell sg13g2_nand2_1 (0) disconnected node: B
+Cell sg13g2_nand2_1 (0) disconnected node: VDD
+Cell sg13g2_nand2_1 (0) disconnected node: VSS
+
+Subcircuit pins:
+Circuit 1: sg13g2_nand2_1                  |Circuit 2: sg13g2_nand2_1                  
+-------------------------------------------|-------------------------------------------
+Y                                          |Y                                          
+A                                          |A                                          
+B                                          |B                                          
+VDD                                        |VDD                                        
+VSS                                        |VSS                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sg13g2_nand2_1 and sg13g2_nand2_1 are equivalent.
+
+Cell sg13g2_decap_4 (0) disconnected node: VDD
+Cell sg13g2_decap_4 (0) disconnected node: VSS
+
+Subcircuit pins:
+Circuit 1: sg13g2_decap_4                  |Circuit 2: sg13g2_decap_4                  
+-------------------------------------------|-------------------------------------------
+VDD                                        |VDD                                        
+VSS                                        |VSS                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sg13g2_decap_4 and sg13g2_decap_4 are equivalent.
+
+Cell sg13g2_inv_1 (0) disconnected node: Y
+Cell sg13g2_inv_1 (0) disconnected node: A
+Cell sg13g2_inv_1 (0) disconnected node: VDD
+Cell sg13g2_inv_1 (0) disconnected node: VSS
+
+Subcircuit pins:
+Circuit 1: sg13g2_inv_1                    |Circuit 2: sg13g2_inv_1                    
+-------------------------------------------|-------------------------------------------
+Y                                          |Y                                          
+A                                          |A                                          
+VDD                                        |VDD                                        
+VSS                                        |VSS                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sg13g2_inv_1 and sg13g2_inv_1 are equivalent.
+
+Cell sg13g2_o21ai_1 (0) disconnected node: Y
+Cell sg13g2_o21ai_1 (0) disconnected node: A1
+Cell sg13g2_o21ai_1 (0) disconnected node: A2
+Cell sg13g2_o21ai_1 (0) disconnected node: B1
+Cell sg13g2_o21ai_1 (0) disconnected node: VDD
+Cell sg13g2_o21ai_1 (0) disconnected node: VSS
+
+Subcircuit pins:
+Circuit 1: sg13g2_o21ai_1                  |Circuit 2: sg13g2_o21ai_1                  
+-------------------------------------------|-------------------------------------------
+Y                                          |Y                                          
+A1                                         |A1                                         
+A2                                         |A2                                         
+B1                                         |B1                                         
+VDD                                        |VDD                                        
+VSS                                        |VSS                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sg13g2_o21ai_1 and sg13g2_o21ai_1 are equivalent.
+
+Cell sg13g2_buf_16 (0) disconnected node: X
+Cell sg13g2_buf_16 (0) disconnected node: A
+Cell sg13g2_buf_16 (0) disconnected node: VDD
+Cell sg13g2_buf_16 (0) disconnected node: VSS
+
+Subcircuit pins:
+Circuit 1: sg13g2_buf_16                   |Circuit 2: sg13g2_buf_16                   
+-------------------------------------------|-------------------------------------------
+X                                          |X                                          
+A                                          |A                                          
+VDD                                        |VDD                                        
+VSS                                        |VSS                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sg13g2_buf_16 and sg13g2_buf_16 are equivalent.
+
+Cell sg13g2_xnor2_1 (0) disconnected node: Y
+Cell sg13g2_xnor2_1 (0) disconnected node: A
+Cell sg13g2_xnor2_1 (0) disconnected node: B
+Cell sg13g2_xnor2_1 (0) disconnected node: VDD
+Cell sg13g2_xnor2_1 (0) disconnected node: VSS
+
+Subcircuit pins:
+Circuit 1: sg13g2_xnor2_1                  |Circuit 2: sg13g2_xnor2_1                  
+-------------------------------------------|-------------------------------------------
+Y                                          |Y                                          
+A                                          |A                                          
+B                                          |B                                          
+VDD                                        |VDD                                        
+VSS                                        |VSS                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sg13g2_xnor2_1 and sg13g2_xnor2_1 are equivalent.
+
+Cell sg13g2_a21oi_2 (0) disconnected node: Y
+Cell sg13g2_a21oi_2 (0) disconnected node: A1
+Cell sg13g2_a21oi_2 (0) disconnected node: A2
+Cell sg13g2_a21oi_2 (0) disconnected node: B1
+Cell sg13g2_a21oi_2 (0) disconnected node: VDD
+Cell sg13g2_a21oi_2 (0) disconnected node: VSS
+
+Subcircuit pins:
+Circuit 1: sg13g2_a21oi_2                  |Circuit 2: sg13g2_a21oi_2                  
+-------------------------------------------|-------------------------------------------
+Y                                          |Y                                          
+A1                                         |A1                                         
+A2                                         |A2                                         
+B1                                         |B1                                         
+VDD                                        |VDD                                        
+VSS                                        |VSS                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sg13g2_a21oi_2 and sg13g2_a21oi_2 are equivalent.
+
+Cell sg13g2_a21o_1 (0) disconnected node: X
+Cell sg13g2_a21o_1 (0) disconnected node: A1
+Cell sg13g2_a21o_1 (0) disconnected node: A2
+Cell sg13g2_a21o_1 (0) disconnected node: B1
+Cell sg13g2_a21o_1 (0) disconnected node: VDD
+Cell sg13g2_a21o_1 (0) disconnected node: VSS
+
+Subcircuit pins:
+Circuit 1: sg13g2_a21o_1                   |Circuit 2: sg13g2_a21o_1                   
+-------------------------------------------|-------------------------------------------
+X                                          |X                                          
+A1                                         |A1                                         
+A2                                         |A2                                         
+B1                                         |B1                                         
+VDD                                        |VDD                                        
+VSS                                        |VSS                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sg13g2_a21o_1 and sg13g2_a21o_1 are equivalent.
+
+Cell sg13g2_a21o_2 (0) disconnected node: X
+Cell sg13g2_a21o_2 (0) disconnected node: A1
+Cell sg13g2_a21o_2 (0) disconnected node: A2
+Cell sg13g2_a21o_2 (0) disconnected node: B1
+Cell sg13g2_a21o_2 (0) disconnected node: VDD
+Cell sg13g2_a21o_2 (0) disconnected node: VSS
+
+Subcircuit pins:
+Circuit 1: sg13g2_a21o_2                   |Circuit 2: sg13g2_a21o_2                   
+-------------------------------------------|-------------------------------------------
+X                                          |X                                          
+A1                                         |A1                                         
+A2                                         |A2                                         
+B1                                         |B1                                         
+VDD                                        |VDD                                        
+VSS                                        |VSS                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sg13g2_a21o_2 and sg13g2_a21o_2 are equivalent.
+
+Cell sg13g2_and2_1 (0) disconnected node: X
+Cell sg13g2_and2_1 (0) disconnected node: A
+Cell sg13g2_and2_1 (0) disconnected node: B
+Cell sg13g2_and2_1 (0) disconnected node: VDD
+Cell sg13g2_and2_1 (0) disconnected node: VSS
+
+Subcircuit pins:
+Circuit 1: sg13g2_and2_1                   |Circuit 2: sg13g2_and2_1                   
+-------------------------------------------|-------------------------------------------
+X                                          |X                                          
+A                                          |A                                          
+B                                          |B                                          
+VDD                                        |VDD                                        
+VSS                                        |VSS                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sg13g2_and2_1 and sg13g2_and2_1 are equivalent.
+
+Cell sg13g2_nor2_1 (0) disconnected node: Y
+Cell sg13g2_nor2_1 (0) disconnected node: A
+Cell sg13g2_nor2_1 (0) disconnected node: B
+Cell sg13g2_nor2_1 (0) disconnected node: VDD
+Cell sg13g2_nor2_1 (0) disconnected node: VSS
+
+Subcircuit pins:
+Circuit 1: sg13g2_nor2_1                   |Circuit 2: sg13g2_nor2_1                   
+-------------------------------------------|-------------------------------------------
+Y                                          |Y                                          
+A                                          |A                                          
+B                                          |B                                          
+VDD                                        |VDD                                        
+VSS                                        |VSS                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sg13g2_nor2_1 and sg13g2_nor2_1 are equivalent.
+
+Cell sg13g2_mux2_1 (0) disconnected node: X
+Cell sg13g2_mux2_1 (0) disconnected node: A0
+Cell sg13g2_mux2_1 (0) disconnected node: A1
+Cell sg13g2_mux2_1 (0) disconnected node: S
+Cell sg13g2_mux2_1 (0) disconnected node: VDD
+Cell sg13g2_mux2_1 (0) disconnected node: VSS
+
+Subcircuit pins:
+Circuit 1: sg13g2_mux2_1                   |Circuit 2: sg13g2_mux2_1                   
+-------------------------------------------|-------------------------------------------
+X                                          |X                                          
+A0                                         |A0                                         
+A1                                         |A1                                         
+S                                          |S                                          
+VDD                                        |VDD                                        
+VSS                                        |VSS                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sg13g2_mux2_1 and sg13g2_mux2_1 are equivalent.
+
+Cell sg13g2_and3_1 (0) disconnected node: X
+Cell sg13g2_and3_1 (0) disconnected node: A
+Cell sg13g2_and3_1 (0) disconnected node: B
+Cell sg13g2_and3_1 (0) disconnected node: C
+Cell sg13g2_and3_1 (0) disconnected node: VDD
+Cell sg13g2_and3_1 (0) disconnected node: VSS
+
+Subcircuit pins:
+Circuit 1: sg13g2_and3_1                   |Circuit 2: sg13g2_and3_1                   
+-------------------------------------------|-------------------------------------------
+X                                          |X                                          
+A                                          |A                                          
+B                                          |B                                          
+C                                          |C                                          
+VDD                                        |VDD                                        
+VSS                                        |VSS                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sg13g2_and3_1 and sg13g2_and3_1 are equivalent.
+
+Cell sg13g2_nor2b_1 (0) disconnected node: Y
+Cell sg13g2_nor2b_1 (0) disconnected node: A
+Cell sg13g2_nor2b_1 (0) disconnected node: B_N
+Cell sg13g2_nor2b_1 (0) disconnected node: VDD
+Cell sg13g2_nor2b_1 (0) disconnected node: VSS
+
+Subcircuit pins:
+Circuit 1: sg13g2_nor2b_1                  |Circuit 2: sg13g2_nor2b_1                  
+-------------------------------------------|-------------------------------------------
+Y                                          |Y                                          
+A                                          |A                                          
+B_N                                        |B_N                                        
+VDD                                        |VDD                                        
+VSS                                        |VSS                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sg13g2_nor2b_1 and sg13g2_nor2b_1 are equivalent.
+
+Cell sg13g2_nand2b_1 (0) disconnected node: Y
+Cell sg13g2_nand2b_1 (0) disconnected node: A_N
+Cell sg13g2_nand2b_1 (0) disconnected node: B
+Cell sg13g2_nand2b_1 (0) disconnected node: VDD
+Cell sg13g2_nand2b_1 (0) disconnected node: VSS
+
+Subcircuit pins:
+Circuit 1: sg13g2_nand2b_1                 |Circuit 2: sg13g2_nand2b_1                 
+-------------------------------------------|-------------------------------------------
+Y                                          |Y                                          
+A_N                                        |A_N                                        
+B                                          |B                                          
+VDD                                        |VDD                                        
+VSS                                        |VSS                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sg13g2_nand2b_1 and sg13g2_nand2b_1 are equivalent.
+
+Cell sg13g2_a221oi_1 (0) disconnected node: Y
+Cell sg13g2_a221oi_1 (0) disconnected node: A1
+Cell sg13g2_a221oi_1 (0) disconnected node: A2
+Cell sg13g2_a221oi_1 (0) disconnected node: B1
+Cell sg13g2_a221oi_1 (0) disconnected node: B2
+Cell sg13g2_a221oi_1 (0) disconnected node: C1
+Cell sg13g2_a221oi_1 (0) disconnected node: VDD
+Cell sg13g2_a221oi_1 (0) disconnected node: VSS
+
+Subcircuit pins:
+Circuit 1: sg13g2_a221oi_1                 |Circuit 2: sg13g2_a221oi_1                 
+-------------------------------------------|-------------------------------------------
+Y                                          |Y                                          
+A1                                         |A1                                         
+A2                                         |A2                                         
+B1                                         |B1                                         
+B2                                         |B2                                         
+C1                                         |C1                                         
+VDD                                        |VDD                                        
+VSS                                        |VSS                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sg13g2_a221oi_1 and sg13g2_a221oi_1 are equivalent.
+
+Cell sg13g2_nor3_1 (0) disconnected node: Y
+Cell sg13g2_nor3_1 (0) disconnected node: A
+Cell sg13g2_nor3_1 (0) disconnected node: B
+Cell sg13g2_nor3_1 (0) disconnected node: C
+Cell sg13g2_nor3_1 (0) disconnected node: VDD
+Cell sg13g2_nor3_1 (0) disconnected node: VSS
+
+Subcircuit pins:
+Circuit 1: sg13g2_nor3_1                   |Circuit 2: sg13g2_nor3_1                   
+-------------------------------------------|-------------------------------------------
+Y                                          |Y                                          
+A                                          |A                                          
+B                                          |B                                          
+C                                          |C                                          
+VDD                                        |VDD                                        
+VSS                                        |VSS                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sg13g2_nor3_1 and sg13g2_nor3_1 are equivalent.
+
+Class dsm_and_freq_divider (0):  Merged 371 parallel devices.
+Class dsm_and_freq_divider (1):  Merged 371 parallel devices.
+Subcircuit summary:
+Circuit 1: dsm_and_freq_divider            |Circuit 2: dsm_and_freq_divider            
+-------------------------------------------|-------------------------------------------
+sg13g2_decap_8 (237->1)                    |sg13g2_decap_8 (237->1)                    
+sg13g2_fill_1 (54->1)                      |sg13g2_fill_1 (54->1)                      
+sg13g2_nand3_1 (4)                         |sg13g2_nand3_1 (4)                         
+sg13g2_a21oi_1 (15)                        |sg13g2_a21oi_1 (15)                        
+sg13g2_buf_1 (11)                          |sg13g2_buf_1 (11)                          
+sg13g2_dfrbpq_1 (27)                       |sg13g2_dfrbpq_1 (27)                       
+sg13g2_fill_2 (41->1)                      |sg13g2_fill_2 (41->1)                      
+sg13g2_xor2_1 (13)                         |sg13g2_xor2_1 (13)                         
+sg13g2_nand2_1 (11)                        |sg13g2_nand2_1 (11)                        
+sg13g2_decap_4 (43->1)                     |sg13g2_decap_4 (43->1)                     
+sg13g2_inv_1 (33)                          |sg13g2_inv_1 (33)                          
+sg13g2_o21ai_1 (3)                         |sg13g2_o21ai_1 (3)                         
+sg13g2_buf_16 (3)                          |sg13g2_buf_16 (3)                          
+sg13g2_xnor2_1 (15)                        |sg13g2_xnor2_1 (15)                        
+sg13g2_a21oi_2 (1)                         |sg13g2_a21oi_2 (1)                         
+sg13g2_a21o_1 (1)                          |sg13g2_a21o_1 (1)                          
+sg13g2_a21o_2 (2)                          |sg13g2_a21o_2 (2)                          
+sg13g2_and2_1 (5)                          |sg13g2_and2_1 (5)                          
+sg13g2_nor2_1 (6)                          |sg13g2_nor2_1 (6)                          
+sg13g2_mux2_1 (9)                          |sg13g2_mux2_1 (9)                          
+sg13g2_and3_1 (1)                          |sg13g2_and3_1 (1)                          
+sg13g2_nor2b_1 (4)                         |sg13g2_nor2b_1 (4)                         
+sg13g2_nand2b_1 (1)                        |sg13g2_nand2b_1 (1)                        
+sg13g2_a221oi_1 (1)                        |sg13g2_a221oi_1 (1)                        
+sg13g2_nor3_1 (1)                          |sg13g2_nor3_1 (1)                          
+Number of devices: 171                     |Number of devices: 171                     
+Number of nets: 174                        |Number of nets: 174                        
+---------------------------------------------------------------------------------------
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: dsm_and_freq_divider            |Circuit 2: dsm_and_freq_divider            
+-------------------------------------------|-------------------------------------------
+freq_in                                    |freq_in                                    
+sclk                                       |sclk                                       
+en                                         |en                                         
+rst                                        |rst                                        
+sdata                                      |sdata                                      
+freq_out                                   |freq_out                                   
+VPWR                                       |VPWR                                       
+VGND                                       |VGND                                       
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes dsm_and_freq_divider and dsm_and_freq_divider are equivalent.
+
+Final result: Circuits match uniquely.
+.

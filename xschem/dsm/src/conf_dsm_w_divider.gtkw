@@ -1,0 +1,26 @@
+[*]
+[*] GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
+[*] Mon Sep 30 13:11:15 2025
+[*]
+[dumpfile] "shift_reg_tb.vcd"
+[dumpfile_mtime] "Mon Sep 30 13:10:47 2025"
+[dumpfile_size] 777
+[savefile] "conf.gtkw"
+[timestart] 0
+[size] 1906 985
+[pos] -1 -1
+*-14.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 269
+[signals_width] 102
+[sst_expanded] 1
+[sst_vpaned_height] 291
+@28
+tb_dsm_and_freq_divider.freq_in
+tb_dsm_and_freq_divider.rst
+tb_dsm_and_freq_divider.sclk
+tb_dsm_and_freq_divider.sdata
+tb_dsm_and_freq_divider.en
+tb_dsm_and_freq_divider.freq_out
+@29
+[pattern_trace] 1
+[pattern_trace] 0

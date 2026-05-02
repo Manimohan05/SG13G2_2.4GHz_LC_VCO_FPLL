@@ -1,0 +1,121 @@
+Reading timing models for corner nom_fast_1p32V_m40C…
+Reading timing library for the 'nom_fast_1p32V_m40C' corner at '/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/lib/sg13g2_stdcell_fast_1p32V_m40C.lib'…
+Reading timing library for the 'nom_fast_1p32V_m40C' corner at '/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_io/lib/sg13g2_io_fast_1p32V_3p6V_m40C.lib'…
+Reading timing models for corner nom_slow_1p08V_125C…
+Reading timing library for the 'nom_slow_1p08V_125C' corner at '/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/lib/sg13g2_stdcell_slow_1p08V_125C.lib'…
+Reading timing library for the 'nom_slow_1p08V_125C' corner at '/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_io/lib/sg13g2_io_slow_1p08V_3p0V_125C.lib'…
+Reading timing models for corner nom_typ_1p20V_25C…
+Reading timing library for the 'nom_typ_1p20V_25C' corner at '/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/lib/sg13g2_stdcell_typ_1p20V_25C.lib'…
+Reading timing library for the 'nom_typ_1p20V_25C' corner at '/home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_io/lib/sg13g2_io_typ_1p2V_3p3V_25C.lib'…
+Reading OpenROAD database at '/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/34-openroad-detailedplacement/dsm_and_freq_divider.odb'…
+Reading design constraints file at '/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/my_constraints.sdc'…
+[INFO] No information on clock propagation in input SDC file-- propagating all clocks.
+[INFO] Configuring cts characterization…
++ configure_cts_characterization 
+[INFO] Performing clock tree synthesis…
+[INFO] Looking for the following net(s): sclk freq_in
+[INFO] Running Clock Tree Synthesis…
++ clock_tree_synthesis -buf_list sg13g2_buf_8 sg13g2_buf_4 sg13g2_buf_2 -root_buf sg13g2_buf_16 -sink_clustering_enable -apply_ndr half
+[INFO CTS-0050] Root buffer is sg13g2_buf_16.
+[INFO CTS-0051] Sink buffer is sg13g2_buf_4.
+[INFO CTS-0052] The following clock buffers will be used for CTS:
+                    sg13g2_buf_2
+                    sg13g2_buf_4
+                    sg13g2_buf_8
+[INFO CTS-0049] Characterization buffer is sg13g2_buf_8.
+[INFO CTS-0007] Net "sclk" found for clock "sclk".
+[INFO CTS-0010]  Clock net "sclk" has 9 sinks.
+[INFO CTS-0007] Net "freq_in" found for clock "freq_in".
+[WARNING CTS-0041] Net "freq_in" has 1 sinks. Skipping...
+[INFO CTS-0008] TritonCTS found 1 clock nets.
+[INFO CTS-0097] Characterization used 3 buffer(s) types.
+[INFO CTS-0201] 0 blockages from hard placement blockages and placed macros will be used.
+[INFO CTS-0027] Generating H-Tree topology for net sclk.
+[INFO CTS-0028]  Total number of sinks: 9.
+[INFO CTS-0090]  Sinks will be clustered based on buffer max cap.
+[INFO CTS-0030]  Number of static layers: 0.
+[INFO CTS-0020]  Wire segment unit: 18900  dbu (18 um).
+[INFO CTS-0023]  Original sink region: [(15840, 21000), (21600, 84840)].
+[INFO CTS-0024]  Normalized sink region: [(0.838095, 1.11111), (1.14286, 4.48889)].
+[INFO CTS-0025]     Width:  0.3048.
+[INFO CTS-0026]     Height: 3.3778.
+ Level 1
+    Direction: Vertical
+    Sinks per sub-region: 5
+    Sub-region size: 0.3048 X 1.6889
+[INFO CTS-0034]     Segment length (rounded): 1.
+[INFO CTS-0032]  Stop criterion found. Max number of sinks is 8.
+[INFO CTS-0035]  Number of sinks covered: 9.
+[INFO CTS-0018]     Created 3 clock buffers.
+[INFO CTS-0012]     Minimum number of buffers in the clock path: 2.
+[INFO CTS-0013]     Maximum number of buffers in the clock path: 2.
+[INFO CTS-0015]     Created 3 clock nets.
+[INFO CTS-0016]     Fanout distribution for the current clock = 4:1, 5:1..
+[INFO CTS-0017]     Max level of the clock tree: 1.
+[INFO CTS-0098] Clock net "sclk"
+[INFO CTS-0099]  Sinks 10
+[INFO CTS-0100]  Leaf buffers 0
+[INFO CTS-0101]  Average sink wire length 69.10 um
+[INFO CTS-0102]  Path depth 2 - 2
+[INFO CTS-0207]  Dummy loads inserted 1
+[INFO] Repairing long wires on clock nets…
+[INFO RSZ-0058] Using max wire length 2937um.
+Setting global connections for newly added cells…
+[INFO] Setting global connections...
+[INFO ODB-0403] 8 connections made, 0 conflicts skipped.
+Updating metrics…
+Cell type report:                       Count       Area
+  Clock buffer                              3     136.08
+  Timing Repair Buffer                     11      79.83
+  Inverter                                 32     174.18
+  Clock inverter                            1       5.44
+  Sequential cell                          27    1322.70
+  Multi-Input combinational cell           93    1075.94
+  Total                                   167    2794.18
+Writing OpenROAD database to '/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/35-openroad-cts/dsm_and_freq_divider.odb'…
+Writing netlist to '/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/35-openroad-cts/dsm_and_freq_divider.nl.v'…
+Writing powered netlist to '/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/35-openroad-cts/dsm_and_freq_divider.pnl.v'…
+Writing layout to '/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/35-openroad-cts/dsm_and_freq_divider.def'…
+Writing timing constraints to '/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/35-openroad-cts/dsm_and_freq_divider.sdc'…
+[INFO] Legalizing…
++ detailed_placement -max_displacement  500 100 
+Placement Analysis
+---------------------------------
+total displacement          5.4 u
+average displacement        0.0 u
+max displacement            3.2 u
+original HPWL            2714.9 u
+legalized HPWL           2791.2 u
+delta HPWL                    3 %
+
+[INFO DPL-0020] Mirrored 44 instances
+[INFO DPL-0021] HPWL before            2791.2 u
+[INFO DPL-0022] HPWL after             2701.1 u
+[INFO DPL-0023] HPWL delta               -3.2 %
+Setting global connections for newly added cells…
+[INFO] Setting global connections...
+[INFO ODB-0403] 0 connections made, 0 conflicts skipped.
+Updating metrics…
+Cell type report:                       Count       Area
+  Clock buffer                              3     136.08
+  Timing Repair Buffer                     11      79.83
+  Inverter                                 32     174.18
+  Clock inverter                            1       5.44
+  Sequential cell                          27    1322.70
+  Multi-Input combinational cell           93    1075.94
+  Total                                   167    2794.18
+Writing OpenROAD database to '/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/35-openroad-cts/dsm_and_freq_divider.odb'…
+Writing netlist to '/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/35-openroad-cts/dsm_and_freq_divider.nl.v'…
+Writing powered netlist to '/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/35-openroad-cts/dsm_and_freq_divider.pnl.v'…
+Writing layout to '/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/35-openroad-cts/dsm_and_freq_divider.def'…
+Writing timing constraints to '/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/35-openroad-cts/dsm_and_freq_divider.sdc'…
+%OL_CREATE_REPORT cts.rpt
+Total number of Clock Roots: 1.
+Total number of Buffers Inserted: 3.
+Total number of Clock Subnets: 3.
+Total number of Sinks: 9.
+Cells used:
+  sg13g2_buf_16: 3
+Dummys used:
+  sg13g2_inv_1: 1
+%OL_END_REPORT

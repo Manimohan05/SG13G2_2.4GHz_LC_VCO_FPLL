@@ -1,0 +1,39 @@
+126. Printing statistics.
+
+=== dsm_and_freq_divider ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      117 wires
+      149 wire bits
+       24 public wires
+       40 public wire bits
+        6 ports
+        6 port bits
+      135 cells
+       29   $_ANDNOT_
+        2   $_AND_
+        9   $_DFFE_PP0P_
+       18   $_DFF_PP0_
+        2   $_MUX_
+        6   $_NAND_
+       14   $_NOR_
+        6   $_NOT_
+        6   $_ORNOT_
+        9   $_OR_
+       14   $_XNOR_
+       20   $_XOR_
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_DFFE_PP0P_ is unknown!
+   Area for cell type $_DFF_PP0_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+

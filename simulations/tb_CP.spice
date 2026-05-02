@@ -1,0 +1,86 @@
+** sch_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/charge-pump/tb_CP.sch
+**.subckt tb_CP CTRL UP VDD DN GND
+*.opin CTRL
+*.ipin UP
+*.ipin VDD
+*.ipin DN
+*.ipin GND
+XM2 Vbn Vbn net7 GND sg13_lv_nmos w=W_NB l=2u ng=n_NB
+XM8 net2 GND VDD VDD sg13_lv_pmos w=W_PS l=2u ng=n_PS
+XM11 Vbp Vbp net2 VDD sg13_lv_pmos w=W_PB l=2u ng=n_PB
+XM3 Vbn Vbp net1 VDD sg13_lv_pmos w=W_PB l=2u ng=n_PB
+XM4 net1 GND VDD VDD sg13_lv_pmos w=W_PS l=2u ng=n_PS
+XM7 net5 UP VDD VDD sg13_lv_pmos w=W_PS l=2u ng=n_PS
+XM9 VCP Vbp net5 VDD sg13_lv_pmos w=W_PB l=2u ng=n_PB
+XM10 net7 VDD GND GND sg13_lv_nmos w=W_NS l=2u ng=n_NS
+XM1 net6 DN GND GND sg13_lv_nmos w=W_NS l=2u ng=n_NS
+XM5 VCP Vbn net6 GND sg13_lv_nmos w=W_NB l=2u ng=n_NB
+V1 VDD GND 1.2
+V2 DN GND PULSE(0 1.2 3.1u 1n 1n 49n 100n 29)
+Vloop VCP net3 0
+.save i(vloop)
+V3 UP GND PULSE(1.2 0 20n 1n 1n 49n 100n 29)
+XM6 Vbp net8 GND GND sg13_lv_nmos w=3.9u l=2u ng=1
+VBGR net8 GND 0.6
+XR2 CTRL net3 sub! rppd w=2e-6 l=407.22e-6 m=1 b=0
+XC2 CTRL GND cap_cmim w=18.63e-6 l=18.63e-6 m=4
+XR1 net4 net3 sub! rppd w=2e-6 l=407.22e-6 m=1 b=0
+XC1 net4 GND cap_cmim w=48.34e-6 l=48.34e-6 m=16
+**** begin user architecture code
+
+
+
+.include tb_CP.save
+.param temp=27
+.option method=gear rshunt=1.0e12
+.control
+save all
+op
+write tb_CP.raw
+.endc
+
+
+
+.lib cornerMOSlv.lib mos_tt
+.lib cornerMOShv.lib mos_tt
+.lib cornerRES.lib res_typ
+.lib cornerCAP.lib cap_typ
+
+
+
+
+.param temp = 27
+.options method=gear rshunt=1.0e12
+
+.control
+
+* Save required signals
+save v(UP) v(DN) v(VCP) v(CTRL)
+
+* Long transient simulation
+tran 1n 6u
+
+* Save raw waveform
+write CP_tran.raw
+
+* Plot transient waveform
+plot v(UP) v(DN) v(VCP) v(CTRL)
+plot v(CTRL)
+plot i(Vloop)
+plot v(vbp) v(vbn)
+
+.endc
+
+
+
+
+
+.param W_PB=163.6u n_PB=20 W_PS=29.6u n_PS=5
+.param W_NB=40.7u n_NB=5 W_NS=6u n_NS=1
+
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.GLOBAL VDD
+.end

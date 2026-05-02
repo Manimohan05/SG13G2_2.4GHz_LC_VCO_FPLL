@@ -1,0 +1,196 @@
+** sch_path: /foss/designs/frac-n-pll-vco-smacd_2026/schematic/top-pll/LC_VCO_PLL_tb.sch
+**.subckt LC_VCO_PLL_tb
+V1 VDD GND 1.2
+Vfref CLK_IN GND 0 pulse(0 1.2 0n 1n 1n 50n 100n)
+I1 Vbias1 GND 50u
+xpll VDD CLK_IN CLK_OUT Vbias2 OUTn Vbias1 GND LC_VCO_PLL
+I3 VDD Vbias2 80u
+**** begin user architecture code
+
+
+
+*****************************************************
+* PLL + DSM Frequency Divider Testbench (Optimized)
+*****************************************************
+
+.option temp=27
+.param VDD=1.2
+
+* ==============================
+* Include Models & Stimuli
+* ==============================
+.include ./IHP_4nH_Inductor.spice
+.include stimuli_test.cir
+
+* ==============================
+* Simulation Options (Optimized for Speed & Stability)
+* ==============================
+* gear method improves stability for long oscillator runs
+* reltol=1e-3 prevents the simulator from bogging down on microscopic errors
+.options reltol=1e-3 abstol=1e-9 vntol=1e-6 method=gear
+
+* ==============================
+* Initial Conditions (Speed Hack)
+* ==============================
+* Uncomment the line below to pre-charge the loop filter to your expected
+* V_tune voltage (e.g., 0.6V). This skips the massive initial frequency jump.
+
+*.nodeset v(x2.vctrl)=0.606
+*.nodeset v(x2.x1.ctrl1)=0.606
+*.nodeset v(x2.x1.ctrl2)=0.606
+
+.control
+  * CRITICAL: Save ONLY essential low-frequency signals.
+  * Saving 2.4GHz nodes for 100us will crash your memory.
+  save xpll.vctrl xpll.up xpll.dn xpll.dsm_out clk_out clk_in vbias1 vbias2 xpll.xcp.ctrl1 xpll.xcp.ctrl2 outn xpll.outp
+  *save all
+
+
+  * 20p defines the step to resolve the 2.4 GHz edges without forcing a maxstep.
+  tran 30p 30u uic
+
+  remzerovec
+  write pll_top.raw
+.endc
+
+
+
+
+
+.lib cornerMOSlv.lib mos_tt
+.lib cornerMOShv.lib mos_tt
+.lib cornerHBT.lib hbt_typ
+.lib cornerRES.lib res_typ
+.lib cornerCAP.lib cap_typ_stat
+.include /foss/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
+.global VDD GND
+
+
+.param CP_N_L = 1u
+.param CP_N_W = 3u
+.param CP_P_M = 1
+.param CP_P_L = 1u
+.param CP_P_W = 10u
+.param CP_N_M = 1
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  LC_VCO_PLL.sym # of pins=7
+** sym_path: /foss/designs/frac-n-pll-vco-smacd_2026/schematic/top-pll/LC_VCO_PLL.sym
+** sch_path: /foss/designs/frac-n-pll-vco-smacd_2026/schematic/top-pll/LC_VCO_PLL.sch
+.subckt LC_VCO_PLL VDD CLK_IN CLK_OUT IbiasVCO OUTn Ibias GND
+*.iopin GND
+*.iopin VDD
+*.ipin CLK_IN
+*.ipin IbiasVCO
+*.ipin Ibias
+*.opin OUTn
+*.opin CLK_OUT
+* noconn rst
+* noconn sclk
+* noconn sdata
+* noconn en
+xcp VDD UP VCTRL DN GND Ibias CP
+xpfd VDD UP CLK_IN DSM_OUT DN GND PFD
+xvco VDD CLK_OUT OUTn IbiasVCO VCTRL GND LC_VCO
+adut [ net1 net2 net3 net4 net5 ] [ net6 ] null dut
+.model dut d_cosim simulation=./../dsm_and_freq_divider.so
+A1 [ CLK_OUT ] [ net1 ] adc1
+.model adc1 adc_bridge in_low=0.76 in_high=0.76
+A6 [ net6 ] [ DSM_OUT ] dac1
+.model dac1 dac_bridge out_low=0 out_high=1.2
+A7 [ en ] [ net5 ] adc1
+.model adc1 adc_bridge in_low=0.76 in_high=0.76
+A2 [ rst ] [ net2 ] adc1
+.model adc1 adc_bridge in_low=0.76 in_high=0.76
+A3 [ sclk ] [ net3 ] adc1
+.model adc1 adc_bridge in_low=0.76 in_high=0.76
+A4 [ sdata ] [ net4 ] adc1
+.model adc1 adc_bridge in_low=0.76 in_high=0.76
+.ends
+
+
+* expanding   symbol:  CP.sym # of pins=6
+** sym_path: /foss/designs/frac-n-pll-vco-smacd_2026/schematic/charge-pump/CP.sym
+** sch_path: /foss/designs/frac-n-pll-vco-smacd_2026/schematic/charge-pump/CP.sch
+.subckt CP VDD UP CTRL DN GND Ibias
+*.opin CTRL
+*.ipin UP
+*.ipin VDD
+*.ipin Ibias
+*.ipin DN
+*.ipin GND
+XM2 Vbn Vbn net2 GND sg13_lv_nmos w=3u l=2u ng=1 m=1
+XM8 net5 GND VDD VDD sg13_lv_pmos w=10u l=2u ng=1 m=1
+XR2 CTRL1 CTRL sub! rsil w=0.5e-6 l=1000e-6 m=1 b=0
+XR1 CTRL1 CTRL2 sub! rsil w=0.5e-6 l=2500e-6 m=1 b=0
+XC3 CTRL GND cap_cmim w=60.0e-6 l=60.0e-6 m=1
+XC2 CTRL2 GND cap_cmim w=40.0e-6 l=40.0e-6 m=4
+XC1 CTRL1 GND cap_cmim w=15.0e-6 l=20.0e-6 m=4
+XM11 Ibias Ibias net5 VDD sg13_lv_pmos w=10u l=2u ng=1 m=1
+XM3 Vbn Ibias net1 VDD sg13_lv_pmos w=10u l=2u ng=1 m=1
+XM4 net1 GND VDD VDD sg13_lv_pmos w=10u l=2u ng=1 m=1
+XM7 net4 UP VDD VDD sg13_lv_pmos w=10u l=2u ng=1 m=1
+XM9 CTRL1 Ibias net4 VDD sg13_lv_pmos w=10u l=2u ng=1 m=1
+XM10 net2 VDD GND GND sg13_lv_nmos w=3u l=2u ng=1 m=1
+XM1 net3 DN GND GND sg13_lv_nmos w=3u l=2u ng=1 m=1
+XM5 CTRL1 Vbn net3 GND sg13_lv_nmos w=3u l=2u ng=1 m=1
+.ends
+
+
+* expanding   symbol:  PFD.sym # of pins=6
+** sym_path: /foss/designs/frac-n-pll-vco-smacd_2026/schematic/phase-freq-detector/PFD.sym
+** sch_path: /foss/designs/frac-n-pll-vco-smacd_2026/schematic/phase-freq-detector/PFD.sch
+.subckt PFD VDD UP F_REF F_VCO DN GND
+*.opin UP
+*.ipin F_REF
+*.ipin VDD
+*.ipin GND
+*.opin DN
+*.ipin F_VCO
+x1 net1 net2 F_REF VDD RST_N VDD GND sg13g2_dfrbp_2
+x2 DN net3 F_VCO VDD RST_N VDD GND sg13g2_dfrbp_2
+x3 RST_N net1 DN VDD GND sg13g2_nand2_2
+x4 UP net1 VDD GND sg13g2_inv_2
+.ends
+
+
+* expanding   symbol:  LC_VCO.sym # of pins=6
+** sym_path: /foss/designs/frac-n-pll-vco-smacd_2026/schematic/lc-vco/LC_VCO.sym
+** sch_path: /foss/designs/frac-n-pll-vco-smacd_2026/schematic/lc-vco/LC_VCO.sch
+.subckt LC_VCO VDD OUTp OUTn Ibias VCTRL GND
+*.opin OUTp
+*.opin OUTn
+*.iopin VCTRL
+*.iopin Ibias
+*.iopin GND
+*.iopin VDD
+XM6 net5 Vgs GND GND sg13_lv_nmos w=70.29u l=0.5u ng=20 m=1
+XM4 net1 net4 VDD VDD sg13_lv_pmos w=34.52u l=0.13u ng=10 m=1
+X5M3 net4 net1 VDD VDD sg13_lv_pmos w=34.52u l=0.13u ng=10 m=1
+XM2 OUTp OUTn Vx GND sg13_lv_nmos w=25.11u l=0.13u ng=8 m=1
+XM1 OUTn OUTp Vx GND sg13_lv_nmos w=25.11u l=0.13u ng=8 m=1
+Vpmos_p net1 net3 0
+.save i(vpmos_p)
+Vnmos_p net3 OUTp 0
+.save i(vnmos_p)
+Vtail Vx net5 0
+.save i(vtail)
+XM5 Vgs Vgs GND GND sg13_lv_nmos w=17.95u l=0.5u ng=6 m=1
+Vpmos_n net4 net2 0
+.save i(vpmos_n)
+Vnmos_n net2 OUTn 0
+.save i(vnmos_n)
+x1 net2 net3 ihp_4nh_inductor
+XC1 net2 net3 GND cap_rfcmim w=22.15e-6 l=22.15e-6 wfeed=10.0e-6
+XC3 OUTp VCTRL OUTn GND sg13_hv_svaricap w=9.74u l=0.8u Nx=7
+XC2 OUTp VCTRL OUTn GND sg13_hv_svaricap w=9.74u l=0.8u Nx=7
+Vbias Ibias Vgs 0
+.save i(vbias)
+.ends
+
+.GLOBAL GND
+.GLOBAL VDD
+.end

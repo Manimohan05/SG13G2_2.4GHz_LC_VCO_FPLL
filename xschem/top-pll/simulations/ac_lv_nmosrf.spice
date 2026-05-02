@@ -1,0 +1,42 @@
+** sch_path: /home/mmhnbm/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.tech/xschem/sg13g2_tests_xyce/ac_lv_nmosrf.sch
+**.subckt ac_lv_nmosrf
+Vgs net1 GND dc 0.45 ac 1
+Vds net2 GND 1.2
+Vgs1 net4 GND dc 0.45 ac 1
+Vds2 net5 GND 1.2
+XM1 Vout2 net6 GND GND sg13_lv_nmos w=1.0u l=0.35u ng=1 m=1 rfmode=0
+XM2 Vout1 net3 GND GND sg13_lv_nmos w=1.0u l=0.35u ng=1 m=1 rfmode=1
+R1 net6 net4 400
+R2 net5 Vout2 400
+R3 net3 net1 400
+R4 net2 Vout1 400
+**** begin user architecture code
+
+
+
+
+
+
+
+.lib cornerMOSlv.lib mos_tt
+
+
+
+
+
+.param temp=27
+.control
+save all
+ac dec 1001 10meg 10000meg
+let vd1 = abs(Vout1)
+let vd2 = abs(Vout2)
+meas ac Vout_1_5GHz find vd1 at=5000meg
+meas ac Vout_2_5GHz find vd2 at=5000meg
+write ac_lv_nmosrf.raw
+.endc
+
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end

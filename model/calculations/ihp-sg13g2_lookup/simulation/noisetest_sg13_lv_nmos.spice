@@ -1,0 +1,36 @@
+** sch_path: /foss/designs/Book-on-gm-ID-design/starter_files_open_source_tools/ihp-sg13g2/noisetest_sg13_lv_nmos.sch
+**.subckt noisetest_sg13_lv_nmos
+vg g 0 DC 0.6 AC 1
+vd d 0 0.6
+vb b 0 0
+Hn n 0 vd 1
+XM1 d g 0 b sg13_lv_nmos w={wx} l={lx} ng=1 m=1
+**** begin user architecture code
+
+
+.param wx=5u lx=0.13u
+.save all
+.save @n.xm1.nsg13_lv_nmos[sfl]
+.save @n.xm1.nsg13_lv_nmos[sid]
+.save @n.xm1.nsg13_lv_nmos[gm]
+.save @n.xm1.nsg13_lv_nmos[ids]
+
+.control
+set sqrnoise
+noise v(n) vg dec 1 1 1e11 1
+write noisetest_sg13_lv_nmos.raw noise1.all
+setplot noise1
+display
+print onoise_n.xm1.nsg13_lv_nmos_flicker
+print onoise_n.xm1.nsg13_lv_nmos_idid
+print onoise_n.xm1.nsg13_lv_nmos_igig
+op
+print @n.xm1.nsg13_lv_nmos[sfl]
+print @n.xm1.nsg13_lv_nmos[sid]
+.endc
+
+
+ .lib /foss/pdks/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib mos_tt
+**** end user architecture code
+**.ends
+.end

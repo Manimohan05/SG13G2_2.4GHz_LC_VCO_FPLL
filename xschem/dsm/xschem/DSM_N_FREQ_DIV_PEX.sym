@@ -1,0 +1,97 @@
+v {xschem version=3.4.8RC file_version=1.3
+*
+* This file is part of XSCHEM,
+* a schematic capture and Spice/Vhdl/Verilog netlisting tool for circuit
+* simulation.
+* Copyright (C) 1998-2023 Stefan Frederik Schippers
+*
+* This program is free software; you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation; either version 2 of the License, or
+* (at your option) any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with this program; if not, write to the Free Software
+* Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+}
+G {}
+K {type=primitive
+format="@name @pinlist @symname"
+template="name=x1"
+}
+V {}
+S {}
+F {}
+E {}
+L 4 -200 20 -180 20 {}
+L 4 -200 40 -180 40 {}
+L 4 -200 60 -180 60 {}
+L 4 -117.5 17.5 -117.5 22.5 {}
+L 4 -117.5 17.5 -115 20 {}
+L 4 -117.5 22.5 -115 20 {}
+L 4 -130 40 -117.5 40 {}
+L 4 -117.5 37.5 -117.5 42.5 {}
+L 4 -117.5 37.5 -115 40 {}
+L 4 -117.5 42.5 -115 40 {}
+L 4 -137.5 60 -117.5 60 {}
+L 4 -117.5 57.5 -117.5 62.5 {}
+L 4 -117.5 57.5 -115 60 {}
+L 4 -117.5 62.5 -115 60 {}
+L 4 -110 10 -110 70 {}
+L 4 -110 10 0 10 {}
+L 4 0 10 0 70 {}
+L 4 -110 70 0 70 {}
+L 4 40 60 100 60 {}
+L 4 100 10 100 60 {}
+L 4 40 10 100 10 {}
+L 4 40 10 40 60 {}
+L 4 40 20 60 30 {}
+L 4 40 40 60 30 {}
+L 4 20 30 40 30 {}
+L 4 20 -5 20 30 {}
+L 4 -12.5 -20 100 -20 {}
+L 4 100 -60 100 -20 {}
+L 4 -12.5 -60 100 -60 {}
+L 4 -12.5 -60 -12.5 -20 {}
+L 4 0 50 40 50 {}
+L 4 70 -20 70 10 {}
+L 4 -200 -40 -180 -40 {}
+L 4 -105 -40 -62.5 -40 {}
+L 4 -60 -37.5 -60 -5 {}
+L 4 -60 -5 20 -5 {}
+L 4 180 -40 200 -40 {}
+L 4 100 -40 117.5 -40 {}
+L 4 180 40 200 40 {}
+L 4 -57.5 -40 -12.5 -40 {}
+L 4 -147.5 20 -117.5 20 {}
+L 7 140 -100 140 -80 {}
+L 7 140 90 140 110 {}
+B 5 197.5 -42.5 202.5 -37.5 {name=freq_in dir=in verilog_type=wire propag=0}
+B 5 197.5 37.5 202.5 42.5 {name=rst dir=in verilog_type=wire propag=0}
+B 5 -202.5 57.5 -197.5 62.5 {name=sclk dir=in verilog_type=wire propag=0}
+B 5 -202.5 37.5 -197.5 42.5 {name=sdata dir=in verilog_type=wire propag=0}
+B 5 -202.5 17.5 -197.5 22.5 {name=en dir=in verilog_type=wire propag=0}
+B 5 -202.5 -42.5 -197.5 -37.5 {name=freq_out dir=out verilog_type=wire propag=1}
+B 5 137.5 -102.5 142.5 -97.5 {name=VDD dir=inout}
+B 5 137.5 107.5 142.5 112.5 {name=GND dir=inout}
+A 4 -60 -40 2.5 180 360 {}
+P 4 5 180 -80 -180 -80 -180 90 180 90 180 -80 {}
+T {FREQ_IN} 170 -45 0 1 0.2 0.2 {}
+T {RST} 170 35 0 1 0.2 0.2 {}
+T {SCLK} -170 55 0 0 0.2 0.2 {}
+T {SDATA} -170 35 0 0 0.2 0.2 {}
+T {EN} -170 15 0 0 0.2 0.2 {}
+T {FREQ_OUT} -170 -45 0 0 0.2 0.2 {}
+T {@name} -160 100 0 0 0.2 0.2 {}
+T {SHIFT_REG} -99.75 41.5 0 0 0.3 0.3 {}
+T {DSM} 88.5 17.75 1 0 0.3 0.3 {}
+T {9-BIT} -77.25 19 0 0 0.3 0.3 {}
+T {240/248 DIV} 92.25 -31.5 2 0 0.3 0.3 {}
+T {DSM_N_FREQ_DIV} -161 -106 0 0 0.3 0.3 {}
+T {VDD} 127.5 -74 0 0 0.2 0.2 {}
+T {GND} 127.5 84 2 1 0.2 0.2 {}

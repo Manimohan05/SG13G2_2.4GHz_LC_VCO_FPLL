@@ -1,0 +1,62 @@
+
+Magic 8.3 revision 636 - Compiled on Thu Apr 16 09:13:57 PM CEST 2026.
+Starting magic under Tcl interpreter
+Using the terminal as the console.
+WARNING: RLIMIT_NOFILE is above 1024 and Tcl_Version<9 this may cause runtime issues [rlim_cur=1048576]
+Using NULL graphics device.
+Processing system .magicrc file
+Switching to WIRING tool.
+Switching to NETLIST tool.
+Switching to PICK tool.
+Switching to BOX tool.
+Sourcing design .magicrc for technology ihp-sg13g2 ...
+2 Magic internal units = 1 Lambda
+Input style sg13g2(): scaleFactor=2, multiplier=2
+The following types are not handled by extraction and will be treated as non-electrical types:
+    pblock sealcont difffill nemitter hvnemitter hvisodiffres sealvia1 sealvia2 sealvia3 sealvia4 sealvia5 sealvia6 pillar solder seal glass thruvia inductor 
+Scaled tech values by 2 / 1 to match internal grid scaling
+Loading ihp-sg13g2 Device Generator Menu ...
+Loading "pex/BANDGAP_REF__BANDGAP_REF/magic_RC/BANDGAP_REF_MAGIC_RC_Script.tcl" from command line.
+Warning: Calma reading is not undoable!  I hope that's OK.
+Library written using GDS-II Release 6.0
+Library name: LIB
+Reading "$$$CONTEXT_INFO$$$".
+Reading "rppd".
+Reading "via_stack$1".
+Reading "BANDGAP_REF".
+CIF file read warning: CIF style sg13g2(): units rescaled by factor of 5 / 1
+Error while reading cell "BANDGAP_REF" (byte position 3537272): Unknown layer/datatype in boundary, layer=236 type=0
+Extracting BANDGAP_REF into /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/pex/BANDGAP_REF__BANDGAP_REF/magic_RC/BANDGAP_REF.ext:
+exttosim finished.
+Adding  a_n7288_18340#
+Adding  a_981_18638#
+Adding  a_528_18033#
+Adding  a_n7288_17727#
+Adding  a_528_17421#
+Adding  a_n7288_17115#
+Adding  a_528_16809#
+Adding  a_n7289_16545#
+Adding  a_527_16281#
+Adding  a_n6059_11418#
+Adding  a_1804_15931#
+Adding  a_n6059_10861#
+Adding  a_4707_16560#
+Adding  a_5580_15247#
+Adding  a_3630_15211#
+Adding  a_n7289_16017#
+Adding  a_527_15753#
+Adding  a_n7289_15489#
+Adding  a_n7289_14961#
+Adding  a_527_14697#
+Adding  a_3822_10479#
+Adding  a_n7289_14433#
+Adding  a_527_13669#
+Adding  a_n7059_10169#
+Adding  GND
+Warning: via5 at -7966 19289 smaller than extract section allows
+Adding  VDD; Tnew = 1.14ns, Told = 0.00ns
+Adding  VBGR; Tnew = 0.05ns, Told = 0.00ns
+Total Nets: 52
+Nets extracted: 27 (0.519231)
+Nets output: 27 (0.519231)
+exttospice finished.

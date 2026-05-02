@@ -1,0 +1,56 @@
+** sch_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/charge-pump/tb_CP_LF_PEX.sch
+**.subckt tb_CP_LF_PEX
+V1 VDD GND 1.2
+V2 DN GND PULSE(0 1.2 3.1u 1n 1n 49n 100n 29)
+V3 UP GND PULSE(1.2 0 20n 1n 1n 49n 100n 29)
+VBGR VBGR GND 0.6
+x1 UP VDD VCP VBGR GND DN CHARGE_PUMP_PEX
+x2 CTRL VCP GND LOOP_FILTER_PEX
+**** begin user architecture code
+
+
+
+.include tb_CP.save
+.param temp=27
+.option method=gear rshunt=1.0e12
+.control
+save all
+op
+write tb_CP_LF.raw
+.endc
+
+
+
+.include /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/pex/CHARGE_PUMP_V1__CHARGE_PUMP/magic_RC/CHARGE_PUMP.pex.spice
+.include /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/pex/LOOP_FILTER__LOOP_FILTER/magic_RC/LOOP_FILTER.pex.spice
+.lib cornerMOSlv.lib mos_tt
+.lib cornerMOShv.lib mos_tt
+.lib cornerRES.lib res_typ
+.lib cornerCAP.lib cap_typ
+
+
+
+
+.param temp = 27
+.options method=gear rshunt=1.0e12
+
+.control
+
+* Save required signals
+save v(UP) v(DN) v(VCP) v(CTRL)
+
+* Long transient simulation
+tran 1n 6u
+
+* Plot transient waveform
+plot v(UP) v(DN) v(VCP) v(CTRL)
+plot v(CTRL)
+
+.endc
+
+
+**** end user architecture code
+**.ends
+.GLOBAL VDD
+.GLOBAL GND
+.end

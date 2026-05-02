@@ -1,0 +1,9 @@
+18-Apr-2026 15:03:25 | INFO    | KLayout version detected: 0.30.5
+18-Apr-2026 15:03:25 | INFO    | Using DRC JSON file: /opt/pdks/ihp-sg13g2/libs.tech/klayout/python/sg13g2_pycell_lib/sg13g2_tech_mod.json
+18-Apr-2026 15:03:25 | INFO    | Running IHP-SG13G2 main checks on design /home/designer/shared/LC_VCO_FPLL/gds/blocks/BANDGAP_REF.gds, topcell: BANDGAP_REF
+18-Apr-2026 15:03:35 | INFO    | Running IHP-SG13G2 sg13g2_maximal checks on design /home/designer/shared/LC_VCO_FPLL/gds/blocks/BANDGAP_REF.gds, topcell: BANDGAP_REF
+18-Apr-2026 15:03:45 | INFO    | Completed running Sg13g2_maximal checks.
+18-Apr-2026 15:03:45 | INFO    | =====================================================================================
+18-Apr-2026 15:03:45 | INFO    | ✅ --- KLayout DRC Check Passed: No DRC violations detected in the layout. --- ✅
+18-Apr-2026 15:03:45 | INFO    | =====================================================================================
+18-Apr-2026 15:03:45 | INFO    | Total DRC Run time: 19.89 seconds (including execution, analysis, and reporting)

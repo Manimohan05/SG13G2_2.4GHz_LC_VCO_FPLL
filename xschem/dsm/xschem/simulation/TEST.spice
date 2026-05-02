@@ -1,0 +1,39 @@
+** sch_path: /foss/designs/uniccass-icdesign-tools/shared_xserver/frac-n-pll-vco-smacd_2026/schematic/dsm/xschem/TEST.sch
+**.subckt TEST
+V1 freq_in GND PULSE(0 1.2 0 10ns 10ns 50ns 100ns)
+* noconn rst
+* noconn sclk
+* noconn sdata
+* noconn en
+x1 freq_in rst sclk sdata en freq_out VDD GND DSM_N_FREQ_DIV
+V2 VDD GND 1.2
+**** begin user architecture code
+
+
+
+.include ../DSM_N_FREQ_DIV.spice
+* ngspice commands
+.save v(dout) v(sdata) v(sclk) v(en) v(rst) v(dsm_clk) v(freq_in) v(freq_out)
+.control
+  tran 0.5n 1m
+  remzerovec
+  write test.raw
+.endc
+
+* to generate following file copy stimuli.test
+* to the simulation directory and run simulation -> Utile Stimuli Editor (GUI),
+* and press 'Translate'
+.include stimuli_test.cir
+
+
+
+.lib cornerMOSlv.lib mos_tt
+.lib cornerMOShv.lib mos_tt
+.lib cornerRES.lib res_typ
+.lib cornerCAP.lib cap_typ
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.GLOBAL VDD
+.end

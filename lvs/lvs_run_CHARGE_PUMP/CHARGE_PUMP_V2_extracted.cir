@@ -1,0 +1,28 @@
+* Extracted by KLayout with SG13G2 LVS runset on : 18/04/2026 12:56
+
+.SUBCKT CHARGE_PUMP VDD VSS DN VCP VBGR UP
+R$1 VDD \$457 ntap1 A=79.08p P=527.2u
+R$3 VSS \$1 ptap1 A=47.808p P=318.72u
+M$4 VSS VBGR \$107 \$1 sg13_lv_nmos L=2u W=3.9u AS=1.326p AD=1.326p PS=8.48u
++ PD=8.48u rfmode=0
+M$5 VDD VSS \$132 \$457 sg13_lv_pmos L=2u W=29.6u AS=6.512p AD=6.512p PS=37.72u
++ PD=37.72u rfmode=0
+M$10 VDD VSS \$130 \$457 sg13_lv_pmos L=2u W=29.6u AS=6.512p AD=6.512p
++ PS=37.72u PD=37.72u rfmode=0
+M$15 VDD UP \$134 \$457 sg13_lv_pmos L=2u W=29.6u AS=6.512p AD=6.512p PS=37.72u
++ PD=37.72u rfmode=0
+M$22 \$43 \$107 \$132 \$457 sg13_lv_pmos L=2u W=163.6u AS=32.311p AD=32.311p
++ PS=179.68u PD=179.68u rfmode=0
+M$42 \$44 VDD VSS \$1 sg13_lv_nmos L=2u W=6u AS=2.04p AD=2.04p PS=12.68u
++ PD=12.68u rfmode=0
+M$43 \$47 DN VSS \$1 sg13_lv_nmos L=2u W=6u AS=2.04p AD=2.04p PS=12.68u
++ PD=12.68u rfmode=0
+M$44 \$47 \$43 VCP \$1 sg13_lv_nmos L=2u W=40.7u AS=8.954p AD=8.954p PS=51.04u
++ PD=51.04u rfmode=0
+M$49 \$44 \$43 \$43 \$1 sg13_lv_nmos L=2u W=40.7u AS=8.954p AD=8.954p PS=51.04u
++ PD=51.04u rfmode=0
+M$54 VCP \$107 \$134 \$457 sg13_lv_pmos L=2u W=163.6u AS=32.311p AD=32.311p
++ PS=179.68u PD=179.68u rfmode=0
+M$74 \$107 \$107 \$130 \$457 sg13_lv_pmos L=2u W=163.6u AS=32.311p AD=32.311p
++ PS=179.68u PD=179.68u rfmode=0
+.ENDS CHARGE_PUMP

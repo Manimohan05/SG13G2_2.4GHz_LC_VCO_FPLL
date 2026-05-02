@@ -1,0 +1,22 @@
+ time 1ns
+ capacitance 1pF
+ resistance 1kohm
+ voltage 1v
+ current 1uA
+ power 1pW
+ distance 1um
+== Technology LEF Values ==
+=== Routing Layers ===
+Name                Direction           Res/Unit Distance   Cap/Unit Distance   
+Metal1              HORIZONTAL          8.437500e-04        6.878400e-05        
+Metal2              VERTICAL            5.150000e-04        9.302000e-05        
+Metal3              HORIZONTAL          5.150000e-04        9.200000e-05        
+Metal4              VERTICAL            5.150000e-04        9.178800e-05        
+Metal5              HORIZONTAL          5.150000e-04        8.882600e-05        
+=== Vias ===
+Name                Cut Resistance      
+Cont                2.200000e-02        
+Via1                2.000000e-02        
+Via2                2.000000e-02        
+Via3                2.000000e-02        
+Via4                2.000000e-02        

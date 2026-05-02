@@ -1,0 +1,36 @@
+** sch_path: /foss/designs/iic_osic_tools/Analog_designs/LC_VCO_3Ghz/Design/design_data/xschem/inductor/tb-ind.sch
+**.subckt tb-ind
+V1 p1 GND DC 0 AC 1
+x1 p1 GND ihp_4nh_inductor
+**** begin user architecture code
+
+
+.include ./IHP_4nH_Inductor.spice
+.ac lin 100k 100Meg 15G
+.control
+destroy all
+run
+save all
+
+* Complex impedance
+let z_complex = -v(p1)/i(v1)
+
+* Real and Imag parts
+let r = real(z_complex)
+let x = imag(z_complex)
+
+* Inductance in nH
+let L = 1e9 * x/(2*pi*frequency)
+
+* Quality factor
+let Q = x/r
+
+write tb-ind.raw
+
+* Plot both on same graph
+plot L Q title Inductance
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end

@@ -1,0 +1,145 @@
+$date
+	Sat Feb  7 08:42:10 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_JK_FF $end
+$var wire 1 ! q_bar $end
+$var wire 1 " q $end
+$var reg 1 # clk $end
+$var reg 1 $ j $end
+$var reg 1 % k $end
+$var reg 1 & rst $end
+$scope module uut $end
+$var wire 1 # clk $end
+$var wire 1 ' d_in $end
+$var wire 1 $ j $end
+$var wire 1 % k $end
+$var wire 1 ( q_bar_curr $end
+$var wire 1 ) q_curr $end
+$var wire 1 & rst $end
+$var wire 1 ! q_bar $end
+$var wire 1 " q $end
+$scope module dff_inst $end
+$var wire 1 # clk $end
+$var wire 1 ' d $end
+$var wire 1 ! q_bar $end
+$var wire 1 & rst $end
+$var reg 1 " q $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+0)
+1(
+0'
+1&
+0%
+0$
+0#
+0"
+1!
+$end
+#5000
+1#
+#10000
+0#
+#15000
+1#
+#20000
+0#
+0&
+#25000
+1#
+#30000
+1'
+0#
+1$
+#35000
+0(
+0!
+1)
+1"
+1#
+#40000
+0'
+0#
+1%
+#45000
+1'
+1(
+1!
+0)
+0"
+1#
+#50000
+0#
+#55000
+0'
+0(
+0!
+1)
+1"
+1#
+#60000
+0#
+#65000
+1'
+1(
+1!
+0)
+0"
+1#
+#70000
+0#
+#75000
+0'
+0(
+0!
+1)
+1"
+1#
+#80000
+0#
+0$
+#85000
+1(
+1!
+0)
+0"
+1#
+#90000
+0#
+0%
+#95000
+1#
+#100000
+1'
+0#
+1$
+#105000
+0(
+0!
+1)
+1"
+1#
+#110000
+0#
+0$
+#115000
+1#
+#120000
+0#
+#125000
+1#
+#130000
+0#

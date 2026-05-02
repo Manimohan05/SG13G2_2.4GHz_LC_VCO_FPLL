@@ -1,0 +1,20 @@
+timestamp 1772617202
+version 8.3
+tech ihp-sg13g2
+style ngspice()
+scale 1000 1 0.5
+resistclasses 3000000 67000 110 88 88 88 88 18 11 7000 260000 1360000
+abstract
+port "VSS" 2 0 -44 672 44 m1
+port "VSS" 2 517 -44 639 198 m1
+port "VSS" 2 517 -44 567 362 m1
+port "VSS" 2 306 -44 367 206 m1
+port "VSS" 2 104 -44 162 362 m1
+port "VSS" 2 35 -44 162 198 m1
+port "VDD" 1 0 712 672 800 m1
+port "VDD" 1 589 442 641 800 m1
+port "VDD" 1 244 295 431 800 m1
+port "VDD" 1 37 441 89 800 m1
+node "VSS" 2 0 35 -44 m1 0 0 0 0 125076 3116 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "VDD" 2 0 37 441 m1 0 0 0 0 165247 3436 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "sub!" 0 0 -1073741817 -1073741817 space 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0

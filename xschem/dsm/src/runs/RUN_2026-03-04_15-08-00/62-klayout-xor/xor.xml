@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report-database>
+ <description>XOR /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/57-magic-streamout/dsm_and_freq_divider.magic.gds vs. /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/58-klayout-streamout/dsm_and_freq_divider.klayout.gds</description>
+ <original-file/>
+ <generator>drc: script='/nix/store/slcig8wnc74r65q82z4xzwsf083lmzip-python3-3.13.9-env/lib/python3.13/site-packages/librelane/scripts/klayout/xor.drc'</generator>
+ <top-cell>dsm_and_freq_divider</top-cell>
+ <tags>
+ </tags>
+ <categories>
+  <category>
+   <name>1/0</name>
+   <description>XOR data for layer 1/0</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>10/0</name>
+   <description>XOR data for layer 10/0</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>10/2</name>
+   <description>XOR data for layer 10/2</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>10/25</name>
+   <description>XOR data for layer 10/25</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>125/0</name>
+   <description>XOR data for layer 125/0</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>126/0</name>
+   <description>XOR data for layer 126/0</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>126/2</name>
+   <description>XOR data for layer 126/2</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>126/25</name>
+   <description>XOR data for layer 126/25</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>133/0</name>
+   <description>XOR data for layer 133/0</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>134/0</name>
+   <description>XOR data for layer 134/0</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>134/2</name>
+   <description>XOR data for layer 134/2</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>134/25</name>
+   <description>XOR data for layer 134/25</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>14/0</name>
+   <description>XOR data for layer 14/0</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>189/4</name>
+   <description>XOR data for layer 189/4</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>19/0</name>
+   <description>XOR data for layer 19/0</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>29/0</name>
+   <description>XOR data for layer 29/0</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>30/0</name>
+   <description>XOR data for layer 30/0</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>30/2</name>
+   <description>XOR data for layer 30/2</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>30/25</name>
+   <description>XOR data for layer 30/25</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>31/0</name>
+   <description>XOR data for layer 31/0</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>49/0</name>
+   <description>XOR data for layer 49/0</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>5/0</name>
+   <description>XOR data for layer 5/0</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>50/0</name>
+   <description>XOR data for layer 50/0</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>6/0</name>
+   <description>XOR data for layer 6/0</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>66/0</name>
+   <description>XOR data for layer 66/0</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>67/0</name>
+   <description>XOR data for layer 67/0</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>8/0</name>
+   <description>XOR data for layer 8/0</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>8/2</name>
+   <description>XOR data for layer 8/2</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>8/25</name>
+   <description>XOR data for layer 8/25</description>
+   <categories>
+   </categories>
+  </category>
+ </categories>
+ <cells>
+  <cell>
+   <name>dsm_and_freq_divider</name>
+   <variant/>
+   <layout-name/>
+   <references>
+   </references>
+  </cell>
+ </cells>
+ <items>
+ </items>
+</report-database>

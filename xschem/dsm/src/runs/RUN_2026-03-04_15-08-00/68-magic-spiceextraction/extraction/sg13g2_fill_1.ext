@@ -1,0 +1,12 @@
+timestamp 1772617202
+version 8.3
+tech ihp-sg13g2
+style ngspice()
+scale 1000 1 0.5
+resistclasses 3000000 67000 110 88 88 88 88 18 11 7000 260000 1360000
+abstract
+port "VSS" 2 0 -44 96 44 m1
+port "VDD" 1 0 712 96 800 m1
+node "VSS" 0 0 0 -44 m1 0 0 0 0 8448 368 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "VDD" 0 0 0 712 m1 0 0 0 0 8448 368 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "sub!" 0 0 -1073741817 -1073741817 space 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0

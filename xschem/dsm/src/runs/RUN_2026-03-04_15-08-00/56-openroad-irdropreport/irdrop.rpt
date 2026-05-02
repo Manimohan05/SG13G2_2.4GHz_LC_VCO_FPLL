@@ -1,0 +1,26 @@
++ analyze_power_grid -net VPWR -voltage_file /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/56-openroad-irdropreport/net-VPWR.csv
+[INFO PSM-0040] All shapes on net VPWR are connected.
+########## IR report #################
+Net              : VPWR
+Corner           : nom_typ_1p20V_25C
+Total power      : 6.38e-04 W
+Supply voltage   : 1.20e+00 V
+Worstcase voltage: 1.20e+00 V
+Average voltage  : 1.20e+00 V
+Average IR drop  : 6.56e-04 V
+Worstcase IR drop: 2.83e-03 V
+Percentage drop  : 0.24 %
+######################################
++ analyze_power_grid -net VGND -voltage_file /home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/runs/RUN_2026-03-04_15-08-00/56-openroad-irdropreport/net-VGND.csv
+[INFO PSM-0040] All shapes on net VGND are connected.
+########## IR report #################
+Net              : VGND
+Corner           : nom_typ_1p20V_25C
+Total power      : 6.38e-04 W
+Supply voltage   : 0.00e+00 V
+Worstcase voltage: 8.48e-03 V
+Average voltage  : 1.10e-03 V
+Average IR drop  : 1.10e-03 V
+Worstcase IR drop: 8.48e-03 V
+Percentage drop  : 0.71 %
+######################################

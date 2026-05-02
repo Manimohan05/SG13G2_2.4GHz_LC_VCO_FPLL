@@ -1,0 +1,148 @@
+// Specify Spectre language mode
+simulator lang=spectre
+
+// BEGIN ANSOFT HEADER
+// node 1    Port1:1
+// node 2    Port2:1
+//   Format: Spectre
+//   Topckt: IHP_4nH_Inductor
+//     Date: Tue Feb 10 01:11:02 2026
+//    Notes: Frequency range: 0 to 1.5e+010 Hz, 301 points
+//         : Maximum number of poles: 10000
+//         : S-Matrix fitting error tolerance: 0.005
+//         : Causality check tolerance: auto
+//         : Passivity enforcement: off
+//         : Causality enforcement: off
+//         : Fitting method: TWA
+//         : Matrix fitting: By entire matrix
+//         : Ensure Z-parameter accuracy: on
+//         : Relative error control: off
+//         : Common ground option: on
+//         : Final fitting error: 0.000123148
+//         : Final model order: 20
+// END ANSOFT HEADER
+
+subckt IHP_4nH_Inductor ( 1 2 )
+Vam1 ( 1 n2 ) vsource type=dc dc=0
+Rport1 ( n2 0 ) resistor r=50 isnoisy=no
+Vam2 ( 2 n4 ) vsource type=dc dc=0
+Rport2 ( n4 0 ) resistor r=50 isnoisy=no
+
+Fi1 ( 0 ni1 ) cccs probe=Vam1 gain=50
+Gi1 ( 0 ni1 1 0 ) vccs gm=1
+Rt1 ( ni1 0 ) resistor r=1 isnoisy=no
+Fi2 ( 0 ni2 ) cccs probe=Vam2 gain=50
+Gi2 ( 0 ni2 2 0 ) vccs gm=1
+Rt2 ( ni2 0 ) resistor r=1 isnoisy=no
+
+Ca1 ( ns1 0 ) capacitor c=1e-012
+Ra1 ( ns1 0 ) resistor r=65383.3304115 isnoisy=no
+Ca2 ( ns2 0 ) capacitor c=1e-012
+Ra2 ( ns2 0 ) resistor r=700.985908422 isnoisy=no
+Ca3 ( ns3 0 ) capacitor c=1e-012
+Ca4 ( ns4 0 ) capacitor c=1e-012
+Ra3 ( ns3 0 ) resistor r=3203.97806018 isnoisy=no
+Ra4 ( ns4 0 ) resistor r=3203.97806018 isnoisy=no
+Ga3 ( ns3 0 ns4 0 ) vccs gm=-0.00360543294404
+Ga4 ( ns4 0 ns3 0 ) vccs gm=0.00360543294404
+Ca5 ( ns5 0 ) capacitor c=1e-012
+Ra5 ( ns5 0 ) resistor r=229.153207458 isnoisy=no
+Ca6 ( ns6 0 ) capacitor c=1e-012
+Ra6 ( ns6 0 ) resistor r=75.0246573467 isnoisy=no
+Ca7 ( ns7 0 ) capacitor c=1e-012
+Ra7 ( ns7 0 ) resistor r=27.5143222557 isnoisy=no
+Ca8 ( ns8 0 ) capacitor c=1e-012
+Ca9 ( ns9 0 ) capacitor c=1e-012
+Ra8 ( ns8 0 ) resistor r=6.38396750515 isnoisy=no
+Ra9 ( ns9 0 ) resistor r=6.38396750515 isnoisy=no
+Ga8 ( ns8 0 ns9 0 ) vccs gm=-0.162554117523
+Ga9 ( ns9 0 ns8 0 ) vccs gm=0.162554117523
+Ca10 ( ns10 0 ) capacitor c=1e-012
+Ra10 ( ns10 0 ) resistor r=3.68897766136 isnoisy=no
+Ca11 ( ns11 0 ) capacitor c=1e-012
+Ra11 ( ns11 0 ) resistor r=65383.3304115 isnoisy=no
+Ca12 ( ns12 0 ) capacitor c=1e-012
+Ra12 ( ns12 0 ) resistor r=700.985908422 isnoisy=no
+Ca13 ( ns13 0 ) capacitor c=1e-012
+Ca14 ( ns14 0 ) capacitor c=1e-012
+Ra13 ( ns13 0 ) resistor r=3203.97806018 isnoisy=no
+Ra14 ( ns14 0 ) resistor r=3203.97806018 isnoisy=no
+Ga13 ( ns13 0 ns14 0 ) vccs gm=-0.00360543294404
+Ga14 ( ns14 0 ns13 0 ) vccs gm=0.00360543294404
+Ca15 ( ns15 0 ) capacitor c=1e-012
+Ra15 ( ns15 0 ) resistor r=229.153207458 isnoisy=no
+Ca16 ( ns16 0 ) capacitor c=1e-012
+Ra16 ( ns16 0 ) resistor r=75.0246573467 isnoisy=no
+Ca17 ( ns17 0 ) capacitor c=1e-012
+Ra17 ( ns17 0 ) resistor r=27.5143222557 isnoisy=no
+Ca18 ( ns18 0 ) capacitor c=1e-012
+Ca19 ( ns19 0 ) capacitor c=1e-012
+Ra18 ( ns18 0 ) resistor r=6.38396750515 isnoisy=no
+Ra19 ( ns19 0 ) resistor r=6.38396750515 isnoisy=no
+Ga18 ( ns18 0 ns19 0 ) vccs gm=-0.162554117523
+Ga19 ( ns19 0 ns18 0 ) vccs gm=0.162554117523
+Ca20 ( ns20 0 ) capacitor c=1e-012
+Ra20 ( ns20 0 ) resistor r=3.68897766136 isnoisy=no
+
+Gb1_1 ( ns1 0 ni1 0 ) vccs gm=1.52944182211e-005
+Gb2_1 ( ns2 0 ni1 0 ) vccs gm=0.00142656220045
+Gb3_1 ( ns3 0 ni1 0 ) vccs gm=0.00363245158563
+Gb5_1 ( ns5 0 ni1 0 ) vccs gm=0.00436389265981
+Gb6_1 ( ns6 0 ni1 0 ) vccs gm=0.0133289512457
+Gb7_1 ( ns7 0 ni1 0 ) vccs gm=0.0363447077019
+Gb8_1 ( ns8 0 ni1 0 ) vccs gm=0.313499798059
+Gb10_1 ( ns10 0 ni1 0 ) vccs gm=0.271077813909
+Gb11_2 ( ns11 0 ni2 0 ) vccs gm=1.52944182211e-005
+Gb12_2 ( ns12 0 ni2 0 ) vccs gm=0.00142656220045
+Gb13_2 ( ns13 0 ni2 0 ) vccs gm=0.00363245158563
+Gb15_2 ( ns15 0 ni2 0 ) vccs gm=0.00436389265981
+Gb16_2 ( ns16 0 ni2 0 ) vccs gm=0.0133289512457
+Gb17_2 ( ns17 0 ni2 0 ) vccs gm=0.0363447077019
+Gb18_2 ( ns18 0 ni2 0 ) vccs gm=0.313499798059
+Gb20_2 ( ns20 0 ni2 0 ) vccs gm=0.271077813909
+
+Gc1_1 ( 0 n2 ns1 0 ) vccs gm=1.76267381551e-005
+Gc1_2 ( 0 n2 ns2 0 ) vccs gm=-0.000151220806042
+Gc1_3 ( 0 n2 ns3 0 ) vccs gm=-1.68253410247e-007
+Gc1_4 ( 0 n2 ns4 0 ) vccs gm=-1.25380721891e-007
+Gc1_5 ( 0 n2 ns5 0 ) vccs gm=0.000203537591402
+Gc1_6 ( 0 n2 ns6 0 ) vccs gm=0.000362637752056
+Gc1_7 ( 0 n2 ns7 0 ) vccs gm=0.0362599312468
+Gc1_8 ( 0 n2 ns8 0 ) vccs gm=0.0563014516303
+Gc1_9 ( 0 n2 ns9 0 ) vccs gm=-0.0108921884879
+Gc1_10 ( 0 n2 ns10 0 ) vccs gm=-0.111740397354
+Gc1_11 ( 0 n2 ns11 0 ) vccs gm=-1.75711441108e-005
+Gc1_12 ( 0 n2 ns12 0 ) vccs gm=-0.000216183270575
+Gc1_13 ( 0 n2 ns13 0 ) vccs gm=-2.71782132946e-007
+Gc1_14 ( 0 n2 ns14 0 ) vccs gm=-1.18255536459e-007
+Gc1_15 ( 0 n2 ns15 0 ) vccs gm=-0.000347724397458
+Gc1_16 ( 0 n2 ns16 0 ) vccs gm=-0.000466583986875
+Gc1_17 ( 0 n2 ns17 0 ) vccs gm=-0.0361722765998
+Gc1_18 ( 0 n2 ns18 0 ) vccs gm=-0.0612010323038
+Gc1_19 ( 0 n2 ns19 0 ) vccs gm=0.0107744519884
+Gc1_20 ( 0 n2 ns20 0 ) vccs gm=0.0889461400398
+Gd1_1 ( 0 n2 ni1 0 ) vccs gm=-0.00963393825744
+Gd1_2 ( 0 n2 ni2 0 ) vccs gm=0.00170840182023
+Gc2_1 ( 0 n4 ns1 0 ) vccs gm=-1.75711441108e-005
+Gc2_2 ( 0 n4 ns2 0 ) vccs gm=-0.000216183270575
+Gc2_3 ( 0 n4 ns3 0 ) vccs gm=-2.71782132942e-007
+Gc2_4 ( 0 n4 ns4 0 ) vccs gm=-1.18255536462e-007
+Gc2_5 ( 0 n4 ns5 0 ) vccs gm=-0.000347724397458
+Gc2_6 ( 0 n4 ns6 0 ) vccs gm=-0.000466583986875
+Gc2_7 ( 0 n4 ns7 0 ) vccs gm=-0.0361722765998
+Gc2_8 ( 0 n4 ns8 0 ) vccs gm=-0.0612010323038
+Gc2_9 ( 0 n4 ns9 0 ) vccs gm=0.0107744519884
+Gc2_10 ( 0 n4 ns10 0 ) vccs gm=0.0889461400398
+Gc2_11 ( 0 n4 ns11 0 ) vccs gm=1.75943656497e-005
+Gc2_12 ( 0 n4 ns12 0 ) vccs gm=-0.000152672672756
+Gc2_13 ( 0 n4 ns13 0 ) vccs gm=-2.11161877367e-007
+Gc2_14 ( 0 n4 ns14 0 ) vccs gm=-1.35138356853e-007
+Gc2_15 ( 0 n4 ns15 0 ) vccs gm=0.000202282418477
+Gc2_16 ( 0 n4 ns16 0 ) vccs gm=0.000355783181274
+Gc2_17 ( 0 n4 ns17 0 ) vccs gm=0.0361772381767
+Gc2_18 ( 0 n4 ns18 0 ) vccs gm=0.0548302977393
+Gc2_19 ( 0 n4 ns19 0 ) vccs gm=-0.010837348132
+Gc2_20 ( 0 n4 ns20 0 ) vccs gm=-0.110555514531
+Gd2_1 ( 0 n4 ni1 0 ) vccs gm=0.00170840182023
+Gd2_2 ( 0 n4 ni2 0 ) vccs gm=-0.010013828236
+ends IHP_4nH_Inductor

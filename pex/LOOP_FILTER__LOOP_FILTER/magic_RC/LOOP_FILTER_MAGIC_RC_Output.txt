@@ -1,0 +1,64 @@
+
+Magic 8.3 revision 636 - Compiled on Thu Apr 16 09:13:57 PM CEST 2026.
+Starting magic under Tcl interpreter
+Using the terminal as the console.
+WARNING: RLIMIT_NOFILE is above 1024 and Tcl_Version<9 this may cause runtime issues [rlim_cur=1048576]
+Using NULL graphics device.
+Processing system .magicrc file
+Switching to WIRING tool.
+Switching to NETLIST tool.
+Switching to PICK tool.
+Switching to BOX tool.
+Sourcing design .magicrc for technology ihp-sg13g2 ...
+2 Magic internal units = 1 Lambda
+Input style sg13g2(): scaleFactor=2, multiplier=2
+The following types are not handled by extraction and will be treated as non-electrical types:
+    pblock sealcont difffill nemitter hvnemitter hvisodiffres sealvia1 sealvia2 sealvia3 sealvia4 sealvia5 sealvia6 pillar solder seal glass thruvia inductor 
+Scaled tech values by 2 / 1 to match internal grid scaling
+Loading ihp-sg13g2 Device Generator Menu ...
+Loading "pex/LOOP_FILTER__LOOP_FILTER/magic_RC/LOOP_FILTER_MAGIC_RC_Script.tcl" from command line.
+Warning: Calma reading is not undoable!  I hope that's OK.
+Library written using GDS-II Release 6.0
+Library name: LIB
+Reading "$$$CONTEXT_INFO$$$".
+Reading "rppd$1".
+Reading "via_stack$9".
+Reading "via_stack$13".
+Reading "cmim$2".
+Reading "cmim".
+Reading "via_stack$15".
+Reading "via_stack$6".
+Reading "via_stack$3".
+Reading "via_stack$7".
+Reading "via_stack$4".
+Reading "via_stack$8".
+Reading "guard_ring$1".
+Reading "LOOP_FILTER".
+Extracting LOOP_FILTER into /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/pex/LOOP_FILTER__LOOP_FILTER/magic_RC/LOOP_FILTER.ext:
+exttosim finished.
+Adding  a_22713_22904#; Tnew = 0.00ns, Told = -694.99ns
+Adding  a_30943_22340#; Tnew = 0.00ns, Told = -52.42ns
+Adding  a_22713_21776#; Tnew = 0.00ns, Told = -61.32ns
+Adding  a_30943_21212#; Tnew = 0.00ns, Told = -57.48ns
+Adding  a_22713_20648#; Tnew = 0.00ns, Told = -59.18ns
+Adding  a_30943_20084#; Tnew = 0.00ns, Told = -57.48ns
+Adding  a_22713_19520#; Tnew = 0.00ns, Told = -58.59ns
+Adding  a_30943_18956#; Tnew = 0.00ns, Told = -57.48ns
+Adding  a_22713_18392#; Tnew = 0.00ns, Told = -58.59ns
+Adding  a_30943_17828#; Tnew = 0.00ns, Told = -52.42ns
+Adding  a_30943_n2581#; Tnew = 0.00ns, Told = -52.42ns
+Adding  a_22713_n3145#; Tnew = 0.00ns, Told = -58.59ns
+Adding  a_30943_n3709#; Tnew = 0.00ns, Told = -57.48ns
+Adding  a_22713_n4273#; Tnew = 0.00ns, Told = -58.59ns
+Adding  a_30943_n4837#; Tnew = 0.00ns, Told = -57.48ns
+Adding  a_22713_n5401#; Tnew = 0.00ns, Told = -58.83ns
+Adding  a_30943_n5965#; Tnew = 0.00ns, Told = -57.48ns
+Adding  a_22713_n6529#; Tnew = 0.00ns, Told = -59.68ns
+Adding  a_30943_n7093#; Tnew = 0.00ns, Told = -52.94ns
+Adding  VSS
+Adding  IN; Tnew = 0.00ns, Told = 0.00ns
+Adding  OUT; Tnew = 0.01ns, Told = 0.00ns
+Total Nets: 42
+Nets extracted: 22 (0.523810)
+Nets output: 22 (0.523810)
+exttospice finished.

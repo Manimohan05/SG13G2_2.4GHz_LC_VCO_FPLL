@@ -1,0 +1,43 @@
+** sch_path: /home/mmhnbm/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/xschem/dsm_top_tb.sch
+**.subckt dsm_top_tb
+V1 dsm_clk GND PULSE(0 1.8 0 10ns 10ns 50ns 100ns)
+A1 [ net1 ] [ dout ] dac1
+.model dac1 dac_bridge out_low=0 out_high=1.2
+A2 [ en ] [ net6 ] adc1
+.model adc1 adc_bridge in_low=0.4 in_high=1.2
+A3 [ sdata ] [ net5 ] adc1
+.model adc1 adc_bridge in_low=0.4 in_high=1.2
+A4 [ sclk ] [ net4 ] adc1
+.model adc1 adc_bridge in_low=0.4 in_high=1.2
+A5 [ rst ] [ net3 ] adc1
+.model adc1 adc_bridge in_low=0.4 in_high=1.2
+A6 [ dsm_clk ] [ net2 ] adc1
+.model adc1 adc_bridge in_low=0.4 in_high=1.2
+* noconn rst
+* noconn sclk
+* noconn sdata
+* noconn en
+adut [ net2 net3 net4 net5 net6 ] [ net1 ] null dut
+.model dut d_cosim simulation=./../dsm_top.so
+**** begin user architecture code
+
+
+
+* ngspice commands
+.save v(dout) v(sdata) v(sclk) v(en) v(rstn) v(dsm_clk) v(data_word0) v(data_word1) v(data_word2) v(data_word3) v(data_word4) v(data_word5) v(data_word6) v(data_word7) v(data_word8)
+.control
+  tran 0.5n 161702n
+  remzerovec
+  write test.raw
+.endc
+
+* to generate following file copy stimuli.test
+* to the simulation directory and run simulation -> Utile Stimuli Editor (GUI),
+* and press 'Translate'
+.include stimuli_test.cir
+
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end

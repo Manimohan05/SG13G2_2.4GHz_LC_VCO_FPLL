@@ -1,0 +1,83 @@
+$date
+	Sat Feb  7 12:15:58 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_Modulus_Controller $end
+$var wire 1 ! mc $end
+$var reg 1 " b $end
+$var reg 1 # c $end
+$var reg 1 $ c_bar $end
+$var reg 1 % d $end
+$var reg 1 & d_bar $end
+$var reg 1 ' select_in $end
+$scope module uut $end
+$var wire 1 " b $end
+$var wire 1 # c $end
+$var wire 1 $ c_bar $end
+$var wire 1 % d $end
+$var wire 1 & d_bar $end
+$var wire 1 ( logic_0 $end
+$var wire 1 ) logic_1 $end
+$var wire 1 * logic_2 $end
+$var wire 1 ! mc $end
+$var wire 1 ' select_in $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+0*
+0)
+0(
+x'
+0&
+0%
+0$
+0#
+0"
+0!
+$end
+#10000
+1'
+#20000
+1!
+1(
+1"
+#30000
+1)
+0(
+0"
+1$
+1&
+#40000
+1*
+0)
+1#
+1%
+0$
+0&
+#50000
+0*
+1(
+1"
+0'
+#60000
+1)
+0(
+0"
+1$
+1&
+#70000
+0!
+0)
+0$
+0&
+#80000

@@ -1,0 +1,31 @@
+** sch_path: /foss/designs/iic_osic_tools/frac-n-pll-vco-unic_cass/schematic/blocks/dsm/xschem/dsm_with_mdiv_pex_tb.sch
+**.subckt dsm_with_mdiv_pex_tb
+V1 freq_in GND PULSE(0 1.8 0 10ns 10ns 50ns 100ns)
+* noconn rst
+* noconn sclk
+* noconn sdata
+* noconn en
+x1 freq_in rst sclk sdata en freq_out dsm_and_freq_divider_pex
+**** begin user architecture code
+
+
+
+.include ./dsm_and_freq_divider.pex.spice
+* ngspice commands
+.save v(dout) v(sdata) v(sclk) v(en) v(rst) v(dsm_clk) v(freq_in) v(freq_out)
+.control
+  tran 0.5n 1m
+  remzerovec
+  write test.raw
+.endc
+
+* to generate following file copy stimuli.test
+* to the simulation directory and run simulation -> Utile Stimuli Editor (GUI),
+* and press 'Translate'
+.include stimuli_test.cir
+
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end

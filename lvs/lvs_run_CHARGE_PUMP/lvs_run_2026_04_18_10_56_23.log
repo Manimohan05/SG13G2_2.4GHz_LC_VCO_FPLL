@@ -1,0 +1,16 @@
+18-Apr-2026 12:56:24 | INFO    | Your Klayout version is: KLayout 0.30.5
+18-Apr-2026 12:56:24 | INFO    | Running SG13G2 LVS checks on design /home/designer/shared/LC_VCO_FPLL/gds/blocks/CHARGE_PUMP_V2.gds on cell CHARGE_PUMP
+18-Apr-2026 12:56:27 | INFO    | ==============================================================================
+18-Apr-2026 12:56:27 | INFO    | Important Summary
+18-Apr-2026 12:56:27 | INFO    | +------------------+--------------------------------------------------------------+
+18-Apr-2026 12:56:27 | INFO    | | Status           | PASS                                                         |
+18-Apr-2026 12:56:27 | INFO    | | Mode             | COMPARE                                                      |
+18-Apr-2026 12:56:27 | INFO    | | Outcome          | Comparison mode: PASS (netlists match).                      |
+18-Apr-2026 12:56:27 | INFO    | | Layout           | CHARGE_PUMP_V2.gds                                           |
+18-Apr-2026 12:56:27 | INFO    | | Top Cell         | CHARGE_PUMP                                                  |
+18-Apr-2026 12:56:27 | INFO    | | Results Dir      | /home/designer/shared/LC_VCO_FPLL/lvs/lvs_run_CHARGE_PUMP    |
+18-Apr-2026 12:56:27 | INFO    | | Warnings         | 0                                                            |
+18-Apr-2026 12:56:27 | INFO    | | Errors           | 0                                                            |
+18-Apr-2026 12:56:27 | INFO    | | Run Time (s)     | 3.509                                                        |
+18-Apr-2026 12:56:27 | INFO    | +------------------+--------------------------------------------------------------+
+18-Apr-2026 12:56:27 | INFO    | ==============================================================================

@@ -1,0 +1,45 @@
+** sch_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/bgr/tb_BGR_PEX.sch
+**.subckt tb_BGR_PEX VBGR
+*.opin VBGR
+V1 VDD GND PULSE(0 1.2 0 10m 0 1 2)
+x1 VDD GND VBGR BANDGAP_REF_PEX
+**** begin user architecture code
+
+
+
+.option rshunt=1.0e12
+.control
+save all
+save VDD
+alter V1 dc 1.2
+
+op
+print I(Vmeas)
+
+dc TEMP 100 -50 -5
+print I(Vmeas)
+
+write tb_BGR_PEX_temp.raw
+.endc
+
+.control
+save all
+tran 100u 15m
+
+print I(Vmeas)
+
+write tb_BGR_PEX_transient.raw
+.endc
+
+
+
+.include /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/pex/BANDGAP_REF__BANDGAP_REF/magic_RC/BANDGAP_REF.pex.spice
+.lib cornerMOSlv.lib mos_tt
+.lib cornerMOShv.lib mos_tt
+.lib cornerRES.lib res_typ
+.lib cornerCAP.lib cap_typ
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end

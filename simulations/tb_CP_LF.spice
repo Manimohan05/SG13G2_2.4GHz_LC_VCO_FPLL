@@ -1,0 +1,101 @@
+** sch_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/charge-pump/tb_CP_LF.sch
+**.subckt tb_CP_LF
+V1 VDD GND 1.2
+V2 DN GND PULSE(0 1.2 3.1u 1n 1n 49n 100n 29)
+V3 UP GND PULSE(1.2 0 20n 1n 1n 49n 100n 29)
+VBGR net1 GND 0.6
+x1 UP VDD VCP net1 GND DN GND CHARGE_PUMP
+x2 CTRL VCP GND GND LOOP_FILTER
+**** begin user architecture code
+
+
+
+.include tb_CP.save
+.param temp=27
+.option method=gear rshunt=1.0e12
+.control
+save all
+op
+write tb_CP_LF.raw
+.endc
+
+
+
+.lib cornerMOSlv.lib mos_tt
+.lib cornerMOShv.lib mos_tt
+.lib cornerRES.lib res_typ
+.lib cornerCAP.lib cap_typ
+
+
+
+
+.param temp = 27
+.options method=gear rshunt=1.0e12
+
+.control
+
+* Save required signals
+save v(UP) v(DN) v(VCP) v(CTRL)
+
+* Long transient simulation
+tran 1n 6u
+
+* Plot transient waveform
+plot v(UP) v(DN) v(VCP) v(CTRL)
+plot v(CTRL)
+
+.endc
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  xschem/charge-pump/CHARGE_PUMP.sym # of pins=7
+** sym_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/charge-pump/CHARGE_PUMP.sym
+** sch_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/charge-pump/CHARGE_PUMP.sch
+.subckt CHARGE_PUMP UP VDD VCP VBGR GND DN SUB!
+*.opin VCP
+*.ipin UP
+*.ipin DN
+*.iopin GND
+*.iopin VBGR
+*.iopin VDD
+*.iopin SUB!
+XM2 Vbn Vbn net5 SUB! sg13_lv_nmos w=40.7u l=2u ng=5
+XM8 net2 GND VDD NW sg13_lv_pmos w=29.6u l=2u ng=5
+XM11 Vbp Vbp net2 NW sg13_lv_pmos w=163.6u l=2u ng=20
+XM3 Vbn Vbp net1 NW sg13_lv_pmos w=163.6u l=2u ng=20
+XM4 net1 GND VDD NW sg13_lv_pmos w=29.6u l=2u ng=5
+XM7 net3 UP VDD NW sg13_lv_pmos w=29.6u l=2u ng=5
+XM9 VCP Vbp net3 NW sg13_lv_pmos w=163.6u l=2u ng=20
+XM10 net5 VDD GND SUB! sg13_lv_nmos w=6u l=2u ng=1
+XM1 net4 DN GND SUB! sg13_lv_nmos w=6u l=2u ng=1
+XM5 VCP Vbn net4 SUB! sg13_lv_nmos w=40.7u l=2u ng=5
+XM6 Vbp VBGR GND SUB! sg13_lv_nmos w=3.9u l=2u ng=1
+XR1 VDD NW ntap1 R=1.319 w=51e-6 l=36e-6 rw=0.3e-6
+XR2 VDD NW ntap1 R=2.51 w=30.5e-6 l=15.5e-6 rw=0.3e-6
+XR3 GND SUB! ptap1 R=9.234 w=5.68e-6 l=7.26e-6 rw=0.3e-6
+XR4 GND SUB! ptap1 R=2.717 w=30e-6 l=12.54e-6 rw=0.3e-6
+XR5 GND SUB! ptap1 R=4.486 w=20e-6 l=6e-6 rw=0.3e-6
+.ends
+
+
+* expanding   symbol:  xschem/loop-filter/LOOP_FILTER.sym # of pins=4
+** sym_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/loop-filter/LOOP_FILTER.sym
+** sch_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/loop-filter/LOOP_FILTER.sch
+.subckt LOOP_FILTER OUT IN GND SUB!
+*.opin OUT
+*.iopin GND
+*.ipin IN
+*.iopin SUB!
+XC2 OUT GND cap_cmim w=18.63e-6 l=18.63e-6 m=4
+XC1 net1 GND cap_cmim w=48.34e-6 l=48.34e-6 m=16
+XR2 OUT IN SUB! rppd w=2e-6 l=407.2e-6 m=1 b=0
+XR1 net1 IN SUB! rppd w=2e-6 l=407.2e-6 m=1 b=0
+XR3 GND SUB! ptap1 R=1.462 w=46.34e-6 l=32.18e-6 rw=0.3e-6
+XR4 GND SUB! ptap1 R=1.462 w=46.34e-6 l=32.18e-6 rw=0.3e-6
+.ends
+
+.GLOBAL VDD
+.GLOBAL GND
+.end

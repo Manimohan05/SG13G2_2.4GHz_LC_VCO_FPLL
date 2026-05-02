@@ -1,0 +1,59 @@
+* Extracted by KLayout with SG13G2 LVS runset on : 18/04/2026 15:04
+
+.SUBCKT BANDGAP_REF GND VDD VBGR
+M$1 GND \$65 \$132 \$1 sg13_lv_nmos L=10u W=0.15u AS=0.1005p AD=0.1005p
++ PS=1.34u PD=1.34u rfmode=0
+M$2 GND \$97 \$97 \$1 sg13_lv_nmos L=9.75u W=0.72u AS=0.2448p AD=0.2448p
++ PS=2.12u PD=2.12u rfmode=0
+M$3 GND \$97 \$5 \$1 sg13_lv_nmos L=9.75u W=0.72u AS=0.2448p AD=0.2448p
++ PS=2.12u PD=2.12u rfmode=0
+M$4 GND \$46 \$65 \$1 sg13_lv_nmos L=5u W=7.14u AS=1.62435p AD=1.62435p
++ PS=10.745u PD=10.745u rfmode=0
+M$8 GND \$5 \$18 \$1 sg13_lv_nmos L=9.75u W=28.8u AS=6.552p AD=6.552p PS=37.82u
++ PD=37.82u rfmode=0
+M$12 GND \$77 \$77 \$1 sg13_lv_nmos L=5u W=21u AS=4.38375p AD=4.38375p
++ PS=26.965u PD=26.965u rfmode=0
+M$20 VDD \$18 VBGR \$41 sg13_lv_pmos L=5u W=16u AS=3.34p AD=3.34p PS=21.34u
++ PD=21.34u rfmode=0
+M$28 VDD \$75 \$18 \$47 sg13_lv_pmos L=2.08u W=75u AS=15.65625p AD=15.65625p
++ PS=87.715u PD=87.715u rfmode=0
+M$36 VDD \$18 \$65 \$41 sg13_lv_pmos L=5u W=15u AS=3.13125p AD=3.13125p
++ PS=20.215u PD=20.215u rfmode=0
+M$44 VDD \$18 \$46 \$41 sg13_lv_pmos L=5u W=15u AS=3.13125p AD=3.13125p
++ PS=20.215u PD=20.215u rfmode=0
+M$52 \$65 \$4 VDD \$101 sg13_lv_pmos L=4u W=0.2u AS=0.104p AD=0.104p PS=1.34u
++ PD=1.34u rfmode=0
+M$53 VDD \$75 \$75 \$47 sg13_lv_pmos L=2.08u W=75u AS=15.65625p AD=15.65625p
++ PS=87.715u PD=87.715u rfmode=0
+M$61 VDD VDD \$85 \$107 sg13_lv_pmos L=3.7u W=14.56u AS=4.9504p AD=4.9504p
++ PS=31.84u PD=31.84u rfmode=0
+M$62 \$85 \$65 \$97 \$107 sg13_lv_pmos L=3.7u W=7.28u AS=2.4752p AD=2.4752p
++ PS=15.92u PD=15.92u rfmode=0
+M$63 \$97 VDD VDD \$107 sg13_lv_pmos L=3.7u W=7.28u AS=2.4752p AD=2.4752p
++ PS=15.92u PD=15.92u rfmode=0
+M$65 \$85 \$46 \$5 \$107 sg13_lv_pmos L=3.7u W=7.28u AS=2.4752p AD=2.4752p
++ PS=15.92u PD=15.92u rfmode=0
+M$66 \$5 VDD VDD \$107 sg13_lv_pmos L=3.7u W=7.28u AS=2.4752p AD=2.4752p
++ PS=15.92u PD=15.92u rfmode=0
+M$67 \$85 \$75 VDD \$82 sg13_lv_pmos L=1.95u W=5.3u AS=1.802p AD=1.802p
++ PS=11.28u PD=11.28u rfmode=0
+M$68 VDD \$132 \$132 \$116 sg13_lv_pmos L=1u W=1u AS=0.34p AD=0.34p PS=3.36u
++ PD=3.36u rfmode=0
+M$69 VDD \$132 \$4 \$116 sg13_lv_pmos L=1u W=1u AS=0.34p AD=0.34p PS=3.36u
++ PD=3.36u rfmode=0
+R$78 GND \$79 \$1 rppd w=3u l=38.65u ps=0u b=0 m=1
+R$82 \$79 \$46 \$1 rppd w=0.5u l=154.6u ps=0u b=0 m=1
+R$87 \$77 \$46 \$1 rppd w=0.5u l=193.25u ps=0u b=0 m=1
+R$94 VBGR GND \$1 rppd w=0.71u l=270.55u ps=0u b=0 m=1
+C$95 VDD GND cap_cmim w=5u l=5u A=25p P=20u m=15
+C$97 \$4 GND cap_cmim w=18.2u l=18.2u A=331.24p P=72.8u m=1
+C$106 \$5 \$18 cap_cmim w=22.29u l=22.29u A=496.8441p P=89.16u m=1
+R$112 VDD \$107 ntap1 A=33.0912p P=183.84u
+R$113 VDD \$41 ntap1 A=80.0064p P=222.24u
+R$114 VDD \$47 ntap1 A=65.2608p P=181.28u
+R$115 VDD \$116 ntap1 A=20.988p P=58.3u
+R$116 VDD \$82 ntap1 A=20.4264p P=56.74u
+R$117 VDD \$101 ntap1 A=12.9024p P=35.84u
+R$118 GND \$1 ptap1 A=187.248p P=633.7u
+R$123 GND \$75 \$1 rppd w=0.5u l=15u ps=0u b=0 m=1
+.ENDS BANDGAP_REF

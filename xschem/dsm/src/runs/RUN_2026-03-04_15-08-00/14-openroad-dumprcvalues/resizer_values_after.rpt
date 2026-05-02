@@ -1,0 +1,27 @@
+ time 1ns
+ capacitance 1pF
+ resistance 1kohm
+ voltage 1v
+ current 1uA
+ power 1pW
+ distance 1um
+== Resizer RC Values (After Set RC) ==
+=== Corner nom_typ_1p20V_25C ===
+==== Estimation RC Values ====
+Name                Direction           Res/Unit Distance   Cap/Unit Distance   
+Signal              Avg                 8.989925e-04        1.006917e-04        
+Clock               Avg                 8.989925e-04        1.006917e-04        
+==== Rt. Layer RC Values ====
+Name                Direction           Res/Unit Distance   Cap/Unit Distance   
+Metal1              HORIZONTAL          8.545760e-03        1.000000e-10        
+Metal2              VERTICAL            2.535190e-03        1.691210e-04        
+Metal3              HORIZONTAL          1.543290e-03        1.828320e-04        
+Metal4              VERTICAL            6.314240e-04        1.664540e-04        
+Metal5              HORIZONTAL          6.840510e-04        8.574310e-05        
+==== Via R Values ====
+Name                Res/Unit Distance   
+Cont                2.200000e-03        
+Via1                2.000000e-03        
+Via2                2.000000e-03        
+Via3                2.000000e-03        
+Via4                2.000000e-03        

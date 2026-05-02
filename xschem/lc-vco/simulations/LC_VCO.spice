@@ -1,0 +1,20 @@
+** sch_path: /foss/designs/frac-n-pll-vco-unic_cass/schematic/lc-vco/LC_VCO.sch
+.SUBCKT LC_VCO VDD VCTRL GND OUT VBGR
+*.PININFO OUT:O VCTRL:I VBGR:I VDD:B GND:B
+M5 Vx Vgs GND GND sg13_lv_nmos w=384u l=1u ng=48
+M4 OUTp OUTn VDD VDD sg13_lv_pmos w=36u l=0.13u ng=5
+M3 OUTn OUTp VDD VDD sg13_lv_pmos w=36u l=0.13u ng=5
+M2 OUTp OUTn Vx GND sg13_lv_nmos w=22u l=0.13u ng=3
+M1 OUTn OUTp Vx GND sg13_lv_nmos w=22u l=0.13u ng=3
+M6 Vgs Vgs GND GND sg13_lv_nmos w=64u l=1u ng=8
+C1 OUTn OUTp GND cap_rfcmim w=21.9e-6 l=21.9e-6 wfeed=10.0e-6
+C3 OUTp VCTRL OUTn GND sg13_hv_svaricap w=9.74u l=0.8u Nx=7
+C2 OUTp VCTRL OUTn GND sg13_hv_svaricap w=9.74u l=0.8u Nx=7
+M7 Vgs VBGR VDD VDD sg13_lv_pmos w=38u l=1u ng=5
+M8 OUT OUTp VDD VDD sg13_lv_pmos w=15u l=0.13u ng=10
+M9 OUT OUTp GND GND sg13_lv_nmos w=1.5u l=0.13u ng=1
+M10 net1 OUTn VDD VDD sg13_lv_pmos w=15u l=0.13u ng=10
+M11 net1 OUTn GND GND sg13_lv_nmos w=1.5u l=0.13u ng=1
+.ENDS
+.GLOBAL GND
+.GLOBAL VDD

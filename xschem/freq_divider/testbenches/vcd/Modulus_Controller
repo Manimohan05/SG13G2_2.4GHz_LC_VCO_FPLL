@@ -1,0 +1,112 @@
+#! /foss/tools/iverilog/bin/vvp
+:ivl_version "13.0 (devel)" "(s20251012-46-gaad14df3-dirty)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/foss/tools/iverilog/lib/ivl/system.vpi";
+:vpi_module "/foss/tools/iverilog/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/foss/tools/iverilog/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/foss/tools/iverilog/lib/ivl/v2005_math.vpi";
+:vpi_module "/foss/tools/iverilog/lib/ivl/va_math.vpi";
+S_0x55a75669cc60 .scope module, "tb_Modulus_Controller" "tb_Modulus_Controller" 2 4;
+ .timescale -9 -12;
+v0x55a7566b33f0_0 .var "b", 0 0;
+v0x55a7566b34b0_0 .var "c", 0 0;
+v0x55a7566b3550_0 .var "c_bar", 0 0;
+v0x55a7566b35f0_0 .var "d", 0 0;
+v0x55a7566b36c0_0 .var "d_bar", 0 0;
+v0x55a7566b3760_0 .net "mc", 0 0, L_0x55a7566b3e60;  1 drivers
+v0x55a7566b3830_0 .var "select_in", 0 0;
+S_0x55a75669cdf0 .scope module, "uut" "Modulus_Controller" 2 13, 3 6 0, S_0x55a75669cc60;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "b";
+    .port_info 1 /INPUT 1 "c";
+    .port_info 2 /INPUT 1 "d";
+    .port_info 3 /INPUT 1 "c_bar";
+    .port_info 4 /INPUT 1 "d_bar";
+    .port_info 5 /INPUT 1 "select_in";
+    .port_info 6 /OUTPUT 1 "mc";
+L_0x55a7566b3900 .functor BUFZ 1, v0x55a7566b33f0_0, C4<0>, C4<0>, C4<0>;
+L_0x55a7566b39f0 .functor AND 1, v0x55a7566b3550_0, v0x55a7566b36c0_0, C4<1>, C4<1>;
+L_0x55a7566b3b00 .functor AND 1, v0x55a7566b34b0_0, v0x55a7566b35f0_0, C4<1>, C4<1>;
+L_0x55a7566b3c10 .functor AND 1, L_0x55a7566b3b00, v0x55a7566b3830_0, C4<1>, C4<1>;
+L_0x55a7566b3d50 .functor OR 1, L_0x55a7566b3900, L_0x55a7566b39f0, C4<0>, C4<0>;
+L_0x55a7566b3e60 .functor OR 1, L_0x55a7566b3d50, L_0x55a7566b3c10, C4<0>, C4<0>;
+v0x55a75668c3c0_0 .net *"_ivl_4", 0 0, L_0x55a7566b3b00;  1 drivers
+v0x55a7566b2a80_0 .net *"_ivl_8", 0 0, L_0x55a7566b3d50;  1 drivers
+v0x55a7566b2b60_0 .net "b", 0 0, v0x55a7566b33f0_0;  1 drivers
+v0x55a7566b2c00_0 .net "c", 0 0, v0x55a7566b34b0_0;  1 drivers
+v0x55a7566b2cc0_0 .net "c_bar", 0 0, v0x55a7566b3550_0;  1 drivers
+v0x55a7566b2dd0_0 .net "d", 0 0, v0x55a7566b35f0_0;  1 drivers
+v0x55a7566b2e90_0 .net "d_bar", 0 0, v0x55a7566b36c0_0;  1 drivers
+v0x55a7566b2f50_0 .net "logic_0", 0 0, L_0x55a7566b3900;  1 drivers
+v0x55a7566b3010_0 .net "logic_1", 0 0, L_0x55a7566b39f0;  1 drivers
+v0x55a7566b30d0_0 .net "logic_2", 0 0, L_0x55a7566b3c10;  1 drivers
+v0x55a7566b3190_0 .net "mc", 0 0, L_0x55a7566b3e60;  alias, 1 drivers
+v0x55a7566b3250_0 .net "select_in", 0 0, v0x55a7566b3830_0;  1 drivers
+    .scope S_0x55a75669cc60;
+T_0 ;
+    %vpi_call 2 24 "$dumpfile", "tb_Modulus_Controller.vcd" {0 0 0};
+    %vpi_call 2 25 "$dumpvars" {0 0 0};
+    %pushi/vec4 0, 0, 5;
+    %split/vec4 1;
+    %store/vec4 v0x55a7566b36c0_0, 0, 1;
+    %split/vec4 1;
+    %store/vec4 v0x55a7566b3550_0, 0, 1;
+    %split/vec4 1;
+    %store/vec4 v0x55a7566b35f0_0, 0, 1;
+    %split/vec4 1;
+    %store/vec4 v0x55a7566b34b0_0, 0, 1;
+    %store/vec4 v0x55a7566b33f0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55a7566b3830_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55a7566b33f0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 3, 0, 3;
+    %split/vec4 1;
+    %store/vec4 v0x55a7566b36c0_0, 0, 1;
+    %split/vec4 1;
+    %store/vec4 v0x55a7566b3550_0, 0, 1;
+    %store/vec4 v0x55a7566b33f0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 12, 0, 4;
+    %split/vec4 1;
+    %store/vec4 v0x55a7566b36c0_0, 0, 1;
+    %split/vec4 1;
+    %store/vec4 v0x55a7566b3550_0, 0, 1;
+    %split/vec4 1;
+    %store/vec4 v0x55a7566b35f0_0, 0, 1;
+    %store/vec4 v0x55a7566b34b0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55a7566b3830_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55a7566b33f0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 3, 0, 3;
+    %split/vec4 1;
+    %store/vec4 v0x55a7566b36c0_0, 0, 1;
+    %split/vec4 1;
+    %store/vec4 v0x55a7566b3550_0, 0, 1;
+    %store/vec4 v0x55a7566b33f0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 12, 0, 4;
+    %split/vec4 1;
+    %store/vec4 v0x55a7566b36c0_0, 0, 1;
+    %split/vec4 1;
+    %store/vec4 v0x55a7566b3550_0, 0, 1;
+    %split/vec4 1;
+    %store/vec4 v0x55a7566b35f0_0, 0, 1;
+    %store/vec4 v0x55a7566b34b0_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 46 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "../tb_Modulus_Controller.v";
+    "./../../Modulus_Controller.v";

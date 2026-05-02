@@ -1,0 +1,68 @@
+** sch_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/phase-freq-detector/tb_PHASE_FREQ_DET.sch
+**.subckt tb_PHASE_FREQ_DET
+Vdd VDD GND 'VDD'
+Vfvco F_DIV GND 0 pulse(0 'VDD' 2n 1n 1n 5n 10n)
+Vfref F_REF GND 0 pulse(0 'VDD' 0n 1n 1n 5n 10n)
+x2 F_REF UP VDD GND F_DIV DN PHASE_FREQ_DET
+**** begin user architecture code
+
+
+
+.param RAW_TEMP = agauss(40, 30, 1)
+.param TEMPGAUSS = max(20, min(RAW_TEMP, 80))
+.option temp = 'TEMPGAUSS'
+.param VDDGAUSS = agauss(1.2, 0.05, 1)
+
+.param VDD = 'VDDGAUSS'
+* analysis
+
+.tran 100p 30n uic
+
+.control
+let i = 0
+dowhile i < 10
+  reset
+  run
+  write tb_PHASE_FREQ_DET.raw
+  set appendwrite
+  reset
+  let i = i + 1
+end
+quit
+.endc
+
+
+
+
+
+.lib cornerMOSlv.lib mos_tt
+.lib cornerMOShv.lib mos_tt
+.lib cornerHBT.lib hbt_typ
+.lib cornerRES.lib res_typ
+.include /foss/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
+.global VDD GND
+
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  xschem/phase-freq-detector/PHASE_FREQ_DET.sym # of pins=6
+** sym_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/phase-freq-detector/PHASE_FREQ_DET.sym
+** sch_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/phase-freq-detector/PHASE_FREQ_DET.sch
+.subckt PHASE_FREQ_DET FREF UP VDD GND FDIV DN
+*.opin UP
+*.ipin FREF
+*.iopin VDD
+*.iopin GND
+*.opin DN
+*.ipin FDIV
+x1 net1 UP FREF VDD nRST VDD GND sg13g2_dfrbp_2
+x2 DN net2 FDIV VDD nRST VDD GND sg13g2_dfrbp_2
+x3 nRST net1 DN VDD GND sg13g2_nand2_2
+* noconn #net2
+.ends
+
+.GLOBAL GND
+.GLOBAL VDD
+.end

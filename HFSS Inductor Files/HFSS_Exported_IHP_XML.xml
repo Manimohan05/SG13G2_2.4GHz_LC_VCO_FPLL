@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<c:Control xmlns:c="http://www.ansys.com/control" schemaVersion="1.0">
+
+  <Stackup schemaVersion="1.0">
+    <Materials>
+      <Material Name="Cont">
+        <Conductivity>
+          <Double>2390000</Double>
+        </Conductivity>
+      </Material>
+      <Material Name="EPI">
+        <Permittivity>
+          <Double>11.9</Double>
+        </Permittivity>
+        <Conductivity>
+          <Double>5</Double>
+        </Conductivity>
+      </Material>
+      <Material Name="LOWLOSS">
+        <Conductivity>
+          <Double>10000000000</Double>
+        </Conductivity>
+      </Material>
+      <Material Name="Metal1">
+        <Conductivity>
+          <Double>21640000</Double>
+        </Conductivity>
+      </Material>
+      <Material Name="Metal4">
+        <Conductivity>
+          <Double>23190000</Double>
+        </Conductivity>
+      </Material>
+      <Material Name="Metal5">
+        <Conductivity>
+          <Double>23190000</Double>
+        </Conductivity>
+      </Material>
+      <Material Name="Passive">
+        <Permittivity>
+          <Double>6.6</Double>
+        </Permittivity>
+      </Material>
+      <Material Name="Sub">
+        <Permittivity>
+          <Double>11.9</Double>
+        </Permittivity>
+        <Conductivity>
+          <Double>2</Double>
+        </Conductivity>
+      </Material>
+      <Material Name="TopMetal1">
+        <Conductivity>
+          <Double>27800000</Double>
+        </Conductivity>
+      </Material>
+      <Material Name="TopMetal2">
+        <Conductivity>
+          <Double>30300000</Double>
+        </Conductivity>
+      </Material>
+      <Material Name="TopVia1">
+        <Conductivity>
+          <Double>2191000</Double>
+        </Conductivity>
+      </Material>
+      <Material Name="TopVia2">
+        <Conductivity>
+          <Double>3143000</Double>
+        </Conductivity>
+      </Material>
+      <Material Name="Via3">
+        <Conductivity>
+          <Double>1660000</Double>
+        </Conductivity>
+      </Material>
+      <Material Name="Via4">
+        <Conductivity>
+          <Double>1660000</Double>
+        </Conductivity>
+      </Material>
+      <Material Name="activ">
+        <Conductivity>
+          <Double>357141</Double>
+        </Conductivity>
+      </Material>
+      <Material Name="air">
+        <Permittivity>
+          <Double>1.0006</Double>
+        </Permittivity>
+        <Permeability>
+          <Double>1.0000004</Double>
+        </Permeability>
+      </Material>
+      <Material Name="silicon_dioxide">
+        <Permittivity>
+          <Double>4</Double>
+        </Permittivity>
+      </Material>
+    </Materials>
+    <Layers LengthUnit="um">
+      <Layer Color="#1a291f" Material="air" Name="air" Thickness="300" Type="dielectric"/>
+      <Layer Color="#44614c" Material="silicon_dioxide" Name="SiO2" Thickness="1.9" Type="dielectric"/>
+      <Layer Color="#289889" FillMaterial="silicon_dioxide" Material="TopMetal2" Name="TopMetal2" Thickness="3" Type="conductor"/>
+      <Layer Color="#09517b" FillMaterial="silicon_dioxide" Material="TopVia2" Name="TopVia2" Thickness="2.8" Type="conductor"/>
+      <Layer Color="#d091ef" FillMaterial="silicon_dioxide" Material="TopMetal1" Name="TopMetal1" Thickness="2" Type="conductor"/>
+      <Layer Color="#db74f0" FillMaterial="silicon_dioxide" Material="TopVia1" Name="TopVia1" Thickness="0.85" Type="conductor"/>
+      <Layer Color="#f67fc1" FillMaterial="silicon_dioxide" Material="Metal5" Name="Metal5" Thickness="0.49" Type="conductor"/>
+      <Layer Color="#289889" FillMaterial="silicon_dioxide" Material="Via4" Name="Via4" Thickness="0.54" Type="conductor"/>
+      <Layer Color="#09517b" FillMaterial="silicon_dioxide" Material="Metal4" Name="Metal4" Thickness="0.49" Type="conductor"/>
+      <Layer Color="#d091ef" FillMaterial="silicon_dioxide" Material="Via3" Name="Via3" Thickness="0.54" Type="conductor"/>
+      <Layer Color="#db74f0" FillMaterial="silicon_dioxide" Material="Metal4" Name="Metal3" Thickness="0.49" Type="conductor"/>
+      <Layer Color="#88c36a" FillMaterial="silicon_dioxide" Material="Via3" Name="Via2" Thickness="0.54" Type="conductor"/>
+      <Layer Color="#8db7ca" FillMaterial="silicon_dioxide" Material="Metal4" Name="Metal2" Thickness="0.49" Type="conductor"/>
+      <Layer Color="#efa15d" FillMaterial="silicon_dioxide" Material="Via3" Name="Via1" Thickness="0.54" Type="conductor"/>
+      <Layer Color="#553755" FillMaterial="silicon_dioxide" Material="Metal1" Name="Metal1" Thickness="0.42" Type="conductor"/>
+      <Layer Color="#5e6f10" FillMaterial="silicon_dioxide" Material="Cont" Name="Cont" Thickness="0.64" Type="conductor"/>
+      <Layer Color="#10738a" FillMaterial="Passive" Material="activ" Name="Activ" Thickness="0.4" Type="conductor"/>
+      <Layer Color="#1a291f" FillMaterial="EPI" Material="LOWLOSS" Name="SUBGND" Thickness="3.75" Type="conductor"/>
+      <Layer Color="#264a33" Material="Sub" Name="Substrate" Thickness="280" Type="dielectric"/>
+    </Layers>
+  </Stackup>
+
+</c:Control>

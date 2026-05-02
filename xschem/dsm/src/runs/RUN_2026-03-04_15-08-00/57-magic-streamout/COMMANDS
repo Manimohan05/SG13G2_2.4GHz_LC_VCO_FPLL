@@ -1,0 +1,1 @@
+magic -dnull -noconsole -rcfile /home/hansa/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.tech/magic/ihp-sg13g2.magicrc /nix/store/slcig8wnc74r65q82z4xzwsf083lmzip-python3-3.13.9-env/lib/python3.13/site-packages/librelane/scripts/magic/wrapper.tcl

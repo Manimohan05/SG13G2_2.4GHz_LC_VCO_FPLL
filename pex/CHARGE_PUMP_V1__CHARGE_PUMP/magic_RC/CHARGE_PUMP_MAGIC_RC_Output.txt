@@ -1,0 +1,68 @@
+
+Magic 8.3 revision 636 - Compiled on Thu Apr 16 09:13:57 PM CEST 2026.
+Starting magic under Tcl interpreter
+Using the terminal as the console.
+WARNING: RLIMIT_NOFILE is above 1024 and Tcl_Version<9 this may cause runtime issues [rlim_cur=1048576]
+Using NULL graphics device.
+Processing system .magicrc file
+Switching to WIRING tool.
+Switching to NETLIST tool.
+Switching to PICK tool.
+Switching to BOX tool.
+Sourcing design .magicrc for technology ihp-sg13g2 ...
+2 Magic internal units = 1 Lambda
+Input style sg13g2(): scaleFactor=2, multiplier=2
+The following types are not handled by extraction and will be treated as non-electrical types:
+    pblock sealcont difffill nemitter hvnemitter hvisodiffres sealvia1 sealvia2 sealvia3 sealvia4 sealvia5 sealvia6 pillar solder seal glass thruvia inductor 
+Scaled tech values by 2 / 1 to match internal grid scaling
+Loading ihp-sg13g2 Device Generator Menu ...
+Loading "pex/CHARGE_PUMP_V1__CHARGE_PUMP/magic_RC/CHARGE_PUMP_MAGIC_RC_Script.tcl" from command line.
+Warning: Calma reading is not undoable!  I hope that's OK.
+Library written using GDS-II Release 6.0
+Library name: LIB
+Reading "$$$CONTEXT_INFO$$$".
+Reading "via_stack$10".
+Reading "via_stack$11".
+Reading "guard_ring$3".
+Reading "nmos$4".
+Reading "guard_ring$5".
+Reading "nmos$3".
+Reading "nmos$2".
+Reading "via_stack$8".
+Reading "via_stack$9".
+Reading "guard_ring$2".
+Reading "pmos$5".
+Reading "via_stack$6".
+Reading "via_stack$7".
+Reading "nmos$1".
+Reading "pmos$4".
+Reading "via_stack".
+Reading "via_stack$3".
+Reading "via_stack$2".
+Reading "pmos".
+Reading "guard_ring".
+Reading "pmos$2".
+Reading "via_stack$4".
+Reading "via_stack$5".
+Reading "CHARGE_PUMP".
+Error while reading cell "CHARGE_PUMP" (byte position 288268): Unknown layer/datatype in boundary, layer=10 type=1
+Error while reading cell "CHARGE_PUMP" (byte position 288332): Unknown layer/datatype in boundary, layer=8 type=1
+Extracting CHARGE_PUMP into /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/pex/CHARGE_PUMP_V1__CHARGE_PUMP/magic_RC/CHARGE_PUMP.ext:
+exttosim finished.
+Adding  a_6599_9155#
+Adding  a_7067_9155#; Tnew = 0.00ns, Told = -66967.41ns
+Adding  a_7067_7119#; Tnew = 0.00ns, Told = -64570.43ns
+Adding  a_7067_5083#; Tnew = 0.00ns, Told = -51238.95ns
+Adding  a_6599_7119#; Tnew = 0.00ns, Told = -43029.67ns
+Adding  a_6684_2433#; Tnew = 0.00ns, Told = -5187.83ns
+Adding  a_9470_2433#; Tnew = 0.00ns, Told = -5237.62ns
+Adding  VSS
+Adding  VDD
+Adding  VBGR; Tnew = 0.00ns, Told = 0.00ns
+Adding  UP; Tnew = 0.09ns, Told = 0.00ns
+Adding  VCP; Tnew = 0.32ns, Told = 0.00ns
+Adding  DN; Tnew = 0.00ns, Told = 0.00ns
+Total Nets: 13
+Nets extracted: 13 (1.000000)
+Nets output: 13 (1.000000)
+exttospice finished.

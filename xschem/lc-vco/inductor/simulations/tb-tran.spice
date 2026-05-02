@@ -1,0 +1,22 @@
+** sch_path: /foss/designs/iic_osic_tools/Analog_designs/LC_VCO_3Ghz/Design/design_data/xschem/inductor/tb-tran.sch
+**.subckt tb-tran
+V1 net1 GND sin(0 1.8 2.5G)
+V2 v1 net1 0
+x1 v1 GND ihp_4nh_inductor
+**** begin user architecture code
+
+
+.include ./IHP_4nH_Inductor.spice
+.tran 0.4p 400p
+.control
+destroy all
+run
+let i1 = -i(v2)
+plot v1 i1
+
+.endc
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end

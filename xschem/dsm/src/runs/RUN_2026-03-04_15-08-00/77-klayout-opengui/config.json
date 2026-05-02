@@ -1,0 +1,158 @@
+{
+    "STD_CELL_LIBRARY": "sky130_fd_sc_hd",
+    "VDD_PIN": "VPWR",
+    "GND_PIN": "VGND",
+    "TECH_LEFS": {
+        "nom_*": "/home/hansa/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef",
+        "min_*": "/home/hansa/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__min.tlef",
+        "max_*": "/home/hansa/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__max.tlef"
+    },
+    "PRIMARY_GDSII_STREAMOUT_TOOL": "magic",
+    "DEFAULT_MAX_TRAN": null,
+    "DEFAULT_CORNER": "nom_tt_025C_1v80",
+    "STA_CORNERS": [
+        "nom_tt_025C_1v80",
+        "nom_ss_100C_1v60",
+        "nom_ff_n40C_1v95",
+        "min_tt_025C_1v80",
+        "min_ss_100C_1v60",
+        "min_ff_n40C_1v95",
+        "max_tt_025C_1v80",
+        "max_ss_100C_1v60",
+        "max_ff_n40C_1v95"
+    ],
+    "RT_MIN_LAYER": "met1",
+    "RT_MAX_LAYER": "Metal5",
+    "SCL_GROUND_PINS": [
+        "VGND",
+        "VNB"
+    ],
+    "SCL_POWER_PINS": [
+        "VPWR",
+        "VPB"
+    ],
+    "TRISTATE_CELLS": [
+        "sky130_fd_sc_hd__ebuf*"
+    ],
+    "FILL_CELLS": [
+        "sky130_fd_sc_hd__fill_2",
+        "sky130_fd_sc_hd__fill_1"
+    ],
+    "DECAP_CELLS": [
+        "sky130_fd_sc_hd__decap_3"
+    ],
+    "LIB": {
+        "*_tt_025C_1v80": [
+            "/home/hansa/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib"
+        ],
+        "*_ss_100C_1v60": [
+            "/home/hansa/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib"
+        ],
+        "*_ff_n40C_1v95": [
+            "/home/hansa/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib"
+        ]
+    },
+    "CELL_LEFS": [
+        "/home/hansa/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef",
+        "/home/hansa/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef"
+    ],
+    "CELL_GDS": [
+        "/home/hansa/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds"
+    ],
+    "CELL_VERILOG_MODELS": [
+        "/home/hansa/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/verilog/primitives.v",
+        "/home/hansa/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v"
+    ],
+    "CELL_BB_VERILOG_MODELS": [
+        "/home/hansa/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd__blackbox.v",
+        "/home/hansa/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd__blackbox_pp.v"
+    ],
+    "CELL_SPICE_MODELS": [
+        "/home/hansa/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_ef_sc_hd__decap_12.spice",
+        "/home/hansa/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_ef_sc_hd__decap_20_12.spice",
+        "/home/hansa/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_ef_sc_hd__decap_40_12.spice",
+        "/home/hansa/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_ef_sc_hd__decap_60_12.spice",
+        "/home/hansa/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_ef_sc_hd__decap_80_12.spice",
+        "/home/hansa/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_ef_sc_hd__fill_12.spice",
+        "/home/hansa/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_ef_sc_hd__fill_2.spice",
+        "/home/hansa/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_ef_sc_hd__fill_4.spice",
+        "/home/hansa/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_ef_sc_hd__fill_8.spice",
+        "/home/hansa/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice"
+    ],
+    "CELL_CDLS": [
+        "/home/hansa/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.ref/sky130_fd_sc_hd/cdl/sky130_fd_sc_hd.cdl"
+    ],
+    "SYNTH_EXCLUDED_CELL_FILE": "/home/hansa/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.tech/openlane/sky130_fd_sc_hd/no_synth.cells",
+    "PNR_EXCLUDED_CELL_FILE": "/home/hansa/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.tech/openlane/sky130_fd_sc_hd/drc_exclude.cells",
+    "OUTPUT_CAP_LOAD": 33.442,
+    "MAX_FANOUT_CONSTRAINT": 10,
+    "MAX_TRANSITION_CONSTRAINT": 0.75,
+    "MAX_CAPACITANCE_CONSTRAINT": 0.2,
+    "CLOCK_UNCERTAINTY_CONSTRAINT": 0.25,
+    "CLOCK_TRANSITION_CONSTRAINT": 0.15,
+    "TIME_DERATING_CONSTRAINT": 5,
+    "IO_DELAY_CONSTRAINT": 20,
+    "SYNTH_DRIVING_CELL": "sky130_fd_sc_hd__inv_2/Y",
+    "SYNTH_CLK_DRIVING_CELL": null,
+    "SYNTH_TIEHI_CELL": "sky130_fd_sc_hd__conb_1/HI",
+    "SYNTH_TIELO_CELL": "sky130_fd_sc_hd__conb_1/LO",
+    "SYNTH_BUFFER_CELL": "sky130_fd_sc_hd__buf_2/A/X",
+    "PLACE_SITE": "unithd",
+    "CELL_PAD_EXCLUDE": [
+        "sky130_fd_sc_hd__tap*",
+        "sky130_fd_sc_hd__decap*",
+        "sky130_ef_sc_hd__decap*",
+        "sky130_fd_sc_hd__fill*"
+    ],
+    "DIODE_CELL": "sky130_fd_sc_hd__diode_2/DIODE",
+    "WELLTAP_CELL": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+    "ENDCAP_CELL": "sky130_fd_sc_hd__decap_3",
+    "DESIGN_DIR": "/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src",
+    "PDK_ROOT": "/home/hansa/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71",
+    "DESIGN_NAME": "dsm_and_freq_divider",
+    "PDK": "sky130A",
+    "CLOCK_PERIOD": 10,
+    "CLOCK_PORT": [
+        "sclk",
+        "freq_in"
+    ],
+    "CLOCK_NET": null,
+    "VDD_NETS": null,
+    "GND_NETS": null,
+    "DIE_AREA": null,
+    "EXTRA_EXCLUDED_CELLS": null,
+    "MACROS": null,
+    "EXTRA_LEFS": null,
+    "EXTRA_VERILOG_MODELS": null,
+    "EXTRA_SPICE_MODELS": null,
+    "EXTRA_CDLS": null,
+    "EXTRA_LIBS": null,
+    "EXTRA_GDS": null,
+    "FALLBACK_SDC": "/home/hansa/projects/frac-n-pll-vco-smacd_2026/schematic/blocks/dsm/src/my_constraints.sdc",
+    "PAD_GDS": null,
+    "PAD_LEFS": null,
+    "PAD_VERILOG_MODELS": null,
+    "PAD_SPICE_MODELS": null,
+    "PAD_CDLS": null,
+    "PAD_LIBS": null,
+    "PAD_CORNER": null,
+    "PAD_FILLERS": null,
+    "PAD_SITE_NAME": null,
+    "PAD_CORNER_SITE_NAME": null,
+    "PAD_FAKE_SITES": null,
+    "PAD_BONDPAD_NAME": null,
+    "PAD_BONDPAD_WIDTH": null,
+    "PAD_BONDPAD_HEIGHT": null,
+    "PAD_BONDPAD_OFFSETS": null,
+    "PAD_PLACE_IO_TERMINALS": null,
+    "PAD_EDGE_SPACING": 0,
+    "KLAYOUT_TECH": "/home/hansa/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.tech/klayout/tech/sky130A.lyt",
+    "KLAYOUT_PROPERTIES": "/home/hansa/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.tech/klayout/tech/sky130A.lyp",
+    "KLAYOUT_DEF_LAYER_MAP": "/home/hansa/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A/libs.tech/klayout/tech/sky130A.map",
+    "KLAYOUT_EDITOR_MODE": false,
+    "KLAYOUT_GUI_USE_GDS": true,
+    "meta": {
+        "librelane_version": "3.0.0rc0",
+        "step": "KLayout.OpenGUI"
+    }
+}
