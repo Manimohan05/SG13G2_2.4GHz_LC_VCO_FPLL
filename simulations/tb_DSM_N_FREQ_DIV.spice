@@ -17,9 +17,9 @@ A6 [ freq_in ] [ net6 ] adc1
 * noconn en
 A10 [ net1 ] [ freq_out ] dac1
 .model dac1 dac_bridge out_low=0 out_high=1.2
+V2 VDD GND 1.2
 adut [ net6 net5 net4 net3 net2 ] [ net1 ] null dut
-.model dut d_cosim simulation=./../dsm_and_freq_divider.so
-V2 VDD GND PULSE(0 1.2 0 1u 0 1s 2s)
+.model dut d_cosim simulation=../simulations/dsm_and_freq_divider.so
 **** begin user architecture code
 
 
@@ -40,6 +40,6 @@ V2 VDD GND PULSE(0 1.2 0 1u 0 1s 2s)
 
 **** end user architecture code
 **.ends
-.GLOBAL GND
 .GLOBAL VDD
+.GLOBAL GND
 .end

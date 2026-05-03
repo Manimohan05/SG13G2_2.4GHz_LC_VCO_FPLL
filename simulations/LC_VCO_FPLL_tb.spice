@@ -1,0 +1,207 @@
+** sch_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/top-pll/LC_VCO_FPLL_tb.sch
+**.subckt LC_VCO_FPLL_tb CLK_OUT
+*.opin CLK_OUT
+V1 VDD GND 1.2
+Vfref CLK_IN GND 0 pulse(0 1.2 0n 1n 1n 50n 100n)
+VBGR VBGR GND 0.6
+xpll VBGR CLK_IN VDD CLK_OUT GND en rst sclk sdata LC_VCO_FPLL
+* noconn en
+* noconn rst
+* noconn sclk
+* noconn sdata
+**** begin user architecture code
+
+
+
+*****************************************************
+* PLL + DSM Frequency Divider Testbench (Optimized)
+*****************************************************
+
+.option temp=27
+.param VDD=1.2
+.option rshunt = 1.0e12
+
+* ==============================
+* Include Models & Stimuli
+* ==============================
+.include 4nH_INDUCTOR.spice
+.include ../simulations/stimuli_test.cir
+
+* ==============================
+* Simulation Options (Optimized for Speed & Stability)
+* ==============================
+* gear method improves stability for long oscillator runs
+* reltol=1e-3 prevents the simulator from bogging down on microscopic errors
+.options reltol=1e-3 abstol=1e-9 vntol=1e-6 method=gear
+
+* ==============================
+* Initial Conditions (Speed Hack)
+* ==============================
+* Uncomment the line below to pre-charge the loop filter to your expected
+* V_tune voltage (e.g., 0.6V). This skips the massive initial frequency jump.
+
+*.nodeset v(x1.vctrl)=0.606
+*.nodeset v(x1.x1.ctrl1)=0.606
+*.nodeset v(x1.x1.ctrl2)=0.606
+
+.control
+  * CRITICAL: Save ONLY essential low-frequency signals.
+  * Saving 2.4GHz nodes for 100us will crash your memory.
+  save xpll.vctrl xpll.up xpll.dn xpll.clk_fb clk_out clk_in vbgr xpll.vcp xpll.x4.outp sdata sclk en rst
+  *save all
+
+
+  * 20p defines the step to resolve the 2.4 GHz edges without forcing a maxstep.
+  tran 10p 100u
+
+  remzerovec
+  write tb_LC_VCO_FPLL_100u.raw
+.endc
+
+
+
+
+
+.lib cornerMOSlv.lib mos_tt
+.lib cornerMOShv.lib mos_tt
+.lib cornerHBT.lib hbt_typ
+.lib cornerRES.lib res_typ
+.lib cornerCAP.lib cap_typ
+.include /foss/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
+*.include /opt/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
+.global VDD GND
+
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  xschem/top-pll/LC_VCO_FPLL.sym # of pins=9
+** sym_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/top-pll/LC_VCO_FPLL.sym
+** sch_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/top-pll/LC_VCO_FPLL.sch
+.subckt LC_VCO_FPLL VBGR CLK_IN VDD CLK_OUT VSS EN RST SDATA SCLK
+*.ipin CLK_IN
+*.opin CLK_OUT
+*.ipin EN
+*.ipin SDATA
+*.ipin SCLK
+*.ipin RST
+*.iopin VDD
+*.iopin VSS
+*.iopin VBGR
+x1 CLK_IN UP VDD VSS CLK_FB DN PHASE_FREQ_DET
+x2 UP VDD VCP VBGR VSS DN VSS CHARGE_PUMP
+x3 VCTRL VCP VSS VSS LOOP_FILTER
+x4 VDD VCTRL VSS CLK_OUT VBGR LC_VCO
+adut [ net1 net2 net3 net4 net5 ] [ net6 ] null dut
+.model dut d_cosim simulation=../simulations/dsm_and_freq_divider.so
+A1 [ CLK_OUT ] [ net1 ] adc1
+.model adc1 adc_bridge in_low=0.76 in_high=0.76
+A2 [ RST ] [ net2 ] adc1
+.model adc1 adc_bridge in_low=0.76 in_high=0.76
+A3 [ SCLK ] [ net3 ] adc1
+.model adc1 adc_bridge in_low=0.76 in_high=0.76
+A4 [ SDATA ] [ net4 ] adc1
+.model adc1 adc_bridge in_low=0.76 in_high=0.76
+A5 [ EN ] [ net5 ] adc1
+.model adc1 adc_bridge in_low=0.76 in_high=0.76
+A6 [ net6 ] [ CLK_FB ] dac1
+.model dac1 dac_bridge out_low=0 out_high=1.2
+.ends
+
+
+* expanding   symbol:  PHASE_FREQ_DET.sym # of pins=6
+** sym_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/phase-freq-detector/PHASE_FREQ_DET.sym
+** sch_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/phase-freq-detector/PHASE_FREQ_DET.sch
+.subckt PHASE_FREQ_DET FREF UP VDD GND FDIV DN
+*.opin UP
+*.ipin FREF
+*.iopin VDD
+*.iopin GND
+*.opin DN
+*.ipin FDIV
+x1 net1 UP FREF VDD nRST VDD GND sg13g2_dfrbp_2
+x2 DN net2 FDIV VDD nRST VDD GND sg13g2_dfrbp_2
+x3 nRST net1 DN VDD GND sg13g2_nand2_2
+* noconn #net2
+.ends
+
+
+* expanding   symbol:  CHARGE_PUMP.sym # of pins=7
+** sym_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/charge-pump/CHARGE_PUMP.sym
+** sch_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/charge-pump/CHARGE_PUMP.sch
+.subckt CHARGE_PUMP UP VDD VCP VBGR GND DN SUB!
+*.opin VCP
+*.ipin UP
+*.ipin DN
+*.iopin GND
+*.iopin VBGR
+*.iopin VDD
+*.iopin SUB!
+XM2 Vbn Vbn net5 SUB! sg13_lv_nmos w=40.7u l=2u ng=5
+XM8 net2 GND VDD NW sg13_lv_pmos w=29.6u l=2u ng=5
+XM11 Vbp Vbp net2 NW sg13_lv_pmos w=163.6u l=2u ng=20
+XM3 Vbn Vbp net1 NW sg13_lv_pmos w=163.6u l=2u ng=20
+XM4 net1 GND VDD NW sg13_lv_pmos w=29.6u l=2u ng=5
+XM7 net3 UP VDD NW sg13_lv_pmos w=29.6u l=2u ng=5
+XM9 VCP Vbp net3 NW sg13_lv_pmos w=163.6u l=2u ng=20
+XM10 net5 VDD GND SUB! sg13_lv_nmos w=6u l=2u ng=1
+XM1 net4 DN GND SUB! sg13_lv_nmos w=6u l=2u ng=1
+XM5 VCP Vbn net4 SUB! sg13_lv_nmos w=40.7u l=2u ng=5
+XM6 Vbp VBGR GND SUB! sg13_lv_nmos w=3.9u l=2u ng=1
+XR1 VDD NW ntap1 R=1.319 w=51e-6 l=36e-6 rw=0.3e-6
+XR2 VDD NW ntap1 R=2.51 w=30.5e-6 l=15.5e-6 rw=0.3e-6
+XR3 GND SUB! ptap1 R=9.234 w=5.68e-6 l=7.26e-6 rw=0.3e-6
+XR4 GND SUB! ptap1 R=2.717 w=30e-6 l=12.54e-6 rw=0.3e-6
+XR5 GND SUB! ptap1 R=4.486 w=20e-6 l=6e-6 rw=0.3e-6
+.ends
+
+
+* expanding   symbol:  xschem/loop-filter/LOOP_FILTER.sym # of pins=4
+** sym_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/loop-filter/LOOP_FILTER.sym
+** sch_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/loop-filter/LOOP_FILTER.sch
+.subckt LOOP_FILTER OUT IN GND SUB!
+*.opin OUT
+*.iopin GND
+*.ipin IN
+*.iopin SUB!
+XC2 OUT GND cap_cmim w=18.63e-6 l=18.63e-6 m=4
+XC1 net1 GND cap_cmim w=48.34e-6 l=48.34e-6 m=16
+XR2 OUT IN SUB! rppd w=2e-6 l=407.2e-6 m=1 b=0
+XR1 net1 IN SUB! rppd w=2e-6 l=407.2e-6 m=1 b=0
+XR3 GND SUB! ptap1 R=1.462 w=46.34e-6 l=32.18e-6 rw=0.3e-6
+XR4 GND SUB! ptap1 R=1.462 w=46.34e-6 l=32.18e-6 rw=0.3e-6
+.ends
+
+
+* expanding   symbol:  xschem/lc-vco/LC_VCO.sym # of pins=5
+** sym_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/lc-vco/LC_VCO.sym
+** sch_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/lc-vco/LC_VCO.sch
+.subckt LC_VCO VDD VCTRL GND FOUT VBGR
+*.opin FOUT
+*.ipin VCTRL
+*.ipin VBGR
+*.iopin VDD
+*.iopin GND
+XM5 Vx Vgs GND GND sg13_lv_nmos w=384u l=1u ng=48
+XM4 OUTp OUTn VDD VDD sg13_lv_pmos w=36u l=0.13u ng=5
+XM3 OUTn OUTp VDD VDD sg13_lv_pmos w=36u l=0.13u ng=5
+XM2 OUTp OUTn Vx GND sg13_lv_nmos w=22u l=0.13u ng=3
+XM1 OUTn OUTp Vx GND sg13_lv_nmos w=22u l=0.13u ng=3
+XM6 Vgs Vgs GND GND sg13_lv_nmos w=64u l=1u ng=8
+XC1 OUTn OUTp GND cap_rfcmim w=21.9e-6 l=21.9e-6 wfeed=10.0e-6
+XC3 OUTp VCTRL OUTn GND sg13_hv_svaricap w=9.74u l=0.8u Nx=7
+XC2 OUTp VCTRL OUTn GND sg13_hv_svaricap w=9.74u l=0.8u Nx=7
+XM7 Vgs VBGR VDD VDD sg13_lv_pmos w=38u l=1u ng=5
+XM8 FOUT OUTp VDD VDD sg13_lv_pmos w=15u l=0.13u ng=10
+XM9 FOUT OUTp GND GND sg13_lv_nmos w=1.5u l=0.13u ng=1
+XM10 net1 OUTn VDD VDD sg13_lv_pmos w=15u l=0.13u ng=10
+XM11 net1 OUTn GND GND sg13_lv_nmos w=1.5u l=0.13u ng=1
+x2 OUTn OUTp 4nH_INDUCTOR
+.ends
+
+.GLOBAL GND
+.GLOBAL VDD
+.GLOBAL VBGR
+.GLOBAL VSS
+.end

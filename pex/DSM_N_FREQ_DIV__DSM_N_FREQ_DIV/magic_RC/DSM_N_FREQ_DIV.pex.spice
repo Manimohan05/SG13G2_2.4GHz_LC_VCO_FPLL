@@ -1,6 +1,6 @@
 * NGSPICE file created from DSM_N_FREQ_DIV.ext - technology: ihp-sg13g2
 
-.subckt DSM_N_FREQ_DIV freq_in rst sclk sdata en freq_out VPWR VGND
+.subckt DSM_N_FREQ_DIV_PEX freq_in rst sclk sdata en freq_out VPWR VGND
 X0 VGND.t1312 VPWR.t1697 VGND.t1312 VGND.t1314 sg13_lv_nmos ad=79.8f pd=0.8u as=0 ps=0 w=0.42u l=1u
 X1 VPWR.t812 a_16079_8797.t2 a_16336_8678.t0 VPWR.t260 sg13_lv_pmos ad=2.75005p pd=18.05u as=79.8f ps=0.8u w=0.42u l=0.13u
 X2 a_2232_15428.t1 _124_.S.t9 VPWR.t1008 VPWR.t630 sg13_lv_pmos ad=0.2856p pd=2.36u as=0.253p ps=1.53u w=0.84u l=0.13u

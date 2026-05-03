@@ -153,5 +153,5 @@ out_high=1.2
 C {dsm_and_freq_divider.sym} 620 -310 0 0 {name=adut
 dut=dut
 d_cosim_model= d_cosim
-model=./../dsm_and_freq_divider.so}
+model=../simulations/dsm_and_freq_divider.so}
 C {lab_wire.sym} 400 -350 0 0 {name=p5 sig_type=std_logic lab=freq_in}

@@ -318,11 +318,4 @@ C {vdd.sym} -150 -160 0 0 {name=l9 lab=VDD}
 C {vdd.sym} 220 -350 0 0 {name=l7 lab=VDD}
 C {vdd.sym} 520 -340 0 0 {name=l4 lab=VDD}
 C {vdd.sym} 570 -160 0 0 {name=l12 lab=VDD}
-C {code.sym} -210 280 0 0 {name=INDUCTOR only_toplevel=false 
-value="
-.subckt 4nH_INDUCTOR 1 2
-* LVS black-box stub only
-* Full model is available in 4nH_INDUCTOR.spice
-.ends
-"}
 C {xschem/lc-vco/4nH_INDUCTOR.sym} 200 80 0 0 {name=x2}

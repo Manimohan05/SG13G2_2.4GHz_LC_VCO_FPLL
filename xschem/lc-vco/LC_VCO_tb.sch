@@ -13,7 +13,6 @@ N -890 -240 -890 -220 {lab=VCTRL}
 N -890 -160 -890 -140 {lab=GND}
 N -960 -140 -890 -140 {lab=GND}
 N -960 -160 -960 -140 {lab=GND}
-N -800 -185 -800 -145 {lab=VDD}
 N -1190 -240 -1190 -220 {lab=VCTRL}
 N -1190 -240 -960 -240 {lab=VCTRL}
 N -1190 -140 -960 -140 {lab=GND}
@@ -27,7 +26,7 @@ N -620 -260 -370 -260 {lab=VBGR}
 N -620 -195 -620 -155 {lab=GND}
 N -400 -200 -370 -200 {lab=GND}
 N -400 -200 -400 -140 {lab=GND}
-C {vsource.sym} -800 -115 0 0 {name=V1 value="PULSE(0 1.2 0 1u 0 1s 2s)" savecurrent=false}
+N -800 -190 -800 -140 {lab=VDD}
 C {gnd.sym} -800 -45 0 0 {name=l4 lab=GND}
 C {simulator_commands.sym} -1030 60 0 0 {name=ANALYSIS only_toplevel=true 
 value="
@@ -37,21 +36,20 @@ value="
 .control
 
 * Save required signals
-save v(VCTRL) v(FOUT) v(x1.Vx) v(x1.OUTp) v(VBGR)
+save v(VCTRL) v(FOUT) v(x1.Vx) v(x1.OUTp)
 
 * Long transient simulation
-tran 10p 2u
+tran 10p 500n 100n
 
 * Save raw waveform
-write LC_VCO_standalone_tran.raw
+write tb_LC_VCO_tran.raw
 
 * Plot transient waveform
 let vout = v(FOUT)
-plot v(VCTRL) v(x1.Vx) v(FOUT) v(x1.OUTp) v(VBGR)
-plot v(VBGR)
+plot v(VCTRL) v(x1.Vx) v(FOUT) v(x1.OUTp)
 
 * Plot steady-state waveform
-plot v(VCTRL) v(x1.Vx) v(OUT) v(x1.OUTp) v(VBGR) xlimit 4000n 4005n
+plot v(VCTRL) v(x1.Vx) v(FOUT) v(x1.OUTp) xlimit 400n 405n
 
 * FFT analysis
 setplot tran1
@@ -77,8 +75,6 @@ wrdata vco_waveform_standalone.txt power_out_db
 
 .endc
 "
-}
-C {vsource.sym} -960 -190 0 1 {name=Vup value="PULSE(0.4 0.8 1u 90n 1n 1s 2s)" savecurrent=false
 }
 C {gnd.sym} -960 -120 0 0 {name=l6 lab=GND}
 C {vsource.sym} -890 -190 0 0 {name=V2 value=1.1 savecurrent=false
@@ -123,3 +119,6 @@ C {gnd.sym} -620 -155 0 0 {name=l5 lab=GND}
 C {vsource.sym} -620 -220 0 0 {name=VBGR value=0.6 savecurrent=false}
 C {xschem/lc-vco/LC_VCO.sym} -260 -230 0 0 {name=x1}
 C {lab_pin.sym} -490 -260 2 1 {name=p1 sig_type=std_logic lab=VBGR}
+C {vsource.sym} -800 -110 0 0 {name=V1 value=1.2 savecurrent=false}
+C {vsource.sym} -960 -190 0 1 {name=Vup value="PULSE(0.4 0.8 10n 90n 1n 1s 2s)" savecurrent=false
+}

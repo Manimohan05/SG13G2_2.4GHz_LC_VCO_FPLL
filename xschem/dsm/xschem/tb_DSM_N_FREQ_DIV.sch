@@ -54,30 +54,29 @@ en
 rst
 freq_out
 freq_in"
-rawfile=$netlist_dir/test.raw
+rawfile=$netlist_dir/tb_DSM_N_FREQ_DIV.raw
 autoload=1}
-N 650 -180 700 -180 {lab=rst}
-N 1280 -160 1330 -160 {lab=sclk}
-N 1280 -180 1330 -180 {lab=sdata}
-N 1280 -200 1330 -200 {lab=en}
+N 400 -270 450 -270 {lab=rst}
+N 1030 -250 1080 -250 {lab=sclk}
+N 1030 -270 1080 -270 {lab=sdata}
+N 1030 -290 1080 -290 {lab=en}
 N 320 -200 320 -190 {lab=GND}
 N 570 -100 610 -100 {lab=en}
 N 570 -120 610 -120 {lab=sdata}
 N 570 -140 610 -140 {lab=sclk}
 N 570 -160 610 -160 {lab=rst}
 N 320 -290 320 -260 {lab=freq_in}
-N 650 -260 700 -260 {lab=freq_in}
-N 1290 -260 1330 -260 {lab=freq_out}
-N 1190 -260 1230 -260 {lab=#net1}
-N 1190 -200 1220 -200 {lab=#net2}
-N 1190 -180 1220 -180 {lab=#net3}
-N 1190 -160 1220 -160 {lab=#net4}
-N 760 -180 790 -180 {lab=#net5}
-N 760 -260 790 -260 {lab=#net6}
-N 250 -195 250 -155 {lab=GND}
-N 250 -295 250 -255 {lab=VDD}
-N 850 -355 850 -315 {lab=VDD}
-N 850 -115 850 -75 {lab=GND}
+N 400 -350 450 -350 {lab=freq_in}
+N 1040 -350 1080 -350 {lab=freq_out}
+N 940 -350 980 -350 {lab=#net1}
+N 940 -290 970 -290 {lab=#net2}
+N 940 -270 970 -270 {lab=#net3}
+N 940 -250 970 -250 {lab=#net4}
+N 510 -270 540 -270 {lab=#net5}
+N 510 -350 540 -350 {lab=#net6}
+N 60 -280 60 -260 {lab=VDD}
+N 60 -200 60 -180 {lab=GND}
+N 600 -200 600 -190 {lab=GND}
 C {simulator_commands.sym} 110 -290 0 0 {name=COMMANDS
 verilog_ignore=1
 vhdl_ignore=1
@@ -90,7 +89,7 @@ value="
 .control  
   tran 0.5n 1m
   remzerovec
-  write tb_DSM_N_FREQ_DIV.raw
+  write tb_DSM_N_FREQ_DIV.raw 
 .endc
 
 * to generate following file copy stimuli.test
@@ -103,33 +102,32 @@ descr="load waves"
 tclcommand="xschem raw_read $netlist_dir/tb_DSM_N_FREQ_DIV.raw tran"
 }
 C {vsource.sym} 320 -230 0 0 {name=V1 value="PULSE(0 1.8 0 10ns 10ns 50ns 100ns)" savecurrent=false}
-C {gnd.sym} 320 -190 0 0 {name=l1 lab=GND}
 C {lab_wire.sym} 320 -290 0 0 {name=p10 sig_type=std_logic lab=freq_in}
-C {adc_bridge1.sym} 1250 -200 0 1 {name=A2
+C {adc_bridge1.sym} 1000 -290 0 1 {name=A2
 adc=adc1
 adc_bridge_model=adc_bridge
 in_low=0.4
 in_high=1.2
 }
-C {adc_bridge1.sym} 1250 -180 0 1 {name=A3
+C {adc_bridge1.sym} 1000 -270 0 1 {name=A3
 adc=adc1
 adc_bridge_model=adc_bridge
 in_low=0.4
 in_high=1.2
 }
-C {adc_bridge1.sym} 1250 -160 0 1 {name=A4
+C {adc_bridge1.sym} 1000 -250 0 1 {name=A4
 adc=adc1
 adc_bridge_model=adc_bridge
 in_low=0.4
 in_high=1.2
 }
-C {adc_bridge1.sym} 730 -180 0 0 {name=A5
+C {adc_bridge1.sym} 480 -270 0 0 {name=A5
 adc=adc1
 adc_bridge_model=adc_bridge
 in_low=0.4
 in_high=1.2
 }
-C {adc_bridge1.sym} 730 -260 0 0 {name=A6
+C {adc_bridge1.sym} 480 -350 0 0 {name=A6
 adc=adc1
 adc_bridge_model=adc_bridge
 in_low=0.4
@@ -143,24 +141,25 @@ C {noconn.sym} 610 -160 2 0 {name=l2}
 C {noconn.sym} 610 -140 2 0 {name=l3}
 C {noconn.sym} 610 -120 2 0 {name=l4}
 C {noconn.sym} 610 -100 2 0 {name=l5}
-C {lab_pin.sym} 1330 -200 0 1 {name=p1 sig_type=std_logic lab=en}
-C {lab_pin.sym} 1330 -180 0 1 {name=p2 sig_type=std_logic lab=sdata}
-C {lab_pin.sym} 1330 -160 0 1 {name=p3 sig_type=std_logic lab=sclk}
-C {lab_pin.sym} 650 -180 0 0 {name=p4 sig_type=std_logic lab=rst}
-C {lab_wire.sym} 1330 -260 0 1 {name=p13 sig_type=std_logic lab=freq_out}
-C {dac_bridge1.sym} 1260 -260 0 0 {name=A10
+C {lab_pin.sym} 1080 -290 0 1 {name=p1 sig_type=std_logic lab=en}
+C {lab_pin.sym} 1080 -270 0 1 {name=p2 sig_type=std_logic lab=sdata}
+C {lab_pin.sym} 1080 -250 0 1 {name=p3 sig_type=std_logic lab=sclk}
+C {lab_pin.sym} 400 -270 0 0 {name=p4 sig_type=std_logic lab=rst}
+C {lab_wire.sym} 1080 -350 0 1 {name=p13 sig_type=std_logic lab=freq_out}
+C {dac_bridge1.sym} 1010 -350 0 0 {name=A10
 dac=dac1
 dac_bridge_model=dac_bridge
 out_low=0
 out_high=1.2
 }
-C {lab_wire.sym} 650 -260 0 0 {name=p5 sig_type=std_logic lab=freq_in}
-C {xschem/dsm/xschem/DSM_N_FREQ_DIV.sym} 990 -220 0 1 {name=adut
+C {lab_wire.sym} 400 -350 0 0 {name=p5 sig_type=std_logic lab=freq_in}
+C {vsource.sym} 60 -230 0 0 {name=V2 value=1.2 savecurrent=false}
+C {vdd.sym} 60 -280 0 0 {name=l6 lab=VDD}
+C {gnd.sym} 60 -180 0 0 {name=l8 lab=GND}
+C {vdd.sym} 600 -430 0 0 {name=l7 lab=VDD}
+C {gnd.sym} 320 -190 0 0 {name=l9 lab=GND}
+C {gnd.sym} 600 -190 0 0 {name=l1 lab=GND}
+C {xschem/dsm/xschem/DSM_N_FREQ_DIV.sym} 740 -310 0 1 {name=adut
 dut=dut
 d_cosim_model= d_cosim
-model=./../dsm_and_freq_divider.so}
-C {vsource.sym} 250 -225 0 0 {name=V2 value="PULSE(0 1.2 0 1u 0 1s 2s)" savecurrent=false}
-C {gnd.sym} 250 -155 0 0 {name=l6 lab=GND}
-C {vdd.sym} 250 -295 0 0 {name=l7 lab=VDD}
-C {vdd.sym} 850 -355 0 0 {name=l8 lab=VDD}
-C {gnd.sym} 850 -75 0 0 {name=l9 lab=GND}
+model=../simulations/dsm_and_freq_divider.so}

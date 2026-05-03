@@ -2,10 +2,10 @@
 **.subckt LC_VCO_tb FOUT VCTRL
 *.opin FOUT
 *.ipin VCTRL
-V1 VDD GND PULSE(0 1.2 0 1u 0 1s 2s)
-Vup VCTRL GND PULSE(0.4 0.8 1u 90n 1n 1s 2s)
 VBGR VBGR GND 0.6
 x1 VDD VCTRL GND FOUT VBGR LC_VCO
+V1 VDD GND 1.2
+Vup VCTRL GND PULSE(0.4 0.8 10n 90n 1n 1s 2s)
 **** begin user architecture code
 
 
@@ -16,21 +16,20 @@ x1 VDD VCTRL GND FOUT VBGR LC_VCO
 .control
 
 * Save required signals
-save v(VCTRL) v(FOUT) v(x1.Vx) v(x1.OUTp) v(VBGR)
+save v(VCTRL) v(FOUT) v(x1.Vx) v(x1.OUTp)
 
 * Long transient simulation
-tran 10p 2u
+tran 10p 500n 100n
 
 * Save raw waveform
-write LC_VCO_standalone_tran.raw
+write tb_LC_VCO_tran.raw
 
 * Plot transient waveform
 let vout = v(FOUT)
-plot v(VCTRL) v(x1.Vx) v(FOUT) v(x1.OUTp) v(VBGR)
-plot v(VBGR)
+plot v(VCTRL) v(x1.Vx) v(FOUT) v(x1.OUTp)
 
 * Plot steady-state waveform
-plot v(VCTRL) v(x1.Vx) v(OUT) v(x1.OUTp) v(VBGR) xlimit 4000n 4005n
+plot v(VCTRL) v(x1.Vx) v(FOUT) v(x1.OUTp) xlimit 400n 405n
 
 * FFT analysis
 setplot tran1
@@ -103,16 +102,6 @@ XM8 FOUT OUTp VDD VDD sg13_lv_pmos w=15u l=0.13u ng=10
 XM9 FOUT OUTp GND GND sg13_lv_nmos w=1.5u l=0.13u ng=1
 XM10 net1 OUTn VDD VDD sg13_lv_pmos w=15u l=0.13u ng=10
 XM11 net1 OUTn GND GND sg13_lv_nmos w=1.5u l=0.13u ng=1
-**** begin user architecture code
-
-
-.subckt 4nH_INDUCTOR 1 2
-* LVS black-box stub only
-* Full model is available in 4nH_INDUCTOR.spice
-.ends
-
-
-**** end user architecture code
 x2 OUTn OUTp 4nH_INDUCTOR
 .ends
 
