@@ -1,14 +1,14 @@
-** sch_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/top-pll/LC_VCO_FPLL_tb.sch
+** sch_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/top-pll/LC_VCO_FPLL_tb.sch
 **.subckt LC_VCO_FPLL_tb CLK_OUT
 *.opin CLK_OUT
 V1 VDD GND 1.2
 Vfref CLK_IN GND 0 pulse(0 1.2 0n 1n 1n 50n 100n)
 VBGR VBGR GND 0.6
-xpll VBGR CLK_IN VDD CLK_OUT GND en rst sclk sdata LC_VCO_FPLL
+xpll VBGR CLK_IN VDD CLK_OUT GND en rst sdata sclk LC_VCO_FPLL
 * noconn en
 * noconn rst
-* noconn sclk
 * noconn sdata
+* noconn sclk
 **** begin user architecture code
 
 
@@ -34,28 +34,16 @@ xpll VBGR CLK_IN VDD CLK_OUT GND en rst sclk sdata LC_VCO_FPLL
 * reltol=1e-3 prevents the simulator from bogging down on microscopic errors
 .options reltol=1e-3 abstol=1e-9 vntol=1e-6 method=gear
 
-* ==============================
-* Initial Conditions (Speed Hack)
-* ==============================
-* Uncomment the line below to pre-charge the loop filter to your expected
-* V_tune voltage (e.g., 0.6V). This skips the massive initial frequency jump.
-
-*.nodeset v(x1.vctrl)=0.606
-*.nodeset v(x1.x1.ctrl1)=0.606
-*.nodeset v(x1.x1.ctrl2)=0.606
-
 .control
   * CRITICAL: Save ONLY essential low-frequency signals.
-  * Saving 2.4GHz nodes for 100us will crash your memory.
   save xpll.vctrl xpll.up xpll.dn xpll.clk_fb clk_out clk_in vbgr xpll.vcp xpll.x4.outp sdata sclk en rst
-  *save all
 
 
   * 20p defines the step to resolve the 2.4 GHz edges without forcing a maxstep.
-  tran 10p 100u
+  tran 10p 40u
 
   remzerovec
-  write tb_LC_VCO_FPLL_100u.raw
+  write tb_LC_VCO_FPLL_40u.raw
 .endc
 
 
@@ -77,8 +65,8 @@ xpll VBGR CLK_IN VDD CLK_OUT GND en rst sclk sdata LC_VCO_FPLL
 **.ends
 
 * expanding   symbol:  xschem/top-pll/LC_VCO_FPLL.sym # of pins=9
-** sym_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/top-pll/LC_VCO_FPLL.sym
-** sch_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/top-pll/LC_VCO_FPLL.sch
+** sym_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/top-pll/LC_VCO_FPLL.sym
+** sch_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/top-pll/LC_VCO_FPLL.sch
 .subckt LC_VCO_FPLL VBGR CLK_IN VDD CLK_OUT VSS EN RST SDATA SCLK
 *.ipin CLK_IN
 *.opin CLK_OUT
@@ -111,8 +99,8 @@ A6 [ net6 ] [ CLK_FB ] dac1
 
 
 * expanding   symbol:  PHASE_FREQ_DET.sym # of pins=6
-** sym_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/phase-freq-detector/PHASE_FREQ_DET.sym
-** sch_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/phase-freq-detector/PHASE_FREQ_DET.sch
+** sym_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/phase-freq-detector/PHASE_FREQ_DET.sym
+** sch_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/phase-freq-detector/PHASE_FREQ_DET.sch
 .subckt PHASE_FREQ_DET FREF UP VDD GND FDIV DN
 *.opin UP
 *.ipin FREF
@@ -128,8 +116,8 @@ x3 nRST net1 DN VDD GND sg13g2_nand2_2
 
 
 * expanding   symbol:  CHARGE_PUMP.sym # of pins=7
-** sym_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/charge-pump/CHARGE_PUMP.sym
-** sch_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/charge-pump/CHARGE_PUMP.sch
+** sym_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/charge-pump/CHARGE_PUMP.sym
+** sch_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/charge-pump/CHARGE_PUMP.sch
 .subckt CHARGE_PUMP UP VDD VCP VBGR GND DN SUB!
 *.opin VCP
 *.ipin UP
@@ -158,8 +146,8 @@ XR5 GND SUB! ptap1 R=4.486 w=20e-6 l=6e-6 rw=0.3e-6
 
 
 * expanding   symbol:  xschem/loop-filter/LOOP_FILTER.sym # of pins=4
-** sym_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/loop-filter/LOOP_FILTER.sym
-** sch_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/loop-filter/LOOP_FILTER.sch
+** sym_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/loop-filter/LOOP_FILTER.sym
+** sch_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/loop-filter/LOOP_FILTER.sch
 .subckt LOOP_FILTER OUT IN GND SUB!
 *.opin OUT
 *.iopin GND
@@ -175,8 +163,8 @@ XR4 GND SUB! ptap1 R=1.462 w=46.34e-6 l=32.18e-6 rw=0.3e-6
 
 
 * expanding   symbol:  xschem/lc-vco/LC_VCO.sym # of pins=5
-** sym_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/lc-vco/LC_VCO.sym
-** sch_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/lc-vco/LC_VCO.sch
+** sym_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/lc-vco/LC_VCO.sym
+** sch_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/lc-vco/LC_VCO.sch
 .subckt LC_VCO VDD VCTRL GND FOUT VBGR
 *.opin FOUT
 *.ipin VCTRL

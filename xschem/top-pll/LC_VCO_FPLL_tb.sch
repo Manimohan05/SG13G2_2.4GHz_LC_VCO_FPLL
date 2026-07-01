@@ -54,13 +54,12 @@ node="clk_out
 clk_in"
 rawfile=$netlist_dir/tb_LC_VCO_FPLL_100u.raw}
 B 2 800 -1200 1600 -800 {flags=graph
-y1=0.7
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
-x2=40e-06
+x2=400e-06
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -77,8 +76,9 @@ node=xpll.vctrl
 autoload=1
 rawfile=$netlist_dir/tb_LC_VCO_FPLL_100u.raw
 x1=22e-06
-y2=0.83
-vlegend=0}
+vlegend=0
+y2=1.
+y1=0}
 B 2 1600 -1200 2400 -800 {flags=graph
 y1=-0.00011
 y2=1.3
@@ -190,7 +190,7 @@ C {vsource.sym} 390 -610 0 1 {name=Vfref value="0 pulse(0 1.2 0n 1n 1n 50n 100n)
 C {gnd.sym} 390 -540 0 0 {name=l10 lab=GND}
 C {launcher.sym} 1360 -660 0 0 {name=h1
 descr="load waves" 
-tclcommand="xschem raw_read $netlist_dir/simulation/tb_LC_VCO_FPLL_100u.raw tran
+tclcommand="xschem raw_read $netlist_dir/simulation/tb_LC_VCO_FPLL_40u.raw tran
 "
 }
 C {launcher.sym} 1360 -620 0 0 {name=h4
@@ -236,10 +236,10 @@ value="
 
 
   * 20p defines the step to resolve the 2.4 GHz edges without forcing a maxstep.
-  tran 10p 100u
+  tran 10p 40u
   
   remzerovec
-  write tb_LC_VCO_FPLL_100u.raw 
+  write tb_LC_VCO_FPLL_40u.raw 
 .endc
 "}
 C {simulator_commands.sym} 990 -660 0 0 {
