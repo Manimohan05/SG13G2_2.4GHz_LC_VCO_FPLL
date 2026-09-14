@@ -1,23 +1,23 @@
-* Extracted by KLayout with SG13G2 LVS runset on : 18/04/2026 14:45
+* Extracted by KLayout with SG13G2 LVS runset on : 10/09/2026 12:03
 
-.SUBCKT PFD_CP_LF VCTRL CLK_IN CLK_FB VSS VDD VBGR
+.SUBCKT PFD_CP_LF CLK_FB CLK_IN VBGR VCTRL VDD VSS
 X$1 VSS VSS VCTRL \$39 LOOP_FILTER
 X$2 VSS VDD \$7 \$8 CLK_FB CLK_IN PHASE_FREQ_DET
 X$5 VSS VDD VSS \$7 \$39 \$8 VBGR CHARGE_PUMP
 .ENDS PFD_CP_LF
 
 .SUBCKT CHARGE_PUMP \$1 VDD VSS DN VCP UP VBGR
-R$1 VDD \$457 ntap1 A=79.08p P=527.2u
-R$3 VSS \$1 ptap1 A=47.808p P=318.72u
-M$4 VSS VBGR \$107 \$1 sg13_lv_nmos L=2u W=3.9u AS=1.326p AD=1.326p PS=8.48u
+R$1 VSS \$1 ptap1 A=47.808p P=318.72u
+M$2 VSS VBGR \$107 \$1 sg13_lv_nmos L=2u W=3.9u AS=1.326p AD=1.326p PS=8.48u
 + PD=8.48u rfmode=0
-M$5 VDD VSS \$135 \$457 sg13_lv_pmos L=2u W=29.6u AS=6.512p AD=6.512p PS=37.72u
-+ PD=37.72u rfmode=0
-M$10 VDD VSS \$133 \$457 sg13_lv_pmos L=2u W=29.6u AS=6.512p AD=6.512p
+M$3 VDD VSS \$132 \$I361 sg13_lv_pmos L=2u W=29.6u AS=6.512p AD=6.512p
 + PS=37.72u PD=37.72u rfmode=0
-M$15 VDD UP \$137 \$457 sg13_lv_pmos L=2u W=29.6u AS=6.512p AD=6.512p PS=37.72u
+R$8 VDD \$I361 ntap1 A=79.08p P=527.2u
+M$9 VDD UP \$134 \$I361 sg13_lv_pmos L=2u W=29.6u AS=6.512p AD=6.512p PS=37.72u
 + PD=37.72u rfmode=0
-M$22 \$43 \$107 \$135 \$457 sg13_lv_pmos L=2u W=163.6u AS=32.311p AD=32.311p
+M$14 VDD VSS \$130 \$I361 sg13_lv_pmos L=2u W=29.6u AS=6.512p AD=6.512p
++ PS=37.72u PD=37.72u rfmode=0
+M$22 \$43 \$107 \$132 \$I361 sg13_lv_pmos L=2u W=163.6u AS=32.311p AD=32.311p
 + PS=179.68u PD=179.68u rfmode=0
 M$42 \$44 VDD VSS \$1 sg13_lv_nmos L=2u W=6u AS=2.04p AD=2.04p PS=12.68u
 + PD=12.68u rfmode=0
@@ -27,9 +27,9 @@ M$44 \$47 \$43 VCP \$1 sg13_lv_nmos L=2u W=40.7u AS=8.954p AD=8.954p PS=51.04u
 + PD=51.04u rfmode=0
 M$49 \$44 \$43 \$43 \$1 sg13_lv_nmos L=2u W=40.7u AS=8.954p AD=8.954p PS=51.04u
 + PD=51.04u rfmode=0
-M$54 VCP \$107 \$137 \$457 sg13_lv_pmos L=2u W=163.6u AS=32.311p AD=32.311p
+M$54 VCP \$107 \$134 \$I361 sg13_lv_pmos L=2u W=163.6u AS=32.311p AD=32.311p
 + PS=179.68u PD=179.68u rfmode=0
-M$74 \$107 \$107 \$133 \$457 sg13_lv_pmos L=2u W=163.6u AS=32.311p AD=32.311p
+M$74 \$107 \$107 \$130 \$I361 sg13_lv_pmos L=2u W=163.6u AS=32.311p AD=32.311p
 + PS=179.68u PD=179.68u rfmode=0
 .ENDS CHARGE_PUMP
 

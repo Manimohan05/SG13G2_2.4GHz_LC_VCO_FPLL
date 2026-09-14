@@ -93,7 +93,7 @@
   </category>
   <category>
    <name>Act.b</name>
-   <description>5.5. Act.b : Min. Activ space or notch: 0.21 µm.</description>
+   <description>5.5. Act.b : Min. Activ (drawing + filler) space or notch: 0.21 µm.</description>
    <categories>
    </categories>
   </category>
@@ -141,7 +141,7 @@
   </category>
   <category>
    <name>Gat.b</name>
-   <description>5.8. Gat.b :Min. GatPoly space or notch: 0.18 µm.</description>
+   <description>5.8. Gat.b : Min. GatPoly (drawing + filler) space or notch: 0.18 µm.</description>
    <categories>
    </categories>
   </category>
@@ -248,6 +248,18 @@
    </categories>
   </category>
   <category>
+   <name>CntB.a</name>
+   <description>5.15. CntB.a Min. and max. ContBar width is 0.16 um</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>CntB.a1</name>
+   <description>5.15. CntB.a1 Min. ContBar length is 0.34 um</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
    <name>CntB.b1</name>
    <description>5.15. CntB.b1 Min. ContBar space with common run &gt; 5.0 µm is 0.36 um</description>
    <categories>
@@ -315,7 +327,7 @@
   </category>
   <category>
    <name>M1.b</name>
-   <description>5.16. M1.b: Min. Metal1 space or notch: 0.18μm.</description>
+   <description>5.16. M1.b: Min. Metal1 (drawing + filler) space or notch: 0.18 μm.</description>
    <categories>
    </categories>
   </category>
@@ -351,7 +363,7 @@
   </category>
   <category>
    <name>M2.b</name>
-   <description>5.17. M2.b: Min. Metal2 space or notch: 0.21 μm.</description>
+   <description>5.17. M2.b: Min. Metal2 (drawing + filler) space or notch: 0.21 μm.</description>
    <categories>
    </categories>
   </category>
@@ -387,7 +399,7 @@
   </category>
   <category>
    <name>M3.b</name>
-   <description>5.17. M3.b: Min. Metal3 space or notch: 0.21 μm.</description>
+   <description>5.17. M3.b: Min. Metal3 (drawing + filler) space or notch: 0.21 μm.</description>
    <categories>
    </categories>
   </category>
@@ -423,7 +435,7 @@
   </category>
   <category>
    <name>M4.b</name>
-   <description>5.17. M4.b: Min. Metal4 space or notch: 0.21 μm.</description>
+   <description>5.17. M4.b: Min. Metal4 (drawing + filler) space or notch: 0.21 μm.</description>
    <categories>
    </categories>
   </category>
@@ -459,7 +471,7 @@
   </category>
   <category>
    <name>M5.b</name>
-   <description>5.17. M5.b: Min. Metal5 space or notch: 0.21 μm.</description>
+   <description>5.17. M5.b: Min. Metal5 (drawing + filler) space or notch: 0.21 μm.</description>
    <categories>
    </categories>
   </category>
@@ -651,7 +663,7 @@
   </category>
   <category>
    <name>TM1.b</name>
-   <description>5.22. TM1.b: Min. TopMetal1 space or notch: 1.64 μm.</description>
+   <description>5.22. TM1.b: Min. TopMetal1 (drawing + filler) space or notch: 1.64 μm.</description>
    <categories>
    </categories>
   </category>
@@ -699,7 +711,7 @@
   </category>
   <category>
    <name>TM2.b</name>
-   <description>5.25. TM2.b: Min. TopMetal2 space or notch: 2.0 μm.</description>
+   <description>5.25. TM2.b: Min. TopMetal2 (drawing + filler) space or notch: 2.0 μm.</description>
    <categories>
    </categories>
   </category>
@@ -1071,12 +1083,6 @@
    </categories>
   </category>
   <category>
-   <name>activ_pin_Offgrid</name>
-   <description>3.1 activ_pin_Offgrid: activ_pin layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
    <name>activ_mask_Offgrid</name>
    <description>3.1 activ_mask_Offgrid: activ_mask layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
    <categories>
@@ -1089,12 +1095,6 @@
    </categories>
   </category>
   <category>
-   <name>activ_nofill_Offgrid</name>
-   <description>3.1 activ_nofill_Offgrid: activ_nofill layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
    <name>activ_opc_Offgrid</name>
    <description>3.1 activ_opc_Offgrid: activ_opc layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
    <categories>
@@ -1103,12 +1103,6 @@
   <category>
    <name>activ_iopc_Offgrid</name>
    <description>3.1 activ_iopc_Offgrid: activ_iopc layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>activ_noqrc_Offgrid</name>
-   <description>3.1 activ_noqrc_Offgrid: activ_noqrc layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
    <categories>
    </categories>
   </category>
@@ -1137,20 +1131,8 @@
    </categories>
   </category>
   <category>
-   <name>gatpoly_pin_Offgrid</name>
-   <description>3.1 gatpoly_pin_Offgrid: gatpoly_pin layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
    <name>gatpoly_filler_Offgrid</name>
    <description>3.1 gatpoly_filler_Offgrid: gatpoly_filler layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>gatpoly_nofill_Offgrid</name>
-   <description>3.1 gatpoly_nofill_Offgrid: gatpoly_nofill layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
    <categories>
    </categories>
   </category>
@@ -1203,12 +1185,6 @@
    </categories>
   </category>
   <category>
-   <name>metal1_pin_Offgrid</name>
-   <description>3.1 metal1_pin_Offgrid: metal1_pin layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
    <name>metal1_mask_Offgrid</name>
    <description>3.1 metal1_mask_Offgrid: metal1_mask layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
    <categories>
@@ -1217,12 +1193,6 @@
   <category>
    <name>metal1_filler_Offgrid</name>
    <description>3.1 metal1_filler_Offgrid: metal1_filler layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>metal1_nofill_Offgrid</name>
-   <description>3.1 metal1_nofill_Offgrid: metal1_nofill layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
    <categories>
    </categories>
   </category>
@@ -1269,12 +1239,6 @@
    </categories>
   </category>
   <category>
-   <name>passiv_pin_Offgrid</name>
-   <description>3.1 passiv_pin_Offgrid: passiv_pin layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
    <name>passiv_pillar_Offgrid</name>
    <description>3.1 passiv_pillar_Offgrid: passiv_pillar layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
    <categories>
@@ -1299,12 +1263,6 @@
    </categories>
   </category>
   <category>
-   <name>metal2_pin_Offgrid</name>
-   <description>3.1 metal2_pin_Offgrid: metal2_pin layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
    <name>metal2_mask_Offgrid</name>
    <description>3.1 metal2_mask_Offgrid: metal2_mask layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
    <categories>
@@ -1313,12 +1271,6 @@
   <category>
    <name>metal2_filler_Offgrid</name>
    <description>3.1 metal2_filler_Offgrid: metal2_filler layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>metal2_nofill_Offgrid</name>
-   <description>3.1 metal2_nofill_Offgrid: metal2_nofill layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
    <categories>
    </categories>
   </category>
@@ -1365,12 +1317,6 @@
    </categories>
   </category>
   <category>
-   <name>baspoly_pin_Offgrid</name>
-   <description>3.1 baspoly_pin_Offgrid: baspoly_pin layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
    <name>psd_drw_Offgrid</name>
    <description>3.1 psd_drw_Offgrid: psd_drw layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
    <categories>
@@ -1395,12 +1341,6 @@
    </categories>
   </category>
   <category>
-   <name>backmetal1_pin_Offgrid</name>
-   <description>3.1 backmetal1_pin_Offgrid: backmetal1_pin layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
    <name>backmetal1_mask_Offgrid</name>
    <description>3.1 backmetal1_mask_Offgrid: backmetal1_mask layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
    <categories>
@@ -1409,12 +1349,6 @@
   <category>
    <name>backmetal1_filler_Offgrid</name>
    <description>3.1 backmetal1_filler_Offgrid: backmetal1_filler layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>backmetal1_nofill_Offgrid</name>
-   <description>3.1 backmetal1_nofill_Offgrid: backmetal1_nofill layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
    <categories>
    </categories>
   </category>
@@ -1479,12 +1413,6 @@
    </categories>
   </category>
   <category>
-   <name>metal3_pin_Offgrid</name>
-   <description>3.1 metal3_pin_Offgrid: metal3_pin layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
    <name>metal3_mask_Offgrid</name>
    <description>3.1 metal3_mask_Offgrid: metal3_mask layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
    <categories>
@@ -1493,12 +1421,6 @@
   <category>
    <name>metal3_filler_Offgrid</name>
    <description>3.1 metal3_filler_Offgrid: metal3_filler layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>metal3_nofill_Offgrid</name>
-   <description>3.1 metal3_nofill_Offgrid: metal3_nofill layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
    <categories>
    </categories>
   </category>
@@ -1545,20 +1467,8 @@
    </categories>
   </category>
   <category>
-   <name>nwell_pin_Offgrid</name>
-   <description>3.1 nwell_pin_Offgrid: nwell_pin layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
    <name>nbulay_drw_Offgrid</name>
    <description>3.1 nbulay_drw_Offgrid: nbulay_drw layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>nbulay_pin_Offgrid</name>
-   <description>3.1 nbulay_pin_Offgrid: nbulay_pin layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
    <categories>
    </categories>
   </category>
@@ -1571,12 +1481,6 @@
   <category>
    <name>pwell_drw_Offgrid</name>
    <description>3.1 pwell_drw_Offgrid: pwell_drw layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>pwell_pin_Offgrid</name>
-   <description>3.1 pwell_pin_Offgrid: pwell_pin layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
    <categories>
    </categories>
   </category>
@@ -1641,12 +1545,6 @@
    </categories>
   </category>
   <category>
-   <name>metal4_pin_Offgrid</name>
-   <description>3.1 metal4_pin_Offgrid: metal4_pin layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
    <name>metal4_mask_Offgrid</name>
    <description>3.1 metal4_mask_Offgrid: metal4_mask layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
    <categories>
@@ -1655,12 +1553,6 @@
   <category>
    <name>metal4_filler_Offgrid</name>
    <description>3.1 metal4_filler_Offgrid: metal4_filler layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>metal4_nofill_Offgrid</name>
-   <description>3.1 metal4_nofill_Offgrid: metal4_nofill layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
    <categories>
    </categories>
   </category>
@@ -1713,12 +1605,6 @@
    </categories>
   </category>
   <category>
-   <name>metal5_pin_Offgrid</name>
-   <description>3.1 metal5_pin_Offgrid: metal5_pin layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
    <name>metal5_mask_Offgrid</name>
    <description>3.1 metal5_mask_Offgrid: metal5_mask layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
    <categories>
@@ -1727,12 +1613,6 @@
   <category>
    <name>metal5_filler_Offgrid</name>
    <description>3.1 metal5_filler_Offgrid: metal5_filler layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>metal5_nofill_Offgrid</name>
-   <description>3.1 metal5_nofill_Offgrid: metal5_nofill layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
    <categories>
    </categories>
   </category>
@@ -1785,20 +1665,8 @@
    </categories>
   </category>
   <category>
-   <name>exchange0_pin_Offgrid</name>
-   <description>3.1 exchange0_pin_Offgrid: exchange0_pin layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
    <name>exchange1_drw_Offgrid</name>
    <description>3.1 exchange1_drw_Offgrid: exchange1_drw layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>exchange1_pin_Offgrid</name>
-   <description>3.1 exchange1_pin_Offgrid: exchange1_pin layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
    <categories>
    </categories>
   </category>
@@ -1809,32 +1677,14 @@
    </categories>
   </category>
   <category>
-   <name>exchange2_pin_Offgrid</name>
-   <description>3.1 exchange2_pin_Offgrid: exchange2_pin layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
    <name>exchange3_drw_Offgrid</name>
    <description>3.1 exchange3_drw_Offgrid: exchange3_drw layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
    <categories>
    </categories>
   </category>
   <category>
-   <name>exchange3_pin_Offgrid</name>
-   <description>3.1 exchange3_pin_Offgrid: exchange3_pin layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
    <name>exchange4_drw_Offgrid</name>
    <description>3.1 exchange4_drw_Offgrid: exchange4_drw layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>exchange4_pin_Offgrid</name>
-   <description>3.1 exchange4_pin_Offgrid: exchange4_pin layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
    <categories>
    </categories>
   </category>
@@ -1953,12 +1803,6 @@
    </categories>
   </category>
   <category>
-   <name>topmetal1_pin_Offgrid</name>
-   <description>3.1 topmetal1_pin_Offgrid: topmetal1_pin layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
    <name>topmetal1_mask_Offgrid</name>
    <description>3.1 topmetal1_mask_Offgrid: topmetal1_mask layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
    <categories>
@@ -1967,12 +1811,6 @@
   <category>
    <name>topmetal1_filler_Offgrid</name>
    <description>3.1 topmetal1_filler_Offgrid: topmetal1_filler layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>topmetal1_nofill_Offgrid</name>
-   <description>3.1 topmetal1_nofill_Offgrid: topmetal1_nofill layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
    <categories>
    </categories>
   </category>
@@ -2019,12 +1857,6 @@
    </categories>
   </category>
   <category>
-   <name>polyres_pin_Offgrid</name>
-   <description>3.1 polyres_pin_Offgrid: polyres_pin layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
    <name>vmim_drw_Offgrid</name>
    <description>3.1 vmim_drw_Offgrid: vmim_drw layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
    <categories>
@@ -2055,12 +1887,6 @@
    </categories>
   </category>
   <category>
-   <name>topmetal2_pin_Offgrid</name>
-   <description>3.1 topmetal2_pin_Offgrid: topmetal2_pin layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
    <name>topmetal2_mask_Offgrid</name>
    <description>3.1 topmetal2_mask_Offgrid: topmetal2_mask layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
    <categories>
@@ -2069,12 +1895,6 @@
   <category>
    <name>topmetal2_filler_Offgrid</name>
    <description>3.1 topmetal2_filler_Offgrid: topmetal2_filler layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>topmetal2_nofill_Offgrid</name>
-   <description>3.1 topmetal2_nofill_Offgrid: topmetal2_nofill layer is Offgrid (All features are on a drawing grid of 5 nm)</description>
    <categories>
    </categories>
   </category>

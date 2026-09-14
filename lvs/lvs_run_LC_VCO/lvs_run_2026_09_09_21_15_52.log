@@ -1,0 +1,18 @@
+09-Sep-2026 23:15:52 | INFO    | Your Klayout version is: KLayout 0.30.11 (required >= 0.30.5)
+09-Sep-2026 23:15:52 | INFO    | Running SG13G2 LVS checks on design /foss/designs/uniccass-icdesign-tools/shared_xserver/LC_VCO_FPLL/gds/blocks/LC_VCO.gds on cell LC_VCO
+09-Sep-2026 23:16:09 | INFO    | ==============================================================================
+09-Sep-2026 23:16:09 | INFO    | Important Summary
+09-Sep-2026 23:16:09 | INFO    | +------------------+-------------------------------------------------------------------------------------+
+09-Sep-2026 23:16:09 | INFO    | | Status           | FAIL                                                                                |
+09-Sep-2026 23:16:09 | INFO    | | Mode             | COMPARE                                                                             |
+09-Sep-2026 23:16:09 | INFO    | | Outcome          | Comparison mode: FAIL (netlists do not match).                                      |
+09-Sep-2026 23:16:09 | INFO    | | Layout           | LC_VCO.gds                                                                          |
+09-Sep-2026 23:16:09 | INFO    | | Top Cell         | LC_VCO                                                                              |
+09-Sep-2026 23:16:09 | INFO    | | Results Dir      | /foss/designs/uniccass-icdesign-tools/shared_xserver/LC_VCO_FPLL/lvs/lvs_run_LC_VCO |
+09-Sep-2026 23:16:09 | INFO    | | Warnings         | 0                                                                                   |
+09-Sep-2026 23:16:09 | INFO    | | Errors           | 1                                                                                   |
+09-Sep-2026 23:16:09 | INFO    | | Run Time (s)     | 17.269                                                                              |
+09-Sep-2026 23:16:09 | INFO    | +------------------+-------------------------------------------------------------------------------------+
+09-Sep-2026 23:16:09 | ERROR   | Key errors:
+09-Sep-2026 23:16:09 | ERROR   |   - 2026-09-09 23:16:07 +0200: Memory Usage (507392K) : ERROR : Netlists don't match
+09-Sep-2026 23:16:09 | INFO    | ==============================================================================

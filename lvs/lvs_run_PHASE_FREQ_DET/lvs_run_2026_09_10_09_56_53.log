@@ -1,0 +1,16 @@
+10-Sep-2026 11:56:53 | INFO    | Your Klayout version is: KLayout 0.30.11 (required >= 0.30.5)
+10-Sep-2026 11:56:53 | INFO    | Running SG13G2 LVS checks on design /foss/designs/uniccass-icdesign-tools/shared_xserver/LC_VCO_FPLL/gds/blocks/PHASE_FREQ_DET.gds on cell PHASE_FREQ_DET
+10-Sep-2026 11:56:57 | INFO    | ==============================================================================
+10-Sep-2026 11:56:57 | INFO    | Important Summary
+10-Sep-2026 11:56:57 | INFO    | +------------------+---------------------------------------------------------------------------------------------+
+10-Sep-2026 11:56:57 | INFO    | | Status           | PASS                                                                                        |
+10-Sep-2026 11:56:57 | INFO    | | Mode             | COMPARE                                                                                     |
+10-Sep-2026 11:56:57 | INFO    | | Outcome          | Comparison mode: PASS (netlists match).                                                     |
+10-Sep-2026 11:56:57 | INFO    | | Layout           | PHASE_FREQ_DET.gds                                                                          |
+10-Sep-2026 11:56:57 | INFO    | | Top Cell         | PHASE_FREQ_DET                                                                              |
+10-Sep-2026 11:56:57 | INFO    | | Results Dir      | /foss/designs/uniccass-icdesign-tools/shared_xserver/LC_VCO_FPLL/lvs/lvs_run_PHASE_FREQ_DET |
+10-Sep-2026 11:56:57 | INFO    | | Warnings         | 0                                                                                           |
+10-Sep-2026 11:56:57 | INFO    | | Errors           | 0                                                                                           |
+10-Sep-2026 11:56:57 | INFO    | | Run Time (s)     | 4.523                                                                                       |
+10-Sep-2026 11:56:57 | INFO    | +------------------+---------------------------------------------------------------------------------------------+
+10-Sep-2026 11:56:57 | INFO    | ==============================================================================

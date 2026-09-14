@@ -33,12 +33,12 @@ C {iopin.sym} -180 -20 0 1 {name=p1 lab=VDD}
 C {iopin.sym} -180 20 0 1 {name=p5 lab=GND}
 C {opin.sym} 220 130 0 0 {name=p7 lab=DN}
 C {ipin.sym} -180 130 0 0 {name=p20 lab=FDIV}
-C {sg13g2_stdcells/sg13g2_dfrbp_2.sym} 10 -110 0 0 {name=x1 VDD=VDD VSS=GND prefix=sg13g2_ }
-C {sg13g2_stdcells/sg13g2_dfrbp_2.sym} 10 110 2 1 {name=x2 VDD=VDD VSS=GND prefix=sg13g2_ }
-C {sg13g2_stdcells/sg13g2_nand2_2.sym} 80 0 0 1 {name=x3 VDD=VDD VSS=GND prefix=sg13g2_ }
 C {vdd.sym} -120 -110 3 0 {name=l12 lab=VDD}
 C {vdd.sym} -120 110 3 0 {name=l1 lab=VDD}
 C {noconn.sym} 140 110 2 0 {name=l2}
 C {vdd.sym} -140 -40 0 1 {name=l4 lab=VDD}
 C {gnd.sym} -140 40 0 1 {name=l14 lab=GND}
 C {lab_pin.sym} -40 0 1 0 {name=p16 sig_type=std_logic lab=nRST}
+C {xschem/sg13g2_stdcells/sg13g2_dfrbp_2.sym} 10 -110 0 0 {name=x1 VDD=VDD VSS=GND prefix=sg13g2_ }
+C {xschem/sg13g2_stdcells/sg13g2_dfrbp_2.sym} 10 110 2 1 {name=x2 VDD=VDD VSS=GND prefix=sg13g2_ }
+C {xschem/sg13g2_stdcells/sg13g2_nand2_2.sym} 80 0 0 1 {name=x3 VDD=VDD VSS=GND prefix=sg13g2_ }

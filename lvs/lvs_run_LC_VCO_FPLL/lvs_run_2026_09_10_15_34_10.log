@@ -1,0 +1,19 @@
+10-Sep-2026 17:34:10 | INFO    | Your Klayout version is: KLayout 0.30.11 (required >= 0.30.5)
+10-Sep-2026 17:34:10 | WARNING | KLayout binary version (0.30.11) differs from the imported klayout Python package version (0.30.12). Re-align with: pip install klayout==0.30.11
+10-Sep-2026 17:34:10 | INFO    | Running SG13G2 LVS checks on design /home/designer/shared/LC_VCO_FPLL/gds/LC_VCO_FPLL.gds on cell LC_VCO_FPLL
+10-Sep-2026 17:34:34 | INFO    | ==============================================================================
+10-Sep-2026 17:34:34 | INFO    | Important Summary
+10-Sep-2026 17:34:34 | INFO    | +------------------+--------------------------------------------------------------+
+10-Sep-2026 17:34:34 | INFO    | | Status           | PASS                                                         |
+10-Sep-2026 17:34:34 | INFO    | | Mode             | COMPARE                                                      |
+10-Sep-2026 17:34:34 | INFO    | | Outcome          | Comparison mode: PASS (netlists match).                      |
+10-Sep-2026 17:34:34 | INFO    | | Layout           | LC_VCO_FPLL.gds                                              |
+10-Sep-2026 17:34:34 | INFO    | | Top Cell         | LC_VCO_FPLL                                                  |
+10-Sep-2026 17:34:34 | INFO    | | Results Dir      | /home/designer/shared/LC_VCO_FPLL/lvs/lvs_run_LC_VCO_FPLL    |
+10-Sep-2026 17:34:34 | INFO    | | Warnings         | 1                                                            |
+10-Sep-2026 17:34:34 | INFO    | | Errors           | 0                                                            |
+10-Sep-2026 17:34:34 | INFO    | | Run Time (s)     | 24.317                                                       |
+10-Sep-2026 17:34:34 | INFO    | +------------------+--------------------------------------------------------------+
+10-Sep-2026 17:34:34 | WARNING | Key warnings:
+10-Sep-2026 17:34:34 | WARNING |   - KLayout binary version (0.30.11) differs from the imported klayout Python package version (0.30.12). Re-align with: pip install klayout==0.30.11
+10-Sep-2026 17:34:34 | INFO    | ==============================================================================

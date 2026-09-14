@@ -51,20 +51,23 @@
     - [Integrated PLL Simulation for N = 240](post-layout/pex.md)   
 11. [TinyTapeout SKY25b Submission](docs/ttsky25b_mpw.md)
 12. [Testing Plan with AD3](test/plan.md)
-13. [References](#ref)
+13. [Publication](#paper)
+14. [Post-Layout Results](#results)
+15. [References](#ref)
 
 ### Team Members (Department of Electronic and Telecommunication Engineering, University of Moratuwa)
 
-- Rajinthan	Rameshkumar.
-- Anjana Viduranga.
-- Shenal Ranasinghe.
-- Sajitha Madugalle.
-- Lohan Atapattu.
-- Manimohan	Thiriloganathan.
-- Hansa Marasinghe.
-- Avishka Herath.
-- Kithmin Wickremasinghe (MASc).
+- Rajinthan	Rameshkumar (UG).
+- Anjana Viduranga (UG).
+- Shenal Ranasinghe (UG).
+- Manimohan	Thiriloganathan (BSc).
+- Hansa Marasinghe (BSc).
+- Avishka Herath (BSc).
+- Gayangana Leelarathne (MSc) - School of Electrical Engineering, Aalto University, Finland.
+- Kithmin Wickremasinghe (MASc) - Department of Electrical and Computer Engineering, University of British Columbia, Canada.
 - Dr. Chamira Edussooriya (PhD).
+
+Earlier contributors: Sajitha Madugalle, Lohan Atapattu.
 
 <a name="overview"></a>
 ### Overview of the Project:
@@ -102,18 +105,126 @@ The PLL is a charge-pump (CP) based (Type-II) PLL which uses a standard fraction
 | Robustness/PVT | Monte Carlo yield on key specs | 99 | - | - | % | - |
 | Power/Area | Total DC power consumption | - | 12 | 25 | mW | - |
 | Power/Area | Power down current consumption | - | 0.5 | 5 | µA | - |
-| Power/Area | Die area | - | 0.22 | 0.25 | mm² | 500 µm x 500 µm |
+| Power/Area | Die area | 0.48 | 0.8 | 1.2 | mm² | 1 mm x 0.8 mm |
 
 [Return to top](#toc)
 
 <a name="application"></a>
 ### Application of the Project:
 
-<a name="refs"></a>
+The design targets the 2.4 GHz industrial, scientific and medical (ISM) band, making it
+suitable for Bluetooth Low Energy (BLE) and 2.4 GHz Wi-Fi transceivers. BLE requires
+stringent phase noise performance and fast settling (typically < 150 µs) to maintain
+stable frequency hopping and reliable data transmission.
+
+[Return to top](#toc)
+
+<a name="paper"></a>
+### Publication:
+
+This work has been accepted for presentation at the **International Conference on
+Synthesis, Modeling, Analysis and Simulation Methods, and Applications to Circuit
+Design (SMACD) 2026**.
+
+> M. Thiriloganathan, S. Ranasinghe, A. Herath, R. Rameshkumar, H. Marasinghe,
+> A. Viduranga, G. Leelarathne and K. Wickremasinghe,
+> "**A 2.4 GHz LC-VCO Fractional-N Phase Locked Loop Open-Source Design in 130-nm BiCMOS**,"
+> *SMACD*, 2026.
+
+<p align="center">
+    <img src="./images/smacd_paper.png" width = "600"><br>
+    <em>Figure 2: SMACD 2026 paper</em>
+</p>
+
+Manuscripts and figure sources are in [`paper_submission/`](paper_submission/).
+
+**Key contribution.** RF integrated circuit design in the open-source CMOS ecosystem is
+limited by the absence of reliable passive device models, particularly on-chip spiral
+inductors. Consequently, prior open-source work relies on ring-oscillator-based VCOs with
+degraded phase noise. This design uses a cross-coupled differential LC-VCO with a
+**custom-designed on-chip spiral inductor**, developed using an open-source
+electromagnetic modelling workflow in *OpenEMS*. To the best of our knowledge, this is the
+first fully open-source CMOS PLL design with an integrated on-chip spiral inductor.
+
+**Spiral inductor.** Three-turn symmetric octagonal geometry on *TopMetal2* with
+*TopMetal1* underpasses through *TopVia2*; outer radius R<sub>out</sub> = 218 µm, turn
+spacing S = 14 µm, trace width W = 30 µm. Characterised in OpenEMS (FDTD, 0–12 GHz
+Gaussian excitation, 0.5 µm refined cell size) with two-step open-short de-embedding:
+
+| Quantity | Value |
+|----------|-------|
+| Differential inductance L<sub>diff</sub> @ 2.45 GHz | 4.000 nH |
+| Differential quality factor Q<sub>diff</sub> @ 2.45 GHz | 16.80 |
+| Peak Q<sub>diff</sub> | ≈ 18.9 near 3.8 GHz |
+| Q<sub>diff</sub> across 2.3–2.7 GHz (±5 % geometry) | 16.32 – 17.49 |
+| L<sub>diff</sub> across 2.3–2.7 GHz (±5 % geometry) | 3.9 – 4.1 nH |
+
+**Tools.** *Xschem* for schematic capture, *ngspice* for transient and noise simulation,
+*KLayout* for layout and physical verification, *OpenEMS* for electromagnetic modelling —
+a fully open-source EDA flow on the IHP SG13G2 open-source PDK.
+
+[Return to top](#toc)
+
+<a name="results"></a>
+### Post-Layout Results:
+
+The integrated PLL layout passed both DRC and LVS and was validated through post-layout
+simulation with parasitic extraction.
+
+| Metric | Value |
+|--------|-------|
+| Technology | IHP SG13G2, 130 nm SiGe BiCMOS |
+| Output frequency range | 2.4 – 2.48 GHz |
+| VCO tuning range | > 3.3 % |
+| VCO sensitivity K<sub>VCO</sub> | ≈ 120 MHz/V |
+| Phase noise @ 1 MHz offset | −100.8 dBc/Hz (carrier 2.44 GHz) |
+| Reference spur | ≈ −40.2 dBc |
+| Total power consumption | 12.73 mW |
+| Die area | 930 µm × 666 µm (≈ 0.619 mm²) |
+
+The tuning curve is nonlinear owing to varicap behaviour and layout-induced parasitics.
+The reference spur is slightly high, though it still meets BLE specifications; further
+improvement is needed.
+
+**Comparison with PLL architectures operating near the 2.4 GHz band:**
+
+| PLL Architecture | VCO | Process | Frequency (GHz) | Phase Noise (dBc/Hz) | Power (mW) | Area (mm²) |
+|------------------|-----|---------|-----------------|----------------------|------------|------------|
+| Integer-N PLL | Ring-Oscillator | 130 nm | 2.4 | -167.88 (@1MHz) | 11.63 | 0.0495 |
+| Integer-N PLL | CMOS LC VCO | 180 nm | 2.4 | -119 (@1MHz) | 8 | 0.96 |
+| CMOS LC-PLL | CMOS LC VCO | 65 nm | 10.3 | -95.12 (@1MHz) | 6.8 | — |
+| Fractional-N PLL | Multi-Core VCO | 130 nm | 0.125–8.4 | -152.9 (@10MHz) | — | — |
+| Fractional-N Oversampling PLL | CMOS LC VCO | 65 nm | 2.4 | -217.8 (FOM) | 4.97 | 0.58 |
+| **Our Design [Fractional-N PLL]** | **CMOS LC VCO** | **130 nm** | **2.4** | **-100.8 (@1MHz)** | **12.73** | **0.619** |
+
+**Future work.** Reference spur suppression via charge pump matching and loop filter
+optimisation; higher-order ∆Σ modulators and fast-locking techniques to reduce fractional
+spurs and settling time while maintaining stable PLL operation.
+
+[Return to top](#toc)
+
+<a name="ref"></a>
 ### References:
 
 The following open-source PLL designs were referred to during the development of this project:
+- Our past IHP openMPW submission (30 MHz Fractional-N PLL) - [https://github.com/avishkaherath/TO_July2025](https://github.com/avishkaherath/TO_July2025/blob/main/30_MHz_Fractional_N_PLL/doc/source/designdata.rst)
 - tt08-tiny-pll - [https://github.com/LegumeEmittingDiode/tt08-tiny-pll](https://github.com/LegumeEmittingDiode/tt08-tiny-pll)
 - Razavi papers
+
+Cited in the paper:
+- N. F. Assaify *et al.*, "A ring-oscillator-based 2.4 GHz integer-N PLL design in skywater 130nm open-source technology," in *ISPACS*, 2025.
+- B. Razavi, "Education of chip designers at a large scale: A proposal," *IEEE Solid-State Circuits Mag.*, 2024.
+- K. Herman *et al.*, "On the versatility of the IHP BiCMOS open source and manufacturable PDK," *IEEE Solid-State Circuits Mag.*, vol. 16, no. 2, pp. 30–38, 2024.
+- D. Liao *et al.*, "A 2.4-GHz 16-phase sub-sampling fractional-N PLL with robust soft loop switching," *IEEE J. Solid-State Circuits*, 2018.
+- G. Z. Gomez *et al.*, "Bluetooth low energy (BLE) radio design trends and considerations," *Electronics*, 2021.
+- B. Razavi, *RF Microelectronics*. Pearson, 2011.
+- S. S. Mohan *et al.*, "Simple accurate expressions for planar spiral inductances," *IEEE J. Solid-State Circuits*, 1999.
+- T. Liebig *et al.*, "openEMS—a free and open source equivalent-circuit (EC) FDTD simulation platform," *Int. J. Numer. Model.*, 2013.
+- F. Zhang *et al.*, "Design optimization and modeling of on-chip RF inductors in CMOS," in *IEEE MWSCAS*, 2009.
+- D. Ham and A. Hajimiri, "Concepts and methods in optimization of integrated LC VCOs," *IEEE J. Solid-State Circuits*, 2001.
+- J. Jo *et al.*, "Low phase-noise, 2.4 and 5.8 GHz dual-band frequency synthesizer with Class-C VCO and bias-controlled charge pump," *Electronics*, 2022.
+- J. S. Gaggatur *et al.*, "A digitally programmable 9.1–11.2 GHz CMOS LC-PLL with integrated power management for X-Band FMCW radar systems," in *IEEE SPACE*, 2025.
+- H. Shi *et al.*, "An ultra-wideband 125-MHz-to-8.4-GHz fractional-N PLL featuring an isolated multi-core VCO and an active-feedback doubler," *IEEE Microw. Wireless Technol. Lett.*, 2026.
+- J. Qiu *et al.*, "A 32-kHz-reference 2.4-GHz Fractional-N oversampling PLL with 200-kHz loop bandwidth," *IEEE J. Solid-State Circuits*, 2021.
 
 [Return to top](#toc)

@@ -1,0 +1,16 @@
+10-Sep-2026 12:03:01 | INFO    | Your Klayout version is: KLayout 0.30.11 (required >= 0.30.5)
+10-Sep-2026 12:03:01 | INFO    | Running SG13G2 LVS checks on design /foss/designs/uniccass-icdesign-tools/shared_xserver/LC_VCO_FPLL/gds/blocks/PFD_CP_LF.gds on cell PFD_CP_LF
+10-Sep-2026 12:03:07 | INFO    | ==============================================================================
+10-Sep-2026 12:03:07 | INFO    | Important Summary
+10-Sep-2026 12:03:07 | INFO    | +------------------+----------------------------------------------------------------------------------------+
+10-Sep-2026 12:03:07 | INFO    | | Status           | PASS                                                                                   |
+10-Sep-2026 12:03:07 | INFO    | | Mode             | COMPARE                                                                                |
+10-Sep-2026 12:03:07 | INFO    | | Outcome          | Comparison mode: PASS (netlists match).                                                |
+10-Sep-2026 12:03:07 | INFO    | | Layout           | PFD_CP_LF.gds                                                                          |
+10-Sep-2026 12:03:07 | INFO    | | Top Cell         | PFD_CP_LF                                                                              |
+10-Sep-2026 12:03:07 | INFO    | | Results Dir      | /foss/designs/uniccass-icdesign-tools/shared_xserver/LC_VCO_FPLL/lvs/lvs_run_PFD_CP_LF |
+10-Sep-2026 12:03:07 | INFO    | | Warnings         | 0                                                                                      |
+10-Sep-2026 12:03:07 | INFO    | | Errors           | 0                                                                                      |
+10-Sep-2026 12:03:07 | INFO    | | Run Time (s)     | 6.121                                                                                  |
+10-Sep-2026 12:03:07 | INFO    | +------------------+----------------------------------------------------------------------------------------+
+10-Sep-2026 12:03:07 | INFO    | ==============================================================================

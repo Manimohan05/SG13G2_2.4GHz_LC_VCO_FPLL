@@ -1,0 +1,21 @@
+09-Sep-2026 06:41:28 | INFO    | Your Klayout version is: KLayout 0.30.11 (required >= 0.30.5)
+09-Sep-2026 06:41:28 | WARNING | KLayout binary version (0.30.11) differs from the imported klayout Python package version (0.30.12). Re-align with: pip install klayout==0.30.11
+09-Sep-2026 06:41:28 | INFO    | Running SG13G2 LVS checks on design /home/designer/shared/SG13G2_2.4GHz_LC_VCO_FPLL/gds/blocks/LOOP_FILTER.gds on cell LOOP_FILTER
+09-Sep-2026 06:41:34 | INFO    | ==============================================================================
+09-Sep-2026 06:41:34 | INFO    | Important Summary
+09-Sep-2026 06:41:34 | INFO    | +------------------+-----------------------------------------------------------------------------------------+
+09-Sep-2026 06:41:34 | INFO    | | Status           | FAIL                                                                                    |
+09-Sep-2026 06:41:34 | INFO    | | Mode             | COMPARE                                                                                 |
+09-Sep-2026 06:41:34 | INFO    | | Outcome          | Comparison mode: FAIL (netlists do not match).                                          |
+09-Sep-2026 06:41:34 | INFO    | | Layout           | LOOP_FILTER.gds                                                                         |
+09-Sep-2026 06:41:34 | INFO    | | Top Cell         | LOOP_FILTER                                                                             |
+09-Sep-2026 06:41:34 | INFO    | | Results Dir      | /home/designer/shared/SG13G2_2.4GHz_LC_VCO_FPLL/lvs_run_LOOP_FILTER_2026_09_09_06_41_28 |
+09-Sep-2026 06:41:34 | INFO    | | Warnings         | 1                                                                                       |
+09-Sep-2026 06:41:34 | INFO    | | Errors           | 1                                                                                       |
+09-Sep-2026 06:41:34 | INFO    | | Run Time (s)     | 6.107                                                                                   |
+09-Sep-2026 06:41:34 | INFO    | +------------------+-----------------------------------------------------------------------------------------+
+09-Sep-2026 06:41:34 | ERROR   | Key errors:
+09-Sep-2026 06:41:34 | ERROR   |   - 2026-09-09 06:41:33 +0200: Memory Usage (474500K) : ERROR : Netlists don't match
+09-Sep-2026 06:41:34 | WARNING | Key warnings:
+09-Sep-2026 06:41:34 | WARNING |   - KLayout binary version (0.30.11) differs from the imported klayout Python package version (0.30.12). Re-align with: pip install klayout==0.30.11
+09-Sep-2026 06:41:34 | INFO    | ==============================================================================

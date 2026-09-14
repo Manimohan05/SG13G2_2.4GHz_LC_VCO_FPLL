@@ -1,0 +1,16 @@
+27-Apr-2026 09:13:01 | INFO    | Your Klayout version is: KLayout 0.30.5
+27-Apr-2026 09:13:01 | INFO    | Running SG13G2 LVS checks on design /home/designer/shared/LC_VCO_FPLL/gds/blocks/4nH_INDUCTOR.gds on cell 4nH_INDUCTOR
+27-Apr-2026 09:13:15 | INFO    | ==============================================================================
+27-Apr-2026 09:13:15 | INFO    | Important Summary
+27-Apr-2026 09:13:15 | INFO    | +------------------+--------------------------------------------------------------+
+27-Apr-2026 09:13:15 | INFO    | | Status           | NET_ONLY                                                     |
+27-Apr-2026 09:13:15 | INFO    | | Mode             | NET_ONLY                                                     |
+27-Apr-2026 09:13:15 | INFO    | | Outcome          | NET_ONLY mode: extracted netlist generated from layout only. |
+27-Apr-2026 09:13:15 | INFO    | | Layout           | 4nH_INDUCTOR.gds                                             |
+27-Apr-2026 09:13:15 | INFO    | | Top Cell         | 4nH_INDUCTOR                                                 |
+27-Apr-2026 09:13:15 | INFO    | | Results Dir      | /home/designer/shared/LC_VCO_FPLL/lvs/lvs_run_4nH_INDUCTOR   |
+27-Apr-2026 09:13:15 | INFO    | | Warnings         | 0                                                            |
+27-Apr-2026 09:13:15 | INFO    | | Errors           | 0                                                            |
+27-Apr-2026 09:13:15 | INFO    | | Run Time (s)     | 14.073                                                       |
+27-Apr-2026 09:13:15 | INFO    | +------------------+--------------------------------------------------------------+
+27-Apr-2026 09:13:15 | INFO    | ==============================================================================

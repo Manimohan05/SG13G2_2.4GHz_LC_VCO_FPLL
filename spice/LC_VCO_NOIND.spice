@@ -1,20 +1,32 @@
 ** sch_path: /home/designer/shared/LC_VCO_FPLL/xschem/LC_VCO_NOIND.sch
 .subckt LC_VCO_NOIND FOUT VCTRL VBGR VDD GND OUTn OUTp
 *.PININFO FOUT:O VCTRL:I VBGR:I VDD:B GND:B OUTn:B OUTp:B
-XM5 Vx Vgs GND GND sg13_lv_nmos w=384u l=1u ng=48 m=1
-XM4 OUTp OUTn VDD VDD sg13_lv_pmos w=36u l=0.13u ng=5 m=1
-XM3 OUTn OUTp VDD VDD sg13_lv_pmos w=36u l=0.13u ng=5 m=1
-XM2 OUTp OUTn Vx GND sg13_lv_nmos w=22u l=0.13u ng=3 m=1
-XM1 OUTn OUTp Vx GND sg13_lv_nmos w=22u l=0.13u ng=3 m=1
-XM6 Vgs Vgs GND GND sg13_lv_nmos w=64u l=1u ng=8 m=1
-XC1 OUTn OUTp GND cap_rfcmim w=21.9e-6 l=21.9e-6 wfeed=10.0e-6
-XC3 OUTp VCTRL OUTn GND sg13_hv_svaricap w=9.74u l=0.8u Nx=7
-XC2 OUTp VCTRL OUTn GND sg13_hv_svaricap w=9.74u l=0.8u Nx=7
-XM7 Vgs VBGR VDD VDD sg13_lv_pmos w=38u l=1u ng=5 m=1
-XM8 FOUT OUTp VDD VDD sg13_lv_pmos w=15u l=0.13u ng=10 m=1
-XM9 FOUT OUTp GND GND sg13_lv_nmos w=1.5u l=0.13u ng=1 m=1
-XM10 net1 OUTn VDD VDD sg13_lv_pmos w=15u l=0.13u ng=10 m=1
-XM11 net1 OUTn GND GND sg13_lv_nmos w=1.5u l=0.13u ng=1 m=1
+MM5 Vx Vgs GND SUB! sg13_lv_nmos w=384u l=1u ng=48
+MM4 OUTp OUTn VDD NW sg13_lv_pmos w=36u l=0.13u ng=5
+MM3 OUTn OUTp VDD NW sg13_lv_pmos w=36u l=0.13u ng=5
+MM2 OUTp OUTn Vx SUB! sg13_lv_nmos w=21.99u l=0.13u ng=3
+MM1 OUTn OUTp Vx SUB! sg13_lv_nmos w=21.99u l=0.13u ng=3
+MM6 Vgs Vgs GND SUB! sg13_lv_nmos w=64u l=1u ng=8
+CC1 OUTn OUTp sub! rfcmim w=21.9e-6 l=21.9e-6 wfeed=10.0e-6
+CC3 OUTp VCTRL OUTn sub! sg13_hv_svaricap w=9.74u l=0.8u Nx=7
+CC2 OUTp VCTRL OUTn sub! sg13_hv_svaricap w=9.74u l=0.8u Nx=7
+MM7 Vgs VBGR VDD NWa sg13_lv_pmos w=38u l=1u ng=5
+MM8 FOUT OUTp VDD NW sg13_lv_pmos w=15u l=0.13u ng=10
+MM9 FOUT OUTp GND SUB! sg13_lv_nmos w=1.5u l=0.13u ng=1
+MM10 net1 OUTn VDD NW sg13_lv_pmos w=15u l=0.13u ng=10
+MM11 net1 OUTn GND SUB! sg13_lv_nmos w=1.5u l=0.13u ng=1
+RR1 VDD NW ntap1 A=9.294e-12 P=6.196e-05
+RR2 VDD NW ntap1 A=9.294e-12 P=6.196e-05
+RR3 GND sub! ptap1 A=2.8626e-11 P=0.00019084
+RR4 GND SUB! ptap1 A=8.232e-12 P=5.488e-05
+RR5 GND SUB! ptap1 A=8.232e-12 P=5.488e-05
+RR6 VDD NW ntap1 A=7.404e-12 P=4.936e-05
+RR7 VDD NW ntap1 A=7.404e-12 P=4.936e-05
+RR8 GND SUB! ptap1 A=4.122e-12 P=2.748e-05
+RR9 GND SUB! ptap1 A=4.122e-12 P=2.748e-05
+RR10 GND SUB! ptap1 A=1.434e-11 P=9.56e-05
+RR11 GND SUB! ptap1 A=4.1796e-11 P=0.00027864
+RR12 VDD NWa ntap1 A=1.2144e-11 P=8.096e-05
 .ends
 .GLOBAL GND
 .GLOBAL VDD

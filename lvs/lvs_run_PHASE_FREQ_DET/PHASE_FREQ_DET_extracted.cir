@@ -1,9 +1,9 @@
-* Extracted by KLayout with SG13G2 LVS runset on : 16/04/2026 20:09
+* Extracted by KLayout with SG13G2 LVS runset on : 10/09/2026 11:56
 
-.SUBCKT PHASE_FREQ_DET VSS VDD DN UP FDIV FREF
-X$1 VSS \$8 \$I27 DN VDD FDIV VDD sg13g2_dfrbp_2
-X$2 \$9 \$8 DN VDD VSS sg13g2_nand2_2
-X$3 VSS \$8 UP \$9 VDD FREF VDD sg13g2_dfrbp_2
+.SUBCKT PHASE_FREQ_DET DN FDIV FREF UP VDD VSS
+X$10 VSS \$8 \$I27 DN VDD FDIV VDD sg13g2_dfrbp_2
+X$11 \$9 \$8 DN VDD VSS sg13g2_nand2_2
+X$13 VSS \$8 UP \$9 VDD FREF VDD sg13g2_dfrbp_2
 .ENDS PHASE_FREQ_DET
 
 .SUBCKT sg13g2_nand2_2 A Y B VDD VSS
