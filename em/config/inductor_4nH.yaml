@@ -1,0 +1,78 @@
+# 4 nH tank inductor for the 2.4 GHz LC-VCO.
+#
+#   python scripts/run_pipeline.py --config config/inductor_4nH.yaml
+#
+# Paths are relative to this file.
+
+name: SG13G2 4 nH octagonal spiral
+subckt: 4nH_INDUCTOR
+
+geometry:
+  gds: ../../gds/blocks/4nH_INDUCTOR.gds
+  topcell: 4nH_INDUCTOR
+  # Spiral on the thickest metal, underpass one level down, via between them.
+  layers: [TopMetal2, TopMetal1, TopVia2]
+
+  # Documented parameters of the taped-out geometry (see docs/em-inductor.md).
+  # The EM model takes its shape from the GDS; these are recorded so a sweep
+  # can regenerate an equivalent spiral.
+  turns: 3
+  shape: octagonal
+  outer_radius_um: 218.0
+  turn_spacing_um: 14.0
+  trace_width_um: 30.0
+
+simulation:
+  f_start: 1.0e7
+  f_stop: 1.2e10           # 0-12 GHz, covers the band and the self-resonance
+  n_freq: 401
+  cellsize_um: 8.0
+  refined_cellsize_um: 0.5 # resolves edge current crowding; drives runtime
+  air_padding_um: 200.0
+  substrate_um: 280.0
+  end_criteria: 1.0e-5
+  max_timesteps: 60000
+  boundary: [MUR, MUR, MUR, MUR, MUR, MUR]
+  verbose: 1
+
+# Substrate and oxide stack. Heights come from the PDK stackup XML; these
+# boxes fill the space the metal layers do not occupy.
+dielectrics:
+  - {name: SiO2,      epsilon: 4.10,  kappa: 0.0, zmin: 0.0,     zmax: 15.7303}
+  - {name: Passive,   epsilon: 6.60,  kappa: 0.0, zmin: 15.7303, zmax: 16.1303}
+  - {name: EPI,       epsilon: 11.9,  kappa: 5.0, zmin: -3.75,   zmax: 0.0}
+  - {name: Substrate, epsilon: 11.9,  kappa: 2.0, zmin: -283.75, zmax: -3.75}
+
+# Differential excitation across the two spiral terminals. Coordinates are in
+# micrometres in the GDS frame; adjust to the terminal geometry if the layout
+# changes.
+ports:
+  - {x0: -15.0, y0: -218.0, x1: 15.0, y1: -212.0, direction: y, z0: 50.0}
+  - {x0: -15.0, y0:  212.0, x1: 15.0, y1:  218.0, direction: y, z0: 50.0}
+
+# Two-step open-short de-embedding. Generate these with the same feed geometry
+# and an open / shorted spiral, then point at the Touchstone files.
+deembed:
+  open_s2p:  null     # e.g. out/inductor_open.s2p
+  short_s2p: null     # e.g. out/inductor_short.s2p
+
+fit:
+  n_poles: 32
+  n_iter: 20
+  emphasis_band: [2.0e9, 3.0e9]   # weight the VCO tuning range
+  emphasis_weight: 5.0
+
+target:
+  f0: 2.45e9
+  L_nH: 4.0
+  Q: 16.8
+
+tolerance:
+  L_percent: 1.0
+  Q_percent: 3.0
+
+output:
+  dir: ../out
+  raw_s2p: inductor_raw.s2p
+  deembedded_s2p: inductor.s2p
+  spice: 4nH_INDUCTOR_openems.spice

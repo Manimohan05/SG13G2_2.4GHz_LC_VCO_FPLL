@@ -1,0 +1,11 @@
+# Core pipeline - de-embedding, extraction, fitting, SPICE export, self-check.
+numpy>=1.21
+scipy>=1.7
+matplotlib>=3.4
+PyYAML>=5.4
+
+# Needed only for the `em` stage (the FDTD solve itself). Install openEMS with
+# its python bindings from https://www.openems.de/ - it is not on PyPI, so it
+# is deliberately not listed as a pip requirement here.
+#   CSXCAD
+#   openEMS
