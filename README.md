@@ -57,8 +57,6 @@
 - Kithmin Wickremasinghe (MASc) - Department of Electrical and Computer Engineering, University of British Columbia, Canada.
 - Dr. Chamira Edussooriya (PhD).
 
-Earlier contributors: Sajitha Madugalle, Lohan Atapattu.
-
 [Return to top](#toc)
 
 ---
