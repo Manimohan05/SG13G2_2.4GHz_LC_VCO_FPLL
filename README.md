@@ -47,12 +47,12 @@
 <a name="members"></a>
 ## 1. Members (Department of Electronic and Telecommunication Engineering, University of Moratuwa)
 
-- Rajinthan	Rameshkumar (UG).
-- Anjana Viduranga (UG).
-- Shenal Ranasinghe (UG).
 - Manimohan	Thiriloganathan (BSc).
-- Hansa Marasinghe (BSc).
+- Shenal Ranasinghe (UG).
 - Avishka Herath (BSc).
+- Rajinthan	Rameshkumar (UG).
+- Hansa Marasinghe (BSc).
+- Anjana Viduranga (UG).
 - Gayangana Leelarathne (MSc) - School of Electrical Engineering, Aalto University, Finland.
 - Kithmin Wickremasinghe (MASc) - Department of Electrical and Computer Engineering, University of British Columbia, Canada.
 - Dr. Chamira Edussooriya (PhD).
