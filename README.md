@@ -6,6 +6,8 @@
 1. [Members](#members)
 2. [Overview of the Project](#overview)
 3. [Specifications of the Project](#specs)
+    - [Achieved — as published at SMACD 2026](#specs_achieved)
+    - [Specifications not yet verified](#specs_open)
 4. [Circuit Design](#circuit)
     - [Phase-Locked Loop (PLL)](#pll)
     - [Phase-Frequency Detector (PFD)](#pfd)
@@ -22,11 +24,15 @@
     - [Varactor Tuning Range](#sim_var)
     - [VCO Tuning Curve and K_VCO](#sim_kvco)
     - [Integrated PLL Testbench](#sim_pll)
+    - [Integrated Pre-Layout Simulation Circuit](#sim_circuit)
 7. [Layout Design](#layout)
     - [Integrated PLL Layout](#lay_pll)
+    - [3D View](#lay_3d)
     - [Layout Information](#layout_info)
 8. [Physical Verification (DRC, LVS)](#pv)
 9. [Post-Layout Results after PEX](#pex)
+    - [Parasitic Extraction (RC) with Kpex](#pex_flow)
+    - [Post-Layout Performance](#pex_results)
     - [Lock Behaviour](#pex_lock)
     - [Phase Noise](#pex_pn)
     - [Reference Spur](#pex_spur)
@@ -41,15 +47,15 @@
 <a name="members"></a>
 ## 1. Members (Department of Electronic and Telecommunication Engineering, University of Moratuwa)
 
-- Rajinthan Rameshkumar (UG)
-- Anjana Viduranga (UG)
-- Shenal Ranasinghe (UG)
-- Manimohan Thiriloganathan (BSc)
-- Hansa Marasinghe (BSc)
-- Avishka Herath (BSc)
-- Gayangana Leelarathne (MSc) — School of Electrical Engineering, Aalto University, Finland
-- Instructor: Kithmin Wickremasinghe (MASc) — Department of Electrical and Computer Engineering, University of British Columbia, Canada
-- Supervisor: Dr. Chamira Edussooriya (PhD)
+- Rajinthan	Rameshkumar (UG).
+- Anjana Viduranga (UG).
+- Shenal Ranasinghe (UG).
+- Manimohan	Thiriloganathan (BSc).
+- Hansa Marasinghe (BSc).
+- Avishka Herath (BSc).
+- Gayangana Leelarathne (MSc) - School of Electrical Engineering, Aalto University, Finland.
+- Kithmin Wickremasinghe (MASc) - Department of Electrical and Computer Engineering, University of British Columbia, Canada.
+- Dr. Chamira Edussooriya (PhD).
 
 Earlier contributors: Sajitha Madugalle, Lohan Atapattu.
 
@@ -130,6 +136,57 @@ hopping.
 > inherited from an older plan and is wrong for this implementation: SG13G2 low-voltage
 > devices are 1.2 V parts, every testbench runs at `.param VDD=1.2`, and the archived
 > corner runs use 1.08 / 1.20 / 1.32 V.
+
+<a name="specs_achieved"></a>
+### 3.1 Achieved — post-layout, as published at SMACD 2026
+
+Values below are the ones reported in the paper (see [§12](#paper)), measured from
+post-layout simulation with parasitic extraction at V<sub>DD</sub> = 1.2 V, 27 °C,
+f<sub>REF</sub> = 10 MHz, carrier 2.44 GHz.
+
+| Parameter | Target | **Achieved** | Verdict |
+|-----------|--------|--------------|---------|
+| Technology | – | IHP SG13G2, 130 nm SiGe BiCMOS | – |
+| Architecture | – | Type-II fractional-N, 1st-order digital ∆Σ | – |
+| Reference frequency | 10 MHz | 10 MHz | ✅ |
+| Division ratios | 240 … 248 | 240 and 248, ∆Σ-dithered | ✅ |
+| Output frequency range | 2.40 – 2.48 GHz | **2.4 – 2.48 GHz** | ✅ meets |
+| VCO tuning range | 8 – 10 % | **> 3.3 %** | ⚠️ below target, covers the ISM band |
+| K<sub>VCO</sub> | 50 – 150 MHz/V | **≈ 120 MHz/V** | ✅ in range |
+| Phase noise @ 1 MHz offset | −100 dBc/Hz | **−100.8 dBc/Hz** | ✅ meets |
+| Reference spur | better than −60 dBc | **≈ −40.2 dBc** | ⚠️ misses target, still meets BLE |
+| Total DC power | 12 mW typ, 25 mW max | **12.73 mW** | ✅ meets |
+| Die area | 0.48 – 1.2 mm² | **930 µm × 666 µm ≈ 0.619 mm²** | ✅ meets |
+| Varactor capacitance swing | – | 70 – 200 fF over 1.2 V V<sub>CTRL</sub> | – |
+| VCO startup | – | reliable down to ≈ 0.7 V tail bias | – |
+
+**Spiral inductor (paper §II):**
+
+| Parameter | Value |
+|-----------|-------|
+| Geometry | 3-turn symmetric octagonal, TopMetal2 spiral, TopMetal1 underpass via TopVia2 |
+| R<sub>out</sub> / S / W | 218 µm / 14 µm / 30 µm |
+| L<sub>diff</sub> @ 2.45 GHz | **4.000 nH** (2 % tolerance constraint) |
+| Q<sub>diff</sub> @ 2.45 GHz | **16.80** |
+| Peak Q<sub>diff</sub> | ≈ 18.9 near 3.8 GHz |
+| Self-resonant frequency | ≈ 10 GHz |
+| Q<sub>diff</sub> over 2.3 – 2.7 GHz, ±5 % geometry | 16.32 – 17.49 |
+| L<sub>diff</sub> over 2.3 – 2.7 GHz, ±5 % geometry | 3.9 – 4.1 nH |
+| EM setup | OpenEMS FDTD, 0 – 12 GHz Gaussian excitation, 0.5 µm refined cell size |
+
+<a name="specs_open"></a>
+### 3.2 Specifications not yet verified
+
+Listed rather than silently omitted — these appear in the target table but have no
+archived evidence in this repository:
+
+| Specification | Status |
+|---------------|--------|
+| Lock time (25 – 40 µs) | Transient plots exist; no extracted signed-off number |
+| Loop bandwidth and phase margin | Design values from `model/calculations/PLL/`; no post-layout loop-gain measurement |
+| PVT across TT/FF/SS/FS/SF | Corner libraries wired into the testbenches; only the typical corner archived |
+| Monte Carlo yield (99 %) | Not run |
+| Power-down current | No power-down mode in this revision |
 
 [Return to top](#toc)
 
@@ -401,6 +458,16 @@ Full details in [`em/README.md`](em/README.md).
 <center><img src="./xschem/top-pll/images/Pll_tb.png" width="1000"></center>
 <p align="center"><em>Figure 8: Closed-loop PLL testbench</em></p>
 
+<a name="sim_circuit"></a>
+### 6.5 Integrated Pre-Layout Simulation Circuit
+
+The complete schematic driven for the pre-layout closed-loop runs — PFD, charge pump,
+loop filter, LC-VCO, bandgap reference and the ∆Σ fractional-N divider wired as one
+system.
+
+<center><img src="./images/Integreated%20pre%20simulation%20circuit.jpeg" width="1000"></center>
+<p align="center"><em>Figure 9: Integrated pre-layout simulation circuit</em></p>
+
 [Return to top](#toc)
 
 ---
@@ -411,8 +478,11 @@ Full details in [`em/README.md`](em/README.md).
 <a name="lay_pll"></a>
 ### 7.1 Integrated PLL Layout
 
+<center><img src="./images/PLL%20Layout.jpeg" width="1000"></center>
+<p align="center"><em>Figure 10: Top-level PLL layout — 930 µm × 666 µm</em></p>
+
 <center><img src="./images/PLL.png" width="1000"></center>
-<p align="center"><em>Figure 9: Top-level PLL layout — 930 µm × 666 µm</em></p>
+<p align="center"><em>Figure 11: Annotated view of the same layout, with the five blocks marked</em></p>
 
 The spiral inductor dominates the die and sets its size. The floorplan reflects each
 block's sensitivity: the inductor and VCO occupy a guard-ringed region as far as
@@ -421,8 +491,17 @@ from the tank with its own decoupling; and the PFD, charge pump and loop filter 
 together as the `PFD_CP_LF` group, because charge-pump current matching depends on how
 the filter loads it.
 
+<a name="lay_3d"></a>
+### 7.2 3D View
+
+The metal stack rendered in three dimensions — the spiral on TopMetal2 with its
+TopMetal1 underpass is clearly separated from the rest of the circuitry below.
+
+<center><img src="./images/PLL%20layout%203d%20view.jpeg" width="1000"></center>
+<p align="center"><em>Figure 12: 3D view of the integrated PLL layout</em></p>
+
 <a name="layout_info"></a>
-### 7.2 Layout Information
+### 7.3 Layout Information
 
 | | **Width (µm)** | **Height (µm)** | **Area (µm²)** | Notes |
 |--|---------------|-----------------|----------------|-------|
@@ -463,6 +542,9 @@ that gates tapeout.
 > is no schematic to compare a passive spiral against; LVS sees the two-terminal black
 > box `spice/4nH_INDUCTOR_LVS.spice`.
 
+<center><img src="./images/DRC%20and%20lvs%20of%20all%20blocks%20passed%20log%20screenshot.jpeg" width="1000"></center>
+<p align="center"><em>Figure 13: DRC and LVS run logs for the blocks</em></p>
+
 Archived runs live in [`drc/`](drc/) and [`lvs/`](lvs/), one directory per cell.
 
 [Return to top](#toc)
@@ -475,6 +557,31 @@ Archived runs live in [`drc/`](drc/) and [`lvs/`](lvs/), one directory per cell.
 Nominal conditions: V<sub>DD</sub> = 1.2 V, 27 °C, typical corner, f<sub>REF</sub> =
 10 MHz, carrier 2.44 GHz.
 
+<a name="pex_flow"></a>
+### 9.1 Parasitic Extraction (RC) with Kpex
+
+RC extraction is run with Magic through `kpex`. Results are archived per cell in
+[`pex/`](pex/):
+
+```
+pex/<CELL>__<TOPCELL>/
+  kpex.log
+  magic_RC/<CELL>.pex.spice              ← the extracted netlist used in PEX simulation
+  magic_RC/<CELL>.ext
+  magic_RC/<CELL>_MAGIC_RC_Script.tcl
+```
+
+Extracted netlists feed the `*_PEX` testbenches in [`simulations/`](simulations/), for
+example `tb_CP_LF_PEX.spice` and `tb_PHASE_FREQ_DET_PEX.spice`. PEX is archived for
+`BANDGAP_REF`, `CHARGE_PUMP_V1`, `DSM_N_FREQ_DIV`, `LOOP_FILTER` and `PHASE_FREQ_DET`.
+
+> ⚠️ The archived charge-pump extraction is for revision **V1**, while **V2** is the
+> layout that ships in the top level. PEX simulation of that block does not currently
+> reflect the shipping layout and should be re-extracted.
+
+<a name="pex_results"></a>
+### 9.2 Post-Layout Performance
+
 | Metric | Value |
 |--------|-------|
 | Output frequency range | 2.40 – 2.48 GHz |
@@ -486,16 +593,16 @@ Nominal conditions: V<sub>DD</sub> = 1.2 V, 27 °C, typical corner, f<sub>REF</s
 | Die area | **930 µm × 666 µm (≈ 0.619 mm²)** |
 
 <a name="pex_lock"></a>
-### 9.1 Lock Behaviour
+### 9.3 Lock Behaviour
 
 <center><img src="./xschem/top-pll/plots/plot_vctrl_transient.png" width="1000"></center>
-<p align="center"><em>Figure 10: Control voltage during acquisition — settles without sustained ringing</em></p>
+<p align="center"><em>Figure 14: Control voltage during acquisition — settles without sustained ringing</em></p>
 
 <a name="pex_pn"></a>
-### 9.2 Phase Noise
+### 9.4 Phase Noise
 
 <center><img src="./xschem/top-pll/plots/phase_noise.png" width="1000"></center>
-<p align="center"><em>Figure 11: Closed-loop phase noise at a 2.44 GHz carrier — −100.8 dBc/Hz at 1 MHz offset</em></p>
+<p align="center"><em>Figure 15: Closed-loop phase noise at a 2.44 GHz carrier — −100.8 dBc/Hz at 1 MHz offset</em></p>
 
 > ngspice has no closed-loop PLL phase-noise analysis, so phase noise is derived by
 > post-processing a long transient. The spectrum is taken from the **settled** portion
@@ -503,17 +610,17 @@ Nominal conditions: V<sub>DD</sub> = 1.2 V, 27 °C, typical corner, f<sub>REF</s
 > this is compared against uses the same method, so the comparison is like-for-like.
 
 <a name="pex_spur"></a>
-### 9.3 Reference Spur
+### 9.5 Reference Spur
 
 <center><img src="./xschem/top-pll/plots/reference_spur_SA.png" width="1000"></center>
-<p align="center"><em>Figure 12: Output spectrum showing the reference spur at f<sub>out</sub> ± 10 MHz</em></p>
+<p align="center"><em>Figure 16: Output spectrum showing the reference spur at f<sub>out</sub> ± 10 MHz</em></p>
 
 At ≈ −40.2 dBc this is the weakest result in the design. It clears BLE requirements but
 misses the −60 dBc target. The two mechanisms are charge-pump up/down current mismatch
 and finite loop-filter rejection at 10 MHz.
 
 <a name="pex_cmp"></a>
-### 9.4 Comparison with Published Work
+### 9.6 Comparison with Published Work
 
 | PLL Architecture | VCO | Process | Frequency (GHz) | Phase Noise (dBc/Hz) | Power (mW) | Area (mm²) |
 |------------------|-----|---------|-----------------|----------------------|------------|------------|
@@ -547,12 +654,17 @@ chip integration template that provides the pad ring and chip-level interface.
 ### GPIO Configuration
 
 <center><img src="./docs/img/unic-cass-mock-tapeout-pinlist.png" width="1000"></center>
-<p align="center"><em>Figure 13: Shuttle GPIO assignment</em></p>
+<p align="center"><em>Figure 17: Shuttle GPIO assignment</em></p>
 
 ### Layout Integration
 
 <center><img src="./docs/img/unic-cass-mock-tapeout.png" width="1000"></center>
-<p align="center"><em>Figure 14: Integration of user projects into the shuttle</em></p>
+<p align="center"><em>Figure 18: Integration of user projects into the shuttle</em></p>
+
+### This Design on the Shuttle
+
+<center><img src="./images/Uniccass%20integration%20chip.jpeg" width="1000"></center>
+<p align="center"><em>Figure 19: The PLL integrated into the UNIC-CASS chip</em></p>
 
 The wrapper mandates a fixed 17-in / 17-out pad interface. That budget is why this PLL
 loads its division ratio over a 3-wire serial interface rather than nine parallel pins.
@@ -582,6 +694,7 @@ documented in [`docs/README.md`](docs/README.md).
 | [`model/`](model/) | Analytical sizing notebooks, gm/I<sub>D</sub> lookup tables, Qucs-S models |
 | [`docs/`](docs/) | Documentation and images |
 | [`archive/hfss/`](archive/hfss/) | Archived Ansys HFSS inductor work, superseded by `em/` |
+| `openems/` | Placeholder from the earlier EM effort — superseded by [`em/`](em/) |
 | [`UNIC-CASS-2025/`](UNIC-CASS-2025/) | Mock-tapeout wrapper integration data |
 | [`paper_submission/`](paper_submission/) | Manuscripts and figure sources |
 
@@ -607,14 +720,14 @@ Analysis and Simulation Methods, and Applications to Circuit Design (SMACD) 2026
 > BiCMOS**," *SMACD*, 2026.
 
 <center><img src="./images/smacd_paper.png" width="800"></center>
-<p align="center"><em>Figure 15: SMACD 2026 paper</em></p>
+<p align="center"><em>Figure 20: SMACD 2026 paper</em></p>
 
 Manuscripts and figure sources are in [`paper_submission/`](paper_submission/).
 
 ### In the news
 
 <center><img src="./images/ENTC_News.png" width="800"></center>
-<p align="center"><em>Figure 16: Coverage by the Department of Electronic and Telecommunication Engineering, University of Moratuwa</em></p>
+<p align="center"><em>Figure 21: Coverage by the Department of Electronic and Telecommunication Engineering, University of Moratuwa</em></p>
 
 [Return to top](#toc)
 
