@@ -144,21 +144,26 @@ Values below are the ones reported in the paper (see [§12](#paper)), measured f
 post-layout simulation with parasitic extraction at V<sub>DD</sub> = 1.2 V, 27 °C,
 f<sub>REF</sub> = 10 MHz, carrier 2.44 GHz.
 
-| Parameter | Target | **Achieved** | Verdict |
-|-----------|--------|--------------|---------|
-| Technology | – | IHP SG13G2, 130 nm SiGe BiCMOS | – |
-| Architecture | – | Type-II fractional-N, 1st-order digital ∆Σ | – |
-| Reference frequency | 10 MHz | 10 MHz | ✅ |
-| Division ratios | 240 … 248 | 240 and 248, ∆Σ-dithered | ✅ |
-| Output frequency range | 2.40 – 2.48 GHz | **2.4 – 2.48 GHz** | ✅ meets |
-| VCO tuning range | 8 – 10 % | **> 3.3 %** | ⚠️ below target, covers the ISM band |
-| K<sub>VCO</sub> | 50 – 150 MHz/V | **≈ 120 MHz/V** | ✅ in range |
-| Phase noise @ 1 MHz offset | −100 dBc/Hz | **−100.8 dBc/Hz** | ✅ meets |
-| Reference spur | better than −60 dBc | **≈ −40.2 dBc** | ⚠️ misses target, still meets BLE |
-| Total DC power | 12 mW typ, 25 mW max | **12.73 mW** | ✅ meets |
-| Die area | 0.48 – 1.2 mm² | **930 µm × 666 µm ≈ 0.619 mm²** | ✅ meets |
-| Varactor capacitance swing | – | 70 – 200 fF over 1.2 V V<sub>CTRL</sub> | – |
-| VCO startup | – | reliable down to ≈ 0.7 V tail bias | – |
+| Parameter | Value |
+|-----------|-------|
+| Technology | IHP SG13G2, 130 nm SiGe BiCMOS |
+| Architecture | Type-II fractional-N, 1st-order digital ∆Σ |
+| Reference frequency | 10 MHz |
+| Division ratios | 240 and 248, ∆Σ-dithered |
+| Output frequency range | 2.4 – 2.48 GHz |
+| VCO tuning range | > 3.3 % |
+| K<sub>VCO</sub> | ≈ 120 MHz/V |
+| Phase noise @ 1 MHz offset | −100.8 dBc/Hz |
+| Reference spur | ≈ −40.2 dBc |
+| Total DC power | 12.73 mW |
+| Die area | 930 µm × 666 µm ≈ 0.619 mm² |
+| Varactor capacitance swing | 70 – 200 fF over 1.2 V V<sub>CTRL</sub> |
+| VCO startup | reliable down to ≈ 0.7 V tail bias |
+
+The tuning range and the reference spur fall short of the targets in the table above —
+3.3 % against 8 %, and −40.2 dBc against −60 dBc. The achieved tuning range still covers
+the intended ISM band, and the spur still meets BLE requirements; both are addressed
+under future work in [§9.6](#pex_cmp).
 
 **Spiral inductor (paper §II):**
 
