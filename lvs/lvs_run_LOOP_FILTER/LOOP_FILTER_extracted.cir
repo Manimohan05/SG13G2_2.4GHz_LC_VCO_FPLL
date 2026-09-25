@@ -1,9 +1,9 @@
-* Extracted by KLayout with SG13G2 LVS runset on : 09/09/2026 06:41
+* Extracted by KLayout with SG13G2 LVS runset on : 25/09/2026 16:48
 
-.SUBCKT LOOP_FILTER IN OUT VSS
-R$9 OUT IN \$1 rppd w=2u l=407.2u ps=0u b=0 m=1
-R$19 IN \$3 \$1 rppd w=2u l=407.2u ps=0u b=0 m=1
-C$21 \$3 VSS cap_cmim w=48.34u l=48.34u A=2336.7556p P=193.36u m=16
-C$30 OUT VSS cap_cmim w=18.63u l=18.63u A=347.0769p P=74.52u m=4
-R$41 VSS \$1 ptap1 A=93.504p P=623.36u
+.SUBCKT LOOP_FILTER GND IN OUT SUB!
+R$1 GND SUB! ptap1 A=93.504p P=623.36u
+R$12 IN OUT SUB! rppd w=2u l=407.2u ps=0u b=0 m=1
+R$22 IN \$9 SUB! rppd w=2u l=407.2u ps=0u b=0 m=1
+C$23 \$9 GND cap_cmim w=48.34u l=48.34u A=2336.7556p P=193.36u m=16
+C$39 OUT GND cap_cmim w=18.63u l=18.63u A=347.0769p P=74.52u m=4
 .ENDS LOOP_FILTER

@@ -1,0 +1,16 @@
+25-Sep-2026 16:48:12 | INFO    | Your Klayout version is: KLayout 0.30.11 (required >= 0.30.5)
+25-Sep-2026 16:48:12 | INFO    | Running SG13G2 LVS checks on design /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/gds/blocks/LOOP_FILTER.gds on cell LOOP_FILTER
+25-Sep-2026 16:48:20 | INFO    | ==============================================================================
+25-Sep-2026 16:48:20 | INFO    | Important Summary
+25-Sep-2026 16:48:20 | INFO    | +------------------+--------------------------------------------------------------------------------+
+25-Sep-2026 16:48:20 | INFO    | | Status           | PASS                                                                           |
+25-Sep-2026 16:48:20 | INFO    | | Mode             | COMPARE                                                                        |
+25-Sep-2026 16:48:20 | INFO    | | Outcome          | Comparison mode: PASS (netlists match).                                        |
+25-Sep-2026 16:48:20 | INFO    | | Layout           | LOOP_FILTER.gds                                                                |
+25-Sep-2026 16:48:20 | INFO    | | Top Cell         | LOOP_FILTER                                                                    |
+25-Sep-2026 16:48:20 | INFO    | | Results Dir      | /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/lvs/lvs_run_LOOP_FILTER |
+25-Sep-2026 16:48:20 | INFO    | | Warnings         | 0                                                                              |
+25-Sep-2026 16:48:20 | INFO    | | Errors           | 0                                                                              |
+25-Sep-2026 16:48:20 | INFO    | | Run Time (s)     | 7.697                                                                          |
+25-Sep-2026 16:48:20 | INFO    | +------------------+--------------------------------------------------------------------------------+
+25-Sep-2026 16:48:20 | INFO    | ==============================================================================
