@@ -1,5 +1,7 @@
 ## A 2.4 GHz Type-II ∆Σ Fractional-N Phase Locked Loop (PLL) with a Type-IV Cross-Coupled Differential LC Voltage-Controlled Oscillator (VCO) for Wi-Fi/Bluetooth Applications — [Universalization of IC Design from CASS](https://github.com/unic-cass)
 
+**Paper:** [A 2.4 GHz LC-VCO Fractional-N Phase Locked Loop Open-Source Design in 130-nm BiCMOS — IEEE Xplore](https://ieeexplore.ieee.org/document/11647761) (SMACD 2026)
+
 <a name="toc"></a>
 # Table of Contents
 
@@ -37,6 +39,7 @@
     - [Phase Noise](#pex_pn)
     - [Reference Spur](#pex_spur)
     - [Comparison with Published Work](#pex_cmp)
+    - [Block-Level Pre- vs Post-Layout Comparison](#pex_blocks)
 10. [UNIC-CASS Mock Tapeout](#tapeout)
 11. [Repository Structure](#repo)
 12. [Publication](#paper)
@@ -98,7 +101,7 @@ PLL with an integrated on-chip spiral inductor**.
 
 ### Block Diagram
 
-<center><img src="./img/block.png" width="1000"></center>
+<center><img src="./images/block.png" width="1000"></center>
 <p align="center"><em>Figure 1: Block diagram of the fractional-N PLL</em></p>
 
 [Return to top](#toc)
@@ -484,8 +487,8 @@ system.
 <center><img src="./images/PLL%20Layout.jpeg" width="1000"></center>
 <p align="center"><em>Figure 10: Top-level PLL layout — 930 µm × 666 µm</em></p>
 
-<center><img src="./images/PLL.png" width="1000"></center>
-<p align="center"><em>Figure 11: Annotated view of the same layout, with the five blocks marked</em></p>
+<center><img src="./images/PLL_Architecture.png" width="1000"></center>
+<p align="center"><em>Figure 11: The five blocks of the PLL — PFD (I), charge pump (II), loop filter (III), LC-VCO (IV), and the serially programmed ΔΣ modulator with divider (V)</em></p>
 
 The spiral inductor dominates the die and sets its size. The floorplan reflects each
 block's sensitivity: the inductor and VCO occupy a guard-ringed region as far as
@@ -518,8 +521,10 @@ TopMetal1 underpass is clearly separated from the rest of the circuitry below.
 <a name="pv"></a>
 ## 8. Physical Verification (DRC, LVS)
 
-All runs used **KLayout 0.30.11** against the IHP SG13G2 rule decks (`main` and
-`sg13g2_maximal` tables for DRC).
+All runs used **KLayout 0.30.11** and IHP-Open-PDK `7e53c77` against the IHP SG13G2 rule
+decks (`main` and `sg13g2_maximal` tables for DRC, density rules off). **LVS was run with
+strict port checking** — no `--ignore_top_ports_mismatch` — so pin names and pin count on
+the layout must equal those of the schematic netlist.
 
 | Cell | DRC | LVS |
 |------|-----|-----|
@@ -531,19 +536,23 @@ All runs used **KLayout 0.30.11** against the IHP SG13G2 rule decks (`main` and
 | `BANDGAP_REF` | ✅ clean | ✅ match |
 | `DSM_N_FREQ_DIV` | ✅ clean | ✅ match |
 | `LC_VCO_NOIND` | ✅ clean | ✅ match |
-| `LC_VCO` | ✅ clean | ⚠️ port labels — see note |
+| `LC_VCO` | ✅ clean | ✅ match |
 | `4nH_INDUCTOR` | ✅ clean | ℹ️ extraction only |
 
 **The integrated top level `LC_VCO_FPLL` is DRC clean and LVS matching** — the result
 that gates tapeout.
 
-> **Note on the standalone `LC_VCO`.** Its LVS run reports five **top-level port label**
-> mismatches and no device or net mismatches — the internal connectivity is correct. The
-> same cell passes as instantiated inside `LC_VCO_FPLL`, where those nets are ordinary
-> internal nets. It does mean `gds/blocks/LC_VCO.gds` cannot be reused as a standalone
-> macro until the pin labels are added. `4nH_INDUCTOR` is extraction-only because there
-> is no schematic to compare a passive spiral against; LVS sees the two-terminal black
-> box `spice/4nH_INDUCTOR_LVS.spice`.
+> **Block pin names.** The standalone block layouts carry the same pin names as their
+> schematics: ground is `GND` (`LOOP_FILTER`, `CHARGE_PUMP`), the supplies of
+> `DSM_N_FREQ_DIV` are `GND`/`VDD`, and `LC_VCO` has its five pins labelled on the top
+> cell. `LOOP_FILTER`, `CHARGE_PUMP` and `BANDGAP_REF` declare a `SUB!` substrate pin in
+> their schematics; each layout has a small P+ substrate tap on a Metal1 pad labelled
+> `SUB!` (placed clear of the existing shapes) so that pin exists in the layout as well.
+> These edits add labels and one tap per block and change no existing geometry. The
+> full-chip and `PFD_CP_LF` layouts contain their own copies of these blocks without the
+> extra pad and still match. `4nH_INDUCTOR` is extraction-only because there is no
+> schematic to compare a passive spiral against; LVS sees the two-terminal black box
+> `spice/4nH_INDUCTOR_LVS.spice`.
 
 <center><img src="./images/DRC%20and%20lvs%20of%20all%20blocks%20passed%20log%20screenshot.jpeg" width="1000"></center>
 <p align="center"><em>Figure 13: DRC and LVS run logs for the blocks</em></p>
@@ -576,11 +585,19 @@ pex/<CELL>__<TOPCELL>/
 
 Extracted netlists feed the `*_PEX` testbenches in [`simulations/`](simulations/), for
 example `tb_CP_LF_PEX.spice` and `tb_PHASE_FREQ_DET_PEX.spice`. PEX is archived for
-`BANDGAP_REF`, `CHARGE_PUMP_V1`, `DSM_N_FREQ_DIV`, `LOOP_FILTER` and `PHASE_FREQ_DET`.
+`BANDGAP_REF`, `CHARGE_PUMP_V2`, `DSM_N_FREQ_DIV`, `LOOP_FILTER`, `PHASE_FREQ_DET` and
+`LC_VCO_NOIND`. The archived `<CELL>.pex.spice` files are the testbench-ready netlists
+(subcircuit named `<CELL>_PEX`, ports in the testbench pin order); the extraction is from
+the layouts in `gds/blocks/`, including revision **V2** of the charge pump that ships in
+the top level.
 
-> ⚠️ The archived charge-pump extraction is for revision **V1**, while **V2** is the
-> layout that ships in the top level. PEX simulation of that block does not currently
-> reflect the shipping layout and should be re-extracted.
+**LC-VCO.** `kpex`/Magic extract only resistance and capacitance — no inductance and no
+mutual coupling — so the spiral must not be extracted with the rest of the VCO. The VCO
+is extracted without the inductor as `LC_VCO_NOIND`, and the EM-extracted
+`4nH_INDUCTOR` model is connected between its `OUTn` and `OUTp` pins in
+`simulations/LC_VCO_NOIND_pex_tb.spice`. `LC_VCO_NOIND.pex_sim.spice` is the same
+netlist with the four extracted varactor lines replaced by two `sg13_hv_svaricap`
+instances, which ngspice can bind to the PDK model.
 
 <a name="pex_results"></a>
 ### 9.2 Post-Layout Performance
@@ -642,6 +659,51 @@ on-chip inductor can be built at all in a fully open-source flow.
 filter optimisation; higher-order ∆Σ modulators and fast-locking techniques to reduce
 fractional spurs and settling time.
 
+<a name="pex_blocks"></a>
+### 9.7 Block-Level Pre- vs Post-Layout Comparison
+
+Each block was simulated twice with the same testbench and stimulus: **pre-layout** on the
+schematic netlist and **post-layout** on the Magic RC extraction archived in
+[`pex/`](pex/). Conditions: V<sub>DD</sub> = 1.2 V, 27 °C, typical corner, ngspice.
+
+| Block | Metric | Pre-layout | Post-layout | Difference |
+|-------|--------|-----------:|------------:|-----------:|
+| Bandgap reference | Output at 25 °C | 0.6024 V | 0.6026 V | +0.0 % |
+| Phase-frequency detector | `UP` average | 0.916 V | 0.902 V | −1.6 % |
+| | `DN` average | 0.040 V | 0.053 V | +34 % (tens of mV) |
+| | `UP` second rising edge | 3.17 ns | 3.30 ns | +4.0 % |
+| | `DN` second rising edge | 12.90 ns | 12.94 ns | +0.3 % |
+| Charge pump + loop filter | `CTRL` after 6 µs | 0.077 V | 0.069 V | −10 % |
+| | `CTRL` peak | 1.176 V | 1.177 V | +0.1 % |
+| | `VCP` peak | 1.283 V | 1.281 V | −0.2 % |
+| PFD + charge pump + loop filter (`PFD_CP_LF`) | `VCTRL` after 300 ns | 0.892 V | 0.877 V | −1.8 % |
+| LC-VCO (with the EM-extracted inductor) | Oscillation frequency (V<sub>ctrl</sub> ≈ 0.57 V) | 2.413 GHz | 2.353 GHz | −2.5 % |
+| | Output swing | 0.779 V | 0.757 V | −2.8 % |
+| ∆Σ modulator + divider (100 MHz input) | First output rising edge | 0.6230 µs | 0.6234 µs | +0.06 % |
+| | First output falling edge | 1.8630 µs | 1.8634 µs | +0.02 % |
+| | Output half period (input cycles) | 1.2400 µs (124) | 1.2400 µs (124) | 0.0 % |
+
+The blocks agree within a few percent wherever the quantity is a level or a frequency.
+The larger percentages (`DN` average, `CTRL` minimum) are differences of a few tens of
+millivolts on near-zero signals. The 2.5 % lower VCO frequency is the expected effect of
+the added interconnect capacitance; the inductor is the EM model in both runs (the
+extraction covers the rest of the VCO only, see §9.1).
+
+> **DSM testbench.** The divider output period at the original 10 MHz input is 24.4 µs, too
+> long to simulate on the extracted netlist. Both DSM testbenches therefore use the same
+> 100 MHz input (0.5 ns edges), the same reset/enable stimulus (`stimuli_test.cir`), the same
+> 0.2 ns maximum time step and a 2 µs window, which shows the first divided-output
+> rising and falling edges. The post-layout run uses looser solver settings
+> (`reltol`, `gmin`, `abstol`, `itl4`, `cshunt`, set in the testbench) so the extracted
+> netlist converges through the reset and `sclk` edges.
+
+Testbenches: `tb_BGR`, `tb_PHASE_FREQ_DET`, `tb_CP_LF`, `tb_DSM_N_FREQ_DIV` (pre-layout)
+and the matching `*_PEX` decks (post-layout) in [`simulations/`](simulations/);
+`LC_VCO_tb.spice` and `LC_VCO_NOIND_pex_tb.spice` for the LC-VCO.
+The full closed-loop PLL is not simulated on the extracted netlist: at 10 ps steps it runs
+at roughly 4 ns of simulated time per minute on the transistor-level netlist on the
+machine used here, so 40 µs would take over a week.
+
 [Return to top](#toc)
 
 ---
@@ -668,6 +730,9 @@ chip integration template that provides the pad ring and chip-level interface.
 
 <center><img src="./images/Uniccass%20integration%20chip.jpeg" width="1000"></center>
 <p align="center"><em>Figure 19: The PLL integrated into the UNIC-CASS chip</em></p>
+
+<center><img src="./images/Final%20chip%20uniccass.png" width="1000"></center>
+<p align="center"><em>Figure 20: Final chip — top-level schematic, top-level layout with the on-chip inductor, cross-reference, and the top-level LVS run (netlists match)</em></p>
 
 The wrapper mandates a fixed 17-in / 17-out pad interface. That budget is why this PLL
 loads its division ratio over a 3-wire serial interface rather than nine parallel pins.
@@ -722,15 +787,17 @@ Analysis and Simulation Methods, and Applications to Circuit Design (SMACD) 2026
 > "**A 2.4 GHz LC-VCO Fractional-N Phase Locked Loop Open-Source Design in 130-nm
 > BiCMOS**," *SMACD*, 2026.
 
+Paper: [IEEE Xplore, document 11647761](https://ieeexplore.ieee.org/document/11647761)
+
 <center><img src="./images/smacd_paper.png" width="800"></center>
-<p align="center"><em>Figure 20: SMACD 2026 paper</em></p>
+<p align="center"><em>Figure 21: SMACD 2026 paper</em></p>
 
 Manuscripts and figure sources are in [`paper_submission/`](paper_submission/).
 
 ### In the news
 
 <center><img src="./images/ENTC_News.png" width="800"></center>
-<p align="center"><em>Figure 21: Coverage by the Department of Electronic and Telecommunication Engineering, University of Moratuwa</em></p>
+<p align="center"><em>Figure 22: Coverage by the Department of Electronic and Telecommunication Engineering, University of Moratuwa</em></p>
 
 [Return to top](#toc)
 
