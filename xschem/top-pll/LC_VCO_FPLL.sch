@@ -651,6 +651,7 @@ XFILLER_17_108 VDD GND sg13g2_decap_4
 .ends
 "}
 C {code.sym} -250 300 0 0 {name=STD_CELLS only_toplevel=false
+spice_ignore="tcleval([if \{[info exists lvs_ignore] && $lvs_ignore == 1\} \{return \{false\}\} else \{return \{true\}\}])"
 value="
 ************************************************************************
 * Library Name: sg13g2_stdcell

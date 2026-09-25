@@ -186,7 +186,8 @@ N 1070 -90 1100 -90 {lab=SUB!}
 N 1070 -130 1070 -90 {lab=SUB!}
 N 1070 -90 1070 -40 {lab=SUB!}
 C {xschem/lc-vco/4nH_INDUCTOR.sym} 200 80 0 0 {name=x1}
-C {code.sym} -210 280 0 0 {name=INDUCTOR only_toplevel=false 
+C {code.sym} -210 280 0 0 {name=INDUCTOR only_toplevel=false
+spice_ignore="tcleval([if \{[info exists lvs_ignore] && $lvs_ignore == 1\} \{return \{false\}\} else \{return \{true\}\}])"
 value="
 .subckt 4nH_INDUCTOR 1 2
 * LVS black-box stub only
