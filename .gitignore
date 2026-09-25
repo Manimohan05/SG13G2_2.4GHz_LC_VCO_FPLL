@@ -3,11 +3,16 @@
 *.nodes
 *.sims
 
-# Ignore large FFT output
-schematic/blocks/lc-vco/simulations/fft_output.txt
 /.vscode
 /.claude
 
 # Python caches
 __pycache__/
 *.py[cod]
+
+# Waveform text dumps written by the testbenches
+fft_output*.txt
+vco_waveform*.txt
+
+# LibreLane / OpenLane flow output
+runs/
