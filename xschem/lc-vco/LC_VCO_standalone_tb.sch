@@ -1,8 +1,9 @@
-v {xschem version=3.4.6 file_version=1.2}
+v {xschem version=3.4.8RC file_version=1.3}
 G {}
 K {}
 V {}
 S {}
+F {}
 E {}
 L 4 -680 -340 -360 -340 {}
 L 4 -360 -400 -360 -340 {}
@@ -254,8 +255,6 @@ C {ammeter.sym} 60 -110 0 1 {name=Vpmos_n savecurrent=true spice_ignore=0}
 C {ammeter.sym} 60 30 0 1 {name=Vnmos_n savecurrent=true spice_ignore=0}
 C {lab_pin.sym} -470 230 2 0 {name=p1 sig_type=std_logic lab=Vgs
 }
-C {ihp_4nh_inductor.sym} 200 60 2 1 {name=x1
-}
 C {sg13g2_pr/cap_rfcmim.sym} 210 -80 3 0 {name=C1 
 model=cap_rfcmim
 lvs_model=rfcmim
@@ -450,3 +449,4 @@ C {vsource.sym} -780 260 0 0 {name=VBGR value=0.6 savecurrent=false}
 C {gnd.sym} -780 330 0 0 {name=l18 lab=GND}
 C {lab_pin.sym} -780 160 1 0 {name=p4 sig_type=std_logic lab=VBGR
 }
+C {xschem/lc-vco/inductor/ihp_4nh_inductor.sym} 200 80 0 0 {name=x1}

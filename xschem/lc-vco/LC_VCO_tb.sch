@@ -18,8 +18,8 @@ N -1190 -240 -960 -240 {lab=VCTRL}
 N -1190 -140 -960 -140 {lab=GND}
 N -1190 -160 -1190 -140 {lab=GND}
 N -960 -270 -960 -240 {lab=VCTRL}
-N -160 -280 -160 -260 {lab=VDD}
-N -160 -200 -140 -200 {lab=FOUT}
+N -150 -280 -150 -260 {lab=VDD}
+N -150 -200 -130 -200 {lab=FOUT}
 N -390 -230 -370 -230 {lab=VCTRL}
 N -620 -260 -620 -250 {lab=VBGR}
 N -620 -260 -370 -260 {lab=VBGR}
@@ -27,6 +27,7 @@ N -620 -195 -620 -155 {lab=GND}
 N -400 -200 -370 -200 {lab=GND}
 N -400 -200 -400 -140 {lab=GND}
 N -800 -190 -800 -140 {lab=VDD}
+N -300 -160 -300 -140 {lab=GND}
 C {gnd.sym} -800 -45 0 0 {name=l4 lab=GND}
 C {simulator_commands.sym} -1030 60 0 0 {name=ANALYSIS only_toplevel=true 
 value="
@@ -81,7 +82,7 @@ C {vsource.sym} -890 -190 0 0 {name=V2 value=1.1 savecurrent=false
 spice_ignore=true}
 C {vsource.sym} -1190 -190 0 1 {name=Vdn value="PULSE(0.5 0.0 10n 90n 1n 1s 2s)" savecurrent=false
 spice_ignore=true}
-C {opin.sym} -140 -200 0 0 {name=p5 lab=FOUT
+C {opin.sym} -130 -200 0 0 {name=p5 lab=FOUT
 }
 C {simulator_commands.sym} -1170 60 0 0 {name=OP only_toplevel=true 
 value="
@@ -95,8 +96,9 @@ write LC_VCO_tb.raw
 }
 C {ipin.sym} -960 -270 1 0 {name=p11 lab=VCTRL}
 C {gnd.sym} -400 -140 0 0 {name=l1 lab=GND}
+C {gnd.sym} -300 -140 0 0 {name=l7 lab=GND}
 C {lab_pin.sym} -390 -230 2 1 {name=p3 sig_type=std_logic lab=VCTRL}
-C {vdd.sym} -160 -280 0 0 {name=l2 lab=VDD}
+C {vdd.sym} -150 -280 0 0 {name=l2 lab=VDD}
 C {vdd.sym} -800 -185 0 0 {name=l3 lab=VDD}
 C {simulator_commands.sym} -740 60 0 0 {name=INCLUDE only_toplevel=true
 format="tcleval( @value )"

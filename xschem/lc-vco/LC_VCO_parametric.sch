@@ -360,4 +360,4 @@ plot tot_power xlimit 20n 35n
 
 .endc
 "}
-C {/home/designer/shared/LC_VCO_FPLL/xschem/4nH_INDUCTOR.sym} 2170 380 0 0 {name=x1}
+C {xschem/lc-vco/4nH_INDUCTOR.sym} 2170 380 0 0 {name=x1}

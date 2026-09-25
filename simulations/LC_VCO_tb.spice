@@ -1,9 +1,9 @@
-** sch_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/lc-vco/LC_VCO_tb.sch
+** sch_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/lc-vco/LC_VCO_tb.sch
 **.subckt LC_VCO_tb FOUT VCTRL
 *.opin FOUT
 *.ipin VCTRL
 VBGR VBGR GND 0.6
-x1 VDD VCTRL GND FOUT VBGR LC_VCO
+x1 VDD VCTRL GND FOUT VBGR GND LC_VCO
 V1 VDD GND 1.2
 Vup VCTRL GND PULSE(0.4 0.8 10n 90n 1n 1s 2s)
 **** begin user architecture code
@@ -79,30 +79,43 @@ write LC_VCO_tb.raw
 **** end user architecture code
 **.ends
 
-* expanding   symbol:  xschem/lc-vco/LC_VCO.sym # of pins=5
-** sym_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/lc-vco/LC_VCO.sym
-** sch_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/lc-vco/LC_VCO.sch
-.subckt LC_VCO VDD VCTRL GND FOUT VBGR
+* expanding   symbol:  xschem/lc-vco/LC_VCO.sym # of pins=6
+** sym_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/lc-vco/LC_VCO.sym
+** sch_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/lc-vco/LC_VCO.sch
+.subckt LC_VCO VDD VCTRL GND FOUT VBGR SUB!
 *.opin FOUT
 *.ipin VCTRL
 *.ipin VBGR
 *.iopin VDD
 *.iopin GND
-XM5 Vx Vgs GND GND sg13_lv_nmos w=384u l=1u ng=48
-XM4 OUTp OUTn VDD VDD sg13_lv_pmos w=36u l=0.13u ng=5
-XM3 OUTn OUTp VDD VDD sg13_lv_pmos w=36u l=0.13u ng=5
-XM2 OUTp OUTn Vx GND sg13_lv_nmos w=22u l=0.13u ng=3
-XM1 OUTn OUTp Vx GND sg13_lv_nmos w=22u l=0.13u ng=3
-XM6 Vgs Vgs GND GND sg13_lv_nmos w=64u l=1u ng=8
-XC1 OUTn OUTp GND cap_rfcmim w=21.9e-6 l=21.9e-6 wfeed=10.0e-6
-XC3 OUTp VCTRL OUTn GND sg13_hv_svaricap w=9.74u l=0.8u Nx=7
-XC2 OUTp VCTRL OUTn GND sg13_hv_svaricap w=9.74u l=0.8u Nx=7
-XM7 Vgs VBGR VDD VDD sg13_lv_pmos w=38u l=1u ng=5
-XM8 FOUT OUTp VDD VDD sg13_lv_pmos w=15u l=0.13u ng=10
-XM9 FOUT OUTp GND GND sg13_lv_nmos w=1.5u l=0.13u ng=1
-XM10 net1 OUTn VDD VDD sg13_lv_pmos w=15u l=0.13u ng=10
-XM11 net1 OUTn GND GND sg13_lv_nmos w=1.5u l=0.13u ng=1
-x2 OUTn OUTp 4nH_INDUCTOR
+*.iopin SUB!
+x1 OUTn OUTp 4nH_INDUCTOR
+XM5 Vx Vgs GND SUB! sg13_lv_nmos w=384u l=1u ng=48 m=1 mm_ok=1
+XM4 OUTp OUTn VDD NW sg13_lv_pmos w=36u l=0.13u ng=5 m=1 mm_ok=1
+XM3 OUTn OUTp VDD NW sg13_lv_pmos w=36u l=0.13u ng=5 m=1 mm_ok=1
+XM2 OUTp OUTn Vx SUB! sg13_lv_nmos w=21.99u l=0.13u ng=3 m=1 mm_ok=1
+XM1 OUTn OUTp Vx SUB! sg13_lv_nmos w=21.99u l=0.13u ng=3 m=1 mm_ok=1
+XM6 Vgs Vgs GND SUB! sg13_lv_nmos w=64u l=1u ng=8 m=1 mm_ok=1
+XC1 OUTn OUTp SUB! cap_rfcmim w=21.9e-6 l=21.9e-6 wfeed=10.0e-6 m=1 mm_ok=1
+XC3 OUTp VCTRL OUTn sub! sg13_hv_svaricap w=9.74u l=0.8u Nx=7 mm_ok=1
+XC2 OUTp VCTRL OUTn sub! sg13_hv_svaricap w=9.74u l=0.8u Nx=7 mm_ok=1
+XM7 Vgs VBGR VDD NWa sg13_lv_pmos w=38u l=1u ng=5 m=1 mm_ok=1
+XM8 FOUT OUTp VDD NW sg13_lv_pmos w=15u l=0.13u ng=10 m=1 mm_ok=1
+XM9 FOUT OUTp GND SUB! sg13_lv_nmos w=1.5u l=0.13u ng=1 m=1 mm_ok=1
+XM10 net1 OUTn VDD NW sg13_lv_pmos w=15u l=0.13u ng=10 m=1 mm_ok=1
+XM11 net1 OUTn GND SUB! sg13_lv_nmos w=1.5u l=0.13u ng=1 m=1 mm_ok=1
+XR1 VDD NW ntap1 R=7.357 w=10.22e-6 l=5.87e-6 rw=0.3e-6
+XR2 VDD NW ntap1 R=7.357 w=10.22e-6 l=5.87e-6 rw=0.3e-6
+XR3 GND SUB! ptap1 R=2.388 w=33.9e-6 l=14.41e-6 rw=0.3e-6
+XR4 GND SUB! ptap1 R=8.306 w=10.09e-6 l=4.23e-6 rw=0.3e-6
+XR5 GND SUB! ptap1 R=8.306 w=10.09e-6 l=4.23e-6 rw=0.3e-6
+XR6 VDD NW ntap1 R=9.234 w=8.42e-6 l=4.52e-6 rw=0.3e-6
+XR7 VDD NW ntap1 R=9.234 w=8.42e-6 l=4.52e-6 rw=0.3e-6
+XR8 GND SUB! ptap1 R=16.59 w=3.21e-6 l=4.26e-6 rw=0.3e-6
+XR9 GND SUB! ptap1 R=16.59 w=3.21e-6 l=4.26e-6 rw=0.3e-6
+XR10 GND SUB! ptap1 R=4.768 w=10.76e-6 l=13.74e-6 rw=0.3e-6
+XR11 GND SUB! ptap1 R=1.636 w=12.36e-6 l=57.9e-6 rw=0.3e-6
+XR12 VDD NWa ntap1 R=5.63 w=10.62e-6 l=10.22e-6 rw=0.3e-6
 .ends
 
 .GLOBAL GND
