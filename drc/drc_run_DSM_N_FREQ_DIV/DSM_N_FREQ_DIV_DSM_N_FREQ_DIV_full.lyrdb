@@ -2,7 +2,7 @@
 <report-database>
  <description>Main DRC Run Report at</description>
  <original-file />
- <generator>drc: script='/opt/pdks/ihp-sg13g2/libs.tech/klayout/tech/drc/ihp-sg13g2.drc'</generator>
+ <generator>drc: script='/foss/pdks/ihp-sg13g2/libs.tech/klayout/tech/drc/ihp-sg13g2.drc'</generator>
  <top-cell>DSM_N_FREQ_DIV</top-cell>
  <tags>
  </tags>

@@ -1,9 +1,9 @@
-# Logfile created on 2026-09-09 06:38:46 +0200 by logger.rb/v1.4.3
-2026-09-09 06:38:46 +0200: Memory Usage (432724K) : Starting running IHP-SG13G2 Klayout DRC maximum runset on /home/designer/shared/SG13G2_2.4GHz_LC_VCO_FPLL/gds/blocks/CHARGE_PUMP_V2.gds
-2026-09-09 06:38:46 +0200: Memory Usage (432724K) : Ruby Version for klayout: 3.0.2
-2026-09-09 06:38:46 +0200: Memory Usage (433748K) : Loading database to memory is complete.
-2026-09-09 06:38:46 +0200: Memory Usage (433748K) : IHP-SG13G2 Klayout DRC maximum runset output at: /home/designer/shared/SG13G2_2.4GHz_LC_VCO_FPLL/drc_run_CHARGE_PUMP/CHARGE_PUMP_V2_CHARGE_PUMP_sg13g2_maximal.lyrdb
-2026-09-09 06:38:46 +0200: Memory Usage (433876K) : Evaluate switches.
-2026-09-09 06:38:46 +0200: Memory Usage (433876K) : Klayout will use 1 thread(s)
-2026-09-09 06:38:46 +0200: Memory Usage (433876K) : deep mode is enabled for sg13g2_maximal runset.
-2026-09-09 06:38:56 +0200: Memory Usage (453588K) : KLayout DRC run for maximum ruleSet completed in 10.14 seconds
+# Logfile created on 2026-09-25 16:57:11 +0200 by logger.rb/v1.5.3
+2026-09-25 16:57:11 +0200: Memory Usage (455724K) : Starting running IHP-SG13G2 Klayout DRC maximum runset on /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/gds/blocks/CHARGE_PUMP_V2.gds
+2026-09-25 16:57:11 +0200: Memory Usage (455724K) : Ruby Version for klayout: 3.2.3
+2026-09-25 16:57:11 +0200: Memory Usage (456620K) : Loading database to memory is complete.
+2026-09-25 16:57:11 +0200: Memory Usage (456620K) : IHP-SG13G2 Klayout DRC maximum runset output at: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/drc/drc_run_CHARGE_PUMP/CHARGE_PUMP_V2_CHARGE_PUMP_sg13g2_maximal.lyrdb
+2026-09-25 16:57:11 +0200: Memory Usage (456620K) : Evaluate switches.
+2026-09-25 16:57:11 +0200: Memory Usage (456620K) : Klayout will use 12 thread(s)
+2026-09-25 16:57:11 +0200: Memory Usage (456620K) : deep mode is enabled for sg13g2_maximal runset.
+2026-09-25 16:57:20 +0200: Memory Usage (487976K) : KLayout DRC run for maximum ruleSet completed in 8.29 seconds
