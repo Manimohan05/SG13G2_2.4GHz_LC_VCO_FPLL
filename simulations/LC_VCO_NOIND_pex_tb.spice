@@ -1,0 +1,24 @@
+** LC_VCO post-layout: Magic RC extraction of LC_VCO_NOIND + EM-extracted 4nH inductor
+V1 VDD GND 1.2
+VBGR VBGR GND 0.6
+Vup VCTRL GND PULSE(0.4 0.8 10n 90n 1n 1s 2s)
+xvco OUTp OUTn FOUT VCTRL VBGR GND VDD LC_VCO_NOIND
+xind OUTn OUTp 4nH_INDUCTOR
+.param temp=27
+.options method=gear rshunt=1.0e12
+.include 4nH_INDUCTOR.spice
+.include ../pex/LC_VCO_NOIND__LC_VCO_NOIND/magic_RC/LC_VCO_NOIND.pex_sim.spice
+.lib cornerMOSlv.lib mos_tt
+.lib cornerMOShv.lib mos_tt
+.lib cornerRES.lib res_typ
+.lib cornerCAP.lib cap_typ
+.control
+save v(vctrl) v(fout) v(outp) v(outn)
+tran 10p 300n
+meas tran tper trig v(fout) val=0.6 rise=40 targ v(fout) val=0.6 rise=60
+meas tran fo_max max v(fout) from=200n to=300n
+meas tran fo_min min v(fout) from=200n to=300n
+meas tran vp_pp pp v(outp) from=200n to=300n
+quit
+.endc
+.end

@@ -1,0 +1,1192 @@
+scale 1000 1 0.5
+rnode "GND.n0" 0 0 19746 512 0
+rnode "GND.n1" 0 0 19746 512 0
+rnode "GND.n2" 0 0 19746 512 0
+rnode "GND.n3" 0 0 19746 512 0
+rnode "GND.n4" 0 0 19746 512 0
+rnode "GND.n5" 0 0 19746 3368 0
+rnode "GND.n6" 0 0 19746 512 0
+rnode "GND.n7" 0 0 19746 512 0
+rnode "GND.n8" 0 0 19746 512 0
+rnode "GND.n9" 0 0 19746 512 0
+rnode "GND.n10" 0 0 19746 512 0
+rnode "GND.n11" 0 0 19746 512 0
+rnode "GND.n12" 0 0 19746 512 0
+rnode "GND.n13" 0 0 19746 512 0
+rnode "GND.n14" 0 0 19746 10808 0
+rnode "GND.n15" 0 0 19746 512 0
+rnode "GND.n16" 0 0 19746 3640 0
+rnode "GND.n17" 0 0 19746 512 0
+rnode "GND.n18" 0 0 19746 512 0
+rnode "GND.n19" 0 0 19746 512 0
+rnode "GND.n20" 0 0 19746 4592 0
+rnode "GND.n21" 0 0 19746 512 0
+rnode "GND.n22" 0 0 19746 512 0
+rnode "GND.n23" 0 0 19746 512 0
+rnode "GND.n24" 0 0 19746 512 0
+rnode "GND.n25" 0 0 19746 512 0
+rnode "GND.n26" 0 0 19746 512 0
+rnode "GND.n27" 0 0 19746 512 0
+rnode "GND.n28" 0 0 19746 3844 0
+rnode "GND.n29" 0 0 19746 512 0
+rnode "GND.n30" 0 0 19746 512 0
+rnode "GND.n31" 0 0 19746 512 0
+rnode "GND.n32" 0 0 19746 512 0
+rnode "GND.n33" 0 0 23398 6566 0
+rnode "GND.n34" 0 0 23398 6566 0
+rnode "GND.n35" 0 0 21620 2191 0
+rnode "GND.n36" 0 0 14672 3648 0
+rnode "GND.n37" 0 0 14672 2492 0
+rnode "GND.n38" 0 0 14672 4228 0
+rnode "GND.n39" 0 0 14672 2492 0
+rnode "GND.t50" 0 0 14672 2492 0
+rnode "GND.n40" 0 0 14672 2492 0
+rnode "GND.n41" 0 0 22418 6144 0
+rnode "GND.n42" 0 0 13626 1438 0
+rnode "GND.n43" 0 0 19474 11760 0
+rnode "GND.n44" 0 0 19474 11760 0
+rnode "GND.n45" 0 0 14672 2492 0
+rnode "GND.n46" 0 0 14672 2492 0
+rnode "GND.n47" 0 0 34882 2778 0
+rnode "GND.n48" 0 0 21599 9689 0
+rnode "GND.n49" 0 0 21620 9808 0
+rnode "GND.n50" 0 0 21764 1792 0
+rnode "GND.n51" 0 0 13626 2462 0
+rnode "GND.n52" 0 0 13766 1747 0
+rnode "GND.n53" 0 0 13486 2462 0
+rnode "GND.n54" 0 0 13346 2462 0
+rnode "GND.n55" 0 0 13206 2462 0
+rnode "GND.n56" 0 0 13066 2462 0
+rnode "GND.n57" 0 0 12926 2462 0
+rnode "GND.n58" 0 0 12786 2462 0
+rnode "GND.n59" 0 0 13532 2492 0
+rnode "GND.n60" 0 0 13464 2492 0
+rnode "GND.n61" 0 0 13328 2492 0
+rnode "GND.n62" 0 0 13192 2492 0
+rnode "GND.n63" 0 0 13056 2492 0
+rnode "GND.n64" 0 0 12920 2492 0
+rnode "GND.t46" 0 0 13626 3698 0
+rnode "GND.t10" 0 0 13626 4250 0
+rnode "GND.t44" 0 0 13626 4526 0
+rnode "GND.t48" 0 0 13626 3146 0
+rnode "GND.t47" 0 0 13626 3422 0
+rnode "GND.t45" 0 0 13626 3974 0
+rnode "GND.n65" 0 0 14672 2492 0
+rnode "GND.t41" 0 0 13626 4802 0
+rnode "GND.n66" 0 0 19746 10196 0
+rnode "GND.n67" 0 0 22128 9548 0
+rnode "GND.n68" 0 0 22128 9684 0
+rnode "GND.n69" 0 0 22128 9752 0
+rnode "GND.n70" 0 0 22128 9864 0
+rnode "GND.n71" 0 0 22128 10000 0
+rnode "GND.n72" 0 0 22710 9412 0
+rnode "GND.n73" 0 0 22128 10136 0
+rnode "GND.n74" 0 0 22710 9480 0
+rnode "GND.n75" 0 0 22710 9616 0
+rnode "GND.n76" 0 0 22710 9752 0
+rnode "GND.n77" 0 0 22710 9932 0
+rnode "GND.n78" 0 0 22710 10068 0
+rnode "GND.n79" 0 0 19746 10128 0
+rnode "GND.n80" 0 0 22710 10136 0
+rnode "GND.n81" 0 0 19746 10060 0
+rnode "GND.t19" 0 0 18540 10002 0
+rnode "GND.n82" 0 0 19746 9992 0
+rnode "GND.n83" 0 0 22710 10000 0
+rnode "GND.n84" 0 0 19746 9924 0
+rnode "GND.n85" 0 0 19746 9788 0
+rnode "GND.t0" 0 0 22419 9809 0
+rnode "GND.n86" 0 0 19746 9856 0
+rnode "GND.n87" 0 0 22710 9864 0
+rnode "GND.t20" 0 0 18540 9726 0
+rnode "GND.n88" 0 0 19746 9720 0
+rnode "GND.n89" 0 0 19746 9652 0
+rnode "GND.n90" 0 0 22710 9684 0
+rnode "GND.n91" 0 0 19746 9584 0
+rnode "GND.n92" 0 0 19746 9516 0
+rnode "GND.n93" 0 0 22710 9548 0
+rnode "GND.t22" 0 0 18540 9450 0
+rnode "GND.n94" 0 0 19746 9448 0
+rnode "GND.n95" 0 0 19746 7340 0
+rnode "GND.n96" 0 0 23398 6165 0
+rnode "GND.n97" 0 0 23258 6165 0
+rnode "GND.n98" 0 0 23118 6165 0
+rnode "GND.n99" 0 0 22978 6165 0
+rnode "GND.n100" 0 0 22838 6165 0
+rnode "GND.n101" 0 0 22698 6165 0
+rnode "GND.n102" 0 0 22558 6165 0
+rnode "GND.n103" 0 0 22278 6165 0
+rnode "GND.n104" 0 0 22138 6165 0
+rnode "GND.n105" 0 0 21998 6165 0
+rnode "GND.n106" 0 0 21858 6165 0
+rnode "GND.n107" 0 0 21718 6165 0
+rnode "GND.n108" 0 0 21578 6165 0
+rnode "GND.n109" 0 0 23398 4648 0
+rnode "GND.n110" 0 0 23398 4716 0
+rnode "GND.n111" 0 0 23398 4852 0
+rnode "GND.n112" 0 0 23398 4988 0
+rnode "GND.n113" 0 0 23398 5162 0
+rnode "GND.n114" 0 0 23398 5298 0
+rnode "GND.n115" 0 0 23398 7284 0
+rnode "GND.n116" 0 0 19746 7272 0
+rnode "GND.t33" 0 0 18540 7242 0
+rnode "GND.n117" 0 0 23398 7216 0
+rnode "GND.n118" 0 0 19746 7204 0
+rnode "GND.n119" 0 0 23398 7148 0
+rnode "GND.n120" 0 0 19746 7136 0
+rnode "GND.n121" 0 0 23398 7080 0
+rnode "GND.n122" 0 0 19746 7068 0
+rnode "GND.t5" 0 0 22419 7061 0
+rnode "GND.n123" 0 0 23398 7012 0
+rnode "GND.n124" 0 0 19746 7000 0
+rnode "GND.t34" 0 0 18540 6966 0
+rnode "GND.t6" 0 0 22419 6959 0
+rnode "GND.n125" 0 0 19746 6932 0
+rnode "GND.n126" 0 0 23398 6906 0
+rnode "GND.n127" 0 0 19746 6864 0
+rnode "GND.t7" 0 0 22419 6857 0
+rnode "GND.n128" 0 0 23398 6838 0
+rnode "GND.n129" 0 0 19746 6796 0
+rnode "GND.n130" 0 0 23398 6770 0
+rnode "GND.n131" 0 0 19746 6728 0
+rnode "GND.n132" 0 0 23398 6702 0
+rnode "GND.t35" 0 0 18540 6690 0
+rnode "GND.n133" 0 0 19746 6660 0
+rnode "GND.n134" 0 0 23398 6634 0
+rnode "GND.n135" 0 0 19746 6592 0
+rnode "GND.n136" 0 0 23398 6566 0
+rnode "GND.t36" 0 0 18540 6414 0
+rnode "GND.t38" 0 0 18540 6138 0
+rnode "GND.t39" 0 0 18540 5862 0
+rnode "GND.t43" 0 0 18540 5586 0
+rnode "GND.n137" 0 0 23398 5434 0
+rnode "GND.n138" 0 0 19746 5408 0
+rnode "GND.t51" 0 0 18540 5310 0
+rnode "GND.n139" 0 0 19746 5340 0
+rnode "GND.n140" 0 0 23398 5366 0
+rnode "GND.n141" 0 0 19746 5272 0
+rnode "GND.n142" 0 0 19746 5204 0
+rnode "GND.n143" 0 0 23398 5230 0
+rnode "GND.t2" 0 0 22419 5143 0
+rnode "GND.n144" 0 0 19746 5136 0
+rnode "GND.n145" 0 0 19746 5000 0
+rnode "GND.t52" 0 0 18540 5034 0
+rnode "GND.t3" 0 0 22419 5041 0
+rnode "GND.n146" 0 0 19746 5068 0
+rnode "GND.n147" 0 0 23398 5094 0
+rnode "GND.t4" 0 0 22419 4939 0
+rnode "GND.n148" 0 0 19746 4932 0
+rnode "GND.n149" 0 0 19746 4864 0
+rnode "GND.n150" 0 0 23398 4920 0
+rnode "GND.n151" 0 0 19746 4796 0
+rnode "GND.n152" 0 0 19746 4728 0
+rnode "GND.t53" 0 0 18540 4758 0
+rnode "GND.n153" 0 0 23398 4784 0
+rnode "GND.n154" 0 0 19746 4660 0
+rnode "GND.n155" 0 0 19746 2552 0
+rnode "GND.n156" 0 0 22128 1931 0
+rnode "GND.n157" 0 0 22128 2067 0
+rnode "GND.n158" 0 0 22128 2135 0
+rnode "GND.n159" 0 0 22128 2247 0
+rnode "GND.n160" 0 0 22128 2383 0
+rnode "GND.n161" 0 0 22128 2519 0
+rnode "GND.n162" 0 0 22710 1863 0
+rnode "GND.n163" 0 0 22710 1795 0
+rnode "GND.n164" 0 0 22710 1999 0
+rnode "GND.n165" 0 0 22710 2135 0
+rnode "GND.n166" 0 0 22710 2315 0
+rnode "GND.n167" 0 0 22710 2451 0
+rnode "GND.t64" 0 0 18540 2550 0
+rnode "GND.n168" 0 0 19746 2484 0
+rnode "GND.n169" 0 0 22710 2519 0
+rnode "GND.n170" 0 0 19746 2416 0
+rnode "GND.n171" 0 0 19746 2348 0
+rnode "GND.n172" 0 0 22710 2383 0
+rnode "GND.n173" 0 0 19746 2280 0
+rnode "GND.t66" 0 0 18540 2274 0
+rnode "GND.n174" 0 0 19746 2144 0
+rnode "GND.t8" 0 0 22419 2191 0
+rnode "GND.n175" 0 0 19746 2212 0
+rnode "GND.n176" 0 0 22710 2247 0
+rnode "GND.n177" 0 0 19746 2076 0
+rnode "GND.n178" 0 0 19746 2008 0
+rnode "GND.n179" 0 0 22710 2067 0
+rnode "GND.t67" 0 0 18540 1998 0
+rnode "GND.n180" 0 0 19746 1940 0
+rnode "GND.n181" 0 0 19746 1872 0
+rnode "GND.n182" 0 0 22710 1931 0
+rnode "GND.n183" 0 0 19746 1804 0
+rnode "GND.t13" 0 0 17334 11760 0
+rnode "GND.t16" 0 0 17364 10140 0
+rnode "GND.t21" 0 0 17334 9924 0
+rnode "GND.t24" 0 0 17364 8484 0
+rnode "GND.t29" 0 0 17334 11760 0
+rnode "GND.t32" 0 0 17364 6828 0
+rnode "GND.t40" 0 0 17364 5172 0
+rnode "GND.t37" 0 0 17334 11760 0
+rnode "GND.t57" 0 0 17364 3516 0
+rnode "GND.t54" 0 0 17334 11760 0
+rnode "GND.t62" 0 0 17334 11760 0
+rnode "GND.n184" 0 0 22098 1831 0
+rnode "GND.n185" 0 0 21599 1831 0
+rnode "GND.n186" 0 0 22098 1951 0
+rnode "GND.n187" 0 0 21599 1951 0
+rnode "GND.n188" 0 0 21599 2071 0
+rnode "GND.n189" 0 0 22098 2191 0
+rnode "GND.n190" 0 0 22368 2211 0
+rnode "GND.n191" 0 0 22098 2071 0
+rnode "GND.n192" 0 0 22368 2091 0
+rnode "GND.t9" 0 0 22368 2311 0
+rnode "GND.n193" 0 0 22368 2311 0
+rnode "GND.n194" 0 0 22098 2311 0
+rnode "GND.n195" 0 0 21599 2311 0
+rnode "GND.n196" 0 0 22098 2431 0
+rnode "GND.n197" 0 0 22098 9449 0
+rnode "GND.n198" 0 0 21599 9449 0
+rnode "GND.n199" 0 0 22098 9569 0
+rnode "GND.n200" 0 0 21599 9569 0
+rnode "GND.n201" 0 0 21764 2191 0
+rnode "GND.n202" 0 0 21764 5790 0
+rnode "GND.n203" 0 0 22098 9809 0
+rnode "GND.n204" 0 0 22368 9829 0
+rnode "GND.n205" 0 0 22098 9689 0
+rnode "GND.n206" 0 0 22368 9709 0
+rnode "GND.t1" 0 0 22368 9929 0
+rnode "GND.n207" 0 0 22368 9929 0
+rnode "GND.n208" 0 0 22098 9929 0
+rnode "GND.n209" 0 0 21599 9929 0
+rnode "GND.n210" 0 0 22098 10049 0
+rnode "GND.n211" 0 0 21599 10049 0
+rnode "GND.n212" 0 0 22098 10169 0
+rnode "GND.n213" 0 0 21599 10169 0
+rnode "GND.n214" 0 0 19776 10169 0
+rnode "GND.n215" 0 0 19610 11760 0
+rnode "GND.n216" 0 0 19776 10049 0
+rnode "GND.n217" 0 0 19746 9992 0
+rnode "GND.n218" 0 0 19776 9929 0
+rnode "GND.n219" 0 0 19610 11760 0
+rnode "GND.n220" 0 0 19776 9809 0
+rnode "GND.n221" 0 0 19610 11760 0
+rnode "GND.n222" 0 0 19776 9689 0
+rnode "GND.n223" 0 0 19610 11760 0
+rnode "GND.n224" 0 0 19776 9569 0
+rnode "GND.n225" 0 0 22098 2551 0
+rnode "GND.n226" 0 0 21929 2551 0
+rnode "GND.n227" 0 0 21599 2431 0
+rnode "GND.n228" 0 0 19776 2431 0
+rnode "GND.n229" 0 0 19610 11760 0
+rnode "GND.n230" 0 0 19776 2311 0
+rnode "GND.n231" 0 0 19610 11760 0
+rnode "GND.n232" 0 0 19776 2191 0
+rnode "GND.n233" 0 0 19610 11760 0
+rnode "GND.n234" 0 0 19776 2071 0
+rnode "GND.n235" 0 0 19746 2008 0
+rnode "GND.n236" 0 0 19776 1951 0
+rnode "GND.n237" 0 0 19610 11760 0
+rnode "GND.n238" 0 0 19776 1831 0
+rnode "GND.t73" 0 0 17364 756 0
+rnode "GND.t70" 0 0 17334 1600 0
+rnode "GND.t65" 0 0 17364 1860 0
+rnode "GND.t12" 0 0 18540 11382 0
+rnode "GND.t14" 0 0 18540 11106 0
+rnode "GND.n239" 0 0 19746 11148 0
+rnode "GND.n240" 0 0 24246 11165 0
+rnode "GND.t74" 0 0 18540 618 0
+rnode "GND.n241" 0 0 24246 834 0
+rnode "GND.n242" 0 0 19746 852 0
+rnode "GND.t72" 0 0 18540 894 0
+rnode "GND.t71" 0 0 18540 1170 0
+rnode "GND.t69" 0 0 18540 1446 0
+rnode "GND.t68" 0 0 18540 1722 0
+rnode "GND.n243" 0 0 19746 1736 0
+rnode "GND.n244" 0 0 22710 1795 0
+rnode "GND.n245" 0 0 22710 1795 0
+rnode "GND.n246" 0 0 22710 2587 0
+rnode "GND.t63" 0 0 18540 2826 0
+rnode "GND.t61" 0 0 18540 3102 0
+rnode "GND.t60" 0 0 18540 3378 0
+rnode "GND.t59" 0 0 18540 3654 0
+rnode "GND.n247" 0 0 14758 3888 0
+rnode "GND.n248" 0 0 19746 3912 0
+rnode "GND.t58" 0 0 18540 3930 0
+rnode "GND.t56" 0 0 18540 4206 0
+rnode "GND.t55" 0 0 18540 4482 0
+rnode "GND.n249" 0 0 23398 4648 0
+rnode "GND.n250" 0 0 23398 4648 0
+rnode "GND.n251" 0 0 23398 5434 0
+rnode "GND.n252" 0 0 23398 4648 0
+rnode "GND.n253" 0 0 23258 5464 0
+rnode "GND.n254" 0 0 23398 4648 0
+rnode "GND.n255" 0 0 23118 5464 0
+rnode "GND.n256" 0 0 23398 4648 0
+rnode "GND.n257" 0 0 22978 5464 0
+rnode "GND.n258" 0 0 23398 4648 0
+rnode "GND.n259" 0 0 22838 5464 0
+rnode "GND.n260" 0 0 23398 4648 0
+rnode "GND.n261" 0 0 22698 5464 0
+rnode "GND.n262" 0 0 23398 4648 0
+rnode "GND.n263" 0 0 22558 5464 0
+rnode "GND.n264" 0 0 23398 4648 0
+rnode "GND.n265" 0 0 22418 5464 0
+rnode "GND.n266" 0 0 22324 5434 0
+rnode "GND.n267" 0 0 22278 5464 0
+rnode "GND.n268" 0 0 22256 5434 0
+rnode "GND.n269" 0 0 22138 5464 0
+rnode "GND.n270" 0 0 22120 5434 0
+rnode "GND.n271" 0 0 21998 5464 0
+rnode "GND.n272" 0 0 21984 5434 0
+rnode "GND.n273" 0 0 21858 5464 0
+rnode "GND.n274" 0 0 21848 5434 0
+rnode "GND.n275" 0 0 21718 5464 0
+rnode "GND.n276" 0 0 21712 5434 0
+rnode "GND.n277" 0 0 21578 5464 0
+rnode "GND.n278" 0 0 21576 5434 0
+rnode "GND.n279" 0 0 21440 5434 0
+rnode "GND.n280" 0 0 21438 6165 0
+rnode "GND.n281" 0 0 21440 6566 0
+rnode "GND.n282" 0 0 21576 6566 0
+rnode "GND.n283" 0 0 21578 6536 0
+rnode "GND.n284" 0 0 21712 6566 0
+rnode "GND.n285" 0 0 21718 6536 0
+rnode "GND.n286" 0 0 21848 6566 0
+rnode "GND.n287" 0 0 21858 6536 0
+rnode "GND.n288" 0 0 21984 6566 0
+rnode "GND.n289" 0 0 21998 6536 0
+rnode "GND.n290" 0 0 22120 6566 0
+rnode "GND.n291" 0 0 22138 6536 0
+rnode "GND.n292" 0 0 22256 6566 0
+rnode "GND.n293" 0 0 22278 6536 0
+rnode "GND.n294" 0 0 22324 6566 0
+rnode "GND.n295" 0 0 22418 6536 0
+rnode "GND.n296" 0 0 22514 6566 0
+rnode "GND.n297" 0 0 22558 6536 0
+rnode "GND.n298" 0 0 22650 6566 0
+rnode "GND.n299" 0 0 22698 6536 0
+rnode "GND.n300" 0 0 22786 6566 0
+rnode "GND.n301" 0 0 22838 6536 0
+rnode "GND.n302" 0 0 22922 6566 0
+rnode "GND.n303" 0 0 22978 6536 0
+rnode "GND.n304" 0 0 23058 6566 0
+rnode "GND.n305" 0 0 23118 6536 0
+rnode "GND.n306" 0 0 23194 6566 0
+rnode "GND.n307" 0 0 23258 6536 0
+rnode "GND.n308" 0 0 23330 6566 0
+rnode "GND.n309" 0 0 23398 6566 0
+rnode "GND.n310" 0 0 21440 7352 0
+rnode "GND.t31" 0 0 18540 7518 0
+rnode "GND.t30" 0 0 18540 7794 0
+rnode "GND.t28" 0 0 18540 8070 0
+rnode "GND.t27" 0 0 18540 8346 0
+rnode "GND.t26" 0 0 18540 8622 0
+rnode "GND.t25" 0 0 18540 8898 0
+rnode "GND.t23" 0 0 18540 9174 0
+rnode "GND.n311" 0 0 22710 9412 0
+rnode "GND.n312" 0 0 22710 9412 0
+rnode "GND.n313" 0 0 22710 10204 0
+rnode "GND.n314" 0 0 19746 10264 0
+rnode "GND.t18" 0 0 18540 10278 0
+rnode "GND.t17" 0 0 18540 10554 0
+rnode "GND.t15" 0 0 18540 10830 0
+rnode "GND.n315" 0 0 14758 10980 0
+rnode "GND.n316" 0 0 12646 2462 0
+rnode "GND.t49" 0 0 12580 2764 0
+rnode "GND.t11" 0 0 12580 4128 0
+rnode "GND.n317" 0 0 14466 1747 0
+rnode "GND.n318" 0 0 14326 1747 0
+rnode "GND.n319" 0 0 14186 1747 0
+rnode "GND.n320" 0 0 14046 1747 0
+rnode "GND.n321" 0 0 13906 1747 0
+rnode "GND.n322" 0 0 14672 2492 0
+rnode "GND.n323" 0 0 13766 2462 0
+rnode "GND.n324" 0 0 14672 2492 0
+rnode "GND.n325" 0 0 13906 2462 0
+rnode "GND.n326" 0 0 14672 2492 0
+rnode "GND.n327" 0 0 14046 2462 0
+rnode "GND.n328" 0 0 14672 2492 0
+rnode "GND.n329" 0 0 14186 2462 0
+rnode "GND.n330" 0 0 14672 2492 0
+rnode "GND.n331" 0 0 14326 2462 0
+rnode "GND.n332" 0 0 14672 2492 0
+rnode "GND.n333" 0 0 14466 2462 0
+rnode "GND.n334" 0 0 14672 2492 0
+rnode "GND.n335" 0 0 14606 2462 0
+rnode "GND.n336" 0 0 12580 4840 0
+rnode "GND.t42" 0 0 12580 4680 0
+rnode "GND.n337" 0 0 14672 2492 0
+rnode "GND.n338" 0 0 12786 1747 0
+rnode "GND.n339" 0 0 12926 1747 0
+rnode "GND.n340" 0 0 13066 1747 0
+rnode "GND.n341" 0 0 13206 1747 0
+rnode "GND.n342" 0 0 13346 1747 0
+rnode "GND.n343" 0 0 13486 1747 0
+rnode "GND.n344" 0 0 14466 1372 0
+rnode "GND" 0 0 14356 84 0
+resist "GND.n40" "GND.t47" 60.2204
+resist "GND.t50" "GND.n39" 0.00679889
+resist "GND.t50" "GND.n36" 0.00681111
+resist "GND.t50" "GND.n38" 0.00704998
+resist "GND.n336" "GND.t50" 0.00853968
+resist "GND.t50" "GND.n46" 0.00910807
+resist "GND.n201" "GND.n50" 0.0171
+resist "GND.n49" "GND.n48" 0.04
+resist "GND.n213" "GND.n211" 0.04
+resist "GND.n211" "GND.n209" 0.04
+resist "GND.n209" "GND.n49" 0.04
+resist "GND.n48" "GND.n200" 0.04
+resist "GND.n200" "GND.n198" 0.04
+resist "GND.n227" "GND.n226" 0.04
+resist "GND.n227" "GND.n195" 0.04
+resist "GND.n195" "GND.n35" 0.04
+resist "GND.n35" "GND.n188" 0.04
+resist "GND.n188" "GND.n187" 0.04
+resist "GND.n187" "GND.n185" 0.04
+resist "GND.n250" "GND.n109" 0.0414174
+resist "GND.n318" "GND.n317" 0.0466667
+resist "GND.n319" "GND.n318" 0.0466667
+resist "GND.n320" "GND.n319" 0.0466667
+resist "GND.n321" "GND.n320" 0.0466667
+resist "GND.n321" "GND.n52" 0.0466667
+resist "GND.n42" "GND.n52" 0.0466667
+resist "GND.n42" "GND.n343" 0.0466667
+resist "GND.n343" "GND.n342" 0.0466667
+resist "GND.n342" "GND.n341" 0.0466667
+resist "GND.n341" "GND.n340" 0.0466667
+resist "GND.n340" "GND.n339" 0.0466667
+resist "GND.n339" "GND.n338" 0.0466667
+resist "GND.n97" "GND.n96" 0.0466667
+resist "GND.n98" "GND.n97" 0.0466667
+resist "GND.n99" "GND.n98" 0.0466667
+resist "GND.n100" "GND.n99" 0.0466667
+resist "GND.n101" "GND.n100" 0.0466667
+resist "GND.n102" "GND.n101" 0.0466667
+resist "GND.n41" "GND.n102" 0.0466667
+resist "GND.n103" "GND.n41" 0.0466667
+resist "GND.n104" "GND.n103" 0.0466667
+resist "GND.n105" "GND.n104" 0.0466667
+resist "GND.n106" "GND.n105" 0.0466667
+resist "GND.n107" "GND.n106" 0.0466667
+resist "GND.n108" "GND.n107" 0.0466667
+resist "GND.n280" "GND.n108" 0.0466667
+resist "GND" "GND.n344" 0.0552
+resist "GND.n278" "GND.n277" 0.0662723
+resist "GND.n208" "GND.n71" 0.0681056
+resist "GND.n194" "GND.n160" 0.069939
+resist "GND.n191" "GND.n157" 0.069939
+resist "GND.n308" "GND.n307" 0.069939
+resist "GND.n219" "GND.n218" 0.0717723
+resist "GND.n234" "GND.n233" 0.0717723
+resist "GND.n205" "GND.n68" 0.0717723
+resist "GND.n332" "GND.n331" 0.0736056
+resist "GND.n276" "GND.n275" 0.0736056
+resist "GND.n64" "GND.n57" 0.0736056
+resist "GND.n285" "GND.n284" 0.0736056
+resist "GND.n32" "GND.n0" 0.0110551
+resist "GND.n255" "GND.n254" 0.0772723
+resist "GND.n306" "GND.n305" 0.0772723
+resist "GND.n330" "GND.n329" 0.0809389
+resist "GND.n274" "GND.n273" 0.080939
+resist "GND.n63" "GND.n56" 0.080939
+resist "GND.n287" "GND.n286" 0.080939
+resist "GND.n216" "GND.n215" 0.0827723
+resist "GND.n237" "GND.n236" 0.0827723
+resist "GND.n267" "GND.n266" 0.0843333
+resist "GND.n59" "GND.n53" 0.0843333
+resist "GND.n294" "GND.n293" 0.0843333
+resist "GND.n257" "GND.n256" 0.0846056
+resist "GND.n304" "GND.n303" 0.0846056
+resist "GND.n328" "GND.n327" 0.0882723
+resist "GND.n272" "GND.n271" 0.0882723
+resist "GND.n62" "GND.n55" 0.0882723
+resist "GND.n289" "GND.n288" 0.0882723
+resist "GND.n224" "GND.n223" 0.0901056
+resist "GND.n229" "GND.n228" 0.0901056
+resist "GND.t50" "GND.n37" 0.0911021
+resist "GND.n259" "GND.n258" 0.0919389
+resist "GND.n302" "GND.n301" 0.091939
+resist "GND.n326" "GND.n325" 0.0956056
+resist "GND.n270" "GND.n269" 0.0956056
+resist "GND.n61" "GND.n54" 0.0956056
+resist "GND.n291" "GND.n290" 0.0956056
+resist "GND.n43" "GND.n224" 0.210381
+resist "GND.n228" "GND.n44" 0.21037
+resist "GND.n210" "GND.n73" 0.0974389
+resist "GND.n261" "GND.n260" 0.0992723
+resist "GND.n196" "GND.n161" 0.0992723
+resist "GND.n186" "GND.n156" 0.0992723
+resist "GND.n300" "GND.n299" 0.0992723
+resist "GND.n203" "GND.n70" 0.100833
+resist "GND.n221" "GND.n220" 0.101106
+resist "GND.n232" "GND.n231" 0.101106
+resist "GND.n199" "GND.n67" 0.101106
+resist "GND.n189" "GND.n159" 0.102667
+resist "GND.n189" "GND.n158" 0.102667
+resist "GND.n324" "GND.n323" 0.102939
+resist "GND.n268" "GND.n267" 0.102939
+resist "GND.n60" "GND.n53" 0.102939
+resist "GND.n293" "GND.n292" 0.102939
+resist "GND.n203" "GND.n69" 0.1045
+resist "GND.n217" "GND.n216" 0.1045
+resist "GND.n236" "GND.n235" 0.1045
+resist "GND.n263" "GND.n262" 0.106606
+resist "GND.n298" "GND.n297" 0.106606
+resist "GND.n322" "GND.n51" 0.110272
+resist "GND.n265" "GND.n264" 0.113939
+resist "GND.n296" "GND.n295" 0.113939
+resist "GND.n205" "GND.n69" 0.1155
+resist "GND.n218" "GND.n217" 0.1155
+resist "GND.n235" "GND.n234" 0.1155
+resist "GND.n194" "GND.n159" 0.117333
+resist "GND.n191" "GND.n158" 0.117333
+resist "GND.n208" "GND.n70" 0.119167
+resist "GND.n222" "GND.n221" 0.119439
+resist "GND.n231" "GND.n230" 0.119439
+resist "GND.n197" "GND.n67" 0.119439
+resist "GND.n225" "GND.n161" 0.121272
+resist "GND.n184" "GND.n156" 0.121272
+resist "GND.n212" "GND.n73" 0.123106
+resist "GND.n252" "GND.n251" 0.124925
+resist "GND.n282" "GND.n281" 0.124925
+resist "GND.n334" "GND.n333" 0.128252
+resist "GND.n316" "GND.n45" 0.128252
+resist "GND.n283" "GND.n282" 0.128252
+resist "GND.n45" "GND.n58" 0.128592
+resist "GND.n335" "GND.n334" 0.128592
+resist "GND.n223" "GND.n222" 0.130439
+resist "GND.n230" "GND.n229" 0.130439
+resist "GND.n253" "GND.n252" 0.131919
+resist "GND.n215" "GND.n214" 0.137772
+resist "GND.n238" "GND.n237" 0.137772
+resist "GND.n264" "GND.n263" 0.143272
+resist "GND.n297" "GND.n296" 0.143272
+resist "GND.n323" "GND.n322" 0.146939
+resist "GND.n199" "GND.n68" 0.148772
+resist "GND.n220" "GND.n219" 0.148772
+resist "GND.n233" "GND.n232" 0.148772
+resist "GND.n262" "GND.n261" 0.150606
+resist "GND.n196" "GND.n160" 0.150606
+resist "GND.n186" "GND.n157" 0.150606
+resist "GND.n299" "GND.n298" 0.150606
+resist "GND.n210" "GND.n71" 0.152439
+resist "GND.n202" "GND.n201" 0.154243
+resist "GND.n269" "GND.n268" 0.154272
+resist "GND.n325" "GND.n324" 0.154272
+resist "GND.n60" "GND.n54" 0.154272
+resist "GND.n292" "GND.n291" 0.154272
+resist "GND.n260" "GND.n259" 0.157939
+resist "GND.n301" "GND.n300" 0.157939
+resist "GND.n327" "GND.n326" 0.161606
+resist "GND.n271" "GND.n270" 0.161606
+resist "GND.n61" "GND.n55" 0.161606
+resist "GND.n290" "GND.n289" 0.161606
+resist "GND.n258" "GND.n257" 0.165272
+resist "GND.n303" "GND.n302" 0.165272
+resist "GND.n329" "GND.n328" 0.168939
+resist "GND.n273" "GND.n272" 0.168939
+resist "GND.n62" "GND.n56" 0.168939
+resist "GND.n288" "GND.n287" 0.168939
+resist "GND.n192" "GND.n190" 0.171753
+resist "GND.n193" "GND.n190" 0.171753
+resist "GND.n206" "GND.n204" 0.171753
+resist "GND.n207" "GND.n204" 0.171753
+resist "GND.n266" "GND.n265" 0.172333
+resist "GND.n59" "GND.n51" 0.172333
+resist "GND.n295" "GND.n294" 0.172333
+resist "GND.n256" "GND.n255" 0.172606
+resist "GND.n305" "GND.n304" 0.172606
+resist "GND.n275" "GND.n274" 0.176272
+resist "GND.n331" "GND.n330" 0.176272
+resist "GND.n63" "GND.n57" 0.176272
+resist "GND.n286" "GND.n285" 0.176272
+resist "GND.n344" "GND.n42" 0.493458
+resist "GND.n202" "GND.n41" 0.485487
+resist "GND.n254" "GND.n253" 0.179939
+resist "GND.n307" "GND.n306" 0.179939
+resist "GND.n333" "GND.n332" 0.183606
+resist "GND.n277" "GND.n276" 0.183606
+resist "GND.n64" "GND.n58" 0.183606
+resist "GND.n284" "GND.n283" 0.183606
+resist "GND.n279" "GND.n278" 0.187272
+resist "GND.n309" "GND.n308" 0.187272
+resist "GND.n50" "GND.n47" 2.31155
+resist "GND.n245" "GND.n163" 0.264328
+resist "GND.n312" "GND.n72" 0.264328
+resist "GND.n214" "GND.n31" 1.47632
+resist "GND.n34" "GND.n309" 1.33298
+resist "GND.n344" "GND.n50" 0.312771
+resist "GND.t67" "GND.n164" 0.316189
+resist "GND.t62" "GND.n0" 0.347107
+resist "GND.t21" "GND.n0" 0.347162
+resist "GND.t37" "GND.n0" 0.374103
+resist "GND.t29" "GND.n0" 0.379176
+resist "GND.t54" "GND.n0" 0.379176
+resist "GND.t49" "GND.t50" 0.387037
+resist "GND.n238" "GND.n32" 1.43995
+resist "GND.n337" "GND.t42" 0.442714
+resist "GND.n49" "GND.n202" 1.2816
+resist "GND.n201" "GND.n35" 1.1274
+resist "GND.n189" "GND.n35" 0.46475
+resist "GND.n185" "GND.n184" 0.46475
+resist "GND.n187" "GND.n186" 0.46475
+resist "GND.n191" "GND.n188" 0.46475
+resist "GND.n195" "GND.n194" 0.46475
+resist "GND.n198" "GND.n197" 0.46475
+resist "GND.n200" "GND.n199" 0.46475
+resist "GND.n205" "GND.n48" 0.46475
+resist "GND.n203" "GND.n49" 0.46475
+resist "GND.n209" "GND.n208" 0.46475
+resist "GND.n211" "GND.n210" 0.46475
+resist "GND.n213" "GND.n212" 0.46475
+resist "GND.n227" "GND.n196" 0.46475
+resist "GND.n226" "GND.n225" 0.46475
+resist "GND.t11" "GND.n337" 0.480592
+resist "GND.n190" "GND.n189" 0.5775
+resist "GND.n204" "GND.n203" 0.5775
+resist "GND.n250" "GND.n249" 0.586207
+resist "GND.n136" "GND.n33" 0.586207
+resist "GND.n250" "GND.n137" 0.586957
+resist "GND.n83" "GND.t19" 0.632378
+resist "GND.n94" "GND.t22" 0.632378
+resist "GND.t64" "GND.n155" 0.632378
+resist "GND.n192" "GND.n191" 0.680503
+resist "GND.n194" "GND.n193" 0.680503
+resist "GND.n206" "GND.n205" 0.680503
+resist "GND.n208" "GND.n207" 0.680503
+resist "GND.t70" "GND.n0" 0.791365
+resist "GND.t70" "GND.t73" 0.861659
+resist "GND.t65" "GND.t70" 0.912576
+resist "GND.n309" "GND.n96" 1.02025
+resist "GND.n251" "GND.n96" 1.02025
+resist "GND.n253" "GND.n97" 1.02025
+resist "GND.n255" "GND.n98" 1.02025
+resist "GND.n257" "GND.n99" 1.02025
+resist "GND.n259" "GND.n100" 1.02025
+resist "GND.n261" "GND.n101" 1.02025
+resist "GND.n263" "GND.n102" 1.02025
+resist "GND.n265" "GND.n41" 1.02025
+resist "GND.n267" "GND.n103" 1.02025
+resist "GND.n269" "GND.n104" 1.02025
+resist "GND.n271" "GND.n105" 1.02025
+resist "GND.n273" "GND.n106" 1.02025
+resist "GND.n275" "GND.n107" 1.02025
+resist "GND.n277" "GND.n108" 1.02025
+resist "GND.n283" "GND.n108" 1.02025
+resist "GND.n285" "GND.n107" 1.02025
+resist "GND.n287" "GND.n106" 1.02025
+resist "GND.n289" "GND.n105" 1.02025
+resist "GND.n291" "GND.n104" 1.02025
+resist "GND.n293" "GND.n103" 1.02025
+resist "GND.n295" "GND.n41" 1.02025
+resist "GND.n297" "GND.n102" 1.02025
+resist "GND.n299" "GND.n101" 1.02025
+resist "GND.n301" "GND.n100" 1.02025
+resist "GND.n303" "GND.n99" 1.02025
+resist "GND.n305" "GND.n98" 1.02025
+resist "GND.n307" "GND.n97" 1.02025
+resist "GND.n280" "GND.n279" 1.02392
+resist "GND.n281" "GND.n280" 1.02392
+resist "GND.n34" "GND.n33" 0.0397858
+resist "GND.t49" "GND.t11" 1.08587
+resist "GND.t21" "GND.t16" 1.11728
+resist "GND.t57" "GND.t62" 1.11728
+resist "GND.t65" "GND.t62" 1.11729
+resist "GND.t21" "GND.t24" 1.11753
+resist "GND.t49" "GND.n316" 1.123
+resist "GND.t40" "GND.t54" 1.13689
+resist "GND.t29" "GND.t32" 1.1371
+resist "GND.t32" "GND.t37" 1.13971
+resist "GND.t37" "GND.t40" 1.13991
+resist "GND.t13" "GND.t16" 1.17282
+resist "GND.t24" "GND.t29" 1.17356
+resist "GND.t54" "GND.t57" 1.17377
+resist "GND.n212" "GND.n72" 1.20955
+resist "GND.n184" "GND.n163" 1.21057
+resist "GND.n225" "GND.n163" 1.21139
+resist "GND.n197" "GND.n72" 1.21241
+resist "GND.n281" "GND.n34" 1.4556
+resist "GND.n279" "GND.n109" 1.35413
+resist "GND.t50" "GND.n65" 1.40211
+resist "GND.n0" "GND.n43" 1.28825
+resist "GND.n44" "GND.n0" 1.2898
+resist "GND.t42" "GND.n336" 1.44125
+resist "GND.n251" "GND.n109" 1.45397
+resist "GND.n336" "GND.n335" 1.47116
+resist "GND.n245" "GND.n244" 1.88889
+resist "GND.n312" "GND.n311" 1.88889
+resist "GND.n246" "GND.n245" 1.88964
+resist "GND.n313" "GND.n312" 1.88964
+resist "GND.n88" "GND.t20" 1.89713
+resist "GND.t66" "GND.n173" 1.89713
+resist "GND.n42" "GND.n51" 1.96625
+resist "GND.n333" "GND.n317" 1.96625
+resist "GND.n331" "GND.n318" 1.96625
+resist "GND.n329" "GND.n319" 1.96625
+resist "GND.n327" "GND.n320" 1.96625
+resist "GND.n325" "GND.n321" 1.96625
+resist "GND.n323" "GND.n52" 1.96625
+resist "GND.n343" "GND.n53" 1.96625
+resist "GND.n342" "GND.n54" 1.96625
+resist "GND.n341" "GND.n55" 1.96625
+resist "GND.n340" "GND.n56" 1.96625
+resist "GND.n339" "GND.n57" 1.96625
+resist "GND.n338" "GND.n58" 1.96625
+resist "GND.n337" "GND.t50" 1.9704
+resist "GND.n338" "GND.n316" 2.01292
+resist "GND.n335" "GND.n317" 2.01292
+resist "GND.t5" "GND.n122" 2.21332
+resist "GND.t6" "GND.t34" 2.21332
+resist "GND.t7" "GND.n127" 2.21332
+resist "GND.n144" "GND.t2" 2.21332
+resist "GND.t3" "GND.t52" 2.21332
+resist "GND.n148" "GND.t4" 2.21332
+resist "GND.t73" "GND.n32" 1.46343
+resist "GND.n313" "GND.n66" 2.52951
+resist "GND.n80" "GND.n79" 2.52951
+resist "GND.n81" "GND.n78" 2.52951
+resist "GND.n83" "GND.n82" 2.52951
+resist "GND.n84" "GND.n77" 2.52951
+resist "GND.n87" "GND.n86" 2.52951
+resist "GND.n174" "GND.n165" 2.8457
+resist "GND.n179" "GND.n177" 2.8457
+resist "GND.n178" "GND.n164" 2.8457
+resist "GND.n182" "GND.n180" 2.8457
+resist "GND.n181" "GND.n162" 2.8457
+resist "GND.n244" "GND.n183" 2.8457
+resist "GND.t60" "GND.n5" 9.58383
+resist "GND.n310" "GND.n95" 3.79427
+resist "GND.n116" "GND.n115" 3.79427
+resist "GND.n118" "GND.n117" 3.79427
+resist "GND.n120" "GND.n119" 3.79427
+resist "GND.n122" "GND.n121" 3.79427
+resist "GND.n124" "GND.n123" 3.79427
+resist "GND.t35" "GND.n132" 3.79427
+resist "GND.t51" "GND.n114" 3.79427
+resist "GND.n145" "GND.n112" 3.79427
+resist "GND.n150" "GND.n148" 3.79427
+resist "GND.n149" "GND.n111" 3.79427
+resist "GND.n153" "GND.n151" 3.79427
+resist "GND.n152" "GND.n110" 3.79427
+resist "GND.n249" "GND.n154" 3.79427
+resist "GND.t18" "GND.n314" 4.42664
+resist "GND.t59" "GND.n16" 10.8486
+resist "GND.n243" "GND.t68" 4.42664
+resist "GND.n224" "GND.n200" 5.01325
+resist "GND.n222" "GND.n48" 5.01325
+resist "GND.n220" "GND.n49" 5.01325
+resist "GND.n218" "GND.n209" 5.01325
+resist "GND.n216" "GND.n211" 5.01325
+resist "GND.n214" "GND.n213" 5.01325
+resist "GND.n43" "GND.n198" 5.02305
+resist "GND.n226" "GND.n44" 5.02307
+resist "GND.n230" "GND.n195" 5.01325
+resist "GND.n232" "GND.n35" 5.01325
+resist "GND.n234" "GND.n188" 5.01325
+resist "GND.n236" "GND.n187" 5.01325
+resist "GND.n238" "GND.n185" 5.01325
+resist "GND.n228" "GND.n227" 5.01325
+resist "GND.n15" "GND.n0" 0.234253
+resist "GND.n2" "GND.n0" 0.101943
+resist "GND.n6" "GND.n0" 0.101967
+resist "GND.n30" "GND.n0" 1.87738
+resist "GND.n29" "GND.n0" 1.87738
+resist "GND.n18" "GND.n0" 0.101967
+resist "GND.n21" "GND.n0" 0.101943
+resist "GND.n12" "GND.n0" 0.101943
+resist "GND.n5" "GND.n0" 0.102204
+resist "GND.n16" "GND.n0" 0.102204
+resist "GND.n28" "GND.n0" 0.436499
+resist "GND.n14" "GND.n0" 0.102204
+resist "GND.n240" "GND.n239" 5.37521
+resist "GND.t50" "GND.n45" 5.61231
+resist "GND.n334" "GND.t50" 5.61231
+resist "GND.n252" "GND.n250" 5.61231
+resist "GND.n282" "GND.n33" 5.61231
+resist "GND.t58" "GND.n248" 5.6914
+resist "GND.n242" "GND.n241" 5.6914
+resist "GND.n128" "GND.t7" 6.00759
+resist "GND.t2" "GND.n113" 6.00759
+resist "GND.n14" "GND.t17" 22.2325
+resist "GND.n26" "GND.t18" 23.4966
+resist "GND.n4" "GND.t25" 8.31949
+resist "GND.n2" "GND.t26" 9.58425
+resist "GND.n11" "GND.t30" 13.3795
+resist "GND.n17" "GND.t31" 14.6433
+resist "GND.t38" "GND.n22" 20.968
+resist "GND.t39" "GND.n1" 13.4206
+resist "GND.t43" "GND.n23" 14.6433
+resist "GND.n20" "GND.t55" 18.0282
+resist "GND.n16" "GND.t60" 24.762
+resist "GND.n5" "GND.t61" 26.0268
+resist "GND.n21" "GND.t63" 27.2908
+resist "GND.n12" "GND.n246" 16.8566
+resist "GND.n241" "GND.n10" 22.1
+resist "GND.t26" "GND.n6" 24.7613
+resist "GND.n240" "GND.n15" 22.4154
+resist "GND.t0" "GND.n85" 6.63997
+resist "GND.n175" "GND.t8" 6.63997
+resist "GND.t15" "GND.n14" 13.3781
+resist "GND.n1" "GND.t38" 13.4197
+resist "GND.t56" "GND.n19" 13.3785
+resist "GND.n248" "GND.n247" 7.58853
+resist "GND.t14" "GND.n24" 12.9692
+resist "GND.t20" "GND.n76" 8.22091
+resist "GND.n117" "GND.t33" 8.22091
+resist "GND.n126" "GND.n125" 8.22091
+resist "GND.n130" "GND.n129" 8.22091
+resist "GND.n132" "GND.n131" 8.22091
+resist "GND.n134" "GND.n133" 8.22091
+resist "GND.n136" "GND.n135" 8.22091
+resist "GND.n22" "GND.t36" 14.6433
+resist "GND.n138" "GND.n137" 8.22091
+resist "GND.n140" "GND.n139" 8.22091
+resist "GND.n141" "GND.n114" 8.22091
+resist "GND.n143" "GND.n142" 8.22091
+resist "GND.n147" "GND.n146" 8.22091
+resist "GND.n153" "GND.t53" 8.22091
+resist "GND.t55" "GND.n18" 14.6433
+resist "GND.t9" "GND.n192" 8.44925
+resist "GND.n193" "GND.t9" 8.44925
+resist "GND.t1" "GND.n206" 8.44925
+resist "GND.n207" "GND.t1" 8.44925
+resist "GND.n322" "GND.t50" 8.46945
+resist "GND.n324" "GND.t50" 8.46945
+resist "GND.n326" "GND.t50" 8.46945
+resist "GND.n328" "GND.t50" 8.46945
+resist "GND.n330" "GND.t50" 8.46945
+resist "GND.n332" "GND.t50" 8.46945
+resist "GND.n264" "GND.n250" 8.46945
+resist "GND.n262" "GND.n250" 8.46945
+resist "GND.n260" "GND.n250" 8.46945
+resist "GND.n258" "GND.n250" 8.46945
+resist "GND.n256" "GND.n250" 8.46945
+resist "GND.n254" "GND.n250" 8.46945
+resist "GND.n215" "GND.n0" 8.46945
+resist "GND.n219" "GND.n0" 8.46945
+resist "GND.n221" "GND.n0" 8.46945
+resist "GND.n223" "GND.n0" 8.46945
+resist "GND.n229" "GND.n0" 8.46945
+resist "GND.n231" "GND.n0" 8.46945
+resist "GND.n233" "GND.n0" 8.46945
+resist "GND.n237" "GND.n0" 8.46945
+resist "GND.t50" "GND.n64" 8.46945
+resist "GND.t50" "GND.n63" 8.46945
+resist "GND.t50" "GND.n62" 8.46945
+resist "GND.t50" "GND.n61" 8.46945
+resist "GND.t50" "GND.n60" 8.46945
+resist "GND.n245" "GND.n156" 8.46945
+resist "GND.n245" "GND.n157" 8.46945
+resist "GND.n245" "GND.n160" 8.46945
+resist "GND.n245" "GND.n161" 8.46945
+resist "GND.n278" "GND.n250" 8.46945
+resist "GND.n276" "GND.n250" 8.46945
+resist "GND.n274" "GND.n250" 8.46945
+resist "GND.n272" "GND.n250" 8.46945
+resist "GND.n270" "GND.n250" 8.46945
+resist "GND.n268" "GND.n250" 8.46945
+resist "GND.n312" "GND.n67" 8.46945
+resist "GND.n312" "GND.n68" 8.46945
+resist "GND.n312" "GND.n71" 8.46945
+resist "GND.n312" "GND.n73" 8.46945
+resist "GND.t13" "GND.n31" 0.329664
+resist "GND.n31" "GND.n0" 0.00424936
+resist "GND.n284" "GND.n33" 8.46945
+resist "GND.n286" "GND.n33" 8.46945
+resist "GND.n288" "GND.n33" 8.46945
+resist "GND.n290" "GND.n33" 8.46945
+resist "GND.n292" "GND.n33" 8.46945
+resist "GND.n296" "GND.n33" 8.46945
+resist "GND.n298" "GND.n33" 8.46945
+resist "GND.n300" "GND.n33" 8.46945
+resist "GND.n302" "GND.n33" 8.46945
+resist "GND.n304" "GND.n33" 8.46945
+resist "GND.n306" "GND.n33" 8.46945
+resist "GND.n308" "GND.n33" 8.46945
+resist "GND.n245" "GND.n169" 8.5
+resist "GND.n245" "GND.n167" 8.5
+resist "GND.n245" "GND.n172" 8.5
+resist "GND.n245" "GND.n166" 8.5
+resist "GND.n245" "GND.n176" 8.5
+resist "GND.n245" "GND.n165" 8.5
+resist "GND.n245" "GND.n179" 8.5
+resist "GND.n245" "GND.n164" 8.5
+resist "GND.n245" "GND.n182" 8.5
+resist "GND.n245" "GND.n162" 8.5
+resist "GND.n250" "GND.n140" 8.5
+resist "GND.n250" "GND.n114" 8.5
+resist "GND.n250" "GND.n143" 8.5
+resist "GND.n250" "GND.n113" 8.5
+resist "GND.n250" "GND.n147" 8.5
+resist "GND.n250" "GND.n112" 8.5
+resist "GND.n250" "GND.n150" 8.5
+resist "GND.n250" "GND.n111" 8.5
+resist "GND.n250" "GND.n153" 8.5
+resist "GND.n250" "GND.n110" 8.5
+resist "GND.n115" "GND.n33" 8.5
+resist "GND.n117" "GND.n33" 8.5
+resist "GND.n119" "GND.n33" 8.5
+resist "GND.n121" "GND.n33" 8.5
+resist "GND.n123" "GND.n33" 8.5
+resist "GND.n126" "GND.n33" 8.5
+resist "GND.n128" "GND.n33" 8.5
+resist "GND.n130" "GND.n33" 8.5
+resist "GND.n132" "GND.n33" 8.5
+resist "GND.n134" "GND.n33" 8.5
+resist "GND.n312" "GND.n80" 8.5
+resist "GND.n312" "GND.n78" 8.5
+resist "GND.n312" "GND.n83" 8.5
+resist "GND.n312" "GND.n77" 8.5
+resist "GND.n312" "GND.n87" 8.5
+resist "GND.n312" "GND.n76" 8.5
+resist "GND.n312" "GND.n90" 8.5
+resist "GND.n312" "GND.n75" 8.5
+resist "GND.n312" "GND.n93" 8.5
+resist "GND.n312" "GND.n74" 8.5
+resist "GND.n310" "GND.n33" 0.58475
+resist "GND.n125" "GND.t6" 8.5371
+resist "GND.n146" "GND.t3" 8.5371
+resist "GND.n176" "GND.t66" 8.5371
+resist "GND.n15" "GND.t12" 8.35911
+resist "GND.t22" "GND.n74" 9.48567
+resist "GND.t33" "GND.n116" 9.48567
+resist "GND.n133" "GND.t35" 9.48567
+resist "GND.n139" "GND.t51" 9.48567
+resist "GND.t53" "GND.n152" 9.48567
+resist "GND.n10" "GND.t74" 8.35903
+resist "GND.n169" "GND.t64" 9.80185
+resist "GND.n90" "GND.n89" 10.118
+resist "GND.n91" "GND.n75" 10.118
+resist "GND.n93" "GND.n92" 10.118
+resist "GND.n311" "GND.n7" 16.5411
+resist "GND.n168" "GND.n167" 10.4342
+resist "GND.n172" "GND.n170" 10.4342
+resist "GND.n171" "GND.n166" 10.4342
+resist "GND.t34" "GND.n124" 10.7504
+resist "GND.t52" "GND.n145" 10.7504
+resist "GND.n246" "GND.n155" 11.0666
+resist "GND.n169" "GND.n168" 11.0666
+resist "GND.n170" "GND.n167" 11.0666
+resist "GND.n172" "GND.n171" 11.0666
+resist "GND.n173" "GND.n166" 11.0666
+resist "GND.n176" "GND.n175" 11.0666
+resist "GND.n315" "GND.n3" 16.1311
+resist "GND.n85" "GND.n76" 11.3828
+resist "GND.n90" "GND.n88" 11.3828
+resist "GND.n89" "GND.n75" 11.3828
+resist "GND.n93" "GND.n91" 11.3828
+resist "GND.n92" "GND.n74" 11.3828
+resist "GND.n311" "GND.n94" 11.3828
+resist "GND.n247" "GND.n65" 12.7957
+resist "GND.n7" "GND.t23" 7.05432
+resist "GND.t25" "GND.n2" 26.027
+resist "GND.t30" "GND.n17" 20.968
+resist "GND.t63" "GND.n12" 7.05568
+resist "GND.t61" "GND.n21" 8.32044
+resist "GND.n23" "GND.t39" 20.968
+resist "GND.t23" "GND.n4" 27.2918
+resist "GND.t17" "GND.n26" 12.1147
+resist "GND.n239" "GND.t14" 13.2799
+resist "GND.t31" "GND.n30" 18.0282
+resist "GND.n127" "GND.n126" 13.2799
+resist "GND.n129" "GND.n128" 13.2799
+resist "GND.n131" "GND.n130" 13.2799
+resist "GND.n135" "GND.n134" 13.2799
+resist "GND.n29" "GND.n136" 18.0282
+resist "GND.n27" "GND.t43" 18.0282
+resist "GND.n140" "GND.n138" 13.2799
+resist "GND.n143" "GND.n141" 13.2799
+resist "GND.n142" "GND.n113" 13.2799
+resist "GND.n147" "GND.n144" 13.2799
+resist "GND.t72" "GND.n242" 13.2799
+resist "GND.n247" "GND.n28" 20.0051
+resist "GND.t71" "GND.n9" 20.967
+resist "GND.n86" "GND.t0" 14.8609
+resist "GND.t8" "GND.n174" 14.8609
+resist "GND.n247" "GND.n37" 14.8967
+resist "GND.n123" "GND.t5" 15.4933
+resist "GND.t4" "GND.n112" 15.4933
+resist "GND.t28" "GND.n11" 22.2318
+resist "GND.t69" "GND.n13" 22.2318
+resist "GND.t50" "GND.n59" 17
+resist "GND.n245" "GND.n158" 17
+resist "GND.n245" "GND.n159" 17
+resist "GND.n266" "GND.n250" 17
+resist "GND.n312" "GND.n69" 17
+resist "GND.n312" "GND.n70" 17
+resist "GND.n239" "GND.n0" 8.49378
+resist "GND.n79" "GND.n0" 8.49183
+resist "GND.n217" "GND.n0" 17
+resist "GND.n82" "GND.n0" 8.49347
+resist "GND.n84" "GND.n0" 8.49329
+resist "GND.n89" "GND.n0" 8.49305
+resist "GND.n91" "GND.n0" 8.49925
+resist "GND.n94" "GND.n0" 8.48967
+resist "GND.n95" "GND.n0" 8.49086
+resist "GND.n118" "GND.n0" 8.49403
+resist "GND.n120" "GND.n0" 8.49453
+resist "GND.n122" "GND.n0" 8.49159
+resist "GND.n125" "GND.n0" 8.49256
+resist "GND.n127" "GND.n0" 8.49063
+resist "GND.n131" "GND.n0" 8.48942
+resist "GND.n133" "GND.n0" 8.49355
+resist "GND.n138" "GND.n0" 8.4938
+resist "GND.n139" "GND.n0" 8.49111
+resist "GND.n141" "GND.n0" 8.49738
+resist "GND.n146" "GND.n0" 8.49231
+resist "GND.n148" "GND.n0" 8.49207
+resist "GND.n152" "GND.n0" 8.49015
+resist "GND.n154" "GND.n0" 8.49134
+resist "GND.n248" "GND.n0" 8.49354
+resist "GND.n155" "GND.n0" 8.49404
+resist "GND.n170" "GND.n0" 8.49038
+resist "GND.n171" "GND.n0" 8.4899
+resist "GND.n173" "GND.n0" 8.49532
+resist "GND.n177" "GND.n0" 8.49429
+resist "GND.n235" "GND.n0" 17
+resist "GND.n242" "GND.n0" 8.4928
+resist "GND.n10" "GND.n0" 0.23437
+resist "GND.t72" "GND.n9" 14.6437
+resist "GND.n9" "GND.n0" 0.101967
+resist "GND.t71" "GND.n13" 13.3789
+resist "GND.n13" "GND.n0" 0.101967
+resist "GND.t69" "GND.n8" 12.1142
+resist "GND.n8" "GND.n0" 0.101967
+resist "GND.n243" "GND.n0" 8.49677
+resist "GND.n183" "GND.n0" 8.49281
+resist "GND.n181" "GND.n0" 8.49508
+resist "GND.n180" "GND.n0" 8.49628
+resist "GND.n178" "GND.n0" 8.49653
+resist "GND.n174" "GND.n0" 8.499
+resist "GND.n175" "GND.n0" 8.48991
+resist "GND.n168" "GND.n0" 8.49232
+resist "GND.t58" "GND.n19" 22.2322
+resist "GND.n19" "GND.n0" 0.101967
+resist "GND.t56" "GND.n18" 20.9675
+resist "GND.n20" "GND.n0" 1.87738
+resist "GND.n151" "GND.n0" 8.49087
+resist "GND.n149" "GND.n0" 8.49135
+resist "GND.n145" "GND.n0" 8.49556
+resist "GND.n144" "GND.n0" 8.49329
+resist "GND.n142" "GND.n0" 8.49378
+resist "GND.n137" "GND.n27" 18.0277
+resist "GND.n27" "GND.n0" 1.87738
+resist "GND.n23" "GND.n0" 0.101943
+resist "GND.n1" "GND.n0" 0.0813581
+resist "GND.n22" "GND.n0" 0.101943
+resist "GND.t36" "GND.n29" 18.0277
+resist "GND.n135" "GND.n0" 8.4958
+resist "GND.n129" "GND.n0" 8.49532
+resist "GND.n124" "GND.n0" 8.49686
+resist "GND.n116" "GND.n0" 8.49979
+resist "GND.n310" "GND.n30" 22.4543
+resist "GND.n17" "GND.n0" 0.101943
+resist "GND.n11" "GND.n0" 0.101943
+resist "GND.t28" "GND.n25" 12.1142
+resist "GND.n25" "GND.n0" 0.101967
+resist "GND.t27" "GND.n6" 10.8494
+resist "GND.n4" "GND.n0" 0.101943
+resist "GND.n7" "GND.n0" 0.102204
+resist "GND.n92" "GND.n0" 8.49183
+resist "GND.n88" "GND.n0" 8.49039
+resist "GND.n85" "GND.n0" 8.49702
+resist "GND.n86" "GND.n0" 8.49713
+resist "GND.n81" "GND.n0" 8.48943
+resist "GND.n66" "GND.n0" 8.49508
+resist "GND.n314" "GND.n0" 8.49604
+resist "GND.n26" "GND.n0" 0.101943
+resist "GND.t15" "GND.n3" 19.2924
+resist "GND.n3" "GND.n0" 1.87738
+resist "GND.n24" "GND.n315" 14.8658
+resist "GND.n24" "GND.n0" 1.87738
+resist "GND.n294" "GND.n33" 17
+resist "GND.t27" "GND.n25" 23.4966
+resist "GND.n28" "GND.t59" 23.1676
+resist "GND.t68" "GND.n8" 23.4966
+resist "GND.n115" "GND.n95" 17.7066
+resist "GND.n119" "GND.n118" 17.7066
+resist "GND.n121" "GND.n120" 17.7066
+resist "GND.n150" "GND.n149" 17.7066
+resist "GND.n151" "GND.n111" 17.7066
+resist "GND.n154" "GND.n110" 17.7066
+resist "GND.n249" "GND.n20" 22.4543
+resist "GND.t19" "GND.n81" 18.339
+resist "GND.n180" "GND.t67" 18.339
+resist "GND.n177" "GND.n165" 18.6551
+resist "GND.n179" "GND.n178" 18.6551
+resist "GND.n182" "GND.n181" 18.6551
+resist "GND.n183" "GND.n162" 18.6551
+resist "GND.n244" "GND.n243" 18.6551
+resist "GND.n314" "GND.n313" 18.9713
+resist "GND.n80" "GND.n66" 18.9713
+resist "GND.n79" "GND.n78" 18.9713
+resist "GND.n82" "GND.n77" 18.9713
+resist "GND.n87" "GND.n84" 18.9713
+resist "GND.n65" "GND.t45" 26.9382
+resist "GND.n37" "GND.t46" 28.1822
+resist "GND.t10" "GND.n38" 32.8294
+resist "GND.t47" "GND.n36" 32.83
+resist "GND.t44" "GND.n39" 37.3945
+resist "GND.n40" "GND.t48" 22.3655
+resist "GND.t41" "GND.n46" 23.038
+resist "GND.n46" "GND.t44" 55.6569
+resist "GND.n40" "GND.t50" 0.00455593
+resist "GND.n39" "GND.t10" 60.2178
+resist "GND.t46" "GND.n36" 64.7819
+resist "GND.t45" "GND.n38" 64.7824
+resist "GND.n241" "GND.n47" 5075.27
+resist "GND.n47" "GND.n240" 5073.02
+resist "GND.t50" "GND.n315" 24512.1
+device msubckt sg13_lv_nmos 17580 11282 17581 11283  "GND.t12" "a_12790_2770#" 400 0 "GND.t13" 1920 72960,1996 "a_17580_450#" 1920 130560,3976
+device msubckt sg13_lv_nmos 17580 11006 17581 11007  "GND.t14" "a_12790_2770#" 400 0 "a_17580_450#" 1920 72960,1996 "GND.t13" 1920 72960,1996
+device msubckt sg13_lv_nmos 17580 10730 17581 10731  "GND.t15" "a_12790_2770#" 400 0 "GND.t16" 1920 72960,1996 "a_17580_450#" 1920 72960,1996
+device msubckt sg13_lv_nmos 17580 10454 17581 10455  "GND.t17" "a_12790_2770#" 400 0 "a_17580_450#" 1920 72960,1996 "GND.t16" 1920 72960,1996
+device msubckt sg13_lv_nmos 17580 10178 17581 10179  "GND.t18" "a_12790_2770#" 400 0 "GND.t16" 1920 72960,1996 "a_17580_450#" 1920 72960,1996
+device msubckt sg13_lv_nmos 17580 9902 17581 9903  "GND.t19" "a_12790_2770#" 400 0 "a_17580_450#" 1920 72960,1996 "GND.t16" 1920 72960,1996
+device msubckt sg13_lv_nmos 17580 9626 17581 9627  "GND.t20" "a_12790_2770#" 400 0 "GND.t21" 1920 72960,1996 "a_17580_450#" 1920 72960,1996
+device msubckt sg13_lv_nmos 17580 9350 17581 9351  "GND.t22" "a_12790_2770#" 400 0 "a_17580_450#" 1920 72960,1996 "GND.t21" 1920 72960,1996
+device msubckt sg13_lv_nmos 22406 9659 22407 9660  "GND.t0" "OUTn" 52 0 "GND.t1" 300 20400,736 "a_22432_9659#" 300 20400,736
+device msubckt sg13_lv_nmos 17580 9074 17581 9075  "GND.t23" "a_12790_2770#" 400 0 "GND.t24" 1920 72960,1996 "a_17580_450#" 1920 72960,1996
+device msubckt sg13_lv_nmos 17580 8798 17581 8799  "GND.t25" "a_12790_2770#" 400 0 "a_17580_450#" 1920 72960,1996 "GND.t24" 1920 72960,1996
+device msubckt sg13_lv_nmos 17580 8522 17581 8523  "GND.t26" "a_12790_2770#" 400 0 "GND.t24" 1920 72960,1996 "a_17580_450#" 1920 72960,1996
+device msubckt sg13_lv_nmos 17580 8246 17581 8247  "GND.t27" "a_12790_2770#" 400 0 "a_17580_450#" 1920 72960,1996 "GND.t24" 1920 72960,1996
+device msubckt sg13_lv_nmos 17580 7970 17581 7971  "GND.t28" "a_12790_2770#" 400 0 "GND.t29" 1920 72960,1996 "a_17580_450#" 1920 72960,1996
+device msubckt sg13_lv_nmos 17580 7694 17581 7695  "GND.t30" "a_12790_2770#" 400 0 "a_17580_450#" 1920 72960,1996 "GND.t29" 1920 72960,1996
+device msubckt sg13_lv_nmos 17580 7418 17581 7419  "GND.t31" "a_12790_2770#" 400 0 "GND.t32" 1920 72960,1996 "a_17580_450#" 1920 72960,1996
+device msubckt sg13_lv_nmos 17580 7142 17581 7143  "GND.t33" "a_12790_2770#" 400 0 "a_17580_450#" 1920 72960,1996 "GND.t32" 1920 72960,1996
+device msubckt sg13_lv_nmos 17580 6866 17581 6867  "GND.t34" "a_12790_2770#" 400 0 "GND.t32" 1920 72960,1996 "a_17580_450#" 1920 72960,1996
+device msubckt sg13_lv_nmos 17580 6590 17581 6591  "GND.t35" "a_12790_2770#" 400 0 "a_17580_450#" 1920 72960,1996 "GND.t32" 1920 72960,1996
+device msubckt sg13_lv_nmos 17580 6314 17581 6315  "GND.t36" "a_12790_2770#" 400 0 "GND.t37" 1920 72960,1996 "a_17580_450#" 1920 72960,1996
+device msubckt sg13_lv_nmos 21686 7048 21687 7049  "GND.t5" "OUTp" 52 0 "a_17580_450#" 1466 55708,1542 "OUTn" 1466 99688,3068
+device msubckt sg13_lv_nmos 21686 6946 21687 6947  "GND.t6" "OUTp" 52 0 "OUTn" 1466 55708,1542 "a_17580_450#" 1466 55708,1542
+device msubckt sg13_lv_nmos 21686 6844 21687 6845  "GND.t7" "OUTp" 52 0 "a_17580_450#" 1466 99688,3068 "OUTn" 1466 55708,1542
+device msubckt sg13_lv_nmos 17580 6038 17581 6039  "GND.t38" "a_12790_2770#" 400 0 "a_17580_450#" 1920 72960,1996 "GND.t37" 1920 72960,1996
+device msubckt sg13_lv_nmos 17580 5762 17581 5763  "GND.t39" "a_12790_2770#" 400 0 "GND.t40" 1920 72960,1996 "a_17580_450#" 1920 72960,1996
+device msubckt sg13_lv_nmos 17580 5486 17581 5487  "GND.t43" "a_12790_2770#" 400 0 "a_17580_450#" 1920 72960,1996 "GND.t40" 1920 72960,1996
+device msubckt sg13_lv_nmos 12826 4702 12827 4703  "GND.t41" "a_12790_2770#" 400 0 "GND.t42" 1600 60800,1676 "a_12790_2770#" 1600 108800,3336
+device msubckt sg13_lv_nmos 12826 4426 12827 4427  "GND.t44" "a_12790_2770#" 400 0 "a_12790_2770#" 1600 60800,1676 "GND.t42" 1600 60800,1676
+device msubckt sg13_lv_nmos 12826 4150 12827 4151  "GND.t10" "a_12790_2770#" 400 0 "GND.t11" 1600 60800,1676 "a_12790_2770#" 1600 60800,1676
+device msubckt sg13_lv_nmos 12826 3874 12827 3875  "GND.t45" "a_12790_2770#" 400 0 "a_12790_2770#" 1600 60800,1676 "GND.t11" 1600 60800,1676
+device msubckt sg13_lv_nmos 12826 3598 12827 3599  "GND.t46" "a_12790_2770#" 400 0 "GND.t11" 1600 60800,1676 "a_12790_2770#" 1600 60800,1676
+device msubckt sg13_lv_nmos 12826 3322 12827 3323  "GND.t47" "a_12790_2770#" 400 0 "a_12790_2770#" 1600 60800,1676 "GND.t11" 1600 60800,1676
+device msubckt sg13_lv_nmos 12826 3046 12827 3047  "GND.t48" "a_12790_2770#" 400 0 "GND.t49" 1600 60800,1676 "a_12790_2770#" 1600 60800,1676
+device msubckt sg13_lv_nmos 12826 2770 12827 2771  "GND.t50" "a_12790_2770#" 400 0 "a_12790_2770#" 1600 108800,3336 "GND.t49" 1600 60800,1676
+device msubckt sg13_lv_nmos 17580 5210 17581 5211  "GND.t51" "a_12790_2770#" 400 0 "GND.t40" 1920 72960,1996 "a_17580_450#" 1920 72960,1996
+device msubckt sg13_lv_nmos 17580 4934 17581 4935  "GND.t52" "a_12790_2770#" 400 0 "a_17580_450#" 1920 72960,1996 "GND.t40" 1920 72960,1996
+device msubckt sg13_lv_nmos 17580 4658 17581 4659  "GND.t53" "a_12790_2770#" 400 0 "GND.t54" 1920 72960,1996 "a_17580_450#" 1920 72960,1996
+device msubckt sg13_lv_nmos 21686 5130 21687 5131  "GND.t2" "OUTn" 52 0 "OUTp" 1466 55708,1542 "a_17580_450#" 1466 99688,3068
+device msubckt sg13_lv_nmos 21686 5028 21687 5029  "GND.t3" "OUTn" 52 0 "a_17580_450#" 1466 55708,1542 "OUTp" 1466 55708,1542
+device msubckt sg13_lv_nmos 21686 4926 21687 4927  "GND.t4" "OUTn" 52 0 "OUTp" 1466 99688,3068 "a_17580_450#" 1466 55708,1542
+device msubckt sg13_lv_nmos 17580 4382 17581 4383  "GND.t55" "a_12790_2770#" 400 0 "a_17580_450#" 1920 72960,1996 "GND.t54" 1920 72960,1996
+device msubckt sg13_lv_nmos 17580 4106 17581 4107  "GND.t56" "a_12790_2770#" 400 0 "GND.t57" 1920 72960,1996 "a_17580_450#" 1920 72960,1996
+device msubckt sg13_lv_nmos 17580 3830 17581 3831  "GND.t58" "a_12790_2770#" 400 0 "a_17580_450#" 1920 72960,1996 "GND.t57" 1920 72960,1996
+device msubckt sg13_lv_nmos 17580 3554 17581 3555  "GND.t59" "a_12790_2770#" 400 0 "GND.t57" 1920 72960,1996 "a_17580_450#" 1920 72960,1996
+device msubckt sg13_lv_nmos 17580 3278 17581 3279  "GND.t60" "a_12790_2770#" 400 0 "a_17580_450#" 1920 72960,1996 "GND.t57" 1920 72960,1996
+device msubckt sg13_lv_nmos 17580 3002 17581 3003  "GND.t61" "a_12790_2770#" 400 0 "GND.t62" 1920 72960,1996 "a_17580_450#" 1920 72960,1996
+device msubckt sg13_lv_nmos 17580 2726 17581 2727  "GND.t63" "a_12790_2770#" 400 0 "a_17580_450#" 1920 72960,1996 "GND.t62" 1920 72960,1996
+device msubckt sg13_lv_nmos 17580 2450 17581 2451  "GND.t64" "a_12790_2770#" 400 0 "GND.t65" 1920 72960,1996 "a_17580_450#" 1920 72960,1996
+device msubckt sg13_lv_nmos 17580 2174 17581 2175  "GND.t66" "a_12790_2770#" 400 0 "a_17580_450#" 1920 72960,1996 "GND.t65" 1920 72960,1996
+device msubckt sg13_lv_nmos 17580 1898 17581 1899  "GND.t67" "a_12790_2770#" 400 0 "GND.t65" 1920 72960,1996 "a_17580_450#" 1920 72960,1996
+device msubckt sg13_lv_nmos 17580 1622 17581 1623  "GND.t68" "a_12790_2770#" 400 0 "a_17580_450#" 1920 72960,1996 "GND.t65" 1920 72960,1996
+device msubckt sg13_lv_nmos 22406 2041 22407 2042  "GND.t8" "OUTp" 52 0 "GND.t9" 300 20400,736 "FOUT" 300 20400,736
+device msubckt sg13_lv_nmos 17580 1346 17581 1347  "GND.t69" "a_12790_2770#" 400 0 "GND.t70" 1920 72960,1996 "a_17580_450#" 1920 72960,1996
+device msubckt sg13_lv_nmos 17580 1070 17581 1071  "GND.t71" "a_12790_2770#" 400 0 "a_17580_450#" 1920 72960,1996 "GND.t70" 1920 72960,1996
+device msubckt sg13_lv_nmos 17580 794 17581 795  "GND.t72" "a_12790_2770#" 400 0 "GND.t73" 1920 72960,1996 "a_17580_450#" 1920 72960,1996
+device msubckt sg13_lv_nmos 17580 518 17581 519  "GND.t74" "a_12790_2770#" 400 0 "a_17580_450#" 1920 130560,3976 "GND.t73" 1920 72960,1996
+device csubckt cap_rfcmim 29470 3810 29471 3811  "GND" "OUTn" 34368 0 "OUTp" -12888 24950144,39866
