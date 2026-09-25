@@ -47,7 +47,7 @@ tclcommand="xschem annotate_op"
 C {simulator_commands.sym} 1270 -440 0 0 {name=MODEL only_toplevel=true
 format="tcleval( @value )"
 value="
-.include /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/pex/CHARGE_PUMP_V1__CHARGE_PUMP/magic_RC/CHARGE_PUMP.pex.spice
+.include /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/pex/CHARGE_PUMP_V2__CHARGE_PUMP/magic_RC/CHARGE_PUMP.pex.spice
 .include /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/pex/LOOP_FILTER__LOOP_FILTER/magic_RC/LOOP_FILTER.pex.spice
 .lib cornerMOSlv.lib mos_tt
 .lib cornerMOShv.lib mos_tt
