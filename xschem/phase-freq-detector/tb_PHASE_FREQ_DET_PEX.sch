@@ -149,7 +149,7 @@ value="
 .param TEMPGAUSS = max(20, min(RAW_TEMP, 80))
 .option temp = 'TEMPGAUSS'
 .param VDDGAUSS = agauss(1.2, 0.05, 1)
-.include /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/pex/PHASE_FREQ_DET__PHASE_FREQ_DET/magic_RC/PHASE_FREQ_DET.pex.spice
+.include /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/pex/PHASE_FREQ_DET__PHASE_FREQ_DET/magic_RC/PHASE_FREQ_DET.pex.spice
 .param VDD = 'VDDGAUSS'
 * analysis
 

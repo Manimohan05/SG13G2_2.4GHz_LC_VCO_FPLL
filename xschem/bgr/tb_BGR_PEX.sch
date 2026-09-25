@@ -109,7 +109,7 @@ write tb_BGR_PEX_transient.raw
 C {simulator_commands.sym} 730 -530 0 0 {name=MODEL only_toplevel=true
 format="tcleval( @value )"
 value="
-.include /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/pex/BANDGAP_REF__BANDGAP_REF/magic_RC/BANDGAP_REF.pex.spice
+.include /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/pex/BANDGAP_REF__BANDGAP_REF/magic_RC/BANDGAP_REF.pex.spice
 .lib cornerMOSlv.lib mos_tt
 .lib cornerMOShv.lib mos_tt
 .lib cornerRES.lib res_typ

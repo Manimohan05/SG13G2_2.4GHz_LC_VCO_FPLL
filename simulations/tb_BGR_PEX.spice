@@ -1,4 +1,4 @@
-** sch_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/bgr/tb_BGR_PEX.sch
+** sch_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/bgr/tb_BGR_PEX.sch
 **.subckt tb_BGR_PEX VBGR
 *.opin VBGR
 V1 VDD GND PULSE(0 1.2 0 10m 0 1 2)
@@ -33,7 +33,7 @@ write tb_BGR_PEX_transient.raw
 
 
 
-.include /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/pex/BANDGAP_REF__BANDGAP_REF/magic_RC/BANDGAP_REF.pex.spice
+.include /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/pex/BANDGAP_REF__BANDGAP_REF/magic_RC/BANDGAP_REF.pex.spice
 .lib cornerMOSlv.lib mos_tt
 .lib cornerMOShv.lib mos_tt
 .lib cornerRES.lib res_typ

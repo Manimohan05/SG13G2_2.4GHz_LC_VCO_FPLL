@@ -82,6 +82,8 @@ only_toplevel=false
 value="
 .param temp = 27
 .options method=gear rshunt=1.0e12
+* extracted RC power grid needs looser tolerances and a small node cap to converge through the rst edge
+.options reltol=1e-2 gmin=1e-10 abstol=1e-10 itl4=100 cshunt=1e-15
 
 * ngspice commands
 .save v(dout) v(sdata) v(sclk) v(en) v(rst) v(dsm_clk) v(freq_in) v(freq_out)
@@ -121,12 +123,14 @@ C {gnd.sym} 850 -75 0 0 {name=l9 lab=GND}
 C {simulator_commands.sym} 280 -190 0 0 {name=MODEL only_toplevel=true
 format="tcleval( @value )"
 value="
-.include /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/pex/DSM_N_FREQ_DIV__DSM_N_FREQ_DIV/magic_RC/DSM_N_FREQ_DIV.pex.spice
-*.include /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/dsm/xschem/DSM_N_FREQ_DIV_PEX.spice
+.include /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/pex/DSM_N_FREQ_DIV__DSM_N_FREQ_DIV/magic_RC/DSM_N_FREQ_DIV.pex.spice
+*.include /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/dsm/xschem/DSM_N_FREQ_DIV_PEX.spice
 .lib cornerMOSlv.lib mos_tt
 .lib cornerMOShv.lib mos_tt
 .lib cornerRES.lib res_typ
 .lib cornerCAP.lib cap_typ
+* drives rst/en/sclk/sdata; without it the extracted netlist is never reset
+.include stimuli_test.cir
 *.include /foss/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
 
 "}
