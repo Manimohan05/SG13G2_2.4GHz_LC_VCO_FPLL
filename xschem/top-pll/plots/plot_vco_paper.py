@@ -86,7 +86,9 @@ def plot_paper(vctrl, freq_hz, save_path):
         f_pad = 0.005
         ax_f.set_xlim(vctrl.min(), vctrl.max())
         # ax_f.set_ylim(freq_ghz.min() - f_pad, freq_ghz.max() + f_pad)
-        ax_f.set_ylim(2.38 - f_pad, 2.5 + f_pad)
+        f_lo = min(2.38, np.floor(freq_ghz.min() * 50) / 50)
+        f_hi = max(2.50, np.ceil(freq_ghz.max() * 50) / 50)
+        ax_f.set_ylim(f_lo - f_pad, f_hi + f_pad)
 
         # k_pad = kvco_mhzv.max() * 0.12
         # ax_k.set_ylim(0, kvco_mhzv.max() + k_pad)
@@ -109,7 +111,7 @@ def plot_paper(vctrl, freq_hz, save_path):
         # Ticks
         ax_f.xaxis.set_major_locator(ticker.MultipleLocator(0.2))
         # ax_f.yaxis.set_major_locator(ticker.MultipleLocator(0.02))
-        ax_f.yaxis.set_ticks([2.38, 2.40, 2.42, 2.44, 2.46, 2.48, 2.50])
+        ax_f.yaxis.set_ticks(np.arange(f_lo, f_hi + 1e-9, 0.02))
         ax_k.yaxis.set_ticks([0, 25, 50, 75, 100, 125, 150])
 
         # Labels
@@ -143,17 +145,20 @@ def main():
         print(f"Error: '{csv_path}' not found.")
         sys.exit(1)
 
-    # vctrl, freq_hz = load_csv(csv_path)
-
-    vctrl = np.array([0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2])
-    freq_hz = np.array([2.392e9, 2.3923e9, 2.3925e9, 2.3950e9, 2.4000e9, 2.4075e9, 2.4150e9, 2.4250e9, 2.4375e9, 2.4500e9, 2.4650e9, 2.4800e9, 2.4950e9])
+    if len(sys.argv) > 1:
+        vctrl, freq_hz = load_csv(csv_path)
+        stem = os.path.splitext(os.path.basename(csv_path))[0]
+    else:
+        stem = "plot_vco"
+        vctrl = np.array([0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2])
+        freq_hz = np.array([2.392e9, 2.3923e9, 2.3925e9, 2.3950e9, 2.4000e9, 2.4075e9, 2.4150e9, 2.4250e9, 2.4375e9, 2.4500e9, 2.4650e9, 2.4800e9, 2.4950e9])
 
     # 🔍 Debug info
     print("Loaded points:", len(vctrl))
     print("Frequency range (Hz):", np.min(freq_hz), "to", np.max(freq_hz))
 
-    plot_paper(vctrl, freq_hz, os.path.join(script_dir, "plot_vco.pdf"))
-    plot_paper(vctrl, freq_hz, os.path.join(script_dir, "plot_vco.png"))
+    plot_paper(vctrl, freq_hz, os.path.join(script_dir, stem + ".pdf"))
+    plot_paper(vctrl, freq_hz, os.path.join(script_dir, stem + ".png"))
 
 
 if __name__ == "__main__":

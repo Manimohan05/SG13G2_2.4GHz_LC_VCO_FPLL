@@ -40,6 +40,7 @@
     - [Reference Spur](#pex_spur)
     - [Comparison with Published Work](#pex_cmp)
     - [Block-Level Pre- vs Post-Layout Comparison](#pex_blocks)
+    - [LC-VCO Tuning: Pre- vs Post-Layout](#pex_vco)
 10. [UNIC-CASS Mock Tapeout](#tapeout)
 11. [Repository Structure](#repo)
 12. [Publication](#paper)
@@ -160,6 +161,10 @@ f<sub>REF</sub> = 10 MHz, carrier 2.44 GHz.
 | Die area | 930 µm × 666 µm ≈ 0.619 mm² |
 | Varactor capacitance swing | 70 – 200 fF over 1.2 V V<sub>CTRL</sub> |
 | VCO startup | reliable down to ≈ 0.7 V tail bias |
+
+> The frequency and K<sub>VCO</sub> rows are the paper's figures. Re-simulating the LC-VCO alone
+> on the extracted layout gives 2.3255 – 2.4256 GHz, so the post-layout VCO does not reach the
+> top of the band; see [§9.8](#pex_vco).
 
 The tuning range and the reference spur fall short of the targets in the table above —
 3.3 % against 8 %, and −40.2 dBc against −60 dBc. The achieved tuning range still covers
@@ -612,6 +617,10 @@ instances, which ngspice can bind to the PDK model.
 | Total power consumption | **12.73 mW** |
 | Die area | **930 µm × 666 µm (≈ 0.619 mm²)** |
 
+> The output-frequency and K<sub>VCO</sub> rows are the paper's figures. The extracted LC-VCO,
+> simulated on its own, covers 2.3255 – 2.4256 GHz with K<sub>VCO</sub> ≈ 106 MHz/V over
+> 0.4 – 1.2 V; see [§9.8](#pex_vco).
+
 <a name="pex_lock"></a>
 ### 9.3 Lock Behaviour
 
@@ -703,6 +712,51 @@ and the matching `*_PEX` decks (post-layout) in [`simulations/`](simulations/);
 The full closed-loop PLL is not simulated on the extracted netlist: at 10 ps steps it runs
 at roughly 4 ns of simulated time per minute on the transistor-level netlist on the
 machine used here, so 40 µs would take over a week.
+
+<a name="pex_vco"></a>
+### 9.8 LC-VCO Tuning: Pre- vs Post-Layout
+
+The LC-VCO alone was swept over V<sub>CTRL</sub> = 0 – 1.2 V in 0.1 V steps at V<sub>DD</sub> = 1.2 V,
+V<sub>BGR</sub> = 0.6 V, 27 °C, typical corner (10 ps step, frequency from 20 oscillation cycles
+after start-up). **Pre-layout** is the schematic netlist; **post-layout** is the Magic RC
+extraction of `LC_VCO_NOIND` with the EM-extracted 4 nH inductor across `OUTp`/`OUTn` (§9.1). In
+a noise-free simulation the oscillator can stay at its unstable equilibrium, so a small initial
+voltage on `OUTp` starts the oscillation.
+
+| Metric | Pre-layout | Post-layout |
+|--------|-----------:|------------:|
+| f<sub>osc</sub> at V<sub>CTRL</sub> = 0 V | 2.3840 GHz | 2.3255 GHz |
+| f<sub>osc</sub> at V<sub>CTRL</sub> = 0.6 V | 2.4160 GHz | 2.3556 GHz |
+| f<sub>osc</sub> at V<sub>CTRL</sub> = 1.2 V | 2.4906 GHz | 2.4256 GHz |
+| Tuning range (of centre frequency) | 4.4 % | 4.2 % |
+| V<sub>CTRL</sub> for 2.40 GHz | 0.39 V | 0.99 V |
+| V<sub>CTRL</sub> for 2.48 GHz | 1.12 V | not reached |
+| Peak K<sub>VCO</sub> (near 1.0 V) | 134 MHz/V | 126 MHz/V |
+| Mean K<sub>VCO</sub>, 0.4 – 1.2 V | 112 MHz/V | 106 MHz/V |
+| Mean K<sub>VCO</sub>, 0.7 – 1.2 V | 129 MHz/V | 121 MHz/V |
+| VCO core power | 0.93 mW | 1.00 mW |
+| Tank swing at `OUTp` | 0.75 – 0.80 V<sub>pp</sub> | 0.74 – 0.77 V<sub>pp</sub> |
+
+<center><img src="./images/VCO_Tuning_Pre_vs_Post.png" width="900"></center>
+<p align="center"><em>LC-VCO frequency and K<sub>VCO</sub> against V<sub>CTRL</sub>, pre- and post-layout; the shaded band is 2.40 – 2.48 GHz</em></p>
+
+K<sub>VCO</sub> is not constant: it rises from about 30 MHz/V at 0 V to a peak near 1.0 V. The
+paper's ≈ 120 MHz/V corresponds to the mean slope over the operating region (0.4 – 1.2 V:
+112 MHz/V pre-layout, 106 MHz/V post-layout; 0.7 – 1.2 V: 129 and 121 MHz/V). The pre-layout
+sweep reproduces the paper's tuning curve — 2.40 GHz at 0.39 V and 2.48 GHz at 1.12 V, against
+0.40 V and 1.10 V from the paper's points.
+
+**Post-layout shortfall.** The layout parasitics lower the frequency by about 2.5 % (≈ 60 MHz) at
+every control voltage. With V<sub>CTRL</sub> limited to 1.2 V the extracted VCO reaches 2.4256 GHz, so it
+cannot cover the top of the 2.40 – 2.48 GHz band, and the higher division ratios of the
+240 – 248 range are out of reach. This revision keeps the layout as taped out. A frequency
+recovery would need about 5 % less tank capacitance (≈ 55 – 60 fF, estimated from the 1/√C
+scaling), which is a schematic and layout change and is left to a later revision.
+
+Data and plots: [`vco_tuning_pre.csv`](xschem/top-pll/simulations/vco_tuning_pre.csv),
+[`vco_tuning_post.csv`](xschem/top-pll/simulations/vco_tuning_post.csv) and
+[`plots/`](xschem/top-pll/plots/) (`vco_tuning_pre.png`, `vco_tuning_post.png`,
+`vco_tuning_pre_vs_post.png`, drawn with `plot_vco_paper.py`).
 
 [Return to top](#toc)
 
