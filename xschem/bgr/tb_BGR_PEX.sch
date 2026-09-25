@@ -89,9 +89,12 @@ alter V1 dc 1.2
 
 op
 print I(Vmeas)
+print v(VBGR)
+print -i(V1)
 
 dc TEMP 100 -50 -5
 print I(Vmeas)
+print v(VBGR)
 
 write tb_BGR_PEX_temp.raw
 .endc
@@ -101,6 +104,11 @@ save all
 tran 100u 15m
 
 print I(Vmeas)
+meas tran vb_end find v(VBGR) at=15m
+meas tran vb_max max v(VBGR) from=5m to=15m
+meas tran vb_min min v(VBGR) from=5m to=15m
+* supply current (negative = drawn from the source), power = 1.2 V x |idd|
+meas tran idd avg i(V1) from=13m to=15m
 
 write tb_BGR_PEX_transient.raw
 .endc

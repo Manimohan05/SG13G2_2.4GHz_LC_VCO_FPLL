@@ -70,6 +70,17 @@ save v(UP) v(DN) v(VCP) v(CTRL)
 * Long transient simulation
 tran 1n 6u
 
+* Measurements
+meas tran ctrl_end find v(CTRL) at=6u
+meas tran ctrl_max max v(CTRL)
+meas tran ctrl_min min v(CTRL)
+meas tran vcp_end find v(VCP) at=6u
+meas tran vcp_max max v(VCP)
+* supply current (negative = drawn from the source), power = 1.2 V x |idd|
+meas tran idd avg i(V1) from=1u to=6u
+
+write tb_CP_LF_PEX_tran.raw v(UP) v(DN) v(VCP) v(CTRL)
+
 * Plot transient waveform
 plot v(UP) v(DN) v(VCP) v(CTRL)
 plot v(CTRL)

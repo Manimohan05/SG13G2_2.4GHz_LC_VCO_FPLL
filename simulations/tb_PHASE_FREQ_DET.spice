@@ -1,4 +1,4 @@
-** sch_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/phase-freq-detector/tb_PHASE_FREQ_DET.sch
+** sch_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/phase-freq-detector/tb_PHASE_FREQ_DET.sch
 **.subckt tb_PHASE_FREQ_DET
 Vdd VDD GND 'VDD'
 Vfvco F_DIV GND 0 pulse(0 'VDD' 2n 1n 1n 5n 10n)
@@ -8,26 +8,31 @@ x2 F_REF UP VDD GND F_DIV DN PHASE_FREQ_DET
 
 
 
-.param RAW_TEMP = agauss(40, 30, 1)
-.param TEMPGAUSS = max(20, min(RAW_TEMP, 80))
-.option temp = 'TEMPGAUSS'
-.param VDDGAUSS = agauss(1.2, 0.05, 1)
+* Nominal conditions (27 C, 1.2 V). For the Monte Carlo spread of temperature and supply
+* used in the paper, replace them by:
+*   .param RAW_TEMP = agauss(40, 30, 1)
+*   .param TEMPGAUSS = max(20, min(RAW_TEMP, 80))
+*   .option temp = 'TEMPGAUSS'
+*   .param VDDGAUSS = agauss(1.2, 0.05, 1)
+*   .param VDD = 'VDDGAUSS'
+.option temp = 27
 
-.param VDD = 'VDDGAUSS'
+.param VDD = 1.2
 * analysis
 
 .tran 100p 30n uic
 
 .control
-let i = 0
-dowhile i < 10
-  reset
-  run
-  write tb_PHASE_FREQ_DET.raw
-  set appendwrite
-  reset
-  let i = i + 1
-end
+run
+write tb_PHASE_FREQ_DET.raw
+meas tran up_avg avg v(UP) from=10n to=30n
+meas tran dn_avg avg v(DN) from=10n to=30n
+meas tran up_r2 when v(UP)=0.6 rise=2
+meas tran up_f2 when v(UP)=0.6 fall=2
+meas tran dn_r2 when v(DN)=0.6 rise=2
+meas tran dn_f2 when v(DN)=0.6 fall=2
+* supply current (negative = drawn from the source), power = 1.2 V x |idd|
+meas tran idd avg i(Vdd) from=10n to=30n
 quit
 .endc
 
@@ -48,8 +53,8 @@ quit
 **.ends
 
 * expanding   symbol:  xschem/phase-freq-detector/PHASE_FREQ_DET.sym # of pins=6
-** sym_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/phase-freq-detector/PHASE_FREQ_DET.sym
-** sch_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/phase-freq-detector/PHASE_FREQ_DET.sch
+** sym_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/phase-freq-detector/PHASE_FREQ_DET.sym
+** sch_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/phase-freq-detector/PHASE_FREQ_DET.sch
 .subckt PHASE_FREQ_DET FREF UP VDD GND FDIV DN
 *.opin UP
 *.ipin FREF
@@ -57,10 +62,10 @@ quit
 *.iopin GND
 *.opin DN
 *.ipin FDIV
+* noconn #net2
 x1 net1 UP FREF VDD nRST VDD GND sg13g2_dfrbp_2
 x2 DN net2 FDIV VDD nRST VDD GND sg13g2_dfrbp_2
 x3 nRST net1 DN VDD GND sg13g2_nand2_2
-* noconn #net2
 .ends
 
 .GLOBAL GND

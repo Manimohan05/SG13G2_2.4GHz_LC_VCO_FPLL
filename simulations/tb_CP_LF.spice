@@ -1,4 +1,4 @@
-** sch_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/charge-pump/tb_CP_LF.sch
+** sch_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/charge-pump/tb_CP_LF.sch
 **.subckt tb_CP_LF
 V1 VDD GND 1.2
 V2 DN GND PULSE(0 1.2 3.1u 1n 1n 49n 100n 29)
@@ -40,6 +40,17 @@ save v(UP) v(DN) v(VCP) v(CTRL)
 * Long transient simulation
 tran 1n 6u
 
+* Measurements
+meas tran ctrl_end find v(CTRL) at=6u
+meas tran ctrl_max max v(CTRL)
+meas tran ctrl_min min v(CTRL)
+meas tran vcp_end find v(VCP) at=6u
+meas tran vcp_max max v(VCP)
+* supply current (negative = drawn from the source), power = 1.2 V x |idd|
+meas tran idd avg i(V1) from=1u to=6u
+
+write tb_CP_LF_tran.raw v(UP) v(DN) v(VCP) v(CTRL)
+
 * Plot transient waveform
 plot v(UP) v(DN) v(VCP) v(CTRL)
 plot v(CTRL)
@@ -51,8 +62,8 @@ plot v(CTRL)
 **.ends
 
 * expanding   symbol:  xschem/charge-pump/CHARGE_PUMP.sym # of pins=7
-** sym_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/charge-pump/CHARGE_PUMP.sym
-** sch_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/charge-pump/CHARGE_PUMP.sch
+** sym_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/charge-pump/CHARGE_PUMP.sym
+** sch_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/charge-pump/CHARGE_PUMP.sch
 .subckt CHARGE_PUMP UP VDD VCP VBGR GND DN SUB!
 *.opin VCP
 *.ipin UP
@@ -61,17 +72,17 @@ plot v(CTRL)
 *.iopin VBGR
 *.iopin VDD
 *.iopin SUB!
-XM2 Vbn Vbn net5 SUB! sg13_lv_nmos w=40.7u l=2u ng=5
-XM8 net2 GND VDD NW sg13_lv_pmos w=29.6u l=2u ng=5
-XM11 Vbp Vbp net2 NW sg13_lv_pmos w=163.6u l=2u ng=20
-XM3 Vbn Vbp net1 NW sg13_lv_pmos w=163.6u l=2u ng=20
-XM4 net1 GND VDD NW sg13_lv_pmos w=29.6u l=2u ng=5
-XM7 net3 UP VDD NW sg13_lv_pmos w=29.6u l=2u ng=5
-XM9 VCP Vbp net3 NW sg13_lv_pmos w=163.6u l=2u ng=20
-XM10 net5 VDD GND SUB! sg13_lv_nmos w=6u l=2u ng=1
-XM1 net4 DN GND SUB! sg13_lv_nmos w=6u l=2u ng=1
-XM5 VCP Vbn net4 SUB! sg13_lv_nmos w=40.7u l=2u ng=5
-XM6 Vbp VBGR GND SUB! sg13_lv_nmos w=3.9u l=2u ng=1
+XM2 Vbn Vbn net5 SUB! sg13_lv_nmos w=40.7u l=2u ng=5 m=1 mm_ok=1
+XM8 net2 GND VDD NW sg13_lv_pmos w=29.6u l=2u ng=5 m=1 mm_ok=1
+XM11 Vbp Vbp net2 NW sg13_lv_pmos w=163.6u l=2u ng=20 m=1 mm_ok=1
+XM3 Vbn Vbp net1 NW sg13_lv_pmos w=163.6u l=2u ng=20 m=1 mm_ok=1
+XM4 net1 GND VDD NW sg13_lv_pmos w=29.6u l=2u ng=5 m=1 mm_ok=1
+XM7 net3 UP VDD NW sg13_lv_pmos w=29.6u l=2u ng=5 m=1 mm_ok=1
+XM9 VCP Vbp net3 NW sg13_lv_pmos w=163.6u l=2u ng=20 m=1 mm_ok=1
+XM10 net5 VDD GND SUB! sg13_lv_nmos w=6u l=2u ng=1 m=1 mm_ok=1
+XM1 net4 DN GND SUB! sg13_lv_nmos w=6u l=2u ng=1 m=1 mm_ok=1
+XM5 VCP Vbn net4 SUB! sg13_lv_nmos w=40.7u l=2u ng=5 m=1 mm_ok=1
+XM6 Vbp VBGR GND SUB! sg13_lv_nmos w=3.9u l=2u ng=1 m=1 mm_ok=1
 XR1 VDD NW ntap1 R=1.319 w=51e-6 l=36e-6 rw=0.3e-6
 XR2 VDD NW ntap1 R=2.51 w=30.5e-6 l=15.5e-6 rw=0.3e-6
 XR3 GND SUB! ptap1 R=9.234 w=5.68e-6 l=7.26e-6 rw=0.3e-6
@@ -81,17 +92,17 @@ XR5 GND SUB! ptap1 R=4.486 w=20e-6 l=6e-6 rw=0.3e-6
 
 
 * expanding   symbol:  xschem/loop-filter/LOOP_FILTER.sym # of pins=4
-** sym_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/loop-filter/LOOP_FILTER.sym
-** sch_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/loop-filter/LOOP_FILTER.sch
+** sym_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/loop-filter/LOOP_FILTER.sym
+** sch_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/loop-filter/LOOP_FILTER.sch
 .subckt LOOP_FILTER OUT IN GND SUB!
 *.opin OUT
 *.iopin GND
 *.ipin IN
 *.iopin SUB!
-XC2 OUT GND cap_cmim w=18.63e-6 l=18.63e-6 m=4
-XC1 net1 GND cap_cmim w=48.34e-6 l=48.34e-6 m=16
-XR2 OUT IN SUB! rppd w=2e-6 l=407.2e-6 m=1 b=0
-XR1 net1 IN SUB! rppd w=2e-6 l=407.2e-6 m=1 b=0
+XC2 OUT GND cap_cmim w=18.63e-6 l=18.63e-6 m=4 mm_ok=1
+XC1 net1 GND cap_cmim w=48.34e-6 l=48.34e-6 m=16 mm_ok=1
+XR2 OUT IN SUB! rppd w=2e-6 l=407.2e-6 m=1 b=0 mm_ok=1
+XR1 net1 IN SUB! rppd w=2e-6 l=407.2e-6 m=1 b=0 mm_ok=1
 XR3 GND SUB! ptap1 R=1.462 w=46.34e-6 l=32.18e-6 rw=0.3e-6
 XR4 GND SUB! ptap1 R=1.462 w=46.34e-6 l=32.18e-6 rw=0.3e-6
 .ends

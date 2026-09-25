@@ -102,26 +102,31 @@ C {simulator_commands_shown.sym} 1700 -750 0 0 {name=SimulatorNGSPICE
 simulator=ngspice
 only_toplevel=false 
 value="
-.param RAW_TEMP = agauss(40, 30, 1)
-.param TEMPGAUSS = max(20, min(RAW_TEMP, 80))
-.option temp = 'TEMPGAUSS'
-.param VDDGAUSS = agauss(1.2, 0.05, 1)
+* Nominal conditions (27 C, 1.2 V). For the Monte Carlo spread of temperature and supply
+* used in the paper, replace them by:
+*   .param RAW_TEMP = agauss(40, 30, 1)
+*   .param TEMPGAUSS = max(20, min(RAW_TEMP, 80))
+*   .option temp = 'TEMPGAUSS'
+*   .param VDDGAUSS = agauss(1.2, 0.05, 1)
+*   .param VDD = 'VDDGAUSS'
+.option temp = 27
 
-.param VDD = 'VDDGAUSS'
+.param VDD = 1.2
 * analysis
 
 .tran 100p 30n uic
 
 .control
-let i = 0
-dowhile i < 10
-  reset
-  run
-  write tb_PHASE_FREQ_DET.raw
-  set appendwrite
-  reset
-  let i = i + 1
-end
+run
+write tb_PHASE_FREQ_DET.raw
+meas tran up_avg avg v(UP) from=10n to=30n
+meas tran dn_avg avg v(DN) from=10n to=30n
+meas tran up_r2 when v(UP)=0.6 rise=2
+meas tran up_f2 when v(UP)=0.6 fall=2
+meas tran dn_r2 when v(DN)=0.6 rise=2
+meas tran dn_f2 when v(DN)=0.6 fall=2
+* supply current (negative = drawn from the source), power = 1.2 V x |idd|
+meas tran idd avg i(Vdd) from=10n to=30n
 quit
 .endc
 "}
