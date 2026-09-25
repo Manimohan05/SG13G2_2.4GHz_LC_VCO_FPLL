@@ -82,13 +82,18 @@ only_toplevel=false
 value="
 .param temp = 27
 .options method=gear rshunt=1.0e12
-* extracted RC power grid needs looser tolerances and a small node cap to converge through the rst edge
-.options reltol=1e-2 gmin=1e-10 abstol=1e-10 itl4=100 cshunt=1e-15
+* extracted RC power grid needs looser tolerances and a small node cap to converge through the rst and sclk edges
+.options reltol=1e-2 gmin=1e-9 abstol=1e-9 itl4=500 cshunt=1e-14
 
 * ngspice commands
 .save v(dout) v(sdata) v(sclk) v(en) v(rst) v(dsm_clk) v(freq_in) v(freq_out)
 .control  
-  tran 0.5n 1m
+  tran 0.2n 2u
+  meas tran fo_max max v(freq_out)
+  meas tran fo_min min v(freq_out)
+  meas tran t_r1 when v(freq_out)=0.6 rise=1
+  meas tran t_f1 when v(freq_out)=0.6 fall=1
+  meas tran half trig v(freq_out) val=0.6 rise=1 targ v(freq_out) val=0.6 fall=1
   remzerovec
   write tb_DSM_N_FREQ_DIV_PEX.raw
 .endc
@@ -98,7 +103,7 @@ C {launcher.sym} 420 -370 0 0 {name=h5
 descr="load waves" 
 tclcommand="xschem raw_read $netlist_dir/tb_DSM_N_FREQ_DIV_PEX.raw tran"
 }
-C {vsource.sym} 560 -210 0 0 {name=V1 value="PULSE(0 1.8 0 10ns 10ns 50ns 100ns)" savecurrent=false}
+C {vsource.sym} 560 -210 0 0 {name=V1 value="PULSE(0 1.2 0 0.5n 0.5n 4.5n 10n)" savecurrent=false}
 C {gnd.sym} 560 -170 0 0 {name=l1 lab=GND}
 C {lab_wire.sym} 560 -270 0 0 {name=p10 sig_type=std_logic lab=freq_in}
 C {lab_pin.sym} 710 -60 0 0 {name=p6 sig_type=std_logic lab=en}

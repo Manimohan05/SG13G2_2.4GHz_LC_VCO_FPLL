@@ -1,6 +1,6 @@
 ** sch_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/dsm/xschem/tb_DSM_N_FREQ_DIV_PEX.sch
 **.subckt tb_DSM_N_FREQ_DIV_PEX
-V1 freq_in GND PULSE(0 1.8 0 10ns 10ns 50ns 100ns)
+V1 freq_in GND PULSE(0 1.2 0 0.5n 0.5n 4.5n 10n)
 * noconn rst
 * noconn sclk
 * noconn sdata
@@ -13,13 +13,18 @@ x1 freq_in rst sclk sdata en freq_out VDD GND DSM_N_FREQ_DIV_PEX
 
 .param temp = 27
 .options method=gear rshunt=1.0e12
-* extracted RC power grid needs looser tolerances and a small node cap to converge through the rst edge
-.options reltol=1e-2 gmin=1e-10 abstol=1e-10 itl4=100 cshunt=1e-15
+* extracted RC power grid needs looser tolerances and a small node cap to converge through the rst and sclk edges
+.options reltol=1e-2 gmin=1e-9 abstol=1e-9 itl4=500 cshunt=1e-14
 
 * ngspice commands
 .save v(dout) v(sdata) v(sclk) v(en) v(rst) v(dsm_clk) v(freq_in) v(freq_out)
 .control
-  tran 0.5n 1m
+  tran 0.2n 2u
+  meas tran fo_max max v(freq_out)
+  meas tran fo_min min v(freq_out)
+  meas tran t_r1 when v(freq_out)=0.6 rise=1
+  meas tran t_f1 when v(freq_out)=0.6 fall=1
+  meas tran half trig v(freq_out) val=0.6 rise=1 targ v(freq_out) val=0.6 fall=1
   remzerovec
   write tb_DSM_N_FREQ_DIV_PEX.raw
 .endc
