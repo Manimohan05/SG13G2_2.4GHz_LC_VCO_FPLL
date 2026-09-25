@@ -1,0 +1,171 @@
+** sch_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/top-pll/tb_LC_VCO_FPLL.sch
+**.subckt tb_LC_VCO_FPLL CLK_OUT
+*.opin CLK_OUT
+x1 CLK_IN UP VDD GND CLK_FB DN PHASE_FREQ_DET
+x2 UP VDD VCP VBGR GND DN GND CHARGE_PUMP
+x3 VCTRL VCP GND GND LOOP_FILTER
+x4 VDD VCTRL GND CLK_OUT VBGR GND LC_VCO
+V1 VDD GND 1.2
+VBGR VBGR GND 0.6
+Vfref CLK_IN GND 0 pulse(0 1.2 0n 1n 1n 50n 100n)
+**** begin user architecture code
+
+
+
+*****************************************************
+* Closed-loop PLL testbench (pre-layout)
+* VBGR is an ideal source: the bandgap is a test block, not part of the tapeout.
+*****************************************************
+.option temp=27
+.param VDD=1.2
+.option rshunt=1.0e12
+.include 4nH_INDUCTOR.spice
+.include ../simulations/stimuli_test.cir
+
+* Divider: compiled behavioural model of the DSM + N-divider (dsm_and_freq_divider.so),
+* verified separately at transistor level (tb_DSM_N_FREQ_DIV, tb_DSM_N_FREQ_DIV_PEX).
+adut [ dn1 dn2 dn3 dn4 dn5 ] [ dn6 ] null dut
+.model dut d_cosim simulation=../simulations/dsm_and_freq_divider.so
+A1 [ CLK_OUT ] [ dn1 ] adc1
+A2 [ rst ] [ dn2 ] adc1
+A3 [ sclk ] [ dn3 ] adc1
+A4 [ sdata ] [ dn4 ] adc1
+A5 [ en ] [ dn5 ] adc1
+* ADC threshold: value used in the paper deck
+.model adc1 adc_bridge in_low=0.76 in_high=0.76
+A6 [ dn6 ] [ CLK_FB ] dac1
+.model dac1 dac_bridge out_low=0 out_high=1.2
+* gear method is stable for long oscillator runs
+.options reltol=1e-3 abstol=1e-9 vntol=1e-6 method=gear
+.control
+  * save only the low-frequency loop signals plus the output clock
+  save v(vctrl) v(up) v(dn) v(clk_fb) v(clk_out) v(clk_in) v(vcp) v1#branch
+  tran 10p 100u
+  meas tran idd avg i(V1) from=60u to=100u
+  remzerovec
+  write tb_LC_VCO_FPLL_100u.raw v(vctrl) v(up) v(dn) v(clk_fb) v(clk_out) v(clk_in) v(vcp)
+.endc
+
+
+
+
+
+.lib cornerMOSlv.lib mos_tt
+.lib cornerMOShv.lib mos_tt
+.lib cornerHBT.lib hbt_typ
+.lib cornerRES.lib res_typ
+.lib cornerCAP.lib cap_typ
+.include /foss/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
+.global VDD GND
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  xschem/phase-freq-detector/PHASE_FREQ_DET.sym # of pins=6
+** sym_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/phase-freq-detector/PHASE_FREQ_DET.sym
+** sch_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/phase-freq-detector/PHASE_FREQ_DET.sch
+.subckt PHASE_FREQ_DET FREF UP VDD GND FDIV DN
+*.opin UP
+*.ipin FREF
+*.iopin VDD
+*.iopin GND
+*.opin DN
+*.ipin FDIV
+* noconn #net2
+x1 net1 UP FREF VDD nRST VDD GND sg13g2_dfrbp_2
+x2 DN net2 FDIV VDD nRST VDD GND sg13g2_dfrbp_2
+x3 nRST net1 DN VDD GND sg13g2_nand2_2
+.ends
+
+
+* expanding   symbol:  xschem/charge-pump/CHARGE_PUMP.sym # of pins=7
+** sym_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/charge-pump/CHARGE_PUMP.sym
+** sch_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/charge-pump/CHARGE_PUMP.sch
+.subckt CHARGE_PUMP UP VDD VCP VBGR GND DN SUB!
+*.opin VCP
+*.ipin UP
+*.ipin DN
+*.iopin GND
+*.iopin VBGR
+*.iopin VDD
+*.iopin SUB!
+XM2 Vbn Vbn net5 SUB! sg13_lv_nmos w=40.7u l=2u ng=5 m=1 mm_ok=1
+XM8 net2 GND VDD NW sg13_lv_pmos w=29.6u l=2u ng=5 m=1 mm_ok=1
+XM11 Vbp Vbp net2 NW sg13_lv_pmos w=163.6u l=2u ng=20 m=1 mm_ok=1
+XM3 Vbn Vbp net1 NW sg13_lv_pmos w=163.6u l=2u ng=20 m=1 mm_ok=1
+XM4 net1 GND VDD NW sg13_lv_pmos w=29.6u l=2u ng=5 m=1 mm_ok=1
+XM7 net3 UP VDD NW sg13_lv_pmos w=29.6u l=2u ng=5 m=1 mm_ok=1
+XM9 VCP Vbp net3 NW sg13_lv_pmos w=163.6u l=2u ng=20 m=1 mm_ok=1
+XM10 net5 VDD GND SUB! sg13_lv_nmos w=6u l=2u ng=1 m=1 mm_ok=1
+XM1 net4 DN GND SUB! sg13_lv_nmos w=6u l=2u ng=1 m=1 mm_ok=1
+XM5 VCP Vbn net4 SUB! sg13_lv_nmos w=40.7u l=2u ng=5 m=1 mm_ok=1
+XM6 Vbp VBGR GND SUB! sg13_lv_nmos w=3.9u l=2u ng=1 m=1 mm_ok=1
+XR1 VDD NW ntap1 R=1.319 w=51e-6 l=36e-6 rw=0.3e-6
+XR2 VDD NW ntap1 R=2.51 w=30.5e-6 l=15.5e-6 rw=0.3e-6
+XR3 GND SUB! ptap1 R=9.234 w=5.68e-6 l=7.26e-6 rw=0.3e-6
+XR4 GND SUB! ptap1 R=2.717 w=30e-6 l=12.54e-6 rw=0.3e-6
+XR5 GND SUB! ptap1 R=4.486 w=20e-6 l=6e-6 rw=0.3e-6
+.ends
+
+
+* expanding   symbol:  xschem/loop-filter/LOOP_FILTER.sym # of pins=4
+** sym_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/loop-filter/LOOP_FILTER.sym
+** sch_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/loop-filter/LOOP_FILTER.sch
+.subckt LOOP_FILTER OUT IN GND SUB!
+*.opin OUT
+*.iopin GND
+*.ipin IN
+*.iopin SUB!
+XC2 OUT GND cap_cmim w=18.63e-6 l=18.63e-6 m=4 mm_ok=1
+XC1 net1 GND cap_cmim w=48.34e-6 l=48.34e-6 m=16 mm_ok=1
+XR2 OUT IN SUB! rppd w=2e-6 l=407.2e-6 m=1 b=0 mm_ok=1
+XR1 net1 IN SUB! rppd w=2e-6 l=407.2e-6 m=1 b=0 mm_ok=1
+XR3 GND SUB! ptap1 R=1.462 w=46.34e-6 l=32.18e-6 rw=0.3e-6
+XR4 GND SUB! ptap1 R=1.462 w=46.34e-6 l=32.18e-6 rw=0.3e-6
+.ends
+
+
+* expanding   symbol:  xschem/lc-vco/LC_VCO.sym # of pins=6
+** sym_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/lc-vco/LC_VCO.sym
+** sch_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/lc-vco/LC_VCO.sch
+.subckt LC_VCO VDD VCTRL GND FOUT VBGR SUB!
+*.opin FOUT
+*.ipin VCTRL
+*.ipin VBGR
+*.iopin VDD
+*.iopin GND
+*.iopin SUB!
+x1 OUTn OUTp 4nH_INDUCTOR
+XM5 Vx Vgs GND SUB! sg13_lv_nmos w=384u l=1u ng=48 m=1 mm_ok=1
+XM4 OUTp OUTn VDD NW sg13_lv_pmos w=36u l=0.13u ng=5 m=1 mm_ok=1
+XM3 OUTn OUTp VDD NW sg13_lv_pmos w=36u l=0.13u ng=5 m=1 mm_ok=1
+XM2 OUTp OUTn Vx SUB! sg13_lv_nmos w=21.99u l=0.13u ng=3 m=1 mm_ok=1
+XM1 OUTn OUTp Vx SUB! sg13_lv_nmos w=21.99u l=0.13u ng=3 m=1 mm_ok=1
+XM6 Vgs Vgs GND SUB! sg13_lv_nmos w=64u l=1u ng=8 m=1 mm_ok=1
+XC1 OUTn OUTp SUB! cap_rfcmim w=21.9e-6 l=21.9e-6 wfeed=10.0e-6 m=1 mm_ok=1
+XC3 OUTp VCTRL OUTn sub! sg13_hv_svaricap w=9.74u l=0.8u Nx=7 mm_ok=1
+XC2 OUTp VCTRL OUTn sub! sg13_hv_svaricap w=9.74u l=0.8u Nx=7 mm_ok=1
+XM7 Vgs VBGR VDD NWa sg13_lv_pmos w=38u l=1u ng=5 m=1 mm_ok=1
+XM8 FOUT OUTp VDD NW sg13_lv_pmos w=15u l=0.13u ng=10 m=1 mm_ok=1
+XM9 FOUT OUTp GND SUB! sg13_lv_nmos w=1.5u l=0.13u ng=1 m=1 mm_ok=1
+XM10 net1 OUTn VDD NW sg13_lv_pmos w=15u l=0.13u ng=10 m=1 mm_ok=1
+XM11 net1 OUTn GND SUB! sg13_lv_nmos w=1.5u l=0.13u ng=1 m=1 mm_ok=1
+XR1 VDD NW ntap1 R=7.357 w=10.22e-6 l=5.87e-6 rw=0.3e-6
+XR2 VDD NW ntap1 R=7.357 w=10.22e-6 l=5.87e-6 rw=0.3e-6
+XR3 GND SUB! ptap1 R=2.388 w=33.9e-6 l=14.41e-6 rw=0.3e-6
+XR4 GND SUB! ptap1 R=8.306 w=10.09e-6 l=4.23e-6 rw=0.3e-6
+XR5 GND SUB! ptap1 R=8.306 w=10.09e-6 l=4.23e-6 rw=0.3e-6
+XR6 VDD NW ntap1 R=9.234 w=8.42e-6 l=4.52e-6 rw=0.3e-6
+XR7 VDD NW ntap1 R=9.234 w=8.42e-6 l=4.52e-6 rw=0.3e-6
+XR8 GND SUB! ptap1 R=16.59 w=3.21e-6 l=4.26e-6 rw=0.3e-6
+XR9 GND SUB! ptap1 R=16.59 w=3.21e-6 l=4.26e-6 rw=0.3e-6
+XR10 GND SUB! ptap1 R=4.768 w=10.76e-6 l=13.74e-6 rw=0.3e-6
+XR11 GND SUB! ptap1 R=1.636 w=12.36e-6 l=57.9e-6 rw=0.3e-6
+XR12 VDD NWa ntap1 R=5.63 w=10.62e-6 l=10.22e-6 rw=0.3e-6
+.ends
+
+.GLOBAL VDD
+.GLOBAL GND
+.GLOBAL VBGR
+.end

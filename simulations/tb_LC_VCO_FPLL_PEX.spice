@@ -1,0 +1,74 @@
+** sch_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/top-pll/tb_LC_VCO_FPLL_PEX.sch
+**.subckt tb_LC_VCO_FPLL_PEX CLK_OUT
+*.opin CLK_OUT
+x1 CLK_IN UP VDD GND CLK_FB DN PHASE_FREQ_DET_PEX
+x2 UP VDD VCP VBGR GND DN CHARGE_PUMP_PEX
+x3 VCTRL VCP GND LOOP_FILTER_PEX
+x4 OUTp OUTn CLK_OUT VCTRL VBGR GND VDD LC_VCO_NOIND
+xind OUTn OUTp 4nH_INDUCTOR
+V1 VDD GND 1.2
+VBGR VBGR GND 0.6
+Vfref CLK_IN GND 0 pulse(0 1.2 0n 1n 1n 50n 100n)
+**** begin user architecture code
+
+
+
+*****************************************************
+* Closed-loop PLL testbench (post-layout, extracted blocks)
+* VBGR is an ideal source: the bandgap is a test block, not part of the tapeout.
+*****************************************************
+.option temp=27
+.param VDD=1.2
+.option rshunt=1.0e12
+.include 4nH_INDUCTOR.spice
+.include ../simulations/stimuli_test.cir
+* start-up kick: a noise-free run can stay at the unstable equilibrium at low VCTRL
+.ic v(OUTp)=0.4
+* extracted (Magic RC) netlists of the blocks; the inductor is the EM model above
+.include ../pex/PHASE_FREQ_DET__PHASE_FREQ_DET/magic_RC/PHASE_FREQ_DET.pex.spice
+.include ../pex/CHARGE_PUMP_V2__CHARGE_PUMP/magic_RC/CHARGE_PUMP.pex.spice
+.include ../pex/LOOP_FILTER__LOOP_FILTER/magic_RC/LOOP_FILTER.pex.spice
+.include ../pex/LC_VCO_NOIND__LC_VCO_NOIND/magic_RC/LC_VCO_NOIND.pex_sim.spice
+* Divider: compiled behavioural model of the DSM + N-divider (dsm_and_freq_divider.so),
+* verified separately at transistor level (tb_DSM_N_FREQ_DIV, tb_DSM_N_FREQ_DIV_PEX).
+adut [ dn1 dn2 dn3 dn4 dn5 ] [ dn6 ] null dut
+.model dut d_cosim simulation=../simulations/dsm_and_freq_divider.so
+A1 [ CLK_OUT ] [ dn1 ] adc1
+A2 [ rst ] [ dn2 ] adc1
+A3 [ sclk ] [ dn3 ] adc1
+A4 [ sdata ] [ dn4 ] adc1
+A5 [ en ] [ dn5 ] adc1
+* ADC threshold: 0.6 V = mid-swing of the extracted VCO output (measured -0.03 V to 1.22 V)
+.model adc1 adc_bridge in_low=0.6 in_high=0.6
+A6 [ dn6 ] [ CLK_FB ] dac1
+.model dac1 dac_bridge out_low=0 out_high=1.2
+* gear method is stable for long oscillator runs
+.options reltol=1e-3 abstol=1e-9 vntol=1e-6 method=gear
+.control
+  * save only the low-frequency loop signals plus the output clock
+  save v(vctrl) v(up) v(dn) v(clk_fb) v(clk_out) v(clk_in) v(vcp) v1#branch
+  tran 10p 40u
+  meas tran idd avg i(V1) from=20u to=40u
+  remzerovec
+  write tb_LC_VCO_FPLL_PEX_40u.raw v(vctrl) v(up) v(dn) v(clk_fb) v(clk_out) v(clk_in) v(vcp)
+.endc
+
+
+
+
+
+.lib cornerMOSlv.lib mos_tt
+.lib cornerMOShv.lib mos_tt
+.lib cornerHBT.lib hbt_typ
+.lib cornerRES.lib res_typ
+.lib cornerCAP.lib cap_typ
+.include /foss/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
+.global VDD GND
+
+
+**** end user architecture code
+**.ends
+.GLOBAL VDD
+.GLOBAL GND
+.GLOBAL VBGR
+.end
