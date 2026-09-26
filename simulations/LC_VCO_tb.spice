@@ -45,7 +45,8 @@ plot power_out_db xlimit 2.34G 2.54G ylimit -200 0
 meas sp max_power_out_db max power_out_db FROM=2G TO=3G
 
 * Save FFT spectrum as raw file
-write LC_VCO_fft.raw
+write LC_VCO_fft.raw frequency power_out_db
+shell python3 ../xschem/lc-vco/raw_spectrum_as_tran.py LC_VCO_fft.raw
 
 * Save FFT data
 wrdata fft_output_standalone.txt frequency power_out_db

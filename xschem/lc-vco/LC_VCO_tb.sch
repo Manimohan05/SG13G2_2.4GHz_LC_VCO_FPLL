@@ -5,6 +5,81 @@ V {}
 S {}
 F {}
 E {}
+B 2 -830 10 -30 410 {flags=graph
+y1=-0.2
+y2=1.4
+ypos1=-0.2
+ypos2=1.4
+divy=5
+subdivy=1
+unity=1
+x1=1e-07
+x2=5e-07
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+dataset=-1
+unitx=1
+logx=0
+logy=0
+autoload=1
+color="7 12 21 11"
+node="vctrl
+x1.vx
+fout
+x1.outp"
+hilight_wave=-1
+rawfile=$netlist_dir/tb_LC_VCO_tran.raw}
+B 2 -30 10 770 410 {flags=graph
+y1=-0.2
+y2=1.4
+ypos1=-0.2
+ypos2=1.4
+divy=5
+subdivy=1
+unity=1
+x1=4e-07
+x2=4.05e-07
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+dataset=-1
+unitx=1
+logx=0
+logy=0
+autoload=1
+color="7 12 21 11"
+node="vctrl
+x1.vx
+fout
+x1.outp"
+hilight_wave=-1
+rawfile=$netlist_dir/tb_LC_VCO_tran.raw}
+B 2 -30 -390 770 10 {flags=graph
+y1=-200
+y2=0
+ypos1=-200
+ypos2=0
+divy=5
+subdivy=1
+unity=1
+x1=2340000000.0
+x2=2540000000.0
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+dataset=-1
+unitx=1
+logx=0
+logy=0
+autoload=1
+color="7"
+node="power_out_db"
+hilight_wave=-1
+rawfile=$netlist_dir/LC_VCO_fft.raw}
 N -800 -85 -800 -45 {lab=GND}
 N -960 -140 -960 -120 {lab=GND}
 N -960 -240 -960 -220 {lab=VCTRL}
@@ -29,7 +104,7 @@ N -400 -200 -400 -140 {lab=GND}
 N -800 -190 -800 -140 {lab=VDD}
 N -300 -160 -300 -140 {lab=GND}
 C {gnd.sym} -800 -45 0 0 {name=l4 lab=GND}
-C {simulator_commands.sym} -1030 60 0 0 {name=ANALYSIS only_toplevel=true 
+C {simulator_commands.sym} -1080 210 0 0 {name=ANALYSIS only_toplevel=true 
 value="
 .param temp = 27
 .options method=gear rshunt=1.0e12
@@ -66,7 +141,8 @@ plot power_out_db xlimit 2.34G 2.54G ylimit -200 0
 meas sp max_power_out_db max power_out_db FROM=2G TO=3G
 
 * Save FFT spectrum as raw file
-write LC_VCO_fft.raw
+write LC_VCO_fft.raw frequency power_out_db
+shell python3 ../xschem/lc-vco/raw_spectrum_as_tran.py LC_VCO_fft.raw
 
 * Save FFT data
 wrdata fft_output_standalone.txt frequency power_out_db
@@ -84,7 +160,7 @@ C {vsource.sym} -1190 -190 0 1 {name=Vdn value="PULSE(0.5 0.0 10n 90n 1n 1s 2s)"
 spice_ignore=true}
 C {opin.sym} -130 -200 0 0 {name=p5 lab=FOUT
 }
-C {simulator_commands.sym} -1170 60 0 0 {name=OP only_toplevel=true 
+C {simulator_commands.sym} -1220 210 0 0 {name=OP only_toplevel=true 
 value="
 .param temp=27
 .control
@@ -100,12 +176,12 @@ C {gnd.sym} -300 -140 0 0 {name=l7 lab=GND}
 C {lab_pin.sym} -390 -230 2 1 {name=p3 sig_type=std_logic lab=VCTRL}
 C {vdd.sym} -150 -280 0 0 {name=l2 lab=VDD}
 C {vdd.sym} -800 -185 0 0 {name=l3 lab=VDD}
-C {simulator_commands.sym} -740 60 0 0 {name=INCLUDE only_toplevel=true
+C {simulator_commands.sym} -1090 30 0 0 {name=INCLUDE only_toplevel=true
 format="tcleval( @value )"
 value="
 .include 4nH_INDUCTOR.spice
 "}
-C {simulator_commands.sym} -880 60 0 0 {name=MODEL only_toplevel=true
+C {simulator_commands.sym} -1230 30 0 0 {name=MODEL only_toplevel=true
 format="tcleval( @value )"
 value="
 .lib cornerMOSlv.lib mos_tt
@@ -113,7 +189,7 @@ value="
 .lib cornerRES.lib res_typ
 .lib cornerCAP.lib cap_typ
 "}
-C {launcher.sym} -370 130 0 0 {name=h1
+C {launcher.sym} -310 -60 0 0 {name=h1
 descr="OP annotate" 
 tclcommand="xschem annotate_op"
 }

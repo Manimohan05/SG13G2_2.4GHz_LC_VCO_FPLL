@@ -54,6 +54,53 @@ autoload=1
 color="4 7"
 node="vdd
 vbgr"}
+B 2 1235 -134 2035 266 {flags=graph
+y1=0.45
+y2=0.65
+ypos1=0.45
+ypos2=0.65
+divy=5
+subdivy=1
+unity=1
+x1=0
+x2=0.015
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+dataset=-1
+unitx=1
+logx=0
+logy=0
+autoload=1
+color="7"
+node="vbgr"
+hilight_wave=-1
+rawfile=$netlist_dir/tb_BGR_transient.raw}
+B 2 2035 -134 2835 266 {flags=graph
+y1=0.45
+y2=0.65
+ypos1=0.45
+ypos2=0.65
+divy=5
+subdivy=1
+unity=1
+x1=-50
+x2=100
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+dataset=-1
+unitx=1
+logx=0
+logy=0
+autoload=1
+sim_type=dc
+color="7"
+node="vbgr"
+hilight_wave=-1
+rawfile=$netlist_dir/tb_BGR_temp.raw}
 N 640 -730 640 -700 {
 lab=GND}
 N 880 -690 880 -660 {
@@ -97,6 +144,7 @@ print -i(V1)
 dc TEMP 100 -50 -5
 print I(Vmeas)
 print v(VBGR)
+plot v(VBGR)
 
 write tb_BGR_temp.raw
 .endc
@@ -111,6 +159,7 @@ meas tran vb_max max v(VBGR) from=5m to=15m
 meas tran vb_min min v(VBGR) from=5m to=15m
 * supply current (negative = drawn from the source), power = 1.2 V x |idd|
 meas tran idd avg i(V1) from=13m to=15m
+plot v(VBGR)
 
 write tb_BGR_transient.raw
 .endc

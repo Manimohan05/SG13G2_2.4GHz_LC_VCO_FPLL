@@ -127,7 +127,8 @@ meas tran dn_r2 when v(DN)=0.6 rise=2
 meas tran dn_f2 when v(DN)=0.6 fall=2
 * supply current (negative = drawn from the source), power = 1.2 V x |idd|
 meas tran idd avg i(Vdd) from=10n to=30n
-quit
+plot v(F_REF) v(F_DIV)
+plot v(UP) v(DN)
 .endc
 "}
 C {simulator_commands_shown.sym} 1690 -980 0 0 {

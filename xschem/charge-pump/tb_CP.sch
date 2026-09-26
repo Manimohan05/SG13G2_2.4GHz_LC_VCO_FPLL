@@ -10,6 +10,102 @@ L 4 1750 -750 1750 -690 {}
 L 4 1180 -890 1380 -890 {}
 L 4 620 -360 820 -360 {}
 L 4 820 -360 820 -300 {}
+B 2 1580 -180 2380 220 {flags=graph
+y1=-0.1
+y2=1.4
+ypos1=-0.1
+ypos2=1.4
+divy=5
+subdivy=1
+unity=1
+x1=0
+x2=6e-06
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+dataset=-1
+unitx=1
+logx=0
+logy=0
+autoload=1
+color="7 12 21 11"
+node="up
+dn
+vcp
+ctrl"
+hilight_wave=-1
+rawfile=$netlist_dir/CP_tran.raw}
+B 2 2380 -980 3180 -580 {flags=graph
+y1=0
+y2=1.4
+ypos1=0
+ypos2=1.4
+divy=5
+subdivy=1
+unity=1
+x1=0
+x2=6e-06
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+dataset=-1
+unitx=1
+logx=0
+logy=0
+autoload=1
+color="7"
+node="ctrl"
+hilight_wave=-1
+rawfile=$netlist_dir/CP_tran.raw}
+B 2 2380 -180 3180 220 {flags=graph
+y1=-4e-05
+y2=6e-05
+ypos1=-4e-05
+ypos2=6e-05
+divy=5
+subdivy=1
+unity=1
+x1=0
+x2=6e-06
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+dataset=-1
+unitx=1
+logx=0
+logy=0
+autoload=1
+color="7"
+node="i(vloop)"
+hilight_wave=-1
+rawfile=$netlist_dir/CP_tran.raw}
+B 2 2380 -580 3180 -180 {flags=graph
+y1=0.2
+y2=0.9
+ypos1=0.2
+ypos2=0.9
+divy=5
+subdivy=1
+unity=1
+x1=0
+x2=6e-06
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+dataset=-1
+unitx=1
+logx=0
+logy=0
+autoload=1
+color="7 12"
+node="vbp
+vbn"
+hilight_wave=-1
+rawfile=$netlist_dir/CP_tran.raw}
 P 4 5 1600 -750 2040 -750 2040 -300 1600 -300 1600 -750 {}
 P 4 5 1180 -950 1380 -950 1380 -300 1180 -300 1180 -950 {}
 P 4 5 620 -890 1100 -890 1100 -300 620 -300 620 -890 {}

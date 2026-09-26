@@ -5,6 +5,55 @@ V {}
 S {}
 F {}
 E {}
+B 2 1710 -800 2510 -400 {flags=graph
+y1=-0.2
+y2=1.4
+ypos1=-0.2
+ypos2=1.4
+divy=5
+subdivy=1
+unity=1
+x1=0
+x2=6e-06
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+dataset=-1
+unitx=1
+logx=0
+logy=0
+autoload=1
+color="7 12 21 11"
+node="up
+dn
+vcp
+ctrl"
+hilight_wave=-1
+rawfile=$netlist_dir/tb_CP_LF_tran.raw}
+B 2 1710 -400 2510 0 {flags=graph
+y1=0
+y2=1.4
+ypos1=0
+ypos2=1.4
+divy=5
+subdivy=1
+unity=1
+x1=0
+x2=6e-06
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+dataset=-1
+unitx=1
+logx=0
+logy=0
+autoload=1
+color="7"
+node="ctrl"
+hilight_wave=-1
+rawfile=$netlist_dir/tb_CP_LF_tran.raw}
 N 1580 -760 1580 -740 {lab=VDD}
 N 1580 -680 1580 -660 {lab=GND}
 N 1060 -430 1060 -410 {lab=GND}
