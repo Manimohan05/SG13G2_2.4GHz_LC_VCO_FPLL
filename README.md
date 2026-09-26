@@ -590,11 +590,15 @@ pex/<CELL>__<TOPCELL>/
 
 Extracted netlists feed the `*_PEX` testbenches in [`simulations/`](simulations/), for
 example `tb_CP_LF_PEX.spice` and `tb_PHASE_FREQ_DET_PEX.spice`. PEX is archived for
-`BANDGAP_REF`, `CHARGE_PUMP_V2`, `DSM_N_FREQ_DIV`, `LOOP_FILTER`, `PHASE_FREQ_DET` and
-`LC_VCO_NOIND`. The archived `<CELL>.pex.spice` files are the testbench-ready netlists
+`BANDGAP_REF`, `CHARGE_PUMP_V2`, `LOOP_FILTER`, `PHASE_FREQ_DET` and `LC_VCO_NOIND`. The archived `<CELL>.pex.spice` files are the testbench-ready netlists
 (subcircuit named `<CELL>_PEX`, ports in the testbench pin order); the extraction is from
 the layouts in `gds/blocks/`, including revision **V2** of the charge pump that ships in
 the top level.
+
+**Digital divider.** `DSM_N_FREQ_DIV` is a standard-cell block from the OpenLane flow, so it has no separate
+RC extraction here. Its post-layout simulation uses the layout-extracted netlist of the OpenLane run,
+[`xschem/dsm/src/runs/RUN_2026-03-04_15-08-00/final/spice/dsm_and_freq_divider.spice`](xschem/dsm/src/runs/RUN_2026-03-04_15-08-00/final/spice/dsm_and_freq_divider.spice)
+(transistor-level, no parasitic elements), with the standard cells taken from the PDK.
 
 **LC-VCO.** `kpex`/Magic extract only resistance and capacitance — no inductance and no
 mutual coupling — so the spiral must not be extracted with the rest of the VCO. The VCO
@@ -672,46 +676,54 @@ fractional spurs and settling time.
 ### 9.7 Block-Level Pre- vs Post-Layout Comparison
 
 Each block was simulated twice with the same testbench and stimulus: **pre-layout** on the
-schematic netlist and **post-layout** on the Magic RC extraction archived in
-[`pex/`](pex/). Conditions: V<sub>DD</sub> = 1.2 V, 27 °C, typical corner, ngspice.
+schematic netlist and **post-layout** on the layout-extracted netlist (the Magic RC extraction
+archived in [`pex/`](pex/), and for the digital divider the layout-extracted netlist of the OpenLane
+run). Conditions: V<sub>DD</sub> = 1.2 V, 27 °C, typical corner, ngspice. Each testbench is an xschem
+schematic (`tb_<BLOCK>.sch` and `tb_<BLOCK>_PEX.sch`) whose waveform viewer shows the same
+signals as its ngspice popup plots.
 
 | Block | Metric | Pre-layout | Post-layout | Difference |
 |-------|--------|-----------:|------------:|-----------:|
-| Bandgap reference | Output at 25 °C | 0.6024 V | 0.6026 V | +0.0 % |
-| Phase-frequency detector | `UP` average | 0.916 V | 0.902 V | −1.6 % |
-| | `DN` average | 0.040 V | 0.053 V | +34 % (tens of mV) |
-| | `UP` second rising edge | 3.17 ns | 3.30 ns | +4.0 % |
-| | `DN` second rising edge | 12.90 ns | 12.94 ns | +0.3 % |
-| Charge pump + loop filter | `CTRL` after 6 µs | 0.077 V | 0.069 V | −10 % |
+| Bandgap reference | Output at 27 °C | 0.6024 V | 0.6026 V | +0.04 % |
+| | Supply current | 183 µA | 183 µA | 0.0 % |
+| Phase-frequency detector | `UP` average | 0.916 V | 0.901 V | −1.7 % |
+| | `DN` average | 0.040 V | 0.057 V | +44 % (17 mV) |
+| | `UP` second rising edge | 3.17 ns | 3.31 ns | +4.4 % |
+| | `DN` second rising edge | 12.90 ns | 12.94 ns | +0.4 % |
+| | Supply current (100 MHz test stimulus) | 20.0 µA | 25.8 µA | +29 % |
+| Charge pump + loop filter | `CTRL` after 6 µs | 0.0770 V | 0.0691 V | −10 % |
 | | `CTRL` peak | 1.176 V | 1.177 V | +0.1 % |
 | | `VCP` peak | 1.283 V | 1.281 V | −0.2 % |
+| | Supply current | 102.5 µA | 102.3 µA | −0.2 % |
 | PFD + charge pump + loop filter (`PFD_CP_LF`) | `VCTRL` after 300 ns | 0.892 V | 0.877 V | −1.8 % |
-| LC-VCO (with the EM-extracted inductor) | Oscillation frequency (V<sub>ctrl</sub> ≈ 0.57 V) | 2.413 GHz | 2.353 GHz | −2.5 % |
-| | Output swing | 0.779 V | 0.757 V | −2.8 % |
-| ∆Σ modulator + divider (100 MHz input) | First output rising edge | 0.6230 µs | 0.6234 µs | +0.06 % |
-| | First output falling edge | 1.8630 µs | 1.8634 µs | +0.02 % |
-| | Output half period (input cycles) | 1.2400 µs (124) | 1.2400 µs (124) | 0.0 % |
+| LC-VCO (with the EM-extracted inductor) | Oscillation frequency at V<sub>ctrl</sub> = 0.6 V | 2.416 GHz | 2.356 GHz | −2.5 % |
+| | Output swing (`OUTp`) | 0.769 V<sub>pp</sub> | 0.749 V<sub>pp</sub> | −2.6 % |
+| | Supply power | 0.93 mW | 1.00 mW | +8.6 % |
+| ∆Σ modulator + divider (2.4 GHz, 1.2 V clock) | First output rising edge | 80.02 ns | 78.72 ns | −1.6 % |
+| | First output falling edge | 131.69 ns | 130.35 ns | −1.0 % |
+| | Output period (division ratio) | 103.334 ns (248.0) | 103.335 ns (248.0) | 0.0 % |
 
 The blocks agree within a few percent wherever the quantity is a level or a frequency.
-The larger percentages (`DN` average, `CTRL` minimum) are differences of a few tens of
-millivolts on near-zero signals. The 2.5 % lower VCO frequency is the expected effect of
-the added interconnect capacitance; the inductor is the EM model in both runs (the
-extraction covers the rest of the VCO only, see §9.1).
+The larger percentages (`DN` average, the PFD supply current) are differences of a few tens of
+millivolts or microamps on small signals. The 2.5 % lower VCO frequency is the expected effect of
+the added interconnect capacitance; the inductor is the EM model in both runs (the extraction
+covers the rest of the VCO only, see §9.1 and §9.8).
 
-> **DSM testbench.** The divider output period at the original 10 MHz input is 24.4 µs, too
-> long to simulate on the extracted netlist. Both DSM testbenches therefore use the same
-> 100 MHz input (0.5 ns edges), the same reset/enable stimulus (`stimuli_test.cir`), the same
-> 0.2 ns maximum time step and a 2 µs window, which shows the first divided-output
-> rising and falling edges. The post-layout run uses looser solver settings
-> (`reltol`, `gmin`, `abstol`, `itl4`, `cshunt`, set in the testbench) so the extracted
-> netlist converges through the reset and `sclk` edges.
+> **DSM testbench.** The divider runs at the PLL's own condition: a 2.4 GHz, 1.2 V input clock
+> (what the VCO delivers) with the reset, enable and serial-load stimulus of `stimuli_test.cir`,
+> a 10 ps step and a 250 ns window. Pre-layout uses the compiled behavioural divider
+> (`dsm_and_freq_divider.so`); post-layout uses the transistor-level netlist extracted from the
+> layout by the OpenLane flow (standard cells from the PDK, no parasitic elements), so the
+> comparison is transistor level against the ideal model. Both divide by 248. The paper
+> testbench's original 10 MHz, 1.8 V clock works pre-layout (first edge at 5.709 µs) but makes
+> the transistor-level netlist abort at about 15 µs, so it is not used post-layout.
 
-Testbenches: `tb_BGR`, `tb_PHASE_FREQ_DET`, `tb_CP_LF`, `tb_DSM_N_FREQ_DIV` (pre-layout)
-and the matching `*_PEX` decks (post-layout) in [`simulations/`](simulations/);
-`LC_VCO_tb.spice` and `LC_VCO_NOIND_pex_tb.spice` for the LC-VCO.
-The full closed-loop PLL is not simulated on the extracted netlist: at 10 ps steps it runs
-at roughly 4 ns of simulated time per minute on the transistor-level netlist on the
-machine used here, so 40 µs would take over a week.
+Testbenches: `tb_BGR`, `tb_PHASE_FREQ_DET`, `tb_CP_LF`, `tb_DSM_N_FREQ_DIV` and `LC_VCO_tb`
+(pre-layout) and the matching `*_PEX` testbenches, including `LC_VCO_PEX_tb` (post-layout), in
+[`xschem/`](xschem/), with their netlists in [`simulations/`](simulations/).
+The full closed-loop PLL is not simulated on the transistor-level extracted netlist: at 10 ps
+steps it runs at roughly 4 ns of simulated time per minute on the machine used here, so 40 µs
+would take weeks.
 
 <a name="pex_vco"></a>
 ### 9.8 LC-VCO Tuning: Pre- vs Post-Layout
