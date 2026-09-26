@@ -34,7 +34,7 @@ divy=5
 subdivy=1
 unity=1
 x1=0
-x2=0.001
+x2=2.5e-07
 
 subdivx=4
 xlabmag=1.2
@@ -47,7 +47,7 @@ logy=0
 digital=1
 divx=4
 legend=1
-color="4 4 4 4 4 4"
+color="4 4 4 4 7 4"
 node="sdata
 sclk
 en
@@ -87,9 +87,16 @@ value="
 * ngspice commands
 .save v(dout) v(sdata) v(sclk) v(en) v(rst) v(dsm_clk) v(freq_in) v(freq_out)
 .control  
-  tran 0.5n 1m
+  tran 10p 250n
+  meas tran fo_max max v(freq_out)
+  meas tran fo_min min v(freq_out)
+  meas tran t_r1 when v(freq_out)=0.6 rise=1
+  meas tran t_f1 when v(freq_out)=0.6 fall=1
+  meas tran half trig v(freq_out) val=0.6 rise=1 targ v(freq_out) val=0.6 fall=1
+  meas tran per trig v(freq_out) val=0.6 rise=1 targ v(freq_out) val=0.6 rise=2
   remzerovec
   write tb_DSM_N_FREQ_DIV.raw 
+  plot v(freq_out)
 .endc
 
 * to generate following file copy stimuli.test
@@ -101,7 +108,7 @@ C {launcher.sym} 70 -420 0 0 {name=h5
 descr="load waves" 
 tclcommand="xschem raw_read $netlist_dir/tb_DSM_N_FREQ_DIV.raw tran"
 }
-C {vsource.sym} 320 -230 0 0 {name=V1 value="PULSE(0 1.8 0 10ns 10ns 50ns 100ns)" savecurrent=false}
+C {vsource.sym} 320 -230 0 0 {name=V1 value="PULSE(0 1.2 0 20p 20p 187p 416.67p)" savecurrent=false}
 C {lab_wire.sym} 320 -290 0 0 {name=p10 sig_type=std_logic lab=freq_in}
 C {adc_bridge1.sym} 1000 -290 0 1 {name=A2
 adc=adc1
@@ -162,4 +169,8 @@ C {gnd.sym} 600 -190 0 0 {name=l1 lab=GND}
 C {xschem/dsm/xschem/DSM_N_FREQ_DIV.sym} 740 -310 0 1 {name=adut
 dut=dut
 d_cosim_model= d_cosim
-model=../simulations/dsm_and_freq_divider.so}
+model=../simulations/dsm_and_freq_divider.so
+verilog_ignore=true
+vhdl_ignore=true
+format="@name [ @@freq_in @@rst @@sclk @@sdata @@en ] [ @@freq_out ] null @dut
+.model @dut @d_cosim_model simulation=@model"}

@@ -1,6 +1,6 @@
-** sch_path: /foss/designs/unicasss-tools/frac-n-pll-vco-unic_cass/xschem/dsm/xschem/tb_DSM_N_FREQ_DIV.sch
+** sch_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/dsm/xschem/tb_DSM_N_FREQ_DIV.sch
 **.subckt tb_DSM_N_FREQ_DIV
-V1 freq_in GND PULSE(0 1.2 0 0.5n 0.5n 4.5n 10n)
+V1 freq_in GND PULSE(0 1.2 0 20p 20p 187p 416.67p)
 A2 [ en ] [ net2 ] adc1
 .model adc1 adc_bridge in_low=0.4 in_high=1.2
 A3 [ sdata ] [ net3 ] adc1
@@ -27,14 +27,16 @@ adut [ net6 net5 net4 net3 net2 ] [ net1 ] null dut
 * ngspice commands
 .save v(dout) v(sdata) v(sclk) v(en) v(rst) v(dsm_clk) v(freq_in) v(freq_out)
 .control
-  tran 0.2n 2u
+  tran 10p 250n
   meas tran fo_max max v(freq_out)
   meas tran fo_min min v(freq_out)
   meas tran t_r1 when v(freq_out)=0.6 rise=1
   meas tran t_f1 when v(freq_out)=0.6 fall=1
   meas tran half trig v(freq_out) val=0.6 rise=1 targ v(freq_out) val=0.6 fall=1
+  meas tran per trig v(freq_out) val=0.6 rise=1 targ v(freq_out) val=0.6 rise=2
   remzerovec
   write tb_DSM_N_FREQ_DIV.raw
+  plot v(freq_out)
 .endc
 
 * to generate following file copy stimuli.test

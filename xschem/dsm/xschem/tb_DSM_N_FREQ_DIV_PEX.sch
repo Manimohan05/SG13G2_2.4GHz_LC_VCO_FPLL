@@ -34,7 +34,7 @@ divy=5
 subdivy=1
 unity=1
 x1=0
-x2=3.0325e-07
+x2=2.5e-07
 
 subdivx=4
 xlabmag=1.2
@@ -47,7 +47,7 @@ logy=0
 digital=1
 divx=4
 legend=1
-color="4 4 4 4 4 4"
+color="4 4 4 4 7 4"
 node="sdata
 sclk
 en
@@ -82,20 +82,20 @@ only_toplevel=false
 value="
 .param temp = 27
 .options method=gear rshunt=1.0e12
-* extracted RC power grid needs looser tolerances and a small node cap to converge through the rst and sclk edges
-.options reltol=1e-2 gmin=1e-9 abstol=1e-9 itl4=500 cshunt=1e-14
 
 * ngspice commands
 .save v(dout) v(sdata) v(sclk) v(en) v(rst) v(dsm_clk) v(freq_in) v(freq_out)
 .control  
-  tran 0.2n 2u
+  tran 10p 250n
   meas tran fo_max max v(freq_out)
   meas tran fo_min min v(freq_out)
   meas tran t_r1 when v(freq_out)=0.6 rise=1
   meas tran t_f1 when v(freq_out)=0.6 fall=1
   meas tran half trig v(freq_out) val=0.6 rise=1 targ v(freq_out) val=0.6 fall=1
+  meas tran per trig v(freq_out) val=0.6 rise=1 targ v(freq_out) val=0.6 rise=2
   remzerovec
   write tb_DSM_N_FREQ_DIV_PEX.raw
+  plot v(freq_out)
 .endc
 
 "}
@@ -103,7 +103,7 @@ C {launcher.sym} 420 -370 0 0 {name=h5
 descr="load waves" 
 tclcommand="xschem raw_read $netlist_dir/tb_DSM_N_FREQ_DIV_PEX.raw tran"
 }
-C {vsource.sym} 560 -210 0 0 {name=V1 value="PULSE(0 1.2 0 0.5n 0.5n 4.5n 10n)" savecurrent=false}
+C {vsource.sym} 560 -210 0 0 {name=V1 value="PULSE(0 1.2 0 20p 20p 187p 416.67p)" savecurrent=false}
 C {gnd.sym} 560 -170 0 0 {name=l1 lab=GND}
 C {lab_wire.sym} 560 -270 0 0 {name=p10 sig_type=std_logic lab=freq_in}
 C {lab_pin.sym} 710 -60 0 0 {name=p6 sig_type=std_logic lab=en}
@@ -128,15 +128,23 @@ C {gnd.sym} 850 -75 0 0 {name=l9 lab=GND}
 C {simulator_commands.sym} 280 -190 0 0 {name=MODEL only_toplevel=true
 format="tcleval( @value )"
 value="
-.include /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/pex/DSM_N_FREQ_DIV__DSM_N_FREQ_DIV/magic_RC/DSM_N_FREQ_DIV.pex.spice
-*.include /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/dsm/xschem/DSM_N_FREQ_DIV_PEX.spice
+* NOTE: with the original 10 MHz / 1.8 V clock (PULSE(0 1.8 0 10ns 10ns 50ns 100ns), tran 0.5n 1m) this netlist
+* reproduces the first output edge (5.704 us) but the solver aborts at about 15 us. The PLL condition used here, 2.4 GHz at 1.2 V
+* (what the divider sees from the VCO), converges and gives an output period of 103.3 ns (division ratio 248).
+* layout-extracted netlist straight from the OpenLane run. The PDK standard cells are included first, so the
+* black-box entries at the top of the OpenLane file are ignored (ngspice keeps the first definition).
+.include /foss/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
+.include /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/dsm/src/runs/RUN_2026-03-04_15-08-00/final/spice/dsm_and_freq_divider.spice
+.subckt DSM_N_FREQ_DIV_PEX freq_in rst sclk sdata en freq_out VDD GND
+x0 GND VDD en freq_in freq_out rst sclk sdata dsm_and_freq_divider
+.ends
 .lib cornerMOSlv.lib mos_tt
 .lib cornerMOShv.lib mos_tt
 .lib cornerRES.lib res_typ
 .lib cornerCAP.lib cap_typ
 * drives rst/en/sclk/sdata; without it the extracted netlist is never reset
 .include stimuli_test.cir
-*.include /foss/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
+.include /foss/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
 
 "}
 C {xschem/dsm/xschem/DSM_N_FREQ_DIV_PEX.sym} 990 -220 0 1 {name=x1}
