@@ -490,7 +490,7 @@ system.
 ### 7.1 Integrated PLL Layout
 
 <center><img src="./images/PLL%20Layout.jpeg" width="1000"></center>
-<p align="center"><em>Figure 10: Top-level PLL layout — 930 µm × 666 µm</em></p>
+<p align="center"><em>Figure 10: Top-level PLL layout — 907 µm × 670 µm</em></p>
 
 <center><img src="./images/PLL_Architecture.png" width="1000"></center>
 <p align="center"><em>Figure 11: The five blocks of the PLL — PFD (I), charge pump (II), loop filter (III), LC-VCO (IV), and the serially programmed ΔΣ modulator with divider (V)</em></p>
@@ -516,7 +516,7 @@ TopMetal1 underpass is clearly separated from the rest of the circuitry below.
 
 | | **Width (µm)** | **Height (µm)** | **Area (µm²)** | Notes |
 |--|---------------|-----------------|----------------|-------|
-| **Integrated PLL** | 930 | 666 | 619,380 (≈ 0.619 mm²) | all layers |
+| **Integrated PLL** | 907.0 | 670.0 | 607,690 (≈ 0.608 mm²) | bounding box of all layers in `gds/LC_VCO_FPLL.gds` |
 | **Spiral inductor** | 666 | 672 | ≈ 447,000 | TopMetal2 / TopMetal1, guard-ringed |
 
 [Return to top](#toc)
@@ -619,9 +619,10 @@ instances, which ngspice can bind to the PDK model.
 | Phase noise @ 1 MHz offset | **−100.8 dBc/Hz** |
 | Reference spur | ≈ −40.2 dBc |
 | Total power consumption | **12.73 mW** |
-| Die area | **930 µm × 666 µm (≈ 0.619 mm²)** |
+| Die area | **907 µm × 670 µm (≈ 0.608 mm²)** |
 
-> The output-frequency and K<sub>VCO</sub> rows are the paper's figures. The extracted LC-VCO,
+> The die area is measured from the current `gds/LC_VCO_FPLL.gds` (bounding box of all layers); the paper
+> reports 930 µm × 666 µm (§3.1). The output-frequency and K<sub>VCO</sub> rows are the paper's figures. The extracted LC-VCO,
 > simulated on its own, covers 2.3255 – 2.4256 GHz with K<sub>VCO</sub> ≈ 106 MHz/V over
 > 0.4 – 1.2 V; see [§9.8](#pex_vco).
 
@@ -662,7 +663,7 @@ and finite loop-filter rejection at 10 MHz.
 | CMOS LC-PLL | CMOS LC VCO | 65 nm | 10.3 | −95.12 (@1 MHz) | 6.8 | — |
 | Fractional-N PLL | Multi-Core VCO | 130 nm | 0.125–8.4 | −152.9 (@10 MHz) | — | — |
 | Fractional-N Oversampling PLL | CMOS LC VCO | 65 nm | 2.4 | −217.8 (FOM) | 4.97 | 0.58 |
-| **Our Design [Fractional-N PLL]** | **CMOS LC VCO** | **130 nm** | **2.4** | **−100.8 (@1 MHz)** | **12.73** | **0.619** |
+| **Our Design [Fractional-N PLL]** | **CMOS LC VCO** | **130 nm** | **2.4** | **−100.8 (@1 MHz)** | **12.73** | **0.608** |
 
 Most entries are published silicon; this work is post-layout simulation. The contribution
 here is not a phase-noise record — it is that an LC tank with a real, EM-characterised
