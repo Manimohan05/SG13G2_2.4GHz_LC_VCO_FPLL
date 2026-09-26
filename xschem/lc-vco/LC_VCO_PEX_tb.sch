@@ -204,8 +204,8 @@ C {vsource.sym} -620 -220 0 0 {name=VBGR value=0.6 savecurrent=false}
 C {xschem/lc-vco/LC_VCO_NOIND.sym} -260 -230 0 0 {name=x1}
 C {lab_pin.sym} -490 -260 2 1 {name=p1 sig_type=std_logic lab=VBGR}
 C {vsource.sym} -800 -110 0 0 {name=V1 value=1.2 savecurrent=false}
-C {lab_pin.sym} -260 -130 1 0 {name=p20 sig_type=std_logic lab=OUTp}
-C {lab_pin.sym} -220 -130 1 0 {name=p21 sig_type=std_logic lab=OUTn}
+C {lab_pin.sym} -260 -130 1 1 {name=p20 sig_type=std_logic lab=OUTp}
+C {lab_pin.sym} -220 -130 3 0 {name=p21 sig_type=std_logic lab=OUTn}
 C {lab_pin.sym} -130 -100 0 0 {name=p22 sig_type=std_logic lab=OUTp}
 C {lab_pin.sym} 20 -100 0 1 {name=p23 sig_type=std_logic lab=OUTn}
 C {xschem/lc-vco/4nH_INDUCTOR.sym} -60 -90 0 0 {name=xind}
