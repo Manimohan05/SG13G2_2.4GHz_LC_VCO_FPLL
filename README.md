@@ -59,7 +59,7 @@
 - Anjana Viduranga (UG).
 - Gayangana Leelarathne (MSc) - School of Electrical Engineering, Aalto University, Finland.
 - Kithmin Wickremasinghe (MASc) - Department of Electrical and Computer Engineering, University of British Columbia, Canada.
-- Dr. Chamira Edussooriya (PhD).
+
 
 [Return to top](#toc)
 
