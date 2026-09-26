@@ -1,8 +1,9 @@
-v {xschem version=3.4.6 file_version=1.2}
+v {xschem version=3.4.8RC file_version=1.3}
 G {}
 K {}
 V {}
 S {}
+F {}
 E {}
 N -160 -80 -80 -80 {lab=UP}
 N -160 80 -80 80 {lab=DN}
@@ -27,9 +28,8 @@ N 0 170 40 170 {lab=VSS}
 N -0 150 0 170 {lab=VSS}
 N 160 30 200 30 {lab=VSS}
 N 160 30 160 60 {lab=VSS}
-C {xschem/phase-freq-detector/PHASE_FREQ_DET.sym} -290 0 0 0 {name=x1}
-C {xschem/charge-pump/CHARGE_PUMP.sym} 0 0 0 0 {name=x2}
-C {xschem/loop-filter/LOOP_FILTER.sym} 280 30 0 0 {name=x3}
+C {PHASE_FREQ_DET.sym} -290 0 0 0 {name=x1}
+C {CHARGE_PUMP.sym} 0 0 0 0 {name=x2}
 C {lab_pin.sym} -120 -80 3 1 {name=p8 sig_type=std_logic lab=UP}
 C {lab_pin.sym} -120 80 3 0 {name=p7 sig_type=std_logic lab=DN}
 C {lab_pin.sym} 120 0 1 1 {name=p6 sig_type=std_logic lab=VCP}
@@ -44,3 +44,4 @@ C {iopin.sym} -180 -170 2 1 {name=p12 lab=VDD}
 C {iopin.sym} 200 130 2 1 {name=p13 lab=VSS}
 C {ipin.sym} -450 70 2 1 {name=p3 lab=CLK_FB}
 C {iopin.sym} 120 -170 2 1 {name=p5 lab=VBGR}
+C {xschem/loop-filter/LOOP_FILTER.sym} 280 30 0 0 {name=x3}

@@ -227,7 +227,13 @@ value="
 .include ../pex/CHARGE_PUMP_V2__CHARGE_PUMP/magic_RC/CHARGE_PUMP.pex.spice
 .include ../pex/LOOP_FILTER__LOOP_FILTER/magic_RC/LOOP_FILTER.pex.spice
 .include ../pex/LC_VCO_NOIND__LC_VCO_NOIND/magic_RC/LC_VCO_NOIND.pex_sim.spice
-.include ../pex/DSM_N_FREQ_DIV__DSM_N_FREQ_DIV/magic_RC/DSM_N_FREQ_DIV.pex.spice
+* layout-extracted netlist straight from the OpenLane run. The PDK standard cells are included first, so the
+* black-box entries at the top of the OpenLane file are ignored (ngspice keeps the first definition).
+.include /foss/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
+.include /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/dsm/src/runs/RUN_2026-03-04_15-08-00/final/spice/dsm_and_freq_divider.spice
+.subckt DSM_N_FREQ_DIV_PEX freq_in rst sclk sdata en freq_out VDD GND
+x0 GND VDD en freq_in freq_out rst sclk sdata dsm_and_freq_divider
+.ends
 .include ../pex/BANDGAP_REF__BANDGAP_REF/magic_RC/BANDGAP_REF.pex.spice
 
 * ==============================
