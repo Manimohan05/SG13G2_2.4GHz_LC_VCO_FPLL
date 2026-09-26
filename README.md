@@ -29,7 +29,7 @@
     - [Integrated Pre-Layout Simulation Circuit](#sim_circuit)
 7. [Layout Design](#layout)
     - [Integrated PLL Layout](#lay_pll)
-    - [3D View](#lay_3d)
+    - [2.5D View](#lay_3d)
     - [Layout Information](#layout_info)
 8. [Physical Verification (DRC, LVS)](#pv)
 9. [Post-Layout Results after PEX](#pex)
@@ -41,7 +41,7 @@
     - [Comparison with Published Work](#pex_cmp)
     - [Block-Level Pre- vs Post-Layout Comparison](#pex_blocks)
     - [LC-VCO Tuning: Pre- vs Post-Layout](#pex_vco)
-10. [UNIC-CASS Mock Tapeout](#tapeout)
+10. [UNIC-CASS Tapeout](#tapeout)
 11. [Repository Structure](#repo)
 12. [Publication](#paper)
 13. [References](#ref)
@@ -503,13 +503,13 @@ together as the `PFD_CP_LF` group, because charge-pump current matching depends 
 the filter loads it.
 
 <a name="lay_3d"></a>
-### 7.2 3D View
+### 7.2 2.5D View
 
-The metal stack rendered in three dimensions — the spiral on TopMetal2 with its
+The metal stack rendered with KLayout's 2.5D viewer — the spiral on TopMetal2 with its
 TopMetal1 underpass is clearly separated from the rest of the circuitry below.
 
-<center><img src="./images/PLL%20layout%203d%20view.jpeg" width="1000"></center>
-<p align="center"><em>Figure 12: 3D view of the integrated PLL layout</em></p>
+<center><img src="./images/PLL%20layout%202.5Dview.jpeg" width="1000"></center>
+<p align="center"><em>Figure 12: 2.5D view of the integrated PLL layout</em></p>
 
 <a name="layout_info"></a>
 ### 7.3 Layout Information
@@ -749,7 +749,7 @@ voltage on `OUTp` starts the oscillation.
 | VCO core power | 0.93 mW | 1.00 mW |
 | Tank swing at `OUTp` | 0.75 – 0.80 V<sub>pp</sub> | 0.74 – 0.77 V<sub>pp</sub> |
 
-<center><img src="./images/VCO_Tuning_Pre_vs_Post.png" width="900"></center>
+<center><img src="./xschem/top-pll/plots/vco_tuning_pre_vs_post.png" width="900"></center>
 <p align="center"><em>LC-VCO frequency and K<sub>VCO</sub> against V<sub>CTRL</sub>, pre- and post-layout; the shaded band is 2.40 – 2.48 GHz</em></p>
 
 K<sub>VCO</sub> is not constant: it rises from about 30 MHz/V at 0 V to a peak near 1.0 V. The
@@ -775,7 +775,7 @@ Data and plots: [`vco_tuning_pre.csv`](xschem/top-pll/simulations/vco_tuning_pre
 ---
 
 <a name="tapeout"></a>
-## 10. UNIC-CASS Mock Tapeout
+## 10. UNIC-CASS Tapeout
 
 The design is submitted through the **UNIC-CASS** programme, which fabricates user
 designs on a shared shuttle using the IHP open-source PDK. The design is integrated into
@@ -792,13 +792,44 @@ chip integration template that provides the pad ring and chip-level interface.
 <center><img src="./docs/img/unic-cass-mock-tapeout.png" width="1000"></center>
 <p align="center"><em>Figure 18: Integration of user projects into the shuttle</em></p>
 
-### This Design on the Shuttle
+### Final Chip
 
-<center><img src="./images/Uniccass%20integration%20chip.jpeg" width="1000"></center>
-<p align="center"><em>Figure 19: The PLL integrated into the UNIC-CASS chip</em></p>
+Team 1 integrates three analog designs behind one pad ring, in the
+[unic-cass-2025-analog-team1](https://github.com/manuel-monge/unic-cass-2025-analog-team1)
+repository. The PLL is taken from its own repository at commit `bc5ef31`, together with the
+XPCAM and the multiplier. The final top cell is `MPC0388`: the `team1` integration, the seal
+ring and the density fill, on a 2000 µm × 2000 µm die.
+
+| Block | Position on the die (µm) | Source |
+|-------|--------------------------|--------|
+| `LC_VCO_FPLL` (this PLL, rotated 90°) | x 697 – 1363, y 754 – 1659 | [avishkaherath/LC_VCO_FPLL](https://github.com/avishkaherath/LC_VCO_FPLL) |
+| `TOP_XPCAM` | x 1435 – 1618, y 612 – 724 | [EstebanJGC/IHP__CMP9794](https://github.com/EstebanJGC/IHP__CMP9794) |
+| `multiplier_top` | x 448 – 622, y 1107 – 1386 | [LohanAtapattu/Unic_Cass_IHP](https://github.com/LohanAtapattu/Unic_Cass_IHP) |
+
+The integration repository reports DRC and LVS clean for the three integrated top cells and
+for the chip-level integration before fill. DRC and LVS were not re-run for the copy kept
+here. The PLL inside the chip is the layout of this repository: compared layer by layer with
+[`gds/LC_VCO_FPLL.gds`](gds/LC_VCO_FPLL.gds), 69 of the 71 layers are identical and the other
+two differ by 22.8 µm² of Metal1 and a full-cell marker on layer 189/0.
+
+The screenshots below were taken in KLayout in editor mode with the SG13G2 technology. The
+density fill cells were removed from a temporary copy so that the circuit is visible; the
+delivered GDS is unchanged.
+
+<center><img src="./images/final-chip-layout.png" width="1000"></center>
+<p align="center"><em>Figure 19: Final chip <code>MPC0388</code> in KLayout — 2000 µm × 2000 µm, PLL and its on-chip inductor at the centre, pad ring around it</em></p>
+
+<center><img src="./images/final-chip-pll-layout.png" width="1000"></center>
+<p align="center"><em>Figure 20: The PLL inside the chip — inductor below, PFD/CP/LF, divider and bandgap above it</em></p>
+
+<center><img src="./images/final-chip-2.5d-top.png" width="1000"></center>
+<p align="center"><em>Figure 21: 2.5D view of the PLL region from above — TopMetal2 spiral, TopMetal1 underpass and the Metal1 guard ring</em></p>
+
+<center><img src="./images/final-chip-2.5d-tilt.png" width="1000"></center>
+<p align="center"><em>Figure 22: 2.5D view of the PLL region from an oblique angle, vertical scale ×10</em></p>
 
 <center><img src="./images/Final%20chip%20uniccass.png" width="1000"></center>
-<p align="center"><em>Figure 20: Final chip — top-level schematic, top-level layout with the on-chip inductor, cross-reference, and the top-level LVS run (netlists match)</em></p>
+<p align="center"><em>Figure 23: Final chip — top-level schematic, top-level layout with the on-chip inductor, cross-reference, and the top-level LVS run (netlists match)</em></p>
 
 The wrapper mandates a fixed 17-in / 17-out pad interface. That budget is why this PLL
 loads its division ratio over a 3-wire serial interface rather than nine parallel pins.
@@ -807,7 +838,9 @@ loads its division ratio over a 3-wire serial interface rather than nine paralle
 > arrangement — pad and bond-wire parasitics dominate at that frequency. Plan the bench
 > measurement accordingly: a divided-down output, or on-wafer probing.
 
-Integration data is in [`UNIC-CASS-2025/`](UNIC-CASS-2025/); the wrapper flow is
+The final chip is in [`UNIC-CASS-2025/final-chip/`](UNIC-CASS-2025/final-chip/) (GDS and
+top-level schematics, with a README on provenance and verification status); the mock-tapeout
+data is in [`UNIC-CASS-2025/mock-tapeout/`](UNIC-CASS-2025/mock-tapeout/). The wrapper flow is
 documented in [`docs/README.md`](docs/README.md).
 
 [Return to top](#toc)
@@ -829,7 +862,7 @@ documented in [`docs/README.md`](docs/README.md).
 | [`docs/`](docs/) | Documentation and images |
 | [`archive/hfss/`](archive/hfss/) | Archived Ansys HFSS inductor work, superseded by `em/` |
 | `openems/` | Placeholder from the earlier EM effort — superseded by [`em/`](em/) |
-| [`UNIC-CASS-2025/`](UNIC-CASS-2025/) | Mock-tapeout wrapper integration data |
+| [`UNIC-CASS-2025/`](UNIC-CASS-2025/) | Mock-tapeout wrapper data and the final-chip submission (top-level GDS, schematics) |
 | [`paper_submission/`](paper_submission/) | Manuscripts and figure sources |
 
 Working in this repository with an AI coding agent? See [`CLAUDE.md`](CLAUDE.md) for the
@@ -856,14 +889,14 @@ Analysis and Simulation Methods, and Applications to Circuit Design (SMACD) 2026
 Paper: [IEEE Xplore, document 11647761](https://ieeexplore.ieee.org/document/11647761)
 
 <center><img src="./images/smacd_paper.png" width="800"></center>
-<p align="center"><em>Figure 21: SMACD 2026 paper</em></p>
+<p align="center"><em>Figure 24: SMACD 2026 paper</em></p>
 
 Manuscripts and figure sources are in [`paper_submission/`](paper_submission/).
 
 ### In the news
 
 <center><img src="./images/ENTC_News.png" width="800"></center>
-<p align="center"><em>Figure 22: Coverage by the Department of Electronic and Telecommunication Engineering, University of Moratuwa</em></p>
+<p align="center"><em>Figure 25: Coverage by the Department of Electronic and Telecommunication Engineering, University of Moratuwa</em></p>
 
 [Return to top](#toc)
 

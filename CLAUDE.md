@@ -28,7 +28,7 @@ Published as: *"A 2.4 GHz LC-VCO Fractional-N Phase Locked Loop Open-Source Desi
 | `model/` | Analytical sizing notebooks, gm/ID lookup tables, Qucs-S models | **Yes** |
 | `docs/` | Documentation and images | **Yes** |
 | `archive/hfss/` | Archived Ansys HFSS inductor work (superseded by `em/`) | Reference only |
-| `UNIC-CASS-2025/` | Mock-tapeout wrapper integration data | Vendored |
+| `UNIC-CASS-2025/` | Mock-tapeout wrapper data and the final-chip submission | Vendored |
 | `paper_submission/` | Manuscripts and figure sources | **Yes** |
 
 ### Block subfolders under `xschem/`
