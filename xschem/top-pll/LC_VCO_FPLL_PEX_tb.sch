@@ -270,7 +270,7 @@ value="
 .global VDD GND
 
 "}
-C {title.sym} 570 -70 0 0 {name=l2 author="Skill Surf"}
+C {title.sym} 570 -70 0 0 {name=l2 author="Manimohan"}
 C {lab_pin.sym} 390 -650 0 0 {name=p3 sig_type=std_logic lab=CLK_IN}
 C {vsource.sym} 60 -580 0 0 {name=VBGR value=0.6 savecurrent=false}
 C {gnd.sym} 60 -510 0 0 {name=l13 lab=GND}

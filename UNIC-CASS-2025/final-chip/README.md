@@ -71,7 +71,27 @@ all 71 layers. 69 layers are identical. The two that differ:
 ## Screenshots
 
 The layout screenshots in the main README were taken in KLayout 0.30.11 in editor mode with
-the SG13G2 technology and layer properties from the PDK. The 2.5D views use the PDK's
-`sg13g2_beol.lyd25` metal-stack script. The density fill cells (`*_FILL_CELL`) were removed from a temporary copy of
-`MPC0388.gds` for rendering, so that the circuit is not hidden behind them; the delivered file
-is unchanged. The pad-ring filler cells and the inductor fill are kept.
+the SG13G2 technology and layer properties from the PDK, loaded explicitly with
+`LayoutView.load_layer_props()` (the `-l` command-line flag only applies to a layout given on
+the command line, not one loaded from a script, so this call is required for the real PDK
+colors rather than KLayout's generic per-layer defaults). The 2.5D views use the PDK's
+`sg13g2_beol.lyd25` metal-stack script. `UNICCASS_chip_layout_with_fillers.png` keeps the
+density fill cells (`*_FILL_CELL`); the PLL-only layout figures in the main README have them
+removed from a temporary copy so the circuit is not hidden behind them — the delivered
+`MPC0388.gds` is unchanged either way. The pad-ring filler cells and the inductor fill are kept
+in both.
+
+### Full-chip 2.5D views
+
+Building the 2.5D mesh for the whole ~4 mm² die from `sg13g2_beol.lyd25` (which includes the
+transistor-level layers — Activ, GatPoly, contacts, poly resistors) needs more memory than this
+container has (repeatedly OOM-killed at ~6.9 GB RSS regardless of the render window's
+resolution). [`klayout/sg13g2_beol_metals_only.lyd25`](klayout/sg13g2_beol_metals_only.lyd25) is
+a trimmed copy used only for `UNICCASS_chip_2p5D_top_view.png` and
+`UNICCASS_chip_2p5D_oblique_view.png`: it keeps Metal1 through TopMetal2, every via, and MIM/Vmim
+exactly as in the original (same z-heights, same colors), and drops Activ, GatPoly, the contact
+and poly-resistor layers. Those layers are what exhausts memory across the thousands of standard
+cells in the pad ring, XPCAM and multiplier, and they render invisible under the metal stack in a
+whole-chip 2.5D view regardless. Peak memory with the trimmed script is about 3 GB. The
+PLL-only 2.5D figures in the main README use the PDK's own unmodified `sg13g2_beol.lyd25` — the
+smaller geometry there never needed the trimmed version.

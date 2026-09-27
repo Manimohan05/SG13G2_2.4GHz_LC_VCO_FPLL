@@ -136,7 +136,7 @@ write_data [save_params] $netlist_dir/[file rootname [file tail [xschem get curr
 xschem netlist
 simulate
 "}
-C {title.sym} 210 -150 0 0 {name=l4 author="Skill Surf"}
+C {title.sym} 210 -150 0 0 {name=l4 author="Manimohan"}
 C {launcher.sym} 170 -250 0 0 {name=h1
 descr="load waves" 
 tclcommand="xschem raw_read $netlist_dir/tb_PHASE_FREQ_DET_PEX.raw tran"

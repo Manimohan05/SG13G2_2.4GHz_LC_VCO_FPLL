@@ -476,7 +476,7 @@ The complete schematic driven for the pre-layout closed-loop runs — PFD, charg
 loop filter, LC-VCO, bandgap reference and the ∆Σ fractional-N divider wired as one
 system.
 
-<center><img src="./images/Integreated%20pre%20simulation%20circuit.jpeg" width="1000"></center>
+<center><img src="./images/PLL_integrated_schematic.png" width="1000"></center>
 <p align="center"><em>Figure 9: Integrated pre-layout simulation circuit</em></p>
 
 [Return to top](#toc)
@@ -508,7 +508,7 @@ the filter loads it.
 The metal stack rendered with KLayout's 2.5D viewer — the spiral on TopMetal2 with its
 TopMetal1 underpass is clearly separated from the rest of the circuitry below.
 
-<center><img src="./images/PLL%20layout%202.5Dview.jpeg" width="1000"></center>
+<center><img src="./images/PLL_layout_2p5D_oblique_view.png" width="1000"></center>
 <p align="center"><em>Figure 12: 2.5D view of the integrated PLL layout</em></p>
 
 <a name="layout_info"></a>

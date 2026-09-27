@@ -59,7 +59,7 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x2=400e-06
+x2=65e-06
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -75,7 +75,7 @@ color=12
 node=xpll.vctrl
 autoload=1
 rawfile=$netlist_dir/tb_LC_VCO_FPLL_40u.raw
-x1=22e-06
+x1=60e-06
 vlegend=0
 y2=1.
 y1=0}
@@ -137,7 +137,7 @@ clk_in
 clk_out"
 rawfile=$netlist_dir/tb_LC_VCO_FPLL_40u.raw
 autoload=1
-x2=80e-06}
+x2=65e-06}
 B 2 1600 -400 2400 0 {flags=graph
 y1=0
 y2=1.3
@@ -255,7 +255,7 @@ value="
 .global VDD GND
 
 "}
-C {title.sym} 570 -70 0 0 {name=l2 author="Skill Surf"}
+C {title.sym} 570 -70 0 0 {name=l2 author="Manimohan"}
 C {lab_pin.sym} 390 -650 0 0 {name=p3 sig_type=std_logic lab=CLK_IN}
 C {vsource.sym} 60 -580 0 0 {name=VBGR value=0.6 savecurrent=false}
 C {gnd.sym} 60 -510 0 0 {name=l13 lab=GND}
