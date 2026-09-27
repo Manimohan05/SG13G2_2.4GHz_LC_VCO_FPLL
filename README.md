@@ -503,7 +503,7 @@ system.
 <a name="lay_pll"></a>
 ### 7.1 Integrated PLL Layout
 
-<center><img src="./images/PLL%20Layout.jpeg" width="1000"></center>
+<center><img src="./images/PLL_Layout.jpeg" width="1000"></center>
 <p align="center"><em>Figure 10: Top-level PLL layout — 907 µm × 670 µm</em></p>
 
 <center><img src="./images/PLL_Architecture.png" width="1000"></center>
@@ -573,7 +573,7 @@ that gates tapeout.
 > schematic to compare a passive spiral against; LVS sees the two-terminal black box
 > `spice/4nH_INDUCTOR_LVS.spice`.
 
-<center><img src="./images/DRC%20and%20lvs%20of%20all%20blocks%20passed%20log%20screenshot.jpeg" width="1000"></center>
+<center><img src="./images/DRC_and_LVS_all_blocks_passed_log.jpeg" width="1000"></center>
 <p align="center"><em>Figure 13: DRC and LVS run logs for the blocks</em></p>
 
 Archived runs live in [`drc/`](drc/) and [`lvs/`](lvs/), one directory per cell.
@@ -868,7 +868,7 @@ delivered GDS is unchanged.
 <center><img src="./images/final-chip-2.5d-tilt.png" width="1000"></center>
 <p align="center"><em>Figure 23: 2.5D view of the PLL region from an oblique angle, vertical scale ×10</em></p>
 
-<center><img src="./images/Final%20chip%20uniccass.png" width="1000"></center>
+<center><img src="./images/Final_chip_uniccass.png" width="1000"></center>
 <p align="center"><em>Figure 24: Final chip — top-level schematic, top-level layout with the on-chip inductor, cross-reference, and the top-level LVS run (netlists match)</em></p>
 
 The wrapper mandates a fixed 17-in / 17-out pad interface. That budget is why this PLL
@@ -901,7 +901,6 @@ documented in [`docs/README.md`](docs/README.md).
 | [`model/`](model/) | Analytical sizing notebooks, gm/I<sub>D</sub> lookup tables, Qucs-S models |
 | [`docs/`](docs/) | Documentation and images |
 | [`archive/hfss/`](archive/hfss/) | Ansys HFSS characterisation of the inductor, kept for cross-reference against `em/` |
-| `openems/` | Placeholder from the earlier EM effort — superseded by [`em/`](em/) |
 | [`UNIC-CASS-2025/`](UNIC-CASS-2025/) | Mock-tapeout wrapper data and the final-chip submission (top-level GDS, schematics) |
 | [`paper_submission/`](paper_submission/) | Manuscripts and figure sources |
 
@@ -930,6 +929,9 @@ Paper: [IEEE Xplore, document 11647761](https://ieeexplore.ieee.org/document/116
 
 <center><img src="./images/smacd_paper.png" width="800"></center>
 <p align="center"><em>Figure 25: SMACD 2026 paper</em></p>
+
+<center><img src="./images/SMACD_2026_conference_presentation.jpg" width="800"></center>
+<p align="center"><em>Presenting the paper at SMACD 2026, Dresden</em></p>
 
 Manuscripts and figure sources are in [`paper_submission/`](paper_submission/).
 
