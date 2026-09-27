@@ -19,6 +19,13 @@ Usage
   cd schematic/blocks/top-pll/simulations/
   python3 plot_phase_noise.py
   python3 plot_phase_noise.py /path/to/pll_top.raw
+
+Options (all optional; the defaults reproduce the original figure)
+  --window T0 T1     analysis window in microseconds        [default: 58 73]
+  --remove-tones     replace the deterministic tones at multiples of f_REF/2 (the divider's
+                     240/248 pattern) by a straight line in dB across each tone
+  --out-dir DIR      where to write the figure               [default: this folder]
+  --name NAME        file name without extension             [default: phase_noise]
 """
 
 import os, sys, struct
@@ -181,6 +188,28 @@ def compute_phase_noise(t_cross):
 
 
 # ---------------------------------------------------------------------------
+# 4b.  Optional removal of the tones at multiples of f_REF/2
+# ---------------------------------------------------------------------------
+
+F_REF = 10e6
+
+def remove_tones(f_off, L_dBc, f_ref=F_REF, n_tones=40):
+    """Straight line in dB across every tone at k * f_ref/2. The notch is 4 resolution bandwidths wide on each side."""
+    rbw   = np.median(np.diff(f_off))
+    half  = max(0.6e6, 4.0 * rbw)
+    out   = L_dBc.copy()
+    for k in range(1, n_tones + 1):
+        ft     = k * f_ref / 2
+        inside = np.abs(f_off - ft) < half
+        lo     = np.where(f_off <= ft - half)[0]
+        hi     = np.where(f_off >= ft + half)[0]
+        if inside.any() and len(lo) and len(hi):
+            out[inside] = np.interp(f_off[inside], [f_off[lo[-1]], f_off[hi[0]]],
+                                    [out[lo[-1]], out[hi[0]]])
+    return out
+
+
+# ---------------------------------------------------------------------------
 # 5.  Plot
 # ---------------------------------------------------------------------------
 
@@ -258,10 +287,24 @@ def plot_phase_noise(f_off, L_dBc, f0, f_std, save_path):
 # ---------------------------------------------------------------------------
 
 def main():
+    global T_START, T_END
     script_dir = os.path.dirname(os.path.abspath(__file__))
 
-    if len(sys.argv) > 1:
-        raw_path = os.path.abspath(sys.argv[1])
+    args = sys.argv[1:]
+    out_dir, name, do_notch = script_dir, "phase_noise", False
+    if "--window" in args:
+        i = args.index("--window")
+        T_START, T_END = float(args[i + 1]) * 1e-6, float(args[i + 2]) * 1e-6
+        del args[i:i + 3]
+    if "--out-dir" in args:
+        i = args.index("--out-dir"); out_dir = os.path.abspath(args[i + 1]); del args[i:i + 2]
+    if "--name" in args:
+        i = args.index("--name"); name = args[i + 1]; del args[i:i + 2]
+    if "--remove-tones" in args:
+        args.remove("--remove-tones"); do_notch = True
+
+    if len(args) > 0:
+        raw_path = os.path.abspath(args[0])
     else:
         raw_path = os.path.abspath(
             os.path.join(script_dir, "../../../simulations/tb_LC_VCO_FPLL_100u.raw"))
@@ -293,6 +336,9 @@ def main():
 
     print("  Computing phase noise via period-jitter Welch PSD ...")
     f_off, L_dBc, f0 = compute_phase_noise(t_cross)
+    if do_notch:
+        L_dBc = remove_tones(f_off, L_dBc)
+        print("  Tones at multiples of f_REF/2 removed")
 
     # ── Frequency statistics from instantaneous period ────────────────────
     periods = np.diff(t_cross)
@@ -311,7 +357,7 @@ def main():
         print(f"  L({f_s/1e6:.0f} MHz) = {L_dBc[idx]:.1f} dBc/Hz  "
               f"(spec: {L_s} dBc/Hz)  {flag}")
 
-    base = os.path.join(script_dir, "phase_noise")
+    base = os.path.join(out_dir, name)
     plot_phase_noise(f_off, L_dBc, f0, f_std, base + ".pdf")
     plot_phase_noise(f_off, L_dBc, f0, f_std, base + ".png")
 

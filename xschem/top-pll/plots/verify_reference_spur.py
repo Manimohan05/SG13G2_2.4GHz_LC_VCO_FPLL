@@ -70,7 +70,7 @@ def parse_raw_header(filepath):
     return meta
 
 
-def load_signal(filepath, sig_name, t_start=None):
+def load_signal(filepath, sig_name, t_start=None, t_end=None):
     meta     = parse_raw_header(filepath)
     n_vars   = meta["n_vars"]
     n_points = meta["n_points"]
@@ -106,18 +106,23 @@ def find_rising_crossings(t, v, threshold=THRESHOLD):
 
 
 def jitter_fft_spectrum(t_cross, zpad=ZPAD):
-    periods = np.diff(t_cross)
-    T0      = np.mean(periods)
-    f0      = 1.0 / T0
-    dT      = periods - T0
+    # Phase referenced to a unity-amplitude carrier (not period jitter normalised
+    # to its own largest bin, which for this PLL is the 5 MHz divider tone and
+    # silently moved the 0 dBc reference — see plot_reference_spur.py for the
+    # full explanation). Same method as plot_pll_steady_state.py's tone_level().
+    k    = np.arange(len(t_cross))
+    f0   = (len(t_cross) - 1) / (t_cross[-1] - t_cross[0])
+    dev  = t_cross - (t_cross[0] + k / f0)
+    dev -= np.polyval(np.polyfit(k, dev, 1), k)
+    phase = 2 * np.pi * f0 * dev
 
-    N      = len(dT)
+    N      = len(phase)
     N_fft  = N * zpad
     win    = np.hanning(N)
     cg     = np.sum(win) / N
 
     buf       = np.zeros(N_fft)
-    buf[:N]   = dT * win
+    buf[:N]   = phase * win
     X         = np.fft.rfft(buf)
     f_fft     = np.fft.rfftfreq(N_fft, d=1.0 / f0)
 
@@ -128,8 +133,7 @@ def jitter_fft_spectrum(t_cross, zpad=ZPAD):
     f_off = f_fft[valid]
     A_off = A[valid]
 
-    A_max  = np.max(A_off)
-    P_dBc  = 20.0 * np.log10(np.maximum(A_off / A_max, 1e-300))
+    P_dBc  = 20.0 * np.log10(np.maximum(A_off / 2.0, 1e-300))
     return f_off, P_dBc, f0
 
 
@@ -341,6 +345,12 @@ def main():
     parser.add_argument("--tsettle",   type=float, default=T_SETTLE)
     parser.add_argument("--search_bw", type=float, default=SEARCH_BW)
     parser.add_argument("--nharm",     type=int,   default=N_HARM)
+    parser.add_argument("--tend",      type=float, default=None,
+        help="End of the analysis window, s [default: end of file] "
+             "-- keep this inside one quiet window; the divider disturbance "
+             "every 25.5 us biases Method B's PSD if it is included")
+    parser.add_argument("--out-dir",   dest="out_dir", type=str, default=None)
+    parser.add_argument("--name",      type=str, default="spur_verification")
     args = parser.parse_args()
 
     script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -354,7 +364,7 @@ def main():
 
     print(f"\nRaw file : {raw_path}  ({os.path.getsize(raw_path)/1024**2:.1f} MB)")
     print(f"Loading v(clk_out)  (skip first {args.tsettle*1e6:.0f} µs) ...")
-    t, v = load_signal(raw_path, "v(clk_out)", t_start=args.tsettle)
+    t, v = load_signal(raw_path, "v(clk_out)", t_start=args.tsettle, t_end=args.tend)
     print(f"  {len(t):,} points  |  v range: {v.min():.3f}–{v.max():.3f} V")
 
     # ── Method A: jitter FFT ─────────────────────────────────────────────────
@@ -382,7 +392,7 @@ def main():
     print(f"  Spur lvl  = {spur_dBc_B:.2f} dBc")
 
     # ── Save comparison plot ─────────────────────────────────────────────────
-    save_base = os.path.join(script_dir, "spur_verification")
+    save_base = os.path.join(args.out_dir or script_dir, args.name)
     print(f"\nGenerating comparison plot ...")
     make_comparison_plot(
         f_off_A, P_dBc_A, f0_A, f_spur_A, spur_dBc_A,

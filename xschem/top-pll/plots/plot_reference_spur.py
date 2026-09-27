@@ -65,7 +65,7 @@ def parse_raw_header(filepath):
 # ---------------------------------------------------------------------------
 # 2. Memory-mapped signal loader
 # ---------------------------------------------------------------------------
-def load_signal(filepath, sig_name, t_start=None):
+def load_signal(filepath, sig_name, t_start=None, t_end=None):
     meta     = parse_raw_header(filepath)
     n_vars   = meta["n_vars"]
     n_points = meta["n_points"]
@@ -83,10 +83,9 @@ def load_signal(filepath, sig_name, t_start=None):
     v = np.array(mm[:, var_idx])
     del mm
 
-    if t_start is not None:
-        idx = np.searchsorted(t, t_start)
-        t, v = t[idx:], v[idx:]
-    return t, v
+    i0 = np.searchsorted(t, t_start) if t_start is not None else 0
+    i1 = np.searchsorted(t, t_end) if t_end is not None else len(t)
+    return t[i0:i1], v[i0:i1]
 
 
 # ---------------------------------------------------------------------------
@@ -101,59 +100,55 @@ def find_rising_crossings(t, v, threshold=THRESHOLD):
 
 
 # ---------------------------------------------------------------------------
-# 4. Period-jitter FFT → single-sided amplitude spectrum A(f) [seconds]
+# 4. Output phase from edge times, then a coherent single-sided amplitude
+#    spectrum phi(f) [rad] referenced to the carrier (unity amplitude) —
+#    the earlier period-jitter FFT here was normalised by its own largest
+#    bin ("A_max"), which for this PLL is the 5 MHz divider tone, not the
+#    carrier; that silently changed the 0 dBc reference and under-reported
+#    every spur by about 23 dB. This version references phi(f) directly to
+#    the carrier, the same method used for the tone levels in
+#    plot_pll_steady_state.py (cross-checked there against a Welch PSD).
 # ---------------------------------------------------------------------------
 def compute_jitter_spectrum(t_cross, zpad=ZPAD):
     """
     Returns
     -------
     f_off : offset frequency array (Hz), positive, DC excluded
-    A     : jitter amplitude (s, peak, single-sided, window-corrected)
+    A     : peak phase deviation phi(f) [rad] at each offset, coherent-gain corrected
     f0    : carrier frequency (Hz)
-    N     : number of jitter periods
+    N     : number of edges used
     """
-    periods  = np.diff(t_cross)
-    T0       = np.mean(periods)
-    f0       = 1.0 / T0
-    dT       = periods - T0          # δTₖ = Tₖ − T̄  → zero-mean, no DC
+    k    = np.arange(len(t_cross))
+    f0   = (len(t_cross) - 1) / (t_cross[-1] - t_cross[0])
+    dev  = t_cross - (t_cross[0] + k / f0)
+    dev -= np.polyval(np.polyfit(k, dev, 1), k)      # remove residual frequency offset
+    phase = 2 * np.pi * f0 * dev                     # rad, referenced to a unity carrier
 
-    N        = len(dT)
-    N_fft    = N * zpad
-    win      = np.hanning(N)
-    cg       = np.sum(win) / N       # coherent gain ≈ 0.5
+    N     = len(phase)
+    N_fft = N * zpad
+    win   = np.hanning(N)
+    cg    = np.sum(win) / N
 
-    buf      = np.zeros(N_fft)
-    buf[:N]  = dT * win
-    X        = np.fft.rfft(buf)
-    f_fft    = np.fft.rfftfreq(N_fft, d=1.0 / f0)
+    buf     = np.zeros(N_fft)
+    buf[:N] = phase * win
+    X       = np.fft.rfft(buf)
+    f_fft   = np.fft.rfftfreq(N_fft, d=1.0 / f0)
 
     A        = np.abs(X) / (N * cg)
-    A[1:-1] *= 2.0                   # single-sided: ×2 except DC & Nyquist
+    A[1:-1] *= 2.0
 
     valid = f_fft > 0
     return f_fft[valid], A[valid], f0, N
 
 
-# ---------------------------------------------------------------------------
-# 5. Convert jitter amplitude → dBc power spectrum (correct, negative values)
-# ---------------------------------------------------------------------------
 def jitter_to_dBc(A, f0):
     """
-    φ(f) = 2π·f₀·A(f)   [radians, peak phase deviation]
-
-    Carrier reference = 0 dBc  (i.e., the carrier bin is normalised to 0).
-    All other bins are below → negative dBc values.
-
-    Power at each bin relative to carrier:
-        P(f) [dBc] = 20·log10( φ(f) / φ_max )
-                   = 20·log10( A(f) / A_max )   (f₀ cancels)
-
-    So we simply normalise by the peak amplitude → carrier = 0 dBc,
-    everything else is negative. This matches spectrum analyser convention.
+    A(f) is the peak phase deviation phi(f) [rad] at each offset, referenced to a
+    unity-amplitude carrier. For a single tone this is the standard narrowband-FM
+    sideband formula: dBc = 20*log10(phi/2). f0 is unused; kept for the same
+    call signature as the previous version.
     """
-    A_max  = np.max(A)                                   # carrier bin
-    ratio  = np.maximum(A / A_max, 1e-300)
-    return 20.0 * np.log10(ratio)                        # dBc, carrier=0, rest<0
+    return 20.0 * np.log10(np.maximum(A / 2.0, 1e-300))
 
 
 # ---------------------------------------------------------------------------
@@ -382,6 +377,12 @@ def main():
         help=f"Zero-crossing threshold V [default {THRESHOLD}]")
     parser.add_argument("--tsettle",   type=float, default=T_SETTLE,
         help=f"Skip settling time s [default {T_SETTLE:.1e}]")
+    parser.add_argument("--tend",      type=float, default=None,
+        help="End of the analysis window, s [default: end of file]")
+    parser.add_argument("--out-dir",   dest="out_dir", type=str, default=None,
+        help="Where to write the figure [default: this folder]")
+    parser.add_argument("--name",      type=str, default="reference_spur_SA",
+        help="File name without extension [default reference_spur_SA]")
     parser.add_argument("--search_bw", type=float, default=SEARCH_BW,
         help=f"Spur search half-BW Hz [default {SEARCH_BW:.0e}]")
     parser.add_argument("--nharm",     type=int,   default=N_HARM,
@@ -402,7 +403,7 @@ def main():
     # ── Load ──────────────────────────────────────────────────────────────
     print(f"\nRaw file : {raw_path}  ({os.path.getsize(raw_path)/1024**2:.1f} MB)")
     print(f"Loading v(clk_out)  (skip first {args.tsettle*1e6:.0f} µs) ...")
-    t, v = load_signal(raw_path, "v(clk_out)", t_start=args.tsettle)
+    t, v = load_signal(raw_path, "v(clk_out)", t_start=args.tsettle, t_end=args.tend)
 
     dt_mean = np.mean(np.diff(t))
     print(f"  {len(t):,} points  |  fs = {1/dt_mean/1e9:.3f} GHz  |  "
@@ -452,7 +453,7 @@ def main():
     print(sep + "\n")
 
     # ── Save plots ────────────────────────────────────────────────────────
-    base = os.path.join(script_dir, "reference_spur_SA")
+    base = os.path.join(args.out_dir or script_dir, args.name)
     for ext in (".png", ".pdf"):
         plot_SA(f_off, P_dBc, f0, f_spur, spur_dBc,
                 base + ext, f_ref=args.fref, n_harm=args.nharm)

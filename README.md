@@ -158,7 +158,7 @@ f<sub>REF</sub> = 10 MHz, carrier 2.44 GHz.
 | Phase noise @ 1 MHz offset | −100.8 dBc/Hz |
 | Reference spur | ≈ −40.2 dBc |
 | Total DC power | 12.73 mW |
-| Die area | 930 µm × 666 µm ≈ 0.619 mm² |
+| Die area | 660 µm × 526.5 µm ≈ 0.347 mm² |
 | Varactor capacitance swing | 70 – 200 fF over 1.2 V V<sub>CTRL</sub> |
 | VCO startup | reliable down to ≈ 0.7 V tail bias |
 
@@ -622,26 +622,41 @@ instances, which ngspice can bind to the PDK model.
 | Die area | **907 µm × 670 µm (≈ 0.608 mm²)** |
 
 > The die area is measured from the current `gds/LC_VCO_FPLL.gds` (bounding box of all layers); the paper
-> reports 930 µm × 666 µm (§3.1). The output-frequency and K<sub>VCO</sub> rows are the paper's figures. The extracted LC-VCO,
+> reports 660 µm × 526.5 µm (≈ 0.347 mm²), which is a different floorplan (§3.1). The output-frequency and K<sub>VCO</sub> rows are the paper's figures. The extracted LC-VCO,
 > simulated on its own, covers 2.3255 – 2.4256 GHz with K<sub>VCO</sub> ≈ 106 MHz/V over
 > 0.4 – 1.2 V; see [§9.8](#pex_vco).
 
 <a name="pex_lock"></a>
 ### 9.3 Lock Behaviour
 
-<center><img src="./xschem/top-pll/plots/plot_vctrl_transient.png" width="1000"></center>
-<p align="center"><em>Figure 14: Control voltage during acquisition — settles without sustained ringing</em></p>
+<center><img src="./xschem/top-pll/plots/prelayout/plot_vctrl_transient.png" width="1000"></center>
+<p align="center"><em>Figure 14: Control voltage over 0–65 µs (closed-loop run at schematic level) — overshoot to 1.16 V, lock at about 8 µs, and a short disturbance every 25.5 µs from the divider's modulator pattern</em></p>
+
+The loop is frequency-locked within ±1000 ppm from 7.6 µs and within ±500 ppm from 8.5 µs; the phase error is within
+±100 ps of its final value from 11 µs. Every 25.5 µs (255 reference cycles) the modulator repeats a pattern in which two
+equal bits follow each other, and the loop takes about 2 µs to recover from it; it always returns to the same phase. The
+steady-state control voltage is 0.7795 V with about 26 mV of ripple at 10 MHz. Details and plots: [`xschem/top-pll/plots/prelayout/`](xschem/top-pll/plots/prelayout/).
 
 <a name="pex_pn"></a>
 ### 9.4 Phase Noise
 
-<center><img src="./xschem/top-pll/plots/phase_noise.png" width="1000"></center>
-<p align="center"><em>Figure 15: Closed-loop phase noise at a 2.44 GHz carrier — −100.8 dBc/Hz at 1 MHz offset</em></p>
+<center><img src="./xschem/top-pll/plots/prelayout/phase_noise_with_tone_1.png" width="1000"></center>
+<p align="center"><em>Figure 15: Steady-state closed-loop phase noise at a 2.44 GHz carrier (closed-loop run at schematic level). The peak at 5 MHz, and the smaller peaks at its multiples, come from the divider alternating between 240 and 248 — they are not noise</em></p>
 
 > ngspice has no closed-loop PLL phase-noise analysis, so phase noise is derived by
 > post-processing a long transient. The spectrum is taken from the **settled** portion
 > only — including the acquisition transient corrupts it. The reference open-source work
 > this is compared against uses the same method, so the comparison is like-for-like.
+
+The peak at 5 MHz (about −77 dBc/Hz) is a discrete tone at f<sub>REF</sub>/2. With the
+programmed code the ΔΣ modulator makes the divider alternate between ratios 240 and 248 on every
+other reference period, so the average is 244 but the instantaneous ratio toggles by ±4. That
+modulates the VCO at 5 MHz and at its harmonics, which is also why the 10 MHz reference spur
+(§9.5) is one of the peaks. Read the noise level away from the tones: at 1 MHz it is about
+−109 to −118 dBc/Hz, depending on the analysis window, and with the tones removed it is about
+−122 dBc/Hz at 10 MHz. The paper's −100.8 dBc/Hz (§3.1) is not reproduced by this run. The
+tone-free plots, the tone sizes (5 MHz: −17.7 dBc; 10 MHz: −40.7 dBc) and the other analysis
+windows are in [`xschem/top-pll/plots/prelayout/`](xschem/top-pll/plots/prelayout/).
 
 <a name="pex_spur"></a>
 ### 9.5 Reference Spur
@@ -649,7 +664,7 @@ instances, which ngspice can bind to the PDK model.
 <center><img src="./xschem/top-pll/plots/reference_spur_SA.png" width="1000"></center>
 <p align="center"><em>Figure 16: Output spectrum showing the reference spur at f<sub>out</sub> ± 10 MHz</em></p>
 
-At ≈ −40.2 dBc this is the weakest result in the design. It clears BLE requirements but
+At ≈ −40.2 dBc this is the weakest result in the design (the schematic-level run gives −40.7 dBc at 10 MHz; the larger tone at 5 MHz is not part of this figure). It clears BLE requirements but
 misses the −60 dBc target. The two mechanisms are charge-pump up/down current mismatch
 and finite loop-filter rejection at 10 MHz.
 
@@ -663,7 +678,7 @@ and finite loop-filter rejection at 10 MHz.
 | CMOS LC-PLL | CMOS LC VCO | 65 nm | 10.3 | −95.12 (@1 MHz) | 6.8 | — |
 | Fractional-N PLL | Multi-Core VCO | 130 nm | 0.125–8.4 | −152.9 (@10 MHz) | — | — |
 | Fractional-N Oversampling PLL | CMOS LC VCO | 65 nm | 2.4 | −217.8 (FOM) | 4.97 | 0.58 |
-| **Our Design [Fractional-N PLL]** | **CMOS LC VCO** | **130 nm** | **2.4** | **−100.8 (@1 MHz)** | **12.73** | **0.608** |
+| **Our Design [Fractional-N PLL]** | **CMOS LC VCO** | **130 nm** | **2.4** | **−100.8 (@1 MHz)** | **12.73** | **0.347** |
 
 Most entries are published silicon; this work is post-layout simulation. The contribution
 here is not a phase-noise record — it is that an LC tank with a real, EM-characterised
