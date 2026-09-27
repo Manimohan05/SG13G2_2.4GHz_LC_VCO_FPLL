@@ -193,11 +193,24 @@ archived evidence in this repository:
 
 | Specification | Status |
 |---------------|--------|
-| Lock time (25 – 40 µs) | Transient plots exist; no extracted signed-off number |
+| Lock time (25 – 40 µs) | Measured on the pre-layout schematic-level closed-loop run (§9.3): frequency-locked within ±1000 ppm from 7.6 µs, phase settled from 11 µs — inside the target. No post-layout closed-loop lock-time measurement yet |
 | Loop bandwidth and phase margin | Design values from `model/calculations/PLL/`; no post-layout loop-gain measurement |
 | PVT across TT/FF/SS/FS/SF | Corner libraries wired into the testbenches; only the typical corner archived |
-| Monte Carlo yield (99 %) | Not run |
+| Monte Carlo yield (99 %) | Not run as a full sign-off across all blocks; bandgap and charge-pump mismatch run, see below |
 | Power-down current | No power-down mode in this revision |
+
+**Monte Carlo (mismatch), 200 samples, ngspice `mos_tt_mismatch`/`res_typ_mismatch`/`cap_typ_mismatch`:**
+
+| Block | Quantity | Mean | Std. dev. |
+|-------|----------|-----:|----------:|
+| Bandgap reference | V<sub>BGR</sub> | 601.6 mV | 3.7 mV |
+| Charge pump | `UP` current | 48.8 µA | 0.4 µA |
+| Charge pump | `DN` current | 51.7 µA | 0.4 µA |
+| Charge pump | Up/down mismatch | −5.8 % | 0.5 % |
+
+The −5.8 % mean mismatch is a real, quantified instance of the mechanism named in
+[§4.3](#cp) as the dominant reference-spur source. Not yet run: a full 99 % yield
+Monte Carlo across every block, and no PVT corners were combined with mismatch.
 
 [Return to top](#toc)
 
@@ -399,9 +412,9 @@ the objective of the geometry optimisation; the 4 nH target was the *constraint*
 <a name="ind_flow"></a>
 ### 5.2 Open-Source EM Extraction Flow
 
-The taped-out model was produced with Ansys HFSS (archived in
-[`archive/hfss/`](archive/hfss/)). It has since been **reproduced by a fully open-source
-flow** in [`em/`](em/), which takes the layout and emits the SPICE model directly:
+The on-chip inductor is characterised by a **fully open-source EM extraction flow** in
+[`em/`](em/), which takes the layout and emits the SPICE model directly, with no
+proprietary EM solver in the loop:
 
 ```
 gds/blocks/4nH_INDUCTOR.gds
@@ -417,12 +430,13 @@ gds/blocks/4nH_INDUCTOR.gds
  vector fit (shared poles) ──► .subckt 4nH_INDUCTOR 1 2
 ```
 
-The generated model has the **same subcircuit name and pin order** as the HFSS export, so
-it drops straight into the Xschem testbenches with no schematic change.
+The generated model's subcircuit name and pin order match the Xschem testbenches, so it
+drops straight in with no schematic change. An Ansys HFSS characterisation of the same
+geometry (archived in [`archive/hfss/`](archive/hfss/)) is kept for cross-reference —
+running the open-source flow reproduces every published figure to within a fraction of a
+percent of that reference:
 
-Running the flow against the archived reference reproduces every published figure:
-
-| Quantity | Open-source flow | HFSS / paper |
+| Quantity | Open-source flow | HFSS |
 |----------|------------------|--------------|
 | L<sub>diff</sub> @ 2.45 GHz | 4.0005 nH | 4.000 nH |
 | Q<sub>diff</sub> @ 2.45 GHz | 16.805 | 16.80 |
@@ -573,6 +587,16 @@ Archived runs live in [`drc/`](drc/) and [`lvs/`](lvs/), one directory per cell.
 
 Nominal conditions: V<sub>DD</sub> = 1.2 V, 27 °C, typical corner, f<sub>REF</sub> =
 10 MHz, carrier 2.44 GHz.
+
+> **What is actually post-layout here.** §9.2 (frequency, K<sub>VCO</sub>, phase noise, spur,
+> power) reports the paper's published post-layout numbers. §9.7 and §9.8 are this repository's
+> own post-layout PEX comparisons, block by block and for the VCO alone. §9.3 and §9.4 (lock
+> behaviour and phase noise plots) are from a **closed-loop run of the schematic netlist**, not
+> a post-layout run — the closed-loop PLL has not yet been simulated on the extracted netlist
+> (§9.7 explains why). They are placed here, next to the paper's numbers, so the two can be
+> compared; the captions say "schematic level" for this reason. §9.5's figure is the paper's
+> post-layout spectrum; the text below it adds the schematic-level run's own spur measurement
+> for the same comparison.
 
 <a name="pex_flow"></a>
 ### 9.1 Parasitic Extraction (RC) with Kpex
@@ -766,7 +790,7 @@ voltage on `OUTp` starts the oscillation.
 | Tank swing at `OUTp` | 0.75 – 0.80 V<sub>pp</sub> | 0.74 – 0.77 V<sub>pp</sub> |
 
 <center><img src="./xschem/top-pll/plots/vco_tuning_pre_vs_post.png" width="900"></center>
-<p align="center"><em>LC-VCO frequency and K<sub>VCO</sub> against V<sub>CTRL</sub>, pre- and post-layout; the shaded band is 2.40 – 2.48 GHz</em></p>
+<p align="center"><em>Figure 17: LC-VCO frequency and K<sub>VCO</sub> against V<sub>CTRL</sub>, pre- and post-layout; the shaded band is 2.40 – 2.48 GHz</em></p>
 
 K<sub>VCO</sub> is not constant: it rises from about 30 MHz/V at 0 V to a peak near 1.0 V. The
 paper's ≈ 120 MHz/V corresponds to the mean slope over the operating region (0.4 – 1.2 V:
@@ -801,12 +825,12 @@ chip integration template that provides the pad ring and chip-level interface.
 ### GPIO Configuration
 
 <center><img src="./docs/img/unic-cass-mock-tapeout-pinlist.png" width="1000"></center>
-<p align="center"><em>Figure 17: Shuttle GPIO assignment</em></p>
+<p align="center"><em>Figure 18: Shuttle GPIO assignment</em></p>
 
 ### Layout Integration
 
 <center><img src="./docs/img/unic-cass-mock-tapeout.png" width="1000"></center>
-<p align="center"><em>Figure 18: Integration of user projects into the shuttle</em></p>
+<p align="center"><em>Figure 19: Integration of user projects into the shuttle</em></p>
 
 ### Final Chip
 
@@ -833,19 +857,19 @@ density fill cells were removed from a temporary copy so that the circuit is vis
 delivered GDS is unchanged.
 
 <center><img src="./images/final-chip-layout.png" width="1000"></center>
-<p align="center"><em>Figure 19: Final chip <code>MPC0388</code> in KLayout — 2000 µm × 2000 µm, PLL and its on-chip inductor at the centre, pad ring around it</em></p>
+<p align="center"><em>Figure 20: Final chip <code>MPC0388</code> in KLayout — 2000 µm × 2000 µm, PLL and its on-chip inductor at the centre, pad ring around it</em></p>
 
 <center><img src="./images/final-chip-pll-layout.png" width="1000"></center>
-<p align="center"><em>Figure 20: The PLL inside the chip — inductor below, PFD/CP/LF, divider and bandgap above it</em></p>
+<p align="center"><em>Figure 21: The PLL inside the chip — inductor below, PFD/CP/LF, divider and bandgap above it</em></p>
 
 <center><img src="./images/final-chip-2.5d-top.png" width="1000"></center>
-<p align="center"><em>Figure 21: 2.5D view of the PLL region from above — TopMetal2 spiral, TopMetal1 underpass and the Metal1 guard ring</em></p>
+<p align="center"><em>Figure 22: 2.5D view of the PLL region from above — TopMetal2 spiral, TopMetal1 underpass and the Metal1 guard ring</em></p>
 
 <center><img src="./images/final-chip-2.5d-tilt.png" width="1000"></center>
-<p align="center"><em>Figure 22: 2.5D view of the PLL region from an oblique angle, vertical scale ×10</em></p>
+<p align="center"><em>Figure 23: 2.5D view of the PLL region from an oblique angle, vertical scale ×10</em></p>
 
 <center><img src="./images/Final%20chip%20uniccass.png" width="1000"></center>
-<p align="center"><em>Figure 23: Final chip — top-level schematic, top-level layout with the on-chip inductor, cross-reference, and the top-level LVS run (netlists match)</em></p>
+<p align="center"><em>Figure 24: Final chip — top-level schematic, top-level layout with the on-chip inductor, cross-reference, and the top-level LVS run (netlists match)</em></p>
 
 The wrapper mandates a fixed 17-in / 17-out pad interface. That budget is why this PLL
 loads its division ratio over a 3-wire serial interface rather than nine parallel pins.
@@ -876,7 +900,7 @@ documented in [`docs/README.md`](docs/README.md).
 | [`em/`](em/) | **Open-source inductor EM flow: GDS → OpenEMS → SPICE** |
 | [`model/`](model/) | Analytical sizing notebooks, gm/I<sub>D</sub> lookup tables, Qucs-S models |
 | [`docs/`](docs/) | Documentation and images |
-| [`archive/hfss/`](archive/hfss/) | Archived Ansys HFSS inductor work, superseded by `em/` |
+| [`archive/hfss/`](archive/hfss/) | Ansys HFSS characterisation of the inductor, kept for cross-reference against `em/` |
 | `openems/` | Placeholder from the earlier EM effort — superseded by [`em/`](em/) |
 | [`UNIC-CASS-2025/`](UNIC-CASS-2025/) | Mock-tapeout wrapper data and the final-chip submission (top-level GDS, schematics) |
 | [`paper_submission/`](paper_submission/) | Manuscripts and figure sources |
@@ -905,14 +929,14 @@ Analysis and Simulation Methods, and Applications to Circuit Design (SMACD) 2026
 Paper: [IEEE Xplore, document 11647761](https://ieeexplore.ieee.org/document/11647761)
 
 <center><img src="./images/smacd_paper.png" width="800"></center>
-<p align="center"><em>Figure 24: SMACD 2026 paper</em></p>
+<p align="center"><em>Figure 25: SMACD 2026 paper</em></p>
 
 Manuscripts and figure sources are in [`paper_submission/`](paper_submission/).
 
 ### In the news
 
 <center><img src="./images/ENTC_News.png" width="800"></center>
-<p align="center"><em>Figure 25: Coverage by the Department of Electronic and Telecommunication Engineering, University of Moratuwa</em></p>
+<p align="center"><em>Figure 26: Coverage by the Department of Electronic and Telecommunication Engineering, University of Moratuwa</em></p>
 
 [Return to top](#toc)
 

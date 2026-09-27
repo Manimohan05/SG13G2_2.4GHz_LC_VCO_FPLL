@@ -64,8 +64,8 @@ Touchstone file from *any* field solver can be turned into a SPICE model.
 
 ## Verification
 
-`scripts/validate.py` runs the whole back half against the archived HFSS results
-— the reference this design actually taped out with:
+`scripts/validate.py` runs the whole back half against the archived HFSS results, an
+independent characterisation of the same geometry kept for cross-reference:
 
 ```bash
 python scripts/validate.py
