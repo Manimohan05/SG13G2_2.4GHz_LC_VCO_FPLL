@@ -1,8 +1,8 @@
 """End-to-end self-check for the EM -> SPICE toolchain.
 
 Runs the back half of the pipeline (S-parameters -> vector fit -> SPICE subckt
--> circuit solve -> L/Q) against the archived Ansys HFSS results, which are the
-reference this design was actually taped out with.
+-> circuit solve -> L/Q) against the archived Ansys HFSS results, an independent
+characterisation of the same geometry kept for cross-reference.
 
 Nothing here needs OpenEMS or ngspice, so it runs anywhere numpy does:
 

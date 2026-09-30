@@ -432,9 +432,11 @@ gds/blocks/4nH_INDUCTOR.gds
 
 The generated model's subcircuit name and pin order match the Xschem testbenches, so it
 drops straight in with no schematic change. An Ansys HFSS characterisation of the same
-geometry (archived in [`archive/hfss/`](archive/hfss/)) is kept for cross-reference —
-running the open-source flow reproduces every published figure to within a fraction of a
-percent of that reference:
+geometry (archived in [`archive/hfss/`](archive/hfss/)) is kept for cross-reference. The
+`em` stage (the OpenEMS FDTD solve itself) has not been run in this repository; what is
+verified is the rest of the pipeline — running the de-embedding, vector-fit and
+circuit-solve stages on the archived HFSS S-parameters reproduces every published figure
+to within a fraction of a percent:
 
 | Quantity | Open-source flow | HFSS |
 |----------|------------------|--------------|
