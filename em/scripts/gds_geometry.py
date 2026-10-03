@@ -153,7 +153,14 @@ def _xf(pts, origin, angle, mag, mirror):
 
 
 def read_gds(path, topcell=None, layers=None, max_depth=24):
-    """Flatten `topcell` (or the sole root cell) to a list of Polygon."""
+    """Flatten `topcell` (or the sole root cell) to a list of Polygon.
+
+    `layers`, if given, is an iterable of either layer numbers (any datatype
+    matches) or (layer, datatype) pairs (only that exact pair matches). A GDS
+    layer number alone is not a drawing purpose - the same layer number can
+    carry text, fill-exclusion or boundary-marker shapes on other datatypes,
+    and a bare-number filter would pull those in as if they were drawn metal.
+    """
     cells, _ = _parse(path)
     if not cells:
         raise ValueError(f"no structures in {path}")
@@ -166,7 +173,15 @@ def read_gds(path, topcell=None, layers=None, max_depth=24):
             raise ValueError(f"specify topcell; candidates: {sorted(roots) or sorted(cells)}")
         topcell = roots[0]
 
-    want = None if layers is None else {int(l) for l in layers}
+    if layers is None:
+        want_layers, want_pairs = None, None
+    else:
+        want_layers, want_pairs = set(), set()
+        for l in layers:
+            if isinstance(l, tuple):
+                want_pairs.add((int(l[0]), int(l[1])))
+            else:
+                want_layers.add(int(l))
     out = []
 
     def walk(name, origin, angle, mag, mirror, depth):
@@ -174,7 +189,9 @@ def read_gds(path, topcell=None, layers=None, max_depth=24):
             return
         c = cells[name]
         for poly in c.polygons:
-            if want is None or poly.layer in want:
+            if (want_layers is None and want_pairs is None
+                    or want_layers is not None and poly.layer in want_layers
+                    or want_pairs is not None and (poly.layer, poly.datatype) in want_pairs):
                 out.append(Polygon(poly.layer, poly.datatype,
                                    _xf(poly.points, origin, angle, mag, mirror)))
         for (sn, org, ang, m, mir, cols, rows, sp) in c.refs:

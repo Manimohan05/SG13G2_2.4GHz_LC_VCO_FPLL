@@ -33,12 +33,16 @@ def collect_layers(gds, topcell=None, stackup=None, layer_names=None):
     for n in names:
         if n not in st.layers:
             raise KeyError(f"{n} not in stackup")
-        wanted[st.layers[n].gds_layer] = n
+        # datatype 0 is the drawing purpose; other datatypes on the same GDS
+        # layer number carry pins, labels or fill-exclusion/boundary markers,
+        # not real metal (e.g. SG13G2's full-cell marker shares its layer
+        # number with TopMetal1/TopMetal2 on a different datatype).
+        wanted[(st.layers[n].gds_layer, 0)] = n
 
     top, polys = read_gds(gds, topcell, layers=wanted.keys())
     out = {n: [] for n in names}
     for p in polys:
-        out[wanted[p.layer]].append(p.points)
+        out[wanted[(p.layer, p.datatype)]].append(p.points)
     return top, out, st
 
 
@@ -48,7 +52,24 @@ def _mesh_lines(lo, hi, coarse, refine_at=(), refine=0.5, pad=0.0):
     for x in refine_at:
         lines += list(np.arange(x - 3 * refine, x + 3 * refine + refine, refine))
     lines = np.unique(np.round(np.array(lines), 6))
-    return lines[(lines >= lo - pad - 1e-9) & (lines <= hi + pad + 1e-9)]
+    lines = lines[(lines >= lo - pad - 1e-9) & (lines <= hi + pad + 1e-9)]
+    # The coarse background grid and each vertex's own refine window are
+    # independently anchored (the coarse grid starts at lo-pad, each window
+    # starts at vertex-3*refine), so a coarse line and a refine line can end
+    # up a few nanometres apart purely by coincidence of where the two grids
+    # happen to fall relative to each other - not a real feature, just grid
+    # misalignment. Left alone, OpenEMS has to resolve that gap as if it
+    # were a real cell, which collapses the timestep by orders of magnitude.
+    # Merging any pair closer than a tenth of the refine cell removes those
+    # without touching spacing anyone actually asked for.
+    min_gap = refine / 10.0
+    out = [lines[0]]
+    for x in lines[1:]:
+        if x - out[-1] < min_gap:
+            out[-1] = (out[-1] + x) / 2.0
+        else:
+            out.append(x)
+    return np.array(out)
 
 
 def build(cfg):
@@ -133,8 +154,18 @@ def bounds_of(polys):
     return a[:, 0].min(), a[:, 1].min(), a[:, 0].max(), a[:, 1].max()
 
 
-def edge_coords(polys, tol=6):
-    """Unique x and y coordinates of polygon vertices, for mesh refinement."""
+def edge_coords(polys, tol=2):
+    """Unique x and y coordinates of polygon vertices, for mesh refinement.
+
+    `tol` is decimal places in micrometres, so the default (2) snaps to
+    10 nm - coarser than any refined mesh cell used here, but fine enough
+    to keep every real feature distinct. The old default (6, i.e. 1 pm)
+    treated floating-point rotation noise from angled edges as if it were
+    real geometry a few nanometres apart, creating phantom near-duplicate
+    refinement windows with a near-zero gap between them. OpenEMS then had
+    to resolve that gap, driving the timestep down to the attosecond range
+    and making the run impossibly slow.
+    """
     a = np.vstack([np.asarray(p) for p in polys])
     return np.unique(np.round(a[:, 0], tol)), np.unique(np.round(a[:, 1], tol))
 
