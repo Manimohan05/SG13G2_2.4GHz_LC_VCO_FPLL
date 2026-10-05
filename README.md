@@ -949,6 +949,20 @@ Manuscripts and figure sources are in [`paper_submission/`](paper_submission/).
 <a name="ref"></a>
 ## 13. References
 
+Built with the [IIC-OSIC-TOOLS](https://github.com/iic-jku/IIC-OSIC-TOOLS) open-source IC design container:
+
+> H. Pretl and G. Zachl, "GitHub repository of the IIC-OSIC-TOOLS," 2022.
+> [https://github.com/iic-jku/IIC-OSIC-TOOLS](https://github.com/iic-jku/IIC-OSIC-TOOLS)
+
+```bibtex
+@software{Pretl_IIC-OSIC-TOOLS_2022,
+  author = {Pretl, Harald and Zachl, Georg},
+  title = {{GitHub repository of the IIC-OSIC-TOOLS}},
+  year = {2022},
+  url = {https://github.com/iic-jku/IIC-OSIC-TOOLS}
+}
+```
+
 The following open-source PLL designs were referred to during development:
 
 - Our past IHP openMPW submission (30 MHz Fractional-N PLL) — [TO_July2025](https://github.com/avishkaherath/TO_July2025/blob/main/30_MHz_Fractional_N_PLL/doc/source/designdata.rst)
