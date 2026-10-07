@@ -1,4 +1,4 @@
-** sch_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/lc-vco/LC_VCO_tb.sch
+** sch_path: ../xschem/lc-vco/LC_VCO_tb.sch
 **.subckt LC_VCO_tb FOUT VCTRL
 *.opin FOUT
 *.ipin VCTRL
@@ -81,8 +81,8 @@ write LC_VCO_tb.raw
 **.ends
 
 * expanding   symbol:  xschem/lc-vco/LC_VCO.sym # of pins=6
-** sym_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/lc-vco/LC_VCO.sym
-** sch_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/lc-vco/LC_VCO.sch
+** sym_path: ../xschem/lc-vco/LC_VCO.sym
+** sch_path: ../xschem/lc-vco/LC_VCO.sch
 .subckt LC_VCO VDD VCTRL GND FOUT VBGR SUB!
 *.opin FOUT
 *.ipin VCTRL

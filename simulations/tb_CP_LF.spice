@@ -1,4 +1,4 @@
-** sch_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/charge-pump/tb_CP_LF.sch
+** sch_path: ../xschem/charge-pump/tb_CP_LF.sch
 **.subckt tb_CP_LF
 V1 VDD GND 1.2
 V2 DN GND PULSE(0 1.2 3.1u 1n 1n 49n 100n 29)
@@ -62,8 +62,8 @@ plot v(CTRL)
 **.ends
 
 * expanding   symbol:  xschem/charge-pump/CHARGE_PUMP.sym # of pins=7
-** sym_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/charge-pump/CHARGE_PUMP.sym
-** sch_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/charge-pump/CHARGE_PUMP.sch
+** sym_path: ../xschem/charge-pump/CHARGE_PUMP.sym
+** sch_path: ../xschem/charge-pump/CHARGE_PUMP.sch
 .subckt CHARGE_PUMP UP VDD VCP VBGR GND DN SUB!
 *.opin VCP
 *.ipin UP
@@ -92,8 +92,8 @@ XR5 GND SUB! ptap1 R=4.486 w=20e-6 l=6e-6 rw=0.3e-6
 
 
 * expanding   symbol:  xschem/loop-filter/LOOP_FILTER.sym # of pins=4
-** sym_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/loop-filter/LOOP_FILTER.sym
-** sch_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/loop-filter/LOOP_FILTER.sch
+** sym_path: ../xschem/loop-filter/LOOP_FILTER.sym
+** sch_path: ../xschem/loop-filter/LOOP_FILTER.sch
 .subckt LOOP_FILTER OUT IN GND SUB!
 *.opin OUT
 *.iopin GND

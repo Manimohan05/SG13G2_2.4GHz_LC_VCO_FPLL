@@ -1,4 +1,4 @@
-** sch_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/charge-pump/tb_CP.sch
+** sch_path: ../xschem/charge-pump/tb_CP.sch
 **.subckt tb_CP CTRL UP VDD DN GND
 *.opin CTRL
 *.ipin UP

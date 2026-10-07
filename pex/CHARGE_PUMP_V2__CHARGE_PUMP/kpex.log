@@ -1,8 +1,8 @@
 [2026-09-25 17:15:08,228] [INFO]    GDS input file passed, running in LVS mode
-[2026-09-25 17:15:08,283] [INFO]    Found cell CHARGE_PUMP in GDS /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/gds/blocks/CHARGE_PUMP_V2.gds (only top cell)
+[2026-09-25 17:15:08,283] [INFO]    Found cell CHARGE_PUMP in GDS ../../gds/blocks/CHARGE_PUMP_V2.gds (only top cell)
 [2026-09-25 17:15:08,298] [INFO]    LVS input schematic not specified (argument --schematic), using dummy schematic
 [2026-09-25 17:15:08,491] [INFO]    Calling MAGIC
-[2026-09-25 17:15:08,495] [SUBPROCESS]    magic -dnull -noconsole -rcfile /foss/pdks/ihp-sg13g2/libs.tech/magic/ihp-sg13g2.magicrc /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/pex/CHARGE_PUMP_V2__CHARGE_PUMP/magic_RC/CHARGE_PUMP_MAGIC_RC_Script.tcl, output file: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/pex/CHARGE_PUMP_V2__CHARGE_PUMP/magic_RC/CHARGE_PUMP_MAGIC_RC_Output.txt
+[2026-09-25 17:15:08,495] [SUBPROCESS]    magic -dnull -noconsole -rcfile /foss/pdks/ihp-sg13g2/libs.tech/magic/ihp-sg13g2.magicrc magic_RC/CHARGE_PUMP_MAGIC_RC_Script.tcl, output file: magic_RC/CHARGE_PUMP_MAGIC_RC_Output.txt
 [2026-09-25 17:15:08,569] [SUBPROCESS]    
 [2026-09-25 17:15:08,571] [SUBPROCESS]    Magic 8.3 revision 681 - Compiled on Tue Aug 25 11:50:23 AM CEST 2026.
 [2026-09-25 17:15:08,575] [SUBPROCESS]    Starting magic under Tcl interpreter
@@ -21,7 +21,7 @@
 [2026-09-25 17:15:06,494] [SUBPROCESS]        pblock sealcont difffill nemitter hvnemitter hvisodiffres sealvia1 sealvia2 sealvia3 sealvia4 sealvia5 sealvia6 pillar solder seal glass thruvia inductor 
 [2026-09-25 17:15:06,513] [SUBPROCESS]    Scaled tech values by 2 / 1 to match internal grid scaling
 [2026-09-25 17:15:12,818] [SUBPROCESS]    Loading ihp-sg13g2 Device Generator Menu ...
-[2026-09-25 17:15:12,860] [SUBPROCESS]    Loading "/foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/pex/CHARGE_PUMP_V2__CHARGE_PUMP/magic_RC/CHARGE_PUMP_MAGIC_RC_Script.tcl" from command line.
+[2026-09-25 17:15:12,860] [SUBPROCESS]    Loading "magic_RC/CHARGE_PUMP_MAGIC_RC_Script.tcl" from command line.
 [2026-09-25 17:15:12,927] [SUBPROCESS]    Warning: Calma reading is not undoable!  I hope that's OK.
 [2026-09-25 17:15:12,939] [SUBPROCESS]    Library written using GDS-II Release 6.0
 [2026-09-25 17:15:12,982] [SUBPROCESS]    Library name: LIB
@@ -55,7 +55,7 @@
 [2026-09-25 17:15:13,289] [SUBPROCESS]    Reading "CHARGE_PUMP".
 [2026-09-25 17:15:13,295] [SUBPROCESS]    Error while reading cell "CHARGE_PUMP" (byte position 303210): Unknown layer/datatype in boundary, layer=10 type=1
 [2026-09-25 17:15:13,319] [SUBPROCESS]    Error while reading cell "CHARGE_PUMP" (byte position 303274): Unknown layer/datatype in boundary, layer=8 type=1
-[2026-09-25 17:15:13,417] [SUBPROCESS]    Extracting CHARGE_PUMP into /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/pex/CHARGE_PUMP_V2__CHARGE_PUMP/magic_RC/CHARGE_PUMP.ext:
+[2026-09-25 17:15:13,417] [SUBPROCESS]    Extracting CHARGE_PUMP into magic_RC/CHARGE_PUMP.ext:
 [2026-09-25 17:15:13,419] [SUBPROCESS]    Processing CHARGE_PUMP
 [2026-09-25 17:15:13,962] [SUBPROCESS]    exttosim finished.
 [2026-09-25 17:15:13,964] [SUBPROCESS]    Note:  This option has been deprecated and is unused.
@@ -79,8 +79,8 @@
 [2026-09-25 17:15:14,893] [SUBPROCESS]    Nets output: 3 (0.230769)
 [2026-09-25 17:15:15,432] [SUBPROCESS]    exttospice finished.
 [2026-09-25 17:15:15,463] [INFO]    MAGIC succeeded after 6.939s
-[2026-09-25 17:15:16,779] [SUBPROCESS]    Report DB saved at: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/pex/CHARGE_PUMP_V2__CHARGE_PUMP/magic_RC/CHARGE_PUMP_MAGIC_report.rdb.gz
-[2026-09-25 17:15:16,793] [SUBPROCESS]    SPICE netlist saved at: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/pex/CHARGE_PUMP_V2__CHARGE_PUMP/magic_RC/CHARGE_PUMP.pex.spice
+[2026-09-25 17:15:16,779] [SUBPROCESS]    Report DB saved at: magic_RC/CHARGE_PUMP_MAGIC_report.rdb.gz
+[2026-09-25 17:15:16,793] [SUBPROCESS]    SPICE netlist saved at: magic_RC/CHARGE_PUMP.pex.spice
 [2026-09-25 17:15:16,816] [SUBPROCESS]    * NGSPICE file created from CHARGE_PUMP.ext - technology: ihp-sg13g2
 
 .subckt CHARGE_PUMP GND VDD UP DN VCP VBGR

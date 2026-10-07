@@ -1,4 +1,4 @@
-** sch_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/top-pll/LC_VCO_FPLL_tb.sch
+** sch_path: ../xschem/top-pll/LC_VCO_FPLL_tb.sch
 **.subckt LC_VCO_FPLL_tb CLK_OUT
 *.opin CLK_OUT
 V1 VDD GND 1.2
@@ -65,8 +65,8 @@ xpll CLK_IN VDD CLK_OUT GND en rst sdata sclk LC_VCO_FPLL
 **.ends
 
 * expanding   symbol:  xschem/top-pll/LC_VCO_FPLL.sym # of pins=8
-** sym_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/top-pll/LC_VCO_FPLL.sym
-** sch_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/top-pll/LC_VCO_FPLL.sch
+** sym_path: ../xschem/top-pll/LC_VCO_FPLL.sym
+** sch_path: ../xschem/top-pll/LC_VCO_FPLL.sch
 .subckt LC_VCO_FPLL CLK_IN VDD CLK_OUT VSS EN RST SDATA SCLK
 *.ipin CLK_IN
 *.opin CLK_OUT
@@ -639,8 +639,8 @@ XC1 VDD VSS cap_cmim w=20.0e-6 l=20.0e-6 m=40 mm_ok=1
 
 
 * expanding   symbol:  xschem/phase-freq-detector/PHASE_FREQ_DET.sym # of pins=6
-** sym_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/phase-freq-detector/PHASE_FREQ_DET.sym
-** sch_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/phase-freq-detector/PHASE_FREQ_DET.sch
+** sym_path: ../xschem/phase-freq-detector/PHASE_FREQ_DET.sym
+** sch_path: ../xschem/phase-freq-detector/PHASE_FREQ_DET.sch
 .subckt PHASE_FREQ_DET FREF UP VDD GND FDIV DN
 *.opin UP
 *.ipin FREF
@@ -656,8 +656,8 @@ x3 nRST net1 DN VDD GND sg13g2_nand2_2
 
 
 * expanding   symbol:  xschem/charge-pump/CHARGE_PUMP.sym # of pins=7
-** sym_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/charge-pump/CHARGE_PUMP.sym
-** sch_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/charge-pump/CHARGE_PUMP.sch
+** sym_path: ../xschem/charge-pump/CHARGE_PUMP.sym
+** sch_path: ../xschem/charge-pump/CHARGE_PUMP.sch
 .subckt CHARGE_PUMP UP VDD VCP VBGR GND DN SUB!
 *.opin VCP
 *.ipin UP
@@ -686,8 +686,8 @@ XR5 GND SUB! ptap1 R=4.486 w=20e-6 l=6e-6 rw=0.3e-6
 
 
 * expanding   symbol:  xschem/loop-filter/LOOP_FILTER.sym # of pins=4
-** sym_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/loop-filter/LOOP_FILTER.sym
-** sch_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/loop-filter/LOOP_FILTER.sch
+** sym_path: ../xschem/loop-filter/LOOP_FILTER.sym
+** sch_path: ../xschem/loop-filter/LOOP_FILTER.sch
 .subckt LOOP_FILTER OUT IN GND SUB!
 *.opin OUT
 *.iopin GND
@@ -703,8 +703,8 @@ XR4 GND SUB! ptap1 R=1.462 w=46.34e-6 l=32.18e-6 rw=0.3e-6
 
 
 * expanding   symbol:  xschem/lc-vco/LC_VCO.sym # of pins=6
-** sym_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/lc-vco/LC_VCO.sym
-** sch_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/lc-vco/LC_VCO.sch
+** sym_path: ../xschem/lc-vco/LC_VCO.sym
+** sch_path: ../xschem/lc-vco/LC_VCO.sch
 .subckt LC_VCO VDD VCTRL GND FOUT VBGR SUB!
 *.opin FOUT
 *.ipin VCTRL
@@ -743,8 +743,8 @@ XR12 VDD NWa ntap1 R=5.63 w=10.62e-6 l=10.22e-6 rw=0.3e-6
 
 
 * expanding   symbol:  xschem/bgr/BANDGAP_REF.sym # of pins=4
-** sym_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/bgr/BANDGAP_REF.sym
-** sch_path: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/xschem/bgr/BANDGAP_REF.sch
+** sym_path: ../xschem/bgr/BANDGAP_REF.sym
+** sch_path: ../xschem/bgr/BANDGAP_REF.sch
 .subckt BANDGAP_REF VDD GND VBGR SUB!
 *.opin VBGR
 *.iopin GND

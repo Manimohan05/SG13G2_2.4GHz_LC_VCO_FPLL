@@ -1,8 +1,8 @@
 [2026-09-25 17:15:19,367] [INFO]    GDS input file passed, running in LVS mode
-[2026-09-25 17:15:19,629] [INFO]    Found cell LOOP_FILTER in GDS /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/gds/blocks/LOOP_FILTER.gds (only top cell)
+[2026-09-25 17:15:19,629] [INFO]    Found cell LOOP_FILTER in GDS ../../gds/blocks/LOOP_FILTER.gds (only top cell)
 [2026-09-25 17:15:19,640] [INFO]    LVS input schematic not specified (argument --schematic), using dummy schematic
 [2026-09-25 17:15:19,891] [INFO]    Calling MAGIC
-[2026-09-25 17:15:19,893] [SUBPROCESS]    magic -dnull -noconsole -rcfile /foss/pdks/ihp-sg13g2/libs.tech/magic/ihp-sg13g2.magicrc /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/pex/LOOP_FILTER__LOOP_FILTER/magic_RC/LOOP_FILTER_MAGIC_RC_Script.tcl, output file: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/pex/LOOP_FILTER__LOOP_FILTER/magic_RC/LOOP_FILTER_MAGIC_RC_Output.txt
+[2026-09-25 17:15:19,893] [SUBPROCESS]    magic -dnull -noconsole -rcfile /foss/pdks/ihp-sg13g2/libs.tech/magic/ihp-sg13g2.magicrc magic_RC/LOOP_FILTER_MAGIC_RC_Script.tcl, output file: magic_RC/LOOP_FILTER_MAGIC_RC_Output.txt
 [2026-09-25 17:15:20,035] [SUBPROCESS]    
 [2026-09-25 17:15:20,053] [SUBPROCESS]    Magic 8.3 revision 681 - Compiled on Tue Aug 25 11:50:23 AM CEST 2026.
 [2026-09-25 17:15:20,095] [SUBPROCESS]    Starting magic under Tcl interpreter
@@ -21,7 +21,7 @@
 [2026-09-25 17:15:21,466] [SUBPROCESS]        pblock sealcont difffill nemitter hvnemitter hvisodiffres sealvia1 sealvia2 sealvia3 sealvia4 sealvia5 sealvia6 pillar solder seal glass thruvia inductor 
 [2026-09-25 17:15:21,479] [SUBPROCESS]    Scaled tech values by 2 / 1 to match internal grid scaling
 [2026-09-25 17:15:21,498] [SUBPROCESS]    Loading ihp-sg13g2 Device Generator Menu ...
-[2026-09-25 17:15:21,509] [SUBPROCESS]    Loading "/foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/pex/LOOP_FILTER__LOOP_FILTER/magic_RC/LOOP_FILTER_MAGIC_RC_Script.tcl" from command line.
+[2026-09-25 17:15:21,509] [SUBPROCESS]    Loading "magic_RC/LOOP_FILTER_MAGIC_RC_Script.tcl" from command line.
 [2026-09-25 17:15:21,597] [SUBPROCESS]    Warning: Calma reading is not undoable!  I hope that's OK.
 [2026-09-25 17:15:21,695] [SUBPROCESS]    Library written using GDS-II Release 6.0
 [2026-09-25 17:15:21,781] [SUBPROCESS]    Library name: LIB
@@ -39,7 +39,7 @@
 [2026-09-25 17:15:25,406] [SUBPROCESS]    Reading "via_stack$9".
 [2026-09-25 17:15:26,069] [SUBPROCESS]    Reading "rppd$1".
 [2026-09-25 17:15:26,157] [SUBPROCESS]    Reading "LOOP_FILTER".
-[2026-09-25 17:15:26,449] [SUBPROCESS]    Extracting LOOP_FILTER into /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/pex/LOOP_FILTER__LOOP_FILTER/magic_RC/LOOP_FILTER.ext:
+[2026-09-25 17:15:26,449] [SUBPROCESS]    Extracting LOOP_FILTER into magic_RC/LOOP_FILTER.ext:
 [2026-09-25 17:15:26,450] [SUBPROCESS]    Processing LOOP_FILTER
 [2026-09-25 17:15:29,436] [SUBPROCESS]    exttosim finished.
 [2026-09-25 17:15:29,438] [SUBPROCESS]    Note:  This option has been deprecated and is unused.
@@ -52,8 +52,8 @@
 [2026-09-25 17:15:34,279] [SUBPROCESS]    Nets output: 1 (0.023810)
 [2026-09-25 17:15:36,199] [SUBPROCESS]    exttospice finished.
 [2026-09-25 17:15:36,264] [INFO]    MAGIC succeeded after 16.31s
-[2026-09-25 17:16:15,770] [SUBPROCESS]    Report DB saved at: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/pex/LOOP_FILTER__LOOP_FILTER/magic_RC/LOOP_FILTER_MAGIC_report.rdb.gz
-[2026-09-25 17:16:15,772] [SUBPROCESS]    SPICE netlist saved at: /foss/designs/unicasss-tools/SG13G2_2.4GHz_LC_VCO_FPLL/pex/LOOP_FILTER__LOOP_FILTER/magic_RC/LOOP_FILTER.pex.spice
+[2026-09-25 17:16:15,770] [SUBPROCESS]    Report DB saved at: magic_RC/LOOP_FILTER_MAGIC_report.rdb.gz
+[2026-09-25 17:16:15,772] [SUBPROCESS]    SPICE netlist saved at: magic_RC/LOOP_FILTER.pex.spice
 [2026-09-25 17:16:15,808] [SUBPROCESS]    * NGSPICE file created from LOOP_FILTER.ext - technology: ihp-sg13g2
 
 .subckt LOOP_FILTER OUT GND IN
